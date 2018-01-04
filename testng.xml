@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" >
+
+ <listeners>           
+     <listener class-name="org.uncommons.reportng.HTMLReporter" />
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+       <listener class-name="com.selenium.test.listener.TestNGListener" /> 
+  </listeners>
+
+  <test thread-count="5" name="Test" allow-return-values="true" skipfailedinvocationcounts = "true">
+    <classes>
+      <class name="com.selenium.test.NewTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,59 @@
+<project name="MIS2_test" basedir="." default="testoutput">
+	<path id="run.classespath">
+		<fileset dir = "${basedir}/lib">
+			<include name="selenium-java-2.9.0.jar"/>
+			<include name="jcommander.jar"/>
+			<include name="testng.jar"/>
+			<include name="guice-3.0.jar"/>
+			<include name="selenium-server-standalone-3.7.1.jar"/>
+			<include name="velocity-dep-1.4.jar"/>
+			<include name="reportng-1.1.4.jar"/>
+			<include name="saxon-8.7.jar"/>
+			<include name="SaxonLiaison.jar"/>
+			<include name="bsh-2.0b4.jar"/>
+			<include name="selenium-3.7.1-nodeps-sources.jar"/>
+			<include name="selenium-3.7.1-nodeps.jar"/>
+		</fileset>
+	</path>
+
+	<taskdef name="testng" classpathref="run.classespath" classname="org.testng.TestNGAntTask" />
+
+	<target name="compile" >
+		<echo message="mkdir"/>
+		<mkdir dir="build/classes"/>
+		<javac encoding="UTF-8" debug="on" destdir="build/classes" srcdir="src">
+			<classpath refid="run.classespath"/>
+		</javac>
+	</target>
+
+	<path id="test.classpath">
+		<path refid="run.classespath"/>
+		<pathelement location="build/classes"/>
+	</path>
+
+	<target name="run" depends="compile">
+		<testng outputdir="test-output" classpathref="test.classpath" delegateCommandSystemProperties="true"
+				useDefaultListeners="true" haltOnfailure="false" outputDir="test-output">
+			<xmlfileset dir=".">
+				<include name="testng.xml" />
+			</xmlfileset>
+		</testng>
+	</target>
+
+	<tstamp>
+		<format property="CURTIME" pattern="yyyyMMdd_HHmmss" locale="us" />
+	</tstamp>
+
+
+	<target name="testoutput" depends="run">
+		<xslt in="${basedir}/test-output/testng-results.xml" style="${basedir}/testng-results.xsl" 
+			out="${basedir}/test-output/${CURTIME}/index.html"  processor="SaxonLiaison">
+			<param name="testNgXslt.outputDir" expression="${basedir}/test-output/${CURTIME}/" />
+			<param name="testNgXslt.showRuntimeTotals" expression="true" />
+			<param name="testNgXslt.sortTestCaseLinks" expression="true" />
+			<param name="testNgXslt.testDetailsFilter" expression="FAIL,SKIP,PASS,CONF,BY_CLASS" />
+			<classpath refid="test.classpath" />
+		</xslt>
+	</target>
+
+</project>

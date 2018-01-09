@@ -10,9 +10,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Reporter;
 
-import com.selenium.test.NewTest;
+import com.selenium.test.DriverInstance;
 
-public class TakeScreenshot extends NewTest {
+public class TakeScreenshot extends DriverInstance {
 
 	public static String captureScreenShot(String StrProjectName){
 		

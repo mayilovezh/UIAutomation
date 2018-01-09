@@ -14,7 +14,7 @@ import com.selenium.test.capture.TakeScreenshot;
 import com.selenium.test.element.ElementHelper;
 import com.selenium.test.listener.WebDriverAction;
 
-public class NewTest {
+public class DriverInstance {
 	public static WebDriver driver;
 	public static WebDriverAction action;
     ElementHelper helper = new ElementHelper();

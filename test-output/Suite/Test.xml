@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="CNBJS1BC1281" name="com.selenium.test.NewTest" tests="1" failures="0" timestamp="5 Jan 2018 03:04:58 GMT" time="41.833" errors="0">
-  <testcase name="test" time="35.079" classname="com.selenium.test.NewTest"/>
-</testsuite>

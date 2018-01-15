@@ -8,13 +8,14 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 
 import com.selenium.test.DriverInstance;
 
-public class TakeScreenshot extends DriverInstance {
+public class TakeScreenshot{
 
-	public static String captureScreenShot(String StrProjectName){
+	public static String captureScreenShot(WebDriver driver){
 		
 		String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 		String time = new SimpleDateFormat("HHmmss").format(new Date());

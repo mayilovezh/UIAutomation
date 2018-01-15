@@ -1,6 +1,7 @@
 package com.selenium.test.listener;
 
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -8,6 +9,7 @@ import org.testng.ITestResult;
 import com.selenium.test.capture.TakeScreenshot;
 
 public class TestNGListener  implements ITestListener{
+	WebDriver driver;
 	
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -24,14 +26,14 @@ public class TestNGListener  implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println("TestCases failed and details are" + result.getName());
-		TakeScreenshot.captureScreenShot(result.getName());
+		TakeScreenshot.captureScreenShot(driver);
 		
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		System.out.println("TestCases skipped and details are" + result.getName());
-		TakeScreenshot.captureScreenShot(result.getName());
+		TakeScreenshot.captureScreenShot(driver);
 	}
 
 	@Override

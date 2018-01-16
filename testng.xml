@@ -11,6 +11,7 @@
   <test thread-count="5" name="Test" allow-return-values="true" skipfailedinvocationcounts = "true">
     <classes>
       <class name="com.selenium.test.testcenter.TestCenterList"/>
+      <class name="com.selenium.test.testcenter.TestBuildingList"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

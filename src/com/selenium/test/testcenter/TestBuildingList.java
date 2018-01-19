@@ -13,11 +13,11 @@ import com.selenium.test.listener.WebDriverAction;
 
 public class TestBuildingList {
 	String tbName = "对外经济贸易大学";
-	String tbName_Cn = "";
-	String tbName_En = "";
-	String floor = "";
-	String tbAddress_Cn = "";
-	String tbAddress_En = "";
+	String tbName_Cn = "北京市教育考试指导中心教学楼";
+	String tbName_En = "Teaching building of Beijing Education And Exam Instruction Centre";
+	String floor = "1,2";
+	String tbAddress_Cn = "北京市朝阳区惠新东街10号";
+	String tbAddress_En = "No.10 Huixin dongjie, Chaoyang district, Beijing";
 	static WebDriver driver;
 	WebDriverAction action;
 
@@ -45,12 +45,13 @@ public class TestBuildingList {
 		action.selectByValue(By.id(ElementHelper.TB_CENTER), "100100");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.TB_SEARCH));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TB_NAME)), tbName);
 	}
 
 	@Test
 	public void create() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TB_NAME)), tbName);
+		searchTB();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.TB_CREATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -74,7 +75,50 @@ public class TestBuildingList {
 	}
 
 	@Test
-	public void search() {
-
+	public void search() throws Exception {
+		searchTB();
+	}
+	
+	@Test
+	public void modify() throws Exception {
+		searchTB();
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.linkText(ElementHelper.TB_MODIFY));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.sendkeys(By.id(ElementHelper.TB_MODIFY_REMARK), "Automation Testing");
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
+	}
+	
+	@Test
+	public void modifyLog() throws Exception {
+		searchTB();
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.linkText(ElementHelper.TB_MODIFYLOG));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
+	}
+	
+	@Test
+	public void view() throws Exception {
+		searchTB();
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.linkText(ElementHelper.TB_VIEW));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TB_VIEW_NAME)), tbName_Cn);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
+		
+	}
+	
+	@Test
+	public void lendBuilding() throws Exception {
+		searchTB();
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.linkText(ElementHelper.TB_LENDBUILDING));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.TB_LENDBUILDING_ONE));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
 }

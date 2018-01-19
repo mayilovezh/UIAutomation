@@ -62,7 +62,35 @@ public class ElementHelper {
 	public static String TB_FLOOR = "FloorDesc";
 	public static String TB_ADDRESS_CN = "BuildingAddress";
 	public static String TB_ADDRESS_EN = "BuildingAddressEn";
+	public static String TB_MODIFY = "Modify";
+	public static String TB_MODIFY_REMARK = "RemarkBuilding";
+	public static String TB_MODIFYLOG = "ModifyLog";
+	public static String TB_VIEW = "View";
+	public static String TB_VIEW_NAME = "//*[@id='testBuildingDetailsWindow']/table/tbody/tr[2]/td";
+	public static String TB_LENDBUILDING = "LendBuilding";
+	public static String TB_LENDBUILDING_ONE = "//*[@id='ModifyExtraBuildingDialog']/ul/li[2]/input";
+	
+	//Test Room
+	public static String TEST_ROOM_LIST = "//*[@id='TestCenter']/ul/li[3]/a";
+	public static String TR_CREATE = "//input[@value='Create']";
+	public static String TR_REGION = "selectofficeRoomSearch";
+	public static String TR_CENTER = "selectCenterRoomSearch";
+	public static String TR_BUILDING = "selectbuildingRoomSearch";
+	public static String TR_AVAILABLE = "selectRoomAvailable";
+	public static String TR_ROOM_TYPE = "selectRoomType";
+	public static String TR_SEARCH = "//*[@id='page-heading']/div/table/tbody/tr[2]/td[6]/input[1]";
+	public static String TR_TBNAME = "//*[@id='page-heading']/table/tbody/tr[1]/td[2]";
+	public static String TR_ADD_NAME = "roomName";
+	public static String TR_ADD_ROOMQUOTA = "RoomQuota";
+	public static String TR_ADD_OPTIMALQUOTA = "OptimalQuota";
+	public static String TR_ADD_ROOMTYPE_SPEAKING = "//*[@id='CheckRoomType']/input[1]";
+	public static String TR_ADD_ROOMTYPE_WRITING = "//*[@id='CheckRoomType']/input[2]";
+	public static String TR_ADD_PRODUCTTYPE_IELTS = "//*[@id='CheckRoomProductType']/input[1]";
+	public static String TR_ADD_PRODUCTTYPE_IELTS_UKVI = "//*[@id='CheckRoomProductType']/input[2]";
+	public static String TR_ADD_PRODUCTTYPE_IELTS_LIFE_SKILLS = "//*[@id='CheckRoomProductType']/input[3]";
+	public static String TR_ADD_FLOOR = "Floor";
 	
 	
-
+	
+	
 }

@@ -89,6 +89,17 @@ public class ElementHelper {
 	public static String TR_ADD_PRODUCTTYPE_IELTS_UKVI = "//*[@id='CheckRoomProductType']/input[2]";
 	public static String TR_ADD_PRODUCTTYPE_IELTS_LIFE_SKILLS = "//*[@id='CheckRoomProductType']/input[3]";
 	public static String TR_ADD_FLOOR = "Floor";
+	public static String TR_MODIFY = "Modify";
+	public static String TR_MODIFY_REMARK = "Remark";
+	public static String TR_VIEW = "View";
+	public static String TR_MODIFYLOG = "ModifyLog";
+	public static String TR_CREATE_SHARE_ROOM = "//input[@value='Create Share Room']";
+	public static String TR_SHARE_ROOM_1 = "//div[2]/table/tbody/tr/td/input";
+	public static String TR_SHARE_ROOM_1_YES  = "//td[3]/input";
+	public static String TR_SHARE_START_DATE = "set_DateTime_RoomShareDateFrom";
+	public static String TR_SHARE_END_DATE = "set_DateTime_RoomShareDateTo";
+	public static String TR_SHARE_SEARCH = "btntestshareroomdatelistSearch";
+	public static String TR_SHARE_TEST_DAY = "//*[@id='addtestroomsharedate-Guid_active_cell']/input";
 	
 	
 	

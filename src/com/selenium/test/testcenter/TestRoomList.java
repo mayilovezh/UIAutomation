@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -53,19 +52,18 @@ public class TestRoomList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_TBNAME)), tbName_Cn);
 	}
-	
+
 	public boolean textisExist() {
 		boolean status = false;
 		try {
-			driver.findElement(By.xpath("//td[contains(text(),'" + roomNumber +"')]"));
-			 System.out.println(roomNumber + " is appeard!");  
+			driver.findElement(By.xpath("//td[contains(text(),'" + roomNumber + "')]"));
+			System.out.println(roomNumber + " is appeard!");
 			status = true;
 		} catch (NoSuchElementException e) {
 			status = false;
 		}
 		return status;
 	}
-	
 
 	@Test
 	public void create() throws Exception {
@@ -76,15 +74,9 @@ public class TestRoomList {
 		action.sendkeys(By.id(ElementHelper.TR_ADD_NAME), "111");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement roomQuota = driver.findElement(By.id(ElementHelper.TR_ADD_ROOMQUOTA));
-		js.executeScript("",roomQuota);
-		roomQuota.sendKeys("50");
-//		action.sendkeys(By.id(ElementHelper.TR_ADD_ROOMQUOTA), "50");
+		js.executeScript("$('#RoomQuota').data('kendoNumericTextBox').value('100')");
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		WebElement roomOptimalQuota = driver.findElement(By.id(ElementHelper.TR_ADD_OPTIMALQUOTA));
-		js.executeScript("",roomOptimalQuota);
-		roomOptimalQuota.sendKeys("50");
-//		action.sendkeys(By.id(ElementHelper.TR_ADD_OPTIMALQUOTA), "50");
+		js.executeScript("$('#OptimalQuota').data('kendoNumericTextBox').value('100')");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_SPEAKING));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -96,12 +88,12 @@ public class TestRoomList {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_LIFE_SKILLS));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		js.executeScript("$('#Floor').data('kendoNumericTextBox').value('2');");
 		action.sendkeys(By.id(ElementHelper.TR_ADD_FLOOR), "2");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-
 	}
-	
+
 	@Test
 	public void createShareRoom() throws Exception {
 		searchTestRoom();
@@ -115,10 +107,13 @@ public class TestRoomList {
 		action.sendkeys(By.id(ElementHelper.TR_SHARE_START_DATE), "2018-01-01");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.TR_SHARE_END_DATE), "2018-01-31");
-		
-		
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.TR_SHARE_SEARCH));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.TR_SHARE_TEST_DAY));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
-	
 
 	@Test
 	public void search() throws Exception {
@@ -127,35 +122,52 @@ public class TestRoomList {
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_TBNAME)), tbName_Cn);
 		textisExist();
 	}
-	
+
 	@Test
 	public void modify() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.TR_MODIFY));
+		action.click(By.linkText(ElementHelper.TR_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.sendkeys(By.id(ElementHelper.TR_MODIFY_REMARK), "Automation Testing");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
-	
+
 	@Test
-	public void view() throws Exception {
+	public void modifyShareRoom() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.TR_VIEW));
+		action.click(By.linkText(ElementHelper.TR_MODIFY_SHARE_DAY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+		action.click(By.xpath(ElementHelper.CANCEL));
 	}
-	
+
 	@Test
-	public void modifyLog() throws Exception {
+	public void shareLog() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.TR_MODIFYLOG));
+		action.click(By.linkText(ElementHelper.TR_SHARE_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 
-	
+	@Test
+	public void view() throws Exception {
+		searchTestRoom();
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.linkText(ElementHelper.TR_VIEW));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
+	}
+
+	@Test
+	public void modifyLog() throws Exception {
+		searchTestRoom();
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.linkText(ElementHelper.TR_MODIFYLOG));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
+	}
+
 }

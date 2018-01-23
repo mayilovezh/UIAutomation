@@ -92,15 +92,46 @@ public class ElementHelper {
 	public static String TR_MODIFY = "Modify";
 	public static String TR_MODIFY_REMARK = "Remark";
 	public static String TR_VIEW = "View";
-	public static String TR_MODIFYLOG = "ModifyLog";
+	public static String TR_MODIFYLOG = "Modify Log";
 	public static String TR_CREATE_SHARE_ROOM = "//input[@value='Create Share Room']";
 	public static String TR_SHARE_ROOM_1 = "//div[2]/table/tbody/tr/td/input";
 	public static String TR_SHARE_ROOM_1_YES  = "//td[3]/input";
 	public static String TR_SHARE_START_DATE = "set_DateTime_RoomShareDateFrom";
 	public static String TR_SHARE_END_DATE = "set_DateTime_RoomShareDateTo";
 	public static String TR_SHARE_SEARCH = "btntestshareroomdatelistSearch";
-	public static String TR_SHARE_TEST_DAY = "//*[@id='addtestroomsharedate-Guid_active_cell']/input";
+	public static String TR_SHARE_TEST_DAY = "//td[2]/div/div/div/div[2]/table/tbody/tr/td/input";
+	public static String TR_MODIFY_SHARE_DAY = "Modify Share Day";
+	public static String TR_SHARE_LOG = "Share Log";
 	
+	//Test Session
+	public static String TEST_SESSION_LIST = "//*[@id='TestCenter']/ul/li[4]/a";
+	public static String TS_CREATE = "testSessionListCreate";
+	public static String TS_CREATE_CENTER = "//tr[12]/td[2]";
+	public static String TS_CREATE_YEAR_START= "ddlYear-testsessionAdd";
+	public static String TS_CREATE_MONTH_START= "ddlMonth-testsessionAdd";
+	public static String TS_CREATE_YEAR_END= "ddlYear-endYear1";
+	public static String TS_CREATE_MONTH_END= "ddlMonth-endMonth1";
+	public static String TS_CREATE_SEARCH = "btntestcenterlistSearch";
+	public static String TS_CREATE_TESTDATE = "//td[2]/div/div/div/div[2]/table/tbody/tr/td/input"; 
+	public static String TS_REGION = "selectRegionSearch-testsession";
+	public static String TS_YEAR = "ddlYear-testsession";
+	public static String TS_MONTH = "ddlMonth-testsession";
+	public static String TS_DATE = "selectTestDateSearch";
+	public static String TS_CENTER = "ddltestcenter-testsession";
+	public static String TS_SEARCH =  "btntestsessionlistSearch";
+	public static String TS_TEST_DATE = "//*[@id='spreadsheet_testsession_Grid']/div[2]/table/tbody/tr/td[1]";
+	public static String TS_TEST_CENTER = "//*[@id='spreadsheet_testsession_Grid']/div[2]/table/tbody/tr/td[6]";
+	public static String TS_MODIFY = "Modify";
+	public static String TS_LOG = "Log";
+	public static String TS_MODIFY_SESSION_QUOTA = "quotaForUpdate";
+	
+	//Test Date
+	public static String TEST_DATE_LIST = "//*[@id='TestCenter']/ul/li[5]/a";
+	public static String TD_IMPORT = "btnImportFileForTestDate";
+	public static String TD_YEAR = "selectTestYear";
+	public static String TD_EXAM_PRODUCT_TYPE = "testdate_search_examproducttype";
+	public static String TD_EXAM_FORMAT = "testdate_search_examformat";
+	public static String TD_SEARCH = "testdate_search";
 	
 	
 	

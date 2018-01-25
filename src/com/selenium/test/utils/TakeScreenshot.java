@@ -1,4 +1,4 @@
-package com.selenium.test.capture;
+package com.selenium.test.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,13 +9,12 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.Reporter;
-
-import com.selenium.test.DriverInstance;
 
 public class TakeScreenshot{
 
-	public static String captureScreenShot(WebDriver driver){
+	public static String captureScreenShot(WebDriver driver,String StrProjectName){
 		
 		String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 		String time = new SimpleDateFormat("HHmmss").format(new Date());
@@ -31,7 +30,8 @@ public class TakeScreenshot{
 				FileUtils.copyFile(source, new File(screenShotPath));
 				screenShotPath = screenShotPath.substring(screenShotPath.indexOf("\\"));
 				Reporter.log("<a href="  + screenShotPath + " target=_blank>Failed Screen Shot</a>",true);
-				Reporter.log("" + "< img width='1500px' src=" + srcForDisplay + " />");
+				Reporter.log("" + "< img width='1500px' src=" + srcForDisplay + " />",true);
+				
 				System.out.println("Take the capture for the failure!");
 			}
 		} catch (IOException e) {

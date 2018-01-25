@@ -6,7 +6,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.selenium.test.capture.TakeScreenshot;
+import com.selenium.test.utils.ElementHelper;
+import com.selenium.test.utils.TakeScreenshot;
 
 public class TestNGListener  implements ITestListener{
 	WebDriver driver;
@@ -26,14 +27,14 @@ public class TestNGListener  implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println("TestCases failed and details are" + result.getName());
-		TakeScreenshot.captureScreenShot(driver);
+		TakeScreenshot.captureScreenShot(driver,ElementHelper.PROJECT_NAME);
 		
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		System.out.println("TestCases skipped and details are" + result.getName());
-		TakeScreenshot.captureScreenShot(driver);
+		TakeScreenshot.captureScreenShot(driver,ElementHelper.PROJECT_NAME);
 	}
 
 	@Override

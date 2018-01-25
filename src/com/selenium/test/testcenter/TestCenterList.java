@@ -8,9 +8,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.selenium.test.DriverInstance;
-import com.selenium.test.element.ElementHelper;
 import com.selenium.test.listener.WebDriverAction;
+import com.selenium.test.utils.DriverInstance;
+import com.selenium.test.utils.ElementHelper;
 
 public class TestCenterList{
 	String tcName = "对外经济贸易大学";

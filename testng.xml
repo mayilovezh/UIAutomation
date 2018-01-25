@@ -8,11 +8,13 @@
        <listener class-name="com.selenium.test.listener.TestNGListener" /> 
   </listeners>
 
-  <test thread-count="5" name="Test" allow-return-values="true" skipfailedinvocationcounts = "true">
+  <test thread-count="5" name="Test" skipfailedinvocationcounts="true" allow-return-values="true">
     <classes>
      <!--  <class name="com.selenium.test.testcenter.TestCenterList"/> -->
       <!-- <class name="com.selenium.test.testcenter.TestBuildingList"/> -->
-       <class name="com.selenium.test.testcenter.TestRoomList"/>
+      <!--  <class name="com.selenium.test.testcenter.TestRoomList"/>
+       <class name="com.selenium.test.testcenter.TestDateList"/> -->
+       <class name="com.selenium.test.testcenter.SpkRoomTemplate"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

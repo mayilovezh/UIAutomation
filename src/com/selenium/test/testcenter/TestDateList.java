@@ -6,9 +6,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.selenium.test.DriverInstance;
-import com.selenium.test.element.ElementHelper;
 import com.selenium.test.listener.WebDriverAction;
+import com.selenium.test.utils.DriverInstance;
+import com.selenium.test.utils.ElementHelper;
 
 public class TestDateList {
 	static WebDriver driver;
@@ -25,22 +25,19 @@ public class TestDateList {
 		new DriverInstance().teardown(driver);
 	}
 	
-	public void navigate(){
-		try {
+	public void navigate() throws Exception{
+		
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.id(ElementHelper.TEST_CENTER));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.TEST_SESSION_LIST));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	}
 	
 	@Test
-	public void search() {
-		try {
+	public void search() throws Exception {
+		
 			navigate();
 			action.selectByValue(By.id(ElementHelper.TD_YEAR), "2017");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -49,10 +46,7 @@ public class TestDateList {
 			action.selectByValue(By.id(ElementHelper.TD_EXAM_FORMAT), "1");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TD_SEARCH));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	}
 	
 	@Test

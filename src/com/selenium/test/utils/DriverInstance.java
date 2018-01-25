@@ -1,11 +1,11 @@
-package com.selenium.test;
+package com.selenium.test.utils;
 
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import com.selenium.test.element.ElementHelper;
+
 import com.selenium.test.listener.WebDriverAction;
 
 public class DriverInstance {

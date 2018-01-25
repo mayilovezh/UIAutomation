@@ -188,7 +188,43 @@ public class ElementHelper {
 	public static String SPK_ROOM_MODIFY_REMARK = "ddlRemark-SPKAvailablityModify";
 	public static String SPK_ROOM_VIEW_REMARK = "ddlRemark-SPKAvailablityView";
 	public static String SPK_ROOM_LOG_CONTENT = "//*[@id='SPKAvailabilityLogGrid']/div[2]/table/tbody/tr[1]/td[1]";
+
 	
+	//TDOL 
+	public static String TDOL = "TDOL";
+	
+	//TDP Profile
+	public static String TDP_PROFILE = "//*[@id='TDOL']/ul/li[1]/a";
+	public static String TDP_PROFILE_CREATE = "btnTDPProFileCreate";
+	public static String TDP_PROFILE_CREATE_REGION = "addGeneralTDPInfo-Regions";
+	public static String TDP_PROFILE_CREATE_GIVEN_NAME_EN = "addGeneralTDPInfo-FirstName";
+	public static String TDP_PROFILE_CREATE_MIDDLE_NAME_EN = "addGeneralTDPInfo-MiddleName";
+	public static String TDP_PROFILE_CREATE_FAMILY_NAME_EN = "addGeneralTDPInfo-LastName";
+	public static String TDP_PROFILE_CREATE_FAMILY_NAME_CN = "addGeneralTDPInfo-SurName";
+	public static String TDP_PROFILE_CREATE_GIVEN_NAME_CN = "addGeneralTDPInfo-Curname";
+	public static String TDP_PROFILE_CREATE_ID_TYPE = "addGeneralTDPInfo-IDType2";
+	public static String TDP_PROFILE_CREATE_PASSORT_NUMBER = "addGeneralTDPInfo-IDNumber";
+	public static String TDP_PROFILE_CREATE_GENDER_MALE = "addGeneralTDPInfo-Gender1";
+	public static String TDP_PROFILE_CREATE_GENDER_FEMALE = "addGeneralTDPInfo-Gender2";
+	public static String TDP_PROFILE_CREATE_DATEOFBIRTH = "addGeneralTDPInfo-DateOfBrith";
+	public static String TDP_PROFILE_CREATE_MOBILE = "addGeneralTDPInfo-Mobile";
+	public static String TDP_PROFILE_CREATE_EMAIL = "addGeneralTDPInfo-Email";
+	public static String TDP_PROFILE_CREATE_NATIONALITY = "addGeneralTDPInfo-country";
+	public static String TDP_PROFILE_CREATE_BASECITY = "addGeneralTDPInfo-Province";
+	public static String TDP_PROFILE_CREATE_ROLES_WSUPERVISOR = "//*[@id='addGeneralTDPInfo-Roles']/tr[1]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_SSUPERVISOR = "//*[@id='addGeneralTDPInfo-Roles']/tr[2]/td[1]/input";		
+	public static String TDP_PROFILE_CREATE_ROLES_SAS = "//*[@id='addGeneralTDPInfo-Roles']/tr[3]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_SPK_AS = "//*[@id='addGeneralTDPInfo-Roles']/tr[4]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_DATA_AS = "//*[@id='addGeneralTDPInfo-Roles']/tr[5]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_WAS = "//*[@id='addGeneralTDPInfo-Roles']/tr[6]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_INVIGILATOR_A = "//*[@id='addGeneralTDPInfo-Roles']/tr[7]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_INVIGILATOR_B = "//*[@id='addGeneralTDPInfo-Roles']/tr[8]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_BAG_PERSON = "//*[@id='addGeneralTDPInfo-Roles']/tr[9]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_BACK_UP = "//*[@id='addGeneralTDPInfo-Roles']/tr[10]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_TRAINEE = "//*[@id='addGeneralTDPInfo-Roles']/tr[11]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_AUDITOR = "//*[@id='addGeneralTDPInfo-Roles']/tr[12]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_CARMERAMAN = "//*[@id='addGeneralTDPInfo-Roles']/tr[13]/td[1]/input";
+	public static String TDP_PROFILE_CREATE_ROLES_STATUS = "//input[contains(text(),'Active')]";
 	
 	
 	

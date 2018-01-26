@@ -9,9 +9,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.selenium.test.listener.WebDriverAction;
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
+import com.selenium.test.utils.WebDriverAction;
 
 public class TestRoomList {
 	String tbName_Cn = "对外经济贸易大学继续教育学院(高远楼)";

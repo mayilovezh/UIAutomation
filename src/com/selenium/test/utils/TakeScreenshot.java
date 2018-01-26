@@ -14,7 +14,7 @@ import org.testng.Reporter;
 
 public class TakeScreenshot{
 
-	public static String captureScreenShot(WebDriver driver,String StrProjectName){
+	public static String captureScreenShot(WebDriver driver){
 		
 		String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 		String time = new SimpleDateFormat("HHmmss").format(new Date());

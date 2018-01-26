@@ -27,14 +27,14 @@ public class TestNGListener  implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println("TestCases failed and details are" + result.getName());
-		TakeScreenshot.captureScreenShot(driver,ElementHelper.PROJECT_NAME);
+		new TakeScreenshot().captureScreenShot(driver);
 		
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		System.out.println("TestCases skipped and details are" + result.getName());
-		TakeScreenshot.captureScreenShot(driver,ElementHelper.PROJECT_NAME);
+		new TakeScreenshot().captureScreenShot(driver);
 	}
 
 	@Override

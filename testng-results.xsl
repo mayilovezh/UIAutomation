@@ -677,7 +677,7 @@
 					<xsl:for-each select="reporter-output/line">
 						<div>
 							<code>
-								<xsl:value-of select="." />
+								<xsl:value-of select="." disable-output-escaping="yes"/>
 							</code>
 						</div>
 					</xsl:for-each>

@@ -8,9 +8,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.selenium.test.listener.WebDriverAction;
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
+import com.selenium.test.utils.TakeScreenshot;
+import com.selenium.test.utils.WebDriverAction;
 
 public class SpkRoomTemplate {
 	static WebDriver driver;
@@ -160,16 +161,23 @@ public class SpkRoomTemplate {
 		navigate();
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));
+			action.click(By.xpath(ElementHelper.SPK_TEMPLATE_DELETE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			new TakeScreenshot().captureScreenShot(driver);
 			e.printStackTrace();
+			try {
+				throw e;
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 	
-	@Test
+	/*@Test
 	public void deleteThu() {
 		navigate();
 		try {
@@ -181,6 +189,6 @@ public class SpkRoomTemplate {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }

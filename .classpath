@@ -50,5 +50,14 @@
 	<classpathentry kind="lib" path="H:/selenium-server-3.7.1/selenium-3.7.1-nodeps.jar"/>
 	<classpathentry kind="lib" path="H:/selenium-server-3.7.1/selenium-3.7.1-nodeps-sources.jar"/>
 	<classpathentry kind="lib" path="H:/selenium-server-3.7.1/selenium-server-standalone-3.7.1.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/poi-examples-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/poi-excelant-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/poi-scratchpad-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/RefLibs/dom4j-1.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,10 +1,13 @@
 package com.selenium.test.utils;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -48,9 +51,13 @@ public class WebDriverAction {
 		new Actions(driver).doubleClick(driver.findElement(by)).perform();
 	}
 
-	public void sendkeys(By by, String value) {
+	public void sendkeys(By by,String value) {
 
 		driver.findElement(by).sendKeys(value);
+	}
+	
+	public void sendkeys(By by,CharSequence[] list) {
+		driver.findElement(by).sendKeys(list);
 	}
 	
 	public void selectByValue(By by,String optionValue) {
@@ -60,6 +67,10 @@ public class WebDriverAction {
 	public void selectByIndex(By by,int index) {
 		new Select(driver.findElement(by)).selectByIndex(index);  
 	}
+	public void selectcheckbox(By by) {
+		new Select(driver.findElement(by));  
+	}
+	
 	
 	 public void chooseCancelOnNextConfirmation() {  
          driver.switchTo().alert().dismiss();  
@@ -96,4 +107,17 @@ public class WebDriverAction {
          driver.manage().timeouts().implicitlyWait(Integer.parseInt(wAIT_TIME), TimeUnit.SECONDS);  
      }  
      
+     public List<WebElement> getinputValue(){
+    	 WebElement tdpGivenNameEn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_GIVEN_NAME_EN));
+    	 WebElement tdpGivenNameCn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_GIVEN_NAME_CN));
+    	 WebElement tdpFamilyNameEn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_FAMILY_NAME_EN));
+    	 WebElement tdpFamilyNameCn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_FAMILY_NAME_CN));
+    	 
+    	 List<WebElement> inputWebElement = new ArrayList<WebElement>();
+    	 inputWebElement.add(tdpGivenNameEn);
+    	 inputWebElement.add(tdpGivenNameCn);
+    	 inputWebElement.add(tdpFamilyNameEn);
+    	 inputWebElement.add(tdpFamilyNameCn);
+    	 return inputWebElement;
+     }
 }

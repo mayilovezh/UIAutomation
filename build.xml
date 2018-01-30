@@ -13,6 +13,15 @@
 			<include name="bsh-2.0b4.jar"/>
 			<include name="selenium-3.7.1-nodeps-sources.jar"/>
 			<include name="selenium-3.7.1-nodeps.jar"/>
+			<include name="poi-3.17.jar"/>
+			<include name="poi-examples-3.17.jar"/>
+			<include name="poi-excelant-3.17.jar"/>
+			<include name="poi-ooxml-3.17.jar"/>
+			<include name="poi-ooxml-schemas-3.17.jar"/>
+			<include name="poi-scratchpad-3.17.jar"/>
+			<include name="xmlbeans-2.6.0.jar"/>
+			<include name="commons-collections4-4.1.jar"/>
+			<include name="dom4j-1.6.1.jar"/>
 		</fileset>
 	</path>
 

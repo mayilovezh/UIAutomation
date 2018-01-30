@@ -4,6 +4,7 @@ public class ElementHelper {
 
 	public String DEV_URL = "http://cnbjs1bms001:9003";
 	public String UAT_URL = "http://cnbjs1bms001:9001";
+	public String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
 	public static int LONG_TIME = 10000;
 	public static int WAIT_TIME = 6000;
 	public static int SHORT_TIME = 3000;
@@ -13,12 +14,19 @@ public class ElementHelper {
 	public static String VALUE = "1";
 	public static String TEST_CENTER_ID = "100100";
 	public static String REMARK_VALUE = "Automation Testing";
+	public static String IEP_UESRNAME = "101089";
+	public static String IEP_PASSWORD = "111111";
+	public static String IEP_PINCODE = "1111";
 
 	public  String USER_NAME = "userName";
 	public  String PASSWORD = "password";
 	public  String LOGIN_BTN = "loginButt";
 	public static String CANCEL = "//span[text(),'Cancel']";
 	public static String SAVE = "//button[@type='button']";
+	public  String USER_NAME_IEP = "examineraccount";
+	public  String PASSWORD_IEP = "examinerpassword";
+	public  String PINCODE_IEP = "examinerpincode";
+	public  String LOGIN_IEP = "Log in";
 	
 	public static String GENERALQUERY = "GeneralQuery";
 	//Registration Number List
@@ -210,7 +218,8 @@ public class ElementHelper {
 	public static String TDP_PROFILE_CREATE_MOBILE = "addGeneralTDPInfo-Mobile";
 	public static String TDP_PROFILE_CREATE_EMAIL = "addGeneralTDPInfo-Email";
 	public static String TDP_PROFILE_CREATE_NATIONALITY = "addGeneralTDPInfo-country";
-	public static String TDP_PROFILE_CREATE_BASECITY = "addGeneralTDPInfo-Province";
+	public static String TDP_PROFILE_CREATE_PROVINCE = "addGeneralTDPInfo-Province";
+	public static String TDP_PROFILE_CREATE_BASECITY = "addGeneralTDPInfo-BaseCity";
 	public static String TDP_PROFILE_CREATE_ROLES_WSUPERVISOR = "//*[@id='addGeneralTDPInfo-Roles']/tr[1]/td[1]/input";
 	public static String TDP_PROFILE_CREATE_ROLES_SSUPERVISOR = "//*[@id='addGeneralTDPInfo-Roles']/tr[2]/td[1]/input";		
 	public static String TDP_PROFILE_CREATE_ROLES_SAS = "//*[@id='addGeneralTDPInfo-Roles']/tr[3]/td[1]/input";
@@ -225,6 +234,38 @@ public class ElementHelper {
 	public static String TDP_PROFILE_CREATE_ROLES_AUDITOR = "//*[@id='addGeneralTDPInfo-Roles']/tr[12]/td[1]/input";
 	public static String TDP_PROFILE_CREATE_ROLES_CARMERAMAN = "//*[@id='addGeneralTDPInfo-Roles']/tr[13]/td[1]/input";
 	public static String TDP_PROFILE_CREATE_ROLES_STATUS = "//input[contains(text(),'Active')]";
+//	public static String TDP_PROFILE_CREATE_ROLES = "input[type='checkbox']";
+	public static String TDP_PROFILE_CREATE_ROLES = "//td/table/tbody/tr/td/input";
+	public static String TDP_PROFILE_ROLES = "selTDPProfileRole";
+	public static String TDP_PROFILE_EMAIL = "tdpProfileSearchEmail";
+	public static String TDP_PROFILE_SEARCH = "BtnTDPProFileSearch";
+	public static String TDP_PROFILE_SEARCH_NAME = "//*[@id='TDPProfileInfoGrid']/div[2]/table/tbody/tr/td[4]";
+	public static String TDP_PROFILE_SEARCH_ROLES = "//*[@id='TDPProfileInfoGrid']/div[2]/table/tbody/tr/td[13]";
+	public static String TDP_PROFILE_VIEWLOG = "View Log";
+	
+	
+	//TDP Task
+	public static String TDP_TASK = "//*[@id='TDOL']/ul/li[2]/a";
+	public static String TDP_TASK_CREATE = "TaskListBtnAdd";
+	public static String TDP_TASK_CREATE_REGION = "CreateTdpTask-Region";
+	public static String TDP_TASK_CREATE_TESTDATE = "CreateTdpTask-TestDate";
+	public static String TDP_TASK_CREATE_OPEN_START = "CreateTdpTask-OpenIntervalStart";
+	public static String TDP_TASK_CREATE_OPEN_END = "CreateTdpTask-OpenIntervalEnd";
+	public static String TDP_TASK_CREATE_TESTDAY_1= "//*[@id='CreateTdpTask-TestDayChoose']/input[1]";
+	public static String TDP_TASK_CREATE_TESTDAY_2= "//*[@id='CreateTdpTask-TestDayChoose']/input[2]";
+	public static String TDP_TASK_SEARCH = "TaskListBtnSearch";
+	public static String TDP_TASK_TESTDATE_FROM = "testdate";
+	public static String TDP_TASK_TESTDATE_TO = "testdate1";
+	public static String TDP_TASK_SEARCH_TESTDATE = "//*[@id='TaskListTable']/tbody/tr[1]/td[3]";
+	public static String TDP_TASK_SEARCH_OPENINTERVAL_START = "//*[@id='TaskListTable']/tbody/tr[1]/td[4]";
+	public static String TDP_TASK_SEARCH_OPENINTERVAL_END = "//*[@id='TaskListTable']/tbody/tr[1]/td[4]";
+	public static String TDP_TASK_VIEW = "View";
+	public static String TDP_TASK_REPORT = "SearchTdpCheckedReoprt";
+	public static String TDP_TASK_MODIFY = "modifydoc";
+	public static String TDP_TASK_EXPORT = "exportCheckUnit";
+	public static String TDP_TASK_LOG = "Log";
+	public static String TDP_TASK_MODIFY_DESCRIPTION = "CreateTdpTask-Description";
+	
 	
 	
 	

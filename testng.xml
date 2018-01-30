@@ -14,7 +14,9 @@
       <!-- <class name="com.selenium.test.testcenter.TestBuildingList"/> -->
       <!--  <class name="com.selenium.test.testcenter.TestRoomList"/>
        <class name="com.selenium.test.testcenter.TestDateList"/> -->
-       <class name="com.selenium.test.testcenter.SpkRoomTemplate"/>
+      <!--  <class name="com.selenium.test.testcenter.SpkRoomTemplate"/> -->
+      <!--  <class name="com.selenium.test.tdol.TDPProfile"/> -->
+       <class name="com.selenium.test.tdol.TDPTask"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

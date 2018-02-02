@@ -12,7 +12,7 @@ import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.WebDriverAction;
 
-public class ArrangeDataAS {
+public class ArrangeSpkAS {
 	WebDriver driver;
 	WebDriverAction action;
 	
@@ -32,7 +32,7 @@ public class ArrangeDataAS {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.id(ElementHelper.TDOL));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.ARRANGE_DATA_AS));
+			action.click(By.xpath(ElementHelper.ARRANGE_SAS));
 			Thread.sleep(ElementHelper.WAIT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -43,23 +43,25 @@ public class ArrangeDataAS {
 	@Test
 	public void arrange() throws Exception {
 		navigate();
-		action.selectByIndex(By.id(ElementHelper.ARRANGE_DATA_AS_MONTH), 1);
+		action.selectByIndex(By.id(ElementHelper.ARRANGE_SAS_MONTH), 1);
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.ARRANGE_DATA_AS_DATE), 1);
+		action.selectByIndex(By.id(ElementHelper.ARRANGE_SAS_DATE), 3);
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.ARRANGE_DATA_AS_TEST_DAY1));
+		action.selectByIndex(By.id(ElementHelper.ARRANGE_SAS_DUTY), 2);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SPK_AS_TEST_DAY1));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.ARRANGE_DATA_AS_TEST_DAY2));
+		action.click(By.xpath(ElementHelper.SPK_AS_TEST_DAY2));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.ARRANGE_DATA_AS_TEST_DAY3));
+		action.click(By.xpath(ElementHelper.SPK_AS_TEST_DAY3));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.ARRANGE_DATA_AS_SEARCH));
+		action.click(By.id(ElementHelper.ARRANGE_SAS_SEARCH));
 		action.setTimeout("20");
-		WebElement drag = driver.findElement(By.xpath(ElementHelper.ARRANGE_DATA_AS_DRAG));
-		WebElement drop = driver.findElement(By.id(ElementHelper.ARRANGE_DATA_AS_DROP));
+		WebElement drag = driver.findElement(By.xpath(ElementHelper.SPK_AS_DRAG));
+		WebElement drop = driver.findElement(By.id(ElementHelper.SPK_AS_DROP));
 		(new Actions(driver)).dragAndDrop(drag,drop).perform();
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.ARRANGE_DATA_AS_SAVE));
+		action.click(By.id(ElementHelper.ARRANGE_SAS_SAVE));
 		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 }

@@ -16,7 +16,17 @@
        <class name="com.selenium.test.testcenter.TestDateList"/> -->
       <!--  <class name="com.selenium.test.testcenter.SpkRoomTemplate"/> -->
       <!--  <class name="com.selenium.test.tdol.TDPProfile"/> -->
-       <class name="com.selenium.test.tdol.TDPTask"/>
+       <!-- <class name="com.selenium.test.tdol.TDPTask"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeSupervisor"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeSAS"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeSpkAS"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeWAS"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeDataAS"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeWAStoTC"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeInvigilator"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeBagDuty"/> -->
+        <!-- <class name="com.selenium.test.tdol.ArrangeReports"/> -->
+        <class name="com.selenium.test.postest.CandidateStatusBlock"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

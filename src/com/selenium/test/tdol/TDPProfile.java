@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.ExcelReader;
-import com.selenium.test.utils.TakeScreenshot;
+import com.selenium.test.utils.TakeScreenshots;
 import com.selenium.test.utils.WebDriverAction;
 
 public class TDPProfile {
@@ -99,7 +99,6 @@ public class TDPProfile {
 			Thread.sleep(ElementHelper.LONG_TIME);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			TakeScreenshot.captureScreenShot(driver);
 			e.printStackTrace();
 		}
 	}
@@ -119,7 +118,6 @@ public class TDPProfile {
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_PROFILE_SEARCH_NAME)), reader.getCellValue("profile", 1, 7));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			TakeScreenshot.captureScreenShot(driver);
 			e.printStackTrace();
 		}
 	}

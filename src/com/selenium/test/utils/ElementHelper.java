@@ -266,7 +266,126 @@ public class ElementHelper {
 	public static String TDP_TASK_LOG = "Log";
 	public static String TDP_TASK_MODIFY_DESCRIPTION = "CreateTdpTask-Description";
 	
+	//Arrange Supervisor
+	public static String ARRANGE_SUPERVISOR = "//*[@id='TDOL']/ul/li[6]/a";
+	public static String ARRANGE_SUPERVISOR_MONTH = "arranging_supervisor_Month";
+	public static String ARRANGE_SUPERVISOR_DATE = "arranging_supervisor_Datetime";
+	public static String ARRANGE_SUPERVISOR_TEST_DAY1 = "//input[@value='04/Feb/2018']";
+	public static String ARRANGE_SUPERVISOR_TEST_DAY2 = "//input[@value='05/Feb/2018']";
+	public static String ARRANGE_SUPERVISOR_TEST_DAY3 = "//input[@value='06/Feb/2018']";
+	public static String ARRANGE_SUPERVISOR_SEARCH = "btnArranging_supervisor";
+	public static String ARRANGE_SUPERVISOR_SAVE = "ArrangingSupervisorSave";
+	public static String ARRANGE_SUPERVISOR_DRAG = "//*[@id='SpreadSheet-Supervisor-tdp']/div[2]/table/tbody/tr[2]/td[1]/div";
+	public static String ARRANGE_SUPERVISOR_DROP = "session33432AM";
 	
+	//Arrange SAS
+	public static String ARRANGE_SAS = "//*[@id='TDOL']/ul/li[7]/a";
+	public static String ARRANGE_SAS_MONTH = "arranging_SecurityAS_Month";
+	public static String ARRANGE_SAS_DATE = "arranging_SecurityAS_Datetime";
+	public static String ARRANGE_SAS_DUTY = "arrange_SecurityAs_Duty";
+	public static String ARRANGE_SAS_SEARCH= "btnArranging_SecurityAS";
+	public static String ARRANGE_SAS_SAVE = "ArrangingSecurityASSave";
+	public static String ARRANGE_SAS_DRAG = "//*[@id='SpreadSheet-SecurityAS-tdp']/div[2]/table/tbody/tr[5]/td[1]/div";
+	public static String ARRANGE_SAS_DROP = "testSessionId33707AM";
 	
+	//Arrange Spk AS
+	public static String SPK_AS_TEST_DAY1 = "//input[@value='04/Feb/2018']";
+	public static String SPK_AS_TEST_DAY2 = "//input[@value='05/Feb/2018']";
+	public static String SPK_AS_TEST_DAY3 = "//input[@value='06/Feb/2018']";
+	public static String SPK_AS_DRAG = "//*[@id='SpreadSheet-SecurityAS-tdp']/div[2]/table/tbody/tr[2]/td[1]/div";
+	public static String SPK_AS_DROP = "testSessionId33707AM";
 	
+	//Arrange WAS
+	public static String ARRANGE_WAS = "//*[@id='TDOL']/ul/li[8]/a";
+	public static String ARRANGE_WAS_MONTH = "arranging_wAssistantSupervisor_Month";
+	public static String ARRANGE_WAS_DATE = "ddlTestDate-wAssistantSupervisor";
+	public static String ARRANGE_WAS_TC = "ddlTestCenter-wAssistantSupervisor";
+	public static String ARRANGE_WAS_SEARCH = "BtnwAssistantSupervisorSearch";
+	public static String ARRANGE_WAS_SELECT_ALL = "checkwAssistantSupervisor-wRoomAll";
+	public static String ARRANGE_WAS_CLEAR = "btnClear-wAssistantSupervisor";
+	public static String ARRANGE_WAS_SAVE = "btnSave-wAssistantSupervisor";	
+	public static String ARRANGE_WAS_DRAG = "//*[@id='SpreadSheet-wAssistantSupervisor-tdp']/div[2]/table/tbody/tr[3]/td[2]/div";
+	public static String ARRANGE_WAS_DROP = "//*[@id='SpreadSheet-wAssistantSupervisor-wRoom']/div[2]/table/tbody/tr[1]/td[7]/div";
+	
+	//Arrange Data AS
+	public static String ARRANGE_DATA_AS = "//*[@id='TDOL']/ul/li[9]/a";
+	public static String ARRANGE_DATA_AS_MONTH = "arranging_dataas_Month";
+	public static String ARRANGE_DATA_AS_DATE = "arranging_dataas_Datetime";
+	public static String ARRANGE_DATA_AS_TEST_DAY1 = "//input[@value='04/Feb/2018']";
+	public static String ARRANGE_DATA_AS_TEST_DAY2 = "//input[@value='05/Feb/2018']";
+	public static String ARRANGE_DATA_AS_TEST_DAY3 = "//input[@value='06/Feb/2018']";
+	public static String ARRANGE_DATA_AS_SEARCH = "btnSearch_DataAsAndCenter";
+	public static String ARRANGE_DATA_AS_DRAG = "//*[@id='SpreadSheet-dataas-tdp']/div[2]/table/tbody/tr[2]/td[1]/div";
+	public static String ARRANGE_DATA_AS_DROP = "session33762AM";
+	public static String ARRANGE_DATA_AS_SAVE = "ArrangingdataasSave";
+	
+	//Arrange WAS to TC
+	public static String ARRANGE_WAS_TO_TC = "//*[@id='TDOL']/ul/li[10]/a";
+	public static String ARRANGE_WAS_TO_TC_MONTH = "arranging_SpecialAs_Month";
+	public static String ARRANGE_WAS_TO_TC_DATE = "arranging_SpecialAs_Datetime";
+	public static String ARRANGE_WAS_TO_TC_DUTY = "arrange_SpecialAs_Duty";
+	public static String ARRANGE_WAS_TO_TC_SEARCH = "btnArranging_SpecialAs";
+	public static String ARRANGE_WAS_TO_TC_DRAG = "//*[@id='SpreadSheet-SpecialAs-tdp']/div[2]/table/tbody/tr[1]/td[1]/div";
+	public static String ARRANGE_WAS_TO_TC_DROP = "session33707AM";
+	public static String ARRANGE_WAS_TO_TC_SAVE = "ArrangingSpecialAsSave";
+	
+	//Arrange Invigilator
+	public static String ARRANGE_INVIGILATOR = "//*[@id='TDOL']/ul/li[11]/a";
+	public static String ARRANGE_INVIGILATOR_MONTH = "arranging_Invigilator_Month";
+	public static String ARRANGE_INVIGILATOR_DATE = "ArrangeInvigilatorDatetime";
+	public static String ARRANGE_INVIGILATOR_TC = "ArrangeInvigilatorCenterId";
+	public static String ARRANGE_INVIGILATOR_SEARCH = "btnArranging_invigilator";
+	public static String ARRANGE_INVIGILATOR_DRAG = "//*[@id='SpreadSheet-Invigilator-tdp']/div[2]/table/tbody/tr[1]/td[2]/div";
+	public static String ARRANGE_INVIGILATOR_DROP = "//*[@id='SpreadSheet-Invigilator-wRoom']/div[2]/table/tbody/tr[1]/td[7]/div";
+	public static String ARRANGE_INVIGILATOR_SAVE = "ArranginginvigilatorSave";
+	
+	//Arrange BagDuty
+	public static String ARRANGE_BAGDUTY = "//*[@id='TDOL']/ul/li[12]/a";
+	public static String ARRANGE_BAGDUTY_MONTH = "arranging_Others_Month";
+	public static String ARRANGE_BAGDUTY_DATE = "arranging_Others_Datetime";
+	public static String ARRANGE_BAGDUTY_TEST_DAY1 = "//input[@value='04/Feb/2018']";
+	public static String ARRANGE_BAGDUTY_TEST_DAY2 = "//input[@value='05/Feb/2018']";
+	public static String ARRANGE_BAGDUTY_TEST_DAY3 = "//input[@value='06/Feb/2018']";
+	public static String ARRANGE_BAGDUTY_SEARCH = "btnArranging_Others";
+	public static String ARRANGE_BAGDUTY_DRAG = "//*[@id='SpreadSheet-Others-tdp']/div[2]/table/tbody/tr[1]/td[1]/div";
+	public static String ARRANGE_BAGDUTY_DROP = "center33707AM";
+	public static String ARRANGE_BAGDUTY_SAVE = "ArrangingOthersSave";
+	
+	//Arrange Reports
+	public static String ARRANGE_REPORTS = "//*[@id='TDOL']/ul/li[13]/a";
+	public static String ARRANGE_REPORTS_MONTH = "selArrangeReportMonth";
+	public static String ARRANGE_REPORTS_DATE = "selArrangentReportTestDate";
+	public static String ARRANGE_REPORTS_SEARCH = "//input[@value='Search']";
+	public static String ARRANGE_REPORTS_DETAIL = "//td[@id='ArrangementReportsGrid_active_cell']/a/span";
+	public static String ARRANGE_REPORTS_SENDREMINDER = "//td[@id='ArrangementReportsGrid_active_cell']/a[3]/span";
+	public static String ARRANGE_REPORTS_RELEASE = "//td[@id='ArrangementReportsGrid_active_cell']/a[4]/span";
+	public static String ARRANGE_REPORTS_NOTICE = "//td[@id='ArrangementReportsGrid_active_cell']/a[5]/span";
+
+	
+	//Post Test
+	public static String POST_TEST = "PostTest";
+	
+	//Candidate Status Block
+	public static String CAN_STATUS_BLOCK = "//*[@id='PostTest']/ul/li[1]/a";
+	public static String CAN_STATUS_BLOCK_REGION = "CandidateStatus_List_Region";
+	public static String CAN_STATUS_BLOCK_MONTH = "ddlMonth-CandidateStatus";
+	public static String CAN_STATUS_BLOCK_DATE = "CandidateStatus_List_Datetime";
+	public static String CAN_STATUS_BLOCK_SEARCH = "CandidateStatus_List_BtnQuery";
+	public static String CAN_STATUS_BLOCK_MODIFY = "//input[@value='Modify']";
+	public static String CAN_STATUS_BLOCK_MODIFY_GIVENNAME_EN = "candidate_status_Reg_name";
+	public static String CAN_STATUS_BLOCK_MODIFY_GIVENNAME_CN = "candidate_status_Reg_ch_name";
+	public static String CAN_STATUS_BLOCK_CANDIDATE_NO = "CandidateStatus_List_Search_CandidateNo";
+	public static String CAN_STATUS_BLOCK_SEARCH_INFO = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[2]";
+	public static String CAN_STATUS_BLOCK_SEARCH_CHINESE_NAME = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[9]";
+    public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Score_List_13479094";
+ 
+
+
+
+
+
+
+
+
+
 }

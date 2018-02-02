@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.TakeScreenshot;
+import com.selenium.test.utils.TakeScreenshots;
 import com.selenium.test.utils.WebDriverAction;
 
 public class SpkRoomTemplate {
@@ -166,7 +166,6 @@ public class SpkRoomTemplate {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			new TakeScreenshot().captureScreenShot(driver);
 			e.printStackTrace();
 			try {
 				throw e;

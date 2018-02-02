@@ -56,10 +56,6 @@ public class WebDriverAction {
 		driver.findElement(by).sendKeys(value);
 	}
 	
-	public void sendkeys(By by,CharSequence[] list) {
-		driver.findElement(by).sendKeys(list);
-	}
-	
 	public void selectByValue(By by,String optionValue) {
 		new Select(driver.findElement(by)).selectByValue(optionValue);
 	}

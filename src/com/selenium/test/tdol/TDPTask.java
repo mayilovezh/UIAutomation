@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.TakeScreenshot;
+import com.selenium.test.utils.TakeScreenshots;
 import com.selenium.test.utils.WebDriverAction;
 
 public class TDPTask {
@@ -70,7 +70,6 @@ public class TDPTask {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			TakeScreenshot.captureScreenShot(driver);
 			e.printStackTrace();
 		}
 	}
@@ -93,7 +92,6 @@ public class TDPTask {
 					openintervalEnd);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			TakeScreenshot.captureScreenShot(driver);
 			e.printStackTrace();
 		}
 	}
@@ -113,7 +111,6 @@ public class TDPTask {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			TakeScreenshot.captureScreenShot(driver);
 			e.printStackTrace();
 		}
 	}
@@ -130,7 +127,6 @@ public class TDPTask {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			TakeScreenshot.captureScreenShot(driver);
 			e.printStackTrace();
 		}
 	}
@@ -145,7 +141,6 @@ public class TDPTask {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			TakeScreenshot.captureScreenShot(driver);
 			e.printStackTrace();
 		}
 	}

@@ -26,7 +26,8 @@
         <!-- <class name="com.selenium.test.tdol.ArrangeInvigilator"/> -->
         <!-- <class name="com.selenium.test.tdol.ArrangeBagDuty"/> -->
         <!-- <class name="com.selenium.test.tdol.ArrangeReports"/> -->
-        <class name="com.selenium.test.postest.CandidateStatusBlock"/>
+       <!--  <class name="com.selenium.test.postest.CandidateStatusBlock"/> -->
+        <class name="com.selenium.test.postest.JaggedProfileInfo"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

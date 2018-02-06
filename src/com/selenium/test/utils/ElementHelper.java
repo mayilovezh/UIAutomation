@@ -377,11 +377,72 @@ public class ElementHelper {
 	public static String CAN_STATUS_BLOCK_CANDIDATE_NO = "CandidateStatus_List_Search_CandidateNo";
 	public static String CAN_STATUS_BLOCK_SEARCH_INFO = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[2]";
 	public static String CAN_STATUS_BLOCK_SEARCH_CHINESE_NAME = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[9]";
+	public static String CAN_STATUS_BLOCK_STATUS_SELECT = "Candidate_Status_Chk_13479094";
+	public static String CAN_STATUS_BLOCK_TEST_STATUS = "Candidate_Status_Test_List_13479094";
     public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Score_List_13479094";
+    public static String CAN_STATUS_BLOCK_STATUS_SAVE = "Candidate_Status_Save_Selected";
  
-
-
-
+    //Test Material Check
+    public static String TEST_MATERIAL_CHECK = "//*[@id='PostTest']/ul/li[3]/a";
+    public static String TEST_MATERIAL_MONTH = "ddlMonth-testmaterial";
+    public static String TEST_MATERIAL_DATE = "ddlTestDate-testmaterial";
+    public static String TEST_MATERIAL_TC = "ddlTestCenter-testmaterial";
+    public static String TEST_MATERIAL_CANDIDATENO = "CandidateNo-testmaterial";
+    public static String TEST_MATERIAL_SEARCH = "btnQuery-testmaterial";
+    public static String TEST_MATERIAL_SEARCH_NAME = "//*[@id='spreadsheet-TestMaterial-Grid']/div[2]/table/tbody/tr/td[6]";
+    public static String TEST_MATERIAL_SEARCH_SCORE_STATUS = "//*[@id='spreadsheet-TestMaterial-Grid']/div[2]/table/tbody/tr/td[9]";
+    public static String TEST_MATERIAL_EXPORT = "ExportTestMarterialExcel";
+    
+    //Set Score
+    public static String SET_SCORE = "//*[@id='PostTest']/ul/li[8]/a";
+    public static String SET_SCORE_YEAR = "setscore-Select-Year-Search";
+    public static String SET_SCORE_MONTH = "setscore-Select-Month-Search";
+    public static String SET_SCORE_DATE = "ddlTestDate-setscore";
+    public static String SET_SCORE_TC = "ddlTestCenter-setscore";
+    public static String SET_SCORE_SEARCH = "btnQuery-setscore";
+    public static String SET_SCORE_SAVE = "//input[@value,'Set to 0']";
+    public static String SET_SCORE_SELECT_ALL = "checkspeakingtravelAll";
+    
+    //Confirm Set Score
+    public static String CONFIRM_SET_SCORE = "//*[@id='PostTest']/ul/li[9]/a";
+    
+    //Score Upload
+    public static String SCORE_UPLOAD = "//*[@id='PostTest']/ul/li[11]/a";
+    
+    //Import Log
+    public static String IMPORT_LOG = "//*[@id='PostTest']/ul/li[5]/a";
+    
+    //Score Check
+    public static String SCORE_CHECK = "//*[@id='PostTest']/ul/li[6]/a";
+    
+    //Status Score Check
+    public static String STATUS_SCORE_CHECK = "//*[@id='PostTest']/ul/li[7]/a";
+    
+    //Jagged Profile Info
+    public static String JAGGED_PROFILE_INFO = "//*[@id='PostTest']/ul/li[4]/a";
+    public static String JAGGED_TEST_DATE_FROM = "SddlTestDate-ScoreExtraHandlingJP-start";
+    public static String JAGGED_TEST_DATE_TO = "SddlTestDate-ScoreExtraHandlingJP-end";
+    public static String JAGGED_TEST_DATE_FROM_YEAR = "ui-datepicker-year";
+    public static String JAGGED_TEST_DATE_FROM_MONTH = "ui-datepicker-month";
+    public static String JAGGED_TEST_DATE_FROM_DATE = "//*[@id='ui-datepicker-div']/table/tbody/tr[1]/td[7]/a";
+    public static String JAGGED_TEST_DATE_TO_YEAR = "ui-datepicker-year";
+    public static String JAGGED_TEST_DATE_TO_MONTH = "ui-datepicker-month";
+    public static String JAGGED_TEST_DATE_TO_DATE = "//*[@id='ui-datepicker-div']/table/tbody/tr[5]/td[7]/a";
+    public static String JAGGED_EXPORT = "btn-ScoreExtraHandlingJP-ExportJPRate";
+    
+    //PE SE Comparison
+    public static String PE_SE_COMPARISON = "//*[@id='PostTest']/ul/li[10]/a";
+    public static String PE_SE_YEAR = "select-ComparisonFEorSe-TestDat-Year";
+    public static String PE_SE_MONTH = "select-ComparisonFEorSe-Month";
+    public static String PE_SE_DATE = "select-ComparisonFEorSe-TestDat";
+    public static String PE_SE_TC = "select-ComparisonFEorSe-TestCenter";
+    public static String PE_SE_1STMARKING = "1stMarking";
+    public static String PE_SE_2NDMARKING = "2ndMarking";
+    public static String PE_SE_SEARCH_R = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[1]/td[8]";
+    public static String PE_SE_SEARCH_S_LR = "//*[@id='div_ComparisonFEorSe_Grid1']/div[2]/table/tbody/tr[1]/td[16]";
+    
+    //Candidate From Itap
+    public static String CANDIDATE_FROM_ITAP = "//*[@id='PostTest']/ul/li[12]/a";
 
 
 

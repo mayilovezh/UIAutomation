@@ -16,15 +16,13 @@ import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.TakeScreenshots;
 import com.selenium.test.utils.WebDriverAction;
 
-
-
 public class CandidateStatusBlock {
 	static WebDriver driver;
 	WebDriverAction action;
-	String givenNameEn = "GUANXI";
-	String givenNameCn = "冠希";
-	String candidateNo = "249360";
-	String chineseName = "宋冠希";
+	String givenNameEn = "XIAOQIONG";
+	String givenNameCn = "晓琼";
+	String candidateNo = "249396";
+	String chineseName = "秦 晓琼";
 
 	@BeforeMethod
 	public void setUp() {
@@ -93,8 +91,13 @@ public class CandidateStatusBlock {
 	public void modifyStatus() throws Exception {
 		search();
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.xpath(ElementHelper.CAN_STATUS_BLOCK_SCORE_STATUS), 0);
-
+		action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_STATUS_SELECT));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_TEST_STATUS), 3);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_SCORE_STATUS), 0);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_STATUS_SAVE));
 	}
 
 }

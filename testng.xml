@@ -27,7 +27,8 @@
         <!-- <class name="com.selenium.test.tdol.ArrangeBagDuty"/> -->
         <!-- <class name="com.selenium.test.tdol.ArrangeReports"/> -->
        <!--  <class name="com.selenium.test.postest.CandidateStatusBlock"/> -->
-        <class name="com.selenium.test.postest.JaggedProfileInfo"/>
+       <!--  <class name="com.selenium.test.postest.JaggedProfileInfo"/> -->
+        <class name="com.selenium.test.postest.CandidateFromItap"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

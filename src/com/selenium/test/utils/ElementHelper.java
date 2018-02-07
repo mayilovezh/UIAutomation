@@ -443,10 +443,19 @@ public class ElementHelper {
     
     //Candidate From Itap
     public static String CANDIDATE_FROM_ITAP = "//*[@id='PostTest']/ul/li[12]/a";
+    public static String CANDIDATE_FROM_ITAP_YEAR = "CandidateFromItap_Year";
+    public static String CANDIDATE_FROM_ITAP_MONTH = "CandidateFromItap_Month";
+    public static String CANDIDATE_FROM_ITAP_DATE = "ddlTestDate-CandidateFromItap";
+    public static String CANDIDATE_FROM_ITAP_SEARCH = "SearchCandidateFromItap_Search";
+    public static String CANDIDATE_FROM_ITAP_REGISTRATION = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1]/td[5]";
+    public static String CANDIDATE_FROM_ITAP_SYNC= "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1]/td[6]";
+    public static String CANDIDATE_FROM_ITAP_SPECIAL = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1]/td[7]";
 
-
-
-
-
-
+    
+    //CS-CS
+    public static String CS_CS = "CS-CS";
+    
+    
+    //Free Candidate Add
+    
 }

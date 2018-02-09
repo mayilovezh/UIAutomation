@@ -8,6 +8,7 @@ public class ElementHelper {
 	public static int LONG_TIME = 10000;
 	public static int WAIT_TIME = 6000;
 	public static int SHORT_TIME = 3000;
+	public static int SHORT_TIME_B = 2000;
 	public static int SHORT_TIME_A = 1000;
 	
 	public static final String PROJECT_NAME= "MIS2_test";
@@ -27,6 +28,7 @@ public class ElementHelper {
 	public  String PASSWORD_IEP = "examinerpassword";
 	public  String PINCODE_IEP = "examinerpincode";
 	public  String LOGIN_IEP = "Log in";
+	public static String RESULT_WARNING = "/html/body/div[13]/div[2]";
 	
 	public static String GENERALQUERY = "GeneralQuery";
 	//Registration Number List
@@ -454,8 +456,66 @@ public class ElementHelper {
     
     //CS-CS
     public static String CS_CS = "CS-CS";
-    
-    
     //Free Candidate Add
+    public static String FREE_CANDIDATE_ADD = "//*[@id='CS-CS']/ul/li[1]/a";
+    public static String FREE_CANDIDATE_REGION = "selectFreeCandidateAddRegion";
+    public static String FREE_CANDIDATE_MONTH = "FreeCandidateAdd-Select-Month-Search";
+    public static String FREE_CANDIDATE_DATE = "selectFreeCandidateAddTestDate";
+    public static String FREE_CANDIDATE_TC = "selectFreeCandidateAddTestCenter";
+    public static String FREE_CANDIDATE_SEARCH = "btnFreeCandidateAddQuery";
+    public static String FREE_CANDIDATE_ADD_LR = "//*[@id='spreadsheet-freecandidateadd-table']/tbody/tr[1]/td[1]/input";
+    public static String FREE_CANDIDATE_ADD_LW = "//*[@id='spreadsheet-freecandidateadd-table']/tbody/tr[2]/td[1]/input";
+    public static String FREE_CANDIDATE_ADD_LS = "//*[@id='spreadsheet-freecandidateadd-table']/tbody/tr[3]/td[1]/input";
+    public static String FREE_CANDIDATE_ADD_LRS = "//*[@id='spreadsheet-freecandidateadd-table']/tbody/tr[4]/td[1]/input";
+    public static String FREE_CANDIDATE_ADD_RW = "//*[@id='spreadsheet-freecandidateadd-table']/tbody/tr[5]/td[1]/input";
+    public static String FREE_CANDIDATE_ADD_WS = "//*[@id='spreadsheet-freecandidateadd-table']/tbody/tr[6]/td[1]/input";
+    public static String FREE_CANDIDATE_ADD_RWS = "//*[@id='spreadsheet-freecandidateadd-table']/tbody/tr[7]/td[1]/input";
+    public static String FREE_CANDIDATE_ADD_LWS = "//*[@id='spreadsheet-freecandidateadd-table']/tbody/tr[8]/td[1]/input";
+    public static String FREE_CANDIDATE_ADD_LISTENING = "FreeTestModuleAdd_50";
+    public static String FREE_CANDIDATE_ADD_READING = "FreeTestModuleAdd_51";
+    public static String FREE_CANDIDATE_ADD_WRITTING = "FreeTestModuleAdd_52";
+    public static String FREE_CANDIDATE_ADD_SPEAKING = "FreeTestModuleAdd_53";
+    public static String FREE_CANDIDATE_ADD_MONTH = "AddFreeTestCandidateWindow-Select-Month-Search";
+    public static String FREE_CANDIDATE_ADD_TESTDATE = "selectFreeCandidateAddTestDateAdd";
+    public static String FREE_CANDIDATE_ADD_TC = "selectFreeCandidateAddTestCenterAdd";
+    public static String FREE_CANDIDATE_ADD_REASON = "selectFreeTestCandidateTestReasonAdd";
+    
+    //Free Candidate List
+    public static String FREE_CANDIDATE_LIST = "//*[@id='CS-CS']/ul/li[2]/a";
+    public static String FREE_CANDIDATE_LIST_REGION = "selectFreeTestCandidateRegion";
+    public static String FREE_CANDIDATE_LIST_LAST_MONTH = "FreeTestCandidate-TestDate-Select-LastMonth-Search";
+    public static String FREE_CANDIDATE_LIST_LAST_DATE = "selectFreeTestCandidateLastTestDate";
+    public static String FREE_CANDIDATE_LIST_FREE_MONTH = "FreeTestCandidate-TestDate-Select-FreeMonth-Search";
+    public static String FREE_CANDIDATE_LIST_FREE_DATE = "selectFreeTestCandidateFreeTestDate";
+    public static String FREE_CANDIDATE_LIST_SEARCH = "btnFreeTestCandidateQuery";
+    public static String FREE_CANDIDATE_LIST_TYPE_LR = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[1]/td[2]";
+    public static String FREE_CANDIDATE_LIST_TYPE_LW = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[2]/td[2]";
+    public static String FREE_CANDIDATE_LIST_TYPE_LS = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[3]/td[2]";
+    public static String FREE_CANDIDATE_LIST_TYPE_LRS = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[4]/td[2]";
+    public static String FREE_CANDIDATE_LIST_TYPE_RW = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[5]/td[2]";
+    public static String FREE_CANDIDATE_LIST_TYPE_WS = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[6]/td[2]";
+    public static String FREE_CANDIDATE_LIST_TYPE_RWS = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[7]/td[2]";
+    public static String FREE_CANDIDATE_LIST_TYPE_LWS = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[8]/td[2]";
+    public static String FREE_CANDIDATE_LIST_REASON_LR = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[1]/td[3]";
+    public static String FREE_CANDIDATE_LIST_REASON_LW = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[2]/td[3]";
+    public static String FREE_CANDIDATE_LIST_REASON_LS = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[3]/td[3]";
+    public static String FREE_CANDIDATE_LIST_REASON_LRS = "//*[@id='spreadsheet-freetestcandidate-table]/tbody/tr[4]/td[3]";
+    public static String FREE_CANDIDATE_LIST_REASON_RW = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[5]/td[3]";
+    public static String FREE_CANDIDATE_LIST_REASON_WS = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[6]/td[3]";
+    public static String FREE_CANDIDATE_LIST_REASON_RWS = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[7]/td[3]";
+    public static String FREE_CANDIDATE_LIST_REASON_LWS = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[8]/td[3]";
+    public static String FREE_CANDIDATE_LIST_CANDDNO_LR = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[1]/td[4]";
+    public static String FREE_CANDIDATE_LIST_CANDDNO_LW = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[2]/td[4]";
+    public static String FREE_CANDIDATE_LIST_CANDDNO_LS = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[3]/td[4]";
+    public static String FREE_CANDIDATE_LIST_CANDDNO_LRS = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[4]/td[4]";
+    public static String FREE_CANDIDATE_LIST_CANDDNO_RW = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[5]/td[4]";
+    public static String FREE_CANDIDATE_LIST_CANDDNO_WS = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[6]/td[4]";
+    public static String FREE_CANDIDATE_LIST_CANDDNO_RWS = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[7]/td[4]";
+    public static String FREE_CANDIDATE_LIST_CANDDNO_LWS = "//*[@id='spreadsheet-freetestcandidate-table']/tbody/tr[8]/td[4]";
+    
+    
+    
+    
+    
     
 }

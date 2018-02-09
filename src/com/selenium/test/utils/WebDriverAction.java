@@ -103,6 +103,10 @@ public class WebDriverAction {
          driver.manage().timeouts().implicitlyWait(Integer.parseInt(wAIT_TIME), TimeUnit.SECONDS);  
      }  
      
+     public String resultWarning(WebDriver driver) {
+    	 return driver.findElement(By.xpath(ElementHelper.RESULT_WARNING)).getText();
+     }
+     
      public List<WebElement> getinputValue(){
     	 WebElement tdpGivenNameEn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_GIVEN_NAME_EN));
     	 WebElement tdpGivenNameCn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_GIVEN_NAME_CN));

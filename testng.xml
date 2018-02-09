@@ -1,35 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" >
+<suite name="Suite" verbose="2" allow-return-values="true">
 
- <listeners>           
-     <listener class-name="org.uncommons.reportng.HTMLReporter" />
-      <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-       <listener class-name="com.selenium.test.listener.TestNGListener" /> 
-  </listeners>
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="com.selenium.test.listener.TestNGListener" />
+	</listeners>
 
-  <test thread-count="5" name="Test" skipfailedinvocationcounts="true" allow-return-values="true">
-    <classes>
-     <!--  <class name="com.selenium.test.testcenter.TestCenterList"/> -->
-      <!-- <class name="com.selenium.test.testcenter.TestBuildingList"/> -->
-      <!--  <class name="com.selenium.test.testcenter.TestRoomList"/>
-       <class name="com.selenium.test.testcenter.TestDateList"/> -->
-      <!--  <class name="com.selenium.test.testcenter.SpkRoomTemplate"/> -->
-      <!--  <class name="com.selenium.test.tdol.TDPProfile"/> -->
-       <!-- <class name="com.selenium.test.tdol.TDPTask"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeSupervisor"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeSAS"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeSpkAS"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeWAS"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeDataAS"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeWAStoTC"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeInvigilator"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeBagDuty"/> -->
-        <!-- <class name="com.selenium.test.tdol.ArrangeReports"/> -->
-       <!--  <class name="com.selenium.test.postest.CandidateStatusBlock"/> -->
-       <!--  <class name="com.selenium.test.postest.JaggedProfileInfo"/> -->
-        <class name="com.selenium.test.postest.CandidateFromItap"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+
+<!-- 	<test name="TestCenter">
+		<classes>
+			<class name="com.selenium.test.testcenter.TestCenterList" />
+			<class name="com.selenium.test.testcenter.TestBuildingList" />
+			<class name="com.selenium.test.testcenter.TestRoomList" />
+			<class name="com.selenium.test.testcenter.TestDateList" />
+			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
+		</classes>
+	</test> 
+	
+	<test name="TDOL">
+		<classes>
+			<class name="com.selenium.test.tdol.TDPProfile" />
+			<class name="com.selenium.test.tdol.TDPTask" />
+			<class name="com.selenium.test.tdol.ArrangeSupervisor" />
+			<class name="com.selenium.test.tdol.ArrangeSAS" />
+			<class name="com.selenium.test.tdol.ArrangeSpkAS" />
+			<class name="com.selenium.test.tdol.ArrangeWAS" />
+			<class name="com.selenium.test.tdol.ArrangeDataAS" />
+			<class name="com.selenium.test.tdol.ArrangeWAStoTC" />
+			<class name="com.selenium.test.tdol.ArrangeInvigilator" />
+			<class name="com.selenium.test.tdol.ArrangeBagDuty" />
+			<class name="com.selenium.test.tdol.ArrangeReports" />
+		</classes>
+	</test>	
+	
+	<test name="PostTest">
+		<classes>
+			<class name="com.selenium.test.postest.CandidateStatusBlock" />
+			<class name="com.selenium.test.postest.JaggedProfileInfo" />
+			<class name="com.selenium.test.postest.SetScore" />
+			<class name="com.selenium.test.postest.ConfirmSetScore" />
+			<class name="com.selenium.test.postest.ScoreUpload" />
+			<class name="com.selenium.test.postest.ImportLog" />
+			<class name="com.selenium.test.postest.ScoreCheck" />
+			<class name="com.selenium.test.postest.StatusScoreCheck" />
+			<class name="com.selenium.test.postest.PESEComparison" />
+			<class name="com.selenium.test.postest.EMSManagement" />
+			<class name="com.selenium.test.postest.CandidateFromItap" />
+		</classes>
+	</test>	 -->
+	
+	<test name="CSCS">
+		<classes>
+			<class name="com.selenium.test.cs.FreeCandidateAdd" />
+		</classes>
+	</test>	
+	
+	<!-- 
+	<test name="CSEOR">
+		<classes>
+			
+		</classes>
+	</test>	 -->
+	
+</suite> 
+
  

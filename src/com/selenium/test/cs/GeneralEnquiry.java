@@ -9,7 +9,7 @@ import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.WebDriverAction;
 
-public class ComplaintCandidateAdd {
+public class GeneralEnquiry {
 	static WebDriver driver;
 	WebDriverAction action;
 	@BeforeMethod
@@ -27,7 +27,7 @@ public class ComplaintCandidateAdd {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.CS_CS));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_LIST));
+		action.click(By.xpath(ElementHelper.GENERAL_ENQUIRY));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 }

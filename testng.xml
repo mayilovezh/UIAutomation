@@ -53,7 +53,8 @@
 	
 	<test name="CSCS">
 		<classes>
-			<class name="com.selenium.test.cs.FreeCandidateAdd" />
+			<!-- <class name="com.selenium.test.cs.FreeCandidateAdd" /> -->
+			<class name="com.selenium.test.cs.FreeCandidateList" />
 		</classes>
 	</test>	
 	

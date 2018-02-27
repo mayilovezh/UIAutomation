@@ -538,4 +538,50 @@ public class ElementHelper {
     public static String GENERAL_ENQUIRY_EXPORT = "btn-LetterCandidate-Export";
     
     
+    //Marketing
+    public static String MARKETING = "Marketing";
+    
+    //Query
+    public static String MARKETING_QUERY = "//*[@id='Marketing']/ul/li[1]/a";
+    public static String MARKETING_QUERY_REGION = "selectofficeMarketingSearch";
+    public static String MARKETING_QUERY_DATE_FROM = "txtMarketingTestDateB";
+    public static String MARKETING_QUERY_DATE_TO = "txtMarketingTestDateE";
+    public static String MARKETING_QUERY_SEARCH = "BtnMarketingSearch";
+    public static String MARKETING_QUERY_TYPE_B = "radio2";
+    public static String MARKETING_QUERY_EXPORT = "btnMarketingCanExport";
+    public static String MARKETING_QUERY_NEW_EXPORT = "btnNewMarketingCanExport";
+    
+    //Report By Region
+    public static String REPORT_BY_REGION = "//*[@id='Marketing']/ul/li[2]/a";
+    public static String REPORT_BY_REGION_REGION = "selectofficeMarketingSearch_report";
+    public static String REPORT_BY_REGION_DATE_FROM = "txtMarketingTestDateB_report";
+    public static String REPORT_BY_REGION_DATE_TO = "txtMarketingTestDateE_report";
+    public static String REPORT_BY_REGION_SEARCH = "BtnMarketingSearch_report";
+    public static String REPORT_BY_REGION_EXPORT = "btnMarketingCanExport_report";
+    
+    //Report By Region Origin
+    public static String REPORT_BY_REGION_ORIGIN = "//*[@id='Marketing']/ul/li[3]/a";
+    public static String REPORT_BY_REGION_ORIGIN_DATE_FROM = "txtMarketingTestDateB_city";
+    public static String REPORT_BY_REGION_ORIGIN_DATE_TO = "txtMarketingTestDateE_city";
+    public static String REPORT_BY_REGION_ORIGIN_SEARCH = "BtnMarketingSearch_city";
+    public static String REPORT_BY_REGION_ORIGIN_EXPORT = "btnMarketingCanExport_city";
+    
+    //Report By Center
+    public static String REPORT_BY_CENTER = "//*[@id='Marketing']/ul/li[4]/a";
+    public static String REPORT_BY_CENTER_REGION = "selectofficeMarketingSearch_center";
+    public static String REPORT_BY_CENTER_DATE_FROM = "txtMarketingTestDateB_center";
+    public static String REPORT_BY_CENTER_DATE_TO = "txtMarketingTestDateE_center";
+    public static String REPORT_BY_CENTER_SEARCH = "BtnMarketingSearch_center";
+    public static String REPORT_BY_CENTER_EXPORT = "btnMarketingCanExport_center";
+    
+    //Report By Center Origin
+    public static String REPORT_BY_CENTER_ORIGIN = "//*[@id='Marketing']/ul/li[5]/a";
+    public static String REPORT_BY_CENTER_ORIGIN_DATE_FROM = "txtMarketingTestDateB_centercity";
+    public static String REPORT_BY_CENTER_ORIGIN_DATE_TO = "txtMarketingTestDateE_centercity";
+    public static String REPORT_BY_CENTER_ORIGIN_CITY = "selectofficeMarketingCity_centercity";
+    public static String REPORT_BY_CENTER_ORIGIN_CENTER = "selectofficeMarketingCenter_centercity";
+    public static String REPORT_BY_CENTER_ORIGIN_SEARCH = "BtnMarketingSearch_centercity";
+    public static String REPORT_BY_CENTER_ORIGIN_EXPORT = "btnMarketingCanExport_centercity";
+    
+    
 }

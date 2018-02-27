@@ -51,19 +51,23 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="CSCS">
+	<!-- <test name="CSCS">
 		<classes>
-			<!-- <class name="com.selenium.test.cs.FreeCandidateAdd" /> -->
+			<class name="com.selenium.test.cs.FreeCandidateAdd" />
 			<class name="com.selenium.test.cs.FreeCandidateList" />
 		</classes>
-	</test>	
-	
-	<!-- 
-	<test name="CSEOR">
-		<classes>
-			
-		</classes>
 	</test>	 -->
+	
+	
+	<test name="Marketing">
+		<classes>
+			<class name="com.selenium.test.marketing.MarketingQuery" />
+			<class name="com.selenium.test.marketing.ReportByRegion" />
+			<class name="com.selenium.test.marketing.ReportByRegionOrigin" />
+			<class name="com.selenium.test.marketing.ReportByCenter" />
+			<class name="com.selenium.test.marketing.ReportByCenterOrigin" />
+		</classes>
+	</test>	
 	
 </suite> 
 

@@ -58,14 +58,19 @@
 		</classes>
 	</test>	 -->
 	
-	
-	<test name="Marketing">
+	<!-- <test name="Marketing">
 		<classes>
 			<class name="com.selenium.test.marketing.MarketingQuery" />
 			<class name="com.selenium.test.marketing.ReportByRegion" />
 			<class name="com.selenium.test.marketing.ReportByRegionOrigin" />
 			<class name="com.selenium.test.marketing.ReportByCenter" />
 			<class name="com.selenium.test.marketing.ReportByCenterOrigin" />
+		</classes>
+	</test>	 -->
+	
+	<test name="CS-Extra">
+		<classes>
+			<class name="com.selenium.test.extra.FilterWordsList" />
 		</classes>
 	</test>	
 	

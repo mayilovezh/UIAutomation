@@ -107,6 +107,11 @@ public class WebDriverAction {
     	 return driver.findElement(By.xpath(ElementHelper.RESULT_WARNING)).getText();
      }
      
+     public void clear(By by) {
+
+ 		driver.findElement(by).clear();
+ 	}
+     
      public List<WebElement> getinputValue(){
     	 WebElement tdpGivenNameEn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_GIVEN_NAME_EN));
     	 WebElement tdpGivenNameCn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_GIVEN_NAME_CN));

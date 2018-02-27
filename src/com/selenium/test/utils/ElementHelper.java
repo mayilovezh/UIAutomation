@@ -2,9 +2,9 @@ package com.selenium.test.utils;
 
 public class ElementHelper {
 
-	public String DEV_URL = "http://cnbjs1bms001:9003";
-	public String UAT_URL = "http://cnbjs1bms001:9001";
-	public String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
+	public static String DEV_URL = "http://cnbjs1bms001:9003";
+	public static String UAT_URL = "http://cnbjs1bms001:9001";
+	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
 	public static int LONG_TIME = 10000;
 	public static int WAIT_TIME = 6000;
 	public static int SHORT_TIME = 3000;
@@ -19,15 +19,17 @@ public class ElementHelper {
 	public static String IEP_PASSWORD = "111111";
 	public static String IEP_PINCODE = "1111";
 
-	public  String USER_NAME = "userName";
-	public  String PASSWORD = "password";
-	public  String LOGIN_BTN = "loginButt";
+	public static String USER_NAME = "userName";
+	public static String PASSWORD = "password";
+	public static String USER_NAME_VALUE = "Zhang Yifan"; 
+	public static String PASSWORD_VALUE = "Zyf929670!";
+	public static String LOGIN_BTN = "loginButt";
 	public static String CANCEL = "//span[text(),'Cancel']";
 	public static String SAVE = "//button[@type='button']";
-	public  String USER_NAME_IEP = "examineraccount";
-	public  String PASSWORD_IEP = "examinerpassword";
-	public  String PINCODE_IEP = "examinerpincode";
-	public  String LOGIN_IEP = "Log in";
+	public static String USER_NAME_IEP = "examineraccount";
+	public static String PASSWORD_IEP = "examinerpassword";
+	public static String PINCODE_IEP = "examinerpincode";
+	public static String LOGIN_IEP = "Log in";
 	public static String RESULT_WARNING = "/html/body/div[14]/div[2]";
 	
 	public static String GENERALQUERY = "GeneralQuery";
@@ -584,4 +586,16 @@ public class ElementHelper {
     public static String REPORT_BY_CENTER_ORIGIN_EXPORT = "btnMarketingCanExport_centercity";
     
     
+    //CS-Extra
+    public static String CS_EXTRA = "CS-Extra";
+    
+    //Filter Words List
+    public static String FILTER_WORDS = "//*[@id='CS-Extra']/ul/li[1]/a";
+    public static String FILTER_WORDS_ADD = "inp-Create-ExtraFilterWord";
+    public static String FILTER_WORDS_ADD_NAME = "WordName-ExtraFilterWord";
+    public static String FILTER_WORDS_ADD_TYPE = "SelectWordTypeTc-ExtraFilterWord";
+    public static String FILTER_WORDS_MODIFY = "Modify";
+    public static String FILTER_WORDS_DELETE = "Delete";
+    public static String FILTER_WORDS_MODIFY_WORDS = "//*[@id='SpreadSheetExtraFilterWordGrid']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String FILTER_WORDS_MODIFY_NAME = "//*[@id='SpreadSheetExtraFilterWordGrid']/div[2]/table/tbody/tr[1]/td[3]";
 }

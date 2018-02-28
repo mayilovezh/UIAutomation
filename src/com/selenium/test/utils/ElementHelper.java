@@ -598,4 +598,47 @@ public class ElementHelper {
     public static String FILTER_WORDS_DELETE = "Delete";
     public static String FILTER_WORDS_MODIFY_WORDS = "//*[@id='SpreadSheetExtraFilterWordGrid']/div[2]/table/tbody/tr[1]/td[1]";
     public static String FILTER_WORDS_MODIFY_NAME = "//*[@id='SpreadSheetExtraFilterWordGrid']/div[2]/table/tbody/tr[1]/td[3]";
+    
+    //Pending List
+    public static String PENDING_LIST = "//*[@id='CS-Extra']/ul/li[2]/a";
+    public static String PENDING_LIST_REGION = "RegionIdSecrch-ExtraAppList";
+    public static String PENDING_LIST_YEAR = "sel_searchTestDate_Year_ExtraAppList";
+    public static String PENDING_LIST_MONTH = "sel_searchTestDate_Month_ExtraAppList";
+    public static String PENDING_LIST_DATE = "sel_searchTestDate_ExtraAppList";
+    public static String PENDING_LIST_SEARCH = "//input[contains(@value,'Search')]";
+    public static String PENDING_LIST_PROCESSING = "//*[@id='SpreadSheetExtraAppListGrid']/div[2]/table/tbody/tr/td[8]/a[2]";
+    public static String PENDING_LIST_VIEWLOG = "//*[@id='SpreadSheetExtraAppListGrid']/div[2]/table/tbody/tr/td[8]/a[3]";
+    public static String PENDING_LIST_VIEWLOG_UPDATEBY = "//*[@id='ExtraAppList_Pendding-divHistory-ViewLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
+
+    //Extra List
+    public static String EXTRA_LIST = "//*[@id='CS-Extra']/ul/li[3]/a";
+    public static String EXTRA_LIST_REGION = "ExtraAppListTwo-RegionIdSecrch";
+    public static String EXTRA_LIST_YEAR = "ExtraAppListTwo-YearSecrch";
+    public static String EXTRA_LIST_MONTH = "ExtraAppListTwo-MonthSecrch";
+    public static String EXTRA_LIST_DATE = "ExtraAppListTwo-DateIdSecrch";
+    public static String EXTRA_LIST_STATUS = "ExtraAppListTwo-ExtraStatusSecrch";
+    public static String EXTRA_LIST_CANDIDATE_NO = "ExtraAppListTwo-CandidateIDSecrch";
+    public static String EXTRA_LIST_SEARCH = "//input[contains(@value,'Search')]";
+    public static String EXTRA_LIST_SELECT = "//*[@id='SpreadSheetExtraAppListTwoGrid']/div[2]/table/tbody/tr/td[1]/input";
+    public static String EXTRA_LIST_UPDATE_APP = "Update App";
+    public static String EXTRA_LIST_UPDATE_APP_PHONE = "ExtraAppListTwo-PhoneUpdateApp";
+    public static String EXTRA_LIST_DONE = "ExtraAppListTwo-Done";
+    public static String EXTRA_LIST_EXPORT_EXCEL = "ExtraAppListTwo-ExportExcel";
+    public static String EXTRA_LIST_PRINT_PROCESSING_LIST = "ExtraAppListTwo-Print";
+    public static String EXTRA_LIST_PRINT_POSTAL_LABEL = "ExtraAppListTwo-PrintPostallabel";
+    public static String EXTRA_LIST_EXPORT_EMS_DHL = "ExtraAppListTwo-EMS";
+    public static String EXTRA_LIST_IMPORT_EMS_DHL = "ExtraAppListTwo-ImportEMS";
+    
+    //Refund
+    public static String REFUND = "//*[@id='CS-Extra']/ul/li[4]/a";
+    public static String REFUND_SEARCH = "inp-Query-ExtraAppListRefundList";
+    public static String REFUND_CONFIRM = "inp-Confirm-ExtraAppListRefundList";
+    public static String REFUND_SELECT = "//*[@id='SpreadSheetExtraAppListRefundListGrid']/div[2]/table/tbody/tr/td[1]/input";
+
+    //Confirm Refund
+    public static String CONFIRM_REFUND = "//*[@id='CS-Extra']/ul/li[5]/a";
+    public static String CONFIRM_REFUND_SEARCH = "inp-Query-ExtraAppListConfirmRefundList";
+    public static String CONFIRM_REFUND_SELECT = "//*[@id='SpreadSheetExtraAppListConfirmRefundListGrid']/div[2]/table/tbody/tr/td[1]/input";
+    public static String CONFIRM_REFUND_APPROVE = "inp-Appore-ExtraAppListConfirmRefundList";
+
 }

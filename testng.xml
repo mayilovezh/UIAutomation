@@ -71,6 +71,10 @@
 	<test name="CS-Extra">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
+			<class name="com.selenium.test.extra.PendingList" />
+			<class name="com.selenium.test.extra.ExtraList" />
+			<class name="com.selenium.test.extra.Refund" />
+			<class name="com.selenium.test.extra.ConfirmRefund" />
 		</classes>
 	</test>	
 	

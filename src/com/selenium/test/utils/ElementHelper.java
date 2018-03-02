@@ -656,6 +656,12 @@ public class ElementHelper {
     public static String UNPROCESSING_LIST_ADD = "//input[contains(@value,'Add Candidate No.(TRF Received)')]";
     public static String UNPROCESSING_LIST_START_SERVICE = "butStartService-EORTRFNumberList";
     
+    //EOR APP List
+    public static String EOR_APP_LIST = "//*[@id='CS-EOR']/ul/li[2]/a";
+    
+    //EOR Marking 
+    public static String EOR_MARKING = "//*[@id='CS-EOR']/ul/li[3]/a";
+    
     //1st Import Score
     public static String FIRST_IMPORT_SCORE = "//*[@id='CS-EOR']/ul/li[4]/a";
     public static String FIRST_IMPORT_SCORE_YEAR = "ddlYear-eorscore";
@@ -676,7 +682,58 @@ public class ElementHelper {
     public static String SECOND_IMPORT_SCORE_SELECTFILE = "secondEorScoreFile";
     public static String SECOND_IMPORT_SCORE_UPLOAD = "button.k-button.k-upload-selected";
     
+    //Refund
+    public static String EOR_REFUND = "//*[@id='CS-EOR']/ul/li[6]/a";
     
+    //Confirm Refund
+    public static String EOR_CONFIRM_REFUND = "//*[@id='CS-EOR']/ul/li[7]/a";
+    
+    
+    //EOR India
+    public static String EOR_INDIA = "CS-EOR-India";
+    
+    //UnProcessing List India
+    public static String EOR_INDIA_UNPROCESSING_LIST = "//*[@id='CS-EOR-India']/ul/li[1]/a";
+    public static String EOR_INDIA_UNPROCESSING_LIST_REGION = "sel-IndiaEORImport-OfficeId-Search";
+    public static String EOR_INDIA_UNPROCESSING_LIST_YEAR = "sel-IndiaEORImport-Year-Search";
+    public static String EOR_INDIA_UNPROCESSING_LIST_MONTH = "sel-IndiaEORImport-Month-Search";
+    public static String EOR_INDIA_UNPROCESSING_LIST_DATE = "sel-IndiaEORImport-TestDateId-Search";
+    public static String EOR_INDIA_UNPROCESSING_LIST_SEARCH = "btn-IndiaEORImport-Search";
+    public static String EOR_INDIA_UNPROCESSING_LIST_RECEIVE = "IndiaEOR_Question_paper";
+    public static String EOR_INDIA_UNPROCESSING_LIST_SAVE = "btn-IndiaEORImport-Save";
+    public static String EOR_INDIA_UNPROCESSING_LIST_START_SERVICE = "btn-IndiaEORImport-StartService";
+    
+    //EOR APP List India
+    public static String EOR_INDIA__APP_LIST = "//*[@id='CS-EOR-India']/ul/li[2]/a";
+    
+    //EOR Marking India
+    public static String EOR_INDIA_MARKING = "//*[@id='CS-EOR-India']/ul/li[3]/a";
+    
+    //1st Import Score India
+    public static String EOR_INDIA_FIRST_IMPORT_SCORE = "//*[@id='CS-EOR-India']/ul/li[4]/a";
+    public static String EOR_INDIA_FIRST_IMPORT_SCORE_YEAR = "ddlYear-eorscore-India";
+    public static String EOR_INDIA_FIRST_IMPORT_SCORE_MONTH = "ddlMonth-eorscore-India";
+    public static String EOR_INDIA_FIRST_IMPORT_SCORE_DATE = "selectdespatchdate-India";
+    public static String EOR_INDIA_FIRST_IMPORT_SCORE_WRITING = "writingeorscore-India";
+    public static String EOR_INDIA_FIRST_IMPORT_SCORE_LR = "lreorscore-India";
+    public static String EOR_INDIA_FIRST_IMPORT_SCORE_SELECTFILE = "EorScoreFile-India";
+    public static String EOR_INDIA_FIRST_IMPORT_SCORE_UPLOAD = "button.k-button.k-upload-selected";
+     
+    //2nd Import Score India
+    public static String EOR_INDIA_SECOND_IMPORT_SCORE = "//*[@id='CS-EOR-India']/ul/li[5]/a";
+    public static String EOR_INDIA_SECOND_IMPORT_SCORE_YEAR = "ddlYear-2ndeorscore-India";
+    public static String EOR_INDIA_SECOND_IMPORT_SCORE_MONTH = "ddlMonth-2ndeorscore-India";
+    public static String EOR_INDIA_SECOND_IMPORT_SCORE_DATE = "selectdespatchdate2ndeorscore-India";
+    public static String EOR_INDIA_SECOND_IMPORT_SCORE_WRITING = "writing2ndeorscore-India";
+    public static String EOR_INDIA_SECOND_IMPORT_SCORE_LR = "lr2ndeorscore-India";
+    public static String EOR_INDIA_SECOND_IMPORT_SCORE_SELECTFILE = "secondEorScoreFile-India";
+    public static String EOR_INDIA_SECOND_IMPORT_SCORE_UPLOAD = "button.k-button.k-upload-selected";
+    
+    //Refund India
+    public static String EOR_INDIA__REFUND = "//*[@id='CS-EOR-India']/ul/li[6]/a";
+    
+    //Confirm Refund India
+    public static String EOR_INDIA__CONFIRM_REFUND = "//*[@id='CS-EOR-India']/ul/li[7]/a";
     
     
 

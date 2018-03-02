@@ -68,13 +68,34 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="CS-Extra">
+	<!-- <test name="CS-Extra">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
 			<class name="com.selenium.test.extra.PendingList" />
 			<class name="com.selenium.test.extra.ExtraList" />
 			<class name="com.selenium.test.extra.Refund" />
 			<class name="com.selenium.test.extra.ConfirmRefund" />
+		</classes>
+	</test>	 -->
+	
+	<!-- <test name="CS-Eor">
+		<classes>
+			<class name="com.selenium.test.eor.UnProcessingList" />
+			<class name="com.selenium.test.eor.EorAppList" />
+			<class name="com.selenium.test.eor.EorMarking" />
+			<class name="com.selenium.test.eor.FirstImportScore" />
+			<class name="com.selenium.test.eor.SecondImportScore" />
+			
+		</classes>
+	</test>	 -->
+	
+	<test name="CS-Eor_India">
+		<classes>
+			<class name="com.selenium.test.eorindia.UnProcessingList" />
+			<class name="com.selenium.test.eorindia.EorAppList" />
+			<class name="com.selenium.test.eorindia.EorMarking" />
+			<class name="com.selenium.test.eorindia.FirstImportScore" />
+			<class name="com.selenium.test.eorindia.SecondImportScore" />
 		</classes>
 	</test>	
 	

@@ -640,5 +640,44 @@ public class ElementHelper {
     public static String CONFIRM_REFUND_SEARCH = "inp-Query-ExtraAppListConfirmRefundList";
     public static String CONFIRM_REFUND_SELECT = "//*[@id='SpreadSheetExtraAppListConfirmRefundListGrid']/div[2]/table/tbody/tr/td[1]/input";
     public static String CONFIRM_REFUND_APPROVE = "inp-Appore-ExtraAppListConfirmRefundList";
+    
+    
+    //CS-EOR
+    public static String CS_EOR = "CS-EOR";
+    
+    //UnProcessing List
+    public static String UNPROCESSING_LIST = "//*[@id='CS-EOR']/ul/li[1]/a";
+    public static String UNPROCESSING_LIST_REGION = "RegionIdSecrch_EORTRFNumberList";
+    public static String UNPROCESSING_LIST_YEAR = "EORTRFNumberList-DateIdYearSecrch";
+    public static String UNPROCESSING_LIST_MONTH = "EORTRFNumberList-DateIdMonthSecrch";
+    public static String UNPROCESSING_LIST_DATE = "DateIdSecrch_EORTRFNumberList";
+    public static String UNPROCESSING_LIST_MATCH_STATUS = "MatchStatusSecrch_EORTRFNumberList";
+    public static String UNPROCESSING_LIST_SEARCH = "//input[contains(@value,'Search')]";
+    public static String UNPROCESSING_LIST_ADD = "//input[contains(@value,'Add Candidate No.(TRF Received)')]";
+    public static String UNPROCESSING_LIST_START_SERVICE = "butStartService-EORTRFNumberList";
+    
+    //1st Import Score
+    public static String FIRST_IMPORT_SCORE = "//*[@id='CS-EOR']/ul/li[4]/a";
+    public static String FIRST_IMPORT_SCORE_YEAR = "ddlYear-eorscore";
+    public static String FIRST_IMPORT_SCORE_MONTH = "ddlMonth-eorscore";
+    public static String FIRST_IMPORT_SCORE_DATE = "selectdespatchdate";
+    public static String FIRST_IMPORT_SCORE_WRITING = "writingeorscore";
+    public static String FIRST_IMPORT_SCORE_LR = "lreorscore";
+    public static String FIRST_IMPORT_SCORE_SELECTFILE = "EorScoreFile";
+    public static String FIRST_IMPORT_SCORE_UPLOAD = "button.k-button.k-upload-selected";
+     
+    //2nd Import Score
+    public static String SECOND_IMPORT_SCORE = "//*[@id='CS-EOR']/ul/li[5]/a";
+    public static String SECOND_IMPORT_SCORE_YEAR = "ddlYear-2ndeorscore";
+    public static String SECOND_IMPORT_SCORE_MONTH = "ddlMonth-2ndeorscore";
+    public static String SECOND_IMPORT_SCORE_DATE = "selectdespatchdate2ndeorscore";
+    public static String SECOND_IMPORT_SCORE_WRITING = "writing2ndeorscore";
+    public static String SECOND_IMPORT_SCORE_LR = "lr2ndeorscore";
+    public static String SECOND_IMPORT_SCORE_SELECTFILE = "secondEorScoreFile";
+    public static String SECOND_IMPORT_SCORE_UPLOAD = "button.k-button.k-upload-selected";
+    
+    
+    
+    
 
 }

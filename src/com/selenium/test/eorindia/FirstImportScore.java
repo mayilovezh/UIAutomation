@@ -29,15 +29,15 @@ public class FirstImportScore {
 	
 	public void navigate() throws Exception {
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.CS_EOR));
+		action.click(By.id(ElementHelper.EOR_INDIA));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.FIRST_IMPORT_SCORE));
+		action.click(By.xpath(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.FIRST_IMPORT_SCORE_YEAR), "2017");
+		action.selectByValue(By.id(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_YEAR), "2017");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.FIRST_IMPORT_SCORE_MONTH), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_MONTH), ElementHelper.VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.FIRST_IMPORT_SCORE_DATE), "2017-01-25T00:00:00");
+		action.selectByValue(By.id(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_DATE), "2017-01-25T00:00:00");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
@@ -46,7 +46,7 @@ public class FirstImportScore {
 		navigate();
 		upload("\\resource\\eor\\EORSpeakingScoreImportTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.cssSelector(ElementHelper.FIRST_IMPORT_SCORE_UPLOAD));
+		action.click(By.cssSelector(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
@@ -57,7 +57,7 @@ public class FirstImportScore {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		upload("\\resource\\eor\\EORWritingScoreImportTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.cssSelector(ElementHelper.FIRST_IMPORT_SCORE_UPLOAD));
+		action.click(By.cssSelector(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
@@ -68,7 +68,7 @@ public class FirstImportScore {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		upload("\\resource\\eor\\EORLRScoreTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.cssSelector(ElementHelper.FIRST_IMPORT_SCORE_UPLOAD));
+		action.click(By.cssSelector(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
@@ -78,7 +78,7 @@ public class FirstImportScore {
 		String path = System.getProperty("user.dir") + filePath;
 		File file = new File(path);
 		if(file.exists()) {
-			driver.findElement(By.id(ElementHelper.FIRST_IMPORT_SCORE_SELECTFILE)).sendKeys(file.getPath());
+			driver.findElement(By.id(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_SELECTFILE)).sendKeys(file.getPath());
 		}
 	}
 }

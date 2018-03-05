@@ -89,13 +89,15 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="CS-Eor_India">
+	<test name="CS-Eor-India">
 		<classes>
-			<class name="com.selenium.test.eorindia.UnProcessingList" />
-			<class name="com.selenium.test.eorindia.EorAppList" />
-			<class name="com.selenium.test.eorindia.EorMarking" />
+			<class name="com.selenium.test.eorindia.IndiaUnProcessingList" />
+			<class name="com.selenium.test.eorindia.IndiaAppList" />
+			<class name="com.selenium.test.eorindia.IndiaMarking" />
 			<class name="com.selenium.test.eorindia.FirstImportScore" />
 			<class name="com.selenium.test.eorindia.SecondImportScore" />
+			<class name="com.selenium.test.eorindia.Journal" />
+			<class name="com.selenium.test.eorindia.ConfirmJournal" />
 		</classes>
 	</test>	
 	

@@ -701,7 +701,13 @@ public class ElementHelper {
     public static String EOR_INDIA_UNPROCESSING_LIST_SEARCH = "btn-IndiaEORImport-Search";
     public static String EOR_INDIA_UNPROCESSING_LIST_RECEIVE = "IndiaEOR_Question_paper";
     public static String EOR_INDIA_UNPROCESSING_LIST_SAVE = "btn-IndiaEORImport-Save";
+    public static String EOR_INDIA_UNPROCESSING_LIST_IMPORT = "btn-IndiaEORImport-ImportApplication";
+    public static String EOR_INDIA_UNPROCESSING_LIST_CHOOSEFILE  = "fl-IndiaEORImport-ImportApplication";
+    public static String EOR_INDIA_UNPROCESSING_LIST_UPLOAD = "button.k-button.k-upload-selected";
     public static String EOR_INDIA_UNPROCESSING_LIST_START_SERVICE = "btn-IndiaEORImport-StartService";
+    public static String EOR_INDIA_UNPROCESSING_LIST_CHECK_TEST_DATE = "//*[@id='SpreadSheetIndiaEORImportGrid']/div[2]/table/tbody/tr[1]/td[4]";
+    public static String EOR_INDIA_UNPROCESSING_LIST_CHECK_TEST_CENTER = "//*[@id='SpreadSheetIndiaEORImportGrid']/div[2]/table/tbody/tr[1]/td[3]";
+    public static String EOR_INDIA_UNPROCESSING_LIST_EXPORT = "btn-IndiaEORImport-ExportForm";
     
     //EOR APP List India
     public static String EOR_INDIA__APP_LIST = "//*[@id='CS-EOR-India']/ul/li[2]/a";

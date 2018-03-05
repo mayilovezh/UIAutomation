@@ -46,7 +46,7 @@ public class SecondImportScore {
 		navigate();
 		upload("\\resource\\eor\\EORSpeakingScoreImportTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.cssSelector(ElementHelper.FIRST_IMPORT_SCORE_UPLOAD));
+		action.click(By.cssSelector(ElementHelper.SECOND_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
@@ -57,7 +57,7 @@ public class SecondImportScore {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		upload("\\resource\\eor\\EORWritingScoreImportTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.cssSelector(ElementHelper.FIRST_IMPORT_SCORE_UPLOAD));
+		action.click(By.cssSelector(ElementHelper.SECOND_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
@@ -68,7 +68,7 @@ public class SecondImportScore {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		upload("\\resource\\eor\\EORLRScoreTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.cssSelector(ElementHelper.FIRST_IMPORT_SCORE_UPLOAD));
+		action.click(By.cssSelector(ElementHelper.SECOND_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	

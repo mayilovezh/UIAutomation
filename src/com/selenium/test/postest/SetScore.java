@@ -15,7 +15,7 @@ public class SetScore {
 	WebDriverAction action;
 	@BeforeMethod
 	public void setUp() {
-		driver = new DriverInstance().login(driver);
+		driver = new DriverInstance().loginEast(driver);
 		action = new WebDriverAction(driver);
 	}
 
@@ -36,14 +36,22 @@ public class SetScore {
 	@Test
 	public void setScoreAll() throws Exception {
 		navigate();
-		action.selectByIndex(By.id(ElementHelper.SET_SCORE_YEAR), 0);
-		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.selectByValue(By.id(ElementHelper.SET_SCORE_YEAR), "2018");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.selectByIndex(By.id(ElementHelper.SET_SCORE_MONTH), 0);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.SET_SCORE_DATE), 0);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		
-		
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByValue(By.id(ElementHelper.SET_SCORE_DATE), "10334");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.SET_SCORE_TC), "100084");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.id(ElementHelper.SET_SCORE_SEARCH));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.id(ElementHelper.SET_SCORE_SELECT_ALL));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SET_SCORE_SAVE));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
 	

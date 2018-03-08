@@ -28,7 +28,7 @@ public class ConfirmJournal {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.EOR_INDIA));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.EOR_INDIA__APP_LIST));
+		action.click(By.xpath(ElementHelper.EOR_INDIA__CONFIRM_REFUND));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 }

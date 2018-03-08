@@ -23,6 +23,8 @@ public class ElementHelper {
 	public static String PASSWORD = "password";
 	public static String USER_NAME_VALUE = "Zhang Yifan"; 
 	public static String PASSWORD_VALUE = "Zyf929670!";
+	public static String USER_NAME_EAST = "zhangyifan"; 
+	public static String PASSWORD_EAST = "Zyf929670@";
 	public static String LOGIN_BTN = "loginButt";
 	public static String CANCEL = "//span[text(),'Cancel']";
 	public static String SAVE = "//button[@type='button']";
@@ -404,14 +406,30 @@ public class ElementHelper {
     public static String SET_SCORE_DATE = "ddlTestDate-setscore";
     public static String SET_SCORE_TC = "ddlTestCenter-setscore";
     public static String SET_SCORE_SEARCH = "btnQuery-setscore";
-    public static String SET_SCORE_SAVE = "//input[@value,'Set to 0']";
+    public static String SET_SCORE_SAVE = "//input[@value='Set to 0']";
     public static String SET_SCORE_SELECT_ALL = "checkspeakingtravelAll";
     
     //Confirm Set Score
     public static String CONFIRM_SET_SCORE = "//*[@id='PostTest']/ul/li[9]/a";
+    public static String CONFIRM_SET_SCORE_YEAR = "confirmsetscore-Select-Year-Search";
+    public static String CONFIRM_SET_SCORE_MONTH = "confirmsetscore-Select-Month-Search";
+    public static String CONFIRM_SET_SCORE_DATE = "ddlTestDate-confirmsetscore";
+    public static String CONFIRM_SET_SCORE_TC = "ddlTestCenter-confirmsetscore";
+    public static String CONFIRM_SET_SCORE_SEARCH = "btnQuery-confirmsetscore";
+    public static String CONFIRM_SET_SCORE_SET = "//input[@value='Set to 0']";
+    public static String CONFIRM_SET_SCORE_SELECTALL = "Confirm_checkspeakingtravelAll";
     
     //Score Upload
     public static String SCORE_UPLOAD = "//*[@id='PostTest']/ul/li[11]/a";
+    public static String SCORE_UPLOAD_YEAR = "ScoreUploadAndSyncLog-Select-Year-Search";
+    public static String SCORE_UPLOAD_MONTH = "ScoreUploadAndSyncLog-Select-Month-Search";
+    public static String SCORE_UPLOAD_DATE = "selectScoreUploadAndSyncLogTestDate";
+    public static String SCORE_UPLOAD_SEARCH = "BtnScoreUploadAndSyncLogRefresh";
+    public static String SCORE_UPLOAD_FIRST_MARKING = "//*[@id='ScoreUploadAndSyncLogGrid']/div[2]/table/tbody/tr[15]/td[12]/a[1]";
+    public static String SCORE_UPLOAD_FIRST_RELEASE = "//*[@id='ScoreUploadAndSyncLogGrid']/div[2]/table/tbody/tr[15]/td[12]/a[2]";
+    public static String SCORE_UPLOAD_CHOOSE_FIRST_MARKING = "file-ScoreUpload_Import1stMarking";
+    public static String SCORE_UPLOAD_CHOOSE_FIRST_RELEASE = "file-ScoreUpload_Import1stRelease";
+    public static String SCORE_UPLOAD_UPLOAD = "button.k-button.k-upload-selected";
     
     //Import Log
     public static String IMPORT_LOG = "//*[@id='PostTest']/ul/li[5]/a";
@@ -740,6 +758,34 @@ public class ElementHelper {
     
     //Confirm Refund India
     public static String EOR_INDIA__CONFIRM_REFUND = "//*[@id='CS-EOR-India']/ul/li[7]/a";
+    
+    
+    //Clerical Marker
+    public static String CLERICAL_MARKER = "ClericalMarker";
+    
+    //Clerical Marker Profile
+    public static String CLERICAL_PROFILE = "//*[@id='ClericalMarker']/ul/li[1]/a";
+    public static String CLERICAL_PROFILE_CREATE = "addclericalmarker";
+    public static String CLERICAL_PROFILE_CREATE_GIVEN_NAME_EN = "addclericalmarkergivennameen";
+    public static String CLERICAL_PROFILE_CREATE_FAMILY_NAME_EN = "addclericalmarkerfamilynameen";
+    public static String CLERICAL_PROFILE_CREATE_GIVEN_NAME_CN = "addclericalmarkergivennamecn";
+    public static String CLERICAL_PROFILE_CREATE_FAMILY_NAME_CN = "addclericalmarkerfamilynamecn";
+    public static String CLERICAL_PROFILE_CREATE_ID_TYPE = "addclericalmarkerpassport";
+    public static String CLERICAL_PROFILE_CREATE_ID_NUMBER = "addclericalmarkerIdNumber";
+    public static String CLERICAL_PROFILE_CREATE_GENDER = "addclericalmarkerfemale";
+    public static String CLERICAL_PROFILE_CREATE_DATEBIRTH = "addclericalmarkerbirthday";
+    public static String CLERICAL_PROFILE_CREATE_MOBILE = "addclericalmarkerMobile";
+    public static String CLERICAL_PROFILE_CREATE_EMAIL = "addclericalmarkerEmail";
+    public static String CLERICAL_PROFILE_CREATE_NATIONALITY = "addclericalmarkercountry";
+    public static String CLERICAL_PROFILE_CREATE_PROVINCE = "addclericalmarkerProvince";
+    public static String CLERICAL_PROFILE_CREATE_CITY = "addclericalmarkerBaseCity";
+    public static String CLERICAL_PROFILE_CREATE_STATUS = "addclericalmarkerStatus";
+    public static String CLERICAL_PROFILE_CREATE_ROLES = "//*[@id='ClericalMarkerForm']/table[3]/tbody/tr[3]/td/div/div/input";
+    public static String CLERICAL_PROFILE_CREATE_SAVE = "button.k-button";
+    
+    //Clerical Marker Task
+    public static String CLERICAL_TASK = "//*[@id='ClericalMarker']/ul/li[2]/a";
+    
     
     
 

@@ -33,9 +33,9 @@
 			<class name="com.selenium.test.tdol.ArrangeBagDuty" />
 			<class name="com.selenium.test.tdol.ArrangeReports" />
 		</classes>
-	</test>	
+	</test>	-->
 	
-	<test name="PostTest">
+	<!-- <test name="PostTest">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
 			<class name="com.selenium.test.postest.JaggedProfileInfo" />
@@ -49,7 +49,7 @@
 			<class name="com.selenium.test.postest.EMSManagement" />
 			<class name="com.selenium.test.postest.CandidateFromItap" />
 		</classes>
-	</test>	 -->
+	</test>	  -->
 	
 	<!-- <test name="CSCS">
 		<classes>
@@ -89,7 +89,7 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="CS-Eor-India">
+	<!-- <test name="CS-Eor-India">
 		<classes>
 			<class name="com.selenium.test.eorindia.IndiaUnProcessingList" />
 			<class name="com.selenium.test.eorindia.IndiaAppList" />
@@ -98,6 +98,12 @@
 			<class name="com.selenium.test.eorindia.SecondImportScore" />
 			<class name="com.selenium.test.eorindia.Journal" />
 			<class name="com.selenium.test.eorindia.ConfirmJournal" />
+		</classes>
+	</test>	 -->
+	
+	<test name="ClericalMarker">
+		<classes>
+			<class name="com.selenium.test.clericalmarker.CreateProfile" />
 		</classes>
 	</test>	
 	

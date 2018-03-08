@@ -22,6 +22,22 @@ public class DriverInstance {
 		action.click(By.id(ElementHelper.LOGIN_BTN));
 		return driver;
 	}
+	
+	public WebDriver loginEast(WebDriver driver) {
+		// DOMConfigurator.configure("log4j.xml");
+		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
+		driver = new ChromeDriver();
+		action = new WebDriverAction(driver);
+		driver.get(ElementHelper.DEV_URL);
+		driver.manage().window().maximize();
+		action.setTimeout("10");
+		Assert.assertEquals(driver.getTitle(), "British Council");
+		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_EAST);
+		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST);
+		action.click(By.id(ElementHelper.LOGIN_BTN));
+		return driver;
+	}
+	
 
 	public WebDriver loginIEP(WebDriver driver) {
 		// DOMConfigurator.configure("log4j.xml");

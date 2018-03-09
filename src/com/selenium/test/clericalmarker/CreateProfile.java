@@ -1,10 +1,8 @@
 package com.selenium.test.clericalmarker;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -24,7 +22,7 @@ public class CreateProfile {
 	String dateBirth = "1990-05-26";
 	String mobile = "18505218860";
 	String email = "guoxiao@britishcouncil.org.cn";
-	
+	String clericalNo = "100284";
 
 	@BeforeMethod
 	public void setUp() {
@@ -45,7 +43,7 @@ public class CreateProfile {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test
+	/*@Test
 	public void createProfile() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.CLERICAL_PROFILE_CREATE));
@@ -78,11 +76,50 @@ public class CreateProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_CREATE_ROLES));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-//		new Select(driver.findElement(By.id("addclericalmarkerRoles_listbox"))).selectByValue("1210");
 		((JavascriptExecutor)driver).executeScript("$('#addclericalmarkerRoles_listbox li')[0].click()"); 
-		
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.cssSelector(ElementHelper.CLERICAL_PROFILE_CREATE_SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
+	}*/
+	
+	/*@Test
+	public void searchProfile() throws Exception {
+		navigate();
+		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_NUMBER), clericalNo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.CLERICAL_PROFILE_SEARCH));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_NUMBER)), clericalNo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_FAMILY)), familyNameEn);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_GIVEN)), givenNameEn);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+	}*/
+	
+	@Test
+	public void modifyPwd() throws Exception {
+		navigate();
+		action.click(By.linkText(ElementHelper.CLERICAL_PROFILE_MODIFY));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_MODIFY_PWD));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_MODIFY_PWD_NEW), "123456");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+	}
+	
+	@Test
+	public void modifyPinCode() throws Exception {
+		navigate();
+		action.click(By.linkText(ElementHelper.CLERICAL_PROFILE_MODIFY));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_MODIFY_PINCODE));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_MODIFY_PINCODE_NEW), "1234");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
+		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 }

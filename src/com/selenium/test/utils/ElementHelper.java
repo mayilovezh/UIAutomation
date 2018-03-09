@@ -782,11 +782,32 @@ public class ElementHelper {
     public static String CLERICAL_PROFILE_CREATE_STATUS = "addclericalmarkerStatus";
     public static String CLERICAL_PROFILE_CREATE_ROLES = "//*[@id='ClericalMarkerForm']/table[3]/tbody/tr[3]/td/div/div/input";
     public static String CLERICAL_PROFILE_CREATE_SAVE = "button.k-button";
+    public static String CLERICAL_PROFILE_NUMBER = "CMtxtExaminerNumber";
+    public static String CLERICAL_PROFILE_GIVEN_NAME = "CMtxtGivenNameEn";
+    public static String CLERICAL_PROFILE_SEARCH = "btnCMSearch";
+    public static String CLERICAL_PROFILE_SEARCH_NUMBER  = "//*[@id='ClericalMarkerGrid']/div[2]/table/tbody/tr/td[2]";
+    public static String CLERICAL_PROFILE_SEARCH_FAMILY  = "//*[@id='ClericalMarkerGrid']/div[2]/table/tbody/tr/td[3]";
+    public static String CLERICAL_PROFILE_SEARCH_GIVEN  = "//*[@id='ClericalMarkerGrid']/div[2]/table/tbody/tr/td[4]";
+    public static String CLERICAL_PROFILE_MODIFY = "Modify";
+    public static String CLERICAL_PROFILE_MODIFY_PWD = "//input[contains(@value,'Modify Password')]";
+    public static String CLERICAL_PROFILE_MODIFY_PINCODE = "//input[contains(@value,'Modify PinCode')]";
+    public static String CLERICAL_PROFILE_MODIFY_PWD_NEW = "clericalmarkernewpwd";
+    public static String CLERICAL_PROFILE_MODIFY_PINCODE_NEW = "clericalmarkerewPincode";
     
     //Clerical Marker Task
     public static String CLERICAL_TASK = "//*[@id='ClericalMarker']/ul/li[2]/a";
-    
-    
+    public static String CLERICAL_TASK_CREATE_FM = "//input[contains(@value,'Create 1st Marking Task')]";
+    public static String CLERICAL_TASK_CREATE_FM_TESTDATE = "selectClericalMarkerTestDatefirst";
+    public static String CLERICAL_TASK_CREATE_FM_INTERVAL_FROM = "clericalmarkertaskOpenstart";
+    public static String CLERICAL_TASK_CREATE_FM_INTERVAL_TO = "clericalmarkertaskOpenend";
+    public static String CLERICAL_TASK_CREATE_FM_DAY = "//*[@id='clericalmarkertaskChooseTestDay']/input[1]";
+    public static String CLERICAL_TASK_CREATE_FM_VENUE = "clericalmarkertaskMarkingVenue";
+    public static String CLERICAL_TASK_CREATE_SM = "//input[contains(@value,'Create 2nd Marking Task')]";
+    public static String CLERICAL_TASK_CREATE_SM_TESTDATE = "selectClericalMarkerTestDatesecond";
+    public static String CLERICAL_TASK_CREATE_SM_INTERVAL_FROM = "clericalmarkertaskOpenstart";
+    public static String CLERICAL_TASK_CREATE_SM_INTERVAL_TO = "clericalmarkertaskOpenend";
+    public static String CLERICAL_TASK_CREATE_SM_DAY = "//*[@id='clericalmarkertaskChooseTestDay']/input[1]";
+    public static String CLERICAL_TASK_CREATE_SM_VENUE = "clericalmarkertaskMarkingVenue";
     
 
 }

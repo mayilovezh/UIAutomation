@@ -103,7 +103,8 @@
 	
 	<test name="ClericalMarker">
 		<classes>
-			<class name="com.selenium.test.clericalmarker.CreateProfile" />
+			<!-- <class name="com.selenium.test.clericalmarker.CreateProfile" /> -->
+			<class name="com.selenium.test.clericalmarker.CreateTask" />
 		</classes>
 	</test>	
 	

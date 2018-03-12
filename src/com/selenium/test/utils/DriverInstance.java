@@ -54,6 +54,22 @@ public class DriverInstance {
 		action.click(By.linkText(ElementHelper.LOGIN_IEP));
 		return driver;
 	}
+	
+	public WebDriver loginICMP(WebDriver driver) {
+		// DOMConfigurator.configure("log4j.xml");
+		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
+		driver = new ChromeDriver();
+		action = new WebDriverAction(driver);
+		driver.get(ElementHelper.DEV_ICMP);
+		driver.manage().window().maximize();
+		action.setTimeout("60");
+		Assert.assertEquals(driver.getTitle(), "British Council");
+		action.sendkeys(By.id(ElementHelper.UESR_NAME_ICMP), ElementHelper.UESR_NAME_VALUE_ICMP);
+		action.sendkeys(By.id(ElementHelper.PWD_ICMP), ElementHelper.PWD_VALUE_ICMP);
+		action.sendkeys(By.id(ElementHelper.PINCODE_ICMP), ElementHelper.PINCODE_VALUE_ICMP);
+		action.click(By.linkText(ElementHelper.LOGIN_ICMP));
+		return driver;
+	}
 
 	public void teardown(WebDriver driver) {
 		driver.quit();

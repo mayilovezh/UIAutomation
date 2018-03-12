@@ -2,23 +2,9 @@ package com.selenium.test.utils;
 
 public class ElementHelper {
 
+	//MIS
 	public static String DEV_URL = "http://cnbjs1bms001:9003";
 	public static String UAT_URL = "http://cnbjs1bms001:9001";
-	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
-	public static int LONG_TIME = 10000;
-	public static int WAIT_TIME = 6000;
-	public static int SHORT_TIME = 3000;
-	public static int SHORT_TIME_B = 2000;
-	public static int SHORT_TIME_A = 1000;
-	
-	public static final String PROJECT_NAME= "MIS2_test";
-	public static String VALUE = "1";
-	public static String TEST_CENTER_ID = "100100";
-	public static String REMARK_VALUE = "Automation Testing";
-	public static String IEP_UESRNAME = "101089";
-	public static String IEP_PASSWORD = "111111";
-	public static String IEP_PINCODE = "1111";
-
 	public static String USER_NAME = "userName";
 	public static String PASSWORD = "password";
 	public static String USER_NAME_VALUE = "Zhang Yifan"; 
@@ -26,16 +12,47 @@ public class ElementHelper {
 	public static String USER_NAME_EAST = "zhangyifan"; 
 	public static String PASSWORD_EAST = "Zyf929670@";
 	public static String LOGIN_BTN = "loginButt";
-	public static String CANCEL = "//span[text(),'Cancel']";
-	public static String SAVE = "//button[@type='button']";
+	
+	//Wait Time
+	public static int LONG_TIME = 10000;
+	public static int WAIT_TIME = 6000;
+	public static int SHORT_TIME = 3000;
+	public static int SHORT_TIME_B = 2000;
+	public static int SHORT_TIME_A = 1000;
+	
+	//VALUE
+	public static final String PROJECT_NAME= "MIS2_test";
+	public static String VALUE = "1";
+	public static String TEST_CENTER_ID = "100100";
+	public static String REMARK_VALUE = "Automation Testing";
+	
+	//IEP
+	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
+	public static String IEP_UESRNAME = "101089";
+	public static String IEP_PASSWORD = "111111";
+	public static String IEP_PINCODE = "1111";
 	public static String USER_NAME_IEP = "examineraccount";
 	public static String PASSWORD_IEP = "examinerpassword";
 	public static String PINCODE_IEP = "examinerpincode";
 	public static String LOGIN_IEP = "Log in";
+	
+	//ICMP
+	public static String DEV_ICMP = "http://icmp-dev.chinacloudsites.cn/";
+	public static String UESR_NAME_ICMP = "clericalmarkeraccount";
+	public static String PWD_ICMP = "clericalmarkerpassword";
+	public static String PINCODE_ICMP = "clericalmarkerpincode";
+	public static String UESR_NAME_VALUE_ICMP = "100284";
+	public static String PWD_VALUE_ICMP = "123456";
+	public static String PINCODE_VALUE_ICMP = "1234";
+	public static String LOGIN_ICMP = "btnlogin";
+	
+	//Element
+	public static String CANCEL = "//span[text(),'Cancel']";
+	public static String SAVE = "//button[@type='button']";
 	public static String RESULT_WARNING = "/html/body/div[14]/div[2]";
 	
-	public static String GENERALQUERY = "GeneralQuery";
 	//Registration Number List
+	public static String GENERALQUERY = "GeneralQuery";
 	public static String REGISTRATION = "//*[@id='GeneralQuery']/ul/li[1]/a";
 	public static String REGISTRATION_REGION = "generalQuerySelectRegion";
 	public static String REGISTRATION_TC = "generalQuerySelectCenter";
@@ -808,6 +825,20 @@ public class ElementHelper {
     public static String CLERICAL_TASK_CREATE_SM_INTERVAL_TO = "clericalmarkertaskOpenend";
     public static String CLERICAL_TASK_CREATE_SM_DAY = "//*[@id='clericalmarkertaskChooseTestDay']/input[1]";
     public static String CLERICAL_TASK_CREATE_SM_VENUE = "clericalmarkertaskMarkingVenue";
-    
-
+    public static String CLERICAL_TASK_TEST_DATE = "selectTestDateforCM";
+    public static String CLERICAL_TASK_SEARCH = "btnsearchforCM";
+    public static String CLERICAL_TASK_MODIFY = "Modify";
+    public static String CLERICAL_TASK_MODIFY_REMARK = "clericalmarkertaskRemarkmodify";
+    public static String CLERICAL_TASK_MODIFY_DAY = "//*[@id='clericalmarkertaskChooseTestDaymodify']/input[2]";
+    public static String CLERICAL_TASK_VIEW = "View";
+    public static String CLERICAL_TASK_EXPORT = "Export";
+    public static String CLERICAL_TASK_REPORT = "//a[contains(text(),'Report')]";
+    public static String CLERICAL_TASK_LOG = "Log";
+    public static String CLERICAL_TASK_LOG_USER = "//*[@id='cmLogGrid_btr']/tr/td[3]";
+    public static String CLERICAL_TASK_SEARCH_TEST_DATE_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[2]";
+    public static String CLERICAL_TASK_SEARCH_TEST_DATE_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[2]";
+    public static String CLERICAL_TASK_SEARCH_TYPE_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[3]";
+    public static String CLERICAL_TASK_SEARCH_TYPE_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[3]";
+    public static String CLERICAL_TASK_SEARCH_CREATE_BY_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[7]";
+    public static String CLERICAL_TASK_SEARCH_CREATE_BY_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[7]";
 }

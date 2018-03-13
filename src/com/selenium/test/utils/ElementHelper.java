@@ -15,6 +15,7 @@ public class ElementHelper {
 	
 	//Wait Time
 	public static int LONG_TIME = 10000;
+	public static int LONG_TIME_A = 20000;
 	public static int WAIT_TIME = 6000;
 	public static int SHORT_TIME = 3000;
 	public static int SHORT_TIME_B = 2000;
@@ -841,4 +842,71 @@ public class ElementHelper {
     public static String CLERICAL_TASK_SEARCH_TYPE_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[3]";
     public static String CLERICAL_TASK_SEARCH_CREATE_BY_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[7]";
     public static String CLERICAL_TASK_SEARCH_CREATE_BY_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[7]";
+    
+   //1st Marking Allocation
+    public static String FIRST_ALLOCATION = "//*[@id='ClericalMarker']/ul/li[3]/a";
+    public static String FIRST_ALLOCATION_YEAR = "cmFirstMarking-Select-Year-Search";
+    public static String FIRST_ALLOCATION_MONTH = "cmFirstMarking-Select-Month-Search";
+    public static String FIRST_ALLOCATION_DATE = "cmddlTestDate-firstMarking";
+    public static String FIRST_ALLOCATION_SELECTALL = "cmfirstMarkingTestCenterSelectAll";
+    public static String FIRST_ALLOCATION_SEARCH = "cmbtnQuery-firstMarking";
+    public static String FIRST_ALLOCATION_SELECT_MARKER = "cmtxtSelectExaminerNum-firstMarking";
+    public static String FIRST_ALLOCATION_CALCULATE = "cmbtnCalculate-firstMarking";
+    public static String FIRST_ALLOCATION_AUTO_ALLOCATION = "cmbtnRandomlyAllocation-firstMarking";
+    public static String FIRST_ALLOCATION_CLEAR_ALLOCATION = "cmbtnClearAllocation-firstMarking";
+    public static String FIRST_ALLOCATION_RESULT_PAGE = "cmbtnTaskResultPage-firstMarking";
+    public static String FIRST_ALLOCATION_EXPORT_ALLOCATION_RESULT = "btnexportcmfirstmarkingallocation";
+    public static String FIRST_ALLOCATION_EXPORT_REGISTER_RESULT = "btnexportmarkingmaterialsregisterresult";
+    public static String FIRST_ALLOCATION_NOTICE = "btnaddfirstmarkingnotice";
+    public static String FIRST_ALLOCATION_NOTICE_DELETE = "btndelfirstmarkingnotice";
+    public static String FIRST_ALLOCATION_EXPORT_FINANCE_REPORT = "btnexportcmfirstmarkingfinance";
+    public static String FIRST_ALLOCATION_RESULT_PAGE_NAME = "//*[@id='SpreadSheetFirstMarkerAllocationResultGrid']/div[2]/table/tbody/tr/td[3]";
+    public static String FIRST_ALLOCATION_NOTICE_ADD_PLACEHOLDER = "btncmfirstMarkingplaceholder";
+    public static String FIRST_ALLOCATION_NOTICE_TEXT = "txtcmfirstMarkingNotice";
+    
+    //2nd Marking Allocation
+    public static String SECOND_ALLOCATION = "//*[@id='ClericalMarker']/ul/li[5]/a";
+    public static String SECOND_ALLOCATION_YEAR = "cmDoubleMarking-Select-Year-Search";
+    public static String SECOND_ALLOCATION_MONTH = "cmDoubleMarking-Select-Month-Search";
+    public static String SECOND_ALLOCATION_DATE = "cmddlTestDate-DoubleMarking";
+    public static String SECOND_ALLOCATION_SEARCH = "cmbtnQuery-DoubleMarking";
+    public static String SECOND_ALLOCATION_SELECT = "//*[@id='AvailableMarkers-List-clericalmarkerDoublemarkingallocation']/label[1]/input";
+    public static String SECOND_ALLOCATION_CALCUATOR = "Calcuator-clericalmarkerDoublemarkingallocation";
+    public static String SECOND_ALLOCATION_MANUAL_CHECK = "btn_cm_db_manualallocationcheck";
+    public static String SECOND_ALLOCATION_NOTICE = "btnNotice-DoubleMarking";
+    public static String SECOND_ALLOCATION_DELETE_NOTICE = "btnDeleteNotice-DoubleMarking";
+    public static String SECOND_ALLOCATION_NOTICE_ADD_PLACEHOLDER = "btn-DoubleMarking-placeholder";
+    public static String SECOND_ALLOCATION_NOTICE_TEXT = "txtDoubleMarkingNotice";
+    public static String SECOND_ALLOCATION_RESULT_PAGE = "cmbtnTaskResultPage-DoubleMarking";
+    public static String SECOND_ALLOCATION_EXPORT_RESULT = "inp-ExportSimple-DoubleMarking";
+    public static String SECOND_ALLOCATION_EXPORT_REGISTER_RESULT = "inp-Export-DoubleMarking";
+    public static String SECOND_ALLOCATION_EXPORT_FINANCE_REPORT = "inp-2ndLRFINANCEReportForm-DoubleMarking";
+    
+    
+    //Examiner
+    public static String EXAMINER = "Examiner";
+    
+    //Examiner Profile
+    public static String EXAMINER_PROFILE = "//*[@id='Examiner']/ul/li[1]/a";
+    public static String EXAMINER_PROFILE_CREATE = "//input[contains(@value,'Add New Examiner Profile')]";
+    public static String EXAMINER_PROFILE_CREATE_FIRST_NAME = "ensaddExaminer1FirstName";
+    public static String EXAMINER_PROFILE_CREATE_LAST_NAME = "ensaddExaminer1LastName";
+    public static String EXAMINER_PROFILE_CREATE_PASSPORT_NAME = "ensaddExaminer1NameOnPassport";
+    public static String EXAMINER_PROFILE_CREATE_GENDER = "ensaddExaminer1Gender0";
+    public static String EXAMINER_PROFILE_CREATE_DATEBIRTH = "ensaddExaminer1BirthDay";
+    public static String EXAMINER_PROFILE_CREATE_EXAMINERNO = "ensaddExaminer1ExaminerNumber";
+    public static String EXAMINER_PROFILE_CREATE_MOBILE = "ensaddExaminer1MobileNumber";
+    public static String EXAMINER_PROFILE_CREATE_EMIAL = "ensaddExaminer1EmailAddress";
+    public static String EXAMINER_PROFILE_CREATE_PROVINCE = "ensaddExaminer1Province";
+    public static String EXAMINER_PROFILE_CREATE_CITY = "ensaddExaminer1CityList";
+    public static String EXAMINER_PROFILE_CREATE_PASSPORT_NUMBER = "ensaddExaminer1PassportNumber";
+    public static String EXAMINER_PROFILE_CREATE_NATIONALITY = "ensaddExaminer1Nationaly";
+    public static String EXAMINER_PROFILE_CREATE_WORK_STATUS = "ensaddvisacategory";
+    public static String EXAMINER_PROFILE_EXAMINERNO = "ExaminerNumberExaminer";
+    public static String EXAMINER_PROFILE_SEARCH = "BtnSearch";
+    public static String EXAMINER_PROFILE_SEARCH_NAME = "//*[@id='div_examiners_Grid']/div[2]/table/tbody/tr/td[3]";
+    public static String EXAMINER_PROFILE_SEARCH_EMAIL = "//*[@id='div_examiners_Grid']/div[2]/table/tbody/tr/td[16]";
+    public static String EXAMINER_PROFILE_PWD_PINCODE = "Pwd&Pin";
+    public static String EXAMINER_PROFILE_PWD_NEW = "examinernewpwd";
+    public static String EXAMINER_PROFILE_PINCODE_NEW = "examinernewPincode";
 }

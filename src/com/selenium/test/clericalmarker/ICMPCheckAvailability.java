@@ -15,7 +15,7 @@ public class ICMPCheckAvailability {
 
 	@BeforeMethod
 	public void setUp() {
-		driver = new DriverInstance().login(driver);
+		driver = new DriverInstance().loginICMP(driver);
 		action = new WebDriverAction(driver);
 	}
 
@@ -28,7 +28,5 @@ public class ICMPCheckAvailability {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.CLERICAL_MARKER));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK));
-		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 }

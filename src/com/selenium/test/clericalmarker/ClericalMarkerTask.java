@@ -11,7 +11,7 @@ import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.WebDriverAction;
 
-public class CreateTask {
+public class ClericalMarkerTask {
 	static WebDriver driver;
 	WebDriverAction action;
 	String openIntervalFrom = "01/03/2018 00:00";

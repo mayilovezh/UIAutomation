@@ -101,10 +101,20 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="ClericalMarker">
+	<!-- <test name="ClericalMarker">
 		<classes>
-			<!-- <class name="com.selenium.test.clericalmarker.CreateProfile" /> -->
-			<class name="com.selenium.test.clericalmarker.CreateTask" />
+			<class name="com.selenium.test.clericalmarker.ClericalMarkerProfile" />
+			<class name="com.selenium.test.clericalmarker.ClericalMarkerTask" />
+			<class name="com.selenium.test.clericalmarker.ICMPCheckAvailability" />
+			<class name="com.selenium.test.clericalmarker.FirstMarkingAllocation" />
+			<class name="com.selenium.test.clericalmarker.SecondMarkingAllocation" />
+		</classes>
+	</test>	 -->
+	
+	<test name="Examiner">
+		<classes>
+			<class name="com.selenium.test.examiner.ExaminerProfile" />
+			
 		</classes>
 	</test>	
 	

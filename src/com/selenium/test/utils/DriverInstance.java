@@ -39,7 +39,7 @@ public class DriverInstance {
 	}
 	
 
-	public WebDriver loginIEP(WebDriver driver) {
+	public WebDriver loginTdolIEP(WebDriver driver) {
 		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
 		driver = new ChromeDriver();
@@ -51,6 +51,22 @@ public class DriverInstance {
 		action.sendkeys(By.id(ElementHelper.USER_NAME_IEP), ElementHelper.IEP_UESRNAME);
 		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.IEP_PASSWORD);
 		action.sendkeys(By.id(ElementHelper.PINCODE_IEP), ElementHelper.IEP_PINCODE);
+		action.click(By.linkText(ElementHelper.LOGIN_IEP));
+		return driver;
+	}
+	
+	public WebDriver loginIEP(WebDriver driver) {
+		// DOMConfigurator.configure("log4j.xml");
+		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
+		driver = new ChromeDriver();
+		action = new WebDriverAction(driver);
+		driver.get(ElementHelper.DEV_IEP);
+		driver.manage().window().maximize();
+		action.setTimeout("60");
+		Assert.assertEquals(driver.getTitle(), "British Council");
+		action.sendkeys(By.id(ElementHelper.USER_NAME_IEP), ElementHelper.IEP_ACCOUNT);
+		action.sendkeys(By.id(ElementHelper.PASSWORD_IEP), ElementHelper.IEP_PWD);
+		action.sendkeys(By.id(ElementHelper.PINCODE_IEP), ElementHelper.IEP_E_PINCODE);
 		action.click(By.linkText(ElementHelper.LOGIN_IEP));
 		return driver;
 	}

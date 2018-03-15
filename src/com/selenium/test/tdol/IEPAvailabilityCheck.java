@@ -13,7 +13,7 @@ public class IEPAvailabilityCheck {
 	
 	@BeforeMethod
 	public void setUp() {
-		driver = new DriverInstance().loginIEP(driver);
+		driver = new DriverInstance().loginTdolIEP(driver);
 		action = new WebDriverAction(driver);
 	}
 

@@ -26,8 +26,9 @@ public class ElementHelper {
 	public static String VALUE = "1";
 	public static String TEST_CENTER_ID = "100100";
 	public static String REMARK_VALUE = "Automation Testing";
+	public static String USER = "Zhang Yifan";
 	
-	//IEP
+	//TDOL IEP
 	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
 	public static String IEP_UESRNAME = "101089";
 	public static String IEP_PASSWORD = "111111";
@@ -36,6 +37,11 @@ public class ElementHelper {
 	public static String PASSWORD_IEP = "examinerpassword";
 	public static String PINCODE_IEP = "examinerpincode";
 	public static String LOGIN_IEP = "Log in";
+	
+	//IEP
+	public static String IEP_ACCOUNT = "998866";
+	public static String IEP_PWD = "123456";
+	public static String IEP_E_PINCODE = "1";
 	
 	//ICMP
 	public static String DEV_ICMP = "http://icmp-dev.chinacloudsites.cn/";
@@ -51,12 +57,6 @@ public class ElementHelper {
 	public static String CANCEL = "//span[text(),'Cancel']";
 	public static String SAVE = "//button[@type='button']";
 	public static String RESULT_WARNING = "/html/body/div[14]/div[2]";
-	
-	//Registration Number List
-	public static String GENERALQUERY = "GeneralQuery";
-	public static String REGISTRATION = "//*[@id='GeneralQuery']/ul/li[1]/a";
-	public static String REGISTRATION_REGION = "generalQuerySelectRegion";
-	public static String REGISTRATION_TC = "generalQuerySelectCenter";
 	
 	//Test Center
 	public static String TEST_CENTER = "TestCenter";
@@ -909,4 +909,104 @@ public class ElementHelper {
     public static String EXAMINER_PROFILE_PWD_PINCODE = "Pwd&Pin";
     public static String EXAMINER_PROFILE_PWD_NEW = "examinernewpwd";
     public static String EXAMINER_PROFILE_PINCODE_NEW = "examinernewPincode";
+    public static String EXAMINER_PROFILE_STATUS = "N/A"; 
+    public static String EXAMINER_PROFILE_ROLES_SPK = "//*[@id='ExaminerProfile-modifyRolesList']/input[1]";
+    public static String EXAMINER_PROFILE_ROLES_WRT = "//*[@id='ExaminerProfile-modifyRolesList']/input[2]";
+    public static String EXAMINER_PROFILE_ROLES_SECOND_MARKING = "//*[@id='ExaminerProfile-modifyRolesList']/input[3]";
+    public static String EXAMINER_PROFILE_ROLES_PSN = "//*[@id='ExaminerProfile-modifyRolesList']/input[4]";
+    public static String EXAMINER_PROFILE_ROLES_EOR = "//*[@id='ExaminerProfile-modifyRolesList']/input[5]";
+    public static String EXAMINER_PROFILE_STATUS_SPK = "modifyExaminerProfileStatus_Speaking";
+    public static String EXAMINER_PROFILE_STATUS_WRT = "modifyExaminerProfileStatus_Writting";
+    public static String EXAMINER_PROFILE_STATUS_SPK_MONITOR = "modifyExaminerMonitorStatus_Speaking";
+    public static String EXAMINER_PROFILE_STATUS_WRT_MONITOR = "modifyExaminerMonitorStatus_Writing";
+    public static String EXAMINER_PROFILE_STATUS_SPK_SESSION = "modifyExaminerLastSessionStatus_Speaking";
+    public static String EXAMINER_PROFILE_STATUS_WRT_SESSION = "modifyExaminerLastSessionStatus_Writing";
+    public static String EXAMINER_PROFILE_STATUS_SPK_CERTIFICATION = "modifyExaminerCertificationStatus_Speaking";
+    public static String EXAMINER_PROFILE_STATUS_WRT_CERTIFICATION = "modifyExaminerCertificationStatus_Writing";
+    public static String EXAMINER_PROFILE_STATUS_SAVE = "(//button[@type='button'])[3]";
+    public static String EXAMINER_PROFILE_STATUS_YES = "(//button[@type='button'])[5]";
+    public static String EXAMINER_PROFILE_LOG = "Log";
+    public static String EXAMINER_PROFILE_LOG_NAME = "//*[@id='ExaminerModifyStatusLogGrid']/div[2]/table/tbody/tr[1]/td[3]"; 
+    
+    //Examiner Task
+    public static String EXAMINER_TASK = "//*[@id='Examiner']/ul/li[3]/a";
+    public static String EXAMINER_TASK_SPEAKING = "//*[@id='page-heading']/p/input[1]";
+    public static String EXAMINER_TASK_WRITING = "//*[@id='page-heading']/p/input[2]";
+    public static String EXAMINER_TASK_2ND_MARKING = "//*[@id='page-heading']/p/input[3]";
+    public static String EXAMINER_TASK_EOR_MARKING = "//*[@id='page-heading']/p/input[4]";
+    public static String EXAMINER_TASK_SPEAKING_REGION = "examinerTaskListSpeakingTaskRegion";
+    public static String EXAMINER_TASK_SPEAKING_TESTDATE = "examinerTaskList-SpeakingTask-TestDate";
+    public static String EXAMINER_TASK_SPEAKING_TESTDAY_1 = "//*[@id='examinerTaskList-SpeakingTask-ChooseTestDay']/input[8]";
+    public static String EXAMINER_TASK_SPEAKING_TESTDAY_2 = "//*[@id='examinerTaskList-SpeakingTask-ChooseTestDay']/input[9]";
+    public static String EXAMINER_TASK_SPEAKING_TESTDAY_3 = "//*[@id='examinerTaskList-SpeakingTask-ChooseTestDay']/input[10]";
+    public static String EXAMINER_TASK_SPEAKING_TAG = "examinerTaskList-SpeakingTag";
+    public static String EXAMINER_TASK_SPEAKING_SAVE = "examinerTaskList-SpeakingTask-Save";
+    public static String EXAMINER_TASK_WRITING_REGION = "examinerTaskListWritingTaskRegion";
+    public static String EXAMINER_TASK_WRITING_TESTDATE = "examinerTaskList-WritingTask-TestDate";
+    public static String EXAMINER_TASK_WRITING_TESTDAY = "//*[@id='examinerTaskList-WritingTask-ChooseTestDay']/input[1]";
+    public static String EXAMINER_TASK_WRITING_MARKING_VENUE = "examinerTaskList-WritingTask-MarkingVenue";
+    public static String EXAMINER_TASK_WRITING_SAVE = "examinerTaskList-WritingTask-Save";
+    public static String EXAMINER_TASK_2ND_MARKING_REGION = "examinerTaskListDoubleMarkingTaskRegion";
+    public static String EXAMINER_TASK_2ND_MARKING_TESTDATE = "examinerTaskList-DoubleMarkingTask-TestDate";
+    public static String EXAMINER_TASK_2ND_MARKING_TESTDAY = "//*[@id='examinerTaskList-DoubleMarkingTask-ChooseTestDay']/input[1]";
+    public static String EXAMINER_TASK_2ND_MARKING_VENUE = "examinerTaskList-DoubleMarkingTask-MarkingVenue";
+    public static String EXAMINER_TASK_2ND_MARKING_SAVE = "examinerTaskList-DoubleMarkingTask-Save";
+    public static String EXAMINER_TASK_EOR_MARKING_REGION = "examinerTaskListEORTaskRegion";
+    public static String EXAMINER_TASK_EOR_MARKING_DESPATCH_DATE = "examinerTaskList-EORTask-TestDate";
+    public static String EXAMINER_TASK_EOR_MARKING_REMARK = "examinerTaskList-EORTask-Remark";
+    public static String EXAMINER_TASK_EOR_MARKING_ADD_TESTDAY = "AddEORTaskMarkingDayPicker";
+    public static String EXAMINER_TASK_EOR_MARKING_TESTDAY = "examinerTaskList-EORTask-testday";
+    public static String EXAMINER_TASK_EOR_MARKING_SAVE = "examinerTaskList-EORTask-Save";
+    public static String EXAMINER_TASK_YEAR = "examinerstasklistYear-Search";
+    public static String EXAMINER_TASK_MONTH = "examinerstasklistMonth-Search";
+    public static String EXAMINER_TASK_DATE = "examinerstasklistDatetime";
+    public static String EXAMINER_TASK_TYPE = "examinertasktypelist";
+    public static String EXAMINER_TASK_SEARCH = "examinerTaskList-btnsearch";
+    public static String EXAMINER_TASK_SEARCH_SPK_TESTDATE = "//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr/td[2]";
+    public static String EXAMINER_TASK_TYPE_SPK = "//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr/td[3]";
+    
+    //IEP Availability 
+    public static String IEP_AVAILABILITY = "//*[@id='home']/div[1]/div[2]/div/span[2]/a";
+    public static String IEP_AVAILABILITY_DAY25 = "availableCheck_25";
+    public static String IEP_AVAILABILITY_DAY26 = "availableCheck_26";
+    public static String IEP_AVAILABILITY_DAY31 = "availableCheck_31";
+    public static String IEP_AVAILABILITY_SAVE = "New_Save";
+    
+    
+    //General Query
+    public static String GENERAL_QUERY = "GeneralQuery";
+    
+    //Registration Number List
+    public static String REGISTRATION_NUMBER_LIST = "//*[@id='GeneralQuery']/ul/li[1]/a";
+    public static String RUL_REGION = "generalQuerySelectRegion";
+    public static String RUL_TC = "generalQuerySelectCenter";
+    public static String RUL_DATE_FROM = "txtRegStartDate-RegNum";
+    public static String RUL_DATE_TO = "txtRegEndDate-RegNum";
+    public static String RUL_SEARCH = "btnRegistrationsNumberSearch";
+    public static String RUL_TOTAL_REGISTERED = "//*[@id='RegistrationNumTotal']/table/tbody/tr[2]/td[1]";
+    public static String RUL_TOTAL_QUOTA = "//*[@id='RegistrationNumTotal']/table/tbody/tr[1]/td[2]";
+    public static String RUL_MIS_QUOTA106 = "//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[1]/td[6]";
+    public static String RUL_MIS_QUOTA113 = "//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[2]/td[6]";
+    public static String RUL_MIS_QUOTA118 = "//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[3]/td[6]";
+    public static String RUL_MIS_QUOTA120 = "//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[4]/td[6]";
+    public static String RUL_NEEA_QUOTA106 = "//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[1]/td[7]";
+    public static String RUL_NEEA_QUOTA113 = "//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[2]/td[7]";
+    public static String RUL_NEEA_QUOTA118 = "//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[3]/td[7]";
+    public static String RUL_NEEA_QUOTA120 = "//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[4]/td[7]";
+    public static String RUL_EXPORT_REGISTRATION_NUMBER = "btnExportRegistrationNum";
+    
+    //Holiday Management
+    public static String HOLIDAY_MANAGEMENT = "//*[@id='GeneralQuery']/ul/li[4]/a";
+    public static String HM_CREATE = "btnHolidayCreate";
+    public static String HM_CREATE_DATE = "HolidayDate";
+    public static String HM_CREATE_NAME = "Save_HolidayName";
+    public static String HM_NAME = "HolidayName";
+    public static String HM_SEARCH = "btnHolidaySearch";
+    public static String HM_SEARCH_DATE = "//*[@id='div_Holiday_Grid']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String HM_SEARCH_NAME = "//*[@id='div_Holiday_Grid']/div[2]/table/tbody/tr[1]/td[2]";
+    public static String HM_MODIFY = "Modify";
+    public static String HM_MODIFY_NAME = "Save_HolidayName";
+    public static String HM_LOG = "Log";
+    public static String HM_LOG_NAME = "//*[@id='HolidayLog']/table/tbody/tr[2]/td[3]";
+    public static String HM_DELETE = "Delete";
 }

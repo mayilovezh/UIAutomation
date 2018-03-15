@@ -24,6 +24,7 @@ public class ExaminerProfile {
 	String name = "Yifan Zhang";
 	String pwd = "123456";
 	String pinCode = "1234";
+	String modifyBy = "Zhang Yifan";
 
 	@BeforeMethod
 	public void setUp() {
@@ -78,14 +79,10 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}*/
 
-	@Test
+/*	@Test
 	public void searchProfile() throws Exception {
 		navigate();
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.EXAMINER_PROFILE_EXAMINERNO), examinerNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.EXAMINER_PROFILE_SEARCH));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		searchExaminer();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_PROFILE_SEARCH_NAME)), name);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_PROFILE_SEARCH_EMAIL)), email);
@@ -95,11 +92,7 @@ public class ExaminerProfile {
 	@Test
 	public void modifyPwdPincode() throws Exception {
 		navigate();
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.EXAMINER_PROFILE_EXAMINERNO), examinerNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.EXAMINER_PROFILE_SEARCH));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		searchExaminer();
 		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_PWD_PINCODE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.sendkeys(By.id(ElementHelper.EXAMINER_PROFILE_PWD_NEW), pwd);
@@ -108,5 +101,65 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
+	}*/
+	
+	@Test
+	public void setStatus() throws Exception {
+		navigate();
+		searchExaminer();
+		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_STATUS));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
+		Thread.sleep(15000);
+		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_SPK));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_WRT));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_SECOND_MARKING));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_PSN));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_EOR));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByValue(By.id(ElementHelper.EXAMINER_PROFILE_STATUS_SPK), "12");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.EXAMINER_PROFILE_STATUS_WRT), "22");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.EXAMINER_PROFILE_STATUS_SPK_MONITOR), "51");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.EXAMINER_PROFILE_STATUS_WRT_MONITOR), "61");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.EXAMINER_PROFILE_STATUS_SPK_SESSION), "71");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.EXAMINER_PROFILE_STATUS_WRT_SESSION), "81");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.EXAMINER_PROFILE_STATUS_SPK_CERTIFICATION), "31");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.EXAMINER_PROFILE_STATUS_WRT_CERTIFICATION), "41");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_STATUS_SAVE));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_STATUS_YES));
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
+	
+	@Test
+	public void profileLog() throws Exception {
+		navigate();
+		searchExaminer();
+		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_LOG));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_PROFILE_LOG_NAME)), modifyBy);
+	    Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
+	}
+	
+	public void searchExaminer() throws InterruptedException {
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.sendkeys(By.id(ElementHelper.EXAMINER_PROFILE_EXAMINERNO), examinerNo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.EXAMINER_PROFILE_SEARCH));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+	}
+	
 }

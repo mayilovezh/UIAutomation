@@ -48,13 +48,13 @@ public class HolidayManagement {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 	
-	@Test
+	@Test(dependsOnMethods = { "createHoliday"})
 	public void searchHoliday() throws Exception {
 		navigate();
 		search();
 	}
 	
-	@Test
+	@Test(dependsOnMethods = { "searchHoliday"})
 	public void modifyHoliday() throws Exception {
 		navigate();
 		search();
@@ -66,7 +66,7 @@ public class HolidayManagement {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test
+	@Test(dependsOnMethods = { "modifyHoliday"})
 	public void log() throws Exception {
 		navigate();
 		search();
@@ -78,7 +78,7 @@ public class HolidayManagement {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 	
-	@Test
+	@Test(dependsOnMethods = { "log"})
 	public void delete() throws Exception {
 		navigate();
 		search();

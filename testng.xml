@@ -111,20 +111,21 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="Examiner">
+	<test name="Examiner">
 		<classes>
-			<class name="com.selenium.test.examiner.ExaminerProfile" />
+			<!-- <class name="com.selenium.test.examiner.ExaminerProfile" />
 			<class name="com.selenium.test.examiner.ExaminerTask" />
-			<class name="com.selenium.test.examiner.IEPAvailabilityCheck" />
-		</classes>
-	</test>	 -->
-	
-	<test name="GeneralQuery">
-		<classes>
-			<!-- <class name="com.selenium.test.generalquery.RegistrationNumberList" /> -->
-			<class name="com.selenium.test.generalquery.HolidayManagement" />
+			<class name="com.selenium.test.examiner.IEPAvailabilityCheck" /> -->
+			<class name="com.selenium.test.examiner.SpkDeployment" />
 		</classes>
 	</test>	
+	
+	<!-- <test name="GeneralQuery">
+		<classes>
+			<class name="com.selenium.test.generalquery.RegistrationNumberList" />
+			<class name="com.selenium.test.generalquery.HolidayManagement" />
+		</classes>
+	</test>	 -->
 	
 </suite> 
 

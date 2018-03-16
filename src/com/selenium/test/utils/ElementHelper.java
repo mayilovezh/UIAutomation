@@ -57,6 +57,7 @@ public class ElementHelper {
 	public static String CANCEL = "//span[text(),'Cancel']";
 	public static String SAVE = "//button[@type='button']";
 	public static String RESULT_WARNING = "/html/body/div[14]/div[2]";
+	//(dependsOnMethods = { ""})
 	
 	//Test Center
 	public static String TEST_CENTER = "TestCenter";
@@ -971,6 +972,30 @@ public class ElementHelper {
     public static String IEP_AVAILABILITY_DAY26 = "availableCheck_26";
     public static String IEP_AVAILABILITY_DAY31 = "availableCheck_31";
     public static String IEP_AVAILABILITY_SAVE = "New_Save";
+    
+    //SPK Deployment
+    public static String SPK_DEPLOYMENT = "//*[@id='Examiner']/ul/li[4]/a";
+    public static String SPK_DEPLOYMENT_REGION = "examinerSpeakingArrangeoffice";
+    public static String SPK_DEPLOYMENT_YEAR = "examinerSpeakingArrangelistYear-Search";
+    public static String SPK_DEPLOYMENT_MONTH = "examinerSpeakingArrangelistMonth-Search";
+    public static String SPK_DEPLOYMENT_DATE = "examinerSpeakingArrangeTestDate";
+    public static String SPK_DEPLOYMENT_SEARCH = "//input[contains(@value,'Search')]";
+    public static String SPK_DEPLOYMENT_SEARCH_CITY = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[1]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE115 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[2]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE116 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[3]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE117 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[4]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE118 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[5]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE119 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[6]";
+    public static String SPK_DEPLOYMENT_ASSIGN = "Assign";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "Show Examiner List";
+    public static String SPK_DEPLOYMENT_DELETE = "Delete";
+    public static String SPK_DEPLOYMENT_UPLOAD_TO_PRETEST = "//table[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr/td[10]/a[4]/span";
+    public static String SPK_DEPLOYMENT_RELEASE = "//table[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr/td[10]/a[5]/span";
+    public static String SPK_DEPLOYMENT_SEND_EMAIL = "//table[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr/td[10]/a[6]/span";
+    public static String SPK_DEPLOYMENT_SYNC_ITAP = "//table[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr/td[10]/a[7]/span";
+    public static String SHOW_EXAMINER_DETAILS_ON_TESTDATE = "//input[contains(@value,'ShowExaminerDetails on test date')]";
+    
+    
     
     
     //General Query

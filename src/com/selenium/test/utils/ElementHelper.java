@@ -995,6 +995,61 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_SYNC_ITAP = "//table[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr/td[10]/a[7]/span";
     public static String SHOW_EXAMINER_DETAILS_ON_TESTDATE = "//input[contains(@value,'ShowExaminerDetails on test date')]";
     
+    //Work Records
+    public static String WORK_RECORDS = "//*[@id='Examiner']/ul/li[9]/a";
+    
+    //Core Day Management
+    public static String CORE_DAY_MANAGEMENT = "//*[@id='Examiner']/ul/li[10]/a";
+    public static String CORE_DAY_YEAR = "select-ExaminerCoreday-Year-Search";
+    public static String CORE_DAY_MONTH = "select-ExaminerCoreday-Month-Search";
+    public static String CORE_DAY_DATE = "selectExaminerCoreday";
+    public static String CORE_DAY_EXAMINER_NO = "ExaminerNumberExaminerCoreday";
+    public static String CORE_DAY_SEARCH = "BtnSearchCoreday";
+    public static String CORE_DAY_SELECT = "chk_examinercoreday";
+    public static String CORE_DAY_ADD = "BtnAddCoreday";
+    public static String CORE_DAY_ADD_DATE = "(//input[@id='chk_addexaminercoreday'])[30]";
+    public static String CORE_DAY_RELEASE = "BtenCoredayReleasetoIEP";
+    
+    //Availability Summary
+    public static String AVAILABILITY_SUMMARY = "//*[@id='Examiner']/ul/li[11]/a";
+    
+    
+    //PreTest Planning
+    public static String PRE_TEST_PLANNING = "PreTestPlanning";
+    
+    //Written Templates List
+    public static String WRITTEN_TEMPLATES_LIST = "//*[@id='PreTestPlanning']/ul/li[1]/a";
+    public static String WRITTEN_TEMPLATES_LIST_TC = "WrittenTemplatelistTestCenterid";
+    public static String WRITTEN_TEMPLATES_LIST_SEARCH = "btnQu";
+    public static String WRITTEN_TEMPLATES_LIST_ADD = "btnPreTestLinkToWrittenTemplateAdd";
+    public static String WRITTEN_TEMPLATES_LIST_ADD_BUILDING = "TestBuilding";
+    public static String WRITTEN_TEMPLATES_LIST_ADD_TEMPLATE_NAME = "TemplateName";
+    public static String WRITTEN_TEMPLATES_LIST_ADD_ALL = "selectAll";
+    public static String WRITTEN_TEMPLATES_LIST_SAVE = "submitTemplate";
+    public static String WRITTEN_TEMPLATES_LIST_SEARCH_NAME = "//*[@id='SpreadSheetWrittenTemplateListGrid']/div[2]/table/tbody/tr[2]/td[4]";
+    public static String WRITTEN_TEMPLATES_LIST_SEARCH_QUOTA = "//*[@id='SpreadSheetWrittenTemplateListGrid']/div[2]/table/tbody/tr[2]/td[5]";
+    public static String WRITTEN_TEMPLATES_LIST_ADD_ROOM = "btnAddRoomModify";
+    public static String WRITTEN_TEMPLATES_LIST_MODIFY = "//*[@id='SpreadSheetWrittenTemplateListGrid']/div[2]/table/tbody/tr/td[6]/a[1]";
+    public static String WRITTEN_TEMPLATES_LIST_MODIFY_QUOTA = "QuotaOfTemplateModify5786";
+    public static String WRITTEN_TEMPLATES_LIST_MODIFY_SAVE = "btnDoModify";
+    public static String WRITTEN_TEMPLATES_LIST_DELETE = "//*[@id='SpreadSheetWrittenTemplateListGrid']/div[2]/table/tbody/tr/td[6]/a[2]";
+    
+    //Written Room Arrange 
+    public static String WRITTEN_ROOM_ARRANGE = "//*[@id='PreTestPlanning']/ul/li[2]/a";
+    public static String WRITTEN_ROOM_ARRANGE_MONTH = "ddlMonth-Search";
+    public static String WRITTEN_ROOM_ARRANGE_DATE = "ddlTestDate-Search";
+    public static String WRITTEN_ROOM_ARRANGE_SEARCH = "btnQuery";
+    public static String WRITTEN_ROOM_ARRANGE_CHANGE = "//*[@id='spreadsheet-WrittenArrangement-table']/tbody/tr[1]/td[7]/a";
+    public static String WRITTEN_ROOM_ARRANGE_ADD_ROOM = "btnAddRoom";
+    public static String WRA_ADD_ROOM_BUILDING = "TestBuilding-add";
+    public static String WRA_ADD_ROOM_SAVE = "//button[@type='button']";
+    public static String WRA_SELECT_ALL = "aggangeCheckAll";
+    public static String WRA_SAVE = "btnSave-Upload-WArr";
+    public static String WRA_SAVE_CONFIRM = "(//button[@type='button'])[3]";
+    public static String WRA_SAVE_TEXT = "displayYesConfirmation";
+    public static String WRA_DELETE = "BatchDeleteRoom";
+    public static String WRA_DELETE_SELECT = "//*[@id='tr144']/td[1]/input";
+    
     
     
     

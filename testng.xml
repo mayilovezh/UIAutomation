@@ -111,12 +111,22 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="Examiner">
+	<!-- <test name="Examiner">
 		<classes>
-			<!-- <class name="com.selenium.test.examiner.ExaminerProfile" />
+			<class name="com.selenium.test.examiner.ExaminerProfile" />
 			<class name="com.selenium.test.examiner.ExaminerTask" />
-			<class name="com.selenium.test.examiner.IEPAvailabilityCheck" /> -->
+			<class name="com.selenium.test.examiner.IEPAvailabilityCheck" />
 			<class name="com.selenium.test.examiner.SpkDeployment" />
+			<class name="com.selenium.test.examiner.CoreDayManagement" />
+			<class name="com.selenium.test.examiner.IEPCoreDayCheck" />
+			<class name="com.selenium.test.examiner.IEPCoreDayCheck" />
+		</classes>
+	</test>	 -->
+	
+	<test name="PreTestPlanning">
+		<classes>
+			<!-- <class name="com.selenium.test.pretestplanning.WrittenTemplatesList" /> -->
+			<class name="com.selenium.test.pretestplanning.WrittenRoomArrange" />
 		</classes>
 	</test>	
 	

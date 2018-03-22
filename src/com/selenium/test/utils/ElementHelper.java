@@ -997,6 +997,11 @@ public class ElementHelper {
     
     //Work Records
     public static String WORK_RECORDS = "//*[@id='Examiner']/ul/li[9]/a";
+    public static String WORK_RECORDS_EXAMINER_NO = "Search_text_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage";
+    public static String WORK_RECORDS_SEARCH = "Search_btnQuery_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage";
+    public static String WORK_RECORDS_SEARCH_NAME = "//*[@id='div_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage_Grid']/div[2]/table/tbody/tr[1]/td[3]";
+    public static String WORK_RECORDS_SEARCH_TC = "//*[@id='div_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage_Grid']/div[2]/table/tbody/tr[1]/td[5]";
+    public static String WORK_RECORDS_SEARCH_CDDNO = "//*[@id='div_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage_Grid']/div[2]/table/tbody/tr[1]/td[7]";
     
     //Core Day Management
     public static String CORE_DAY_MANAGEMENT = "//*[@id='Examiner']/ul/li[10]/a";
@@ -1050,7 +1055,11 @@ public class ElementHelper {
     public static String WRA_DELETE = "BatchDeleteRoom";
     public static String WRA_DELETE_SELECT = "//*[@id='tr144']/td[1]/input";
     
-    
+    //Resource Planning
+    public static String RESOURCE_PLANNING = "//*[@id='PreTestPlanning']/ul/li[3]/a";
+    public static String RESOURCE_PLANNING_MONTH = "prebookingSpkplanninglistMonth-Search";
+    public static String RESOURCE_PLANNING_DATE = "prebookingSpkplanninglistDatetime";
+    public static String RESOURCE_PLANNING_SEARCH = "prebookingbtnSpkplanninglist";
     
     
     //General Query
@@ -1089,4 +1098,46 @@ public class ElementHelper {
     public static String HM_LOG = "Log";
     public static String HM_LOG_NAME = "//*[@id='HolidayLog']/table/tbody/tr[2]/td[3]";
     public static String HM_DELETE = "Delete";
+    
+    //Key Dates
+    public static String KEY_DATES = "//*[@id='GeneralQuery']/ul/li[5]/a";
+    public static String KEY_DATES_YEAR = "KeyDates_Year";
+    public static String KEY_DATES_MONTH_FROM = "KeyDates_StartDate";
+    public static String KEY_DATES_MONTH_TO = "KeyDates_EndDate";
+    public static String KEY_DATES_GENERATE = "KeyDates_Generate";
+    public static String KEY_DATES_SHOW = "//input[contains(@value,'Shown On View Page')]";
+    public static String KEY_DATES_HIDDEN = "//input[contains(@value,'Hidden On View Page')]";
+    public static String KEY_DATES_SEARCH = "KeyDates_Search";
+    public static String KEY_DATES_EXPORT = "KeyDates_Export";
+    
+    //Key Dates View
+    public static String KEY_DATES_VIEW = "//*[@id='GeneralQuery']/ul/li[6]/a";
+    public static String KEY_DATES_VIEW_YEAR = "KeyDates_Year_view";
+    public static String KEY_DATES_VIEW_MONTH_FROM = "KeyDates_StartDate_view";
+    public static String KEY_DATES_VIEW_MONTH_TO = "KeyDates_EndDate_view";
+    public static String KEY_DATES_VIEW_SEARCH = "KeyDates_Search_view";
+    public static String KEY_DATES_VIEW_EXPORT = "KeyDates_Export_view";
+    public static String KEY_DATES_VIEW_SEARCH_DATE = "//*[@id='SpreadSheetRoGetKeyDatesGrid_view']/div[2]/table/tbody/tr[1]/td[1]";
+    
+    //Predict Number National
+    public static String PREDICT_NUMBER_NATIONAL = "//*[@id='GeneralQuery']/ul/li[8]/a";
+    public static String PREDICT_NUMBER_NATIONAL_DATE_FROM = "predictNumberList_search_testdatefrom";
+    public static String PREDICT_NUMBER_NATIONAL_DATE_TO = "predictNumberList_search_testdateto";
+    public static String PREDICT_NUMBER_NATIONAL_SEARCH = "predictNumberList_search_btn";
+    public static String PREDICT_NUMBER_NATIONAL_SEARCH_QUOTA1 = "//*[@id='predictNumberList_grid']/div[2]/table/tbody/tr[1]/td[6]";
+    public static String PREDICT_NUMBER_NATIONAL_SEARCH_QUOTA2 = "//*[@id='predictNumberList_grid']/div[2]/table/tbody/tr[2]/td[6]";
+    public static String PREDICT_NUMBER_NATIONAL_SEARCH_QUOTA3 = "//*[@id='predictNumberList_grid']/div[2]/table/tbody/tr[3]/td[6]";
+    
+    //Predict Number Session
+    public static String PREDICT_NUMBER_SESSION = "//*[@id='GeneralQuery']/ul/li[9]/a";
+    public static String PREDICT_NUMBER_SESSION_CITY = "SearchPredictNumberOfTestCenter_City";
+    public static String PREDICT_NUMBER_SESSION_DATE_FROM = "PredictNumberOfTestCentert_search_testdatefrom";
+    public static String PREDICT_NUMBER_SESSION_DATE_TO = "SearchPredictNumberOfTestCenter_search_testdateto";
+    public static String PREDICT_NUMBER_SESSION_SEARCH = "SearchPredictNumberOfTestCenter_search_btn";
+    public static String PREDICT_NUMBER_SESSION_SEARCH_QUOTA1 = "//*[@id='predictNumberOfTestCenterList_grid']/div[2]/table/tbody/tr[1]/td[7]";
+    public static String PREDICT_NUMBER_SESSION_SEARCH_QUOTA2 = "//*[@id='predictNumberOfTestCenterList_grid']/div[2]/table/tbody/tr[2]/td[7]";
+    public static String PREDICT_NUMBER_SESSION_SEARCH_QUOTA3 = "//*[@id='predictNumberOfTestCenterList_grid']/div[2]/table/tbody/tr[3]/td[7]";
+    public static String PREDICT_NUMBER_SESSION_SEARCH_QUOTA4 = "//*[@id='predictNumberOfTestCenterList_grid']/div[2]/table/tbody/tr[4]/td[7]";
+    public static String PREDICT_NUMBER_SESSION_SEARCH_QUOTA5 = "//*[@id='predictNumberOfTestCenterList_grid']/div[2]/table/tbody/tr[5]/td[7]";
+    public static String PREDICT_NUMBER_SESSION_SEARCH_TOTAL_QUOTA = "//*[@id='totalPredictNumberOfTestCenter']/tbody/tr/td[3]";
 }

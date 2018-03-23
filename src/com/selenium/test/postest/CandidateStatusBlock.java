@@ -7,13 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.selenium.test.listener.TestNGListener;
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.TakeScreenshots;
 import com.selenium.test.utils.WebDriverAction;
 
 public class CandidateStatusBlock {
@@ -61,7 +58,7 @@ public class CandidateStatusBlock {
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CAN_STATUS_BLOCK_SEARCH_CHINESE_NAME)), chineseName);
 	}
 
-/*	@Test
+	@Test
 	public void modifypProfile() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -86,7 +83,7 @@ public class CandidateStatusBlock {
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
-*/
+
 	@Test
 	public void modifyStatus() throws Exception {
 		search();

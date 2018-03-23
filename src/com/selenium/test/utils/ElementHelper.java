@@ -997,7 +997,7 @@ public class ElementHelper {
     
     //Work Records
     public static String WORK_RECORDS = "//*[@id='Examiner']/ul/li[9]/a";
-    public static String WORK_RECORDS_EXAMINER_NO = "Search_text_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage";
+    public static String WORK_RECORDS_EXAMINER_NO = "search_text_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage";
     public static String WORK_RECORDS_SEARCH = "Search_btnQuery_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage";
     public static String WORK_RECORDS_SEARCH_NAME = "//*[@id='div_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage_Grid']/div[2]/table/tbody/tr[1]/td[3]";
     public static String WORK_RECORDS_SEARCH_TC = "//*[@id='div_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage_Grid']/div[2]/table/tbody/tr[1]/td[5]";

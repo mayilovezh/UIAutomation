@@ -105,7 +105,6 @@ public class TestSessionList {
 		action.click(By.linkText(ElementHelper.TS_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-
 	}
 
 }

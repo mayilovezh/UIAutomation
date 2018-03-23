@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.TakeScreenshots;
 import com.selenium.test.utils.WebDriverAction;
 
 public class TDPTask {

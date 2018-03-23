@@ -1,12 +1,7 @@
 package com.selenium.test.tdol;
 
-import java.io.IOException;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,7 +10,6 @@ import org.testng.annotations.Test;
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.ExcelReader;
-import com.selenium.test.utils.TakeScreenshots;
 import com.selenium.test.utils.WebDriverAction;
 
 public class TDPProfile {
@@ -90,7 +84,7 @@ public class TDPProfile {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.isVisible(By.xpath(ElementHelper.TDP_PROFILE_CREATE_ROLES));
 			action.click(By.xpath(ElementHelper.TDP_PROFILE_CREATE_ROLES));
-			
+
 			driver.findElement(By.xpath("//*[@id='addGeneralTDPInfo-Roles']/tr[1]/td[1]/input")).click();
 
 			// action.click(By.xpath(ElementHelper.TDP_PROFILE_CREATE_ROLES_WSUPERVISOR));
@@ -102,31 +96,33 @@ public class TDPProfile {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void searchTDP() {
 		navigate();
 		try {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.selectByValue(By.id(ElementHelper.TDP_PROFILE_ROLES), "10");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.TDP_PROFILE_EMAIL),  reader.getCellValue("profile", 1, 6));
+			action.sendkeys(By.id(ElementHelper.TDP_PROFILE_EMAIL), reader.getCellValue("profile", 1, 6));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TDP_PROFILE_SEARCH));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_PROFILE_SEARCH_NAME)), reader.getCellValue("profile", 1, 0));
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_PROFILE_SEARCH_NAME)),
+					reader.getCellValue("profile", 1, 0));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_PROFILE_SEARCH_NAME)), reader.getCellValue("profile", 1, 7));
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_PROFILE_SEARCH_NAME)),
+					reader.getCellValue("profile", 1, 7));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void search() {
 		searchTDP();
 	}
-	
+
 	@Test
 	public void viewLog() {
 		searchTDP();
@@ -139,8 +135,6 @@ public class TDPProfile {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
 
 }

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import com.selenium.test.listener.TestNGListener;
+
 public class DriverInstance {
 	public static WebDriverAction action;
 
@@ -12,6 +14,7 @@ public class DriverInstance {
 		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
 		driver = new ChromeDriver();
+		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
 		driver.get(ElementHelper.DEV_URL);
 		driver.manage().window().maximize();
@@ -27,6 +30,7 @@ public class DriverInstance {
 		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
 		driver = new ChromeDriver();
+		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
 		driver.get(ElementHelper.DEV_URL);
 		driver.manage().window().maximize();
@@ -43,6 +47,7 @@ public class DriverInstance {
 		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
 		driver = new ChromeDriver();
+		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
 		driver.get(ElementHelper.DEV_IEP);
 		driver.manage().window().maximize();
@@ -59,6 +64,7 @@ public class DriverInstance {
 		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
 		driver = new ChromeDriver();
+		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
 		driver.get(ElementHelper.DEV_IEP);
 		driver.manage().window().maximize();
@@ -75,6 +81,7 @@ public class DriverInstance {
 		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
 		driver = new ChromeDriver();
+		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
 		driver.get(ElementHelper.DEV_ICMP);
 		driver.manage().window().maximize();

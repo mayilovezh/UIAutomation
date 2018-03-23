@@ -24,33 +24,29 @@ public class TestDateList {
 	public void close() {
 		new DriverInstance().teardown(driver);
 	}
-	
-	public void navigate() throws Exception{
-		
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.TEST_CENTER));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.TEST_SESSION_LIST));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-		
+
+	public void navigate() throws Exception {
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.TEST_CENTER));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.TEST_SESSION_LIST));
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
+
 	@Test
 	public void search() throws Exception {
-		
-			navigate();
-			action.selectByValue(By.id(ElementHelper.TD_YEAR), "2017");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.TD_EXAM_PRODUCT_TYPE), "1");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.TD_EXAM_FORMAT), "1");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.TD_SEARCH));
-		
+		navigate();
+		action.selectByValue(By.id(ElementHelper.TD_YEAR), "2017");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByValue(By.id(ElementHelper.TD_EXAM_PRODUCT_TYPE), "1");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByValue(By.id(ElementHelper.TD_EXAM_FORMAT), "1");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.TD_SEARCH));
 	}
-	
+
 	@Test
 	public void importFile() {
-		
+
 	}
 }

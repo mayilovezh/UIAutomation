@@ -65,8 +65,8 @@ public class TestRoomList {
 		return status;
 	}
 
-	@Test
-	public void create() throws Exception {
+	/*@Test
+	public void step01_Create() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.TR_CREATE));
@@ -95,7 +95,7 @@ public class TestRoomList {
 	}
 
 	@Test
-	public void createShareRoom() throws Exception {
+	public void step03_CreateShareRoom() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.TR_CREATE_SHARE_ROOM));
@@ -113,10 +113,10 @@ public class TestRoomList {
 		action.click(By.xpath(ElementHelper.TR_SHARE_TEST_DAY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-	}
+	}*/
 
 	@Test
-	public void search() throws Exception {
+	public void step02_Search() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_TBNAME)), tbName_Cn);
@@ -124,7 +124,7 @@ public class TestRoomList {
 	}
 
 	@Test
-	public void modify() throws Exception {
+	public void step04_Modify() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TR_MODIFY));
@@ -134,17 +134,17 @@ public class TestRoomList {
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 
-	@Test
-	public void modifyShareRoom() throws Exception {
+	/*@Test
+	public void step05_ModifyShareRoom() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TR_MODIFY_SHARE_DAY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CANCEL));
-	}
+	}*/
 
 	@Test
-	public void shareLog() throws Exception {
+	public void step06_ShareLog() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TR_SHARE_LOG));
@@ -152,17 +152,17 @@ public class TestRoomList {
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 
-	@Test
-	public void view() throws Exception {
+	/*@Test
+	public void step07_View() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.linkText(ElementHelper.TR_VIEW));
+		action.click(By.xpath(ElementHelper.TR_VIEW));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
-
+*/
 	@Test
-	public void modifyLog() throws Exception {
+	public void step08_ModifyLog() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TR_MODIFYLOG));

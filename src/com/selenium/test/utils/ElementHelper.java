@@ -61,6 +61,8 @@ public class ElementHelper {
 	
 	//Test Center
 	public static String TEST_CENTER = "TestCenter";
+	
+	//Test Center List
 	public static String TEST_CENTER_LIST ="//*[@id='TestCenter']/ul/li[1]/a";
 	public static String TC_CREATE = "//input[@value='Create']";
 	public static String TC_REGION = "selectofficeTCSearch";
@@ -101,11 +103,12 @@ public class ElementHelper {
 	public static String TB_ADDRESS_CN = "BuildingAddress";
 	public static String TB_ADDRESS_EN = "BuildingAddressEn";
 	public static String TB_MODIFY = "Modify";
+	public static String TB_MODIFY_SAVE = "button.k-button";
 	public static String TB_MODIFY_REMARK = "RemarkBuilding";
-	public static String TB_MODIFYLOG = "ModifyLog";
+	public static String TB_MODIFYLOG = "Modify Log";
 	public static String TB_VIEW = "View";
 	public static String TB_VIEW_NAME = "//*[@id='testBuildingDetailsWindow']/table/tbody/tr[2]/td";
-	public static String TB_LENDBUILDING = "LendBuilding";
+	public static String TB_LENDBUILDING = "Lend Building";
 	public static String TB_LENDBUILDING_ONE = "//*[@id='ModifyExtraBuildingDialog']/ul/li[2]/input";
 	
 	//Test Room
@@ -129,7 +132,7 @@ public class ElementHelper {
 	public static String TR_ADD_FLOOR = "Floor";
 	public static String TR_MODIFY = "Modify";
 	public static String TR_MODIFY_REMARK = "Remark";
-	public static String TR_VIEW = "View";
+	public static String TR_VIEW = "(//a[contains(text(),'View')])[2]";
 	public static String TR_MODIFYLOG = "Modify Log";
 	public static String TR_CREATE_SHARE_ROOM = "//input[@value='Create Share Room']";
 	public static String TR_SHARE_ROOM_1 = "//div[2]/table/tbody/tr/td/input";

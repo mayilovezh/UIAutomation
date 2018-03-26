@@ -9,17 +9,17 @@
 	</listeners>
 
 
-<!-- 	<test name="TestCenter">
-		<classes>
-			<class name="com.selenium.test.testcenter.TestCenterList" />
-			<class name="com.selenium.test.testcenter.TestBuildingList" />
-			<class name="com.selenium.test.testcenter.TestRoomList" />
+	<test name="TestCenter" preserve-order="true">
+		<classes >
+			<!-- <class name="com.selenium.test.testcenter.TestCenterList" />
+			<class name="com.selenium.test.testcenter.TestBuildingList" /> -->
+			<!-- <class name="com.selenium.test.testcenter.TestRoomList" /> -->
 			<class name="com.selenium.test.testcenter.TestDateList" />
 			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
 		</classes>
 	</test> 
 	
-	<test name="TDOL">
+	<!-- <test name="TDOL">
 		<classes>
 			<class name="com.selenium.test.tdol.TDPProfile" />
 			<class name="com.selenium.test.tdol.TDPTask" />
@@ -33,7 +33,7 @@
 			<class name="com.selenium.test.tdol.ArrangeBagDuty" />
 			<class name="com.selenium.test.tdol.ArrangeReports" />
 		</classes>
-	</test>	-->
+	</test>	 -->
 	
 	<!-- <test name="PostTest">
 		<classes>
@@ -111,18 +111,18 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="Examiner">
+	<!-- <test name="Examiner">
 		<classes>
-			<!-- <class name="com.selenium.test.examiner.ExaminerProfile" />
+			<class name="com.selenium.test.examiner.ExaminerProfile" />
 			<class name="com.selenium.test.examiner.ExaminerTask" />
 			<class name="com.selenium.test.examiner.IEPAvailabilityCheck" />
 			<class name="com.selenium.test.examiner.SpkDeployment" />
 			<class name="com.selenium.test.examiner.CoreDayManagement" />
 			<class name="com.selenium.test.examiner.IEPCoreDayCheck" />
-			<class name="com.selenium.test.examiner.IEPCoreDayCheck" /> -->
+			<class name="com.selenium.test.examiner.IEPCoreDayCheck" />
 			<class name="com.selenium.test.examiner.WorkRecords" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
 	<!-- <test name="PreTestPlanning">
 		<classes>

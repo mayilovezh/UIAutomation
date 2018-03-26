@@ -20,24 +20,24 @@ public class TestNGListener extends TestListenerAdapter {
 	@Override
 	public void onTestStart(ITestResult result) {
 
-		System.out.println("TestCases start and details are" + result.getName());
+		System.out.println("TestCases start and details are" + " " + result.getName());
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 
-		System.out.println("TestCases success and details are" + result.getName());
+		System.out.println("TestCases success and details are" + " " + result.getName());
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		System.out.println("TestCases failed and details are" + result.getName());
+		System.out.println("TestCases failed and details are" + " " + result.getName());
 		captureScreenShot(result);
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		System.out.println("TestCases skipped and details are" + result.getName());
+		System.out.println("TestCases skipped and details are" + " " +  result.getName());
 		captureScreenShot(result);
 	}
 

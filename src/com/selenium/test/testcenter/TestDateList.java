@@ -29,7 +29,7 @@ public class TestDateList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.TEST_CENTER));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.TEST_SESSION_LIST));
+		action.click(By.xpath(ElementHelper.TEST_DATE_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
@@ -45,8 +45,8 @@ public class TestDateList {
 		action.click(By.id(ElementHelper.TD_SEARCH));
 	}
 
-	@Test
+	/*@Test
 	public void importFile() {
 
-	}
+	}*/
 }

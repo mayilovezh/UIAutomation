@@ -56,8 +56,8 @@ public class TestSessionList {
 
 	}
 
-	@Test
-	public void create() throws Exception {
+	/*@Test
+	public void step01_Create() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.TS_CREATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -77,16 +77,16 @@ public class TestSessionList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 
-	}
+	}*/
 
 	@Test
-	public void searchTS() throws Exception {
+	public void step02_SearchTS() throws Exception {
 		navigate();
 		search();
 	}
 
 	@Test
-	public void modify() throws Exception {
+	public void step03_Modify() throws Exception {
 		navigate();
 		search();
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -98,7 +98,7 @@ public class TestSessionList {
 	}
 
 	@Test
-	public void modifyLog() throws Exception {
+	public void step04_ModifyLog() throws Exception {
 		navigate();
 		search();
 		Thread.sleep(ElementHelper.WAIT_TIME);

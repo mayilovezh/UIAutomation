@@ -43,8 +43,8 @@ public class SpkRoomTemplate {
 
 	}
 
-	@Test
-	public void createThursday() throws Exception {
+	/*@Test
+	public void step01_CreateThursday() throws Exception {
 		navigate();
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
@@ -60,7 +60,7 @@ public class SpkRoomTemplate {
 	}
 
 	@Test
-	public void createSaturday() throws Exception {
+	public void step02_CreateSaturday() throws Exception {
 		navigate();
 
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -76,7 +76,7 @@ public class SpkRoomTemplate {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}
+	}*/
 
 	public void search() throws Exception {
 		navigate();
@@ -86,13 +86,13 @@ public class SpkRoomTemplate {
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY)), templateThu);
 	}
 
-	@Test
-	public void searchTemplate() throws Exception {
+	/*@Test
+	public void step03_SearchTemplate() throws Exception {
 		search();
 	}
 
 	@Test
-	public void modify() throws Exception {
+	public void step04_Modify() throws Exception {
 		search();
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_MODIFY));
@@ -103,13 +103,13 @@ public class SpkRoomTemplate {
 	}
 
 	@Test
-	public void view() throws Exception {
+	public void step05_View() throws Exception {
 		search();
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_VIEW));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		isroomChecked();
-	}
+	}*/
 
 	public boolean isroomChecked() {
 		boolean status = false;
@@ -123,16 +123,16 @@ public class SpkRoomTemplate {
 	}
 
 	@Test
-	public void deleteSat() throws Exception {
+	public void step06_DeleteSat() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SPK_TEMPLATE_DELETE));
+		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 
 	@Test
-	public void deleteThu() throws Exception {
+	public void step07_DeleteThu() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));

@@ -48,8 +48,8 @@ public class TestCenterList{
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_SEARCH_NAME)), tcName);
 	}
 		
-	@Test
-	public void createTC() throws Exception {
+	/*@Test
+	public void step01_CreateTC() throws Exception {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.id(ElementHelper.TEST_CENTER));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -82,14 +82,14 @@ public class TestCenterList{
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CANCEL));
 	}
-	
+	*/
 	@Test
-	public void search() throws Exception {
+	public void step02_Search() throws Exception {
 		searchTC();
 	}
 	
 	@Test
-	public void modify() throws Exception {
+	public void step03_Modify() throws Exception {
 		searchTC();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.cssSelector(ElementHelper.TC_MODIFY));
@@ -100,7 +100,7 @@ public class TestCenterList{
 	}
 	
 	@Test
-	public void view() throws Exception {
+	public void step04_View() throws Exception {
 		searchTC();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TC_VIEW));
@@ -111,7 +111,7 @@ public class TestCenterList{
 	}
 	
 	@Test
-	public void modifyLog() throws Exception {
+	public void step05_ModifyLog() throws Exception {
 		searchTC();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TC_MODIFYLOG));

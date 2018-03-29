@@ -47,7 +47,7 @@ public class SecondMarkingAllocation {
 	
 
 	@Test
-	public void toResultPage() throws Exception {
+	public void step01_ToResultPage() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -58,7 +58,7 @@ public class SecondMarkingAllocation {
 	}
 
 	@Test
-	public void notice() throws Exception {
+	public void step02_Notice() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_NOTICE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -71,7 +71,7 @@ public class SecondMarkingAllocation {
 	}
 
 	@Test
-	public void deleteNotice() throws Exception {
+	public void step03_DeleteNotice() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_DELETE_NOTICE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -81,7 +81,7 @@ public class SecondMarkingAllocation {
 	}
 	
 	@Test
-	public void exportAllocationResult() throws Exception {
+	public void step04_ExportAllocationResult() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_RESULT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -91,7 +91,7 @@ public class SecondMarkingAllocation {
 	}
 	
 	@Test
-	public void exportRegisterResult() throws Exception {
+	public void step05_ExportRegisterResult() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_REGISTER_RESULT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -101,7 +101,7 @@ public class SecondMarkingAllocation {
 	}
 	
 	@Test
-	public void exportFinanceReport() throws Exception {
+	public void step06_ExportFinanceReport() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_FINANCE_REPORT));
 		Thread.sleep(ElementHelper.SHORT_TIME);

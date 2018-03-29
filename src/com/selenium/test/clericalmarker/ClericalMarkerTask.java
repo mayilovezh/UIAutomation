@@ -41,44 +41,46 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
-	/*
-	 * @Test public void createFirstMarkingTask() throws Exception { navigate();
-	 * action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM));
-	 * Thread.sleep(ElementHelper.SHORT_TIME);
-	 * action.selectByIndex(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_TESTDATE),
-	 * 1); Thread.sleep(ElementHelper.SHORT_TIME);
-	 * action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_INTERVAL_FROM),
-	 * openIntervalFrom); Thread.sleep(ElementHelper.SHORT_TIME_B);
-	 * action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_INTERVAL_TO),
-	 * openIntervalTo); Thread.sleep(ElementHelper.SHORT_TIME_B);
-	 * action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM_DAY));
-	 * Thread.sleep(ElementHelper.SHORT_TIME_A);
-	 * action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_VENUE), venue);
-	 * Thread.sleep(ElementHelper.SHORT_TIME_B);
-	 * action.click(By.xpath(ElementHelper.SAVE));
-	 * Thread.sleep(ElementHelper.WAIT_TIME); }
-	 */
-
-	/*
-	 * @Test public void createSecondMarkingTask() throws Exception { navigate();
-	 * action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_SM));
-	 * Thread.sleep(ElementHelper.SHORT_TIME);
-	 * action.selectByIndex(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_TESTDATE),
-	 * 1); Thread.sleep(ElementHelper.SHORT_TIME);
-	 * action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_INTERVAL_FROM),
-	 * openIntervalFrom); Thread.sleep(ElementHelper.SHORT_TIME_B);
-	 * action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_INTERVAL_TO),
-	 * openIntervalTo); Thread.sleep(ElementHelper.SHORT_TIME_B);
-	 * action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_SM_DAY));
-	 * Thread.sleep(ElementHelper.SHORT_TIME_A);
-	 * action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_VENUE), venue);
-	 * Thread.sleep(ElementHelper.SHORT_TIME_B);
-	 * action.click(By.xpath(ElementHelper.SAVE));
-	 * Thread.sleep(ElementHelper.WAIT_TIME); }
-	 */
-
 	/*@Test
-	public void searchTask() throws Exception {
+	public void step01_CreateFirstMarkingTask() throws Exception {
+		navigate();
+		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.selectByIndex(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_TESTDATE), 1);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_INTERVAL_FROM), openIntervalFrom);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_INTERVAL_TO), openIntervalTo);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM_DAY));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_VENUE), venue);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+	}
+
+	@Test
+	public void step02_CreateSecondMarkingTask() throws Exception {
+		navigate();
+		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_SM));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.selectByIndex(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_TESTDATE), 1);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_INTERVAL_FROM), openIntervalFrom);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_INTERVAL_TO), openIntervalTo);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_SM_DAY));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_VENUE), venue);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+	}
+*/
+	@Test
+	public void step03_SearchTask() throws Exception {
 		navigate();
 		search();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_TEST_DATE_FIRST)), testDate);
@@ -93,10 +95,10 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_SECOND)), createBy);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-	}*/
+	}
 
 	@Test
-	public void modifyTask() throws Exception {
+	public void step04_ModifyTask() throws Exception {
 		navigate();
 		search();
 		action.click(By.linkText(ElementHelper.CLERICAL_TASK_MODIFY));
@@ -108,18 +110,18 @@ public class ClericalMarkerTask {
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
+
 	@Test
-	public void viewTask() throws Exception {
+	public void step05_ViewTask() throws Exception {
 		navigate();
 		search();
 		action.click(By.linkText(ElementHelper.CLERICAL_TASK_VIEW));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
-	
+
 	@Test
-	public void viewLog() throws Exception {
+	public void step06_ViewLog() throws Exception {
 		navigate();
 		search();
 		action.click(By.linkText(ElementHelper.CLERICAL_TASK_LOG));

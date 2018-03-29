@@ -47,7 +47,7 @@ public class TDPTask {
 	}
 
 	@Test
-	public void create() {
+	public void step01_Create() {
 		navigate();
 		try {
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -96,12 +96,12 @@ public class TDPTask {
 	}
 
 	@Test
-	public void search() {
+	public void step02_Search() {
 		searchTask();
 	}
 
 	@Test
-	public void view() {
+	public void step03_View() {
 		searchTask();
 		try {
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -115,7 +115,7 @@ public class TDPTask {
 	}
 
 	@Test
-	public void modify() {
+	public void step04_Modify() {
 		searchTask();
 		try {
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -131,7 +131,7 @@ public class TDPTask {
 	}
 
 	@Test
-	public void log() {
+	public void step05_Log() {
 		searchTask();
 		try {
 			Thread.sleep(ElementHelper.WAIT_TIME);

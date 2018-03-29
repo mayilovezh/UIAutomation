@@ -43,8 +43,8 @@ public class TDPProfile {
 		}
 	}
 
-	@Test
-	public void create() {
+	/*@Test
+	public void step01_Create() {
 		navigate();
 		try {
 			action.click(By.id(ElementHelper.TDP_PROFILE_CREATE));
@@ -96,7 +96,7 @@ public class TDPProfile {
 			e.printStackTrace();
 		}
 	}
-
+*/
 	public void searchTDP() {
 		navigate();
 		try {
@@ -119,12 +119,12 @@ public class TDPProfile {
 	}
 
 	@Test
-	public void search() {
+	public void step02_Search() {
 		searchTDP();
 	}
 
 	@Test
-	public void viewLog() {
+	public void step03_ViewLog() {
 		searchTDP();
 		try {
 			Thread.sleep(ElementHelper.WAIT_TIME);

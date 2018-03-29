@@ -45,7 +45,7 @@ public class ClericalMarkerProfile {
 	}
 	
 	/*@Test
-	public void createProfileFirstMarker() throws Exception {
+	public void step01_CreateProfileFirstMarker() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.CLERICAL_PROFILE_CREATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -84,7 +84,7 @@ public class ClericalMarkerProfile {
 	}*/
 	
 	/*@Test
-	public void createProfileSecondMarker() throws Exception {
+	public void step02_CreateProfileSecondMarker() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.CLERICAL_PROFILE_CREATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -123,23 +123,15 @@ public class ClericalMarkerProfile {
 	}*/
 	
 	@Test
-	public void searchProfile() throws Exception {
+	public void step03_SearchProfile() throws Exception {
 		navigate();
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_NUMBER), clericalNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.CLERICAL_PROFILE_SEARCH));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_NUMBER)), clericalNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_FAMILY)), familyNameEn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_GIVEN)), givenNameEn);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		searchProfile();
 	}
 	
 	@Test
-	public void modifyPwd() throws Exception {
+	public void step04_ModifyPwd() throws Exception {
 		navigate();
+		searchProfile();
 		action.click(By.linkText(ElementHelper.CLERICAL_PROFILE_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_MODIFY_PWD));
@@ -151,8 +143,9 @@ public class ClericalMarkerProfile {
 	}
 	
 	@Test
-	public void modifyPinCode() throws Exception {
+	public void step05_ModifyPinCode() throws Exception {
 		navigate();
+		searchProfile();
 		action.click(By.linkText(ElementHelper.CLERICAL_PROFILE_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_MODIFY_PINCODE));
@@ -161,5 +154,18 @@ public class ClericalMarkerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
+	}
+	
+	public void searchProfile() throws Exception {
+		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_NUMBER), clericalNo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.CLERICAL_PROFILE_SEARCH));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_NUMBER)), clericalNo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_FAMILY)), familyNameEn);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_GIVEN)), givenNameEn);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 }

@@ -72,10 +72,13 @@ public class TestNGListener extends TestListenerAdapter {
 				File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 				FileUtils.copyFile(source, new File(screenShotPath));
 				screenShotPath = screenShotPath.substring(screenShotPath.indexOf("\\"));
+				
+				Reporter.log("<br/>" + "Test has failed due to below error:" + "<br/><br/>" + result.getThrowable().getMessage()
+						+ "<br/><br/> For more details about error click 'Exception' column above.");
 				Reporter.log("<a href=" + screenShotPath + " target=_blank>Failed Screen Shot</a>", true);
 				Reporter.log("" + "< img width='1500px' src=" + srcForDisplay + " />", true);
 
-				System.out.println("Take the capture for the failure!");
+				System.out.println("Take the capture sucessful!");
 			}
 		} catch (IOException e) {
 			screenShotPath = "Failed to capture screenshot: " + e.getMessage();

@@ -45,7 +45,7 @@ public class FirstMarkingAllocation {
 	}
 
 	@Test
-	public void autoAllocation() throws Exception {
+	public void step01_AutoAllocation() throws Exception {
 		navigate();
 		action.sendkeys(By.id(ElementHelper.FIRST_ALLOCATION_SELECT_MARKER), "1");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -59,7 +59,7 @@ public class FirstMarkingAllocation {
 	}
 
 	@Test
-	public void toResultPage() throws Exception {
+	public void step02_ToResultPage() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -70,7 +70,7 @@ public class FirstMarkingAllocation {
 	}
 
 	@Test
-	public void notice() throws Exception {
+	public void step03_Notice() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_NOTICE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -83,7 +83,7 @@ public class FirstMarkingAllocation {
 	}
 
 	@Test
-	public void deleteNotice() throws Exception {
+	public void step04_DeleteNotice() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_NOTICE_DELETE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -93,7 +93,7 @@ public class FirstMarkingAllocation {
 	}
 	
 	@Test
-	public void exportAllocationResult() throws Exception {
+	public void step05_ExportAllocationResult() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_ALLOCATION_RESULT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -103,7 +103,7 @@ public class FirstMarkingAllocation {
 	}
 	
 	@Test
-	public void exportRegisterResult() throws Exception {
+	public void step06_ExportRegisterResult() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_REGISTER_RESULT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -113,7 +113,7 @@ public class FirstMarkingAllocation {
 	}
 	
 	@Test
-	public void exportFinanceReport() throws Exception {
+	public void step07_ExportFinanceReport() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_FINANCE_REPORT));
 		Thread.sleep(ElementHelper.SHORT_TIME);

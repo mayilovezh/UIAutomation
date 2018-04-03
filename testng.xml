@@ -19,7 +19,7 @@
 		</classes>
 	</test>  -->
 	
-	<!-- <test name="TDOL">
+	<!-- <test name="TDOL" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.tdol.TDPProfile" />
 			<class name="com.selenium.test.tdol.TDPTask" />
@@ -35,30 +35,30 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="PostTest">
+	<test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
-			<class name="com.selenium.test.postest.JaggedProfileInfo" />
-			<class name="com.selenium.test.postest.SetScore" />
-			<class name="com.selenium.test.postest.ConfirmSetScore" />
-			<class name="com.selenium.test.postest.ScoreUpload" />
+			<!-- <class name="com.selenium.test.postest.JaggedProfileInfo" /> -->
+			<!-- <class name="com.selenium.test.postest.SetScore" />
+			<class name="com.selenium.test.postest.ConfirmSetScore" /> -->
+			<!-- <class name="com.selenium.test.postest.ScoreUpload" />
 			<class name="com.selenium.test.postest.ImportLog" />
 			<class name="com.selenium.test.postest.ScoreCheck" />
-			<class name="com.selenium.test.postest.StatusScoreCheck" />
-			<class name="com.selenium.test.postest.PESEComparison" />
-			<class name="com.selenium.test.postest.EMSManagement" />
+			<class name="com.selenium.test.postest.StatusScoreCheck" /> -->
+		<!-- 	<class name="com.selenium.test.postest.PESEComparison" /> -->
+		<!-- 	<class name="com.selenium.test.postest.EMSManagement" /> -->
 			<class name="com.selenium.test.postest.CandidateFromItap" />
 		</classes>
-	</test>	  -->
+	</test>	 
 	
-	<!-- <test name="CSCS">
+	<!-- <test name="CSCS" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.cs.FreeCandidateAdd" />
 			<class name="com.selenium.test.cs.FreeCandidateList" />
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="Marketing">
+	<!-- <test name="Marketing" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.marketing.MarketingQuery" />
 			<class name="com.selenium.test.marketing.ReportByRegion" />
@@ -68,7 +68,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="CS-Extra">
+	<!-- <test name="CS-Extra" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
 			<class name="com.selenium.test.extra.PendingList" />
@@ -78,7 +78,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="CS-Eor">
+	<!-- <test name="CS-Eor" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.eor.UnProcessingList" />
 			<class name="com.selenium.test.eor.EorAppList" />
@@ -89,7 +89,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="CS-Eor-India">
+	<!-- <test name="CS-Eor-India" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.eorindia.IndiaUnProcessingList" />
 			<class name="com.selenium.test.eorindia.IndiaAppList" />
@@ -101,17 +101,17 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="ClericalMarker">
+	<!-- <test name="ClericalMarker" preserve-order="true">
 		<classes>
-			<!-- <class name="com.selenium.test.clericalmarker.ClericalMarkerProfile" />
+			<class name="com.selenium.test.clericalmarker.ClericalMarkerProfile" />
 			<class name="com.selenium.test.clericalmarker.ClericalMarkerTask" />
 			<class name="com.selenium.test.clericalmarker.ICMPCheckAvailability" />
-			<class name="com.selenium.test.clericalmarker.FirstMarkingAllocation" /> -->
+			<class name="com.selenium.test.clericalmarker.FirstMarkingAllocation" />
 			<class name="com.selenium.test.clericalmarker.SecondMarkingAllocation" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
-	<!-- <test name="Examiner">
+	<!-- <test name="Examiner" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.examiner.ExaminerProfile" />
 			<class name="com.selenium.test.examiner.ExaminerTask" />
@@ -124,7 +124,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="PreTestPlanning">
+	<!-- <test name="PreTestPlanning" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.pretestplanning.WrittenTemplatesList" />
 			<class name="com.selenium.test.pretestplanning.WrittenRoomArrange" />
@@ -132,7 +132,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="GeneralQuery">
+	<!-- <test name="GeneralQuery" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.generalquery.RegistrationNumberList" />
 			<class name="com.selenium.test.generalquery.HolidayManagement" />

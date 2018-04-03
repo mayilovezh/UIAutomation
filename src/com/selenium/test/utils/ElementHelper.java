@@ -409,6 +409,9 @@ public class ElementHelper {
 	public static String CAN_STATUS_BLOCK_TEST_STATUS = "Candidate_Status_Test_List_13479094";
     public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Score_List_13479094";
     public static String CAN_STATUS_BLOCK_STATUS_SAVE = "Candidate_Status_Save_Selected";
+    
+    //EMS Management
+    public static String EMS_MANAGEMENT = "//*[@id='PostTest']/ul/li[2]/a";
  
     //Test Material Check
     public static String TEST_MATERIAL_CHECK = "//*[@id='PostTest']/ul/li[3]/a";
@@ -491,10 +494,9 @@ public class ElementHelper {
     public static String CANDIDATE_FROM_ITAP_MONTH = "CandidateFromItap_Month";
     public static String CANDIDATE_FROM_ITAP_DATE = "ddlTestDate-CandidateFromItap";
     public static String CANDIDATE_FROM_ITAP_SEARCH = "SearchCandidateFromItap_Search";
-    public static String CANDIDATE_FROM_ITAP_REGISTRATION = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1]/td[5]";
-    public static String CANDIDATE_FROM_ITAP_SYNC= "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1]/td[6]";
-    public static String CANDIDATE_FROM_ITAP_SPECIAL = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1]/td[7]";
-
+    public static String CANDIDATE_FROM_ITAP_REGISTRATION = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[2]/td[5]";
+    public static String CANDIDATE_FROM_ITAP_SYNC= "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[2]/td[6]";
+    public static String CANDIDATE_FROM_ITAP_SPECIAL = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[2/td[7]";
     
     //CS-CS
     public static String CS_CS = "CS-CS";

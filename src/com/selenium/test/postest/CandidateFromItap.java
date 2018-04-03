@@ -15,8 +15,8 @@ public class CandidateFromItap {
 	static WebDriver driver;
 	WebDriverAction action;
 	String registrationNo = "264";
-	String syncNo = "264";
-	String specialCandidates = "26";
+	String syncNo = "0";
+	String specialCandidates = "0";
 
 	@BeforeMethod
 	public void setUp() {

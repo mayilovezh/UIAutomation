@@ -16,10 +16,10 @@ import com.selenium.test.utils.WebDriverAction;
 public class CandidateStatusBlock {
 	static WebDriver driver;
 	WebDriverAction action;
-	String givenNameEn = "XIAOQIONG";
-	String givenNameCn = "晓琼";
-	String candidateNo = "249396";
-	String chineseName = "秦 晓琼";
+	String givenNameEn = "XINDI";
+	String givenNameCn = "心笛";
+	String candidateNo = "249668";
+	String chineseName = "邵 心笛";
 
 	@BeforeMethod
 	public void setUp() {
@@ -47,7 +47,7 @@ public class CandidateStatusBlock {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_MONTH), 0);
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), 1);
+		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), 2);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.CAN_STATUS_BLOCK_CANDIDATE_NO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -59,14 +59,16 @@ public class CandidateStatusBlock {
 	}
 
 	@Test
-	public void modifypProfile() throws Exception {
+	public void step01_ModifypProfile() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.isVisible(By.id(ElementHelper.CAN_STATUS_BLOCK_REGION));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_MONTH), 0);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), 1);
+		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), 2);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.CAN_STATUS_BLOCK_CANDIDATE_NO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -85,7 +87,7 @@ public class CandidateStatusBlock {
 	}
 
 	@Test
-	public void modifyStatus() throws Exception {
+	public void step02_ModifyStatus() throws Exception {
 		search();
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_STATUS_SELECT));

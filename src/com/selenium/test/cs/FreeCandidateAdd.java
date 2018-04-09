@@ -49,7 +49,7 @@ public class FreeCandidateAdd {
 	}
 
 	@Test
-	public void createLR() throws Exception {
+	public void step01_CreateLR() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LR));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -70,7 +70,7 @@ public class FreeCandidateAdd {
 	}
 
 	@Test
-	public void createLW() throws Exception {
+	public void step02_CreateLW() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LW));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -91,7 +91,7 @@ public class FreeCandidateAdd {
 	}
 
 	@Test
-	public void createLS() throws Exception {
+	public void step03_CreateLS() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LS));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -112,7 +112,7 @@ public class FreeCandidateAdd {
 	}
 
 	@Test
-	public void createLRS() throws Exception {
+	public void step04_CreateLRS() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LRS));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -135,7 +135,7 @@ public class FreeCandidateAdd {
 	}
 
 	@Test
-	public void createRW() throws Exception {
+	public void step05_CreateRW() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_RW));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -156,7 +156,7 @@ public class FreeCandidateAdd {
 	}
 
 	@Test
-	public void createWS() throws Exception {
+	public void step06_CreateWS() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_WS));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -177,7 +177,7 @@ public class FreeCandidateAdd {
 	}
 
 	@Test
-	public void createRWS() throws Exception {
+	public void step07_CreateRWS() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_RWS));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -200,7 +200,7 @@ public class FreeCandidateAdd {
 	}
 
 	@Test
-	public void createLWS() throws Exception {
+	public void step08_CreateLWS() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LWS));
 		Thread.sleep(ElementHelper.SHORT_TIME);

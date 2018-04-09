@@ -48,7 +48,7 @@ public class FreeCandidateList {
 	}
 	
 	@Test
-	public void search() throws Exception {
+	public void step01_Search() throws Exception {
 		navigate();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FREE_CANDIDATE_LIST_TYPE_LR)), reader.getCellValue("FreeCandidateList", 1, 1));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -85,7 +85,7 @@ public class FreeCandidateList {
 	}
 	
 	@Test
-	public void update() throws Exception {
+	public void step02_Update() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_LIST_UPDATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -96,7 +96,7 @@ public class FreeCandidateList {
 	}
 	
 	@Test
-	public void view() throws Exception {
+	public void step03_View() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_LIST_VIEW));
 		Thread.sleep(ElementHelper.SHORT_TIME);

@@ -68,17 +68,17 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="CS-Extra" preserve-order="true">
+	<!-- <test name="CS-Extra" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
-			<!-- <class name="com.selenium.test.extra.PendingList" />
+			<class name="com.selenium.test.extra.PendingList" />
 			<class name="com.selenium.test.extra.ExtraList" />
 			<class name="com.selenium.test.extra.Refund" />
-			<class name="com.selenium.test.extra.ConfirmRefund" /> -->
+			<class name="com.selenium.test.extra.ConfirmRefund" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
-	<!-- <test name="CS-Eor" preserve-order="true">
+	<test name="CS-Eor" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.eor.UnProcessingList" />
 			<class name="com.selenium.test.eor.EorAppList" />
@@ -87,7 +87,7 @@
 			<class name="com.selenium.test.eor.SecondImportScore" />
 			
 		</classes>
-	</test>	 -->
+	</test>	
 	
 	<!-- <test name="CS-Eor-India" preserve-order="true">
 		<classes>

@@ -695,7 +695,13 @@ public class ElementHelper {
     public static String UNPROCESSING_LIST_DATE = "DateIdSecrch_EORTRFNumberList";
     public static String UNPROCESSING_LIST_MATCH_STATUS = "MatchStatusSecrch_EORTRFNumberList";
     public static String UNPROCESSING_LIST_SEARCH = "//input[contains(@value,'Search')]";
+    public static String UNPROCESSING_LIST_SEARCH_DATE = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[6]";
     public static String UNPROCESSING_LIST_ADD = "//input[contains(@value,'Add Candidate No.(TRF Received)')]";
+    public static String UNPROCESSING_LIST_ADD_REGION = "RegionAdd-EORTRFNumberList";
+    public static String UNPROCESSING_LIST_ADD_YEAR = "EORTRFNumberList-DateIdYearAdd";
+    public static String UNPROCESSING_LIST_ADD_MONTH = "EORTRFNumberList-DateIdMonthAdd";
+    public static String UNPROCESSING_LIST_ADD_TEST_DATE = "TestDateAdd-EORTRFNumberList";
+    public static String UNPROCESSING_LIST_ADD_CDD_NO = "TRFNoAdd-EORTRFNumberList";
     public static String UNPROCESSING_LIST_START_SERVICE = "butStartService-EORTRFNumberList";
     
     //EOR APP List

@@ -36,7 +36,7 @@ public class FilterWordsList {
 	}
 	
 	@Test
-	public void addAddress() throws Exception {
+	public void step01_AddAddress() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FILTER_WORDS_ADD));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -48,8 +48,8 @@ public class FilterWordsList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test(dependsOnMethods = { "addAddress"})
-	public void addDepartment() throws Exception {
+	@Test
+	public void step02_AddDepartment() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FILTER_WORDS_ADD));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -61,8 +61,8 @@ public class FilterWordsList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test(dependsOnMethods = { "addDepartment"})
-	public void addInstitution() throws Exception {
+	@Test
+	public void step03_AddInstitution() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FILTER_WORDS_ADD));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -74,8 +74,8 @@ public class FilterWordsList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test(dependsOnMethods = { "addInstitution"})
-	public void modify() throws Exception {
+	@Test
+	public void step04_Modify() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.FILTER_WORDS_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -86,16 +86,16 @@ public class FilterWordsList {
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 	
-	@Test(dependsOnMethods = { "modify"})
-	public void modifyCheck() throws Exception {
+	@Test
+	public void step05_ModifyCheck() throws Exception {
 		navigate();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FILTER_WORDS_MODIFY_WORDS)), words);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FILTER_WORDS_MODIFY_NAME)), name);
 	}
 	
-	@Test(dependsOnMethods = { "modifyCheck"})
-	public void deleteAddress() throws Exception {
+	@Test
+	public void step06_DeleteAddress() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.FILTER_WORDS_DELETE));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -103,8 +103,8 @@ public class FilterWordsList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 	
-	@Test(dependsOnMethods = { "deleteAddress"})
-	public void deleteDepartment() throws Exception {
+	@Test
+	public void step07_DeleteDepartment() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.FILTER_WORDS_DELETE));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -112,8 +112,8 @@ public class FilterWordsList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 	
-	@Test(dependsOnMethods = { "deleteDepartment"})
-	public void deleteInstitution() throws Exception {
+	@Test
+	public void step08_DeleteInstitution() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.FILTER_WORDS_DELETE));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

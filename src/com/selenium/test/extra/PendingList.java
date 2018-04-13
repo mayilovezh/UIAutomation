@@ -45,15 +45,15 @@ public class PendingList {
 	}
 	
 	@Test
-	public void viewLog() throws Exception {
+	public void step01_ViewLog() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.PENDING_LIST_VIEWLOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.PENDING_LIST_VIEWLOG_UPDATEBY)), name);
 	}
 	
-	@Test(dependsOnMethods = { "viewLog"})
-	public void changetoProcessing() throws Exception {
+	@Test
+	public void step02_ChangetoProcessing() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.PENDING_LIST_PROCESSING));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

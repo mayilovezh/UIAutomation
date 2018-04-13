@@ -48,7 +48,7 @@ public class ExtraList {
 	}
 	
 	@Test
-	public void updateApp() throws Exception {
+	public void step01_UpdateApp() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.EXTRA_LIST_UPDATE_APP));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -60,8 +60,8 @@ public class ExtraList {
 		
 	}
 	
-	@Test(dependsOnMethods = { "updateApp"})
-	public void exportExcel() throws Exception {
+	@Test
+	public void step02_ExportExcel() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.EXTRA_LIST_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -71,8 +71,8 @@ public class ExtraList {
 		
 	}
 	
-	@Test(dependsOnMethods = { "exportExcel"})
-	public void changetoDone() throws Exception {
+	@Test
+	public void step03_ChangetoDone() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.EXTRA_LIST_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

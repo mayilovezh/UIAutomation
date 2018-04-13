@@ -35,21 +35,21 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="PostTest" preserve-order="true">
+	<!-- <test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
-			<!-- <class name="com.selenium.test.postest.JaggedProfileInfo" /> -->
-			<!-- <class name="com.selenium.test.postest.SetScore" />
-			<class name="com.selenium.test.postest.ConfirmSetScore" /> -->
-			<!-- <class name="com.selenium.test.postest.ScoreUpload" />
+			<class name="com.selenium.test.postest.JaggedProfileInfo" />
+			<class name="com.selenium.test.postest.SetScore" />
+			<class name="com.selenium.test.postest.ConfirmSetScore" />
+			<class name="com.selenium.test.postest.ScoreUpload" />
 			<class name="com.selenium.test.postest.ImportLog" />
 			<class name="com.selenium.test.postest.ScoreCheck" />
-			<class name="com.selenium.test.postest.StatusScoreCheck" /> -->
-		<!-- 	<class name="com.selenium.test.postest.PESEComparison" /> -->
-		<!-- 	<class name="com.selenium.test.postest.EMSManagement" /> -->
+			<class name="com.selenium.test.postest.StatusScoreCheck" />
+			<class name="com.selenium.test.postest.PESEComparison" />
+			<class name="com.selenium.test.postest.EMSManagement" />
 			<class name="com.selenium.test.postest.CandidateFromItap" />
 		</classes>
-	</test>	 
+	</test>	  -->
 	
 	<!-- <test name="CSCS" preserve-order="true">
 		<classes>
@@ -68,15 +68,15 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="CS-Extra" preserve-order="true">
+	<test name="CS-Extra" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
-			<class name="com.selenium.test.extra.PendingList" />
+			<!-- <class name="com.selenium.test.extra.PendingList" />
 			<class name="com.selenium.test.extra.ExtraList" />
 			<class name="com.selenium.test.extra.Refund" />
-			<class name="com.selenium.test.extra.ConfirmRefund" />
+			<class name="com.selenium.test.extra.ConfirmRefund" /> -->
 		</classes>
-	</test>	 -->
+	</test>	
 	
 	<!-- <test name="CS-Eor" preserve-order="true">
 		<classes>

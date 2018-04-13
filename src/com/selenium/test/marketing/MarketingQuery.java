@@ -40,7 +40,7 @@ public class MarketingQuery {
 	}
 	
 	@Test
-	public void export_A() throws Exception {
+	public void step01_Export_A() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
@@ -50,7 +50,7 @@ public class MarketingQuery {
 	}
 	
 	@Test
-	public void newExport_A() throws Exception {
+	public void step02_NewExport_A() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
@@ -60,7 +60,7 @@ public class MarketingQuery {
 	}
 	
 	@Test
-	public void export_B() throws Exception {
+	public void step03_Export_B() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.MARKETING_QUERY_TYPE_B));
@@ -72,7 +72,7 @@ public class MarketingQuery {
 	}
 	
 	@Test
-	public void newExport_B() throws Exception {
+	public void step04_NewExport_B() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.MARKETING_QUERY_TYPE_B));

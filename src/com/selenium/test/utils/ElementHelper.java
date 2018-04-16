@@ -16,6 +16,7 @@ public class ElementHelper {
 	//Wait Time
 	public static int LONG_TIME = 10000;
 	public static int LONG_TIME_A = 20000;
+	public static int LONG_TIME_B = 30000;
 	public static int WAIT_TIME = 6000;
 	public static int SHORT_TIME = 3000;
 	public static int SHORT_TIME_B = 2000;
@@ -706,6 +707,26 @@ public class ElementHelper {
     
     //EOR APP List
     public static String EOR_APP_LIST = "//*[@id='CS-EOR']/ul/li[2]/a";
+    public static String EOR_APP_LIST_REGION = "EORDetailsEORAppList-RegionIdSecrch";
+    public static String EOR_APP_LIST_STATUS = "EORDetailsEORAppList-EORStatusSecrch";
+    public static String EOR_APP_LIST_SEARCH = "//input[contains(@value,'Search')]";
+    public static String EOR_APP_LIST_EXPORT_REGION = "EORDetailsEORAppList-ExportDispatchList-RegionIdSelect";
+    public static String EOR_APP_LIST_EXPORT_YEAR = "EORDetailsEORAppList-ExportDispatchList-DespatchDateYearSelect";
+    public static String EOR_APP_LIST_EXPORT_MONTH = "EORDetailsEORAppList-ExportDispatchList-DespatchDateMonthSelect";
+    public static String EOR_APP_LIST_EXPORT_DATE = "EORDetailsEORAppList-ExportDispatchList-DespatchDateSelect";
+    public static String EOR_APP_LIST_EXPORT_TYPE = "EORDetailsEORAppList-ExportDispatchList-EORType";
+    public static String EOR_APP_LIST_EXPORT_DISPATCH_LIST = "inp-ExportDispatchList-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_EXPORT_LR_SCORE = "inp-ExportEORLRscoreinput-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_EXPORT_EOR_WRIT_SCORE = "inp-ExportEORwritingScoreinput-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_EXPORT_EOR_SPK_SCORE = "inp-ExportEORspeakingscoreinput-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_EXPORT_DIFF_WRIT = "inp-ExportDiffwriting-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_EXPORT_DIFF_SPK = "inp-ExportDiffspeaking-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_EXPORT_EMS_LIST = "inp-ExportEMS-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_EXPORT_EOR_SCORE_INFORMATION = "inp-ExportEORScoreInformation-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_EXPORT_EMS_LIST_NEW = "inp-ExportEMS-EORDetailsEORAppList_NEW";
+    public static String EOR_APP_LIST_IMPORT_EMS = "EORDetailsEORAppList-ImportEMS";
+    
+    
     
     //EOR Marking 
     public static String EOR_MARKING = "//*[@id='CS-EOR']/ul/li[3]/a";

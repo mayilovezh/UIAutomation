@@ -80,11 +80,11 @@
 	
 	<test name="CS-Eor" preserve-order="true">
 		<classes>
-			<class name="com.selenium.test.eor.UnProcessingList" />
+			<!-- <class name="com.selenium.test.eor.UnProcessingList" /> -->
 			<class name="com.selenium.test.eor.EorAppList" />
-			<class name="com.selenium.test.eor.EorMarking" />
+			<!-- <class name="com.selenium.test.eor.EorMarking" />
 			<class name="com.selenium.test.eor.FirstImportScore" />
-			<class name="com.selenium.test.eor.SecondImportScore" />
+			<class name="com.selenium.test.eor.SecondImportScore" /> -->
 			
 		</classes>
 	</test>	

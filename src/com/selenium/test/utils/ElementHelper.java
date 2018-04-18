@@ -28,6 +28,7 @@ public class ElementHelper {
 	public static String TEST_CENTER_ID = "100100";
 	public static String REMARK_VALUE = "Automation Testing";
 	public static String USER = "Zhang Yifan";
+	public static String CONFIRMATION = " Operation is successful";
 	
 	//TDOL IEP
 	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
@@ -726,10 +727,40 @@ public class ElementHelper {
     public static String EOR_APP_LIST_EXPORT_EMS_LIST_NEW = "inp-ExportEMS-EORDetailsEORAppList_NEW";
     public static String EOR_APP_LIST_IMPORT_EMS = "EORDetailsEORAppList-ImportEMS";
     
-    
-    
     //EOR Marking 
     public static String EOR_MARKING = "//*[@id='CS-EOR']/ul/li[3]/a";
+    public static String EOR_MARKING_REGION = "ddlRegion-eor";
+    public static String EOR_MARKING_YEAR = "ddlYear-eor";
+    public static String EOR_MARKING_MONTH = "ddlMonth-eor";
+    public static String EOR_MARKING_DATE = "ddlDespatchDate-eor";
+    public static String EOR_MARKING_SEARCH = "btnQuery-eor";
+    public static String EOR_MARKING_AVAILABLE_EXAMINER = "spanAvailableExaminer-eor";
+    public static String EOR_MARKING_SELECT_EXAMINER = "txtSelectExaminerNum-eor";
+    public static String EOR_MARKING_CALCULATE = "btnCalculate-eor";
+    public static String EOR_MARKING_CALCULATE_MAX_COUNT = "spanMaxTotalNum-eor";
+    public static String EOR_MARKING_CALCULATE_MAX_AVG_COUNT = "spanMaxAvgNum-eor";
+    public static String EOR_MARKING_NEW_AUTO_ALLOCATION = "btnAutoAllocation-eor-new";
+    public static String EOR_MARKING_AUTO_ALLOCATION = "btnAutoAllocation-eor";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK = "btnManualAllocation-eor";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK_EXAMINER = "ddlEorMarkingExamienrInfo";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK_TYPE = "ddlEorMarkingeortype";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK_SEARCH = "eormarkingmanualallocationcheckSearch";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK_SELECT = "checkedbox_eorMaringmanualallocationcheckCandidateListGrid";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK_CHECK = "eormarkingmanualallocationcheckcheck";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK_AVAILABLE_EXAMINER = "//*[@id='eormarkingmanualallocationcheckAvailableexaminerradio']/table/tbody/tr[1]/td[1]/label/input";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK_CONFIRM_SAVE = "(//button[@type='button'])[3]";
+    public static String EOR_MARKING_MANUAL_ALLOCATION_CHECK_CONFIRM = "displayYesConfirmation";
+    public static String EOR_MARKING_ALLOCATION_RESULT_PAGE = "btnTaskResultPage-eor";
+    public static String EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN = "//*[@id='EorMarkingTabStrip']/ul/li[2]/span[2]";
+    public static String EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO = "//*[@id='SpreadSheetEorMarkingTask1Grid']/div[2]/table/tbody/tr[1]/td[2]";
+    public static String EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME = "//*[@id='SpreadSheetEorMarkingTask1Grid']/div[2]/table/tbody/tr[1]/td[3]";
+    public static String EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO = "//*[@id='SpreadSheetEorMarkingTask1Grid']/div[2]/table/tbody/tr[1]/td[4]";
+    public static String EOR_MARKING_CLEAR_ALLOCATION = "btnClearAllocation-eor";
+    public static String EOR_MARKING_SET_CAPACITY = "btnSetCapacityAll-eor";
+    public static String EOR_MARKING_SET_CAPACITY_NUMBER = "txtnewcapacity-SetCapacityAll-eor";
+    public static String EOR_MARKING_NOTICE = "btnNotice-eor";
+    public static String EOR_MARKING_CLEAR_NOTICE = "btnClearMarkingNotice-eor";
+    
     
     //1st Import Score
     public static String FIRST_IMPORT_SCORE = "//*[@id='CS-EOR']/ul/li[4]/a";
@@ -753,10 +784,17 @@ public class ElementHelper {
     
     //Refund
     public static String EOR_REFUND = "//*[@id='CS-EOR']/ul/li[6]/a";
+    public static String EOR_REFUND_REGION = "EORDetailsRefundList-RegionIdSecrch";
+    public static String EOR_REFUND_SEARCH = "inp-Query-EORDetailsRefundList";
+    public static String EOR_REFUND_CONFIRM = "inp-Confirm-EORDetailsRefundList";
+    public static String EOR_REFUND_SELECT = "//*[@id='SpreadSheetEORDetailsRefundListGrid']/div[2]/table/tbody/tr[1]/td[1]/input";
     
     //Confirm Refund
     public static String EOR_CONFIRM_REFUND = "//*[@id='CS-EOR']/ul/li[7]/a";
-    
+    public static String EOR_CONFIRM_REFUND_REGION = "EORDetailsConfirmRefundList-RegionIdSecrch";
+    public static String EOR_CONFIRM_REFUND_SEARCH = "inp-Query-EORDetailsConfirmRefundList";
+    public static String EOR_CONFIRM_REFUND_SELECT = "//*[@id='SpreadSheetEORDetailsConfirmRefundListGrid']/div[2]/table/tbody/tr/td[1]/input";
+    public static String EOR_CONFIRM_REFUND_APPROVE = "inp-Appore-EORDetailsConfirmRefundList";
     
     //EOR India
     public static String EOR_INDIA = "CS-EOR-India";

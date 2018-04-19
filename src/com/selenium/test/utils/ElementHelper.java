@@ -796,6 +796,7 @@ public class ElementHelper {
     public static String EOR_CONFIRM_REFUND_SELECT = "//*[@id='SpreadSheetEORDetailsConfirmRefundListGrid']/div[2]/table/tbody/tr/td[1]/input";
     public static String EOR_CONFIRM_REFUND_APPROVE = "inp-Appore-EORDetailsConfirmRefundList";
     
+    
     //EOR India
     public static String EOR_INDIA = "CS-EOR-India";
     
@@ -817,10 +818,52 @@ public class ElementHelper {
     public static String EOR_INDIA_UNPROCESSING_LIST_EXPORT = "btn-IndiaEORImport-ExportForm";
     
     //EOR APP List India
-    public static String EOR_INDIA__APP_LIST = "//*[@id='CS-EOR-India']/ul/li[2]/a";
+    public static String EOR_INDIA_APP_LIST = "//*[@id='CS-EOR-India']/ul/li[2]/a";
+    public static String EOR_INDIA_APP_LIST_REGION = "EORIndiaDetailsEORAppList-RegionIdSecrch";
+    public static String EOR_INDIA_APP_LIST_STATUS = "EORIndiaDetailsEORAppList-EORStatusSecrch";
+    public static String EOR_INDIA_APP_LIST_SEARCH = "//input[contains(@value,'Search')]";
+    public static String EOR_INDIA_APP_LIST_SELECT = "//*[@id='SpreadSheetEORIndiaDetailsEORAppListGrid']/div[2]/table/tbody/tr[2]/td[1]/input";
+    public static String EOR_INDIA_APP_LIST_VIEW_LOG = "//*[@id='SpreadSheetEORIndiaDetailsEORAppListGrid']/div[2]/table/tbody/tr[1]/td[3]/a";
+    public static String EOR_INDIA_APP_LIST_REMARK = "//*[@id='SpreadSheetEORIndiaDetailsEORAppListGrid']/div[2]/table/tbody/tr[1]/td[19]/input";
+    public static String EOR_INDIA_APP_LIST_REMARK_SAVE = "//*[@id='SpreadSheetEORIndiaDetailsEORAppListGrid']/div[2]/table/tbody/tr[1]/td[20]/input";
+    public static String EOR_INDIA_APP_LIST_DONE = "inp-Done-EORIndiaDetailsEORAppList";
+    public static String EOR_INDIA_APP_LIST_EXPORT_REGION = "EORIndiaDetailsEORAppList-ExportDispatchList-RegionIdSelect";
+    public static String EOR_INDIA_APP_LIST_EXPORT_YEAR = "EORIndiaDetailsEORAppList-ExportDispatchList-DespatchDateYearSelect";
+    public static String EOR_INDIA_APP_LIST_EXPORT_MONTH = "EORIndiaDetailsEORAppList-ExportDispatchList-DespatchDateMonthSelect";
+    public static String EOR_INDIA_APP_LIST_EXPORT_DATE = "EORIndiaDetailsEORAppList-ExportDispatchList-DespatchDateSelect";
+    public static String EOR_INDIA_APP_LIST_EXPORT_TYPE = "EORIndiaDetailsEORAppList-ExportDispatchList-EORType";
+    public static String EOR_INDIA_APP_LIST_EXPORT_DIFF_WRITING = "inp-ExportDiffwriting-EORIndiaDetailsEORAppList";
+    public static String EOR_INDIA_APP_LIST_EXPORT_DIFF_SPEAKING = "inp-ExportDiffspeaking-EORIndiaDetailsEORAppList";
+    public static String EOR_INDIA_APP_LIST_EXPORT_DISPATCH_LIST = "inp-ExportDispatchList-EORIndiaDetailsEORAppList";
+    public static String EOR_INDIA_APP_LIST_EXPORT_LR_SCORE = "inp-ExportEORLRscoreinput-EORIndiaDetailsEORAppList";
+    public static String EOR_INDIA_APP_LIST_EXPORT_WRITING_SCORE = "inp-ExportEORwritingScoreinput-EORIndiaDetailsEORAppList";
+    public static String EOR_INDIA_APP_LIST_EXPORT_SPEAKING_SCORE = "inp-ExportEORspeakingscoreinput-EORIndiaDetailsEORAppList";
     
     //EOR Marking India
     public static String EOR_INDIA_MARKING = "//*[@id='CS-EOR-India']/ul/li[3]/a";
+    public static String EOR_INDIA_MARKING_REGION = "IndiaEorMarking-ddlRegion-eor";
+    public static String EOR_INDIA_MARKING_YEAR = "IndiaEorMarking-DespatchDateYear";
+    public static String EOR_INDIA_MARKING_MONTH = "IndiaEorMarking-DespatchDateMonth";
+    public static String EOR_INDIA_MARKING_DATE = "IndiaEorMarking-DespatchDateSelect";
+    public static String EOR_INDIA_MARKING_TYPE_SPK = "chkIndiaSpk";
+    public static String EOR_INDIA_MARKING_TYPE_WRIT = "chkIndiaWrit";
+    public static String EOR_INDIA_MARKING_SEARCH = "btnIndiaQuery-eor";
+    public static String EOR_INDIA_MARKING_AVAILABLE_EXAMINER = "spanAvailableExaminer-eorIndia";
+    public static String EOR_INDIA_MARKING_SELECT_EXAMINER = "txtSelectIndiaExaminerNum-eor";
+    public static String EOR_INDIA_MARKING_CALCULATE = "btnCalculate-eorIndia";
+    public static String EOR_INDIA_MARKING_CALCULATE_MAX_COUNT = "spanMaxTotalNum-eorIndia";
+    public static String EOR_INDIA_MARKING_CALCULATE_MAX_AVG_COUNT = "spanMaxAvgNum-eorIndia";
+    public static String EOR_INDIA_MARKING_NEW_AUTO_ALLOCATION = "btnAutoAllocation-eorIndia";
+    public static String EOR_INDIA_MARKING_AUTO_ALLOCATION = "btnAutoAllocation-eor";
+    public static String EOR_INDIA_MARKING_MANUAL_ALLOCATION_CHECK = "btnManualAllocation-eorIndia";
+    public static String EOR_INDIA_MARKING_MANUAL_ALLOCATION_CHECK_EXAMINER = "ddlEorIndiaMarkingExamienrInfo";
+    public static String EOR_INDIA_MARKING_MANUAL_ALLOCATION_CHECK_TYPE = "ddlEorIndiaMarkingeortype";
+    public static String EOR_INDIA_MARKING_MANUAL_ALLOCATION_CHECK_SEARCH = "eorIndiamarkingmanualallocationcheckSearch";
+    public static String EOR_INDIA_MARKING_ALLOCATION_RESULT_PAGE = "btnTaskResultPage-eorIndia";
+    public static String EOR_INDIA_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN = "//*[@id='EorIndiaMarkingTabStrip']/ul/li[2]/span[2]";
+    public static String EOR_INDIA_MARKING_CLEAR_ALLOCATION = "btnClearAllocation-eorIndia";
+    public static String EOR_INDIA_MARKING_SET_CAPACITY = "btnSetCapacityAll-eorIndia";
+    public static String EOR_INDIA_MARKING_SET_CAPACITY_NUMBER = "txtnewcapacity-SetCapacityAll-eor-India";
     
     //1st Import Score India
     public static String EOR_INDIA_FIRST_IMPORT_SCORE = "//*[@id='CS-EOR-India']/ul/li[4]/a";

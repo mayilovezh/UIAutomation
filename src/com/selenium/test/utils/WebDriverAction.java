@@ -1,13 +1,10 @@
 package com.selenium.test.utils;
 
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -111,18 +108,4 @@ public class WebDriverAction {
 
  		driver.findElement(by).clear();
  	}
-     
-     public List<WebElement> getinputValue(){
-    	 WebElement tdpGivenNameEn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_GIVEN_NAME_EN));
-    	 WebElement tdpGivenNameCn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_GIVEN_NAME_CN));
-    	 WebElement tdpFamilyNameEn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_FAMILY_NAME_EN));
-    	 WebElement tdpFamilyNameCn = driver.findElement(By.id(ElementHelper.TDP_PROFILE_CREATE_FAMILY_NAME_CN));
-    	 
-    	 List<WebElement> inputWebElement = new ArrayList<WebElement>();
-    	 inputWebElement.add(tdpGivenNameEn);
-    	 inputWebElement.add(tdpGivenNameCn);
-    	 inputWebElement.add(tdpFamilyNameEn);
-    	 inputWebElement.add(tdpFamilyNameCn);
-    	 return inputWebElement;
-     }
 }

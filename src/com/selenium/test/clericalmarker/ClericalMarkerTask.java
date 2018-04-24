@@ -105,6 +105,8 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CLERICAL_TASK_MODIFY_DAY));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.clear(By.id(ElementHelper.CLERICAL_TASK_MODIFY_REMARK));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_MODIFY_REMARK), ElementHelper.REMARK_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
@@ -129,6 +131,15 @@ public class ClericalMarkerTask {
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_LOG_USER)), createBy);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
+	}
+	
+	@Test
+	public void step07_Report() throws Exception {
+		navigate();
+		search();
+		action.click(By.xpath(ElementHelper.CLERICAL_TASK_REPORT));
+		Thread.sleep(ElementHelper.LONG_TIME);
+		
 	}
 
 	public void search() throws InterruptedException {

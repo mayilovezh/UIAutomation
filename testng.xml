@@ -78,17 +78,17 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="CS-Eor" preserve-order="true">
+	<!-- <test name="CS-Eor" preserve-order="true">
 		<classes>
-			<!-- <class name="com.selenium.test.eor.UnProcessingList" /> -->
-			<!-- <class name="com.selenium.test.eor.EorAppList" /> -->
-			<!-- <class name="com.selenium.test.eor.EorMarking" /> -->
-			<!-- <class name="com.selenium.test.eor.FirstImportScore" />
-			<class name="com.selenium.test.eor.SecondImportScore" /> -->
+			<class name="com.selenium.test.eor.UnProcessingList" />
+			<class name="com.selenium.test.eor.EorAppList" />
+			<class name="com.selenium.test.eor.EorMarking" />
+			<class name="com.selenium.test.eor.FirstImportScore" />
+			<class name="com.selenium.test.eor.SecondImportScore" />
 			<class name="com.selenium.test.eor.Refund" />
 			<class name="com.selenium.test.eor.ConfirmRefund" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
 	<!-- <test name="CS-Eor-India" preserve-order="true">
 		<classes>
@@ -102,15 +102,16 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="ClericalMarker" preserve-order="true">
+	<test name="ClericalMarker" preserve-order="true">
 		<classes>
-			<class name="com.selenium.test.clericalmarker.ClericalMarkerProfile" />
-			<class name="com.selenium.test.clericalmarker.ClericalMarkerTask" />
-			<class name="com.selenium.test.clericalmarker.ICMPCheckAvailability" />
+			<!-- <class name="com.selenium.test.clericalmarker.ClericalMarkerProfile" /> -->
+			<!-- <class name="com.selenium.test.clericalmarker.ClericalMarkerTask" /> -->
+			<!-- <class name="com.selenium.test.clericalmarker.ICMPCheckAvailability" />
 			<class name="com.selenium.test.clericalmarker.FirstMarkingAllocation" />
-			<class name="com.selenium.test.clericalmarker.SecondMarkingAllocation" />
+			<class name="com.selenium.test.clericalmarker.SecondMarkingAllocation" /> -->
+			<class name="com.selenium.test.clericalmarker.InformationList"/>
 		</classes>
-	</test>	 -->
+	</test>	
 	
 	<!-- <test name="Examiner" preserve-order="true">
 		<classes>

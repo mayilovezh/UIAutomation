@@ -1,6 +1,6 @@
 package com.selenium.test.utils;
 
-
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -15,97 +15,110 @@ public class WebDriverAction {
 	public WebDriverAction(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+
 	public void open(String url) {
 		driver.get(url);
 	}
-	
+
 	public void submit(By by) {
 		driver.findElement(by).submit();
 	}
-	
-	public void openWindow(String url,String handler) {  
-        System.out.println("The function is not available!");  
-    }  
-	
-	public void selectWindow(String handler){
+
+	public void openWindow(String url, String handler) {
+		System.out.println("The function is not available!");
+	}
+
+	public void selectWindow(String handler) {
 		driver.switchTo().window(handler);
 	}
-	
+
 	public void selectFrame(By by) {
-		 driver.switchTo().frame(driver.findElement(by));  
+		driver.switchTo().frame(driver.findElement(by));
 	}
-	
-	  public void close() {  
-          driver.close();
-      }  
-	
+
+	public void unSelectFrame() {
+		driver.switchTo().defaultContent();
+	}
+
+	public void close() {
+		driver.close();
+	}
+
 	public void click(By by) {
 		driver.findElement(by).click();
 	}
-	
+
 	public void doubleClick(By by) {
 		new Actions(driver).doubleClick(driver.findElement(by)).perform();
 	}
 
-	public void sendkeys(By by,String value) {
+	public void sendkeys(By by, String value) {
 
 		driver.findElement(by).sendKeys(value);
 	}
-	
-	public void selectByValue(By by,String optionValue) {
+
+	public void selectByValue(By by, String optionValue) {
 		new Select(driver.findElement(by)).selectByValue(optionValue);
 	}
-	
-	public void selectByIndex(By by,int index) {
-		new Select(driver.findElement(by)).selectByIndex(index);  
+
+	public void selectByIndex(By by, int index) {
+		new Select(driver.findElement(by)).selectByIndex(index);
 	}
+
 	public void selectcheckbox(By by) {
-		new Select(driver.findElement(by));  
+		new Select(driver.findElement(by));
 	}
-	
-	
-	 public void chooseCancelOnNextConfirmation() {  
-         driver.switchTo().alert().dismiss();  
-     }  
-       
-     public void chooseOkOnNextConfirmation() {  
-         driver.switchTo().alert().accept();  
-     }  
 
-     public String getValue(By by) {  
-         return driver.findElement(by).getAttribute("value");  
-     }  
+	public void chooseCancelOnNextConfirmation() {
+		driver.switchTo().alert().dismiss();
+	}
 
-     public String getText(By by) {  
-         return driver.findElement(by).getText();  
-     }  
-     
-     public boolean isVisible(By by) {  
-         return driver.findElement(by).isDisplayed();  
-     }  
-     
-     public void dragdrop(By by,String movementsString) {  
-         dragAndDrop(by, movementsString);  
-     }  
-     
-     public void dragAndDrop(By by,String movementsString) {  
-         int index = movementsString.trim().indexOf('.');  
-         int xOffset = Integer.parseInt(movementsString.substring(0, index));  
-         int yOffset = Integer.parseInt(movementsString.substring(index+1));  
-         new Actions(driver).clickAndHold(driver.findElement(by)).moveByOffset(xOffset, yOffset).perform();  
-     }  
-     
-     public void setTimeout(String wAIT_TIME) {  
-         driver.manage().timeouts().implicitlyWait(Integer.parseInt(wAIT_TIME), TimeUnit.SECONDS);  
-     }  
-     
-     public String resultWarning(WebDriver driver) {
-    	 return driver.findElement(By.xpath(ElementHelper.RESULT_WARNING)).getText();
-     }
-     
-     public void clear(By by) {
+	public void chooseOkOnNextConfirmation() {
+		driver.switchTo().alert().accept();
+	}
 
- 		driver.findElement(by).clear();
- 	}
+	public String getValue(By by) {
+		return driver.findElement(by).getAttribute("value");
+	}
+
+	public String getText(By by) {
+		return driver.findElement(by).getText();
+	}
+
+	public boolean isVisible(By by) {
+		return driver.findElement(by).isDisplayed();
+	}
+
+	public void dragdrop(By by, String movementsString) {
+		dragAndDrop(by, movementsString);
+	}
+
+	public void dragAndDrop(By by, String movementsString) {
+		int index = movementsString.trim().indexOf('.');
+		int xOffset = Integer.parseInt(movementsString.substring(0, index));
+		int yOffset = Integer.parseInt(movementsString.substring(index + 1));
+		new Actions(driver).clickAndHold(driver.findElement(by)).moveByOffset(xOffset, yOffset).perform();
+	}
+
+	public void setTimeout(String wAIT_TIME) {
+		driver.manage().timeouts().implicitlyWait(Integer.parseInt(wAIT_TIME), TimeUnit.SECONDS);
+	}
+
+	public String resultWarning(WebDriver driver) {
+		return driver.findElement(By.xpath(ElementHelper.RESULT_WARNING)).getText();
+	}
+
+	public void clear(By by) {
+
+		driver.findElement(by).clear();
+	}
+
+	public boolean isWebElementExist(By by) {
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
 }

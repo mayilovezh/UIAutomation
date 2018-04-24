@@ -947,7 +947,7 @@ public class ElementHelper {
     public static String CLERICAL_TASK_MODIFY_DAY = "//*[@id='clericalmarkertaskChooseTestDaymodify']/input[2]";
     public static String CLERICAL_TASK_VIEW = "View";
     public static String CLERICAL_TASK_EXPORT = "Export";
-    public static String CLERICAL_TASK_REPORT = "//a[contains(text(),'Report')]";
+    public static String CLERICAL_TASK_REPORT = "(//a[contains(text(),'Report')])[13]";
     public static String CLERICAL_TASK_LOG = "Log";
     public static String CLERICAL_TASK_LOG_USER = "//*[@id='cmLogGrid_btr']/tr/td[3]";
     public static String CLERICAL_TASK_SEARCH_TEST_DATE_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[2]";
@@ -996,6 +996,19 @@ public class ElementHelper {
     public static String SECOND_ALLOCATION_EXPORT_REGISTER_RESULT = "inp-Export-DoubleMarking";
     public static String SECOND_ALLOCATION_EXPORT_FINANCE_REPORT = "inp-2ndLRFINANCEReportForm-DoubleMarking";
     
+    //Information List
+    public static String INFORMATION_LIST = "//*[@id='ClericalMarker']/ul/li[7]/a";
+    public static String INFORMATION_LIST_CATEGORY = "cmInformatoincategory";
+    public static String INFORMATION_LIST_ADD = "cmaddinfobtn";
+    public static String INFORMATION_LIST_ADD_CATEGORY = "cmInformatoincategoryadd";
+    public static String INFORMATION_LIST_ADD_ROLES = "//*[@id='cmInformatoinRoles']/input[1]";
+    public static String INFORMATION_LIST_ADD_TITLE = "cmInformationTitle";
+    public static String INFORMATION_LIST_ADD_SWITCH_FRAME = "ke-edit-iframe";
+    public static String INFORMATION_LIST_ADD_CONTENT = "ke-content";
+    public static String INFORMATION_LIST_ADD_SAVE = "cminfobtnsave";
+    public static String INFORMATION_LIST_TITLE = "cmInfoTitle";
+    public static String INFORMATION_LIST_DELETE = "cmdelinfobtn";
+    public static String INFORMATION_LIST_MODIFY = "Modify";
     
     //Examiner
     public static String EXAMINER = "Examiner";

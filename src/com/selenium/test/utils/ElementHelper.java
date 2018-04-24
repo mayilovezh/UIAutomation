@@ -999,6 +999,10 @@ public class ElementHelper {
     //Information List
     public static String INFORMATION_LIST = "//*[@id='ClericalMarker']/ul/li[7]/a";
     public static String INFORMATION_LIST_CATEGORY = "cmInformatoincategory";
+    public static String INFORMATION_LIST_SEARCH = "cmbtnsearch";
+    public static String INFORMATION_LIST_SEARCH_TITLE = "//*[@id='clericalmarkerinformationGrid']/div[2]/table/tbody/tr/td[3]";
+    public static String INFORMATION_LIST_SEARCH_CATEGORY = "//*[@id='clericalmarkerinformationGrid']/div[2]/table/tbody/tr/td[4]";
+    public static String INFORMATION_LIST_SEARCH_CREATEBY = "//*[@id='clericalmarkerinformationGrid']/div[2]/table/tbody/tr/td[7]";
     public static String INFORMATION_LIST_ADD = "cmaddinfobtn";
     public static String INFORMATION_LIST_ADD_CATEGORY = "cmInformatoincategoryadd";
     public static String INFORMATION_LIST_ADD_ROLES = "//*[@id='cmInformatoinRoles']/input[1]";
@@ -1007,8 +1011,11 @@ public class ElementHelper {
     public static String INFORMATION_LIST_ADD_CONTENT = "ke-content";
     public static String INFORMATION_LIST_ADD_SAVE = "cminfobtnsave";
     public static String INFORMATION_LIST_TITLE = "cmInfoTitle";
-    public static String INFORMATION_LIST_DELETE = "cmdelinfobtn";
+    public static String INFORMATION_LIST_DELETE = "Delete";
+    public static String INFORMATION_LIST_DELETE_ALL = "cmdelinfobtn";
     public static String INFORMATION_LIST_MODIFY = "Modify";
+    public static String INFORMATION_LIST_MODIFY_SAVE = "cminfomodifybtnsave";
+    
     
     //Examiner
     public static String EXAMINER = "Examiner";

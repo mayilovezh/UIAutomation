@@ -47,18 +47,18 @@ public class CoreDayManagement {
 	}
 	
 	@Test
-	public void coredayAdd() throws Exception {
+	public void step01_CoredayAdd() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.CORE_DAY_ADD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.CORE_DAY_ADD_DATE));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
 	@Test
-	public void releaseToIEP() throws Exception {
+	public void step02_ReleaseToIEP() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.CORE_DAY_RELEASE));
 		Thread.sleep(ElementHelper.WAIT_TIME);

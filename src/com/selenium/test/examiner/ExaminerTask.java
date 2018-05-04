@@ -35,7 +35,7 @@ public class ExaminerTask {
 	}
 	
 	/*@Test
-	public void createSpeakingTask() throws Exception {
+	public void step01_CreateSpeakingTask() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.EXAMINER_TASK_SPEAKING));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -56,7 +56,7 @@ public class ExaminerTask {
 	}*/
 	
 	/*@Test
-	public void createWritingTask() throws Exception {
+	public void step02_CreateWritingTask() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.EXAMINER_TASK_WRITING));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -73,7 +73,7 @@ public class ExaminerTask {
 	}
 	
 	@Test
-	public void create2ndMarkingTask() throws Exception {
+	public void step03_Create2ndMarkingTask() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.EXAMINER_TASK_2ND_MARKING));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -90,7 +90,7 @@ public class ExaminerTask {
 	}*/
 	
 	/*@Test
-	public void createEorMarkingTask() throws Exception {
+	public void step04_CreateEorMarkingTask() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.EXAMINER_TASK_EOR_MARKING));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -111,7 +111,7 @@ public class ExaminerTask {
 	}*/
 	
 	@Test
-	public void searchSpeaking() throws Exception {
+	public void step05_SearchSpeaking() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -132,7 +132,7 @@ public class ExaminerTask {
 	}
 	
 	@Test
-	public void searchWriting() throws Exception {
+	public void step06_SearchWriting() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -148,8 +148,6 @@ public class ExaminerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_TASK_TYPE_SPK)), "Writing");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		
-		
 	}
 	
 }

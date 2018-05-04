@@ -52,7 +52,7 @@ public class SpkDeployment {
 	}
 	
 	@Test
-	public void examinerCheck() throws Exception {
+	public void step01_ExaminerCheck() throws Exception {
 		navigate();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_CITY)), city);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -70,7 +70,7 @@ public class SpkDeployment {
 	
 	//TO DO
 	@Test
-	public void showDetail() throws Exception {
+	public void step02_ShowDetail() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -78,7 +78,7 @@ public class SpkDeployment {
 	
 	//TO DO
 	@Test
-	public void replaceExaminer() throws Exception {
+	public void step03_ReplaceExaminer() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -86,7 +86,7 @@ public class SpkDeployment {
 	}
 	
 	@Test
-	public void uploadToPretest() throws Exception {
+	public void step04_UploadToPretest() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_UPLOAD_TO_PRETEST));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -96,7 +96,7 @@ public class SpkDeployment {
 	}
 	
 	@Test
-	public void releaseToIEP() throws Exception {
+	public void step05_ReleaseToIEP() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_RELEASE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -106,7 +106,7 @@ public class SpkDeployment {
 	}
 	
 	@Test
-	public void sendEmail() throws Exception {
+	public void step06_SendEmail() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SEND_EMAIL));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -117,7 +117,7 @@ public class SpkDeployment {
 	
 	//TO DO
 	@Test
-	public void syncToItap() throws Exception {
+	public void step07_SyncToItap() throws Exception {
 		navigate();
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SYNC_ITAP));

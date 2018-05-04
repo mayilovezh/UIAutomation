@@ -1043,7 +1043,7 @@ public class ElementHelper {
     public static String EXAMINER_PROFILE_PWD_PINCODE = "Pwd&Pin";
     public static String EXAMINER_PROFILE_PWD_NEW = "examinernewpwd";
     public static String EXAMINER_PROFILE_PINCODE_NEW = "examinernewPincode";
-    public static String EXAMINER_PROFILE_STATUS = "N/A"; 
+    public static String EXAMINER_PROFILE_STATUS = "Details"; 
     public static String EXAMINER_PROFILE_ROLES_SPK = "//*[@id='ExaminerProfile-modifyRolesList']/input[1]";
     public static String EXAMINER_PROFILE_ROLES_WRT = "//*[@id='ExaminerProfile-modifyRolesList']/input[2]";
     public static String EXAMINER_PROFILE_ROLES_SECOND_MARKING = "//*[@id='ExaminerProfile-modifyRolesList']/input[3]";
@@ -1130,7 +1130,7 @@ public class ElementHelper {
     
     //Work Records
     public static String WORK_RECORDS = "//*[@id='Examiner']/ul/li[9]/a";
-    public static String WORK_RECORDS_EXAMINER_NO = "search_text_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage";
+    public static String WORK_RECORDS_EXAMINER_NO = "Search_text_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage";
     public static String WORK_RECORDS_SEARCH = "Search_btnQuery_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage";
     public static String WORK_RECORDS_SEARCH_NAME = "//*[@id='div_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage_Grid']/div[2]/table/tbody/tr[1]/td[3]";
     public static String WORK_RECORDS_SEARCH_TC = "//*[@id='div_ExaminerArrangement_ExaminerArrangementSearchEngineResultsPage_Grid']/div[2]/table/tbody/tr[1]/td[5]";
@@ -1150,6 +1150,22 @@ public class ElementHelper {
     
     //Availability Summary
     public static String AVAILABILITY_SUMMARY = "//*[@id='Examiner']/ul/li[11]/a";
+    public static String AVAILABILITY_SUMMARY_REGIOM = "SearchExaminerAvailabilitySummary_Region";
+    public static String AVAILABILITY_SUMMARY_YEAR = "SearchExaminerAvailabilitySummary_Year";
+    public static String AVAILABILITY_SUMMARY_MONTH = "SearchExaminerAvailabilitySummary_Month";
+    public static String AVAILABILITY_SUMMARY_SEARCH = "SearchExaminerAvailabilitySummary_Search";
+    public static String AVAILABILITY_SUMMARY_MODIFY_AVAIL = "//input[contains(@value,'Modify Availability')]";
+    public static String AVAILABILITY_SUMMARY_MODIFY_AVAIL_PAGE = "//*[@id='ExaminerAvailabilitySummary_ModifyAvailabilityGrid']/div[3]/a[4]";
+    public static String AVAILABILITY_SUMMARY_MODIFY_AVAIL_YES = "check_available998866";
+    public static String AVAILABILITY_SUMMARY_MODIFY_AVAIL_SELECT = "check_saveavailable998866";
+    public static String AVAILABILITY_SUMMARY_MODIFY_AVAIL_REMARK = "//*[@id='ExaminerAvailabilitySummary_ModifyAvailabilityGrid']/div[2]/table/tbody/tr[24]/td[13]/div/input";
+    public static String AVAILABILITY_SUMMARY_MODIFY_AVAIL_SAVE = "//input[contains(@value,'Save Selected')]";
+    public static String AVAILABILITY_SUMMARY_EXPORT_AVAIL = "//input[contains(@value,'Export Availability')]";
+    public static String AVAILABILITY_SUMMARY_MODIFY_LOCK = "SearchExaminerAvailabilitySummary_Create";
+    public static String AVAILABILITY_SUMMARY_MODIFY_LOCK_SPK_DATE = "Jobs_LockEnd";
+    public static String AVAILABILITY_SUMMARY_MODIFY_LOCK_WRT_DATE = "Quantity_LockEnd";
+    public static String AVAILABILITY_SUMMARY_LOG = "SearchExaminerAvailabilitySummary_ViewLog";
+    public static String AVAILABILITY_SUMMARY_LOG_CREATEBY = "//*[@id='ExaminerAvailabilitySummary_ViewLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
     
     
     //PreTest Planning

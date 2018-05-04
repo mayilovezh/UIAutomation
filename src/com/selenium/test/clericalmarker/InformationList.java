@@ -53,7 +53,7 @@ public class InformationList {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 
-	@Test
+	/*@Test
 	public void step01_AddInformation() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.INFORMATION_LIST_ADD));
@@ -72,7 +72,7 @@ public class InformationList {
 		driver.findElement(By.id("content"));
 		action.click(By.id(ElementHelper.INFORMATION_LIST_ADD_SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}
+	}*/
 
 	@Test
 	public void step02_Search() throws Exception {

@@ -12,7 +12,7 @@ public class DriverInstance {
 
 	public WebDriver login(WebDriver driver) {
 		// DOMConfigurator.configure("log4j.xml");
-		System.setProperty("webdriver.chrome.driver", "/chrome/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);

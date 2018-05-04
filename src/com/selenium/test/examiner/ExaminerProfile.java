@@ -42,11 +42,11 @@ public class ExaminerProfile {
 		action.click(By.id(ElementHelper.EXAMINER));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE));
-		Thread.sleep(ElementHelper.LONG_TIME_A);
+		Thread.sleep(ElementHelper.LONG_TIME_B);
 	}
 
 	/*@Test
-	public void createProfile() throws Exception {
+	public void step01_CreateProfile() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_CREATE));
@@ -79,8 +79,8 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}*/
 
-/*	@Test
-	public void searchProfile() throws Exception {
+	@Test
+	public void step02_SearchProfile() throws Exception {
 		navigate();
 		searchExaminer();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_PROFILE_SEARCH_NAME)), name);
@@ -90,7 +90,7 @@ public class ExaminerProfile {
 	}
 
 	@Test
-	public void modifyPwdPincode() throws Exception {
+	public void step03_ModifyPwdPincode() throws Exception {
 		navigate();
 		searchExaminer();
 		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_PWD_PINCODE));
@@ -101,10 +101,10 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 	
 	@Test
-	public void setStatus() throws Exception {
+	public void step04_SetStatus() throws Exception {
 		navigate();
 		searchExaminer();
 		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_STATUS));
@@ -144,7 +144,7 @@ public class ExaminerProfile {
 	}
 	
 	@Test
-	public void profileLog() throws Exception {
+	public void step05_ProfileLog() throws Exception {
 		navigate();
 		searchExaminer();
 		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_LOG));
@@ -157,7 +157,9 @@ public class ExaminerProfile {
 	public void searchExaminer() throws InterruptedException {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.sendkeys(By.id(ElementHelper.EXAMINER_PROFILE_EXAMINERNO), examinerNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.EXAMINER_PROFILE_SEARCH));
+		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.id(ElementHelper.EXAMINER_PROFILE_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}

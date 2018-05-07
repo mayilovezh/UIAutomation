@@ -19,7 +19,9 @@ public class DriverInstance {
 		driver.manage().window().maximize();
 		action.setTimeout("10");
 		Assert.assertEquals(driver.getTitle(), "British Council");
+		action.clear(By.id(ElementHelper.USER_NAME));
 		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_DEV);
+		action.clear(By.id(ElementHelper.PASSWORD));
 		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.USER_NAME_DEV);
 		action.click(By.id(ElementHelper.LOGIN_BTN));
 		return driver;

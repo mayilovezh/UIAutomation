@@ -17,7 +17,7 @@ public class HolidayManagement {
 	String holidayName = "Spring Festival";
 
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

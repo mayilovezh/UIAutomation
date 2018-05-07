@@ -17,7 +17,7 @@ public class ExtraList {
 	String candidateNo = "188736";
 	String phone = "1234567890";
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

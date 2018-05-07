@@ -18,7 +18,7 @@ public class PESEComparison {
 	String s_LR_score = "2";
 
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

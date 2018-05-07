@@ -23,7 +23,7 @@ public class TDPTask {
 	String openintervalEnd = "20/Feb/2018  00:00";
 
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

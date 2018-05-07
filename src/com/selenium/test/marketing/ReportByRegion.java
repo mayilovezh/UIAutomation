@@ -16,7 +16,7 @@ public class ReportByRegion {
 	String dateFrom = "2018-01-01";
 	String dateTo = "2018-01-06";
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

@@ -19,7 +19,7 @@ public class SpkRoomTemplate {
 	String templateThu = "BJ-UIBE-Thu";
 
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

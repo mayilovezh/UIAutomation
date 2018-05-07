@@ -17,7 +17,7 @@ public class FilterWordsList {
 	String words = "Automation";
 	String name = "Zhang Yifan";
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

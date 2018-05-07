@@ -19,7 +19,7 @@ public class PredictNumberNational {
 	String quota3 = "9218";
 
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

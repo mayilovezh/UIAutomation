@@ -19,7 +19,7 @@ public class IndiaMarking {
 	String maxAvgCount = "13.793103448275861";
 	String capacityNumber = "40";
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

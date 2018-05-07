@@ -15,7 +15,7 @@ public class ResourcePlanning {
 	WebDriverAction action;
 
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

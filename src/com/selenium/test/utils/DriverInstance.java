@@ -10,7 +10,7 @@ import com.selenium.test.listener.TestNGListener;
 public class DriverInstance {
 	public static WebDriverAction action;
 
-	public WebDriver login(WebDriver driver) {
+	public WebDriver login(WebDriver driver) throws Exception {
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
@@ -20,9 +20,13 @@ public class DriverInstance {
 		action.setTimeout("10");
 		Assert.assertEquals(driver.getTitle(), "British Council");
 		action.clear(By.id(ElementHelper.USER_NAME));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_DEV);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.clear(By.id(ElementHelper.PASSWORD));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.USER_NAME_DEV);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.LOGIN_BTN));
 		return driver;
 	}

@@ -17,7 +17,7 @@ public class UnProcessingList {
 	String date = "2017-12-16";
 	
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
 		action = new WebDriverAction(driver);
 	}

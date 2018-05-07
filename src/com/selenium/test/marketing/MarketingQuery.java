@@ -32,7 +32,7 @@ public class MarketingQuery {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.MARKETING_QUERY));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.MARKETING_QUERY_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.MARKETING_QUERY_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.MARKETING_QUERY_DATE_FROM), dateFrom);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

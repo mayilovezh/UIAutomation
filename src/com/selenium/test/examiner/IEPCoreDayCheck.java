@@ -25,10 +25,10 @@ public class IEPCoreDayCheck {
 		new DriverInstance().teardown(driver);
 	}
 
-	@Test
+	/*@Test
 	public void navigate() throws Exception {
 		Thread.sleep(ElementHelper.LONG_TIME_A);
 		action.click(By.xpath(ElementHelper.IEP_AVAILABILITY));
 		Thread.sleep(ElementHelper.LONG_TIME);
-	}
+	}*/
 }

@@ -36,7 +36,7 @@ public class ConfirmRefund {
 	@Test
 	public void approve() throws Exception {
 		navigate();
-		action.selectByValue(By.id(ElementHelper.EOR_CONFIRM_REFUND_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.EOR_CONFIRM_REFUND_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.EOR_CONFIRM_REFUND_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);

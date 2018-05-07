@@ -24,7 +24,7 @@ public class ElementHelper {
 	
 	//VALUE
 	public static final String PROJECT_NAME= "MIS2_test";
-	public static String VALUE = "1";
+	public static String REGION_VALUE = "1";
 	public static String TEST_CENTER_ID = "100100";
 	public static String REMARK_VALUE = "Automation Testing";
 	public static String USER = "Zhang Yifan";

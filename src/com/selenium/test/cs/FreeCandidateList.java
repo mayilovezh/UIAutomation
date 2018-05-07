@@ -33,7 +33,7 @@ public class FreeCandidateList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.FREE_CANDIDATE_LIST_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.FREE_CANDIDATE_LIST_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_LIST_LAST_MONTH), 0);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

@@ -32,7 +32,7 @@ public class ReportByCenter {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.REPORT_BY_CENTER));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.REPORT_BY_CENTER_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.REPORT_BY_CENTER_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.REPORT_BY_CENTER_DATE_FROM), dateFrom);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

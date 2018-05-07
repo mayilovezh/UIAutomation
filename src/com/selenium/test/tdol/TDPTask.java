@@ -53,7 +53,7 @@ public class TDPTask {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.click(By.id(ElementHelper.TDP_TASK_CREATE));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.selectByValue(By.id(ElementHelper.TDP_TASK_CREATE_REGION), ElementHelper.VALUE);
+			action.selectByValue(By.id(ElementHelper.TDP_TASK_CREATE_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.setTimeout("30");
 			action.selectByValue(By.id(ElementHelper.TDP_TASK_CREATE_TESTDATE), "10248");

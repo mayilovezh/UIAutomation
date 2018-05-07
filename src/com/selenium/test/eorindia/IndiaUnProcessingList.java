@@ -53,7 +53,7 @@ public class IndiaUnProcessingList {
 	@Test(dependsOnMethods = { "importApplication"})
 	public void importCheck() throws Exception {
 		navigate();
-		action.selectByValue(By.id(ElementHelper.EOR_INDIA_UNPROCESSING_LIST_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.EOR_INDIA_UNPROCESSING_LIST_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByIndex(By.id(ElementHelper.EOR_INDIA_UNPROCESSING_LIST_YEAR), 1);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

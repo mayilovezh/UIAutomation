@@ -39,7 +39,7 @@ public class SpkDeployment {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT));
 		Thread.sleep(ElementHelper.LONG_TIME);
-		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

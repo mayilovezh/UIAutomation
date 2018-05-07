@@ -36,7 +36,7 @@ public class FreeCandidateAdd {
 
 	public void search() throws Exception {
 		navigate();
-		action.selectByValue(By.id(ElementHelper.FREE_CANDIDATE_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.FREE_CANDIDATE_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_MONTH), 0);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

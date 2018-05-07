@@ -33,7 +33,7 @@ public class ExtraList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.EXTRA_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_YEAR), "2017");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

@@ -38,7 +38,7 @@ public class UnProcessingList {
 	@Test
 	public void step01_SearchTRFReceived() throws Exception {
 		navigate();
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_YEAR), "2017");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -57,7 +57,7 @@ public class UnProcessingList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_ADD));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_YEAR), "2017");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

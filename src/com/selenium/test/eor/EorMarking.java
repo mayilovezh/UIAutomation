@@ -37,7 +37,7 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.EOR_MARKING));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EOR_MARKING_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.EOR_MARKING_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.EOR_MARKING_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

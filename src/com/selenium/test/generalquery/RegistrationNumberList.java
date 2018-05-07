@@ -39,7 +39,7 @@ public class RegistrationNumberList {
 	@Test
 	public void search() throws Exception {
 		navigate();
-		action.selectByValue(By.id(ElementHelper.RUL_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.RUL_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByValue(By.id(ElementHelper.RUL_TC), "50");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

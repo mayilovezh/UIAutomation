@@ -25,7 +25,7 @@ public class IEPAvailabilityCheck {
 		new DriverInstance().teardown(driver);
 	}
 
-	@Test
+	/*@Test
 	public void navigate() throws Exception {
 		Thread.sleep(ElementHelper.LONG_TIME_A);
 		action.click(By.xpath(ElementHelper.IEP_AVAILABILITY));
@@ -34,5 +34,5 @@ public class IEPAvailabilityCheck {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.IEP_AVAILABILITY_SAVE));
 		Thread.sleep(ElementHelper.LONG_TIME);
-	}
+	}*/
 }

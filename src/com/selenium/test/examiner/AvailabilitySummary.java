@@ -38,7 +38,7 @@ public class AvailabilitySummary {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.AVAILABILITY_SUMMARY));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
-		action.selectByValue(By.id(ElementHelper.AVAILABILITY_SUMMARY_REGIOM), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.AVAILABILITY_SUMMARY_REGIOM), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.AVAILABILITY_SUMMARY_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

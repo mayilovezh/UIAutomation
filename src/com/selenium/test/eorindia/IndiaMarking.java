@@ -35,7 +35,7 @@ public class IndiaMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.EOR_INDIA_MARKING));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EOR_INDIA_MARKING_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.EOR_INDIA_MARKING_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.EOR_INDIA_MARKING_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

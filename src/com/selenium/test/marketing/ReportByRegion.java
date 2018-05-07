@@ -32,7 +32,7 @@ public class ReportByRegion {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.REPORT_BY_REGION));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.REPORT_BY_REGION_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.REPORT_BY_REGION_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.REPORT_BY_REGION_DATE_FROM), dateFrom);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

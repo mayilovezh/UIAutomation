@@ -37,7 +37,7 @@ public class Refund {
 	public void confirm() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.EOR_REFUND_REGION), ElementHelper.VALUE);
+		action.selectByValue(By.id(ElementHelper.EOR_REFUND_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.EOR_REFUND_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);

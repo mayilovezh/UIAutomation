@@ -116,13 +116,13 @@
 	<test name="Examiner" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.examiner.ExaminerProfile" />
-			<class name="com.selenium.test.examiner.ExaminerTask" />
+			<!-- <class name="com.selenium.test.examiner.ExaminerTask" />
 			<class name="com.selenium.test.examiner.IEPAvailabilityCheck" />
 			<class name="com.selenium.test.examiner.SpkDeployment" />
 			<class name="com.selenium.test.examiner.CoreDayManagement" />
 			<class name="com.selenium.test.examiner.IEPCoreDayCheck" />
 			<class name="com.selenium.test.examiner.WorkRecords" />
-			<class name="com.selenium.test.examiner.AvailabilitySummary" />
+			<class name="com.selenium.test.examiner.AvailabilitySummary" /> -->
 		</classes>
 	</test>	
 	

@@ -7,8 +7,8 @@ public class ElementHelper {
 	public static String UAT_URL = "http://cnbjs1bms001:9001";
 	public static String USER_NAME = "userName";
 	public static String PASSWORD = "password";
-	public static String USER_NAME_VALUE = "Zhang Yifan"; 
-	public static String PASSWORD_VALUE = "Zyf929670!";
+	public static String USER_NAME_DEV = "Zhang Yifan"; 
+	public static String PASSWORD_DEV = "Zyf929670!";
 	public static String USER_NAME_EAST = "zhangyifan"; 
 	public static String PASSWORD_EAST = "Zyf929670@";
 	public static String LOGIN_BTN = "loginButt";

@@ -11,7 +11,6 @@ public class DriverInstance {
 	public static WebDriverAction action;
 
 	public WebDriver login(WebDriver driver) {
-		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
@@ -20,14 +19,13 @@ public class DriverInstance {
 		driver.manage().window().maximize();
 		action.setTimeout("10");
 		Assert.assertEquals(driver.getTitle(), "British Council");
-		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_VALUE);
-		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_VALUE);
+		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_DEV);
+		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.USER_NAME_DEV);
 		action.click(By.id(ElementHelper.LOGIN_BTN));
 		return driver;
 	}
 	
 	public WebDriver loginEast(WebDriver driver) {
-		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
@@ -44,7 +42,6 @@ public class DriverInstance {
 	
 
 	public WebDriver loginTdolIEP(WebDriver driver) {
-		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
@@ -61,7 +58,6 @@ public class DriverInstance {
 	}
 	
 	public WebDriver loginIEP(WebDriver driver) {
-		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
@@ -78,7 +74,6 @@ public class DriverInstance {
 	}
 	
 	public WebDriver loginICMP(WebDriver driver) {
-		// DOMConfigurator.configure("log4j.xml");
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;

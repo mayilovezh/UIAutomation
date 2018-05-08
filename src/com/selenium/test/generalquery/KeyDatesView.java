@@ -43,14 +43,14 @@ public class KeyDatesView {
 	}
 	
 	@Test
-	public void searchKeyDates() throws Exception {
+	public void step01_SearchKeyDates() throws Exception {
 		navigate();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.KEY_DATES_VIEW_SEARCH_DATE)), "02/06/2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
-	@Test(dependsOnMethods = { "searchKeyDates"})
-	public void exportKeyDates() throws Exception {
+	@Test
+	public void step02_ExportKeyDates() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.KEY_DATES_VIEW_EXPORT));
 		Thread.sleep(ElementHelper.WAIT_TIME);

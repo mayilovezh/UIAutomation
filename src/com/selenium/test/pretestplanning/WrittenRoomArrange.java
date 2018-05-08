@@ -40,15 +40,15 @@ public class WrittenRoomArrange {
 	}
 	
 	@Test
-	public void changeArrangement() throws Exception {
+	public void step01_ChangeArrangement() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.WRITTEN_ROOM_ARRANGE_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.WRITTEN_ROOM_ARRANGE_CHANGE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
+		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.id(ElementHelper.WRITTEN_ROOM_ARRANGE_ADD_ROOM));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.WRA_ADD_ROOM_BUILDING), 2);
+		action.selectByValue(By.id(ElementHelper.WRA_ADD_ROOM_BUILDING), "162");
 		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.xpath(ElementHelper.WRA_ADD_ROOM_SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -58,11 +58,13 @@ public class WrittenRoomArrange {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.WRA_SAVE_CONFIRM));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.id(ElementHelper.WRA_SAVE_TEXT)), "Success");
+		action.click(By.xpath(ElementHelper.WRA_CONFIRM));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		Assert.assertEquals(action.getText(By.id(ElementHelper.WRA_SAVE_TEXT)), "Success.");
 	}
 	
 	@Test
-	public void deleteRoom() throws Exception {
+	public void step02_DeleteRoom() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.WRITTEN_ROOM_ARRANGE_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);

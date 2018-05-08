@@ -36,8 +36,8 @@ public class WrittenTemplatesList {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
-	/*@Test
-	public void addTemplates() throws Exception {
+	@Test
+	public void step01_AddTemplates() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.WRITTEN_TEMPLATES_LIST_ADD));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -51,7 +51,7 @@ public class WrittenTemplatesList {
 	
 	//TO DO
 	@Test
-	public void addRoom() throws Exception {
+	public void step02_AddRoom() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.WRITTEN_TEMPLATES_LIST_SEARCH));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -59,10 +59,10 @@ public class WrittenTemplatesList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.id(ElementHelper.WRITTEN_TEMPLATES_LIST_ADD_ROOM));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-	}*/
+	}
 	
-	/*@Test
-	public void modifyTemplates() throws Exception {
+	@Test
+	public void step03_ModifyTemplates() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.WRITTEN_TEMPLATES_LIST_SEARCH));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -74,10 +74,10 @@ public class WrittenTemplatesList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.WRITTEN_TEMPLATES_LIST_MODIFY_SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 	
-	@Test
-	public void deleteTemplates() throws Exception {
+	/*@Test
+	public void step04_DeleteTemplates() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.WRITTEN_TEMPLATES_LIST_SEARCH));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -86,5 +86,5 @@ public class WrittenTemplatesList {
 		Alert confirm = driver.switchTo().alert();
 		confirm.accept();
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}
+	}*/
 }

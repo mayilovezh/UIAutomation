@@ -113,18 +113,16 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="Examiner" preserve-order="true">
+	<!-- <test name="Examiner" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.examiner.ExaminerProfile" />
-			<!-- <class name="com.selenium.test.examiner.ExaminerTask" />
-			<class name="com.selenium.test.examiner.IEPAvailabilityCheck" />
+			<class name="com.selenium.test.examiner.ExaminerTask" />
 			<class name="com.selenium.test.examiner.SpkDeployment" />
 			<class name="com.selenium.test.examiner.CoreDayManagement" />
-			<class name="com.selenium.test.examiner.IEPCoreDayCheck" />
 			<class name="com.selenium.test.examiner.WorkRecords" />
-			<class name="com.selenium.test.examiner.AvailabilitySummary" /> -->
+			<class name="com.selenium.test.examiner.AvailabilitySummary" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
 	<!-- <test name="PreTestPlanning" preserve-order="true">
 		<classes>
@@ -134,7 +132,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="GeneralQuery" preserve-order="true">
+	<test name="GeneralQuery" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.generalquery.RegistrationNumberList" />
 			<class name="com.selenium.test.generalquery.HolidayManagement" />
@@ -143,7 +141,7 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>	 -->
+	</test>	
 	
 </suite> 
 

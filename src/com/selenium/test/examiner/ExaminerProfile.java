@@ -110,7 +110,7 @@ public class ExaminerProfile {
 		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_STATUS));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(15000);
+		/*Thread.sleep(15000);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_SPK));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_WRT));
@@ -140,7 +140,7 @@ public class ExaminerProfile {
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_STATUS_SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_STATUS_YES));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.WAIT_TIME);*/
 	}
 	
 	@Test

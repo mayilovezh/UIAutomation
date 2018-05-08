@@ -42,6 +42,5 @@ public class ResourcePlanning {
 		navigate();
 		action.click(By.id(ElementHelper.RESOURCE_PLANNING_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		
 	}
 }

@@ -8,7 +8,7 @@ public class ElementHelper {
 	public static String USER_NAME = "userName";
 	public static String PASSWORD = "password";
 	public static String USER_NAME_DEV = "Zhang Yifan"; 
-	public static String PASSWORD_DEV = "Zyf929670!";
+	public static String PASSWORD_DEV = "Zyf11111!";
 	public static String USER_NAME_EAST = "zhangyifan"; 
 	public static String PASSWORD_EAST = "Zyf929670@";
 	public static String LOGIN_BTN = "loginButt";
@@ -1193,13 +1193,14 @@ public class ElementHelper {
     public static String WRITTEN_ROOM_ARRANGE_MONTH = "ddlMonth-Search";
     public static String WRITTEN_ROOM_ARRANGE_DATE = "ddlTestDate-Search";
     public static String WRITTEN_ROOM_ARRANGE_SEARCH = "btnQuery";
-    public static String WRITTEN_ROOM_ARRANGE_CHANGE = "//*[@id='spreadsheet-WrittenArrangement-table']/tbody/tr[1]/td[7]/a";
+    public static String WRITTEN_ROOM_ARRANGE_CHANGE = "//*[@id='spreadsheet-WrittenArrangement-table']/tbody/tr[2]/td[7]/a";
     public static String WRITTEN_ROOM_ARRANGE_ADD_ROOM = "btnAddRoom";
     public static String WRA_ADD_ROOM_BUILDING = "TestBuilding-add";
     public static String WRA_ADD_ROOM_SAVE = "//button[@type='button']";
     public static String WRA_SELECT_ALL = "aggangeCheckAll";
     public static String WRA_SAVE = "btnSave-Upload-WArr";
     public static String WRA_SAVE_CONFIRM = "(//button[@type='button'])[3]";
+    public static String WRA_CONFIRM = "(//button[@type='button'])[5]";
     public static String WRA_SAVE_TEXT = "displayYesConfirmation";
     public static String WRA_DELETE = "BatchDeleteRoom";
     public static String WRA_DELETE_SELECT = "//*[@id='tr144']/td[1]/input";

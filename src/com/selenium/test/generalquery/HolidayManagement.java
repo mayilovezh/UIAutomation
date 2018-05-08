@@ -36,7 +36,7 @@ public class HolidayManagement {
 	}
 	
 	@Test
-	public void createHoliday() throws Exception {
+	public void step01_CreateHoliday() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.HM_CREATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -48,26 +48,28 @@ public class HolidayManagement {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 	
-	@Test(dependsOnMethods = { "createHoliday"})
-	public void searchHoliday() throws Exception {
+	@Test
+	public void step02_SearchHoliday() throws Exception {
 		navigate();
 		search();
 	}
 	
-	@Test(dependsOnMethods = { "searchHoliday"})
-	public void modifyHoliday() throws Exception {
+	@Test
+	public void step03_ModifyHoliday() throws Exception {
 		navigate();
 		search();
 		action.click(By.linkText(ElementHelper.HM_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.clear(By.id(ElementHelper.HM_MODIFY_NAME));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.HM_MODIFY_NAME), holidayName);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test(dependsOnMethods = { "modifyHoliday"})
-	public void log() throws Exception {
+	@Test
+	public void step04_Log() throws Exception {
 		navigate();
 		search();
 		action.click(By.linkText(ElementHelper.HM_LOG));
@@ -78,8 +80,8 @@ public class HolidayManagement {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 	
-	@Test(dependsOnMethods = { "log"})
-	public void delete() throws Exception {
+	@Test
+	public void step05_Delete() throws Exception {
 		navigate();
 		search();
 		action.click(By.linkText(ElementHelper.HM_DELETE));

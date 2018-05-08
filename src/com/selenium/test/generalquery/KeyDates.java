@@ -43,7 +43,7 @@ public class KeyDates {
 	}
 	
 	@Test
-	public void generateKeydates() throws Exception {
+	public void step01_GenerateKeydates() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.KEY_DATES_GENERATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -51,8 +51,8 @@ public class KeyDates {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 	
-	@Test(dependsOnMethods = { "generateKeydates"})
-	public void showOnViewPage() throws Exception {
+	@Test
+	public void step02_ShowOnViewPage() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.KEY_DATES_SHOW));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -60,8 +60,8 @@ public class KeyDates {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
-	@Test(dependsOnMethods = { "showOnViewPage"})
-	public void hiddenOnViewPage() throws Exception {
+	@Test
+	public void step03_HiddenOnViewPage() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.KEY_DATES_HIDDEN));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -69,8 +69,8 @@ public class KeyDates {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
-	@Test(dependsOnMethods = { "hiddenOnViewPage"})
-	public void exportKeyDates() throws Exception {
+	@Test
+	public void step04_ExportKeyDates() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.KEY_DATES_EXPORT));
 		Thread.sleep(ElementHelper.WAIT_TIME);

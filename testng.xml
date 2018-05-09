@@ -35,7 +35,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="PostTest" preserve-order="true">
+	<test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
 			<class name="com.selenium.test.postest.JaggedProfileInfo" />
@@ -49,7 +49,7 @@
 			<class name="com.selenium.test.postest.EMSManagement" />
 			<class name="com.selenium.test.postest.CandidateFromItap" />
 		</classes>
-	</test>	  -->
+	</test>	 
 	
 	<!-- <test name="CSCS" preserve-order="true">
 		<classes>
@@ -58,7 +58,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="Marketing" preserve-order="true">
+	<test name="Marketing" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.marketing.MarketingQuery" />
 			<class name="com.selenium.test.marketing.ReportByRegion" />
@@ -140,7 +140,7 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>	 -->
+	</test>	
 	
 </suite> 
 

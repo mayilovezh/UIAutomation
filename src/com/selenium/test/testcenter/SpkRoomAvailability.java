@@ -55,7 +55,7 @@ public class SpkRoomAvailability {
 	}
 
 	@Test
-	public void create() {
+	public void step01_Create() {
 		navigate();
 		try {
 			action.sendkeys(By.id(ElementHelper.SPK_ROOM_DATE_FROM), dateFrom);
@@ -98,9 +98,8 @@ public class SpkRoomAvailability {
 	public void search() {
 		navigate();
 		try {
-			action.sendkeys(By.id(ElementHelper.SPK_ROOM_DATE_FROM), dateFrom1);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.SPK_ROOM_DATE_FROM), dateTo1);
+			/*action.click(By.cssSelector(ElementHelper.SPK_ROOM_DATE_FROM_CALENDAR));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);*/
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.SPK_ROOM_SEARCH));
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -112,12 +111,12 @@ public class SpkRoomAvailability {
 	}
 
 	@Test
-	public void searchAvailability() {
+	public void step02_SearchAvailability() {
 		search();
 	}
 
 	@Test
-	public void modify() {
+	public void step03_Modify() {
 	 search();
 	 try {
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -134,7 +133,7 @@ public class SpkRoomAvailability {
 	}
 	
 	@Test
-	public void view() {
+	public void step04_View() {
 		search();
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -150,7 +149,7 @@ public class SpkRoomAvailability {
 	}
 	
 	@Test
-	public void log() {
+	public void step05_Log() {
 		search();
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -166,7 +165,7 @@ public class SpkRoomAvailability {
 	}
 	
 	@Test
-	public void detlete() {
+	public void step06_Detlete() {
 		search();
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -177,6 +176,42 @@ public class SpkRoomAvailability {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void step07_DeleteSpkTemplateSat() throws InterruptedException {
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.TEST_CENTER));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), "1");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), "100100");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
+	}
+	
+	@Test
+	public void step08_DeleteSpkTemplateThu() throws InterruptedException {
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.TEST_CENTER));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), "1");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), "100100");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
 	
 

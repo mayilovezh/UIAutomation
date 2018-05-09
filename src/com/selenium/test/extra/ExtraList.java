@@ -14,7 +14,7 @@ public class ExtraList {
 	static WebDriver driver;
 	WebDriverAction action;
 	String name = "Zhang Yifan";
-	String candidateNo = "188736";
+	String candidateNo = "151265";
 	String phone = "1234567890";
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -39,7 +39,7 @@ public class ExtraList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByIndex(By.id(ElementHelper.EXTRA_LIST_MONTH), 9);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_DATE), "10170");
+		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_DATE), "10164");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.EXTRA_LIST_CANDIDATE_NO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

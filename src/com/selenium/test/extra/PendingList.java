@@ -38,7 +38,7 @@ public class PendingList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByIndex(By.id(ElementHelper.PENDING_LIST_MONTH), 9);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.PENDING_LIST_DATE), "10170");
+		action.selectByValue(By.id(ElementHelper.PENDING_LIST_DATE), "10164");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.PENDING_LIST_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);

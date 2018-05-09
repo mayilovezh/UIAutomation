@@ -43,7 +43,7 @@ public class SpkRoomTemplate {
 
 	}
 
-	/*@Test
+	@Test
 	public void step01_CreateThursday() throws Exception {
 		navigate();
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -76,7 +76,7 @@ public class SpkRoomTemplate {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}*/
+	}
 
 	public void search() throws Exception {
 		navigate();
@@ -86,7 +86,7 @@ public class SpkRoomTemplate {
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY)), templateThu);
 	}
 
-	/*@Test
+	@Test
 	public void step03_SearchTemplate() throws Exception {
 		search();
 	}
@@ -109,7 +109,7 @@ public class SpkRoomTemplate {
 		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_VIEW));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		isroomChecked();
-	}*/
+	}
 
 	public boolean isroomChecked() {
 		boolean status = false;

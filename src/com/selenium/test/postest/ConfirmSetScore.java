@@ -33,7 +33,7 @@ public class ConfirmSetScore {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test
+	/*@Test
 	public void confirmSetAll() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.CONFIRM_SET_SCORE_YEAR), "2018");
@@ -53,5 +53,5 @@ public class ConfirmSetScore {
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.LONG_TIME);
 		Assert.assertEquals(action.getText(By.id("displayYesConfirmation")), " The success of the operation");
-	}
+	}*/
 }

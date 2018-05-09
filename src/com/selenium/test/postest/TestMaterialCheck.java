@@ -48,7 +48,7 @@ public class TestMaterialCheck {
 	}
 
 	@Test
-	public void search() throws Exception {
+	public void step01_Search() throws Exception {
 		searchMaterial();
 		action.sendkeys(By.id(ElementHelper.TEST_MATERIAL_CANDIDATENO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -60,7 +60,7 @@ public class TestMaterialCheck {
 	}
 	
 	@Test
-	public void exportExcel() throws Exception {
+	public void step02_ExportExcel() throws Exception {
 		searchMaterial();
 		action.click(By.id(ElementHelper.TEST_MATERIAL_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);

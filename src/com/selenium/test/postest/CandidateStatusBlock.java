@@ -16,10 +16,10 @@ import com.selenium.test.utils.WebDriverAction;
 public class CandidateStatusBlock {
 	static WebDriver driver;
 	WebDriverAction action;
-	String givenNameEn = "XINDI";
-	String givenNameCn = "心笛";
-	String candidateNo = "249668";
-	String chineseName = "邵 心笛";
+	String givenNameEn = "CHENGZHU";
+	String givenNameCn = "成竹";
+	String candidateNo = "910398";
+	String chineseName = "徐 成竹";
 
 	@BeforeMethod
 	public void setUp() throws Exception {

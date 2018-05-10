@@ -7,7 +7,7 @@ public class ElementHelper {
 	public static String UAT_URL = "http://cnbjs1bms001:9001";
 	public static String USER_NAME = "userName";
 	public static String PASSWORD = "password";
-	public static String USER_NAME_DEV = "Zhang Yifan"; 
+	public static String USER_NAME_DEV = "ZYF"; 
 	public static String PASSWORD_DEV = "Zyf11111!";
 	public static String USER_NAME_EAST = "zhangyifan"; 
 	public static String PASSWORD_EAST = "Zyf929670@";
@@ -27,7 +27,7 @@ public class ElementHelper {
 	public static String REGION_VALUE = "1";
 	public static String TEST_CENTER_ID = "100100";
 	public static String REMARK_VALUE = "Automation Testing";
-	public static String USER = "Zhang Yifan";
+	public static String USER = "yifan zhang";
 	public static String CONFIRMATION = " Operation is successful";
 	
 	//TDOL IEP

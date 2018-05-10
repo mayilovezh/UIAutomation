@@ -11,10 +11,10 @@
 
 	<test name="TestCenter" preserve-order="true">
 		<classes >
-			<!-- <class name="com.selenium.test.testcenter.TestCenterList" />
+			<class name="com.selenium.test.testcenter.TestCenterList" />
 			<class name="com.selenium.test.testcenter.TestBuildingList" />
 			<class name="com.selenium.test.testcenter.TestRoomList" />
-			<class name="com.selenium.test.testcenter.TestDateList" /> -->
+			<class name="com.selenium.test.testcenter.TestDateList" />
 			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
 		</classes>
 	</test> 
@@ -35,7 +35,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="PostTest" preserve-order="true">
+	<test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
 			<class name="com.selenium.test.postest.JaggedProfileInfo" />
@@ -49,16 +49,16 @@
 			<class name="com.selenium.test.postest.EMSManagement" />
 			<class name="com.selenium.test.postest.CandidateFromItap" />
 		</classes>
-	</test>	  -->
+	</test>	 
 	
-	<!-- <test name="CSCS" preserve-order="true">
+	<test name="CSCS" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.cs.FreeCandidateAdd" />
 			<class name="com.selenium.test.cs.FreeCandidateList" />
 		</classes>
-	</test>	 -->
+	</test>	
 	
-	<!-- <test name="Marketing" preserve-order="true">
+	<test name="Marketing" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.marketing.MarketingQuery" />
 			<class name="com.selenium.test.marketing.ReportByRegion" />
@@ -68,7 +68,7 @@
 		</classes>
 	</test>	
 	
-	<test name="CS-Extra" preserve-order="true">
+	<!-- <test name="CS-Extra" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
 			<class name="com.selenium.test.extra.PendingList" />

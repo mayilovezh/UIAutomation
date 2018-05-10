@@ -33,7 +33,7 @@ public class SetScore {
 	}
 	
 	
-	/*@Test
+	@Test
 	public void setScoreAll() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.SET_SCORE_YEAR), "2018");
@@ -52,6 +52,6 @@ public class SetScore {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 	
 }

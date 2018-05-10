@@ -48,9 +48,9 @@ public class CandidateFromItap {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CANDIDATE_FROM_ITAP_REGISTRATION)), registrationNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CANDIDATE_FROM_ITAP_SYNC)), syncNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CANDIDATE_FROM_ITAP_SPECIAL)), specialCandidates);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CANDIDATE_FROM_ITAP_SYNC)), syncNo);
+//		Thread.sleep(ElementHelper.SHORT_TIME_A);
+//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CANDIDATE_FROM_ITAP_SPECIAL)), specialCandidates);
+//		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 }

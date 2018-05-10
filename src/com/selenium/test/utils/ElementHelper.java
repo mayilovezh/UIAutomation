@@ -407,9 +407,9 @@ public class ElementHelper {
 	public static String CAN_STATUS_BLOCK_CANDIDATE_NO = "CandidateStatus_List_Search_CandidateNo";
 	public static String CAN_STATUS_BLOCK_SEARCH_INFO = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[2]";
 	public static String CAN_STATUS_BLOCK_SEARCH_CHINESE_NAME = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[9]";
-	public static String CAN_STATUS_BLOCK_STATUS_SELECT = "Candidate_Status_Chk_13479094";
-	public static String CAN_STATUS_BLOCK_TEST_STATUS = "Candidate_Status_Test_List_13479094";
-    public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Score_List_13479094";
+	public static String CAN_STATUS_BLOCK_STATUS_SELECT = "Candidate_Status_Chk_13834770";
+	public static String CAN_STATUS_BLOCK_TEST_STATUS = "Candidate_Status_Test_List_13834770";
+    public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Score_List_13834770";
     public static String CAN_STATUS_BLOCK_STATUS_SAVE = "Candidate_Status_Save_Selected";
     
     //EMS Management
@@ -460,6 +460,12 @@ public class ElementHelper {
     
     //Import Log
     public static String IMPORT_LOG = "//*[@id='PostTest']/ul/li[5]/a";
+    public static String IMPORT_LOG_TESTCENTER_RELEASE = "//*[@id='SpreadSheetScoreModifyLogGrid']/div[2]/table/tbody/tr[1]/td[2]";
+    public static String IMPORT_LOG_FIRST_RELEASE = "//*[@id='SpreadSheetScoreModifyLogGrid']/div[2]/table/tbody/tr[1]/td[5]";
+    public static String IMPORT_LOG_FIRST_MARKING = "//*[@id='SpreadSheetScoreModifyLogGrid']/div[2]/table/tbody/tr[2]/td[5]";
+    public static String IMPORT_LOG_TOTAL_NUM = "//*[@id='SpreadSheetScoreModifyLogGrid']/div[2]/table/tbody/tr[1]/td[6]";
+    public static String IMPORT_LOG_SUCCESS_NUM = "//*[@id='SpreadSheetScoreModifyLogGrid']/div[2]/table/tbody/tr[1]/td[7]";
+    public static String IMPORT_LOG_CREATE_BY = "//*[@id='SpreadSheetScoreModifyLogGrid']/div[2]/table/tbody/tr[1]/td[8]";
     
     //Score Check
     public static String SCORE_CHECK = "//*[@id='PostTest']/ul/li[6]/a";
@@ -496,9 +502,9 @@ public class ElementHelper {
     public static String CANDIDATE_FROM_ITAP_MONTH = "CandidateFromItap_Month";
     public static String CANDIDATE_FROM_ITAP_DATE = "ddlTestDate-CandidateFromItap";
     public static String CANDIDATE_FROM_ITAP_SEARCH = "SearchCandidateFromItap_Search";
-    public static String CANDIDATE_FROM_ITAP_REGISTRATION = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[2]/td[5]";
-    public static String CANDIDATE_FROM_ITAP_SYNC= "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[2]/td[6]";
-    public static String CANDIDATE_FROM_ITAP_SPECIAL = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[2/td[7]";
+    public static String CANDIDATE_FROM_ITAP_REGISTRATION = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1]/td[5]";
+    public static String CANDIDATE_FROM_ITAP_SYNC= "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1]/td[6]";
+    public static String CANDIDATE_FROM_ITAP_SPECIAL = "//*[@id='CandidateFromItap_guid']/div[2]/table/tbody/tr[1/td[7]";
     
     //CS-CS
     public static String CS_CS = "CS-CS";

@@ -39,7 +39,7 @@ public class ScoreUpload {
 		action.selectByValue(By.id(ElementHelper.SCORE_UPLOAD_DATE), "10197");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.SCORE_UPLOAD_SEARCH));
-		Thread.sleep(63000);
+		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 	
 	@Test

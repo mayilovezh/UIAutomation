@@ -16,10 +16,10 @@ import com.selenium.test.utils.WebDriverAction;
 public class CandidateStatusBlock {
 	static WebDriver driver;
 	WebDriverAction action;
-	String givenNameEn = "CHENGZHU";
-	String givenNameCn = "成竹";
-	String candidateNo = "910398";
-	String chineseName = "徐 成竹";
+	String givenNameEn = "PEIYAO";
+	String givenNameCn = "佩瑶";
+	String candidateNo = "036888";
+	String chineseName = "谭 佩瑶";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -45,9 +45,9 @@ public class CandidateStatusBlock {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.isVisible(By.id(ElementHelper.CAN_STATUS_BLOCK_REGION));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_MONTH), 0);
+		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_MONTH), 4);
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), 2);
+		action.selectByValue(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), "10350");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.CAN_STATUS_BLOCK_CANDIDATE_NO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -61,12 +61,12 @@ public class CandidateStatusBlock {
 	@Test
 	public void step01_ModifypProfile() throws Exception {
 		navigate();
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.isVisible(By.id(ElementHelper.CAN_STATUS_BLOCK_REGION));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_MONTH), 0);
+		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_MONTH), 4);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), 2);
+		action.selectByValue(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), "10350");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.CAN_STATUS_BLOCK_CANDIDATE_NO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

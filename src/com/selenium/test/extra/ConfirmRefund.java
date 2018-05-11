@@ -31,7 +31,7 @@ public class ConfirmRefund {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CONFIRM_REFUND));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.CONFIRM_REFUND_SEARCH));
+		action.click(By.id(ElementHelper.CONFIRM_REFUND_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	

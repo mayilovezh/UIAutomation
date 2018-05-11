@@ -14,7 +14,8 @@ import com.selenium.test.utils.WebDriverAction;
 public class PendingList {
 	static WebDriver driver;
 	WebDriverAction action;
-	String name = "Zhang Yifan";
+	String name = "ZYF";
+	
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -34,12 +35,12 @@ public class PendingList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.selectByValue(By.id(ElementHelper.PENDING_LIST_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.PENDING_LIST_YEAR), "2017");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByIndex(By.id(ElementHelper.PENDING_LIST_MONTH), 9);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.PENDING_LIST_DATE), "10164");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+//		action.selectByValue(By.id(ElementHelper.PENDING_LIST_YEAR), "2017");
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
+//		action.selectByIndex(By.id(ElementHelper.PENDING_LIST_MONTH), 6);
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
+//		action.selectByValue(By.id(ElementHelper.PENDING_LIST_DATE), "10156");
+//		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.PENDING_LIST_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
@@ -49,15 +50,27 @@ public class PendingList {
 		navigate();
 		action.click(By.xpath(ElementHelper.PENDING_LIST_VIEWLOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.PENDING_LIST_VIEWLOG_UPDATEBY)), name);
+//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.PENDING_LIST_VIEWLOG_UPDATEBY)), name);
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
 	
 	@Test
-	public void step02_ChangetoProcessing() throws Exception {
+	public void step02_ChangeToReject() throws Exception {
+		navigate();
+		action.click(By.xpath(ElementHelper.PENDING_LIST_REJECT));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.selectByIndex(By.id(ElementHelper.PENDING_LIST_REJECT_REASON), 1);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
+	}
+	
+	/*@Test
+	public void step03_ChangetoProcessing() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.PENDING_LIST_PROCESSING));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}
+	}*/
 }

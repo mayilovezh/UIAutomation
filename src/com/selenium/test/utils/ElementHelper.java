@@ -656,7 +656,9 @@ public class ElementHelper {
     public static String PENDING_LIST_MONTH = "sel_searchTestDate_Month_ExtraAppList";
     public static String PENDING_LIST_DATE = "sel_searchTestDate_ExtraAppList";
     public static String PENDING_LIST_SEARCH = "//input[contains(@value,'Search')]";
+    public static String PENDING_LIST_REJECT = "//*[@id='SpreadSheetExtraAppListGrid']/div[2]/table/tbody/tr[1]/td[8]/a[1]";
     public static String PENDING_LIST_PROCESSING = "//*[@id='SpreadSheetExtraAppListGrid']/div[2]/table/tbody/tr/td[8]/a[2]";
+    public static String PENDING_LIST_REJECT_REASON = "RejectReason";
     public static String PENDING_LIST_VIEWLOG = "//*[@id='SpreadSheetExtraAppListGrid']/div[2]/table/tbody/tr/td[8]/a[3]";
     public static String PENDING_LIST_VIEWLOG_UPDATEBY = "//*[@id='ExtraAppList_Pendding-divHistory-ViewLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
 
@@ -670,25 +672,30 @@ public class ElementHelper {
     public static String EXTRA_LIST_CANDIDATE_NO = "ExtraAppListTwo-CandidateIDSecrch";
     public static String EXTRA_LIST_SEARCH = "//input[contains(@value,'Search')]";
     public static String EXTRA_LIST_SELECT = "//*[@id='SpreadSheetExtraAppListTwoGrid']/div[2]/table/tbody/tr/td[1]/input";
+    public static String EXTRA_LIST_VIEW_LOG = "View Log";
+    public static String EXTRA_LIST_VIEW_LOG_UPDATEBY = "//*[@id='ExtraAppListTwo-divHistory-ViewLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
     public static String EXTRA_LIST_UPDATE_APP = "Update App";
     public static String EXTRA_LIST_UPDATE_APP_PHONE = "ExtraAppListTwo-PhoneUpdateApp";
+    public static String EXTRA_LIST_UPDATE_APP_COURIER_NO = "ExtraAppListTwo-MailNOUpdateApp";
     public static String EXTRA_LIST_DONE = "ExtraAppListTwo-Done";
     public static String EXTRA_LIST_EXPORT_EXCEL = "ExtraAppListTwo-ExportExcel";
     public static String EXTRA_LIST_PRINT_PROCESSING_LIST = "ExtraAppListTwo-Print";
     public static String EXTRA_LIST_PRINT_POSTAL_LABEL = "ExtraAppListTwo-PrintPostallabel";
     public static String EXTRA_LIST_EXPORT_EMS_DHL = "ExtraAppListTwo-EMS";
     public static String EXTRA_LIST_IMPORT_EMS_DHL = "ExtraAppListTwo-ImportEMS";
+    public static String EXTRA_LIST_STATUS_CHECK = "//*[@id='SpreadSheetExtraAppListTwoGrid']/div[2]/table/tbody/tr/td[10]" ;
+    
     
     //Refund
     public static String REFUND = "//*[@id='CS-Extra']/ul/li[4]/a";
     public static String REFUND_SEARCH = "inp-Query-ExtraAppListRefundList";
     public static String REFUND_CONFIRM = "inp-Confirm-ExtraAppListRefundList";
-    public static String REFUND_SELECT = "//*[@id='SpreadSheetExtraAppListRefundListGrid']/div[2]/table/tbody/tr/td[1]/input";
+    public static String REFUND_SELECT = "//*[@id='SpreadSheetExtraAppListRefundListGrid']/div[2]/table/tbody/tr[1]/td[1]/input";
 
     //Confirm Refund
     public static String CONFIRM_REFUND = "//*[@id='CS-Extra']/ul/li[5]/a";
     public static String CONFIRM_REFUND_SEARCH = "inp-Query-ExtraAppListConfirmRefundList";
-    public static String CONFIRM_REFUND_SELECT = "//*[@id='SpreadSheetExtraAppListConfirmRefundListGrid']/div[2]/table/tbody/tr/td[1]/input";
+    public static String CONFIRM_REFUND_SELECT = "//*[@id='SpreadSheetExtraAppListConfirmRefundListGrid']/div[2]/table/tbody/tr[1]/td[1]/input";
     public static String CONFIRM_REFUND_APPROVE = "inp-Appore-ExtraAppListConfirmRefundList";
     
     

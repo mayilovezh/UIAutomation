@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" verbose="2" allow-return-values="true">
+<suite name="Suite" verbose="2" allow-return-values="true" preserve-order="true">
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -9,7 +9,7 @@
 	</listeners>
 
 
-	<test name="TestCenter" preserve-order="true">
+	<!-- <test name="TestCenter" preserve-order="true">
 		<classes >
 			<class name="com.selenium.test.testcenter.TestCenterList" />
 			<class name="com.selenium.test.testcenter.TestBuildingList" />
@@ -19,7 +19,7 @@
 		</classes>
 	</test> 
 	
-	<!-- <test name="TDOL" preserve-order="true">
+	<test name="TDOL" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.tdol.TDPProfile" />
 			<class name="com.selenium.test.tdol.TDPTask" />
@@ -33,7 +33,7 @@
 			<class name="com.selenium.test.tdol.ArrangeBagDuty" />
 			<class name="com.selenium.test.tdol.ArrangeReports" />
 		</classes>
-	</test>	 -->
+	</test>	
 	
 	<test name="PostTest" preserve-order="true">
 		<classes>
@@ -66,19 +66,19 @@
 			<class name="com.selenium.test.marketing.ReportByCenter" />
 			<class name="com.selenium.test.marketing.ReportByCenterOrigin" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
-	<!-- <test name="CS-Extra" preserve-order="true">
+	<test name="CS-Extra" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
 			<class name="com.selenium.test.extra.PendingList" />
-			<class name="com.selenium.test.extra.ExtraList" />
 			<class name="com.selenium.test.extra.Refund" />
 			<class name="com.selenium.test.extra.ConfirmRefund" />
+			<class name="com.selenium.test.extra.ExtraList" />
 		</classes>
 	</test>	
 	
-	<test name="CS-Eor" preserve-order="true">
+	<!-- <test name="CS-Eor" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.eor.UnProcessingList" />
 			<class name="com.selenium.test.eor.EorAppList" />

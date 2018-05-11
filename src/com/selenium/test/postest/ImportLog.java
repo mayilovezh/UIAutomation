@@ -22,7 +22,7 @@ public class ImportLog {
 	String createBy = "zhangyifan";
 	
 	@BeforeMethod
-	public void setUp() {
+	public void setUp() throws Exception {
 		driver = new DriverInstance().loginEast(driver);
 		action = new WebDriverAction(driver);
 	}

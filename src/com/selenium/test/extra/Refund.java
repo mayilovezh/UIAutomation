@@ -31,7 +31,7 @@ public class Refund {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.REFUND));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.REFUND_SEARCH));
+		action.click(By.id(ElementHelper.REFUND_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	

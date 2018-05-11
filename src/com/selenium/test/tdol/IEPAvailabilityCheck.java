@@ -12,8 +12,8 @@ public class IEPAvailabilityCheck {
 	WebDriverAction action;
 	
 	@BeforeMethod
-	public void setUp() {
-		driver = new DriverInstance().loginTdolIEP(driver);
+	public void setUp() throws Exception {
+		driver = new DriverInstance().loginTdol(driver);
 		action = new WebDriverAction(driver);
 	}
 

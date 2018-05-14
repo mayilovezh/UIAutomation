@@ -14,10 +14,10 @@ import com.selenium.test.utils.WebDriverAction;
 public class IndiaMarking {
 	static WebDriver driver;
 	WebDriverAction action;
-	String availableExaminer = "29";
-	String maxCount = "400";
-	String maxAvgCount = "13.793103448275861";
-	String capacityNumber = "40";
+	String availableExaminer = "75";
+	String maxCount = "-276";
+	String maxAvgCount = "-27.6";
+	String capacityNumber = "30";
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -43,6 +43,8 @@ public class IndiaMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByIndex(By.id(ElementHelper.EOR_INDIA_MARKING_DATE), 1);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_TYPE_SPK));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
 		Assert.assertEquals(action.getText(By.id(ElementHelper.EOR_INDIA_MARKING_AVAILABLE_EXAMINER)), availableExaminer);
@@ -52,7 +54,7 @@ public class IndiaMarking {
 		navigate();
 		action.clear(By.id(ElementHelper.EOR_INDIA_MARKING_SELECT_EXAMINER));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.EOR_INDIA_MARKING_SELECT_EXAMINER), availableExaminer);
+		action.sendkeys(By.id(ElementHelper.EOR_INDIA_MARKING_SELECT_EXAMINER), "10");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_CALCULATE));
 		Thread.sleep(ElementHelper.LONG_TIME);
@@ -62,7 +64,7 @@ public class IndiaMarking {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	/*@Test
+	@Test
 	public void setp01_SetCapacity() throws Exception {
 		search();
 		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_SET_CAPACITY));
@@ -71,7 +73,7 @@ public class IndiaMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}*/
+	}
 	
 	/*@Test
 	public void step02_AutoAllocation() throws Exception {
@@ -108,7 +110,7 @@ public class IndiaMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}*/
 	
-	@Test
+	/*@Test
 	public void step04_AllocationResultPage() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_ALLOCATION_RESULT_PAGE));
@@ -122,5 +124,5 @@ public class IndiaMarking {
 //		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "245512,");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.CANCEL));
-	}
+	}*/
 }

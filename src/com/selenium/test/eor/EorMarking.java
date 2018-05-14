@@ -15,9 +15,9 @@ import com.selenium.test.utils.WebDriverAction;
 public class EorMarking {
 	static WebDriver driver;
 	WebDriverAction action;
-	String availableExaminer = "29";
-	String maxCount = "400";
-	String maxAvgCount = "13.793103448275861";
+	String availableExaminer = "60";
+	String maxCount = "84";
+	String maxAvgCount = "8.4";
 	String capacityNumber = "40";
 	
 	@BeforeMethod
@@ -41,7 +41,7 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.EOR_MARKING_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.EOR_MARKING_MONTH), "1");
+		action.selectByValue(By.id(ElementHelper.EOR_MARKING_MONTH), "5");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByIndex(By.id(ElementHelper.EOR_MARKING_DATE), 1);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -54,7 +54,7 @@ public class EorMarking {
 		navigate();
 		action.clear(By.id(ElementHelper.EOR_MARKING_SELECT_EXAMINER));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.EOR_MARKING_SELECT_EXAMINER), availableExaminer);
+		action.sendkeys(By.id(ElementHelper.EOR_MARKING_SELECT_EXAMINER), "10");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_MARKING_CALCULATE));
 		Thread.sleep(ElementHelper.LONG_TIME);
@@ -64,18 +64,18 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	/*@Test
+	@Test
 	public void setp01_SetCapacity() throws Exception {
 		search();
-		action.click(By.id(ElementHelper.EOR_MARKING_SET_CAPACITY));
+		action.click(By.linkText(ElementHelper.EOR_MARKING_SET_CAPACITY_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.sendkeys(By.id(ElementHelper.EOR_MARKING_SET_CAPACITY_NUMBER), capacityNumber);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void step02_AutoAllocation() throws Exception {
 		search();
 		action.click(By.id(ElementHelper.EOR_MARKING_AUTO_ALLOCATION));
@@ -83,9 +83,9 @@ public class EorMarking {
 		Alert confirm = driver.switchTo().alert();
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void step03_ManualAlocationCheck() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK));
@@ -105,10 +105,8 @@ public class EorMarking {
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_CONFIRM_SAVE));
-		Thread.sleep(ElementHelper.LONG_TIME);
-		Assert.assertEquals(action.getText(By.id(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_CONFIRM)), ElementHelper.CONFIRMATION);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-	}*/
+	}
 	
 	@Test
 	public void step04_AllocationResultPage() throws Exception {
@@ -117,11 +115,11 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO)), "993926");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO)), "997641");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME)), "Darren  Skelton");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME)), " ALINA  CHIPYSHEVA");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "245512,");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "000032,");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.CANCEL));
 	}

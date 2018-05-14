@@ -709,7 +709,10 @@ public class ElementHelper {
     public static String UNPROCESSING_LIST_MONTH = "EORTRFNumberList-DateIdMonthSecrch";
     public static String UNPROCESSING_LIST_DATE = "DateIdSecrch_EORTRFNumberList";
     public static String UNPROCESSING_LIST_MATCH_STATUS = "MatchStatusSecrch_EORTRFNumberList";
+    public static String UNPROCESSING_LIST_REJECT = "//input[contains(@value,'Reject')]";
     public static String UNPROCESSING_LIST_SEARCH = "//input[contains(@value,'Search')]";
+    public static String UNPROCESSING_LIST_SEARCH_CDDNO = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String UNPROCESSING_LIST_SEARCH_TIME = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[2]";
     public static String UNPROCESSING_LIST_SEARCH_DATE = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[6]";
     public static String UNPROCESSING_LIST_ADD = "//input[contains(@value,'Add Candidate No.(TRF Received)')]";
     public static String UNPROCESSING_LIST_ADD_REGION = "RegionAdd-EORTRFNumberList";
@@ -722,6 +725,8 @@ public class ElementHelper {
     //EOR APP List
     public static String EOR_APP_LIST = "//*[@id='CS-EOR']/ul/li[2]/a";
     public static String EOR_APP_LIST_REGION = "EORDetailsEORAppList-RegionIdSecrch";
+    public static String EOR_APP_LIST_FAMILY_NAME = "EORDetailsEORAppList-SurNameSecrch";
+    public static String EOR_APP_LIST_GIVEN_NAME = "EORDetailsEORAppList-NameSecrch";
     public static String EOR_APP_LIST_STATUS = "EORDetailsEORAppList-EORStatusSecrch";
     public static String EOR_APP_LIST_SEARCH = "//input[contains(@value,'Search')]";
     public static String EOR_APP_LIST_EXPORT_REGION = "EORDetailsEORAppList-ExportDispatchList-RegionIdSelect";
@@ -739,6 +744,17 @@ public class ElementHelper {
     public static String EOR_APP_LIST_EXPORT_EOR_SCORE_INFORMATION = "inp-ExportEORScoreInformation-EORDetailsEORAppList";
     public static String EOR_APP_LIST_EXPORT_EMS_LIST_NEW = "inp-ExportEMS-EORDetailsEORAppList_NEW";
     public static String EOR_APP_LIST_IMPORT_EMS = "EORDetailsEORAppList-ImportEMS";
+    public static String EOR_APP_LIST_IMPORT_CHOOSE = "fileEMSNO_EORDetailsEORAppList";
+    public static String EOR_APP_LIST_IMPORT_UPLOAD = "button.k-button.k-upload-selected";
+    public static String EOR_APP_LIST_IMPORT_UPLOAD_CONFIRM = "//div[18]/div[3]/div/button"; 
+    public static String EOR_APP_LIST_IMPORT_UPLOAD_CHECK = "//*[@id='windows_kendo_message']/div";
+    public static String EOR_APP_LIST_SEARCH_COURIER_NUMBER = "//*[@id='SpreadSheetEORDetailsEORAppListGrid']/div[2]/table/tbody/tr/td[15]";
+    public static String EOR_APP_LIST_SEARCH_STATUS = "//*[@id='SpreadSheetEORDetailsEORAppListGrid']/div[2]/table/tbody/tr/td[1]"; 
+    public static String EOR_APP_LIST_MARKING_DUE_FROM = "EORDetailsEORAppList-markingduedateFrom";
+    public static String EOR_APP_LIST_SERVICE_DEADLINE_FROM = "EORDetailsEORAppList-startServiceDeadline";
+    public static String EOR_APP_LIST_REFUND_STATUS = "EORDetailsEORAppList-RefundStatusSecrch";
+    public static String EOR_APP_LIST_SELECT = "//*[@id='SpreadSheetEORDetailsEORAppListGrid']/div[2]/table/tbody/tr[1]/td[1]/input";
+    public static String EOR_APP_LIST_DONE = "inp-Done-EORDetailsEORAppList";
     
     //EOR Marking 
     public static String EOR_MARKING = "//*[@id='CS-EOR']/ul/li[3]/a";
@@ -770,7 +786,8 @@ public class ElementHelper {
     public static String EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO = "//*[@id='SpreadSheetEorMarkingTask1Grid']/div[2]/table/tbody/tr[1]/td[4]";
     public static String EOR_MARKING_CLEAR_ALLOCATION = "btnClearAllocation-eor";
     public static String EOR_MARKING_SET_CAPACITY = "btnSetCapacityAll-eor";
-    public static String EOR_MARKING_SET_CAPACITY_NUMBER = "txtnewcapacity-SetCapacityAll-eor";
+    public static String EOR_MARKING_SET_CAPACITY_SELECT = "Set Capacity";
+    public static String EOR_MARKING_SET_CAPACITY_NUMBER = "txtnewcapacity-eor";
     public static String EOR_MARKING_NOTICE = "btnNotice-eor";
     public static String EOR_MARKING_CLEAR_NOTICE = "btnClearMarkingNotice-eor";
     

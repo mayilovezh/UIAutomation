@@ -53,7 +53,7 @@ public class FirstImportScore {
 	@Test
 	public void uploadWriting() throws Exception {
 		navigate();
-		action.click(By.id(ElementHelper.FIRST_IMPORT_SCORE_WRITING));
+		action.click(By.id(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_WRITING));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		upload("\\resource\\eor\\EORWritingScoreImportTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -64,7 +64,7 @@ public class FirstImportScore {
 	@Test
 	public void uploadLR() throws Exception {
 		navigate();
-		action.click(By.id(ElementHelper.FIRST_IMPORT_SCORE_LR));
+		action.click(By.id(ElementHelper.EOR_INDIA_FIRST_IMPORT_SCORE_LR));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		upload("\\resource\\eor\\EORLRScoreTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);

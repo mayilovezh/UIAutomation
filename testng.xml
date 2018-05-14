@@ -9,7 +9,7 @@
 	</listeners>
 
 
-	<!-- <test name="TestCenter" preserve-order="true">
+	<test name="TestCenter" preserve-order="true">
 		<classes >
 			<class name="com.selenium.test.testcenter.TestCenterList" />
 			<class name="com.selenium.test.testcenter.TestBuildingList" />
@@ -19,7 +19,7 @@
 		</classes>
 	</test> 
 	
-	<test name="TDOL" preserve-order="true">
+	<!-- <test name="TDOL" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.tdol.TDPProfile" />
 			<class name="com.selenium.test.tdol.TDPTask" />
@@ -33,7 +33,7 @@
 			<class name="com.selenium.test.tdol.ArrangeBagDuty" />
 			<class name="com.selenium.test.tdol.ArrangeReports" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
 	<test name="PostTest" preserve-order="true">
 		<classes>
@@ -66,7 +66,7 @@
 			<class name="com.selenium.test.marketing.ReportByCenter" />
 			<class name="com.selenium.test.marketing.ReportByCenterOrigin" />
 		</classes>
-	</test>	 -->
+	</test>	
 	
 	<test name="CS-Extra" preserve-order="true">
 		<classes>
@@ -78,15 +78,15 @@
 		</classes>
 	</test>	
 	
-	<!-- <test name="CS-Eor" preserve-order="true">
+	<test name="CS-Eor" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.eor.UnProcessingList" />
+			<class name="com.selenium.test.eor.Refund" />
+			<class name="com.selenium.test.eor.ConfirmRefund" />
 			<class name="com.selenium.test.eor.EorAppList" />
 			<class name="com.selenium.test.eor.EorMarking" />
 			<class name="com.selenium.test.eor.FirstImportScore" />
 			<class name="com.selenium.test.eor.SecondImportScore" />
-			<class name="com.selenium.test.eor.Refund" />
-			<class name="com.selenium.test.eor.ConfirmRefund" />
 		</classes>
 	</test>	
 	
@@ -102,7 +102,7 @@
 		</classes>
 	</test>	
 	
-	<test name="ClericalMarker" preserve-order="true">
+	<!-- <test name="ClericalMarker" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.clericalmarker.ClericalMarkerProfile" />
 			<class name="com.selenium.test.clericalmarker.ClericalMarkerTask" />

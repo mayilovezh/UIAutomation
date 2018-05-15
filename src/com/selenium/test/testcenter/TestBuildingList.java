@@ -13,7 +13,7 @@ import com.selenium.test.utils.WebDriverAction;
 
 public class TestBuildingList {
 	String tbName = "对外经济贸易大学";
-	String tbName_Cn = "对外经济贸易大学继续教育学院(高远楼)";
+	String tbName_Cn = "对外经济贸易大学继续教育与远程教育学院(高远楼,从西门进)";
 	String tbName_En = "Teaching building of Beijing Education And Exam Instruction Centre";
 	String floor = "1,2";
 	String tbAddress_Cn = "北京市朝阳区惠新东街10号";
@@ -85,6 +85,8 @@ public class TestBuildingList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.linkText(ElementHelper.TB_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.clear(By.id(ElementHelper.TB_MODIFY_REMARK));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.TB_MODIFY_REMARK), "Automation Testing");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.cssSelector(ElementHelper.TB_MODIFY_SAVE));

@@ -48,7 +48,7 @@ public class PredictNumberSession {
 		action.sendkeys(By.id(ElementHelper.PREDICT_NUMBER_SESSION_DATE_FROM), "2018-01-01");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.PREDICT_NUMBER_SESSION_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
+		Thread.sleep(ElementHelper.LONG_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.PREDICT_NUMBER_SESSION_SEARCH_QUOTA1)), quota1);
 	    Thread.sleep(ElementHelper.SHORT_TIME_A);
 	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.PREDICT_NUMBER_SESSION_SEARCH_QUOTA2)), quota2);

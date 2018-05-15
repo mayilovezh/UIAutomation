@@ -15,7 +15,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class SecondMarkingAllocation {
 	static WebDriver driver;
 	WebDriverAction action;
-	String name = "Xiao Guo";
+	String name = "Du Jingfen";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -34,9 +34,9 @@ public class SecondMarkingAllocation {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SECOND_ALLOCATION));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByIndex(By.id(ElementHelper.SECOND_ALLOCATION_MONTH), 2);
+		action.selectByIndex(By.id(ElementHelper.SECOND_ALLOCATION_MONTH), 4);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.SECOND_ALLOCATION_DATE), "10207");
+		action.selectByValue(By.id(ElementHelper.SECOND_ALLOCATION_DATE), "10213");
 		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -50,9 +50,9 @@ public class SecondMarkingAllocation {
 	public void step01_ToResultPage() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE_NAME)), name);
-//		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE_NAME)), name);
+	    Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}

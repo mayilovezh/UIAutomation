@@ -23,7 +23,7 @@ public class ClericalMarkerProfile {
 	String dateBirth = "1990-05-26";
 	String mobile = "18505218860";
 	String email = "guoxiao@britishcouncil.org.cn";
-	String clericalNo = "100284";
+	String clericalNo = "100298";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -81,9 +81,9 @@ public class ClericalMarkerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.cssSelector(ElementHelper.CLERICAL_PROFILE_CREATE_SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void step02_CreateProfileSecondMarker() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.CLERICAL_PROFILE_CREATE));

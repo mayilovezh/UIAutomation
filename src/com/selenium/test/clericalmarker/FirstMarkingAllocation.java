@@ -15,7 +15,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class FirstMarkingAllocation {
 	static WebDriver driver;
 	WebDriverAction action;
-	String name = "Xiao Guo";
+	String name = "Du Jingfen";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -34,18 +34,35 @@ public class FirstMarkingAllocation {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.FIRST_ALLOCATION));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FIRST_ALLOCATION_MONTH), 2);
+		action.selectByIndex(By.id(ElementHelper.FIRST_ALLOCATION_MONTH), 4);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.FIRST_ALLOCATION_DATE), "10207");
+		action.selectByValue(By.id(ElementHelper.FIRST_ALLOCATION_DATE), "10213");
 		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SELECTALL));
+		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SEARCH));
+		Thread.sleep(ElementHelper.LONG_TIME_A);
+	}
+	
+	@Test
+	public void step01_SetCapacity() throws Exception {
+		navigate();
+		action.sendkeys(By.id(ElementHelper.FIRST_ALLOCATION_SELECT_MARKER), "1");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.FIRST_ALLOCATION_CALCULATE));
 		Thread.sleep(ElementHelper.LONG_TIME);
+		action.click(By.linkText(ElementHelper.FIRST_ALLOCATION_SET_CAPACITY));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.clear(By.id(ElementHelper.FIRST_ALLOCATION_SET_CAPACITY_NUMBER));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.FIRST_ALLOCATION_SET_CAPACITY_NUMBER), "261");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SAVE));
+		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 
-	@Test
-	public void step01_AutoAllocation() throws Exception {
+	/*@Test
+	public void step02_AutoAllocation() throws Exception {
 		navigate();
 		action.sendkeys(By.id(ElementHelper.FIRST_ALLOCATION_SELECT_MARKER), "1");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -56,10 +73,10 @@ public class FirstMarkingAllocation {
 		Alert confirm = driver.switchTo().alert();
 		confirm.accept();
 		Thread.sleep(ElementHelper.LONG_TIME);
-	}
+	}*/
 
 	@Test
-	public void step02_ToResultPage() throws Exception {
+	public void step03_ToResultPage() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -70,7 +87,7 @@ public class FirstMarkingAllocation {
 	}
 
 	@Test
-	public void step03_Notice() throws Exception {
+	public void step04_Notice() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_NOTICE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -83,7 +100,7 @@ public class FirstMarkingAllocation {
 	}
 
 	@Test
-	public void step04_DeleteNotice() throws Exception {
+	public void step05_DeleteNotice() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_NOTICE_DELETE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -93,7 +110,7 @@ public class FirstMarkingAllocation {
 	}
 	
 	@Test
-	public void step05_ExportAllocationResult() throws Exception {
+	public void step06_ExportAllocationResult() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_ALLOCATION_RESULT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -103,7 +120,7 @@ public class FirstMarkingAllocation {
 	}
 	
 	@Test
-	public void step06_ExportRegisterResult() throws Exception {
+	public void step07_ExportRegisterResult() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_REGISTER_RESULT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -113,7 +130,7 @@ public class FirstMarkingAllocation {
 	}
 	
 	@Test
-	public void step07_ExportFinanceReport() throws Exception {
+	public void step08_ExportFinanceReport() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_FINANCE_REPORT));
 		Thread.sleep(ElementHelper.SHORT_TIME);

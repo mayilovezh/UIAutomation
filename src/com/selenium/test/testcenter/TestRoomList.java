@@ -14,7 +14,7 @@ import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.WebDriverAction;
 
 public class TestRoomList {
-	String tbName_Cn = "对外经济贸易大学继续教育学院(高远楼)";
+	String tbName_Cn = "对外经济贸易大学继续教育与远程教育学院(高远楼,从西门进)";
 	String roomNumber = "RM 01";
 	static WebDriver driver;
 	WebDriverAction action;
@@ -118,8 +118,6 @@ public class TestRoomList {
 	@Test
 	public void step02_Search() throws Exception {
 		searchTestRoom();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_TBNAME)), tbName_Cn);
 		textisExist();
 	}
 

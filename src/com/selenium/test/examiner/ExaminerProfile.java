@@ -45,7 +45,7 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.LONG_TIME_B);
 	}
 
-	/*@Test
+	@Test
 	public void step01_CreateProfile() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -77,7 +77,7 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 
 	@Test
 	public void step02_SearchProfile() throws Exception {
@@ -110,7 +110,7 @@ public class ExaminerProfile {
 		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_STATUS));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-		/*Thread.sleep(15000);
+		Thread.sleep(15000);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_SPK));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_ROLES_WRT));
@@ -140,7 +140,7 @@ public class ExaminerProfile {
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_STATUS_SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_STATUS_YES));
-		Thread.sleep(ElementHelper.WAIT_TIME);*/
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
 	@Test
@@ -149,7 +149,7 @@ public class ExaminerProfile {
 		searchExaminer();
 		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_LOG));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_PROFILE_LOG_NAME)), modifyBy);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_PROFILE_LOG_NAME)), ElementHelper.USER_NAME_DEV);
 	    Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

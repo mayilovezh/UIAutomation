@@ -52,7 +52,7 @@ public class CoreDayManagement {
 		action.click(By.id(ElementHelper.CORE_DAY_ADD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.CORE_DAY_ADD_DATE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
+		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}

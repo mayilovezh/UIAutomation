@@ -154,8 +154,11 @@ public class ElementHelper {
 	public static String TS_CREATE_MONTH_START= "ddlMonth-testsessionAdd";
 	public static String TS_CREATE_YEAR_END= "ddlYear-endYear1";
 	public static String TS_CREATE_MONTH_END= "ddlMonth-endMonth1";
+	public static String TS_CREATE_PRODUCT = "selectTestSessionExamProductTypeAdd2";
+	public static String TS_CREATE_FORMAT = "selectTestSessionExamFormatSearchAdd";
 	public static String TS_CREATE_SEARCH = "btntestcenterlistSearch";
-	public static String TS_CREATE_TESTDATE = "//td[2]/div/div/div/div[2]/table/tbody/tr/td/input"; 
+	public static String TS_CREATE_TESTDATE = "selectestdatereal-10351"; 
+	public static String TS_CRAETE_TC = "//input[contains(@value,'100100')]";
 	public static String TS_REGION = "selectRegionSearch-testsession";
 	public static String TS_YEAR = "ddlYear-testsession";
 	public static String TS_MONTH = "ddlMonth-testsession";
@@ -166,6 +169,7 @@ public class ElementHelper {
 	public static String TS_TEST_CENTER = "//*[@id='spreadsheet_testsession_Grid']/div[2]/table/tbody/tr/td[6]";
 	public static String TS_MODIFY = "Modify";
 	public static String TS_LOG = "Log";
+	public static String TS_LOG_CREATE_BY = "//*[@id='displayCenterWindow_log_btr']/tr/td[3]";
 	public static String TS_MODIFY_SESSION_QUOTA = "quotaForUpdate";
 	
 	//Test Date
@@ -992,9 +996,12 @@ public class ElementHelper {
     public static String FIRST_ALLOCATION_YEAR = "cmFirstMarking-Select-Year-Search";
     public static String FIRST_ALLOCATION_MONTH = "cmFirstMarking-Select-Month-Search";
     public static String FIRST_ALLOCATION_DATE = "cmddlTestDate-firstMarking";
+    public static String FIRST_ALLOCATION_SELECT = "BJ-BFSU";
     public static String FIRST_ALLOCATION_SELECTALL = "cmfirstMarkingTestCenterSelectAll";
     public static String FIRST_ALLOCATION_SEARCH = "cmbtnQuery-firstMarking";
     public static String FIRST_ALLOCATION_SELECT_MARKER = "cmtxtSelectExaminerNum-firstMarking";
+    public static String FIRST_ALLOCATION_SET_CAPACITY = "Set Capacity";
+    public static String FIRST_ALLOCATION_SET_CAPACITY_NUMBER = "newCapacitynumber";
     public static String FIRST_ALLOCATION_CALCULATE = "cmbtnCalculate-firstMarking";
     public static String FIRST_ALLOCATION_AUTO_ALLOCATION = "cmbtnRandomlyAllocation-firstMarking";
     public static String FIRST_ALLOCATION_CLEAR_ALLOCATION = "cmbtnClearAllocation-firstMarking";

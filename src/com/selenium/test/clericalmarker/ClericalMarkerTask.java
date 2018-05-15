@@ -14,13 +14,12 @@ import com.selenium.test.utils.WebDriverAction;
 public class ClericalMarkerTask {
 	static WebDriver driver;
 	WebDriverAction action;
-	String openIntervalFrom = "01/03/2018 00:00";
-	String openIntervalTo = "15/03/2018 00:00";
+	String openIntervalFrom = "15/05/2018 00:00";
+	String openIntervalTo = "20/05/2018 00:00";
 	String venue = "BC Office";
 	String testDate = "15/Dec/2018";
 	String typeFirst = "1st Marking";
 	String typeSecond = "2nd Marking";
-	String createBy = "Zhang Yifan";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -41,7 +40,7 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
-	/*@Test
+	@Test
 	public void step01_CreateFirstMarkingTask() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM));
@@ -78,7 +77,7 @@ public class ClericalMarkerTask {
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-*/
+
 	@Test
 	public void step03_SearchTask() throws Exception {
 		navigate();
@@ -91,9 +90,9 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_TYPE_SECOND)), typeSecond);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_FIRST)), createBy);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_FIRST)), ElementHelper.USER_NAME_DEV);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_SECOND)), createBy);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_SECOND)), ElementHelper.USER_NAME_DEV);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 
@@ -128,7 +127,7 @@ public class ClericalMarkerTask {
 		search();
 		action.click(By.linkText(ElementHelper.CLERICAL_TASK_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_LOG_USER)), createBy);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_LOG_USER)), ElementHelper.USER_NAME_DEV);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

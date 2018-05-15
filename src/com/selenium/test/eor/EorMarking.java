@@ -16,7 +16,7 @@ public class EorMarking {
 	static WebDriver driver;
 	WebDriverAction action;
 	String availableExaminer = "60";
-	String maxCount = "84";
+	String maxCount = "85";
 	String maxAvgCount = "8.4";
 	String capacityNumber = "40";
 	
@@ -115,9 +115,9 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO)), "997641");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO)), "988043");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME)), " ALINA  CHIPYSHEVA");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME)), "AMAR CHARAN GEORGESON");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "000032,");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

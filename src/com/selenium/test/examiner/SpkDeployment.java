@@ -16,11 +16,11 @@ public class SpkDeployment {
 	static WebDriver driver;
 	WebDriverAction action;
 	String city = "BeiJing";
-	String date115 = "88";
-	String date116 = "87";
-	String date117 = "120";
-	String date118 = "89";
-	String date119 = "86";
+	String date115 = "85";
+	String date116 = "84";
+	String date117 = "118";
+	String date118 = "87";
+	String date119 = "84";
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -68,7 +68,7 @@ public class SpkDeployment {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
-	//TO DO
+	/*//TO DO
 	@Test
 	public void step02_ShowDetail() throws Exception {
 		navigate();
@@ -83,9 +83,9 @@ public class SpkDeployment {
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.SHOW_EXAMINER_DETAILS_ON_TESTDATE));
-	}
+	}*/
 	
-	@Test
+	/*@Test
 	public void step04_UploadToPretest() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_UPLOAD_TO_PRETEST));
@@ -93,7 +93,7 @@ public class SpkDeployment {
 		Alert confirm = driver.switchTo().alert();
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
+	}*/
 	
 	@Test
 	public void step05_ReleaseToIEP() throws Exception {
@@ -115,16 +115,15 @@ public class SpkDeployment {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	//TO DO
+	/*//TO DO
 	@Test
 	public void step07_SyncToItap() throws Exception {
-		navigate();
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SYNC_ITAP));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		Alert confirm = driver.switchTo().alert();
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
+	}*/
 	
 }

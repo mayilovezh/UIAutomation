@@ -47,8 +47,8 @@ public class FreeCandidateAdd {
 		action.click(By.id(ElementHelper.FREE_CANDIDATE_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-/*
-	@Test
+
+	/*@Test
 	public void step01_CreateLR() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LR));
@@ -86,7 +86,7 @@ public class FreeCandidateAdd {
 		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 2);
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-	}*/
+	}
 
 	@Test
 	public void step03_CreateLS() throws Exception {
@@ -212,6 +212,6 @@ public class FreeCandidateAdd {
 		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 8);
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-	}
+	}*/
 
 }

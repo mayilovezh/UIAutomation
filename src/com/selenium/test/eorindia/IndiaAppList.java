@@ -68,35 +68,35 @@ public class IndiaAppList {
 	}
 	
 	@Test
-	public void step02_ExportDiffSpeaking() throws Exception {
+	public void step03_ExportDiffSpeaking() throws Exception {
 		exportSearch();
 		action.click(By.id(ElementHelper.EOR_INDIA_APP_LIST_EXPORT_DIFF_SPEAKING));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
 	}
 	
 	@Test
-	public void step02_ExportDispatchList() throws Exception {
+	public void step04_ExportDispatchList() throws Exception {
 		exportSearch();
 		action.click(By.id(ElementHelper.EOR_INDIA_APP_LIST_EXPORT_DISPATCH_LIST));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
 	}
 	
 	@Test
-	public void step02_ExportLRScore() throws Exception {
+	public void step05_ExportLRScore() throws Exception {
 		exportSearch();
 		action.click(By.id(ElementHelper.EOR_INDIA_APP_LIST_EXPORT_LR_SCORE));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
 	}
 	
 	@Test
-	public void step02_ExportWritingScore() throws Exception {
+	public void step06_ExportWritingScore() throws Exception {
 		exportSearch();
 		action.click(By.id(ElementHelper.EOR_INDIA_APP_LIST_EXPORT_WRITING_SCORE));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
 	}
 	
 	@Test
-	public void step02_ExportSpeakingScore() throws Exception {
+	public void step07_ExportSpeakingScore() throws Exception {
 		exportSearch();
 		action.click(By.id(ElementHelper.EOR_INDIA_APP_LIST_EXPORT_SPEAKING_SCORE));
 		Thread.sleep(ElementHelper.LONG_TIME_A);

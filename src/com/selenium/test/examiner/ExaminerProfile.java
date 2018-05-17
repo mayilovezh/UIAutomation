@@ -45,7 +45,7 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.LONG_TIME_B);
 	}
 
-	@Test
+	/*@Test
 	public void step01_CreateProfile() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -77,7 +77,7 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
+	}*/
 
 	@Test
 	public void step02_SearchProfile() throws Exception {

@@ -115,15 +115,4 @@ public class SpkDeployment {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	/*//TO DO
-	@Test
-	public void step07_SyncToItap() throws Exception {
-		navigate();
-		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SYNC_ITAP));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
-	
 }

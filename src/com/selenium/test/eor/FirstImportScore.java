@@ -42,7 +42,7 @@ public class FirstImportScore {
 	}
 	
 	@Test
-	public void uploadSpeaking() throws Exception {
+	public void step01_UploadSpeaking() throws Exception {
 		navigate();
 		upload("\\resource\\eor\\EORSpeakingScoreImportTemplate.xlsx");
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -51,7 +51,7 @@ public class FirstImportScore {
 	}
 	
 	@Test
-	public void uploadWriting() throws Exception {
+	public void step02_UploadWriting() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_IMPORT_SCORE_WRITING));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -62,7 +62,7 @@ public class FirstImportScore {
 	}
 	
 	@Test
-	public void uploadLR() throws Exception {
+	public void step03_UploadLR() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_IMPORT_SCORE_LR));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

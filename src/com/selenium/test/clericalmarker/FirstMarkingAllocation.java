@@ -36,15 +36,15 @@ public class FirstMarkingAllocation {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.selectByIndex(By.id(ElementHelper.FIRST_ALLOCATION_MONTH), 4);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.FIRST_ALLOCATION_DATE), "10213");
+		action.selectByValue(By.id(ElementHelper.FIRST_ALLOCATION_DATE), "10215");
 		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME_A);
+//		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SEARCH));
+//		Thread.sleep(ElementHelper.LONG_TIME_A);
 	}
 	
-	@Test
+	/*@Test
 	public void step01_SetCapacity() throws Exception {
 		navigate();
 		action.sendkeys(By.id(ElementHelper.FIRST_ALLOCATION_SELECT_MARKER), "1");
@@ -59,7 +59,7 @@ public class FirstMarkingAllocation {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}
+	}*/
 
 	/*@Test
 	public void step02_AutoAllocation() throws Exception {

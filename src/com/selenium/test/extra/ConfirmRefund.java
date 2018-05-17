@@ -36,7 +36,7 @@ public class ConfirmRefund {
 	}
 	
 	@Test
-	public void confirmStatus() throws Exception {
+	public void approveStatus() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.CONFIRM_REFUND_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

@@ -17,7 +17,7 @@ public class ClericalMarkerTask {
 	String openIntervalFrom = "15/05/2018 00:00";
 	String openIntervalTo = "20/05/2018 00:00";
 	String venue = "BC Office";
-	String testDate = "15/Dec/2018";
+	String testDate = "27/Dec/2018";
 	String typeFirst = "1st Marking";
 	String typeSecond = "2nd Marking";
 
@@ -40,7 +40,7 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
-	@Test
+	/*@Test
 	public void step01_CreateFirstMarkingTask() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM));
@@ -76,7 +76,7 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
+	}*/
 
 	@Test
 	public void step03_SearchTask() throws Exception {

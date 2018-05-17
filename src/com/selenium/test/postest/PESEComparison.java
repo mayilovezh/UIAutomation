@@ -34,11 +34,6 @@ public class PESEComparison {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.PE_SE_COMPARISON));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-	
-	@Test
-	public void firstMarkingCheck() throws Exception {
-		navigate() ;
 		action.selectByIndex(By.id(ElementHelper.PE_SE_YEAR), 0);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.selectByIndex(By.id(ElementHelper.PE_SE_MONTH), 0);
@@ -47,13 +42,34 @@ public class PESEComparison {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.selectByValue(By.id(ElementHelper.PE_SE_TC), "1");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
+	}
+	
+	@Test
+	public void step01_FirstMarkingCheck() throws Exception {
+		navigate();
 		action.click(By.id(ElementHelper.PE_SE_1STMARKING));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.PE_SE_SEARCH_R)), r_score);
-		Thread.sleep(ElementHelper.SHORT_TIME);
+	}
+	
+	@Test
+	public void step02_SecondMarkingCheck() throws Exception {
+		navigate();
 		action.click(By.id(ElementHelper.PE_SE_2NDMARKING));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.PE_SE_SEARCH_S_LR)), s_LR_score);
-		
+	}
+	
+	@Test
+	public void step03_Export() throws Exception {
+		navigate();
+		action.click(By.id(ElementHelper.PE_SE_1STMARKING));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.id(ElementHelper.PE_SE_EXPORT));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.id(ElementHelper.PE_SE_2NDMARKING));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.id(ElementHelper.PE_SE_EXPORT));
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 }

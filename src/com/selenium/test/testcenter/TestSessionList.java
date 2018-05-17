@@ -79,7 +79,7 @@ public class TestSessionList {
 		navigate();
 	}
 
-	@Test
+	/*@Test
 	public void step03_Modify() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -90,7 +90,7 @@ public class TestSessionList {
 		action.sendkeys(By.id(ElementHelper.TS_MODIFY_SESSION_QUOTA), "200");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-	}
+	}*/
 
 	@Test
 	public void step04_ModifyLog() throws Exception {

@@ -499,6 +499,7 @@ public class ElementHelper {
     public static String PE_SE_2NDMARKING = "2ndMarking";
     public static String PE_SE_SEARCH_R = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[1]/td[8]";
     public static String PE_SE_SEARCH_S_LR = "//*[@id='div_ComparisonFEorSe_Grid1']/div[2]/table/tbody/tr[1]/td[16]";
+    public static String PE_SE_EXPORT = "btnExport-ComparisonFEorSe";
     
     //Candidate From Itap
     public static String CANDIDATE_FROM_ITAP = "//*[@id='PostTest']/ul/li[12]/a";
@@ -753,7 +754,7 @@ public class ElementHelper {
     public static String EOR_APP_LIST_IMPORT_UPLOAD_CONFIRM = "//div[18]/div[3]/div/button"; 
     public static String EOR_APP_LIST_IMPORT_UPLOAD_CHECK = "//*[@id='windows_kendo_message']/div";
     public static String EOR_APP_LIST_SEARCH_COURIER_NUMBER = "//*[@id='SpreadSheetEORDetailsEORAppListGrid']/div[2]/table/tbody/tr/td[15]";
-    public static String EOR_APP_LIST_SEARCH_STATUS = "//*[@id='SpreadSheetEORDetailsEORAppListGrid']/div[2]/table/tbody/tr/td[1]"; 
+    public static String EOR_APP_LIST_SEARCH_STATUS = "//*[@id='SpreadSheetEORDetailsEORAppListGrid']/div[2]/table/tbody/tr/td[1]/span"; 
     public static String EOR_APP_LIST_MARKING_DUE_FROM = "EORDetailsEORAppList-markingduedateFrom";
     public static String EOR_APP_LIST_SERVICE_DEADLINE_FROM = "EORDetailsEORAppList-startServiceDeadline";
     public static String EOR_APP_LIST_REFUND_STATUS = "EORDetailsEORAppList-RefundStatusSecrch";
@@ -986,8 +987,8 @@ public class ElementHelper {
     public static String CLERICAL_TASK_LOG_USER = "//*[@id='cmLogGrid_btr']/tr/td[3]";
     public static String CLERICAL_TASK_SEARCH_TEST_DATE_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[2]";
     public static String CLERICAL_TASK_SEARCH_TEST_DATE_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[2]";
-    public static String CLERICAL_TASK_SEARCH_TYPE_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[3]";
-    public static String CLERICAL_TASK_SEARCH_TYPE_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[3]";
+    public static String CLERICAL_TASK_SEARCH_TYPE_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[3]";
+    public static String CLERICAL_TASK_SEARCH_TYPE_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[3]";
     public static String CLERICAL_TASK_SEARCH_CREATE_BY_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[7]";
     public static String CLERICAL_TASK_SEARCH_CREATE_BY_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[7]";
     

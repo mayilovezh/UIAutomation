@@ -1,5 +1,6 @@
 package com.selenium.test.eorindia;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class IndiaMarking {
 	static WebDriver driver;
 	WebDriverAction action;
-	String availableExaminer = "75";
+	String availableExaminer = "74";
 	String maxCount = "-276";
 	String maxAvgCount = "-27.6";
 	String capacityNumber = "30";
@@ -64,7 +65,7 @@ public class IndiaMarking {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test
+	/*@Test
 	public void setp01_SetCapacity() throws Exception {
 		search();
 		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_SET_CAPACITY));
@@ -75,7 +76,7 @@ public class IndiaMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 	
-	/*@Test
+	@Test
 	public void step02_AutoAllocation() throws Exception {
 		search();
 		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_AUTO_ALLOCATION));
@@ -83,9 +84,9 @@ public class IndiaMarking {
 		Alert confirm = driver.switchTo().alert();
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void step03_ManualAlocationCheck() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_MANUAL_ALLOCATION_CHECK));
@@ -108,9 +109,9 @@ public class IndiaMarking {
 		Thread.sleep(ElementHelper.LONG_TIME);
 		Assert.assertEquals(action.getText(By.id(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_CONFIRM)), ElementHelper.CONFIRMATION);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void step04_AllocationResultPage() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_INDIA_MARKING_ALLOCATION_RESULT_PAGE));

@@ -43,7 +43,7 @@ public class ScoreUpload {
 	}
 	
 	@Test
-	public void uploadFirstMarking() throws Exception {
+	public void step01_UploadFirstMarking() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.SCORE_UPLOAD_FIRST_MARKING));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -54,7 +54,7 @@ public class ScoreUpload {
 	}
 	
 	@Test
-	public void uploadFirstRelease() throws Exception {
+	public void step02_UploadFirstRelease() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.SCORE_UPLOAD_FIRST_RELEASE));
 		Thread.sleep(ElementHelper.SHORT_TIME);

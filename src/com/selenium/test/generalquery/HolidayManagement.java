@@ -14,7 +14,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class HolidayManagement {
 	static WebDriver driver;
 	WebDriverAction action;
-	String holidayName = "Spring Festival";
+	String holidayName = "Mother's Day";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -40,7 +40,7 @@ public class HolidayManagement {
 		navigate();
 		action.click(By.id(ElementHelper.HM_CREATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.HM_CREATE_DATE), "01/01/2018");
+		action.sendkeys(By.id(ElementHelper.HM_CREATE_DATE), "05/13/2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.HM_CREATE_NAME), holidayName);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -74,7 +74,7 @@ public class HolidayManagement {
 		search();
 		action.click(By.linkText(ElementHelper.HM_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_LOG_NAME)), ElementHelper.USER);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_LOG_NAME)), ElementHelper.USER_NAME_DEV);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -95,7 +95,7 @@ public class HolidayManagement {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.HM_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_SEARCH_DATE)), "2018/01/01");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_SEARCH_DATE)), "2018/05/13");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_SEARCH_NAME)), holidayName);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

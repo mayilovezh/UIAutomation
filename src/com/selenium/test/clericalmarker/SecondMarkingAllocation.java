@@ -36,15 +36,13 @@ public class SecondMarkingAllocation {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.selectByIndex(By.id(ElementHelper.SECOND_ALLOCATION_MONTH), 4);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.SECOND_ALLOCATION_DATE), "10213");
+		action.selectByValue(By.id(ElementHelper.SECOND_ALLOCATION_DATE), "10215");
 		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
+//		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SEARCH));
+//		Thread.sleep(ElementHelper.LONG_TIME);
 	}
-
-	
 
 	@Test
 	public void step01_ToResultPage() throws Exception {

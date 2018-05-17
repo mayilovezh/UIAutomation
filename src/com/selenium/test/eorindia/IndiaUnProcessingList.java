@@ -50,7 +50,7 @@ public class IndiaUnProcessingList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test(dependsOnMethods = { "importApplication"})
+	@Test
 	public void importCheck() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EOR_INDIA_UNPROCESSING_LIST_REGION), ElementHelper.REGION_VALUE);
@@ -69,7 +69,7 @@ public class IndiaUnProcessingList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 	
-	@Test(dependsOnMethods = { "importCheck"})
+	@Test
 	public void exportForm() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_INDIA_UNPROCESSING_LIST_EXPORT));

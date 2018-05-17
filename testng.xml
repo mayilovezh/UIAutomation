@@ -8,7 +8,6 @@
 		<listener class-name="com.selenium.test.listener.TestNGListener" />
 	</listeners>
 
-
 	<test name="TestCenter" preserve-order="true">
 		<classes >
 			<class name="com.selenium.test.testcenter.TestCenterList" />
@@ -113,7 +112,7 @@
 		</classes>
 	</test>	
 	
-	<test name="Examiner" preserve-order="true">
+	<!-- <test name="Examiner" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.examiner.ExaminerProfile" />
 			<class name="com.selenium.test.examiner.ExaminerTask" />
@@ -130,9 +129,9 @@
 			<class name="com.selenium.test.pretestplanning.WrittenRoomArrange" />
 			<class name="com.selenium.test.pretestplanning.ResourcePlanning" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
-	<test name="GeneralQuery" preserve-order="true">
+	<!-- <test name="GeneralQuery" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.generalquery.RegistrationNumberList" />
 			<class name="com.selenium.test.generalquery.HolidayManagement" />
@@ -141,7 +140,7 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
 </suite> 
 

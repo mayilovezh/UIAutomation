@@ -14,7 +14,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class HolidayManagement {
 	static WebDriver driver;
 	WebDriverAction action;
-	String holidayName = "Mother's Day";
+	String holidayName = "Children's day";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -40,7 +40,7 @@ public class HolidayManagement {
 		navigate();
 		action.click(By.id(ElementHelper.HM_CREATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.HM_CREATE_DATE), "05/13/2018");
+		action.sendkeys(By.id(ElementHelper.HM_CREATE_DATE), "06/01/2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.HM_CREATE_NAME), holidayName);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -95,7 +95,7 @@ public class HolidayManagement {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.HM_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_SEARCH_DATE)), "2018/05/13");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_SEARCH_DATE)), "2018/06/01");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_SEARCH_NAME)), holidayName);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

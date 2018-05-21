@@ -15,8 +15,8 @@ import com.selenium.test.utils.WebDriverAction;
 public class AvailabilitySummary {
 	static WebDriver driver;
 	WebDriverAction action;
-	String lockSpkDate = "2018-05-06";
-	String lockWrtDate = "2018-05-11";
+	String lockSpkDate = "2018-06-05";
+	String lockWrtDate = "2018-06-05";
 	String dateFrom = "2018-04-01";
 	String dateTo = "2018-05-01";
 	
@@ -48,7 +48,7 @@ public class AvailabilitySummary {
 		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 	
-	@Test
+	/*@Test
 	public void step01_ModifyAvailability() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_AVAIL));
@@ -63,7 +63,7 @@ public class AvailabilitySummary {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_AVAIL_SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
+	}*/
 	
 	@Test
 	public void step02_ModifyLock() throws Exception {
@@ -87,7 +87,7 @@ public class AvailabilitySummary {
 		navigate();
 		action.click(By.id(ElementHelper.AVAILABILITY_SUMMARY_LOG));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOG_CREATEBY)), ElementHelper.USER);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOG_CREATEBY)), ElementHelper.USER_NAME_DEV);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

@@ -16,11 +16,11 @@ public class SpkDeployment {
 	static WebDriver driver;
 	WebDriverAction action;
 	String city = "BeiJing";
-	String date115 = "85";
-	String date116 = "84";
-	String date117 = "118";
-	String date118 = "87";
-	String date119 = "84";
+	String date1 = "29";
+	String date2 = "53";
+	String date3 = "52";
+	String examinerNo = "983493";
+	String examinerName = "Gareth David Blackett";
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -43,9 +43,9 @@ public class SpkDeployment {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.SPK_DEPLOYMENT_MONTH), 0);
+		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_MONTH), "6");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_DATE), "10199");
+		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_DATE), "10217");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);
@@ -56,47 +56,82 @@ public class SpkDeployment {
 		navigate();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_CITY)), city);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE115)), date115);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE1)), date1);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE116)), date116);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE2)), date2);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE117)), date117);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE118)), date118);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE119)), date119);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE3)), date3);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
-	/*//TO DO
-	@Test
-	public void step02_ShowDetail() throws Exception {
+	/*@Test
+	public void step02_AssignExaminer() throws Exception {
 		navigate();
-		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN));
+		Thread.sleep(ElementHelper.LONG_TIME);
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_DATE));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL), "1");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SEARCH));
+		Thread.sleep(ElementHelper.LONG_TIME);
+		action.click(By.id(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
+	}*/
+	
+	@Test
+	public void step03_ShowExaminerDetails() throws Exception {
+		navigate();
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO)), examinerNo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME)), examinerName);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL));
 	}
 	
-	//TO DO
 	@Test
-	public void step03_ReplaceExaminer() throws Exception {
+	public void step04_ShowExaminerPerformance() throws Exception {
+		navigate();
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO)), examinerNo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME)), examinerName);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_CATEGORY), "1");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_SAVE));
+		
+	}
+	
+	/*@Test
+	public void step05_ReplaceSwapExaminer() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.SHOW_EXAMINER_DETAILS_ON_TESTDATE));
-	}*/
+	}
 	
-	/*@Test
-	public void step04_UploadToPretest() throws Exception {
+	@Test
+	public void step06_UploadToPretest() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_UPLOAD_TO_PRETEST));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		Alert confirm = driver.switchTo().alert();
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 	
 	@Test
-	public void step05_ReleaseToIEP() throws Exception {
+	public void step07_ReleaseToIEP() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_RELEASE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -106,13 +141,13 @@ public class SpkDeployment {
 	}
 	
 	@Test
-	public void step06_SendEmail() throws Exception {
+	public void step08_SendEmail() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SEND_EMAIL));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		Alert confirm = driver.switchTo().alert();
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
+	}*/
 	
 }

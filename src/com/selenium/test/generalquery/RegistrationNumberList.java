@@ -16,7 +16,10 @@ public class RegistrationNumberList {
 	static WebDriver driver;
 	WebDriverAction action;
 	ExcelReader reader = new ExcelReader(".\\resource\\generalquery\\registration.xlsx");
-
+    String quota = "400";
+    String totalRegistered = "192";
+    String totalQuota = "1200";
+	
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -43,40 +46,20 @@ public class RegistrationNumberList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByValue(By.id(ElementHelper.RUL_TC), "50");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.RUL_DATE_FROM), "2018-01-01");
+		action.sendkeys(By.id(ElementHelper.RUL_DATE_FROM), "2018-06-01");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.RUL_SEARCH));
-		Thread.sleep(30000);
+		Thread.sleep(ElementHelper.LONG_TIME_A);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA106)),
-				reader.getCellValue("Registration", 1, 0));
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA106)),quota);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA113)),
-				reader.getCellValue("Registration", 2, 0));
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA113)),quota);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA118)),
-				reader.getCellValue("Registration", 3, 0));
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA118)),quota);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA120)),
-				reader.getCellValue("Registration", 4, 0));
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_TOTAL_REGISTERED)),totalRegistered);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_NEEA_QUOTA106)),
-				reader.getCellValue("Registration", 1, 1));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_NEEA_QUOTA113)),
-				reader.getCellValue("Registration", 2, 1));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_NEEA_QUOTA118)),
-				reader.getCellValue("Registration", 3, 1));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_NEEA_QUOTA120)),
-				reader.getCellValue("Registration", 4, 1));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_TOTAL_REGISTERED)),
-				reader.getCellValue("Registration", 1, 3));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_TOTAL_QUOTA)),
-				reader.getCellValue("Registration", 1, 4));
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_TOTAL_QUOTA)),totalQuota);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.RUL_EXPORT_REGISTRATION_NUMBER));
 		Thread.sleep(ElementHelper.WAIT_TIME);

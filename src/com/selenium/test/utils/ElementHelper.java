@@ -1030,6 +1030,7 @@ public class ElementHelper {
     public static String SECOND_ALLOCATION_NOTICE_ADD_PLACEHOLDER = "btn-DoubleMarking-placeholder";
     public static String SECOND_ALLOCATION_NOTICE_TEXT = "txtDoubleMarkingNotice";
     public static String SECOND_ALLOCATION_RESULT_PAGE = "cmbtnTaskResultPage-DoubleMarking";
+    public static String SECOND_ALLOCATION_RESULT_PAGE_NAME = "//*[@id='GotoTaskAllocationResultPageListCalcuatorclericalmarkerDoublemarkingallocationGrid']/div[2]/table/tbody/tr/td[3]";
     public static String SECOND_ALLOCATION_EXPORT_RESULT = "inp-ExportSimple-DoubleMarking";
     public static String SECOND_ALLOCATION_EXPORT_REGISTER_RESULT = "inp-Export-DoubleMarking";
     public static String SECOND_ALLOCATION_EXPORT_FINANCE_REPORT = "inp-2ndLRFINANCEReportForm-DoubleMarking";
@@ -1134,8 +1135,20 @@ public class ElementHelper {
     public static String EXAMINER_TASK_DATE = "examinerstasklistDatetime";
     public static String EXAMINER_TASK_TYPE = "examinertasktypelist";
     public static String EXAMINER_TASK_SEARCH = "examinerTaskList-btnsearch";
-    public static String EXAMINER_TASK_SEARCH_SPK_TESTDATE = "//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr/td[2]";
-    public static String EXAMINER_TASK_TYPE_SPK = "//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr/td[3]";
+    public static String EXAMINER_TASK_TESTDATE = "//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr/td[2]";
+    public static String EXAMINER_TASK_SEARCH_TYPE = "//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr/td[3]";
+    public static String EXAMINER_TASK_REPORT = "(//a[contains(text(),'Report')])[13]";
+    public static String EXAMINER_TASK_REPORT_PAGE = "//*[@id='examinerTaskList-report-grid']/div[3]/a[4]";
+    public static String EXAMINER_TASK_REPORT_UPDATE = "//*[@id='examinerTaskList-report-grid']/div[2]/table/tbody/tr[46]/td[12]/input";
+    public static String EXAMINER_TASK_REPORT_AVAILABLE_BTN = "radExaminerAvaYes";
+    public static String EXAMINER_TASK_REPORT_AVAILABLE = "examinerAvaAll";
+    public static String EXAMINER_TASK_REPORT_TRAVEL_AVAILABLE = "";
+    public static String EXAMINER_TASK_REPORT_CAPACITY = "examinerAvaCapacity";
+    public static String EXAMINER_TASK_REPORT_SAVE = "(//button[@type='button'])[4]";
+    public static String EXAMINER_TASK_MODIFY = "Modify";
+    public static String EXAMINER_TASK_LOG = "(//button[@type='button'])[5]";
+    public static String EXAMINER_TASK_LOG_UPDATE_BY = "//*[@id='LogGrid_btr']/tr/td[3]";
+    
     
     //IEP Availability 
     public static String IEP_AVAILABILITY = "//*[@id='home']/div[1]/div[2]/div/span[2]/a";
@@ -1152,13 +1165,26 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_DATE = "examinerSpeakingArrangeTestDate";
     public static String SPK_DEPLOYMENT_SEARCH = "//input[contains(@value,'Search')]";
     public static String SPK_DEPLOYMENT_SEARCH_CITY = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[1]";
-    public static String SPK_DEPLOYMENT_SEARCH_DATE115 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[2]";
-    public static String SPK_DEPLOYMENT_SEARCH_DATE116 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[3]";
-    public static String SPK_DEPLOYMENT_SEARCH_DATE117 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[4]";
-    public static String SPK_DEPLOYMENT_SEARCH_DATE118 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[5]";
-    public static String SPK_DEPLOYMENT_SEARCH_DATE119 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[6]";
-    public static String SPK_DEPLOYMENT_ASSIGN = "Assign";
-    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "Show Examiner List";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE1 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[2]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE2 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[3]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE3 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[4]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE4 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[5]";
+    public static String SPK_DEPLOYMENT_SEARCH_DATE5 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[6]";
+    public static String SPK_DEPLOYMENT_ASSIGN = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[1]";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[1]/th[2]/input[2]";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[2]/td[1]/select";
+    public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "(//input[@value='Search'])[3]";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "GB2";
+    public static String SPK_DEPLOYMENT_ASSIGN_SAVE = "//button[@type='button']";	
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[2]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[3]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[4]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[1]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL = "(//button[@type='button'])[2]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[3]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_CATEGORY = "speakingarrangementPerformance";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_SAVE = "(//button[@type='button'])[2]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[2]";
     public static String SPK_DEPLOYMENT_DELETE = "Delete";
     public static String SPK_DEPLOYMENT_UPLOAD_TO_PRETEST = "//table[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr/td[10]/a[4]/span";
     public static String SPK_DEPLOYMENT_RELEASE = "//table[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr/td[10]/a[5]/span";
@@ -1183,7 +1209,7 @@ public class ElementHelper {
     public static String CORE_DAY_SEARCH = "BtnSearchCoreday";
     public static String CORE_DAY_SELECT = "chk_examinercoreday";
     public static String CORE_DAY_ADD = "BtnAddCoreday";
-    public static String CORE_DAY_ADD_DATE = "(//input[@id='chk_addexaminercoreday'])[30]";
+    public static String CORE_DAY_ADD_DATE = "(//input[@id='chk_addexaminercoreday'])[6]";
     public static String CORE_DAY_RELEASE = "BtenCoredayReleasetoIEP";
     
     //Availability Summary
@@ -1248,6 +1274,7 @@ public class ElementHelper {
     public static String RESOURCE_PLANNING_MONTH = "prebookingSpkplanninglistMonth-Search";
     public static String RESOURCE_PLANNING_DATE = "prebookingSpkplanninglistDatetime";
     public static String RESOURCE_PLANNING_SEARCH = "prebookingbtnSpkplanninglist";
+    public static String RESOURCE_PLANNING_SEARCH_TOTAL = "totalintv";
     
     
     //General Query

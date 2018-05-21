@@ -38,8 +38,8 @@ public class SecondMarkingAllocation {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.SECOND_ALLOCATION_DATE), "10215");
 		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SELECT));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+//		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SELECT));
+//		Thread.sleep(ElementHelper.SHORT_TIME_A);
 //		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SEARCH));
 //		Thread.sleep(ElementHelper.LONG_TIME);
 	}
@@ -47,9 +47,9 @@ public class SecondMarkingAllocation {
 	@Test
 	public void step01_ToResultPage() throws Exception {
 		navigate();
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE));
+		action.click(By.id(ElementHelper.SECOND_ALLOCATION_RESULT_PAGE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE_NAME)), name);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SECOND_ALLOCATION_RESULT_PAGE_NAME)), name);
 	    Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

@@ -14,9 +14,9 @@ import com.selenium.test.utils.WebDriverAction;
 public class PredictNumberNational {
 	static WebDriver driver;
 	WebDriverAction action;
-	String quota1 = "29265";
-	String quota2 = "26722";
-	String quota3 = "9218";
+	String quota1 = "27220";
+	String quota2 = "7262";
+	String quota3 = "24846";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -40,7 +40,7 @@ public class PredictNumberNational {
 	@Test
 	public void search() throws Exception {
 		navigate();
-		action.sendkeys(By.id(ElementHelper.PREDICT_NUMBER_NATIONAL_DATE_FROM), "2018-03-01");
+		action.sendkeys(By.id(ElementHelper.PREDICT_NUMBER_NATIONAL_DATE_FROM), "2018-06-01");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.PREDICT_NUMBER_NATIONAL_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);

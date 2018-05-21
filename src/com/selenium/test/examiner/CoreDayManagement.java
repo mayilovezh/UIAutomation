@@ -13,7 +13,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class CoreDayManagement {
 	static WebDriver driver;
 	WebDriverAction action;
-	String examinerNo = "998866";
+	String examinerNo = "983493";
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -34,10 +34,8 @@ public class CoreDayManagement {
 		Thread.sleep(ElementHelper.LONG_TIME);
 		action.selectByValue(By.id(ElementHelper.CORE_DAY_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByIndex(By.id(ElementHelper.CORE_DAY_MONTH), 2);
+		action.selectByIndex(By.id(ElementHelper.CORE_DAY_MONTH), 5);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.CORE_DAY_DATE), "2018-03-18");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.CORE_DAY_EXAMINER_NO), examinerNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.CORE_DAY_SEARCH));

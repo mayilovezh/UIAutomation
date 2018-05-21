@@ -47,12 +47,12 @@ public class KeyDates {
 		navigate();
 		action.click(By.id(ElementHelper.KEY_DATES_GENERATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
+//		action.click(By.xpath(ElementHelper.SAVE));
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 	
 	@Test
-	public void step02_ShowOnViewPage() throws Exception {
+	public void step02_HiddenOnViewPage() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.KEY_DATES_SHOW));
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -61,7 +61,7 @@ public class KeyDates {
 	}
 	
 	@Test
-	public void step03_HiddenOnViewPage() throws Exception {
+	public void step03_ShowOnViewPages() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.KEY_DATES_HIDDEN));
 		Thread.sleep(ElementHelper.SHORT_TIME);

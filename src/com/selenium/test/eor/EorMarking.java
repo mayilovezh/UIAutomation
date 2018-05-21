@@ -124,6 +124,6 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "000032,");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CANCEL));
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
 }

@@ -14,12 +14,12 @@ import com.selenium.test.utils.WebDriverAction;
 public class PredictNumberSession {
 	static WebDriver driver;
 	WebDriverAction action;
-	String quota1 = "682";
+	String quota1 = "20";
 	String quota2 = "400";
-	String quota3 = "800";
-	String quota4 = "500";
+	String quota3 = "400";
+	String quota4 = "800";
 	String quota5 = "500";
-	String totalQuota = "13944";
+	String totalQuota = "3682";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -45,7 +45,7 @@ public class PredictNumberSession {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.PREDICT_NUMBER_SESSION_CITY), "110100");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.PREDICT_NUMBER_SESSION_DATE_FROM), "2018-01-01");
+		action.sendkeys(By.id(ElementHelper.PREDICT_NUMBER_SESSION_DATE_FROM), "2018-06-01");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.PREDICT_NUMBER_SESSION_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
@@ -59,7 +59,7 @@ public class PredictNumberSession {
 	    Thread.sleep(ElementHelper.SHORT_TIME_A);
 	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.PREDICT_NUMBER_SESSION_SEARCH_QUOTA5)), quota5);
 	    Thread.sleep(ElementHelper.SHORT_TIME_A);
-	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.PREDICT_NUMBER_SESSION_SEARCH_QUOTA5)), totalQuota);
+	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.PREDICT_NUMBER_SESSION_SEARCH_TOTAL_QUOTA)), totalQuota);
 	    Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 }

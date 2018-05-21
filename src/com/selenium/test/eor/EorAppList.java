@@ -82,7 +82,7 @@ public class EorAppList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 	
-	/*@Test
+	@Test
 	public void step02_ChangeToDone() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EOR_APP_LIST_STATUS), "3");
@@ -93,7 +93,7 @@ public class EorAppList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_APP_LIST_DONE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}*/
+	}
 	
 	@Test
 	public void step03_StatusCheck() throws Exception {
@@ -114,15 +114,15 @@ public class EorAppList {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
-	@Test
+	/*@Test
 	public void step01_ExportDispatchList() throws Exception {
 //		navigate();
 // 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 // 		action.click(By.id(ElementHelper.EOR_APP_LIST_EXPORT_DISPATCH_LIST));
 //  	    Thread.sleep(ElementHelper.LONG_TIME_B);
  		XlsReader reader = new XlsReader(".\\resource\\eor\\Export Dispatch List.xls");
- 		String receiptDate = "2018-03-20  ";
- 		String testDate = "2017-12-09  ";
+ 		String receiptDate = "2018-03-20";
+ 		String testDate = "2017-12-09";
  		String testCenter = "BJ-CUEB_UKVI";
  		String cddName = "RUAN LINTING";
  		String cddNo = "223606";
@@ -272,7 +272,7 @@ public class EorAppList {
 		Assert.assertEquals(W_Score,xlsxReader.getCellValue("EOR Score Information", 6, 7));
 		Assert.assertEquals(S_Score,xlsxReader.getCellValue("EOR Score Information", 6, 8));
 		Assert.assertEquals(overall,xlsxReader.getCellValue("EOR Score Information", 6, 9));
-	}
+	}*/
 	
 	public void upload(String filePath) {
 		String path = System.getProperty("user.dir") + filePath;

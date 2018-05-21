@@ -12,10 +12,10 @@
 		<classes >
 			<class name="com.selenium.test.testcenter.TestCenterList" />
 			<class name="com.selenium.test.testcenter.TestBuildingList" />
-			<class name="com.selenium.test.testcenter.TestRoomList" />
 			<class name="com.selenium.test.testcenter.TestDateList" />
 			<class name="com.selenium.test.testcenter.TestSessionList" />
 			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
+			<class name="com.selenium.test.testcenter.TestRoomList" />
 		</classes>
 	</test> 
 	
@@ -80,10 +80,10 @@
 	
 	<test name="CS-Eor" preserve-order="true">
 		<classes>
+			<class name="com.selenium.test.eor.EorAppList" />
 			<class name="com.selenium.test.eor.UnProcessingList" />
 			<class name="com.selenium.test.eor.Refund" />
 			<class name="com.selenium.test.eor.ConfirmRefund" />
-			<class name="com.selenium.test.eor.EorAppList" />
 			<class name="com.selenium.test.eor.EorMarking" />
 			<class name="com.selenium.test.eor.FirstImportScore" />
 			<class name="com.selenium.test.eor.SecondImportScore" />
@@ -112,7 +112,7 @@
 		</classes>
 	</test>	
 	
-	<!-- <test name="Examiner" preserve-order="true">
+	<test name="Examiner" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.examiner.ExaminerProfile" />
 			<class name="com.selenium.test.examiner.ExaminerTask" />
@@ -129,9 +129,9 @@
 			<class name="com.selenium.test.pretestplanning.WrittenRoomArrange" />
 			<class name="com.selenium.test.pretestplanning.ResourcePlanning" />
 		</classes>
-	</test>	 -->
+	</test>	
 	
-	<!-- <test name="GeneralQuery" preserve-order="true">
+	<test name="GeneralQuery" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.generalquery.RegistrationNumberList" />
 			<class name="com.selenium.test.generalquery.HolidayManagement" />
@@ -140,7 +140,7 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>	 -->
+	</test>	
 	
 </suite> 
 

@@ -15,8 +15,8 @@ import com.selenium.test.utils.WebDriverAction;
 public class SpkRoomTemplate {
 	static WebDriver driver;
 	WebDriverAction action;
-	String templateSat = "BJ-UIBE-Sat";
-	String templateThu = "BJ-UIBE-Thu";
+	String templateSat = "BJ-UIBE-Sat-2";
+	String templateThu = "BJ-UIBE-Thu-2";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -46,17 +46,17 @@ public class SpkRoomTemplate {
 	@Test
 	public void step01_CreateThursday() throws Exception {
 		navigate();
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_BUILDING1));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SEARCH));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_ROOM));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_BUILDING1));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SEARCH));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_ROOM));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
+		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 
 	@Test

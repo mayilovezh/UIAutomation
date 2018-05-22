@@ -19,7 +19,6 @@ public class ImportLog {
 	String marking = "First Marking";
     String totalNum = "81";
     String successNum = "81";
-	String createBy = "zhangyifan";
 	
 	@BeforeMethod
 	public void setUp() throws Exception {

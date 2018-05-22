@@ -49,6 +49,8 @@ public class CandidateStatusBlock {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByValue(By.id(ElementHelper.CAN_STATUS_BLOCK_DATE), "10350");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.selectByValue(By.id(ElementHelper.CAN_STATUS_BLOCK_TC), "50");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.CAN_STATUS_BLOCK_CANDIDATE_NO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_SEARCH));

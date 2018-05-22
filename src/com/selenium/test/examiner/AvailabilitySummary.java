@@ -16,7 +16,7 @@ public class AvailabilitySummary {
 	static WebDriver driver;
 	WebDriverAction action;
 	String lockSpkDate = "2018-06-05";
-	String lockWrtDate = "2018-06-05";
+	String lockWrtDate = "2018-06-20";
 	String dateFrom = "2018-04-01";
 	String dateTo = "2018-05-01";
 	
@@ -87,7 +87,7 @@ public class AvailabilitySummary {
 		navigate();
 		action.click(By.id(ElementHelper.AVAILABILITY_SUMMARY_LOG));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOG_CREATEBY)), ElementHelper.USER_NAME_DEV);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOG_CREATEBY)), ElementHelper.USER_NAME_UAT);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

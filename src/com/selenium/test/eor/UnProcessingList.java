@@ -61,7 +61,7 @@ public class UnProcessingList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_YEAR), "2017");
+		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_MONTH), "12");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -73,13 +73,17 @@ public class UnProcessingList {
 	@Test
 	public void step03_SearchTRFReceived() throws Exception {
 		navigate();
+		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_YEAR), "2017");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_MONTH), "12");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_DATE), "10178");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_MATCH_STATUS), "3");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_CDDNO)), caddNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_TIME)), addTime);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_DATE)), date);
 	}

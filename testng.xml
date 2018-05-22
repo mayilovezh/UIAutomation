@@ -35,7 +35,7 @@
 		</classes>
 	</test>	 -->
 	
-	<test name="PostTest" preserve-order="true">
+	<!-- <test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
 			<class name="com.selenium.test.postest.JaggedProfileInfo" />
@@ -80,10 +80,10 @@
 	
 	<test name="CS-Eor" preserve-order="true">
 		<classes>
-			<class name="com.selenium.test.eor.EorAppList" />
 			<class name="com.selenium.test.eor.UnProcessingList" />
 			<class name="com.selenium.test.eor.Refund" />
 			<class name="com.selenium.test.eor.ConfirmRefund" />
+			<class name="com.selenium.test.eor.EorAppList" />
 			<class name="com.selenium.test.eor.EorMarking" />
 			<class name="com.selenium.test.eor.FirstImportScore" />
 			<class name="com.selenium.test.eor.SecondImportScore" />
@@ -140,7 +140,7 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>	
+	</test>	 -->
 	
 </suite> 
 

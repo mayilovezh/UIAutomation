@@ -44,7 +44,7 @@ public class ResourcePlanning {
 		navigate();
 		action.click(By.id(ElementHelper.RESOURCE_PLANNING_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.id(ElementHelper.RESOURCE_PLANNING_SEARCH_TOTAL)), totalNumber);
+		Assert.assertEquals(action.getText(By.id(ElementHelper.RESOURCE_PLANNING_SEARCH_TOTAL)), "8875");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 }

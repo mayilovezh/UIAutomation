@@ -40,7 +40,7 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
-	/*@Test
+	@Test
 	public void step01_CreateFirstMarkingTask() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM));
@@ -76,7 +76,7 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 
 	@Test
 	public void step03_SearchTask() throws Exception {
@@ -127,7 +127,7 @@ public class ClericalMarkerTask {
 		search();
 		action.click(By.linkText(ElementHelper.CLERICAL_TASK_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_LOG_USER)), ElementHelper.USER_NAME_DEV);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_LOG_USER)), ElementHelper.USER_NAME_UAT);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

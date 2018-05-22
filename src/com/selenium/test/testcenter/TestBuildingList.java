@@ -87,6 +87,8 @@ public class TestBuildingList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.clear(By.id(ElementHelper.TB_MODIFY_REMARK));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.clear(By.id(ElementHelper.TB_MODIFY_REMARK));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.TB_MODIFY_REMARK), "Automation Testing");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.cssSelector(ElementHelper.TB_MODIFY_SAVE));
@@ -98,6 +100,7 @@ public class TestBuildingList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.linkText(ElementHelper.TB_MODIFYLOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TB_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 	

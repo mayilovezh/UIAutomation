@@ -65,7 +65,7 @@ public class KeyDates {
 		navigate();
 		action.click(By.xpath(ElementHelper.KEY_DATES_HIDDEN));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getValue(By.xpath(ElementHelper.KEY_DATES_HIDDEN)), "Shown On View Page");
+		Assert.assertEquals(action.getValue(By.xpath(ElementHelper.KEY_DATES_SHOW)), "Shown On View Page");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	

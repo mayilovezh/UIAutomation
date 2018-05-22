@@ -94,6 +94,8 @@ public class TestCenterList{
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.cssSelector(ElementHelper.TC_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.clear(By.id(ElementHelper.TC_MODIFY_DESCRIPTION));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.TC_MODIFY_DESCRIPTION), "Automation Testing");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
@@ -116,6 +118,7 @@ public class TestCenterList{
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TC_MODIFYLOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 	

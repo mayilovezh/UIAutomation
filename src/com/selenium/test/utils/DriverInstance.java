@@ -15,43 +15,74 @@ public class DriverInstance {
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
-		driver.get(ElementHelper.DEV_URL);
-		driver.manage().window().maximize();
-		action.setTimeout("10");
-		Assert.assertEquals(driver.getTitle(), "British Council");
-		action.clear(By.id(ElementHelper.USER_NAME));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_DEV);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.clear(By.id(ElementHelper.PASSWORD));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_DEV);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.LOGIN_BTN));
+		if (driver.getCurrentUrl().equals(ElementHelper.DEV_URL)) {
+			driver.get(ElementHelper.DEV_URL);
+			driver.manage().window().maximize();
+			action.setTimeout("10");
+			Assert.assertEquals(driver.getTitle(), "British Council");
+			action.clear(By.id(ElementHelper.USER_NAME));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_DEV);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.clear(By.id(ElementHelper.PASSWORD));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_DEV);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.LOGIN_BTN));
+		} else {
+			driver.get(ElementHelper.UAT_URL);
+			driver.manage().window().maximize();
+			action.setTimeout("10");
+			Assert.assertEquals(driver.getTitle(), "British Council");
+			action.clear(By.id(ElementHelper.USER_NAME));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_UAT);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.clear(By.id(ElementHelper.PASSWORD));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_UAT);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.LOGIN_BTN));
+		}
 		return driver;
 	}
-	
+
 	public WebDriver loginEast(WebDriver driver) throws Exception {
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
-		driver.get(ElementHelper.DEV_URL);
-		driver.manage().window().maximize();
-		action.setTimeout("10");
-		Assert.assertEquals(driver.getTitle(), "British Council");
-		action.clear(By.id(ElementHelper.USER_NAME));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_EAST);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.clear(By.id(ElementHelper.PASSWORD));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.LOGIN_BTN));
+		if(driver.getCurrentUrl().equals(ElementHelper.DEV_URL)) {
+			driver.get(ElementHelper.DEV_URL);
+			driver.manage().window().maximize();
+			action.setTimeout("10");
+			Assert.assertEquals(driver.getTitle(), "British Council");
+			action.clear(By.id(ElementHelper.USER_NAME));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_EAST);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.clear(By.id(ElementHelper.PASSWORD));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.LOGIN_BTN));
+		} else {
+			driver.get(ElementHelper.UAT_URL);
+			driver.manage().window().maximize();
+			action.setTimeout("10");
+			Assert.assertEquals(driver.getTitle(), "British Council");
+			action.clear(By.id(ElementHelper.USER_NAME));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_EAST);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.clear(By.id(ElementHelper.PASSWORD));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST_DEV);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.LOGIN_BTN));
+		}
 		return driver;
 	}
-	
 
 	public WebDriver loginTdol(WebDriver driver) throws Exception {
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
@@ -72,7 +103,7 @@ public class DriverInstance {
 		action.click(By.linkText(ElementHelper.LOGIN_IEP));
 		return driver;
 	}
-	
+
 	public WebDriver loginIEP(WebDriver driver) throws Exception {
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();
@@ -92,7 +123,7 @@ public class DriverInstance {
 		action.click(By.linkText(ElementHelper.LOGIN_IEP));
 		return driver;
 	}
-	
+
 	public WebDriver loginICMP(WebDriver driver) throws Exception {
 		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver();

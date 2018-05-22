@@ -79,7 +79,7 @@ public class TestSessionList {
 		navigate();
 	}
 
-	/*@Test
+	@Test
 	public void step03_Modify() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -87,10 +87,10 @@ public class TestSessionList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.clear(By.id(ElementHelper.TS_MODIFY_SESSION_QUOTA));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.TS_MODIFY_SESSION_QUOTA), "200");
+		action.sendkeys(By.id(ElementHelper.TS_MODIFY_SESSION_QUOTA), "230");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-	}*/
+	}
 
 	@Test
 	public void step04_ModifyLog() throws Exception {
@@ -98,7 +98,7 @@ public class TestSessionList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TS_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TS_LOG_CREATE_BY)), ElementHelper.USER_NAME_DEV);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TS_LOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

@@ -41,13 +41,13 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.EOR_MARKING_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.EOR_MARKING_MONTH), "5");
+		action.selectByValue(By.id(ElementHelper.EOR_MARKING_MONTH), "4");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByIndex(By.id(ElementHelper.EOR_MARKING_DATE), 1);
+		action.selectByIndex(By.id(ElementHelper.EOR_MARKING_DATE), 8);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.EOR_MARKING_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
-		Assert.assertEquals(action.getText(By.id(ElementHelper.EOR_MARKING_AVAILABLE_EXAMINER)), availableExaminer);
+		Assert.assertEquals(action.getText(By.id(ElementHelper.EOR_MARKING_AVAILABLE_EXAMINER)), "89");
 	}
 	
 	public void search() throws Exception {
@@ -122,7 +122,7 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME)), "Alina Chipysheva");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "000032,");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "005760,");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

@@ -37,11 +37,13 @@ public class SecondMarkingAllocation {
 		action.selectByIndex(By.id(ElementHelper.SECOND_ALLOCATION_MONTH), 4);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.SECOND_ALLOCATION_DATE), "10215");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);
-//		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SELECT));
-//		Thread.sleep(ElementHelper.SHORT_TIME_A);
-//		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SEARCH));
-//		Thread.sleep(ElementHelper.LONG_TIME);
+		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SELECT));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.SECOND_ALLOCATION_CALCUATOR));
+		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 
 	@Test
@@ -73,9 +75,9 @@ public class SecondMarkingAllocation {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_DELETE_NOTICE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.LONG_TIME);
+//		Alert confirm = driver.switchTo().alert();
+//		confirm.accept();
+//		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 	
 	@Test

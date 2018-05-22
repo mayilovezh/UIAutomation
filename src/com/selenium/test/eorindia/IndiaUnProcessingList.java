@@ -40,7 +40,7 @@ public class IndiaUnProcessingList {
 	}
 	
 	@Test
-	public void importApplication() throws Exception {
+	public void step01_ImportApplication() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_INDIA_UNPROCESSING_LIST_IMPORT));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -51,7 +51,7 @@ public class IndiaUnProcessingList {
 	}
 	
 	@Test
-	public void importCheck() throws Exception {
+	public void step02_ImportCheck() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EOR_INDIA_UNPROCESSING_LIST_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -70,7 +70,7 @@ public class IndiaUnProcessingList {
 	}
 	
 	@Test
-	public void exportForm() throws Exception {
+	public void step03_ExportForm() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_INDIA_UNPROCESSING_LIST_EXPORT));
 		Thread.sleep(ElementHelper.SHORT_TIME);

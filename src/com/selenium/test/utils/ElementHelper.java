@@ -9,8 +9,11 @@ public class ElementHelper {
 	public static String PASSWORD = "password";
 	public static String USER_NAME_DEV = "ZYF"; 
 	public static String PASSWORD_DEV = "Zyf11111!";
+	public static String USER_NAME_UAT = "zyf"; 
+	public static String PASSWORD_UAT = "Zyf111111";
 	public static String USER_NAME_EAST = "zhangyifan"; 
 	public static String PASSWORD_EAST = "Zyf929670@";
+	public static String PASSWORD_EAST_DEV = "Zyf111111";
 	public static String LOGIN_BTN = "loginButt";
 	
 	//Wait Time
@@ -86,6 +89,7 @@ public class ElementHelper {
 	public static String TC_VIEW = "View";
 	public static String TC_VIEW_NAME = "//*[@id='testCenterDetailsWindow']/table/tbody/tr[5]/td";
 	public static String TC_MODIFYLOG = "ModifyLog";
+	public static String TC_MODIFYLOG_CREATE_BY = "//*[@id='SpreadSheetTestCenterModifyLogGrid']/div[2]/table/tbody/tr[1]/td[4]";
 	
 	//Test Building
 	public static String TEST_BUILDING_LIST = "//*[@id='TestCenter']/ul/li[2]/a";
@@ -108,6 +112,7 @@ public class ElementHelper {
 	public static String TB_MODIFY_SAVE = "button.k-button";
 	public static String TB_MODIFY_REMARK = "RemarkBuilding";
 	public static String TB_MODIFYLOG = "Modify Log";
+	public static String TB_MODIFYLOG_CREATE_BY = "//*[@id='SpreadSheetTestBuildingModifyLogGrid']/div[2]/table/tbody/tr[1]/td[4]";
 	public static String TB_VIEW = "View";
 	public static String TB_VIEW_NAME = "//*[@id='testBuildingDetailsWindow']/table/tbody/tr[2]/td";
 	public static String TB_LENDBUILDING = "Lend Building";
@@ -136,6 +141,7 @@ public class ElementHelper {
 	public static String TR_MODIFY_REMARK = "Remark";
 	public static String TR_VIEW = "(//a[contains(text(),'View')])[2]";
 	public static String TR_MODIFYLOG = "Modify Log";
+	public static String TR_MODIFYLOG_CREATE_BY = "//*[@id=SpreadSheetTestRoomModifyLogGrid]/div[2]/table/tbody/tr/td[4]";
 	public static String TR_CREATE_SHARE_ROOM = "//input[@value='Create Share Room']";
 	public static String TR_SHARE_ROOM_1 = "//div[2]/table/tbody/tr/td/input";
 	public static String TR_SHARE_ROOM_1_YES  = "//td[3]/input";
@@ -179,6 +185,10 @@ public class ElementHelper {
 	public static String TD_EXAM_PRODUCT_TYPE = "testdate_search_examproducttype";
 	public static String TD_EXAM_FORMAT = "testdate_search_examformat";
 	public static String TD_SEARCH = "testdate_search";
+	public static String TD_SEARCH_DATE1 = "//*[@id=testdate_guid]/div[2]/table/tbody/tr[17]/td[2]";
+	public static String TD_SEARCH_DATE2 = "//*[@id=testdate_guid]/div[2]/table/tbody/tr[18]/td[2]";
+	public static String TD_SEARCH_DATE3 = "//*[@id=testdate_guid]/div[2]/table/tbody/tr[19]/td[2]";
+	public static String TD_SEARCH_DATE4 = "//*[@id=testdate_guid]/div[2]/table/tbody/tr[20]/td[2]";
 	
 	//Spk Room Template
 	public static String SPK_ROOM_TEMPLATE = "//*[@id='TestCenter']/ul/li[6]/a";
@@ -404,6 +414,7 @@ public class ElementHelper {
 	public static String CAN_STATUS_BLOCK_REGION = "CandidateStatus_List_Region";
 	public static String CAN_STATUS_BLOCK_MONTH = "ddlMonth-CandidateStatus";
 	public static String CAN_STATUS_BLOCK_DATE = "CandidateStatus_List_Datetime";
+	public static String CAN_STATUS_BLOCK_TC = "CandidateStatus_List_CenterId";
 	public static String CAN_STATUS_BLOCK_SEARCH = "CandidateStatus_List_BtnQuery";
 	public static String CAN_STATUS_BLOCK_MODIFY = "//input[@value='Modify']";
 	public static String CAN_STATUS_BLOCK_MODIFY_GIVENNAME_EN = "candidate_status_Reg_name";
@@ -473,6 +484,19 @@ public class ElementHelper {
     
     //Score Check
     public static String SCORE_CHECK = "//*[@id='PostTest']/ul/li[6]/a";
+    public static String SCORE_CHECK_YEAR = "scorecheck-Select-Year-Search";
+    public static String SCORE_CHECK_MONTH = "scorecheck-Select-Month-Search";
+    public static String SCORE_CHECK_DATE = "ddlTestDate-scorecheck";
+    public static String SCORE_CHECK_TC = "ddlTestCenter-scorecheck";
+    public static String SCORE_CHECK_TYPE = "ddlScoreType-scorecheck";
+    public static String SCORE_CHECK_SEARCH = "btnQuery-scorecheck";
+    public static String SCORE_CHECK_SEARCH_CADD_NO = "//*[@id='spreadsheet-ScoreCheck-table']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String SCORE_CHECK_SEARCH_NAME = "//*[@id='spreadsheet-ScoreCheck-table']/div[2]/table/tbody/tr[1]/td[5]";
+    public static String SCORE_CHECK_SERACH_L = "//*[@id='spreadsheet-ScoreCheck-table']/div[2]/table/tbody/tr[1]/td[8]";
+    public static String SCORE_CHECK_SERACH_R = "//*[@id='spreadsheet-ScoreCheck-table']/div[2]/table/tbody/tr[1]/td[9]";
+    public static String SCORE_CHECK_SERACH_W = "//*[@id='spreadsheet-ScoreCheck-table']/div[2]/table/tbody/tr[1]/td[10]";
+    public static String SCORE_CHECK_SERACH_S = "//*[@id='spreadsheet-ScoreCheck-table']/div[2]/table/tbody/tr[1]/td[11]";
+    public static String SCORE_CHECK_SERACH_OVERALL = "//*[@id='spreadsheet-ScoreCheck-table']/div[2]/table/tbody/tr[1]/td[12]";
     
     //Status Score Check
     public static String STATUS_SCORE_CHECK = "//*[@id='PostTest']/ul/li[7]/a";
@@ -714,7 +738,7 @@ public class ElementHelper {
     public static String UNPROCESSING_LIST_MONTH = "EORTRFNumberList-DateIdMonthSecrch";
     public static String UNPROCESSING_LIST_DATE = "DateIdSecrch_EORTRFNumberList";
     public static String UNPROCESSING_LIST_MATCH_STATUS = "MatchStatusSecrch_EORTRFNumberList";
-    public static String UNPROCESSING_LIST_REJECT = "//input[contains(@value,'Reject')]";
+    public static String UNPROCESSING_LIST_REJECT = "//*[@id='SpreadSheetEORTRFNumberRecTimeListGrid']/div[2]/table/tbody/tr[1]/td[10]/input";
     public static String UNPROCESSING_LIST_SEARCH = "//input[contains(@value,'Search')]";
     public static String UNPROCESSING_LIST_SEARCH_CDDNO = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[1]";
     public static String UNPROCESSING_LIST_SEARCH_TIME = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[2]";
@@ -1022,7 +1046,7 @@ public class ElementHelper {
     public static String SECOND_ALLOCATION_MONTH = "cmDoubleMarking-Select-Month-Search";
     public static String SECOND_ALLOCATION_DATE = "cmddlTestDate-DoubleMarking";
     public static String SECOND_ALLOCATION_SEARCH = "cmbtnQuery-DoubleMarking";
-    public static String SECOND_ALLOCATION_SELECT = "//*[@id='AvailableMarkers-List-clericalmarkerDoublemarkingallocation']/label[1]/input";
+    public static String SECOND_ALLOCATION_SELECT = "//*[@id='AvailableMarkers-List-clericalmarkerDoublemarkingallocation']/label[13]/input";
     public static String SECOND_ALLOCATION_CALCUATOR = "Calcuator-clericalmarkerDoublemarkingallocation";
     public static String SECOND_ALLOCATION_MANUAL_CHECK = "btn_cm_db_manualallocationcheck";
     public static String SECOND_ALLOCATION_NOTICE = "btnNotice-DoubleMarking";
@@ -1146,7 +1170,7 @@ public class ElementHelper {
     public static String EXAMINER_TASK_REPORT_CAPACITY = "examinerAvaCapacity";
     public static String EXAMINER_TASK_REPORT_SAVE = "(//button[@type='button'])[4]";
     public static String EXAMINER_TASK_MODIFY = "Modify";
-    public static String EXAMINER_TASK_LOG = "(//button[@type='button'])[5]";
+    public static String EXAMINER_TASK_LOG = "Log";
     public static String EXAMINER_TASK_LOG_UPDATE_BY = "//*[@id='LogGrid_btr']/tr/td[3]";
     
     

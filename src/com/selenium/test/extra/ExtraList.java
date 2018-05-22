@@ -44,7 +44,7 @@ public class ExtraList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_DATE), "10206");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_STATUS), "6");
+		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_STATUS), "4");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.EXTRA_LIST_CANDIDATE_NO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -82,7 +82,7 @@ public class ExtraList {
 	@Test
 	public void step02_StatusCheck() throws Exception {
 		navigate();
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXTRA_LIST_STATUS_CHECK)), statusCheck);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXTRA_LIST_STATUS_CHECK)), "Sent");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 

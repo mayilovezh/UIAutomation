@@ -14,10 +14,10 @@ import com.selenium.test.utils.WebDriverAction;
 public class TestDateList {
 	static WebDriver driver;
 	WebDriverAction action;
-	String testdate1 = "2018-05-05";
-	String testdate2 = "2018-05-12";
-	String testdate3 = "2018-05-19";
-	String testdate4 = "2018-05-24";
+	String testdate1 = "2018-01-06";
+	String testdate2 = "2018-01-13";
+	String testdate3 = "2018-01-18";
+	String testdate4 = "2018-01-20";
 	
 
 	@BeforeMethod

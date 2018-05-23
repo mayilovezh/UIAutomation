@@ -125,8 +125,10 @@ public class TestRoomList {
 	public void step04_Modify() throws Exception {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.linkText(ElementHelper.TR_MODIFY));
+		action.click(By.xpath(ElementHelper.TR_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.clear(By.id(ElementHelper.TR_MODIFY_REMARK));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.clear(By.id(ElementHelper.TR_MODIFY_REMARK));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.TR_MODIFY_REMARK), "Automation Testing");
@@ -166,8 +168,8 @@ public class TestRoomList {
 		searchTestRoom();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TR_MODIFYLOG));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_DEV);
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 

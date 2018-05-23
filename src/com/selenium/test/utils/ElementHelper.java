@@ -137,7 +137,7 @@ public class ElementHelper {
 	public static String TR_ADD_PRODUCTTYPE_IELTS_UKVI = "//*[@id='CheckRoomProductType']/input[2]";
 	public static String TR_ADD_PRODUCTTYPE_IELTS_LIFE_SKILLS = "//*[@id='CheckRoomProductType']/input[3]";
 	public static String TR_ADD_FLOOR = "Floor";
-	public static String TR_MODIFY = "Modify";
+	public static String TR_MODIFY = "(//a[contains(text(),'Modify')])[2]";
 	public static String TR_MODIFY_REMARK = "Remark";
 	public static String TR_VIEW = "(//a[contains(text(),'View')])[2]";
 	public static String TR_MODIFYLOG = "Modify Log";
@@ -185,10 +185,10 @@ public class ElementHelper {
 	public static String TD_EXAM_PRODUCT_TYPE = "testdate_search_examproducttype";
 	public static String TD_EXAM_FORMAT = "testdate_search_examformat";
 	public static String TD_SEARCH = "testdate_search";
-	public static String TD_SEARCH_DATE1 = "//*[@id=testdate_guid]/div[2]/table/tbody/tr[17]/td[2]";
-	public static String TD_SEARCH_DATE2 = "//*[@id=testdate_guid]/div[2]/table/tbody/tr[18]/td[2]";
-	public static String TD_SEARCH_DATE3 = "//*[@id=testdate_guid]/div[2]/table/tbody/tr[19]/td[2]";
-	public static String TD_SEARCH_DATE4 = "//*[@id=testdate_guid]/div[2]/table/tbody/tr[20]/td[2]";
+	public static String TD_SEARCH_DATE1 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[1]/td[2]";
+	public static String TD_SEARCH_DATE2 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[2]/td[2]";
+	public static String TD_SEARCH_DATE3 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[3]/td[2]";
+	public static String TD_SEARCH_DATE4 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[4]/td[2]";
 	
 	//Spk Room Template
 	public static String SPK_ROOM_TEMPLATE = "//*[@id='TestCenter']/ul/li[6]/a";

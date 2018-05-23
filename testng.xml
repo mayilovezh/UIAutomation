@@ -12,10 +12,10 @@
 		<classes >
 			<class name="com.selenium.test.testcenter.TestCenterList" />
 			<class name="com.selenium.test.testcenter.TestBuildingList" />
+			<class name="com.selenium.test.testcenter.TestRoomList" />
 			<class name="com.selenium.test.testcenter.TestDateList" />
 			<class name="com.selenium.test.testcenter.TestSessionList" />
 			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
-			<class name="com.selenium.test.testcenter.TestRoomList" />
 		</classes>
 	</test> 
 	
@@ -35,7 +35,7 @@
 		</classes>
 	</test>	 -->
 	
-	<!-- <test name="PostTest" preserve-order="true">
+	<test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
 			<class name="com.selenium.test.postest.JaggedProfileInfo" />
@@ -140,7 +140,7 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>	 -->
+	</test>	
 	
 </suite> 
 

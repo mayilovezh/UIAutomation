@@ -278,7 +278,6 @@ public class ElementHelper {
 	public static String TDP_PROFILE_CREATE_ROLES_AUDITOR = "//*[@id='addGeneralTDPInfo-Roles']/tr[12]/td[1]/input";
 	public static String TDP_PROFILE_CREATE_ROLES_CARMERAMAN = "//*[@id='addGeneralTDPInfo-Roles']/tr[13]/td[1]/input";
 	public static String TDP_PROFILE_CREATE_ROLES_STATUS = "//input[contains(text(),'Active')]";
-//	public static String TDP_PROFILE_CREATE_ROLES = "input[type='checkbox']";
 	public static String TDP_PROFILE_CREATE_ROLES = "//td/table/tbody/tr/td/input";
 	public static String TDP_PROFILE_ROLES = "selTDPProfileRole";
 	public static String TDP_PROFILE_EMAIL = "tdpProfileSearchEmail";

@@ -77,7 +77,7 @@ public class DriverInstance {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.clear(By.id(ElementHelper.PASSWORD));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST_DEV);
+			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST_UAT);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.LOGIN_BTN));
 		}

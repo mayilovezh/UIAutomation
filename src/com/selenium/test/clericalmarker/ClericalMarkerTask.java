@@ -90,9 +90,9 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_TYPE_SECOND)), typeSecond);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_FIRST)), ElementHelper.USER_NAME_DEV);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_FIRST)), ElementHelper.USER_NAME_UAT);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_SECOND)), ElementHelper.USER_NAME_DEV);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_SECOND)), ElementHelper.USER_NAME_UAT);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 

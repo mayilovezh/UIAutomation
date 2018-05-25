@@ -221,9 +221,9 @@ public class ExaminerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_TASK_SEARCH_TYPE)), "Writing");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_LOG));
+		action.click(By.linkText(ElementHelper.EXAMINER_TASK_LOG));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.linkText(ElementHelper.EXAMINER_TASK_LOG_UPDATE_BY)), ElementHelper.USER_NAME_UAT);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_TASK_LOG_UPDATE_BY)), ElementHelper.USER_NAME_UAT);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

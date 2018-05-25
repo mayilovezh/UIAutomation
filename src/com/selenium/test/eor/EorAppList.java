@@ -104,7 +104,7 @@ public class EorAppList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.EOR_APP_LIST_SERVICE_DEADLINE_FROM), serviceDeadlineFrom);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.EOR_APP_LIST_REFUND_STATUS),"13");
+		action.selectByValue(By.id(ElementHelper.EOR_APP_LIST_REFUND_STATUS),"11");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.EOR_APP_LIST_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);

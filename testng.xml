@@ -33,9 +33,9 @@
 			<class name="com.selenium.test.testcenter.TestSessionList" />
 			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
 		</classes>
-	</test> 
+	</test>  
 	
-	<test name="PostTest" preserve-order="true">
+ 	<test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
 			<class name="com.selenium.test.postest.JaggedProfileInfo" />
@@ -49,7 +49,7 @@
 			<class name="com.selenium.test.postest.EMSManagement" />
 			<class name="com.selenium.test.postest.CandidateFromItap" />
 		</classes>
-	</test>	 
+	</test>	
 	
 	<test name="CSCS" preserve-order="true">
 		<classes>
@@ -107,10 +107,10 @@
 			<class name="com.selenium.test.clericalmarker.ClericalMarkerProfile" />
 			<class name="com.selenium.test.clericalmarker.ClericalMarkerTask" />
 			<class name="com.selenium.test.clericalmarker.FirstMarkingAllocation" />
-			<class name="com.selenium.test.clericalmarker.SecondMarkingAllocation" />
 			<class name="com.selenium.test.clericalmarker.InformationList"/>
+			<class name="com.selenium.test.clericalmarker.SecondMarkingAllocation" />
 		</classes>
-	</test>	
+	</test>	 
 	
 	<test name="Examiner" preserve-order="true">
 		<classes>

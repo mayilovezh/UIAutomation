@@ -40,10 +40,10 @@ public class SecondMarkingAllocation {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SELECT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_CALCUATOR));
-		Thread.sleep(ElementHelper.LONG_TIME);
+//		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SELECT));
+//		Thread.sleep(ElementHelper.SHORT_TIME);
+//		action.click(By.id(ElementHelper.SECOND_ALLOCATION_CALCUATOR));
+//		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 
 	@Test
@@ -84,29 +84,20 @@ public class SecondMarkingAllocation {
 	public void step04_ExportAllocationResult() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_RESULT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.LONG_TIME);
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
 	@Test
 	public void step05_ExportRegisterResult() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_REGISTER_RESULT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.LONG_TIME);
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
 	@Test
 	public void step06_ExportFinanceReport() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_FINANCE_REPORT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.LONG_TIME);
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 }

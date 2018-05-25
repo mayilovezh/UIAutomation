@@ -56,11 +56,11 @@ public class SpkDeployment {
 		navigate();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_CITY)), city);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE1)), 30);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE1)), "30");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE2)), 55);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE2)), "55");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE3)), 54);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE3)), "54");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 	
@@ -86,11 +86,11 @@ public class SpkDeployment {
 		navigate();
 		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO)), examinerNo);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO_UAT)), examinerNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME)), examinerName);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME_UAT)), examinerName);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL));
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_UAT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL));
 	}
@@ -100,11 +100,7 @@ public class SpkDeployment {
 		navigate();
 		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO)), examinerNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME)), examinerName);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE));
+		action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_UAT));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_CATEGORY), "1");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

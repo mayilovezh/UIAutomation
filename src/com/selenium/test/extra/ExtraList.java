@@ -72,9 +72,9 @@ public class ExtraList {
 	@Test
 	public void step01_ViewLog() throws Exception {
 		navigate();
-		action.click(By.linkText(ElementHelper.EXTRA_LIST_VIEW_LOG));
+		action.click(By.xpath(ElementHelper.EXTRA_LIST_VIEW_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXTRA_LIST_VIEW_LOG_UPDATEBY)), ElementHelper.USER_NAME_DEV);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXTRA_LIST_VIEW_LOG_UPDATEBY)), ElementHelper.USER_NAME_UAT);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

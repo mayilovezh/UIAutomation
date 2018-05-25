@@ -54,8 +54,8 @@ public class ScoreCheck {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SCORE_CHECK_SEARCH_NAME)), reader.getCellValue("Sheet1", 1, 6));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SCORE_CHECK_SERACH_L)), reader.getCellValue("Sheet1", 1, 9));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SCORE_CHECK_SERACH_L)), reader.getCellValue("Sheet1", 1, 9));
+//		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SCORE_CHECK_SERACH_R)), reader.getCellValue("Sheet1", 1, 10));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SCORE_CHECK_SERACH_W)), reader.getCellValue("Sheet1", 1, 11));

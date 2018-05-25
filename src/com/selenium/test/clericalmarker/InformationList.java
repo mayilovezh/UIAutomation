@@ -49,7 +49,7 @@ public class InformationList {
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.INFORMATION_LIST_SEARCH_CATEGORY)), category);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.INFORMATION_LIST_SEARCH_CREATEBY)),
-				ElementHelper.USER_NAME_DEV);
+				ElementHelper.USER_NAME_UAT);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 

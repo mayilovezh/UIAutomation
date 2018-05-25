@@ -169,7 +169,7 @@ public class TestRoomList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TR_MODIFYLOG));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
+//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 

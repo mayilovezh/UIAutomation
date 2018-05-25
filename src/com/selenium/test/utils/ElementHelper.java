@@ -13,7 +13,7 @@ public class ElementHelper {
 	public static String PASSWORD_UAT = "Zyf111111";
 	public static String USER_NAME_EAST = "zhangyifan"; 
 	public static String PASSWORD_EAST = "Zyf929670@";
-	public static String PASSWORD_EAST_DEV = "Zyf111111";
+	public static String PASSWORD_EAST_UAT = "Zyf111111";
 	public static String LOGIN_BTN = "loginButt";
 	
 	//Wait Time
@@ -699,8 +699,8 @@ public class ElementHelper {
     public static String EXTRA_LIST_STATUS = "ExtraAppListTwo-ExtraStatusSecrch";
     public static String EXTRA_LIST_CANDIDATE_NO = "ExtraAppListTwo-CandidateIDSecrch";
     public static String EXTRA_LIST_SEARCH = "//input[contains(@value,'Search')]";
-    public static String EXTRA_LIST_SELECT = "//*[@id='SpreadSheetExtraAppListTwoGrid']/div[2]/table/tbody/tr/td[1]/input";
-    public static String EXTRA_LIST_VIEW_LOG = "View Log";
+    public static String EXTRA_LIST_SELECT = "//div[@id='SpreadSheetExtraAppListTwoGrid']/div[2]/table/tbody/tr/td[1]/input";
+    public static String EXTRA_LIST_VIEW_LOG = "//div[@id='SpreadSheetExtraAppListTwoGrid']/div[2]/table/tbody/tr/td[12]/a";
     public static String EXTRA_LIST_VIEW_LOG_UPDATEBY = "//*[@id='ExtraAppListTwo-divHistory-ViewLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
     public static String EXTRA_LIST_UPDATE_APP = "Update App";
     public static String EXTRA_LIST_UPDATE_APP_PHONE = "ExtraAppListTwo-PhoneUpdateApp";
@@ -711,7 +711,7 @@ public class ElementHelper {
     public static String EXTRA_LIST_PRINT_POSTAL_LABEL = "ExtraAppListTwo-PrintPostallabel";
     public static String EXTRA_LIST_EXPORT_EMS_DHL = "ExtraAppListTwo-EMS";
     public static String EXTRA_LIST_IMPORT_EMS_DHL = "ExtraAppListTwo-ImportEMS";
-    public static String EXTRA_LIST_STATUS_CHECK = "//*[@id='SpreadSheetExtraAppListTwoGrid']/div[2]/table/tbody/tr/td[10]" ;
+    public static String EXTRA_LIST_STATUS_CHECK = "//div[@id='SpreadSheetExtraAppListTwoGrid']/div[2]/table/tbody/tr/td[10]" ;
     
     
     //Refund
@@ -1172,7 +1172,6 @@ public class ElementHelper {
     public static String EXAMINER_TASK_LOG = "Log";
     public static String EXAMINER_TASK_LOG_UPDATE_BY = "//*[@id='LogGrid_btr']/tr/td[3]";
     
-    
     //IEP Availability 
     public static String IEP_AVAILABILITY = "//*[@id='home']/div[1]/div[2]/div/span[2]/a";
     public static String IEP_AVAILABILITY_DAY25 = "availableCheck_25";
@@ -1201,10 +1200,14 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_ASSIGN_SAVE = "//button[@type='button']";	
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[2]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[3]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[4]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[4]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[1]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[1]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL = "(//button[@type='button'])[2]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[3]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_CATEGORY = "speakingarrangementPerformance";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_SAVE = "(//button[@type='button'])[2]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[2]";

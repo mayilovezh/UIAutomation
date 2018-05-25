@@ -19,7 +19,7 @@ public class ExaminerProfile {
 	String passportNumber = "1234567896";
 	String dateBirth = "1991-05-22";
 	String mobile = "18505218865";
-	String email = "yifanzhang@britishcouncil.org.cn";
+	String email = "yifan.zhang@britishcouncil.org.cn";
 	String examinerNo = "998866";
 	String name = "Yifan Zhang";
 	String pwd = "123456";

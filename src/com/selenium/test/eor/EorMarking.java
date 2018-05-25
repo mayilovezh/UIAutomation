@@ -120,7 +120,7 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO)), "986527");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME)), "Alina Chipysheva");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME)), "ALINA  CHIPYSHEVA");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "005760,");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

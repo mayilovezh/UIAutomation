@@ -313,13 +313,11 @@ public class ElementHelper {
 	public static String ARRANGE_SUPERVISOR = "//*[@id='TDOL']/ul/li[6]/a";
 	public static String ARRANGE_SUPERVISOR_MONTH = "arranging_supervisor_Month";
 	public static String ARRANGE_SUPERVISOR_DATE = "arranging_supervisor_Datetime";
-	public static String ARRANGE_SUPERVISOR_TEST_DAY1 = "//input[@value='04/Feb/2018']";
-	public static String ARRANGE_SUPERVISOR_TEST_DAY2 = "//input[@value='05/Feb/2018']";
-	public static String ARRANGE_SUPERVISOR_TEST_DAY3 = "//input[@value='06/Feb/2018']";
+	public static String ARRANGE_SUPERVISOR_TEST_DAY1 = "//*[@id='supervisor_AllUnitList']/input[8]";
 	public static String ARRANGE_SUPERVISOR_SEARCH = "btnArranging_supervisor";
 	public static String ARRANGE_SUPERVISOR_SAVE = "ArrangingSupervisorSave";
-	public static String ARRANGE_SUPERVISOR_DRAG = "//*[@id='SpreadSheet-Supervisor-tdp']/div[2]/table/tbody/tr[2]/td[1]/div";
-	public static String ARRANGE_SUPERVISOR_DROP = "session33432AM";
+	public static String ARRANGE_SUPERVISOR_DRAG = "//*[@id='SpreadSheet-Supervisor-tdp']/div[2]/table/tbody/tr[3]/td[1]/div";
+	public static String ARRANGE_SUPERVISOR_DROP = "session34526AM";
 	
 	//Arrange SAS
 	public static String ARRANGE_SAS = "//*[@id='TDOL']/ul/li[7]/a";
@@ -328,15 +326,13 @@ public class ElementHelper {
 	public static String ARRANGE_SAS_DUTY = "arrange_SecurityAs_Duty";
 	public static String ARRANGE_SAS_SEARCH= "btnArranging_SecurityAS";
 	public static String ARRANGE_SAS_SAVE = "ArrangingSecurityASSave";
-	public static String ARRANGE_SAS_DRAG = "//*[@id='SpreadSheet-SecurityAS-tdp']/div[2]/table/tbody/tr[5]/td[1]/div";
-	public static String ARRANGE_SAS_DROP = "testSessionId33707AM";
+	public static String ARRANGE_SAS_DRAG = "//*[@id='SpreadSheet-SecurityAS-tdp']/div[2]/table/tbody/tr[2]/td[1]/div";
+	public static String ARRANGE_SAS_DROP = "testSessionId34526AM";
 	
 	//Arrange Spk AS
-	public static String SPK_AS_TEST_DAY1 = "//input[@value='04/Feb/2018']";
-	public static String SPK_AS_TEST_DAY2 = "//input[@value='05/Feb/2018']";
-	public static String SPK_AS_TEST_DAY3 = "//input[@value='06/Feb/2018']";
-	public static String SPK_AS_DRAG = "//*[@id='SpreadSheet-SecurityAS-tdp']/div[2]/table/tbody/tr[2]/td[1]/div";
-	public static String SPK_AS_DROP = "testSessionId33707AM";
+	public static String SPK_AS_TEST_DAY1 = "//*[@id='SecurityAS_AllUnitList']/input[8]";
+	public static String SPK_AS_DRAG = "//*[@id='SpreadSheet-SecurityAS-tdp']/div[2]/table/tbody/tr[12]/td[1]/div";
+	public static String SPK_AS_DROP = "testSessionId34526PM";
 	
 	//Arrange WAS
 	public static String ARRANGE_WAS = "//*[@id='TDOL']/ul/li[8]/a";

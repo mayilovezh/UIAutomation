@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.WebDriverAction;
 
-public class IEPAvailabilityCheck {
+public class TDOLAvailabilityCheck {
 	static WebDriver driver;
 	WebDriverAction action;
 	

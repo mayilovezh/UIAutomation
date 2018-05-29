@@ -15,7 +15,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class ArrangeWAS {
 	WebDriver driver;
 	WebDriverAction action;
-	
+
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -27,19 +27,14 @@ public class ArrangeWAS {
 		new DriverInstance().teardown(driver);
 	}
 
-	public void navigate() {
-		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.TDOL));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.ARRANGE_WAS));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void navigate() throws Exception {
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.TDOL));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.ARRANGE_WAS));
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
+
 	@Test
 	public void arrange() throws Exception {
 		navigate();
@@ -53,7 +48,7 @@ public class ArrangeWAS {
 		action.setTimeout("20");
 		WebElement drag = driver.findElement(By.xpath(ElementHelper.ARRANGE_WAS_DRAG));
 		WebElement drop = driver.findElement(By.xpath(ElementHelper.ARRANGE_WAS_DROP));
-		(new Actions(driver)).dragAndDrop(drag,drop).perform();
+		(new Actions(driver)).dragAndDrop(drag, drop).perform();
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.ARRANGE_WAS_SAVE));
 		Thread.sleep(ElementHelper.LONG_TIME);

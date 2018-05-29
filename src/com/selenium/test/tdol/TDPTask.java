@@ -33,115 +33,84 @@ public class TDPTask {
 		new DriverInstance().teardown(driver);
 	}
 
-	public void navigate() {
-		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.TDOL));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.TDP_TASK));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void navigate() throws Exception {
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.id(ElementHelper.TDOL));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.TDP_TASK));
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
 	@Test
-	public void step01_Create() {
+	public void step01_Create() throws Exception {
 		navigate();
-		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.id(ElementHelper.TDP_TASK_CREATE));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.selectByValue(By.id(ElementHelper.TDP_TASK_CREATE_REGION), ElementHelper.REGION_VALUE);
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.setTimeout("30");
-			action.selectByValue(By.id(ElementHelper.TDP_TASK_CREATE_TESTDATE), "10248");
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TDP_TASK_CREATE_OPEN_START), intervalStart);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TDP_TASK_CREATE_OPEN_END), intervalEnd);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.TDP_TASK_CREATE_TESTDAY_1));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.TDP_TASK_CREATE_TESTDAY_2));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SAVE));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.id(ElementHelper.TDP_TASK_CREATE));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.selectByValue(By.id(ElementHelper.TDP_TASK_CREATE_REGION), ElementHelper.REGION_VALUE);
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.setTimeout("30");
+		action.selectByValue(By.id(ElementHelper.TDP_TASK_CREATE_TESTDATE), "10248");
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.sendkeys(By.id(ElementHelper.TDP_TASK_CREATE_OPEN_START), intervalStart);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.sendkeys(By.id(ElementHelper.TDP_TASK_CREATE_OPEN_END), intervalEnd);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.TDP_TASK_CREATE_TESTDAY_1));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.TDP_TASK_CREATE_TESTDAY_2));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
 
-	public void searchTask() {
+	public void searchTask() throws Exception {
 		navigate();
-		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.sendkeys(By.id(ElementHelper.TDP_TASK_TESTDATE_FROM), testdateFrom);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TDP_TASK_TESTDATE_TO), testdateTo);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.TDP_TASK_SEARCH));
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_TASK_SEARCH_TESTDATE)), testDate);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_TASK_SEARCH_OPENINTERVAL_START)),
-					openintervalStart);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_TASK_SEARCH_OPENINTERVAL_END)),
-					openintervalEnd);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.sendkeys(By.id(ElementHelper.TDP_TASK_TESTDATE_FROM), testdateFrom);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.sendkeys(By.id(ElementHelper.TDP_TASK_TESTDATE_TO), testdateTo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.TDP_TASK_SEARCH));
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_TASK_SEARCH_TESTDATE)), testDate);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_TASK_SEARCH_OPENINTERVAL_START)),
+				openintervalStart);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TDP_TASK_SEARCH_OPENINTERVAL_END)), openintervalEnd);
 	}
 
 	@Test
-	public void step02_Search() {
+	public void step02_Search() throws Exception {
 		searchTask();
 	}
 
 	@Test
-	public void step03_View() {
+	public void step03_View() throws Exception {
 		searchTask();
-		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.linkText(ElementHelper.TDP_TASK_VIEW));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SAVE));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.linkText(ElementHelper.TDP_TASK_VIEW));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
 
 	@Test
-	public void step04_Modify() {
+	public void step04_Modify() throws Exception {
 		searchTask();
-		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.id(ElementHelper.TDP_TASK_MODIFY));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TDP_TASK_MODIFY_DESCRIPTION), ElementHelper.REMARK_VALUE);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SAVE));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.id(ElementHelper.TDP_TASK_MODIFY));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.sendkeys(By.id(ElementHelper.TDP_TASK_MODIFY_DESCRIPTION), ElementHelper.REMARK_VALUE);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
 
 	@Test
-	public void step05_Log() {
+	public void step05_Log() throws Exception {
 		searchTask();
-		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.linkText(ElementHelper.TDP_TASK_LOG));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SAVE));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.linkText(ElementHelper.TDP_TASK_LOG));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
 	}
 
 }

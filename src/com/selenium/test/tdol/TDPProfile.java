@@ -38,7 +38,7 @@ public class TDPProfile {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
-	/*@Test
+	@Test
 	public void step01_CreateWSupervisor() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.TDP_PROFILE_CREATE));
@@ -543,15 +543,15 @@ public class TDPProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.LONG_TIME);
-	}*/
+	}
 	
 	@Test
-	public void step02_Search() throws Exception {
+	public void step14_Search() throws Exception {
 		searchTDP();
 	}
 
 	@Test
-	public void step03_ViewLog() throws Exception {
+	public void step15_ViewLog() throws Exception {
 		searchTDP();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TDP_PROFILE_VIEWLOG));

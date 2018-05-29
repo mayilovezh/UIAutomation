@@ -15,35 +15,29 @@ public class DriverInstance {
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
-		if (driver.getCurrentUrl().equals(ElementHelper.DEV_URL)) {
-			driver.get(ElementHelper.DEV_URL);
-			driver.manage().window().maximize();
-			action.setTimeout("10");
-			Assert.assertEquals(driver.getTitle(), "British Council");
-			action.clear(By.id(ElementHelper.USER_NAME));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_DEV);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.clear(By.id(ElementHelper.PASSWORD));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_DEV);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.LOGIN_BTN));
-		} else {
-			driver.get(ElementHelper.UAT_URL);
-			driver.manage().window().maximize();
-			action.setTimeout("10");
-			Assert.assertEquals(driver.getTitle(), "British Council");
-			action.clear(By.id(ElementHelper.USER_NAME));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_UAT);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.clear(By.id(ElementHelper.PASSWORD));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_UAT);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.LOGIN_BTN));
-		}
+		driver.get(ElementHelper.DEV_URL);
+		driver.manage().window().maximize();
+		action.setTimeout("10");
+		Assert.assertEquals(driver.getTitle(), "British Council");
+		action.clear(By.id(ElementHelper.USER_NAME));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_DEV);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.clear(By.id(ElementHelper.PASSWORD));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_DEV);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.LOGIN_BTN));
+		// driver.get(ElementHelper.UAT_URL);
+		// action.clear(By.id(ElementHelper.USER_NAME));
+		// Thread.sleep(ElementHelper.SHORT_TIME_A);
+		// action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_UAT);
+		// Thread.sleep(ElementHelper.SHORT_TIME_A);
+		// action.clear(By.id(ElementHelper.PASSWORD));
+		// Thread.sleep(ElementHelper.SHORT_TIME_A);
+		// action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_UAT);
+		// Thread.sleep(ElementHelper.SHORT_TIME_A);
+		// action.click(By.id(ElementHelper.LOGIN_BTN));
 		return driver;
 	}
 
@@ -52,35 +46,31 @@ public class DriverInstance {
 		driver = new ChromeDriver();
 		TestNGListener.driver = driver;
 		action = new WebDriverAction(driver);
-		if(driver.getCurrentUrl().equals(ElementHelper.DEV_URL)) {
-			driver.get(ElementHelper.DEV_URL);
-			driver.manage().window().maximize();
-			action.setTimeout("10");
-			Assert.assertEquals(driver.getTitle(), "British Council");
-			action.clear(By.id(ElementHelper.USER_NAME));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_EAST);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.clear(By.id(ElementHelper.PASSWORD));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.LOGIN_BTN));
-		} else {
-			driver.get(ElementHelper.UAT_URL);
-			driver.manage().window().maximize();
-			action.setTimeout("10");
-			Assert.assertEquals(driver.getTitle(), "British Council");
-			action.clear(By.id(ElementHelper.USER_NAME));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_EAST);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.clear(By.id(ElementHelper.PASSWORD));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST_UAT);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.LOGIN_BTN));
-		}
+		driver.get(ElementHelper.DEV_URL);
+		driver.manage().window().maximize();
+		action.setTimeout("10");
+		Assert.assertEquals(driver.getTitle(), "British Council");
+		action.clear(By.id(ElementHelper.USER_NAME));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_EAST);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.clear(By.id(ElementHelper.PASSWORD));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_EAST);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.LOGIN_BTN));
+		// driver.get(ElementHelper.UAT_URL);
+		// action.clear(By.id(ElementHelper.USER_NAME));
+		// Thread.sleep(ElementHelper.SHORT_TIME_A);
+		// action.sendkeys(By.id(ElementHelper.USER_NAME),
+		// ElementHelper.USER_NAME_EAST);
+		// Thread.sleep(ElementHelper.SHORT_TIME_A);
+		// action.clear(By.id(ElementHelper.PASSWORD));
+		// Thread.sleep(ElementHelper.SHORT_TIME_A);
+		// action.sendkeys(By.id(ElementHelper.PASSWORD),
+		// ElementHelper.PASSWORD_EAST_UAT);
+		// Thread.sleep(ElementHelper.SHORT_TIME_A);
+		// action.click(By.id(ElementHelper.LOGIN_BTN));
 		return driver;
 	}
 

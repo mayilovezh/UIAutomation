@@ -15,7 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 public class ArrangeSupervisor {
 	WebDriver driver;
 	WebDriverAction action;
-	
+
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -27,37 +27,28 @@ public class ArrangeSupervisor {
 		new DriverInstance().teardown(driver);
 	}
 
-	public void navigate() {
-		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.TDOL));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.ARRANGE_SUPERVISOR));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	@Test
-	public void arrange() throws Exception {
-		navigate();
-		action.selectByIndex(By.id(ElementHelper.ARRANGE_SUPERVISOR_MONTH), 1);
+	public void navigate() throws Exception {
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.ARRANGE_SUPERVISOR_DATE), 3);
+		action.click(By.id(ElementHelper.TDOL));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.click(By.xpath(ElementHelper.ARRANGE_SUPERVISOR));
+		Thread.sleep(ElementHelper.WAIT_TIME);
+	}
+
+	@Test
+	public void step01_ArrangeSupervisor() throws Exception {
+		navigate();
+		action.selectByIndex(By.id(ElementHelper.ARRANGE_SUPERVISOR_MONTH), 5);
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.selectByValue(By.id(ElementHelper.ARRANGE_SUPERVISOR_DATE), "10220");
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.ARRANGE_SUPERVISOR_TEST_DAY1));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.ARRANGE_SUPERVISOR_TEST_DAY2));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.ARRANGE_SUPERVISOR_TEST_DAY3));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.ARRANGE_SUPERVISOR_SEARCH));
-		action.setTimeout("20");
+		Thread.sleep(40000);
 		WebElement drag = driver.findElement(By.xpath(ElementHelper.ARRANGE_SUPERVISOR_DRAG));
 		WebElement drop = driver.findElement(By.id(ElementHelper.ARRANGE_SUPERVISOR_DROP));
-		(new Actions(driver)).dragAndDrop(drag,drop).perform();
+		(new Actions(driver)).dragAndDrop(drag, drop).perform();
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.ARRANGE_SUPERVISOR_SAVE));
 		Thread.sleep(ElementHelper.LONG_TIME);

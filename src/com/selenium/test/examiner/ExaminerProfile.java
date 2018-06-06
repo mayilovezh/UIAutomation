@@ -42,7 +42,7 @@ public class ExaminerProfile {
 		action.click(By.id(ElementHelper.EXAMINER));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE));
-		Thread.sleep(ElementHelper.LONG_TIME_B);
+		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 
 	/*@Test

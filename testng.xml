@@ -1,41 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" verbose="2" allow-return-values="true" preserve-order="true">
+<suite name="Suite" verbose="2" allow-return-values="true"
+	preserve-order="true">
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 		<listener class-name="com.selenium.test.listener.TestNGListener" />
 	</listeners>
-	
-	<!-- <test name="TDOL" preserve-order="true">
-		<classes>
-			<class name="com.selenium.test.tdol.TDPProfile" />
-			<class name="com.selenium.test.tdol.TDPTask" />
-			<class name="com.selenium.test.tdol.ArrangeSupervisor" />
-			<class name="com.selenium.test.tdol.ArrangeSAS" />
-			<class name="com.selenium.test.tdol.ArrangeSpkAS" />
-			<class name="com.selenium.test.tdol.ArrangeWAS" />
-			<class name="com.selenium.test.tdol.ArrangeDataAS" />
-			<class name="com.selenium.test.tdol.ArrangeWAStoTC" />
-			<class name="com.selenium.test.tdol.ArrangeInvigilator" />
-			<class name="com.selenium.test.tdol.ArrangeBagDuty" />
-			<class name="com.selenium.test.tdol.ArrangeReports" />
-		</classes>
-	</test>	 -->
+
+	<!-- <test name="TDOL" preserve-order="true"> <classes> <class name="com.selenium.test.tdol.TDPProfile" 
+		/> <class name="com.selenium.test.tdol.TDPTask" /> <class name="com.selenium.test.tdol.ArrangeSupervisor" 
+		/> <class name="com.selenium.test.tdol.ArrangeSAS" /> <class name="com.selenium.test.tdol.ArrangeSpkAS" 
+		/> <class name="com.selenium.test.tdol.ArrangeWAS" /> <class name="com.selenium.test.tdol.ArrangeDataAS" 
+		/> <class name="com.selenium.test.tdol.ArrangeWAStoTC" /> <class name="com.selenium.test.tdol.ArrangeInvigilator" 
+		/> <class name="com.selenium.test.tdol.ArrangeBagDuty" /> <class name="com.selenium.test.tdol.ArrangeReports" 
+		/> </classes> </test> -->
 
 	<test name="TestCenter" preserve-order="true">
-		<classes >
+		<classes>
 			<class name="com.selenium.test.testcenter.TestCenterList" />
-			<!-- <class name="com.selenium.test.testcenter.TestBuildingList" />
+			<class name="com.selenium.test.testcenter.TestBuildingList" />
 			<class name="com.selenium.test.testcenter.TestRoomList" />
 			<class name="com.selenium.test.testcenter.TestDateList" />
 			<class name="com.selenium.test.testcenter.TestSessionList" />
-			<class name="com.selenium.test.testcenter.SpkRoomTemplate" /> -->
+			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
 		</classes>
-	</test>  
-	
- 	<!-- <test name="PostTest" preserve-order="true">
+	</test>
+
+	<test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
 			<class name="com.selenium.test.postest.JaggedProfileInfo" />
@@ -49,15 +42,15 @@
 			<class name="com.selenium.test.postest.EMSManagement" />
 			<class name="com.selenium.test.postest.CandidateFromItap" />
 		</classes>
-	</test>	
-	
+	</test>
+
 	<test name="CSCS" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.cs.FreeCandidateAdd" />
 			<class name="com.selenium.test.cs.FreeCandidateList" />
 		</classes>
-	</test>	
-	
+	</test>
+
 	<test name="Marketing" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.marketing.MarketingQuery" />
@@ -66,8 +59,8 @@
 			<class name="com.selenium.test.marketing.ReportByCenter" />
 			<class name="com.selenium.test.marketing.ReportByCenterOrigin" />
 		</classes>
-	</test>	
-	
+	</test>
+
 	<test name="CS-Extra" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
@@ -76,8 +69,8 @@
 			<class name="com.selenium.test.extra.ConfirmRefund" />
 			<class name="com.selenium.test.extra.ExtraList" />
 		</classes>
-	</test>	
-	
+	</test>
+
 	<test name="CS-Eor" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.eor.UnProcessingList" />
@@ -88,8 +81,8 @@
 			<class name="com.selenium.test.eor.FirstImportScore" />
 			<class name="com.selenium.test.eor.SecondImportScore" />
 		</classes>
-	</test>	
-	
+	</test>
+
 	<test name="CS-Eor-India" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.eorindia.IndiaUnProcessingList" />
@@ -100,18 +93,18 @@
 			<class name="com.selenium.test.eorindia.Journal" />
 			<class name="com.selenium.test.eorindia.ConfirmJournal" />
 		</classes>
-	</test>	
-	
+	</test>
+
 	<test name="ClericalMarker" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.clericalmarker.ClericalMarkerProfile" />
 			<class name="com.selenium.test.clericalmarker.ClericalMarkerTask" />
 			<class name="com.selenium.test.clericalmarker.FirstMarkingAllocation" />
-			<class name="com.selenium.test.clericalmarker.InformationList"/>
+			<class name="com.selenium.test.clericalmarker.InformationList" />
 			<class name="com.selenium.test.clericalmarker.SecondMarkingAllocation" />
 		</classes>
-	</test>	 
-	
+	</test>
+
 	<test name="Examiner" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.examiner.ExaminerProfile" />
@@ -121,16 +114,16 @@
 			<class name="com.selenium.test.examiner.WorkRecords" />
 			<class name="com.selenium.test.examiner.AvailabilitySummary" />
 		</classes>
-	</test>	
-	
+	</test>
+
 	<test name="PreTestPlanning" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.pretestplanning.WrittenTemplatesList" />
 			<class name="com.selenium.test.pretestplanning.WrittenRoomArrange" />
 			<class name="com.selenium.test.pretestplanning.ResourcePlanning" />
 		</classes>
-	</test>	
-	
+	</test>
+
 	<test name="GeneralQuery" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.generalquery.RegistrationNumberList" />
@@ -140,8 +133,8 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>	 -->
-	
+	</test>
+
 </suite> 
 
  

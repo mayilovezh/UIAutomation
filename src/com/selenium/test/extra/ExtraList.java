@@ -14,7 +14,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class ExtraList {
 	static WebDriver driver;
 	WebDriverAction action;
-	String candidateNo = "313316";
+	String candidateNo = "312314";
 	String phone = "1234567890";
 	String courierNo = "987654321";
 	String statusCheck = "Sent Overdue";
@@ -82,7 +82,7 @@ public class ExtraList {
 	@Test
 	public void step02_StatusCheck() throws Exception {
 		navigate();
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXTRA_LIST_STATUS_CHECK)), "Sent");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXTRA_LIST_STATUS_CHECK)), statusCheck);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 

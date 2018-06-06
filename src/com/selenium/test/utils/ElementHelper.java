@@ -445,6 +445,7 @@ public class ElementHelper {
     public static String SET_SCORE_SEARCH = "btnQuery-setscore";
     public static String SET_SCORE_SAVE = "//input[@value='Set to 0']";
     public static String SET_SCORE_SELECT_ALL = "checkspeakingtravelAll";
+    public static String SET_SCORE_SUCCESS_TEXT = "displayYesConfirmation";
     
     //Confirm Set Score
     public static String CONFIRM_SET_SCORE = "//*[@id='PostTest']/ul/li[9]/a";
@@ -467,6 +468,7 @@ public class ElementHelper {
     public static String SCORE_UPLOAD_CHOOSE_FIRST_MARKING = "file-ScoreUpload_Import1stMarking";
     public static String SCORE_UPLOAD_CHOOSE_FIRST_RELEASE = "file-ScoreUpload_Import1stRelease";
     public static String SCORE_UPLOAD_UPLOAD = "button.k-button.k-upload-selected";
+    public static String SCORE_UPLOAD_SUCCESS_TEXT = "windows_kendo_message";
     
     //Import Log
     public static String IMPORT_LOG = "//*[@id='PostTest']/ul/li[5]/a";
@@ -1201,7 +1203,7 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[4]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[1]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[1]";
-    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL = "(//button[@type='button'])[2]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL = "//button[@type='button']";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_CATEGORY = "speakingarrangementPerformance";

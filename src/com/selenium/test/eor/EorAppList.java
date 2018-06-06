@@ -57,7 +57,7 @@ public class EorAppList {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.EOR_APP_LIST));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EOR_APP_LIST_EXPORT_REGION), ElementHelper.REGION_VALUE);
+		action.selectByValue(By.id(ElementHelper.EOR_APP_LIST_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.EOR_APP_LIST_FAMILY_NAME), familyName);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -104,7 +104,7 @@ public class EorAppList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.EOR_APP_LIST_SERVICE_DEADLINE_FROM), serviceDeadlineFrom);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.EOR_APP_LIST_REFUND_STATUS),"11");
+		action.selectByValue(By.id(ElementHelper.EOR_APP_LIST_REFUND_STATUS),"13");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.EOR_APP_LIST_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);

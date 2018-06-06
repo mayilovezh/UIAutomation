@@ -118,7 +118,7 @@ public class TestCenterList{
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.linkText(ElementHelper.TC_MODIFYLOG));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_DEV);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 	

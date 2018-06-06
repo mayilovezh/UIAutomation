@@ -17,7 +17,7 @@ public class RegistrationNumberList {
 	WebDriverAction action;
 	ExcelReader reader = new ExcelReader(".\\resource\\generalquery\\registration.xlsx");
     String quota = "400";
-    String totalRegistered = "192";
+    String totalRegistered = "72";
     String totalQuota = "1200";
 	
 	@BeforeMethod
@@ -50,7 +50,6 @@ public class RegistrationNumberList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.RUL_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA106)),quota);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA113)),quota);

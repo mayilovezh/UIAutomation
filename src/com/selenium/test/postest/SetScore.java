@@ -13,6 +13,8 @@ import com.selenium.test.utils.WebDriverAction;
 public class SetScore {
 	static WebDriver driver;
 	WebDriverAction action;
+	boolean isTextPrest = false;
+	
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().loginEast(driver);
@@ -51,7 +53,8 @@ public class SetScore {
 		action.click(By.xpath(ElementHelper.SET_SCORE_SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.LONG_TIME);
+		isTextPrest = driver.findElement(By.id(ElementHelper.SET_SCORE_SUCCESS_TEXT)).getText().contains(" The success of the operation");
 	}
 	
 }

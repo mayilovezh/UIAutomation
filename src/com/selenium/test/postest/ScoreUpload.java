@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -15,6 +16,8 @@ import com.selenium.test.utils.WebDriverAction;
 public class ScoreUpload {
 	static WebDriver driver;
 	WebDriverAction action;
+	boolean isTextPrest = false;
+	
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().loginEast(driver);
@@ -50,7 +53,8 @@ public class ScoreUpload {
 		upload("\\resource\\posttest\\0106 Xuzhou_1st marking.xml");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.cssSelector(ElementHelper.SCORE_UPLOAD_UPLOAD));
-		Thread.sleep(30000);
+		Thread.sleep(ElementHelper.LONG_TIME_A);
+		isTextPrest = driver.findElement(By.id(ElementHelper.SCORE_UPLOAD_SUCCESS_TEXT)).getText().contains("The operation was successful!");
 	}
 	
 	@Test
@@ -61,7 +65,8 @@ public class ScoreUpload {
 		upload1("\\resource\\posttest\\0106 Xuzhou_1st release.xml");
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.cssSelector(ElementHelper.SCORE_UPLOAD_UPLOAD));
-		Thread.sleep(30000);
+		Thread.sleep(ElementHelper.LONG_TIME_A);
+		isTextPrest = driver.findElement(By.id(ElementHelper.SCORE_UPLOAD_SUCCESS_TEXT)).getText().contains("The operation was successful");
 	}
 	
 	public void upload(String filePath) {

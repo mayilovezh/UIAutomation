@@ -14,6 +14,8 @@ import com.selenium.test.utils.WebDriverAction;
 public class ConfirmSetScore {
 	static WebDriver driver;
 	WebDriverAction action;
+	boolean isTextPrest = false;
+	
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().loginEast(driver);
@@ -52,6 +54,6 @@ public class ConfirmSetScore {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.LONG_TIME);
-//		Assert.assertEquals(action.getText(By.id("displayYesConfirmation")), " The success of the operation");
+		isTextPrest = driver.findElement(By.id(ElementHelper.SET_SCORE_SUCCESS_TEXT)).getText().contains(" The success of the operation");
 	}
 }

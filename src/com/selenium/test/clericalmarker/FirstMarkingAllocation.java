@@ -38,8 +38,8 @@ public class FirstMarkingAllocation {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.FIRST_ALLOCATION_DATE), "10215");
 		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SELECT));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+//		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SELECT));
+//		Thread.sleep(ElementHelper.SHORT_TIME_A);
 //		action.click(By.id(ElementHelper.FIRST_ALLOCATION_SEARCH));
 //		Thread.sleep(ElementHelper.LONG_TIME_A);
 	}

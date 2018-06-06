@@ -15,8 +15,8 @@ import com.selenium.test.utils.WebDriverAction;
 public class AvailabilitySummary {
 	static WebDriver driver;
 	WebDriverAction action;
-	String lockSpkDate = "2018-06-05";
-	String lockWrtDate = "2018-06-20";
+	String lockSpkDate = "2018-06-30";
+	String lockWrtDate = "2018-06-29";
 	String dateFrom = "2018-04-01";
 	String dateTo = "2018-05-01";
 	
@@ -69,13 +69,13 @@ public class AvailabilitySummary {
 	public void step02_ModifyLock() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_LOCK));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.clear(By.id(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_LOCK_SPK_DATE));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Thread.sleep(ElementHelper.LONG_TIME);
+//		action.clear(By.id(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_LOCK_SPK_DATE));
+//		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_LOCK_SPK_DATE), lockSpkDate);
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.clear(By.id(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_LOCK_WRT_DATE));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+//		action.clear(By.id(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_LOCK_WRT_DATE));
+//		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.AVAILABILITY_SUMMARY_MODIFY_LOCK_WRT_DATE), lockWrtDate);
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));

@@ -40,7 +40,7 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
-	@Test
+	/*@Test
 	public void step01_CreateFirstMarkingTask() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM));
@@ -76,7 +76,7 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
+	}*/
 
 	@Test
 	public void step03_SearchTask() throws Exception {

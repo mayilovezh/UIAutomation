@@ -48,7 +48,7 @@ public class FreeCandidateAdd {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
-	@Test
+	/*@Test
 	public void step01_CreateLR() throws Exception {
 		search();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LR));
@@ -212,6 +212,6 @@ public class FreeCandidateAdd {
 		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 8);
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.SAVE));
-	}
+	}*/
 
 }

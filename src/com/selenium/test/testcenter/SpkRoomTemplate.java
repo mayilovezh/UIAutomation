@@ -43,7 +43,7 @@ public class SpkRoomTemplate {
 			action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -66,7 +66,7 @@ public class SpkRoomTemplate {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	
@@ -87,7 +87,7 @@ public class SpkRoomTemplate {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -97,7 +97,7 @@ public class SpkRoomTemplate {
 			search();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -114,7 +114,7 @@ public class SpkRoomTemplate {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -128,7 +128,7 @@ public class SpkRoomTemplate {
 			isroomChecked();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -142,7 +142,7 @@ public class SpkRoomTemplate {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -156,7 +156,7 @@ public class SpkRoomTemplate {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	
@@ -169,7 +169,7 @@ public class SpkRoomTemplate {
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY)), templateThu);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	

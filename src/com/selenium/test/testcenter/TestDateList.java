@@ -39,7 +39,7 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -65,7 +65,7 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 

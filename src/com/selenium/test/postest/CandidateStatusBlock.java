@@ -44,7 +44,7 @@ public class CandidateStatusBlock {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -69,7 +69,7 @@ public class CandidateStatusBlock {
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.CAN_STATUS_BLOCK_SEARCH_CHINESE_NAME)), chineseName);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -91,7 +91,7 @@ public class CandidateStatusBlock {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -116,7 +116,7 @@ public class CandidateStatusBlock {
 			isTextPrest = driver.findElement(By.id(ElementHelper.RESULT_SUCCESS)).getText().contains(ElementHelper.WARNING_TEXT);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	
@@ -130,7 +130,7 @@ public class CandidateStatusBlock {
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.CAN_STATUS_BLOCK_VIEW_CREATE_BY)), ElementHelper.USER_NAME_EAST);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 

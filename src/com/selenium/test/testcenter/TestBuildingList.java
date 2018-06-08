@@ -61,7 +61,7 @@ public class TestBuildingList {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}*/
 
@@ -87,7 +87,7 @@ public class TestBuildingList {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	
@@ -103,7 +103,7 @@ public class TestBuildingList {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	
@@ -120,7 +120,7 @@ public class TestBuildingList {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	
@@ -136,7 +136,7 @@ public class TestBuildingList {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 	
@@ -165,7 +165,7 @@ public class TestBuildingList {
 			Assert.assertEquals(action.getText(By.id(ElementHelper.TB_NAME)), tbName);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 }

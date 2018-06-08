@@ -49,7 +49,7 @@ public class SpkRoomAvailability {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -90,7 +90,7 @@ public class SpkRoomAvailability {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -107,7 +107,7 @@ public class SpkRoomAvailability {
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_ROOM_SEARCH_TESTDATE)), testDate);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -128,7 +128,7 @@ public class SpkRoomAvailability {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -145,7 +145,7 @@ public class SpkRoomAvailability {
 			action.click(By.xpath(ElementHelper.CANCEL));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
@@ -161,7 +161,7 @@ public class SpkRoomAvailability {
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 

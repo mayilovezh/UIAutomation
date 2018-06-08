@@ -30,27 +30,174 @@ public class TestRoomList {
 		new DriverInstance().teardown(driver);
 	}
 
-	public void searchTestRoom() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.TEST_CENTER));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.TEST_ROOM_LIST));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.isVisible(By.id(ElementHelper.TR_REGION));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.TR_REGION), "1");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.TR_CENTER), "100100");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.TR_BUILDING), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.TR_AVAILABLE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.TR_ROOM_TYPE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.TR_SEARCH));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_TBNAME)), tbName_Cn);
+	/*@Test(description = "Create the test room of UIBE and type is speaking")
+	public void step01_Create(){
+		searchTestRoom();
+		try {
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.xpath(ElementHelper.TR_CREATE));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.sendkeys(By.id(ElementHelper.TR_ADD_NAME), "111");
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("$('#RoomQuota').data('kendoNumericTextBox').value('100')");
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			js.executeScript("$('#OptimalQuota').data('kendoNumericTextBox').value('100')");
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_SPEAKING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_WRITING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_UKVI));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_LIFE_SKILLS));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			js.executeScript("$('#Floor').data('kendoNumericTextBox').value('2');");
+			action.sendkeys(By.id(ElementHelper.TR_ADD_FLOOR), "2");
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}*/
+
+	@Test(description = "Create the share room of UIBE")
+	public void step03_CreateShareRoom(){
+		try {
+			searchTestRoom();
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.xpath(ElementHelper.TR_CREATE_SHARE_ROOM));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.TR_SHARE_ROOM_1));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.TR_SHARE_ROOM_1_YES));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.TR_SHARE_START_DATE), "2018-01-01");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.TR_SHARE_END_DATE), "2018-01-31");
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.TR_SHARE_SEARCH));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.TR_SHARE_TEST_DAY));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test(description = "Search the test room '111' of UIBE and type is speaking")
+	public void step02_Search(){
+		searchTestRoom();
+		textisExist();
+	}
+
+	@Test(description = "Modify the test room '111' of UIBE")
+	public void step04_Modify(){
+		try {
+			searchTestRoom();
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.xpath(ElementHelper.TR_MODIFY));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.clear(By.id(ElementHelper.TR_MODIFY_REMARK));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.clear(By.id(ElementHelper.TR_MODIFY_REMARK));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.TR_MODIFY_REMARK), "Automation Testing");
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test(description = "Modify the share room '111' of UIBE")
+	public void step05_ModifyShareRoom(){
+		try {
+			searchTestRoom();
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.linkText(ElementHelper.TR_MODIFY_SHARE_DAY));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.CANCEL));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test(description = "View the share room's log")
+	public void step06_ShareLog(){
+		try {
+			searchTestRoom();
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.linkText(ElementHelper.TR_SHARE_LOG));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test(description = "View the test room's detail of UIBE")
+	public void step07_View(){
+		try {
+			searchTestRoom();
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.xpath(ElementHelper.TR_VIEW));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test(description = "View the test room's log of UIBE")
+	public void step08_ModifyLog(){
+		try {
+			searchTestRoom();
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.linkText(ElementHelper.TR_MODIFYLOG));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void searchTestRoom(){
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.TEST_CENTER));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.TEST_ROOM_LIST));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.isVisible(By.id(ElementHelper.TR_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByValue(By.id(ElementHelper.TR_REGION), "1");
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByValue(By.id(ElementHelper.TR_CENTER), "100100");
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.TR_BUILDING), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.TR_AVAILABLE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.TR_ROOM_TYPE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.TR_SEARCH));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_TBNAME)), tbName_Cn);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public boolean textisExist() {
@@ -64,113 +211,4 @@ public class TestRoomList {
 		}
 		return status;
 	}
-
-	/*@Test
-	public void step01_Create() throws Exception {
-		searchTestRoom();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.TR_CREATE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.sendkeys(By.id(ElementHelper.TR_ADD_NAME), "111");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("$('#RoomQuota').data('kendoNumericTextBox').value('100')");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		js.executeScript("$('#OptimalQuota').data('kendoNumericTextBox').value('100')");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_SPEAKING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_WRITING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_UKVI));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_LIFE_SKILLS));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		js.executeScript("$('#Floor').data('kendoNumericTextBox').value('2');");
-		action.sendkeys(By.id(ElementHelper.TR_ADD_FLOOR), "2");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}
-
-	@Test
-	public void step03_CreateShareRoom() throws Exception {
-		searchTestRoom();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.TR_CREATE_SHARE_ROOM));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.TR_SHARE_ROOM_1));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.TR_SHARE_ROOM_1_YES));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.TR_SHARE_START_DATE), "2018-01-01");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.TR_SHARE_END_DATE), "2018-01-31");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.TR_SHARE_SEARCH));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.TR_SHARE_TEST_DAY));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}*/
-
-	@Test
-	public void step02_Search() throws Exception {
-		searchTestRoom();
-		textisExist();
-	}
-
-	@Test
-	public void step04_Modify() throws Exception {
-		searchTestRoom();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.TR_MODIFY));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.clear(By.id(ElementHelper.TR_MODIFY_REMARK));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.clear(By.id(ElementHelper.TR_MODIFY_REMARK));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.TR_MODIFY_REMARK), "Automation Testing");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}
-
-	/*@Test
-	public void step05_ModifyShareRoom() throws Exception {
-		searchTestRoom();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.linkText(ElementHelper.TR_MODIFY_SHARE_DAY));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.CANCEL));
-	}*/
-
-	@Test
-	public void step06_ShareLog() throws Exception {
-		searchTestRoom();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.linkText(ElementHelper.TR_SHARE_LOG));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}
-
-	/*@Test
-	public void step07_View() throws Exception {
-		searchTestRoom();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.TR_VIEW));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}
-*/
-	@Test
-	public void step08_ModifyLog() throws Exception {
-		searchTestRoom();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.linkText(ElementHelper.TR_MODIFYLOG));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TR_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}
-
 }

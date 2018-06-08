@@ -18,7 +18,6 @@ public class TestDateList {
 	String testdate2 = "2018-01-13";
 	String testdate3 = "2018-01-18";
 	String testdate4 = "2018-01-20";
-	
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -31,37 +30,48 @@ public class TestDateList {
 		new DriverInstance().teardown(driver);
 	}
 
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.TEST_CENTER));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.TEST_DATE_LIST));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	public void navigate() {
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.TEST_CENTER));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.TEST_DATE_LIST));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	@Test
-	public void search() throws Exception {
-		navigate();
-		action.selectByValue(By.id(ElementHelper.TD_YEAR), "2018");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.TD_EXAM_PRODUCT_TYPE), "1");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.TD_EXAM_FORMAT), "1");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.TD_SEARCH));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE1)), testdate1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE2)), testdate2);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE3)), testdate3);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE4)), testdate4);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+	@Test(description = "Check the test date of January")
+	public void search() {
+		try {
+			navigate();
+			action.selectByValue(By.id(ElementHelper.TD_YEAR), "2018");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByValue(By.id(ElementHelper.TD_EXAM_PRODUCT_TYPE), "1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByValue(By.id(ElementHelper.TD_EXAM_FORMAT), "1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.TD_SEARCH));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE1)), testdate1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE2)), testdate2);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE3)), testdate3);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE4)), testdate4);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	/*@Test
-	public void importFile() {
-
-	}*/
+	/*
+	 * @Test public void importFile() {
+	 * 
+	 * }
+	 */
 }

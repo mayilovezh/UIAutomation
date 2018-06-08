@@ -51,13 +51,12 @@ public class SpkRoomAvailability {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
-	@Test
+	@Test(description = "Create the speaking availability of saturday")
 	public void step01_Create() {
-		navigate();
 		try {
+			navigate();
 			action.sendkeys(By.id(ElementHelper.SPK_ROOM_DATE_FROM), dateFrom);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.sendkeys(By.id(ElementHelper.SPK_ROOM_DATE_FROM), dateTo);
@@ -96,10 +95,12 @@ public class SpkRoomAvailability {
 	}
 
 	public void search() {
-		navigate();
 		try {
-			/*action.click(By.cssSelector(ElementHelper.SPK_ROOM_DATE_FROM_CALENDAR));
-			Thread.sleep(ElementHelper.SHORT_TIME_B);*/
+			navigate();
+			/*
+			 * action.click(By.cssSelector(ElementHelper.SPK_ROOM_DATE_FROM_CALENDAR));
+			 * Thread.sleep(ElementHelper.SHORT_TIME_B);
+			 */
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.SPK_ROOM_SEARCH));
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -110,48 +111,48 @@ public class SpkRoomAvailability {
 		}
 	}
 
-	@Test
+	@Test(description = "Search the speaking availability of saturday")
 	public void step02_SearchAvailability() {
 		search();
 	}
 
-	@Test
+	@Test(description = "Modify the speaking availability's room of saturday ")
 	public void step03_Modify() {
-	 search();
-	 try {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.linkText(ElementHelper.SPK_ROOM_MODIFY));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.SPK_ROOM_MODIFY_REMARK), ElementHelper.REMARK_VALUE);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-
-	}
-	
-	@Test
-	public void step04_View() {
-		search();
 		try {
+			search();
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.linkText(ElementHelper.SPK_ROOM_VIEW));
+			action.click(By.linkText(ElementHelper.SPK_ROOM_MODIFY));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_ROOM_VIEW_REMARK)), ElementHelper.REMARK_VALUE);
-		    Thread.sleep(ElementHelper.SHORT_TIME);
-		    action.click(By.xpath(ElementHelper.CANCEL));
+			action.sendkeys(By.id(ElementHelper.SPK_ROOM_MODIFY_REMARK), ElementHelper.REMARK_VALUE);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	@Test
-	public void step05_Log() {
-		search();
+
+	@Test(description = "View the speaking availability's detail")
+	public void step04_View() {
 		try {
+			search();
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.linkText(ElementHelper.SPK_ROOM_VIEW));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_ROOM_VIEW_REMARK)),
+					ElementHelper.REMARK_VALUE);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.CANCEL));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test(description = "View the speaking availability's modify log")
+	public void step05_Log() {
+		try {
+			search();
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.linkText(ElementHelper.SPK_ROOM_LOG));
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -163,11 +164,11 @@ public class SpkRoomAvailability {
 			e.printStackTrace();
 		}
 	}
-	
-	@Test
+
+	@Test(description = "Delete the speaking availability of saturday")
 	public void step06_Detlete() {
-		search();
 		try {
+			search();
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.linkText(ElementHelper.SPK_ROOM_DELETE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -177,42 +178,50 @@ public class SpkRoomAvailability {
 			e.printStackTrace();
 		}
 	}
-	
-	@Test
-	public void step07_DeleteSpkTemplateSat() throws InterruptedException {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.TEST_CENTER));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), "1");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), "100100");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}
-	
-	@Test
-	public void step08_DeleteSpkTemplateThu() throws InterruptedException {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.TEST_CENTER));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), "1");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), "100100");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}
-	
 
+	@Test(description = "Delete the speaking template of saturday")
+	public void step07_DeleteSpkTemplateSat() {
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.TEST_CENTER));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), "1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), "100100");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test(description = "Delete the speaking template of thursday")
+	public void step08_DeleteSpkTemplateThu() {
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.TEST_CENTER));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), "1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), "100100");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.linkText(ElementHelper.SPK_TEMPLATE_DELETE));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

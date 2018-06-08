@@ -3,7 +3,7 @@ package com.selenium.test.utils;
 public class ElementHelper {
 
 	//MIS
-	public static String DEV_URL = "http://cnbjs1bms001:9003";
+	public static String DEV_URL = "http://cnbjs1bms015:9003";
 	public static String UAT_URL = "http://cnbjs1bms001:9001";
 	public static String USER_NAME = "userName";
 	public static String PASSWORD = "password";
@@ -12,7 +12,7 @@ public class ElementHelper {
 	public static String USER_NAME_UAT = "zyf"; 
 	public static String PASSWORD_UAT = "Zyf111111";
 	public static String USER_NAME_EAST = "zhangyifan"; 
-	public static String PASSWORD_EAST = "Zyf929670@";
+	public static String PASSWORD_EAST_DEV = "Zyf929670@";
 	public static String PASSWORD_EAST_UAT = "Zyf111111";
 	public static String LOGIN_BTN = "loginButt";
 	
@@ -32,6 +32,7 @@ public class ElementHelper {
 	public static String REMARK_VALUE = "Automation Testing";
 	public static String USER = "yifan zhang";
 	public static String CONFIRMATION = " Operation is successful";
+	public static String WARNING_TEXT = "Operation is complete！";
 	
 	//TDOL IEP
 	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
@@ -61,7 +62,9 @@ public class ElementHelper {
 	//Element
 	public static String CANCEL = "//span[text(),'Cancel']";
 	public static String SAVE = "//button[@type='button']";
-	public static String RESULT_WARNING = "/html/body/div[14]/div[2]";
+	public static String RESULT_WARNING = "ui-dialog-content ui-widget-content";
+	public static String RESULT_SUCCESS = "displayYesConfirmation";
+	
 	//(dependsOnMethods = { ""})
 	
 	//Test Center
@@ -84,18 +87,21 @@ public class ElementHelper {
 	public static String TC_NAME = "txtCenterName";
 	public static String TC_SEARCH = "BtnCenterSearch";
 	public static String TC_SEARCH_NAME = "//a[contains(text(),'对外经济贸易大学')]";
+	public static String TC_SEARCH_ABBREVATION = "//*[@id='SpreadSheetTestCenterGrid']/div[2]/table/tbody/tr/td[4]";
 	public static String TC_MODIFY = "a.k-button";
 	public static String TC_MODIFY_DESCRIPTION = "CenterDesc";
 	public static String TC_VIEW = "View";
 	public static String TC_VIEW_NAME = "//*[@id='testCenterDetailsWindow']/table/tbody/tr[5]/td";
 	public static String TC_MODIFYLOG = "ModifyLog";
 	public static String TC_MODIFYLOG_CREATE_BY = "//*[@id='SpreadSheetTestCenterModifyLogGrid']/div[2]/table/tbody/tr[1]/td[4]";
+	public static String TC_MODIFYLOG_DETAILS = "//*[@id='SpreadSheetTestCenterModifyLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
 	
 	//Test Building
 	public static String TEST_BUILDING_LIST = "//*[@id='TestCenter']/ul/li[2]/a";
 	public static String TB_CREATE = "//input[@value='Create']";
 	public static String TB_REGION = "selectofficeSearchBuilding";
 	public static String TB_CENTER = "selectTCSearchBuilding";
+	public static String TB_AVAILABLE = "selectBuildingAvailable";
 	public static String TB_SEARCH = "//*[@id='page-heading']/div/table/tbody/tr/td[7]/input[1]";
 	public static String TB_NAME = "LblCenterName";
 	public static String TB_SAVE = "button.k-button";
@@ -113,10 +119,13 @@ public class ElementHelper {
 	public static String TB_MODIFY_REMARK = "RemarkBuilding";
 	public static String TB_MODIFYLOG = "Modify Log";
 	public static String TB_MODIFYLOG_CREATE_BY = "//*[@id='SpreadSheetTestBuildingModifyLogGrid']/div[2]/table/tbody/tr[1]/td[4]";
+	public static String TB_MODIFYLOG_DETAILS = "//*[@id='SpreadSheetTestBuildingModifyLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
 	public static String TB_VIEW = "View";
 	public static String TB_VIEW_NAME = "//*[@id='testBuildingDetailsWindow']/table/tbody/tr[2]/td";
+	public static String TB_VIEW_BUILDING_TYPE = "//*[@id='testBuildingDetailsWindow']/table/tbody/tr[7]/td";
 	public static String TB_LENDBUILDING = "Lend Building";
-	public static String TB_LENDBUILDING_ONE = "//*[@id='ModifyExtraBuildingDialog']/ul/li[2]/input";
+	public static String TB_LENDBUILDING_TC = "//input[contains(@value,'50')]";
+	public static String TB_LENDBUILDING_CHECK = "//*[@id='LblExtraBuilding']/span";
 	
 	//Test Room
 	public static String TEST_ROOM_LIST = "//*[@id='TestCenter']/ul/li[3]/a";
@@ -162,8 +171,9 @@ public class ElementHelper {
 	public static String TS_CREATE_MONTH_END= "ddlMonth-endMonth1";
 	public static String TS_CREATE_PRODUCT = "selectTestSessionExamProductTypeAdd2";
 	public static String TS_CREATE_FORMAT = "selectTestSessionExamFormatSearchAdd";
+	public static String TS_CREATE_TESTDATE_END = "ddlMonth-endMonth1";
 	public static String TS_CREATE_SEARCH = "btntestcenterlistSearch";
-	public static String TS_CREATE_TESTDATE = "selectestdatereal-10351"; 
+	public static String TS_CREATE_TESTDATE = "selectestdatereal-10358"; 
 	public static String TS_CRAETE_TC = "//input[contains(@value,'100100')]";
 	public static String TS_REGION = "selectRegionSearch-testsession";
 	public static String TS_YEAR = "ddlYear-testsession";
@@ -326,8 +336,8 @@ public class ElementHelper {
 	public static String ARRANGE_SAS_DUTY = "arrange_SecurityAs_Duty";
 	public static String ARRANGE_SAS_SEARCH= "btnArranging_SecurityAS";
 	public static String ARRANGE_SAS_SAVE = "ArrangingSecurityASSave";
-	public static String ARRANGE_SAS_DRAG = "//*[@id='SpreadSheet-SecurityAS-tdp']/div[2]/table/tbody/tr[2]/td[1]/div";
-	public static String ARRANGE_SAS_DROP = "testSessionId34526AM";
+	public static String ARRANGE_SAS_DRAG = "//*[contains(@data-tapname='Xiong Ying')]";
+	public static String ARRANGE_SAS_DROP = "(//div[@id='testSessionId36466AM'])[8]";
 	
 	//Arrange Spk AS
 	public static String SPK_AS_TEST_DAY1 = "//*[@id='SecurityAS_AllUnitList']/input[8]";
@@ -412,14 +422,20 @@ public class ElementHelper {
 	public static String CAN_STATUS_BLOCK_TC = "CandidateStatus_List_CenterId";
 	public static String CAN_STATUS_BLOCK_SEARCH = "CandidateStatus_List_BtnQuery";
 	public static String CAN_STATUS_BLOCK_MODIFY = "//input[@value='Modify']";
+	public static String CAN_STATUS_BLOCK_VIEW = "//input[contains(@value,'View')]";
+	public static String CAN_STATUS_BLOCK_VIEW_MODIFY_LOG = "//*[@id='SpreadSheetRegistrationModifyLogGrid']/div[2]/table/tbody/tr[1]/td[2]";
+	public static String CAN_STATUS_BLOCK_VIEW_CREATE_BY = "//*[@id='SpreadSheetRegistrationModifyLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
 	public static String CAN_STATUS_BLOCK_MODIFY_GIVENNAME_EN = "candidate_status_Reg_name";
 	public static String CAN_STATUS_BLOCK_MODIFY_GIVENNAME_CN = "candidate_status_Reg_ch_name";
 	public static String CAN_STATUS_BLOCK_CANDIDATE_NO = "CandidateStatus_List_Search_CandidateNo";
 	public static String CAN_STATUS_BLOCK_SEARCH_INFO = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[2]";
 	public static String CAN_STATUS_BLOCK_SEARCH_CHINESE_NAME = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[9]";
-	public static String CAN_STATUS_BLOCK_STATUS_SELECT = "Candidate_Status_Chk_13834770";
-	public static String CAN_STATUS_BLOCK_TEST_STATUS = "Candidate_Status_Test_List_13834770";
-    public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Score_List_13834770";
+	public static String CAN_STATUS_BLOCK_STATUS_SELECT = "Candidate_Status_Chk";
+	public static String CAN_STATUS_BLOCK_TEST_STATUS = "Candidate_Status_Set_Selected_Test";
+    public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Set_Selected_Score";
+    public static String CAN_STATUS_BLOCK_REASON = "Candidate_Status_Set_Selected_Reject";
+    public static String CAN_STATUS_BLOCK_STAGE = "Candidate_Status_Set_Selected_Stage";
+    public static String CAN_STATUS_BLOCK_REMARK = "Candidate_Status_Remark";
     public static String CAN_STATUS_BLOCK_STATUS_SAVE = "Candidate_Status_Save_Selected";
     
     //EMS Management

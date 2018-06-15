@@ -84,6 +84,7 @@ public class TestRoomList {
 			action.click(By.xpath(ElementHelper.TR_SHARE_TEST_DAY));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));
+			Thread.sleep(ElementHelper.WAIT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -107,7 +108,7 @@ public class TestRoomList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.clear(By.id(ElementHelper.TR_MODIFY_REMARK));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.TR_MODIFY_REMARK), "Automation Testing");
+			action.sendkeys(By.id(ElementHelper.TR_MODIFY_REMARK), ElementHelper.REMARK_VALUE1);
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {

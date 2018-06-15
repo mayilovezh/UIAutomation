@@ -59,8 +59,9 @@ public class TestCenterList {
 			navigate();
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.TC_CREATE));
 			action.waitElementVisible(By.id(ElementHelper.TC_ADD_REGION));
-			List<String> regionOptions = Arrays.asList(new String[] { ElementHelper.SELECT_REGIONS, ElementHelper.NORTH_REGION,
-					ElementHelper.EAST_REGION, ElementHelper.SOUTH_REGION, ElementHelper.S_WEST_REGION });
+			List<String> regionOptions = Arrays
+					.asList(new String[] { ElementHelper.SELECT_REGIONS, ElementHelper.NORTH_REGION,
+							ElementHelper.EAST_REGION, ElementHelper.SOUTH_REGION, ElementHelper.S_WEST_REGION });
 			int regionSize = regionOptions.size();
 			Select regionselectStage = new Select(driver.findElement(By.id(ElementHelper.TC_ADD_REGION)));
 			Assert.assertFalse(regionselectStage.isMultiple());
@@ -70,9 +71,9 @@ public class TestCenterList {
 			}
 			Assert.assertEquals(regionOptions.toArray(), regionOptions1.toArray());
 			System.out.println("The select list number is" + " " + regionSize);
-			
-			List<String> productOptions = Arrays.asList(new String[] { ElementHelper.PRODUCT_IELTS, ElementHelper.PRODUCT_IELTS_UKVI,
-					ElementHelper.PRODUCT_IELTS_LIFE_SKILLS});
+
+			List<String> productOptions = Arrays.asList(new String[] { ElementHelper.PRODUCT_IELTS,
+					ElementHelper.PRODUCT_IELTS_UKVI, ElementHelper.PRODUCT_IELTS_LIFE_SKILLS });
 			int productSize = productOptions.size();
 			Select productselectStage = new Select(driver.findElement(By.id(ElementHelper.TC_ADD_PRODUCT_TYPE)));
 			Assert.assertFalse(productselectStage.isMultiple());
@@ -89,7 +90,7 @@ public class TestCenterList {
 			action.isTextPrest(By.id(ElementHelper.TC_ADD_ERROR), errorMessage);
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.xpath(ElementHelper.TC_ADD_ERROR_CONFIRM));
-			Thread.sleep(ElementHelper.SHORT_TIME_B);   
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.isTextPrest(By.xpath(ElementHelper.TC_ADD_PROVINCE_WARNING), provinceWarning);
 			action.isTextPrest(By.xpath(ElementHelper.TC_ADD_CITY_WARNING), cityWarning);
 			action.isTextPrest(By.xpath(ElementHelper.TC_ADD_CENTERNAME_CN_WARNING), tcNameCnWarning);
@@ -143,7 +144,7 @@ public class TestCenterList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}
+	}*/
 
 	@Test(description = "Verify input Incorrect text and regions.")
 	public void step03_Verifyselectandinput() {
@@ -170,15 +171,15 @@ public class TestCenterList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 	
-	/*@Test(description = "Search for the TestCenter of UIBE")
-	public void step02_Search(){
+	@Test(description = "Search for the TestCenter of UIBE")
+	public void step02_Search() {
 		searchTC();
 	}
 
 	@Test(description = "Modify the TestCenter of UIBE")
-	public void step03_Modify(){
+	public void step03_Modify() {
 		try {
 			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -188,7 +189,7 @@ public class TestCenterList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.clear(By.id(ElementHelper.TC_MODIFY_DESCRIPTION));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.TC_MODIFY_DESCRIPTION),ElementHelper.REMARK_VALUE);
+			action.sendkeys(By.id(ElementHelper.TC_MODIFY_DESCRIPTION), ElementHelper.REMARK_VALUE1);
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
@@ -198,7 +199,7 @@ public class TestCenterList {
 	}
 
 	@Test(description = "View the testcenter details of UIBE")
-	public void step04_View(){
+	public void step04_View() {
 		try {
 			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -214,13 +215,13 @@ public class TestCenterList {
 	}
 
 	@Test(description = "View the modifylog of UIBE")
-	public void step05_ModifyLog(){
+	public void step05_ModifyLog() {
 		try {
 			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.click(By.linkText(ElementHelper.TC_MODIFYLOG));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.isTextPrest(By.className(ElementHelper.TC_MODIFYLOG_DETAILS), "llllll");
+			action.isTextPrest(By.className(ElementHelper.TC_MODIFYLOG_DETAILS), ElementHelper.REMARK_VALUE1);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_MODIFYLOG_CREATE_BY)),
 					ElementHelper.USER_NAME_UAT);
 			action.click(By.xpath(ElementHelper.SAVE));
@@ -228,23 +229,19 @@ public class TestCenterList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 	
-	public void searchTC(){
+	public void searchTC() {
 		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.id(ElementHelper.TEST_CENTER));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.TEST_CENTER_LIST));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.isVisible(By.id(ElementHelper.TC_REGION));
-			Thread.sleep(ElementHelper.SHORT_TIME);
+			navigate();
+			action.waitElementVisible(By.id(ElementHelper.TC_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.sendkeys(By.id(ElementHelper.TC_NAME), tcName);
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.id(ElementHelper.TC_SEARCH));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_SEARCH_NAME)), tcName);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_SEARCH_ABBREVATION)),abbreviation);
+			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TC_SEARCH_NAME), tcName);
+			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TC_SEARCH_ABBREVATION), abbreviation);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);

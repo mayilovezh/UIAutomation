@@ -81,7 +81,7 @@ public class TestBuildingList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.clear(By.id(ElementHelper.TB_MODIFY_REMARK));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.TB_MODIFY_REMARK), "Automation Testing");
+			action.sendkeys(By.id(ElementHelper.TB_MODIFY_REMARK), ElementHelper.REMARK_VALUE1);
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.cssSelector(ElementHelper.TB_MODIFY_SAVE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -99,7 +99,7 @@ public class TestBuildingList {
 			action.click(By.linkText(ElementHelper.TB_MODIFYLOG));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 //		    isTextPrest = driver.findElement(By.className(ElementHelper.TB_MODIFYLOG_DETAILS)).getText().contains(ElementHelper.REMARK_VALUE);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TB_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_DEV);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TB_MODIFYLOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

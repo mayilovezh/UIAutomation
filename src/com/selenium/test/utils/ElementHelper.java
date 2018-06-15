@@ -30,6 +30,7 @@ public class ElementHelper {
 	public static String REGION_VALUE = "1";
 	public static String TEST_CENTER_ID = "100100";
 	public static String REMARK_VALUE = "Automation Testing";
+	public static String REMARK_VALUE1 = "Automation";
 	public static String USER = "yifan zhang";
 	public static String CONFIRMATION = " Operation is successful";
 	public static String WARNING_TEXT = "Operation is complete！";
@@ -1242,9 +1243,9 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_SEARCH_DATE4 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[5]";
     public static String SPK_DEPLOYMENT_SEARCH_DATE5 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[6]";
     public static String SPK_DEPLOYMENT_ASSIGN = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[1]";
-    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[1]/th[2]/input[2]";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//input[contains(@value,'2018-06-02')]";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[2]/td[1]/select";
-    public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "(//input[@value='Search'])[3]";
+    public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "//input[contains(@value='Search')]";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "GB2";
     public static String SPK_DEPLOYMENT_ASSIGN_SAVE = "//button[@type='button']";	
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[2]";
@@ -1257,6 +1258,9 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL = "//button[@type='button']";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[3]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[2]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_YES = "(//button[@type='button'])[2]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_CONFIRM = "(//button[@type='button'])[4]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_CATEGORY = "speakingarrangementPerformance";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_SAVE = "(//button[@type='button'])[2]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[2]";
@@ -1303,9 +1307,15 @@ public class ElementHelper {
     public static String AVAILABILITY_SUMMARY_MODIFY_LOCK = "SearchExaminerAvailabilitySummary_Create";
     public static String AVAILABILITY_SUMMARY_MODIFY_LOCK_SPK_DATE = "Jobs_LockEnd";
     public static String AVAILABILITY_SUMMARY_MODIFY_LOCK_WRT_DATE = "Quantity_LockEnd";
+    public static String AVAILABILITY_SUMMARY_MODIFY_LOCK_SPK_DATE_MESSAGE = "(//button[@type='button'])[3]";
+    public static String AVAILABILITY_SUMMARY_MODIFY_LOCK_WRT_DATE_MESSAGE = "(//button[@type='button'])[4]";
     public static String AVAILABILITY_SUMMARY_LOG = "SearchExaminerAvailabilitySummary_ViewLog";
-    public static String AVAILABILITY_SUMMARY_LOG_CREATEBY = "//*[@id='ExaminerAvailabilitySummary_ViewLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
-    
+    public static String AVAILABILITY_SUMMARY_LOCK_SPK_LOG_CREATEBY = "//*[@id='ExaminerAvailabilitySummary_ViewLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
+    public static String AVAILABILITY_SUMMARY_LOCK_SPK_LOG_OPERATION = "//*[@id='ExaminerAvailabilitySummary_ViewLogGrid']/div[2]/table/tbody/tr[1]/td[2]";
+    public static String AVAILABILITY_SUMMARY_LOCK_SPK_LOG_TYPE = "//*[@id='ExaminerAvailabilitySummary_ViewLogGrid']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String AVAILABILITY_SUMMARY_LOCK_WRT_LOG_CREATEBY = "//*[@id='ExaminerAvailabilitySummary_ViewLogGrid']/div[2]/table/tbody/tr[2]/td[3]";
+    public static String AVAILABILITY_SUMMARY_LOCK_WRT_LOG_OPERATION = "//*[@id='ExaminerAvailabilitySummary_ViewLogGrid']/div[2]/table/tbody/tr[2]/td[2]";
+    public static String AVAILABILITY_SUMMARY_LOCK_WRT_LOG_TYPE = "//*[@id='ExaminerAvailabilitySummary_ViewLogGrid']/div[2]/table/tbody/tr[2]/td[1]";
     
     //PreTest Planning
     public static String PRE_TEST_PLANNING = "PreTestPlanning";

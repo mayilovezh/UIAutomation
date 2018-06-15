@@ -56,7 +56,7 @@ public class TestSessionList {
 		}
 	}
 
-	@Test(description = "Create the test session of UIBE")
+	/*@Test(description = "Create the test session of UIBE")
 	public void step01_Create() {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -83,7 +83,7 @@ public class TestSessionList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}
+	}*/
 
 	@Test(description = "Search the test session of 'UIBE' and test date is '2018-6-2'")
 	public void step02_SearchTestSession() {
@@ -116,7 +116,7 @@ public class TestSessionList {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.click(By.linkText(ElementHelper.TS_LOG));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TS_LOG_CREATE_BY)), ElementHelper.USER_NAME_DEV);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TS_LOG_CREATE_BY)), ElementHelper.USER_NAME_UAT);
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {

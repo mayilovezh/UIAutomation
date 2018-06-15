@@ -42,14 +42,14 @@ public class KeyDates {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	@Test
+	/*@Test
 	public void step01_GenerateKeydates() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.KEY_DATES_GENERATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 //		action.click(By.xpath(ElementHelper.SAVE));
 //		Thread.sleep(ElementHelper.SHORT_TIME_B);
-	}
+	}*/
 	
 	@Test
 	public void step02_HiddenOnViewPage() throws Exception {

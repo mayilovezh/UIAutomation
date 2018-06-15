@@ -16,9 +16,9 @@ public class RegistrationNumberList {
 	static WebDriver driver;
 	WebDriverAction action;
 	ExcelReader reader = new ExcelReader(".\\resource\\generalquery\\registration.xlsx");
-    String quota = "400";
-    String totalRegistered = "72";
-    String totalQuota = "1200";
+    String quota = "401";
+    String totalRegistered = "0";
+    String totalQuota = "1201";
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -44,7 +44,7 @@ public class RegistrationNumberList {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.RUL_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.RUL_TC), "50");
+		action.selectByValue(By.id(ElementHelper.RUL_TC), ElementHelper.TC_BFSU);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.sendkeys(By.id(ElementHelper.RUL_DATE_FROM), "2018-06-01");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

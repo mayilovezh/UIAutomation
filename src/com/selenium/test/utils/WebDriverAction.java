@@ -127,7 +127,12 @@ public class WebDriverAction {
 	
 	public void waitElementVisibleToSendKeys(By by, String value) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).sendKeys(value);;
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).sendKeys(value);
+	}
+	
+	public void waitElementVisibleToAssert(By by, String value) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText().equals(value);
 	}
 	
 	public void isTextPrest(By by, String text) {

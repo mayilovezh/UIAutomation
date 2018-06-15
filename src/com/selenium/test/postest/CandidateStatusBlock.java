@@ -73,7 +73,7 @@ public class CandidateStatusBlock {
 		}
 	}
 
-	@Test(description = "Modify the candidate profile")
+	@Test(description = "Modify the candidate profile.")
 	public void step01_ModifypProfile(){
 		try {
 			search();
@@ -95,7 +95,7 @@ public class CandidateStatusBlock {
 		}
 	}
 
-	@Test(description = "Modify the candidate score status to 'TRF Sent'")
+	@Test(description = "Modify the candidate score status to 'TRF Sent'.")
 	public void step02_ModifyStatus(){
 		try {
 			search();
@@ -114,19 +114,21 @@ public class CandidateStatusBlock {
 			action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_STATUS_SAVE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			isTextPrest = driver.findElement(By.id(ElementHelper.RESULT_SUCCESS)).getText().contains(ElementHelper.WARNING_TEXT);
+			Assert.assertTrue(isTextPrest);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
 	}
 	
-	@Test(description = "View the modify log of status and profile")
+	@Test(description = "View the modify log of status and profile.")
 	public void step03_Viewlog() {
 		try {
 			search();
 			action.click(By.xpath(ElementHelper.CAN_STATUS_BLOCK_VIEW));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			isTextPrest = driver.findElement(By.xpath(ElementHelper.CAN_STATUS_BLOCK_VIEW_MODIFY_LOG)).getText().contains(modifyLog);
+			Assert.assertTrue(isTextPrest);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.CAN_STATUS_BLOCK_VIEW_CREATE_BY)), ElementHelper.USER_NAME_EAST);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

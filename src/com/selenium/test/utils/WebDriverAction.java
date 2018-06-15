@@ -6,7 +6,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class WebDriverAction {
 
@@ -50,6 +53,10 @@ public class WebDriverAction {
 
 	public void doubleClick(By by) {
 		new Actions(driver).doubleClick(driver.findElement(by)).perform();
+	}
+
+	public void clear(By by) {
+		driver.findElement(by).clear();
 	}
 
 	public void sendkeys(By by, String value) {
@@ -108,9 +115,25 @@ public class WebDriverAction {
 		return driver.findElement(By.xpath(ElementHelper.RESULT_WARNING)).getText();
 	}
 
-	public void clear(By by) {
-
-		driver.findElement(by).clear();
+	public void waitElementVisible(By by) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	}
+	
+	public void waitElementVisibleToClick(By by) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).click();
+	}
+	
+	public void waitElementVisibleToSendKeys(By by, String value) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).sendKeys(value);;
+	}
+	
+	public void isTextPrest(By by, String text) {
+		boolean istextprest;
+		istextprest = driver.findElement(by).getText().contains(text);
+		Assert.assertTrue(istextprest);
 	}
 
 	public boolean isWebElementExist(By by) {

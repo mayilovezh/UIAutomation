@@ -33,6 +33,18 @@ public class ElementHelper {
 	public static String USER = "yifan zhang";
 	public static String CONFIRMATION = " Operation is successful";
 	public static String WARNING_TEXT = "Operation is complete！";
+	public static String YEAR_VALUE = "2018";
+	public static String TC_BFSU = "50";
+	public static String NO_AVAILABLE_DATA = "No available data....";
+	public static String SELECT_REGIONS = "--Select--";
+	public static String ALL_REGIONS = "--All Regions--";
+	public static String NORTH_REGION = "North Region";
+	public static String EAST_REGION = "East Region";
+	public static String SOUTH_REGION = "South Region";
+	public static String S_WEST_REGION = "S-West Region";
+	public static String PRODUCT_IELTS = "IELTS";
+	public static String PRODUCT_IELTS_UKVI = "IELTS UKVI";
+	public static String PRODUCT_IELTS_LIFE_SKILLS = "IELTS Life Skills";
 	
 	//TDOL IEP
 	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
@@ -75,6 +87,7 @@ public class ElementHelper {
 	public static String TC_CREATE = "//input[@value='Create']";
 	public static String TC_REGION = "selectofficeTCSearch";
 	public static String TC_ADD_REGION = "selectofficeTCAdd";
+	public static String TC_ADD_PRODUCT_TYPE = "selExamProductTypeTCAdd";
 	public static String TC_ADD_PROVINCE = "selectProvinceTc";
 	public static String TC_ADD_CITY = "selectCityTc";
 	public static String TC_ADD_CENTERNAME_CN = "centerNameAdd";
@@ -95,6 +108,18 @@ public class ElementHelper {
 	public static String TC_MODIFYLOG = "ModifyLog";
 	public static String TC_MODIFYLOG_CREATE_BY = "//*[@id='SpreadSheetTestCenterModifyLogGrid']/div[2]/table/tbody/tr[1]/td[4]";
 	public static String TC_MODIFYLOG_DETAILS = "//*[@id='SpreadSheetTestCenterModifyLogGrid']/div[2]/table/tbody/tr[1]/td[3]";
+	public static String TC_ADD_ERROR = "displayYesConfirmation";
+	public static String TC_ADD_ERROR_CONFIRM = "(//button[@type='button'])[3]";
+	public static String TC_ADD_PROVINCE_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[13]/td/span";
+	public static String TC_ADD_CITY_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[4]/td/span";
+	public static String TC_ADD_CENTERNAME_CN_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[6]/td/span";
+	public static String TC_ADD_CENTERNAME_EN_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[7]/td/span";
+	public static String TC_ADD_TC_QUOTA_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[8]/td/span[2]";
+	public static String TC_ADD_TC_OPTIMALQUOTA_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[9]/td/span[2]";
+	public static String TC_ADD_ABBREVIATION_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[10]/td/span";
+	public static String TC_ADD_ADDRESS_CN_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[11]/td/span";
+	public static String TC_ADD_ADDRESS_EN_WARNING = "//*[@id='displayCenterWindow']/table/tbody/tr[12]/td/span";
+	public static String TC_SEARCH_NO_DATA = "//*[@id='SpreadSheetTestCenterGrid']/div[2]/table/tbody/tr/td";
 	
 	//Test Building
 	public static String TEST_BUILDING_LIST = "//*[@id='TestCenter']/ul/li[2]/a";
@@ -527,16 +552,26 @@ public class ElementHelper {
     public static String JAGGED_EXPORT = "btn-ScoreExtraHandlingJP-ExportJPRate";
     
     //PE SE Comparison
-    public static String PE_SE_COMPARISON = "//*[@id='PostTest']/ul/li[10]/a";
-    public static String PE_SE_YEAR = "select-ComparisonFEorSe-TestDat-Year";
-    public static String PE_SE_MONTH = "select-ComparisonFEorSe-Month";
-    public static String PE_SE_DATE = "select-ComparisonFEorSe-TestDat";
-    public static String PE_SE_TC = "select-ComparisonFEorSe-TestCenter";
-    public static String PE_SE_1STMARKING = "1stMarking";
-    public static String PE_SE_2NDMARKING = "2ndMarking";
-    public static String PE_SE_SEARCH_R = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[1]/td[8]";
-    public static String PE_SE_SEARCH_S_LR = "//*[@id='div_ComparisonFEorSe_Grid1']/div[2]/table/tbody/tr[1]/td[16]";
-    public static String PE_SE_EXPORT = "btnExport-ComparisonFEorSe";
+    public static String FE_SE_COMPARISON = "//*[@id='PostTest']/ul/li[10]/a";
+    public static String FE_SE_REGION = "select-ComparisonFEorSe-RegionId";
+    public static String FE_SE_YEAR = "select-ComparisonFEorSe-TestDat-Year";
+    public static String FE_SE_MONTH = "select-ComparisonFEorSe-Month";
+    public static String FE_SE_DATE = "select-ComparisonFEorSe-TestDat";
+    public static String FE_SE_TC = "select-ComparisonFEorSe-TestCenter";
+    public static String FE_SE_1STMARKING = "1stMarking";
+    public static String FE_SE_2NDMARKING = "2ndMarking";
+    public static String FE_SE_SEARCH_FIRSTMARKING_R1 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[1]/td[8]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_R2 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[2]/td[8]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_TR1 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[3]/td[13]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_CC1 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[3]/td[14]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_LR1 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[3]/td[15]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_GRA1 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[3]/td[16]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_TR2 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[4]/td[13]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_CC2 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[4]/td[14]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_LR2 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[4]/td[15]";
+    public static String FE_SE_SEARCH_FIRSTMARKING_GRA2 = "//*[@id='div_ComparisonFEorSe_Grid']/div[2]/table/tbody/tr[4]/td[16]";
+    public static String FE_SE_EXPORT = "btnExport-ComparisonFEorSe";
+    public static String FE_SE_DIALOG_MESSAGE = "displayYesConfirmation";
     
     //Candidate From Itap
     public static String CANDIDATE_FROM_ITAP = "//*[@id='PostTest']/ul/li[12]/a";

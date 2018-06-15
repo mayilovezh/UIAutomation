@@ -8,7 +8,7 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 		<listener class-name="com.selenium.test.listener.TestNGListener" />
 	</listeners>
-
+	
 	<!-- <test name="TDOL" preserve-order="true">
 	<classes>
 	    <class name="com.selenium.test.tdol.TDPProfile" />
@@ -23,34 +23,34 @@
 		<class name="com.selenium.test.tdol.ArrangeBagDuty" />
 		<class name="com.selenium.test.tdol.ArrangeReports" />
 	</classes>
-</test>
+</test> -->
 
-	<test name="TestCenter" preserve-order="true">
+	 <test name="TestCenter" preserve-order="true">
 		<classes>
 			 <class name="com.selenium.test.testcenter.TestCenterList" /> 
-			<class name="com.selenium.test.testcenter.TestBuildingList" />
+			<!--<class name="com.selenium.test.testcenter.TestBuildingList" />
 		    <class name="com.selenium.test.testcenter.TestRoomList" />
 			<class name="com.selenium.test.testcenter.TestDateList" />
 			<class name="com.selenium.test.testcenter.TestSessionList" />
-			<class name="com.selenium.test.testcenter.SpkRoomTemplate" /> 
+			<class name="com.selenium.test.testcenter.SpkRoomTemplate" /> -->
 		</classes>
-	</test>
- -->
-	 <test name="PostTest" preserve-order="true">
+	</test> 
+
+<!--	 <test name="PostTest" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.postest.CandidateStatusBlock" />
-			<!-- <class name="com.selenium.test.postest.JaggedProfileInfo" />
+			<class name="com.selenium.test.postest.JaggedProfileInfo" />
 			<class name="com.selenium.test.postest.SetScore" />
 			<class name="com.selenium.test.postest.ConfirmSetScore" />
 			<class name="com.selenium.test.postest.ScoreUpload" />
 			<class name="com.selenium.test.postest.ImportLog" />
 			<class name="com.selenium.test.postest.ScoreCheck" />
 			<class name="com.selenium.test.postest.StatusScoreCheck" />
-			<class name="com.selenium.test.postest.PESEComparison" />
 			<class name="com.selenium.test.postest.EMSManagement" />
-			<class name="com.selenium.test.postest.CandidateFromItap" /> -->
+			<class name="com.selenium.test.postest.CandidateFromItap" /> 
+			<class name="com.selenium.test.postest.FESEComparison" />
 		</classes>
-	</test>
+	</test> -->
 
 	<!--<test name="CSCS" preserve-order="true">
 		<classes>

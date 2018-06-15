@@ -144,6 +144,7 @@ public class TestBuildingList {
 	public void step07_Lendingbuildingcheck(){
 		searchTB();
 		isTextPrest = driver.findElement(By.xpath(ElementHelper.TB_LENDBUILDING_CHECK)).getText().contains("( Borrowed from BJ-BFSU )");
+		Assert.assertTrue(isTextPrest);
 	}
 	
 	public void searchTB(){

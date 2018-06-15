@@ -27,33 +27,44 @@ public class ConfirmSetScore {
 		new DriverInstance().teardown(driver);
 	}
 
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.POST_TEST));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.CONFIRM_SET_SCORE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	public void navigate(){
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.POST_TEST));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.CONFIRM_SET_SCORE));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 	
-	@Test
-	public void confirmSetAll() throws Exception {
-		navigate();
-		action.selectByValue(By.id(ElementHelper.CONFIRM_SET_SCORE_YEAR), "2018");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.CONFIRM_SET_SCORE_MONTH), 0);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.CONFIRM_SET_SCORE_DATE), "10334");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.CONFIRM_SET_SCORE_TC), "100084");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.CONFIRM_SET_SCORE_SEARCH));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.id(ElementHelper.CONFIRM_SET_SCORE_SELECTALL));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CONFIRM_SET_SCORE_SET));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.LONG_TIME);
-		isTextPrest = driver.findElement(By.id(ElementHelper.SET_SCORE_SUCCESS_TEXT)).getText().contains(" The success of the operation");
+	@Test(description = "Confirm set all candidates scores to '0'")
+	public void confirmSetAll() {
+		try {
+			navigate();
+			action.selectByValue(By.id(ElementHelper.CONFIRM_SET_SCORE_YEAR), "2018");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.CONFIRM_SET_SCORE_MONTH), 0);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByValue(By.id(ElementHelper.CONFIRM_SET_SCORE_DATE), "10334");
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.selectByValue(By.id(ElementHelper.CONFIRM_SET_SCORE_TC), "100084");
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.click(By.id(ElementHelper.CONFIRM_SET_SCORE_SEARCH));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.click(By.id(ElementHelper.CONFIRM_SET_SCORE_SELECTALL));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.click(By.xpath(ElementHelper.CONFIRM_SET_SCORE_SET));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.click(By.xpath(ElementHelper.SAVE));
+			Thread.sleep(ElementHelper.LONG_TIME);
+			isTextPrest = driver.findElement(By.id(ElementHelper.SET_SCORE_SUCCESS_TEXT)).getText().contains(" The success of the operation");
+			Assert.assertTrue(isTextPrest);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 }

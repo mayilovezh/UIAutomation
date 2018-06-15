@@ -17,9 +17,9 @@ public class ImportLog {
 	String testCenter = "Xuzhou";
 	String release = "First Release";
 	String marking = "First Marking";
-    String totalNum = "81";
-    String successNum = "81";
-	
+	String totalNum = "81";
+	String successNum = "81";
+
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().loginEast(driver);
@@ -31,26 +31,36 @@ public class ImportLog {
 		new DriverInstance().teardown(driver);
 	}
 
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.POST_TEST));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.IMPORT_LOG));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	public void navigate() {
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.POST_TEST));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.IMPORT_LOG));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
-	
-	@Test
-	public void searchImportLog() throws Exception {
-		navigate();
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_TESTCENTER_RELEASE)), testCenter);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_FIRST_RELEASE)), release);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_TOTAL_NUM)), totalNum);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_SUCCESS_NUM)), successNum);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_FIRST_MARKING)), marking);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+
+	@Test(description = "Search the firstmarking and firstrelease upload logs.")
+	public void searchImportLog() {
+		try {
+			navigate();
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_TESTCENTER_RELEASE)), testCenter);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_FIRST_RELEASE)), release);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_TOTAL_NUM)), totalNum);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_SUCCESS_NUM)), successNum);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.IMPORT_LOG_FIRST_MARKING)), marking);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 }

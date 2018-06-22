@@ -90,6 +90,7 @@ public class SpkDeployment {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SAVE));
 			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.waitElementVisibleToAssert(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_NUMBER), "1");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);

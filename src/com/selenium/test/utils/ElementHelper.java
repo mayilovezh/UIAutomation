@@ -46,6 +46,8 @@ public class ElementHelper {
 	public static String PRODUCT_IELTS = "IELTS";
 	public static String PRODUCT_IELTS_UKVI = "IELTS UKVI";
 	public static String PRODUCT_IELTS_LIFE_SKILLS = "IELTS Life Skills";
+	public static String SUCCESS_TEXT = "The success of the operation";
+	public static String CENTER_UIBE = "100100";
 	
 	//TDOL IEP
 	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
@@ -183,9 +185,28 @@ public class ElementHelper {
 	public static String TR_SHARE_START_DATE = "set_DateTime_RoomShareDateFrom";
 	public static String TR_SHARE_END_DATE = "set_DateTime_RoomShareDateTo";
 	public static String TR_SHARE_SEARCH = "btntestshareroomdatelistSearch";
-	public static String TR_SHARE_TEST_DAY = "//td[2]/div/div/div/div[2]/table/tbody/tr/td/input";
+	public static String TR_SHARE_TEST_DAY = "//*[@id='addtestroomsharedate-Guid']/div[2]/table/tbody/tr[1]/td[1]";
 	public static String TR_MODIFY_SHARE_DAY = "Modify Share Day";
 	public static String TR_SHARE_LOG = "Share Log";
+	public static String TR_SHARE_ROOMNUMBER = "//*[@id='addtestroomshare-list']/div[2]/table/tbody/tr/td[2]";
+	public static String TR_MODIFY_SHARE_START_DATE = "set_DateTime_ModifyRoomShareDateFrom";
+	public static String TR_MODIFY_SHARE_END_DATE = "set_DateTime_ModifyRoomShareDateTo";
+	public static String TR_MODIFY_SHARE_SEARCH = "btntestshareroomdatelistSearch-modify";
+	public static String TR_ROOMNUMBER_LIST = "//*[@id='spreadsheet-testroom']/div[2]/table/tbody/tr/td[1]";
+	public static String TR_MPDDIFY_SHARE_LIST = "//*[@id='modifytestroomsharedate-Guid']/div[2]/table/tbody/tr[1]";
+	public static String TR_SHARE_LOG_ROOM_NAME = "//*[@id='SpreadSheetTestRoomShareModifyLogGrid']/div[2]/table/tbody/tr[1]/td[2]";
+	public static String TR_SHARE_LOG_CREATE_BY = "//*[@id='SpreadSheetTestRoomShareModifyLogGrid']/div[2]/table/tbody/tr[1]/td[4]";
+	public static String TR_VIEW_BUILDING_NAME = "//*[@id='testRoomDetailsWindow']/table/tbody/tr[1]/td";
+	public static String TR_VIEW_ROOM_NAME = "//*[@id='testRoomDetailsWindow']/table/tbody/tr[2]/td";
+	public static String TR_CREATE_SHARE_ROOM_NAME = "//*[@id='addtestroomshare-list']/div[2]/table/tbody/tr[1]/td[1]/input";
+	public static String TR_WARNING_MESSAGE_CONFIRM = "(//button[@type='button'])[3]";
+	public static String TR_CREATE_ROOM_TOWARD = "Room_Toward";
+	public static String TR_CREATE_ROOM_NAME_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[4]/td/div/div[1]/span";
+	public static String TR_CREATE_ROOM_QUOTA_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[5]/td/span[2]";
+	public static String TR_CREATE_OPTIMAL_QUOTA_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[6]/td/span[2]";
+	public static String TR_CREATE_ROOM_TYPE_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[7]/td/span[2]";
+	public static String TR_CREATE_ROOM_PRODUCT_TYPE_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[8]/td/span[2]";
+	public static String TR_CREATE_FLOOR_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[9]/td/span[2]";
 	
 	//Test Session
 	public static String TEST_SESSION_LIST = "//*[@id='TestCenter']/ul/li[4]/a";
@@ -487,7 +508,7 @@ public class ElementHelper {
     public static String SET_SCORE_SEARCH = "btnQuery-setscore";
     public static String SET_SCORE_SAVE = "//input[@value='Set to 0']";
     public static String SET_SCORE_SELECT_ALL = "checkspeakingtravelAll";
-    public static String SET_SCORE_SUCCESS_TEXT = "displayYesConfirmation";
+    public static String SET_SCORE_SUCCESS_TEXT = "(//div[@id='displayYesConfirmation'])[2]";
     
     //Confirm Set Score
     public static String CONFIRM_SET_SCORE = "//*[@id='PostTest']/ul/li[9]/a";
@@ -864,8 +885,10 @@ public class ElementHelper {
     public static String EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO = "//*[@id='SpreadSheetEorMarkingTask1Grid']/div[2]/table/tbody/tr[1]/td[4]";
     public static String EOR_MARKING_CLEAR_ALLOCATION = "btnClearAllocation-eor";
     public static String EOR_MARKING_SET_CAPACITY = "btnSetCapacityAll-eor";
+    public static String EOR_MARKING_CLEAR_ALL_SELECT = "checkedbox_all_eorMaring";
+    public static String EOR_MARKING_SELECT_FIRST = "//*[@id='eorMaringExaminerListGrid']/div[2]/table/tbody/tr[1]/td[1]/input";
     public static String EOR_MARKING_SET_CAPACITY_SELECT = "Set Capacity";
-    public static String EOR_MARKING_SET_CAPACITY_NUMBER = "txtnewcapacity-eor";
+    public static String EOR_MARKING_SET_CAPACITY_NUMBER = "txtnewcapacity-SetCapacityAll-eor";
     public static String EOR_MARKING_NOTICE = "btnNotice-eor";
     public static String EOR_MARKING_CLEAR_NOTICE = "btnClearMarkingNotice-eor";
     
@@ -1243,11 +1266,12 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_SEARCH_DATE4 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[5]";
     public static String SPK_DEPLOYMENT_SEARCH_DATE5 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[6]";
     public static String SPK_DEPLOYMENT_ASSIGN = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[1]";
-    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//input[contains(@value,'2018-06-02')]";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[1]/td[7]/input[2]";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[2]/td[1]/select";
     public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "//input[contains(@value='Search')]";
-    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "GB2";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "ADH";
     public static String SPK_DEPLOYMENT_ASSIGN_SAVE = "//button[@type='button']";	
+    public static String SPK_DEPLOYMENT_ASSIGN_NUMBER = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[3]/td[7]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[2]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[3]";
@@ -1288,7 +1312,7 @@ public class ElementHelper {
     public static String CORE_DAY_SEARCH = "BtnSearchCoreday";
     public static String CORE_DAY_SELECT = "chk_examinercoreday";
     public static String CORE_DAY_ADD = "BtnAddCoreday";
-    public static String CORE_DAY_ADD_DATE = "(//input[@id='chk_addexaminercoreday'])[6]";
+    public static String CORE_DAY_ADD_DATE = "(//input[@id='chk_addexaminercoreday'])[5]";
     public static String CORE_DAY_RELEASE = "BtenCoredayReleasetoIEP";
     
     //Availability Summary

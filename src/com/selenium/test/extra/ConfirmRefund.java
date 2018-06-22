@@ -38,11 +38,11 @@ public class ConfirmRefund {
 	@Test
 	public void approveStatus() throws Exception {
 		navigate();
-		action.click(By.xpath(ElementHelper.CONFIRM_REFUND_SELECT));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.CONFIRM_REFUND_APPROVE));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
+//		action.click(By.xpath(ElementHelper.CONFIRM_REFUND_SELECT));
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
+//		action.click(By.id(ElementHelper.CONFIRM_REFUND_APPROVE));
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
+//		action.click(By.xpath(ElementHelper.SAVE));
+//		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 }

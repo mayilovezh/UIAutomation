@@ -174,12 +174,12 @@ public class TestCenterList {
 	}
 	
 	@Test(description = "Search for the TestCenter of UIBE")
-	public void step02_Search() {
+	public void step04_Search() {
 		searchTC();
 	}
 
 	@Test(description = "Modify the TestCenter of UIBE")
-	public void step03_Modify() {
+	public void step05_Modify() {
 		try {
 			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -199,7 +199,7 @@ public class TestCenterList {
 	}
 
 	@Test(description = "View the testcenter details of UIBE")
-	public void step04_View() {
+	public void step06_View() {
 		try {
 			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -215,13 +215,13 @@ public class TestCenterList {
 	}
 
 	@Test(description = "View the modifylog of UIBE")
-	public void step05_ModifyLog() {
+	public void step07_ModifyLog() {
 		try {
 			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.click(By.linkText(ElementHelper.TC_MODIFYLOG));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.isTextPrest(By.className(ElementHelper.TC_MODIFYLOG_DETAILS), ElementHelper.REMARK_VALUE1);
+//			action.isTextPrest(By.xpath(ElementHelper.TC_MODIFYLOG_DETAILS), ElementHelper.REMARK_VALUE1);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_MODIFYLOG_CREATE_BY)),
 					ElementHelper.USER_NAME_UAT);
 			action.click(By.xpath(ElementHelper.SAVE));

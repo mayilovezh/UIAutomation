@@ -55,7 +55,7 @@ public class PendingList {
 		action.click(By.xpath(ElementHelper.SAVE));
 	}
 	
-	@Test
+	/*@Test
 	public void step02_ChangeToReject() throws Exception {
 		navigate();
 		action.click(By.xpath(ElementHelper.PENDING_LIST_REJECT));
@@ -63,7 +63,7 @@ public class PendingList {
 		action.selectByIndex(By.id(ElementHelper.PENDING_LIST_REJECT_REASON), 1);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
-	}
+	}*/
 	
 	/*@Test
 	public void step03_ChangetoProcessing() throws Exception {

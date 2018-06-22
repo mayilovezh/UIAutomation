@@ -15,7 +15,7 @@ public class UnProcessingList {
 	static WebDriver driver;
 	WebDriverAction action;
 	String caddNo = "242218";
-	String addTime = "2018-05-14 14:40:35";
+	String addTime = "2018-05-22 16:11:22";
 	String date = "2017-12-16";
 	
 	
@@ -46,11 +46,11 @@ public class UnProcessingList {
 		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_MATCH_STATUS), "2");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_REJECT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
+//		Thread.sleep(ElementHelper.WAIT_TIME);
+//		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_REJECT));
+//		Thread.sleep(ElementHelper.SHORT_TIME);
+//		action.click(By.xpath(ElementHelper.SAVE));
+//		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 	
 	/*@Test

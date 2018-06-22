@@ -44,7 +44,7 @@ public class ExtraList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_DATE), "10206");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_STATUS), "4");
+		action.selectByValue(By.id(ElementHelper.EXTRA_LIST_STATUS), "6");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.EXTRA_LIST_CANDIDATE_NO), candidateNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

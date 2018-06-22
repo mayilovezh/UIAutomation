@@ -16,7 +16,7 @@ public class RegistrationNumberList {
 	static WebDriver driver;
 	WebDriverAction action;
 	ExcelReader reader = new ExcelReader(".\\resource\\generalquery\\registration.xlsx");
-    String quota = "401";
+    String quota = "400";
     String totalRegistered = "0";
     String totalQuota = "1201";
 	

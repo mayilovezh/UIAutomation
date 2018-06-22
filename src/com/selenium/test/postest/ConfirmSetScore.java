@@ -60,8 +60,7 @@ public class ConfirmSetScore {
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.xpath(ElementHelper.SAVE));
 			Thread.sleep(ElementHelper.LONG_TIME);
-			isTextPrest = driver.findElement(By.id(ElementHelper.SET_SCORE_SUCCESS_TEXT)).getText().contains(" The success of the operation");
-			Assert.assertTrue(isTextPrest);
+			action.isTextPrest(By.xpath(ElementHelper.SET_SCORE_SUCCESS_TEXT), ElementHelper.SUCCESS_TEXT);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);

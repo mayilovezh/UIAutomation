@@ -135,9 +135,17 @@ public class WebDriverAction {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText().equals(value);
 	}
 	
+	public void waitElementVisibleToAssertFalse(By by, String value) {
+		boolean istextprest;
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		istextprest  = wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText().equals(value);
+		Assert.assertFalse(istextprest);
+	}
+	
 	public void isTextPrest(By by, String text) {
 		boolean istextprest;
-		istextprest = driver.findElement(by).getText().contains(text);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		istextprest = wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText().contains(text);
 		Assert.assertTrue(istextprest);
 	}
 

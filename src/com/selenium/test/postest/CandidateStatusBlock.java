@@ -22,7 +22,6 @@ public class CandidateStatusBlock {
 	String chineseName = "田 园";
 	String remarkValue = "Pass all";
 	String modifyLog = "TRF";
-	boolean isTextPrest = false;
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -113,8 +112,7 @@ public class CandidateStatusBlock {
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_STATUS_SAVE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			isTextPrest = driver.findElement(By.id(ElementHelper.RESULT_SUCCESS)).getText().contains(ElementHelper.WARNING_TEXT);
-			Assert.assertTrue(isTextPrest);
+			action.isTextPrest(By.id(ElementHelper.RESULT_SUCCESS), ElementHelper.WARNING_TEXT);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -127,8 +125,7 @@ public class CandidateStatusBlock {
 			search();
 			action.click(By.xpath(ElementHelper.CAN_STATUS_BLOCK_VIEW));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			isTextPrest = driver.findElement(By.xpath(ElementHelper.CAN_STATUS_BLOCK_VIEW_MODIFY_LOG)).getText().contains(modifyLog);
-			Assert.assertTrue(isTextPrest);
+			action.isTextPrest(By.xpath(ElementHelper.CAN_STATUS_BLOCK_VIEW_MODIFY_LOG), modifyLog);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.CAN_STATUS_BLOCK_VIEW_CREATE_BY)), ElementHelper.USER_NAME_EAST);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

@@ -79,7 +79,7 @@ public class FirstMarkingAllocation {
 	public void step03_ToResultPage() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
+		Thread.sleep(ElementHelper.WAIT_TIME);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE_NAME)), name);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));

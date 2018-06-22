@@ -39,12 +39,12 @@ public class ConfirmRefund {
 		action.selectByValue(By.id(ElementHelper.EOR_CONFIRM_REFUND_REGION), ElementHelper.REGION_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.EOR_CONFIRM_REFUND_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.xpath(ElementHelper.EOR_CONFIRM_REFUND_SELECT));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.EOR_CONFIRM_REFUND_APPROVE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
+//		Thread.sleep(ElementHelper.LONG_TIME);
+//		action.click(By.xpath(ElementHelper.EOR_CONFIRM_REFUND_SELECT));
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
+//		action.click(By.id(ElementHelper.EOR_CONFIRM_REFUND_APPROVE));
+//		Thread.sleep(ElementHelper.SHORT_TIME);
+//		action.click(By.xpath(ElementHelper.SAVE));
+//		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 }

@@ -14,11 +14,9 @@ import com.selenium.test.utils.WebDriverAction;
 public class SpkRoomAvailability {
 	static WebDriver driver;
 	WebDriverAction action;
-	String dateFrom = "2018-01-01";
-	String dateTo = "2018-01-31";
-	String dateFrom1 = "2018-12-01";
-	String dateTo1 = "2018-12-31";
-	String testDate = "2018-12-13";
+	String dateFrom = "2018-06-01";
+	String dateTo = "2018-06-30";
+	String testDate = "2018-06-30";
 	String modifyLog = "Modify TC Speaking Availability";
 
 	@BeforeMethod
@@ -34,18 +32,16 @@ public class SpkRoomAvailability {
 
 	public void navigate() {
 		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.TEST_CENTER));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_ROOM_AVAILABILITY));
-			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
+			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_AVAILABILITY));
+			action.waitElementVisible(By.id(ElementHelper.SPK_ROOM_REGION));
 			action.selectByValue(By.id(ElementHelper.SPK_ROOM_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_PRODUCT), ElementHelper.REGION_VALUE);
+			action.selectByValue(By.id(ElementHelper.SPK_ROOM_PRODUCT), "1");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_FORMAT), ElementHelper.REGION_VALUE);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.TEST_CENTER_ID);
+			action.selectByValue(By.id(ElementHelper.SPK_ROOM_FORMAT), "1");
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -55,39 +51,39 @@ public class SpkRoomAvailability {
 
 	@Test(description = "Create the speaking availability of saturday")
 	public void step01_Create() {
+		search();
 		try {
-			navigate();
-			action.sendkeys(By.id(ElementHelper.SPK_ROOM_DATE_FROM), dateFrom);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.SPK_ROOM_DATE_FROM), dateTo);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.SPK_ROOM_CREATE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_TEST_CENTER), ElementHelper.TEST_CENTER_ID);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByIndex(By.id(ElementHelper.SPK_ROOM_CREATE_TEMPLATE_TYPE), 1);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByIndex(By.id(ElementHelper.SPK_ROOM_CREATE_TEMPLATE_NAME), 1);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_REGION), ElementHelper.REGION_VALUE);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_FORMAT), ElementHelper.REGION_VALUE);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_TC), ElementHelper.TEST_CENTER_ID);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_YEAR_FROM), "2018");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_MONTH_FROM), ElementHelper.REGION_VALUE);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_YEAR_TO), "2018");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_MONTH_TO), "12");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_ROOM_CREATE_SEARCH));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.SPK_ROOM_CREATE_TEST_DATE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SAVE));
+			if(action.isTextExist(By.xpath(ElementHelper.SPK_ROOM_SEARCH_TESTDATE), testDate)) {
+				new DriverInstance().teardown(driver);
+			} else {
+				action.click(By.id(ElementHelper.SPK_ROOM_CREATE));
+				action.waitElementVisible(By.id(ElementHelper.SPK_ROOM_CREATE_TEST_CENTER));
+				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByIndex(By.id(ElementHelper.SPK_ROOM_CREATE_TEMPLATE_TYPE), 1);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByIndex(By.id(ElementHelper.SPK_ROOM_CREATE_TEMPLATE_NAME), 1);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_REGION), ElementHelper.REGION_VALUE);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_FORMAT), "1");
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_TC), ElementHelper.CENTER_UIBE);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_YEAR_FROM), ElementHelper.YEAR_VALUE);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_MONTH_FROM), "6");
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_YEAR_TO), ElementHelper.YEAR_VALUE);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_MONTH_TO), "6");
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.id(ElementHelper.SPK_ROOM_CREATE_SEARCH));
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.click(By.id(ElementHelper.SPK_ROOM_CREATE_TEST_DATE));
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.click(By.xpath(ElementHelper.SAVE));
+			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -95,13 +91,16 @@ public class SpkRoomAvailability {
 	}
 
 	public void search() {
+		navigate();
 		try {
-			navigate();
-			/*
-			 * action.click(By.cssSelector(ElementHelper.SPK_ROOM_DATE_FROM_CALENDAR));
-			 * Thread.sleep(ElementHelper.SHORT_TIME_B);
-			 */
+			action.click(By.xpath(ElementHelper.SPK_ROOM_CALENDAR_FROM));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.linkText(ElementHelper.SPK_ROOM_TESTDATE_FROM));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.click(By.xpath(ElementHelper.SPK_ROOM_CALENDAR_TO));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.SPK_ROOM_TESTDATE_TO));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.id(ElementHelper.SPK_ROOM_SEARCH));
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_ROOM_SEARCH_TESTDATE)), testDate);
@@ -182,14 +181,12 @@ public class SpkRoomAvailability {
 	@Test(description = "Delete the speaking template of saturday")
 	public void step07_DeleteSpkTemplateSat() {
 		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.TEST_CENTER));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), "1");
+			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
+			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
+			action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), "100100");
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -205,14 +202,12 @@ public class SpkRoomAvailability {
 	@Test(description = "Delete the speaking template of thursday")
 	public void step08_DeleteSpkTemplateThu() {
 		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.TEST_CENTER));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), "1");
+			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
+			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
+			action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), "100100");
+			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);

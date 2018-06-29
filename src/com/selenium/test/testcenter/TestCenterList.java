@@ -55,12 +55,12 @@ public class TestCenterList {
 	
 	@Test(description = "Verify input value and select options warnings.")
 	public void step01_Verifycreatewarning() {
+		navigate();
 		try {
-			navigate();
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.TC_CREATE));
 			action.waitElementVisible(By.id(ElementHelper.TC_ADD_REGION));
 			List<String> regionOptions = Arrays
-					.asList(new String[] { ElementHelper.SELECT_REGIONS, ElementHelper.NORTH_REGION,
+					.asList(new String[] { ElementHelper.SELECT_DEFAULT, ElementHelper.NORTH_REGION,
 							ElementHelper.EAST_REGION, ElementHelper.SOUTH_REGION, ElementHelper.S_WEST_REGION });
 			int regionSize = regionOptions.size();
 			Select regionselectStage = new Select(driver.findElement(By.id(ElementHelper.TC_ADD_REGION)));
@@ -106,45 +106,50 @@ public class TestCenterList {
 		}
 	}
 
-	/*@Test(description = "Create the TestCenter UIBE")
+	@Test(description = "Create the TestCenter UIBE")
 	public void step02_CreateTC(){
+		searchTC();
 		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.id(ElementHelper.TEST_CENTER));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.TEST_CENTER_LIST));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.isVisible(By.id(ElementHelper.TC_REGION));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.TC_CREATE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.isVisible(By.id(ElementHelper.TC_ADD_REGION));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.selectByIndex(By.id(ElementHelper.TC_ADD_PROVINCE), 1);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.selectByIndex(By.id(ElementHelper.TC_ADD_CITY), 1);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TC_ADD_CENTERNAME_CN), tcName);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TC_ADD_CENTERNAME_EN), tcEName);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("return document.getElementById('TcQuota').value='30'");
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			js.executeScript("return document.getElementById('TcOptimalQuota').value='30'");
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TC_ADD_ABBREVIATION), abbreviation);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TC_ADD_ADDRESS_CN), address);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TC_ADD_ADDRESS_EN), addressE);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SAVE));
+			if(action.isWebElementPreset(By.xpath(ElementHelper.TC_SEARCH_NAME))) {
+				new DriverInstance().teardown(driver);
+			} else {
+				Thread.sleep(ElementHelper.WAIT_TIME);
+				action.click(By.id(ElementHelper.TEST_CENTER));
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.click(By.xpath(ElementHelper.TEST_CENTER_LIST));
+				Thread.sleep(ElementHelper.WAIT_TIME);
+				action.isVisible(By.id(ElementHelper.TC_REGION));
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.click(By.xpath(ElementHelper.TC_CREATE));
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.isVisible(By.id(ElementHelper.TC_ADD_REGION));
+				Thread.sleep(ElementHelper.WAIT_TIME);
+				action.selectByIndex(By.id(ElementHelper.TC_ADD_PROVINCE), 1);
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.selectByIndex(By.id(ElementHelper.TC_ADD_CITY), 1);
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.sendkeys(By.id(ElementHelper.TC_ADD_CENTERNAME_CN), tcName);
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.sendkeys(By.id(ElementHelper.TC_ADD_CENTERNAME_EN), tcEName);
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("return document.getElementById('TcQuota').value='30'");
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				js.executeScript("return document.getElementById('TcOptimalQuota').value='30'");
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.sendkeys(By.id(ElementHelper.TC_ADD_ABBREVIATION), abbreviation);
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.sendkeys(By.id(ElementHelper.TC_ADD_ADDRESS_CN), address);
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.sendkeys(By.id(ElementHelper.TC_ADD_ADDRESS_EN), addressE);
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.click(By.xpath(ElementHelper.SAVE));
+			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 
 	@Test(description = "Verify input Incorrect text and regions.")
 	public void step03_Verifyselectandinput() {
@@ -180,8 +185,8 @@ public class TestCenterList {
 
 	@Test(description = "Modify the TestCenter of UIBE")
 	public void step05_Modify() {
+		searchTC();
 		try {
-			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.click(By.cssSelector(ElementHelper.TC_MODIFY));
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -200,8 +205,8 @@ public class TestCenterList {
 
 	@Test(description = "View the testcenter details of UIBE")
 	public void step06_View() {
+		searchTC();
 		try {
-			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.click(By.linkText(ElementHelper.TC_VIEW));
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -216,8 +221,8 @@ public class TestCenterList {
 
 	@Test(description = "View the modifylog of UIBE")
 	public void step07_ModifyLog() {
+		searchTC();
 		try {
-			searchTC();
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.click(By.linkText(ElementHelper.TC_MODIFYLOG));
 			Thread.sleep(ElementHelper.WAIT_TIME);
@@ -232,8 +237,8 @@ public class TestCenterList {
 	}
 	
 	public void searchTC() {
+		navigate();
 		try {
-			navigate();
 			action.waitElementVisible(By.id(ElementHelper.TC_REGION));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.sendkeys(By.id(ElementHelper.TC_NAME), tcName);

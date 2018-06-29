@@ -34,36 +34,39 @@ public class TestBuildingList {
 		new DriverInstance().teardown(driver);
 	}
 
-	/*@Test(description = "Create the testbuilding of UIBE")
+	@Test(description = "Create the testbuilding of UIBE")
 	public void step01_Create(){
-		searchTB();
+		navigate();
 		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.xpath(ElementHelper.TB_CREATE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.sendkeys(By.id(ElementHelper.TB_ADD_NAME_CN), tbName_Cn);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.TB_ADD_NAME_EN), tbName_En);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.TB_TYPE_SPEAKING));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.TB_TYPE_WRITING));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.TB_TYPE_CB));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.TB_FLOOR), floor);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.TB_ADDRESS_CN), tbAddress_Cn);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.sendkeys(By.id(ElementHelper.TB_ADDRESS_CN), tbAddress_En);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.cssSelector(ElementHelper.TB_SAVE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
+			if(action.isTextExist(By.id(ElementHelper.TB_NAME), tbName)) {
+				new DriverInstance().teardown(driver);
+			} else {
+				action.click(By.xpath(ElementHelper.TB_CREATE));
+				Thread.sleep(ElementHelper.SHORT_TIME_B);
+				action.sendkeys(By.id(ElementHelper.TB_ADD_NAME_CN), tbName_Cn);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.sendkeys(By.id(ElementHelper.TB_ADD_NAME_EN), tbName_En);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.xpath(ElementHelper.TB_TYPE_SPEAKING));
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.xpath(ElementHelper.TB_TYPE_WRITING));
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.xpath(ElementHelper.TB_TYPE_CB));
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.sendkeys(By.id(ElementHelper.TB_FLOOR), floor);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.sendkeys(By.id(ElementHelper.TB_ADDRESS_CN), tbAddress_Cn);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.sendkeys(By.id(ElementHelper.TB_ADDRESS_CN), tbAddress_En);
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.cssSelector(ElementHelper.TB_SAVE));
+				Thread.sleep(ElementHelper.SHORT_TIME);
+			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 
 	@Test(description = "Search for the testbuilding of UIBE")
 	public void step02_Search(){
@@ -74,7 +77,6 @@ public class TestBuildingList {
 	public void step03_Modify(){
 		searchTB();
 		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.linkText(ElementHelper.TB_MODIFY));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.clear(By.id(ElementHelper.TB_MODIFY_REMARK));
@@ -93,9 +95,8 @@ public class TestBuildingList {
 	
 	@Test(description = "View the testbuilding's log of UIBE")
 	public void step04_ModifyLog(){
+		searchTB();
 		try {
-			searchTB();
-			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.linkText(ElementHelper.TB_MODIFYLOG));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 //		    isTextPrest = driver.findElement(By.className(ElementHelper.TB_MODIFYLOG_DETAILS)).getText().contains(ElementHelper.REMARK_VALUE);
@@ -109,9 +110,8 @@ public class TestBuildingList {
 	
 	@Test(description = "View the testbuilding's detail of UIBE")
 	public void step05_View(){
+		searchTB();
 		try {
-			searchTB();
-			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.linkText(ElementHelper.TB_VIEW));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TB_VIEW_NAME)), tbName_Cn);
@@ -126,9 +126,8 @@ public class TestBuildingList {
 	
 	@Test(description = "Lend testbuilding from other testcenter")
 	public void step06_LendBuilding(){
+		searchTB();
 		try {
-			searchTB();
-			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.linkText(ElementHelper.TB_LENDBUILDING));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.TB_LENDBUILDING_TC));
@@ -147,26 +146,28 @@ public class TestBuildingList {
 		Assert.assertTrue(isTextPrest);
 	}
 	
-	public void searchTB(){
+	public void navigate() {
 		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.TEST_CENTER));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.TEST_BUILDING_LIST));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.isVisible(By.id(ElementHelper.TB_REGION));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.selectByValue(By.id(ElementHelper.TB_REGION), "1");
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.selectByValue(By.id(ElementHelper.TB_CENTER), "100100");
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
+			action.waitElementVisibleToClick(By.xpath(ElementHelper.TEST_BUILDING_LIST));
+			action.waitElementVisible(By.id(ElementHelper.TB_REGION));
+			action.selectByValue(By.id(ElementHelper.TB_REGION), ElementHelper.REGION_VALUE);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByValue(By.id(ElementHelper.TB_CENTER), ElementHelper.CENTER_UIBE);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.TB_AVAILABLE), "1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.xpath(ElementHelper.TB_SEARCH));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			Assert.assertEquals(action.getText(By.id(ElementHelper.TB_NAME)), tbName);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
 	}
+	
+	public void searchTB(){
+		navigate();
+	    action.waitElementVisibleToAssert(By.id(ElementHelper.TB_NAME), tbName);
+	}
+	
 }

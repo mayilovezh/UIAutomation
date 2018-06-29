@@ -112,7 +112,7 @@ public class CandidateStatusBlock {
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_STATUS_SAVE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.isTextPrest(By.id(ElementHelper.RESULT_SUCCESS), ElementHelper.WARNING_TEXT);
+			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), ElementHelper.WARNING_TEXT);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);

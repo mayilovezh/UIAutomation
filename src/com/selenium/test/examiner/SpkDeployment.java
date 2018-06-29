@@ -146,7 +146,7 @@ public class SpkDeployment {
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_UAT));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_YES));
-			action.waitElementVisibleToAssert(By.id(ElementHelper.RESULT_SUCCESS), "Delete success");
+			action.waitElementVisibleToAssert(By.id(ElementHelper.RESULT_WARNING), "Delete success");
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_CONFIRM));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

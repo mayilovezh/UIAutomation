@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -148,8 +149,19 @@ public class WebDriverAction {
 		istextprest = wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText().contains(text);
 		Assert.assertTrue(istextprest);
 	}
+	
+	public void elementSelected(By by) {
+		ExpectedConditions.elementToBeSelected(by);
+	}
+	
+	public void getDefaultOption(By by) {
+		Select select = new Select(driver.findElement(by));
+		WebElement option = select.getFirstSelectedOption();
+		String defaultItem = option.getText();
+		System.out.println(defaultItem);
+	}
 
-	public boolean isWebElementExist(By by) {
+	public boolean isWebElementPreset(By by) {
 		try {
 			driver.findElement(by);
 			return true;
@@ -157,4 +169,23 @@ public class WebDriverAction {
 			return false;
 		}
 	}
+	
+	public boolean isTextExist(By by, String text) {
+		try {
+			driver.findElement(by).getText().contains(text);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+	
+	public boolean elementNotPreset(By by) {
+		try {
+			driver.findElement(by);
+			return false;
+		} catch (NoSuchElementException e) {
+			return true;
+		}
+	}
+	
 }

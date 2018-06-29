@@ -247,7 +247,7 @@ public class TestRoomList {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));
-			action.isTextPrest(By.id(ElementHelper.RESULT_SUCCESS), modifyshareDayWarning);
+			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), modifyshareDayWarning);
 			action.click(By.xpath(ElementHelper.TR_WARNING_MESSAGE_CONFIRM));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TR_MODIFY_SHARE_SEARCH));

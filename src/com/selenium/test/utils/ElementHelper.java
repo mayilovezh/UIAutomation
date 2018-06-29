@@ -37,7 +37,8 @@ public class ElementHelper {
 	public static String YEAR_VALUE = "2018";
 	public static String TC_BFSU = "50";
 	public static String NO_AVAILABLE_DATA = "No available data....";
-	public static String SELECT_REGIONS = "--Select--";
+	public static String SELECT_DEFAULT = "--Select--";
+	public static String SELECT_ALL = "--All--";
 	public static String ALL_REGIONS = "--All Regions--";
 	public static String NORTH_REGION = "North Region";
 	public static String EAST_REGION = "East Region";
@@ -48,6 +49,11 @@ public class ElementHelper {
 	public static String PRODUCT_IELTS_LIFE_SKILLS = "IELTS Life Skills";
 	public static String SUCCESS_TEXT = "The success of the operation";
 	public static String CENTER_UIBE = "100100";
+	public static String FORMAT_PB = "PB";
+	public static String FORMAT_CB = "CB";
+	public static String FORMAT_CD_AM = "CD AM";
+	public static String FORMAT_CD_PM = "CD PM";
+	public static String FORMAT_CD_EV = "CD EV";
 	
 	//TDOL IEP
 	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
@@ -75,10 +81,9 @@ public class ElementHelper {
 	public static String LOGIN_ICMP = "btnlogin";
 	
 	//Element
-	public static String CANCEL = "//span[text(),'Cancel']";
+	public static String CANCEL = "(//button[@type='button'])[2]";
 	public static String SAVE = "//button[@type='button']";
-	public static String RESULT_WARNING = "ui-dialog-content ui-widget-content";
-	public static String RESULT_SUCCESS = "displayYesConfirmation";
+	public static String RESULT_WARNING = "displayYesConfirmation";
 	
 	//(dependsOnMethods = { ""})
 	
@@ -220,7 +225,7 @@ public class ElementHelper {
 	public static String TS_CREATE_FORMAT = "selectTestSessionExamFormatSearchAdd";
 	public static String TS_CREATE_TESTDATE_END = "ddlMonth-endMonth1";
 	public static String TS_CREATE_SEARCH = "btntestcenterlistSearch";
-	public static String TS_CREATE_TESTDATE = "selectestdatereal-10358"; 
+	public static String TS_CREATE_TESTDATE = "selectestdatereal-10357"; 
 	public static String TS_CRAETE_TC = "//input[contains(@value,'100100')]";
 	public static String TS_REGION = "selectRegionSearch-testsession";
 	public static String TS_YEAR = "ddlYear-testsession";
@@ -232,8 +237,11 @@ public class ElementHelper {
 	public static String TS_TEST_CENTER = "//*[@id='spreadsheet_testsession_Grid']/div[2]/table/tbody/tr/td[6]";
 	public static String TS_MODIFY = "Modify";
 	public static String TS_LOG = "Log";
-	public static String TS_LOG_CREATE_BY = "//*[@id='displayCenterWindow_log_btr']/tr/td[3]";
+	public static String TS_LOG_CREATE_BY = "//*[@id='displayCenterWindow_log_btr']/tr[2]/td[3]";
 	public static String TS_MODIFY_SESSION_QUOTA = "quotaForUpdate";
+	public static String TS_CREATE_WARNING = "(//button[@type='button'])[3]";
+	public static String TS_SYNC_STATUS = "//*[@id='spreadsheet_testsession_Grid']/div[2]/table/tbody/tr/td[11]";
+	
 	
 	//Test Date
 	public static String TEST_DATE_LIST = "//*[@id='TestCenter']/ul/li[5]/a";
@@ -246,11 +254,15 @@ public class ElementHelper {
 	public static String TD_SEARCH_DATE2 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[2]/td[2]";
 	public static String TD_SEARCH_DATE3 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[3]/td[2]";
 	public static String TD_SEARCH_DATE4 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[4]/td[2]";
+	public static String TD_SEARCH_DATE5 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[5]/td[2]";
+	public static String TD_IMPORT_CHOOSE = "importFileForTestDate";
+	public static String TD_IMPORT_UPLOAD = "button.k-button.k-upload-selected";
+	
 	
 	//Spk Room Template
 	public static String SPK_ROOM_TEMPLATE = "//*[@id='TestCenter']/ul/li[6]/a";
 	public static String SPK_TEMPLATE_REGION = "selectSPKRoomTemplateRegionSearch";
-	public static String SPK_TEMPLATE_TEST_CENTER = "SPKRoomTemplateListTestCenterid";
+	public static String SPK_TEMPLATE_TEST_CENTER = "SPKAvailabilityTestCenter-Search";
 	public static String SPK_TEMPLATE_SEARCH = "btnSPKRoomTemplateSearch";
 	public static String SPK_TEMPLATE_ADD = "btnSPKRoomTemplateAddInSearch";
 	public static String SPK_TEMPLATE_ADD_SEARCH = "btnSPKRoomTemplate-AddSearch";
@@ -289,7 +301,7 @@ public class ElementHelper {
 	public static String SPK_ROOM_CREATE_MONTH_TO = "ddlMonth2-SPKAvailablityAdd";
 	public static String SPK_ROOM_CREATE_SEARCH = "btnSPKAvailablityCreateSearch";
 	public static String SPK_ROOM_CREATE_TEST_DATE = "selecspktestdatereal-10344";
-	public static String SPK_ROOM_SEARCH_TESTDATE = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[1]/td[1]";  
+	public static String SPK_ROOM_SEARCH_TESTDATE = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[2]/td[1]";  
 	public static String SPK_ROOM_MODIFY = "Modify";
 	public static String SPK_ROOM_VIEW = "View";
 	public static String SPK_ROOM_LOG = "Log";
@@ -297,7 +309,10 @@ public class ElementHelper {
 	public static String SPK_ROOM_MODIFY_REMARK = "ddlRemark-SPKAvailablityModify";
 	public static String SPK_ROOM_VIEW_REMARK = "ddlRemark-SPKAvailablityView";
 	public static String SPK_ROOM_LOG_CONTENT = "//*[@id='SPKAvailabilityLogGrid']/div[2]/table/tbody/tr[1]/td[1]";
-
+	public static String SPK_ROOM_CALENDAR_FROM = "//div[@id='page-heading']/table/tbody/tr[2]/td[2]/span/span/span/span";
+	public static String SPK_ROOM_TESTDATE_FROM = "1";
+	public static String SPK_ROOM_CALENDAR_TO = "//div[@id='page-heading']/table/tbody/tr[2]/td[4]/span/span/span/span";
+	public static String SPK_ROOM_TESTDATE_TO = "(//a[contains(text(),'30')])[4]";
 	
 	//TDOL 
 	public static String TDOL = "TDOL";

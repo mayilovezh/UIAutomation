@@ -133,9 +133,9 @@ public class TestCenterList {
 				action.sendkeys(By.id(ElementHelper.TC_ADD_CENTERNAME_EN), tcEName);
 				Thread.sleep(ElementHelper.SHORT_TIME);
 				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("return document.getElementById('TcQuota').value='30'");
+				js.executeScript("$('#TcQuota').data('kendoNumericTextBox').value('500')");
 				Thread.sleep(ElementHelper.SHORT_TIME);
-				js.executeScript("return document.getElementById('TcOptimalQuota').value='30'");
+				js.executeScript("$('#TcOptimalQuota').data('kendoNumericTextBox').value('500')");
 				Thread.sleep(ElementHelper.SHORT_TIME);
 				action.sendkeys(By.id(ElementHelper.TC_ADD_ABBREVIATION), abbreviation);
 				Thread.sleep(ElementHelper.SHORT_TIME);

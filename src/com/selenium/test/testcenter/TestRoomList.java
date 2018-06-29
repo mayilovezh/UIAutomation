@@ -3,6 +3,7 @@ package com.selenium.test.testcenter;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,14 +44,14 @@ public class TestRoomList {
 		new DriverInstance().teardown(driver);
 	}
 	
-	/*@Test(description = "Verify input value and select options warnings.")
+	@Test(description = "Verify input value and select options warnings.")
 	public void step01_VerifyCreateWarning() {
 		searchTestRoom();
 		action.click(By.xpath(ElementHelper.TR_CREATE));
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.xpath(ElementHelper.SAVE));
-			action.isTextPrest(By.id(ElementHelper.RESULT_SUCCESS), warningMessage);
+			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), warningMessage);
 			action.click(By.xpath(ElementHelper.TR_WARNING_MESSAGE_CONFIRM));
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.clear(By.id(ElementHelper.TR_ADD_NAME));
@@ -68,9 +69,9 @@ public class TestRoomList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 
-	/*@Test(description = "Create the test room of UIBE and type is speaking")
+	@Test(description = "Create the test room of UIBE and type is speaking")
 	public void step02_CreateTestRoom(){
 		searchTestRoom();
 		try {
@@ -102,9 +103,9 @@ public class TestRoomList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 	
-	/*@Test(description = "Search the test room of UIBE and type is speaking")
+	@Test(description = "Search the test room of UIBE and type is speaking")
 	public void step02_Search(){
 		searchTestRoom();
 		textisExist();
@@ -142,9 +143,9 @@ public class TestRoomList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 	
-	/*@Test(description = "Modify the test room '111' of UIBE")
+	@Test(description = "Modify the test room '111' of UIBE")
 	public void step04_Modify(){
 		try {
 			searchTestRoom();
@@ -237,12 +238,12 @@ public class TestRoomList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 	
 	@Test(description = "Verify alert message and required fields")
 	public void step09_VerifyModifyShareDay() {
 		searchTestRoom();
-//		getRoomNumber();
+		getRoomNumber();
 		action.click(By.linkText(ElementHelper.TR_MODIFY_SHARE_DAY));
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -262,7 +263,7 @@ public class TestRoomList {
 	@Test(description = "Verify not modify values and share log is null")
 	public void step10_VerifyShareDayLog() {
 		searchTestRoom();
-//		getRoomNumber();
+		getRoomNumber();
 		action.click(By.linkText(ElementHelper.TR_MODIFY_SHARE_DAY));
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);

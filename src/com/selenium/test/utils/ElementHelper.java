@@ -1479,4 +1479,22 @@ public class ElementHelper {
     public static String PREDICT_NUMBER_SESSION_SEARCH_QUOTA4 = "//*[@id='predictNumberOfTestCenterList_grid']/div[2]/table/tbody/tr[4]/td[7]";
     public static String PREDICT_NUMBER_SESSION_SEARCH_QUOTA5 = "//*[@id='predictNumberOfTestCenterList_grid']/div[2]/table/tbody/tr[5]/td[7]";
     public static String PREDICT_NUMBER_SESSION_SEARCH_TOTAL_QUOTA = "//*[@id='totalPredictNumberOfTestCenter']/tbody/tr/td[3]";
+    
+    
+    //Pre Test Arrange
+    public static String PRE_TEST_ARRANGE = "PreTestArrange";
+    
+    //Written Apportionment
+    public static String WRITTEN_APPORTIONMENT = "//*[@id='PreTestArrange']/ul/li[1]/a";
+    public static String WRITTEN_APPORTIONMENT_YEAR = "ddlYear-Summary";
+    public static String WRITTEN_APPORTIONMENT_MONTH = "ddlMonth-Summary";
+    public static String WRITTEN_APPORTIONMENT_DATE = "ddlTestDate-Summary";
+    public static String WRITTEN_APPORTIONMENT_SEARCH = "btnQuery-Summary";
+    public static String WRITTEN_APPORTIONMENT_VIEW = "//input[contains(@value,'View')]";
+    public static String WRITTEN_APPORTIONMENT_ADD = "//input[contains(@value,'Add')]";
+    public static String WRITTEN_APPORTIONMENT_AMEND = "//input[contains(@value,'Amend/Change')]";
+    public static String WRITTEN_CDD_ALLOCATION_AUTO_APPORTION = "btnAutoArr-ArrCdd";
+    public static String WRITTEN_CDD_ALLOCATION_SAVE = "btnSave-ArrCdd";
+    
+    
 }

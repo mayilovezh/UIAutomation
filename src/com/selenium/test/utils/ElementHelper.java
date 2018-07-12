@@ -54,6 +54,7 @@ public class ElementHelper {
 	public static String FORMAT_CD_AM = "CD AM";
 	public static String FORMAT_CD_PM = "CD PM";
 	public static String FORMAT_CD_EV = "CD EV";
+	public static String TC_CUEB = "BJ-CUEB";
 	
 	//TDOL IEP
 	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
@@ -1523,4 +1524,21 @@ public class ElementHelper {
     public static String WRITTEN_APPORTIONMENT_EXPORT_YEAR = "apportionmentlistDdlYear-Searchexport";
     public static String WRITTEN_APPORTIONMENT_EXPORT_MONTH = "apportionmentlistSpan-month-Searchexport";
     public static String WRITTEN_APPORTIONMENT_EXPORT_DATE = "apportionmentlistDateTimeexport";
+    
+    //Spk Arrangement
+    public static String SPK_ARRANGEMENT = "//*[@id='PreTestArrange']/ul/li[2]/a";
+    public static String SPK_ARRANFEMENT_REGION = "SpkTestArrangementlistRegion";
+    public static String SPK_ARRANGEMENT_YEAR = "SpkTestArrangementlistDdlYear-Search";
+    public static String SPK_ARRANGEMENT_MONTH = "SpkTestArrangementlistDdlMonth-Search";
+    public static String SPK_ARRANGEMENT_DATE = "SpkTestArrangementlistDateTime";
+    public static String SPK_ARRANGEMENT_SEARCH = "btnSpkArrangement";
+    public static String SPK_ARRANGEMENT_SEARCH_TC = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[1]";
+    public static String SPK_ARRANGEMENT_AMEND_ARRANGE_ROOM = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr[5]/td[4]/input";
+    public static String SPK_ARRANGEMENT_AMEND_TIME_SLOT = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr[5]/td[5]/input";
+    public static String SPK_ARRANGEMENT_AMEND_CDD_APPORTIONMENT = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr[5]/td[6]/input";
+    public static String SPK_ARRANGEMENT_TIME_SLOT_CDD_NAME = "//*[@id='autospreadsheet-Arrangement-Candidates-table-spk']/tbody/tr[1]/td[5]";
+    public static String SPK_ARRANGEMENT_TIME_SLOT_BACK = "//input[contains(@value,'Back')]";
+    public static String SPK_ARRANGEMENT_AMEND_CDD_APPORTIONMENT_SEARCH = "btnQuery-SpkArrCdd";
+    
+    
 }

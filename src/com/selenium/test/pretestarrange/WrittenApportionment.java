@@ -20,7 +20,6 @@ public class WrittenApportionment {
 
 	static WebDriver driver;
 	WebDriverAction action;
-	String TC = "BJ-CUEB";
 	String roomQuota = "294";
 	String optimalQuota = "294";
 	String ACCandidates = "281";
@@ -202,7 +201,7 @@ public class WrittenApportionment {
 	public boolean isTestCenterPreset() {
 		List<WebElement> table = driver.findElements(By.xpath(ElementHelper.WRITTEN_APPORTIONMENT_SEARCH_TC));
 		for (WebElement element : table) {
-			if (element.getText().equals(TC)) {
+			if (element.getText().equals(ElementHelper.TC_CUEB)) {
 				System.out.println(element.getText());
 				break;
 			}

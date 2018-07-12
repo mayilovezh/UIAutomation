@@ -1486,15 +1486,41 @@ public class ElementHelper {
     
     //Written Apportionment
     public static String WRITTEN_APPORTIONMENT = "//*[@id='PreTestArrange']/ul/li[1]/a";
+    public static String WRITTEN_APPORTIONMENT_REGION = "ddlRegion-Summary";
     public static String WRITTEN_APPORTIONMENT_YEAR = "ddlYear-Summary";
     public static String WRITTEN_APPORTIONMENT_MONTH = "ddlMonth-Summary";
     public static String WRITTEN_APPORTIONMENT_DATE = "ddlTestDate-Summary";
     public static String WRITTEN_APPORTIONMENT_SEARCH = "btnQuery-Summary";
-    public static String WRITTEN_APPORTIONMENT_VIEW = "//input[contains(@value,'View')]";
-    public static String WRITTEN_APPORTIONMENT_ADD = "//input[contains(@value,'Add')]";
-    public static String WRITTEN_APPORTIONMENT_AMEND = "//input[contains(@value,'Amend/Change')]";
+    public static String WRITTEN_APPORTIONMENT_VIEW = "//*[@id='spreadsheet-ArrangementSummary-table']/tbody/tr[5]/td[4]/input";
+    public static String WRITTEN_APPORTIONMENT_ADD = "//*[@id='spreadsheet-ArrangementSummary-table']/tbody/tr[5]/td[6]/input";
+    public static String WRITTEN_APPORTIONMENT_AMEND = "//*[@id='spreadsheet-ArrangementSummary-table']/tbody/tr[5]/td[6]/input";
     public static String WRITTEN_CDD_ALLOCATION_AUTO_APPORTION = "btnAutoArr-ArrCdd";
     public static String WRITTEN_CDD_ALLOCATION_SAVE = "btnSave-ArrCdd";
-    
-    
+    public static String WRITTEN_APPORTIONMENT_SEARCH_TC = "//*[@id='spreadsheet-ArrangementSummary-table']/tbody/tr/td[1]";
+    public static String WRITTEN_APPORTIONMENT_VIEW_ROOM_QUOTA = "lblTotalOpQuota";
+    public static String WRITTEN_APPORTIONMENT_VIEW_OPTIMAL_QUOTA = "lblTotalMaxQuota";
+    public static String WRITTEN_APPORTIONMENT_VIEW_AC_CANDIDATES = "lblTotalAcCount";
+    public static String WRITTEN_APPORTIONMENT_VIEW_TOTAL_CANDIDATES = "lblTotalCddCount";
+    public static String WRITTEN_APPORTIONMENT_VIEW_INVIGILATOR = "lblTotalInviCount";
+    public static String WRITTEN_APPORTIONMENT_VIEW_BACK = "btnCancel-View";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD1 = "//*[@id='tr13871953']/td[4]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD2 = "//*[@id='tr13768008']/td[4]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD3 = "//*[@id='tr13782030']/td[4]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD4 = "//*[@id='tr13768268']/td[4]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD5 = "//*[@id='tr13862380']/td[4]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD6 = "//*[@id='tr13762381']/td[4]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD_NAME1 = "//*[@id='tr13871953']/td[5]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD_NAME2 = "//*[@id='tr13768008']/td[5]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD_NAME3 = "//*[@id='tr13782030']/td[5]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD_NAME4 = "//*[@id='tr13768268']/td[5]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD_NAME5 = "//*[@id='tr13862380']/td[5]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CDD_NAME6 = "//*[@id='tr13762381']/td[5]";
+    public static String WRITTEN_APPORTIONMENT_AMEND_UNAPP = "unapp-ArrCdd";
+    public static String WRITTEN_APPORTIONMENT_AMEND_CANCEL = "cancel-ArrCdd";
+    public static String WRITTEN_APPORTIONMENT_AMEND_DELETE = "delete-SpkArrCdd-w";
+    public static String WRITTEN_APPORTIONMENT_EXPORT = "apportionmentlist_export";
+    public static String WRITTEN_APPORTIONMENT_EXPORT_REGION = "apportionmentlistRegionexport";
+    public static String WRITTEN_APPORTIONMENT_EXPORT_YEAR = "apportionmentlistDdlYear-Searchexport";
+    public static String WRITTEN_APPORTIONMENT_EXPORT_MONTH = "apportionmentlistSpan-month-Searchexport";
+    public static String WRITTEN_APPORTIONMENT_EXPORT_DATE = "apportionmentlistDateTimeexport";
 }

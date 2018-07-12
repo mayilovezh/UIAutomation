@@ -58,7 +58,7 @@ public class TestCenterList {
 		navigate();
 		try {
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.TC_CREATE));
-			action.waitElementVisible(By.id(ElementHelper.TC_ADD_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			List<String> regionOptions = Arrays
 					.asList(new String[] { ElementHelper.SELECT_DEFAULT, ElementHelper.NORTH_REGION,
 							ElementHelper.EAST_REGION, ElementHelper.SOUTH_REGION, ElementHelper.S_WEST_REGION });

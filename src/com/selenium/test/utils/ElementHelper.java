@@ -15,6 +15,7 @@ public class ElementHelper {
 	public static String PASSWORD_EAST_DEV = "Zyf929670@";
 	public static String PASSWORD_EAST_UAT = "Zyf111111";
 	public static String LOGIN_BTN = "loginButt";
+	public static String UN_PRE_BOOKING = "//*[@id='loginTbl']/tbody/tr[3]/td/input[2]";
 	
 	//Wait Time
 	public static int LONG_TIME = 10000;
@@ -1535,10 +1536,24 @@ public class ElementHelper {
     public static String SPK_ARRANGEMENT_SEARCH_TC = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[1]";
     public static String SPK_ARRANGEMENT_AMEND_ARRANGE_ROOM = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr[5]/td[4]/input";
     public static String SPK_ARRANGEMENT_AMEND_TIME_SLOT = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr[5]/td[5]/input";
-    public static String SPK_ARRANGEMENT_AMEND_CDD_APPORTIONMENT = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr[5]/td[6]/input";
+    public static String SPK_ARRANGEMENT_AMEND_SPK_APPORTIONMENT = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr[5]/td[6]/input";
+    public static String SPK_ARRANGEMENT_ADD_SPK_APPORTIONMENT = "//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr[5]/td[6]/input";
     public static String SPK_ARRANGEMENT_TIME_SLOT_CDD_NAME = "//*[@id='autospreadsheet-Arrangement-Candidates-table-spk']/tbody/tr[1]/td[5]";
-    public static String SPK_ARRANGEMENT_TIME_SLOT_BACK = "//input[contains(@value,'Back')]";
+    public static String SPK_ARRANGEMENT_BACK = "//input[contains(@value,'Back')]";
     public static String SPK_ARRANGEMENT_AMEND_CDD_APPORTIONMENT_SEARCH = "btnQuery-SpkArrCdd";
-    
-    
+    public static String SPK_ARRANGEMENT_AMEND_ARRANGE_ROOM_SEARCH = "btnQuery-SpkArrCdd";
+    public static String SPK_ARRANGEMENT_SPK_APPORTIONMENT_CDD_NAME = "tr0";
+    public static String SPK_ARRANGEMENT_SPK_APPORTIONMENT_AUTO = "btnAutoArr-SpkArrCdd";
+    public static String SPK_ARRANGEMENT_SPK_APPORTIONMENT_SAVE = "btnSave-SpkArrCdd";
+    public static String SPK_ARRANGEMENT_SPK_APPORTIONMENT_DELETE = "delete-SpkArrCdd";
+    public static String SPK_ARRANGEMENT_SPK_APPORTIONMENT_CANCEL = "cancel-SpkArrCdd";
+    public static String SPK_ARRANGEMENT_SPK_APPORTIONMENT_UNAPP_ALL = "unapp-SpkArrCdd";
+    public static String SPK_ARRANGEMENT_SPK_APPORTIONMENT_AUTO_CONFIRM = "(//button[@type='button'])[2]";
+    public static String SPK_ARRANGEMENT_SPK_APPORTIONMENT_YES_CONFIRMATION = "(//div[@id='displayYesConfirmation'])[2]";
+    public static String SPK_ARRANGEMENT_EXPORT = "SpkTestArrangementlist_export";
+    public static String SPK_ARRANGEMENT_EXPORT_REGION = "SpkTestArrangementlistRegionexport";
+    public static String SPK_ARRANGEMENT_EXPORT_YEAR = "SpkTestArrangementlistDdlYear-Searchexport";
+    public static String SPK_ARRANGEMENT_EXPORT_MONTH = "SpkTestArrangementlistDdlMonth-Searchexport";
+    public static String SPK_ARRANGEMENT_EXPORT_DATE = "SpkTestArrangementlistDateTimeexport";
+    public static String SPK_ARRANGEMENT_CHECK_EXAMINER_DUPLICATE_ARRANGEMENT = "SpkTestArrangementlist_exportexaminerarr";
 }

@@ -146,7 +146,9 @@
 	
 	<test name="PreTestArrange" preserve-order="true">
 		<classes>
-			<class name="com.selenium.test.pretestarrange.WrittenApportionment" />
+		<!-- 	<class name="com.selenium.test.pretestarrange.WrittenApportionment" /> 
+			<class name="com.selenium.test.pretestarrange.SpkArrangementPrebooking" />-->
+			<class name="com.selenium.test.pretestarrange.SpkArrangementUnPrebooking" />
 		</classes>
 	</test> 
 

@@ -176,7 +176,7 @@ public class WrittenApportionment {
 		}
 	}
 	
-	@Test(description = "Export the written testcenter details")
+	@Test(description = "Export the written testsession details")
 	public void step06_Export() {
 		action.waitElementVisibleToClick(By.id(ElementHelper.PRE_TEST_ARRANGE));
 		action.waitElementVisibleToClick(By.xpath(ElementHelper.WRITTEN_APPORTIONMENT));

@@ -116,6 +116,32 @@ public class DriverInstance {
 		action.click(By.linkText(ElementHelper.LOGIN_ICMP));
 		return driver;
 	}
+	
+	public WebDriver loginUnPrebooking(WebDriver driver) throws Exception {
+		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+		driver = new ChromeDriver();
+		TestNGListener.driver = driver;
+		action = new WebDriverAction(driver);
+		driver.get(ElementHelper.DEV_URL);
+//		driver.get(ElementHelper.UAT_URL);
+		driver.manage().window().maximize();
+		action.setTimeout("10");
+		Assert.assertEquals(driver.getTitle(), "British Council");
+		action.clear(By.id(ElementHelper.USER_NAME));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_DEV);
+//		action.sendkeys(By.id(ElementHelper.USER_NAME), ElementHelper.USER_NAME_UAT);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.clear(By.id(ElementHelper.PASSWORD));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_DEV);
+//		action.sendkeys(By.id(ElementHelper.PASSWORD), ElementHelper.PASSWORD_UAT);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.UN_PRE_BOOKING));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.LOGIN_BTN));
+		return driver;
+	}
 
 	public void teardown(WebDriver driver) {
 		driver.quit();

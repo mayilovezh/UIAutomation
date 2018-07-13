@@ -146,12 +146,6 @@ public class SpkArrangementUnPrebooking {
 
 	// TO DO
 	@Test(description = "")
-	public void step06_ChangeExaminer() {
-
-	}
-
-	// TO DO
-	@Test(description = "")
 	public void step07_DeleteArrangement() {
 
 	}

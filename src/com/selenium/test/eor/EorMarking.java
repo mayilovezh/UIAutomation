@@ -70,8 +70,7 @@ public class EorMarking {
 		search();
 		action.click(By.id(ElementHelper.EOR_MARKING_AUTO_ALLOCATION));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
+		action.chooseOkOnNextConfirmation();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
@@ -89,7 +88,6 @@ public class EorMarking {
 		action.sendkeys(By.id(ElementHelper.EOR_MARKING_SET_CAPACITY_NUMBER), "100");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 	
 	@Test
@@ -107,12 +105,12 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_CHECK));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_AVAILABLE_EXAMINER));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_CONFIRM_SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
+//		action.click(By.xpath(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_AVAILABLE_EXAMINER));
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
+//		action.click(By.xpath(ElementHelper.SAVE));
+//		Thread.sleep(ElementHelper.SHORT_TIME);
+//		action.click(By.xpath(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_CONFIRM_SAVE));
+//		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 	
 	@Test
@@ -122,11 +120,11 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO)), "986527");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO)), "990801");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.isTextPrest(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME), "ALINA  CHIPYSHEVA");
+		action.isTextPrest(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME), "Andrew  Hillman");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "005760,");
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "005774,005808,005828,005834,005879,005882,005908,005913,005963,006001,006010");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

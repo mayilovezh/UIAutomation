@@ -14,9 +14,9 @@ import com.selenium.test.utils.WebDriverAction;
 public class TestMaterialCheck {
 	static WebDriver driver;
 	WebDriverAction action;
-	String candidateNo = "249396";
-	String chineseName = "秦 晓琼";
-	String scoreStatus = "TRF";
+	String candidateNo = "138991";
+	String chineseName = "王 强";
+	String scoreStatus = "TRF Sent";
 
 	@BeforeMethod
 	public void setUp() throws Exception {

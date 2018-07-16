@@ -136,6 +136,7 @@ public class SpkArrangementUnPrebooking {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.id(ElementHelper.SPK_ARRANGEMENT_AMEND_ARRANGE_ROOM_SEARCH));
+			Thread.sleep(ElementHelper.LONG_TIME);
 			action.waitElementVisibleToAssert(By.xpath(ElementHelper.SPK_ARRANGEMENT_TIME_SLOT_CDD_NAME), cddName);
 			action.click(By.xpath(ElementHelper.SPK_ARRANGEMENT_BACK));
 		} catch (InterruptedException e) {

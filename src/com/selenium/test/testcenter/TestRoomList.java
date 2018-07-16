@@ -75,30 +75,34 @@ public class TestRoomList {
 	public void step02_CreateTestRoom(){
 		searchTestRoom();
 		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.xpath(ElementHelper.TR_CREATE));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.sendkeys(By.id(ElementHelper.TR_ADD_NAME), "111");
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("$('#RoomQuota').data('kendoNumericTextBox').value('100')");
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			js.executeScript("$('#OptimalQuota').data('kendoNumericTextBox').value('100')");
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_SPEAKING));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_WRITING));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_UKVI));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_LIFE_SKILLS));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			js.executeScript("$('#Floor').data('kendoNumericTextBox').value('2');");
-			action.sendkeys(By.id(ElementHelper.TR_ADD_FLOOR), "2");
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SAVE));
+			if (action.isTextExist(By.xpath(ElementHelper.TR_SEARCH_ROOM_NAME), roomName)) {
+				new DriverInstance().teardown(driver);
+			} else {
+				Thread.sleep(ElementHelper.WAIT_TIME);
+				action.click(By.xpath(ElementHelper.TR_CREATE));
+				Thread.sleep(ElementHelper.WAIT_TIME);
+				action.sendkeys(By.id(ElementHelper.TR_ADD_NAME), "111");
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("$('#RoomQuota').data('kendoNumericTextBox').value('100')");
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				js.executeScript("$('#OptimalQuota').data('kendoNumericTextBox').value('100')");
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_SPEAKING));
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.xpath(ElementHelper.TR_ADD_ROOMTYPE_WRITING));
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS));
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_UKVI));
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				action.click(By.xpath(ElementHelper.TR_ADD_PRODUCTTYPE_IELTS_LIFE_SKILLS));
+				Thread.sleep(ElementHelper.SHORT_TIME_A);
+				js.executeScript("$('#Floor').data('kendoNumericTextBox').value('2');");
+				action.sendkeys(By.id(ElementHelper.TR_ADD_FLOOR), "2");
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				action.click(By.xpath(ElementHelper.SAVE));
+			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -170,7 +174,7 @@ public class TestRoomList {
 		try {
 			searchTestRoom();
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			getRoomNumber();
+//			getRoomNumber();
 			action.click(By.linkText(ElementHelper.TR_MODIFY_SHARE_DAY));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.sendkeys(By.id(ElementHelper.TR_MODIFY_SHARE_START_DATE), startDate);
@@ -179,15 +183,15 @@ public class TestRoomList {
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.id(ElementHelper.TR_MODIFY_SHARE_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			List<WebElement> table = driver.findElements(By.xpath(ElementHelper.TR_MPDDIFY_SHARE_LIST));
-			for (WebElement element : table) {
-				if (element.isSelected()) {
-					element.click();
-					Thread.sleep(ElementHelper.SHORT_TIME_A);
-					action.click(By.xpath(ElementHelper.SAVE));
-					break;
-				}
-			}
+//			List<WebElement> table = driver.findElements(By.xpath(ElementHelper.TR_MPDDIFY_SHARE_LIST));
+//			for (WebElement element : table) {
+//				if (element.isSelected()) {
+//					element.click();
+//					Thread.sleep(ElementHelper.SHORT_TIME_A);
+//					break;
+//				}
+//			}
+			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -202,7 +206,7 @@ public class TestRoomList {
 			getRoomNumber();
 			action.click(By.linkText(ElementHelper.TR_SHARE_LOG));
 			action.isTextPrest(By.xpath(ElementHelper.TR_SHARE_LOG_ROOM_NAME), roomNumber1);
-			action.isTextPrest(By.xpath(ElementHelper.TR_SHARE_LOG_CREATE_BY), ElementHelper.USER_NAME_DEV);
+			action.isTextPrest(By.xpath(ElementHelper.TR_SHARE_LOG_CREATE_BY), ElementHelper.USER_NAME_UAT);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

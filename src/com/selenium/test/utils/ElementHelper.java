@@ -214,6 +214,7 @@ public class ElementHelper {
 	public static String TR_CREATE_ROOM_TYPE_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[7]/td/span[2]";
 	public static String TR_CREATE_ROOM_PRODUCT_TYPE_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[8]/td/span[2]";
 	public static String TR_CREATE_FLOOR_WARNING = "//*[@id='displayTestRoomWindow']/table/tbody/tr[9]/td/span[2]";
+	public static String TR_SEARCH_ROOM_NAME = "//*[@id='spreadsheet-testroom']/div[2]/table/tbody/tr[1]/td[1]";
 	
 	//Test Session
 	public static String TEST_SESSION_LIST = "//*[@id='TestCenter']/ul/li[4]/a";
@@ -716,8 +717,11 @@ public class ElementHelper {
     public static String MARKETING_QUERY_DATE_TO = "txtMarketingTestDateE";
     public static String MARKETING_QUERY_SEARCH = "BtnMarketingSearch";
     public static String MARKETING_QUERY_TYPE_B = "radio2";
-    public static String MARKETING_QUERY_EXPORT = "btnMarketingCanExport";
-    public static String MARKETING_QUERY_NEW_EXPORT = "btnNewMarketingCanExport";
+    public static String MARKETING_QUERY_SEND_EMAIL = "btnNewMarketingCanExport";
+    public static String MARKETING_QUERY_SEND_EMAIL_LOG = "btnMarketingCanExportLog";
+    public static String MARKETING_QUERY_SEND_EMAIL_LOG_CONTENT = "//*[@id='div-MarketingQuerySentEmail-ViewLogGrid']/div[2]/table/tbody/tr[1]/td[6]";
+    public static String MARKETING_QUERY_SEND_EMAIL_LOG_CREATE_BY = "//*[@id='div-MarketingQuerySentEmail-ViewLogGrid']/div[2]/table/tbody/tr[1]/td[7]";
+    public static String MARKETING_QUERY_SEARCH_LIST_ITEM = "//*[@id='MarketingListGrid']/div[2]/table/tbody/tr[1]";
     
     //Report By Region
     public static String REPORT_BY_REGION = "//*[@id='Marketing']/ul/li[2]/a";
@@ -830,13 +834,8 @@ public class ElementHelper {
     public static String UNPROCESSING_LIST_SEARCH_CDDNO = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[1]";
     public static String UNPROCESSING_LIST_SEARCH_TIME = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[2]";
     public static String UNPROCESSING_LIST_SEARCH_DATE = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[6]";
-    public static String UNPROCESSING_LIST_ADD = "//input[contains(@value,'Add Candidate No.(TRF Received)')]";
-    public static String UNPROCESSING_LIST_ADD_REGION = "RegionAdd-EORTRFNumberList";
-    public static String UNPROCESSING_LIST_ADD_YEAR = "EORTRFNumberList-DateIdYearAdd";
-    public static String UNPROCESSING_LIST_ADD_MONTH = "EORTRFNumberList-DateIdMonthAdd";
-    public static String UNPROCESSING_LIST_ADD_TEST_DATE = "TestDateAdd-EORTRFNumberList";
-    public static String UNPROCESSING_LIST_ADD_CDD_NO = "TRFNoAdd-EORTRFNumberList";
     public static String UNPROCESSING_LIST_START_SERVICE = "butStartService-EORTRFNumberList";
+    public static String UNPROCESSING_LIST_EXPORT = "btn_EORTRFNumberList_ExportExcel_NEW";
     
     //EOR APP List
     public static String EOR_APP_LIST = "//*[@id='CS-EOR']/ul/li[2]/a";
@@ -905,7 +904,7 @@ public class ElementHelper {
     public static String EOR_MARKING_CLEAR_ALL_SELECT = "checkedbox_all_eorMaring";
     public static String EOR_MARKING_SELECT_FIRST = "//*[@id='eorMaringExaminerListGrid']/div[2]/table/tbody/tr[1]/td[1]/input";
     public static String EOR_MARKING_SET_CAPACITY_SELECT = "Set Capacity";
-    public static String EOR_MARKING_SET_CAPACITY_NUMBER = "txtnewcapacity-SetCapacityAll-eor";
+    public static String EOR_MARKING_SET_CAPACITY_NUMBER = "txtnewcapacity-eor";
     public static String EOR_MARKING_NOTICE = "btnNotice-eor";
     public static String EOR_MARKING_CLEAR_NOTICE = "btnClearMarkingNotice-eor";
     
@@ -1104,6 +1103,14 @@ public class ElementHelper {
     public static String CLERICAL_TASK_SEARCH_TYPE_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[3]";
     public static String CLERICAL_TASK_SEARCH_CREATE_BY_FIRST = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[7]";
     public static String CLERICAL_TASK_SEARCH_CREATE_BY_SECOND = "//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[2]/td[7]";
+    public static String CLERICAL_TASK_REPORT_EXAMINER_NAME = "//*[@id='clericalMarkerTaskCheckGrid']/div[2]/table/tbody/tr[19]/td[4]";
+    public static String CLERICAL_TASK_REPORT_MODIFY = "//*[@id='clericalMarkerTaskCheckGrid']/div[2]/table/tbody/tr[19]/td[9]/a";
+    public static String CLERICAL_TASK_REPORT_MODIFY_CAPACITY = "cmtaskcapacity";
+    public static String CLERICAL_TASK_REPORT_MODIFY_AVAILABLE_STATUS = "radCMAva";
+    public static String CLERICAL_TASK_REPORT_MODIFY_TEST_DATE = "//*[@id='cmtaskUnitsforCheck']/input[1]";
+    public static String CLERICAL_TASK_REPORT_MODIFY_SAVE = "btncmaddcheckunit";
+    
+    
     
    //1st Marking Allocation
     public static String FIRST_ALLOCATION = "//*[@id='ClericalMarker']/ul/li[3]/a";
@@ -1286,7 +1293,7 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[1]/td[7]/input[2]";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[2]/td[1]/select";
     public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "//input[contains(@value='Search')]";
-    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "ADH";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "AI";
     public static String SPK_DEPLOYMENT_ASSIGN_SAVE = "//button[@type='button']";	
     public static String SPK_DEPLOYMENT_ASSIGN_NUMBER = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[3]/td[7]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[2]";

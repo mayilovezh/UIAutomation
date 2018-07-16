@@ -40,7 +40,7 @@ public class WorkRecords {
 		action.sendkeys(By.id(ElementHelper.WORK_RECORDS_EXAMINER_NO), "994726");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.WORK_RECORDS_SEARCH));
-		Thread.sleep(35000);
+		Thread.sleep(ElementHelper.LONG_TIME);
 //		Assert.assertEquals(action.getText(By.xpath(ElementHelper.WORK_RECORDS_SEARCH_NAME)), "Micheal Coulson");
 //		Thread.sleep(ElementHelper.SHORT_TIME_A);
 //		Assert.assertEquals(action.getText(By.xpath(ElementHelper.WORK_RECORDS_SEARCH_TC)), "BJ-BLCU");

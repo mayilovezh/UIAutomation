@@ -115,7 +115,7 @@ public class EorAppList {
 	}
 	
 	@Test
-	public void step01_ExportDispatchList() throws Exception {
+	public void step04_ExportDispatchList() throws Exception {
 		navigate();
  		Thread.sleep(ElementHelper.SHORT_TIME_B);
  		action.click(By.id(ElementHelper.EOR_APP_LIST_EXPORT_DISPATCH_LIST));
@@ -134,7 +134,7 @@ public class EorAppList {
 	}
 	
 	@Test
-	public void step02_ExportLRScore() throws Exception {
+	public void step05_ExportLRScore() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_APP_LIST_EXPORT_LR_SCORE));
@@ -151,7 +151,7 @@ public class EorAppList {
 	}
 	
 	@Test
-	public void step03_ExportWritingScore() throws Exception {
+	public void step06_ExportWritingScore() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_APP_LIST_EXPORT_EOR_WRIT_SCORE));
@@ -168,7 +168,7 @@ public class EorAppList {
 	}
 	
 	@Test
-	public void step04_ExportSpeakingScore() throws Exception {
+	public void step07_ExportSpeakingScore() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_APP_LIST_EXPORT_EOR_SPK_SCORE));
@@ -185,7 +185,7 @@ public class EorAppList {
 	}
 	
 	@Test
-	public void step05_ExportDiffWriting() throws Exception {
+	public void step08_ExportDiffWriting() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_APP_LIST_EXPORT_DIFF_WRIT));
@@ -194,7 +194,7 @@ public class EorAppList {
 	}
 	
 	@Test
-	public void step06_ExportDiffSpeaking() throws Exception {
+	public void step09_ExportDiffSpeaking() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_APP_LIST_EXPORT_DIFF_SPK));
@@ -248,7 +248,7 @@ public class EorAppList {
 	}
 	
 	@Test
-	public void step09_ExportScoreInformation() throws Exception {
+	public void step10_ExportScoreInformation() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_APP_LIST_EXPORT_EOR_SCORE_INFORMATION));

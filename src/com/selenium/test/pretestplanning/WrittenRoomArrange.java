@@ -48,8 +48,8 @@ public class WrittenRoomArrange {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.id(ElementHelper.WRITTEN_ROOM_ARRANGE_ADD_ROOM));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.WRA_ADD_ROOM_BUILDING), "162");
-		Thread.sleep(ElementHelper.LONG_TIME);
+//		action.selectByValue(By.id(ElementHelper.WRA_ADD_ROOM_BUILDING), "162");
+//		Thread.sleep(ElementHelper.LONG_TIME);
 //		action.click(By.xpath(ElementHelper.WRA_ADD_ROOM_SAVE));
 //		Thread.sleep(ElementHelper.SHORT_TIME);
 //		action.click(By.id(ElementHelper.WRA_SELECT_ALL));

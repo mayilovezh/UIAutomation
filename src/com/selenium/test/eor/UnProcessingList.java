@@ -14,9 +14,9 @@ import com.selenium.test.utils.WebDriverAction;
 public class UnProcessingList {
 	static WebDriver driver;
 	WebDriverAction action;
-	String caddNo = "242218";
+	String caddNo = "004406";
 	String addTime = "2018-05-22 16:11:22";
-	String date = "2017-12-16";
+	String date = "2018-04-07";
 	
 	
 	@BeforeMethod
@@ -30,62 +30,42 @@ public class UnProcessingList {
 		new DriverInstance().teardown(driver);
 	}
 	
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.CS_EOR));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_REGION), ElementHelper.REGION_VALUE);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
+	public void navigate() {
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.CS_EOR));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.UNPROCESSING_LIST));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_REGION), ElementHelper.REGION_VALUE);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 	
-	@Test
-	public void step01_RejectNotMatch() throws Exception {
+	@Test(description = "Search the matching data")
+	public void step01_Search() {
 		navigate();
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_MATCH_STATUS), "2");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH));
-//		Thread.sleep(ElementHelper.WAIT_TIME);
-//		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_REJECT));
-//		Thread.sleep(ElementHelper.SHORT_TIME);
-//		action.click(By.xpath(ElementHelper.SAVE));
-//		Thread.sleep(ElementHelper.SHORT_TIME);
+		try {
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_CDDNO)), caddNo);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_DATE)), date);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 	
-	/*@Test
-	public void step02_AddCdd() throws Exception {
+	@Test(description = "Export the matching data")
+	public void step02_Export() {
 		navigate();
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_ADD));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_REGION), ElementHelper.REGION_VALUE);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_YEAR), "2018");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_MONTH), "12");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_ADD_TEST_DATE), "10178");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.UNPROCESSING_LIST_ADD_CDD_NO), caddNo);
-	}*/
-	
-	@Test
-	public void step03_SearchTRFReceived() throws Exception {
-		navigate();
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_YEAR), "2017");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_MONTH), "12");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_DATE), "10178");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.UNPROCESSING_LIST_MATCH_STATUS), "3");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_CDDNO)), caddNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_DATE)), date);
+		action.waitElementVisible(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_CDDNO));
+		action.click(By.id(ElementHelper.UNPROCESSING_LIST_EXPORT));
+		action.setTimeout("10");
 	}
 	
 }

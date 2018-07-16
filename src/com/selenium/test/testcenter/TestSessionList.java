@@ -171,7 +171,7 @@ public class TestSessionList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByIndex(By.id(ElementHelper.TS_MONTH), 6);
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.selectByIndex(By.id(ElementHelper.TS_DATE), 5);
+			action.selectByValue(By.id(ElementHelper.TS_DATE), "10357");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.TS_CENTER), ElementHelper.CENTER_UIBE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);

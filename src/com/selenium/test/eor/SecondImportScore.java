@@ -35,7 +35,7 @@ public class SecondImportScore {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.selectByValue(By.id(ElementHelper.SECOND_IMPORT_SCORE_YEAR), "2017");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.SECOND_IMPORT_SCORE_MONTH), ElementHelper.REGION_VALUE);
+		action.selectByValue(By.id(ElementHelper.SECOND_IMPORT_SCORE_MONTH), "1");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.selectByValue(By.id(ElementHelper.SECOND_IMPORT_SCORE_DATE), "2017-01-25T00:00:00");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

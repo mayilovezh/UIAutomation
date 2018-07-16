@@ -58,7 +58,15 @@ public class TestCenterList {
 		navigate();
 		try {
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.TC_CREATE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.chooseOkOnNextConfirmation();
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.click(By.xpath(ElementHelper.SAVE));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.isTextPrest(By.id(ElementHelper.TC_ADD_ERROR), errorMessage);
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.click(By.xpath(ElementHelper.TC_ADD_ERROR_CONFIRM));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			List<String> regionOptions = Arrays
 					.asList(new String[] { ElementHelper.SELECT_DEFAULT, ElementHelper.NORTH_REGION,
 							ElementHelper.EAST_REGION, ElementHelper.SOUTH_REGION, ElementHelper.S_WEST_REGION });
@@ -83,14 +91,6 @@ public class TestCenterList {
 			}
 			Assert.assertEquals(productOptions.toArray(), productOptions1.toArray());
 			System.out.println("The select list number is" + " " + productSize);
-			action.click(By.xpath(ElementHelper.SAVE));
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.chooseOkOnNextConfirmation();
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.isTextPrest(By.id(ElementHelper.TC_ADD_ERROR), errorMessage);
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.click(By.xpath(ElementHelper.TC_ADD_ERROR_CONFIRM));
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.isTextPrest(By.xpath(ElementHelper.TC_ADD_PROVINCE_WARNING), provinceWarning);
 			action.isTextPrest(By.xpath(ElementHelper.TC_ADD_CITY_WARNING), cityWarning);
 			action.isTextPrest(By.xpath(ElementHelper.TC_ADD_CENTERNAME_CN_WARNING), tcNameCnWarning);

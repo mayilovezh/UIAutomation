@@ -15,6 +15,8 @@ public class MarketingQuery {
 	WebDriverAction action;
 	String dateFrom = "2018-01-01";
 	String dateTo = "2018-01-06";
+	String emailContent = "Sent email successfully.";
+	
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -26,60 +28,58 @@ public class MarketingQuery {
 		new DriverInstance().teardown(driver);
 	}
 	
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.MARKETING));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.MARKETING_QUERY));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.MARKETING_QUERY_REGION), ElementHelper.REGION_VALUE);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.MARKETING_QUERY_DATE_FROM), dateFrom);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.MARKETING_QUERY_DATE_TO), dateTo);
+	public void navigate() {
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.MARKETING));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.MARKETING_QUERY));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.selectByValue(By.id(ElementHelper.MARKETING_QUERY_REGION), ElementHelper.REGION_VALUE);
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.sendkeys(By.id(ElementHelper.MARKETING_QUERY_DATE_FROM), dateFrom);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.MARKETING_QUERY_DATE_TO), dateTo);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 	
-	@Test
-	public void step01_Export_A() throws Exception {
+	@Test(description = "Send candidate data to specified email.")
+	public void step01_SendEmail() {
 		navigate();
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_EXPORT));
-		Thread.sleep(ElementHelper.LONG_TIME);
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
+			action.waitElementVisible(By.xpath(ElementHelper.MARKETING_QUERY_SEARCH_LIST_ITEM));
+			action.click(By.id(ElementHelper.MARKETING_QUERY_SEND_EMAIL));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 	
-	@Test
-	public void step02_NewExport_A() throws Exception {
+	@Test(description = "Check email sent successful.")
+	public void step02_EmailLog() {
 		navigate();
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_NEW_EXPORT));
-		Thread.sleep(ElementHelper.LONG_TIME);
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
+			action.waitElementVisible(By.xpath(ElementHelper.MARKETING_QUERY_SEARCH_LIST_ITEM));
+			action.click(By.id(ElementHelper.MARKETING_QUERY_SEND_EMAIL_LOG));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.waitElementVisibleToAssert(By.xpath(ElementHelper.MARKETING_QUERY_SEND_EMAIL_LOG_CONTENT), emailContent);
+			action.waitElementVisibleToAssert(By.xpath(ElementHelper.MARKETING_QUERY_SEND_EMAIL_LOG_CREATE_BY), ElementHelper.USER_NAME_UAT);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 	
-	@Test
-	public void step03_Export_B() throws Exception {
-		navigate();
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_TYPE_B));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_EXPORT));
-		Thread.sleep(ElementHelper.LONG_TIME);
-	}
 	
-	@Test
-	public void step04_NewExport_B() throws Exception {
-		navigate();
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_TYPE_B));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.MARKETING_QUERY_NEW_EXPORT));
-		Thread.sleep(ElementHelper.LONG_TIME);
-	}
 }

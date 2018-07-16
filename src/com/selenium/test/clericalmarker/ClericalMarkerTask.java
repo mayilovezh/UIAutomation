@@ -20,6 +20,7 @@ public class ClericalMarkerTask {
 	String testDate = "27/Dec/2018";
 	String typeFirst = "1st Marking";
 	String typeSecond = "2nd Marking";
+	String examinerName = "Xiao Guo";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -137,8 +138,17 @@ public class ClericalMarkerTask {
 		navigate();
 		search();
 		action.click(By.xpath(ElementHelper.CLERICAL_TASK_REPORT));
-		Thread.sleep(ElementHelper.LONG_TIME);
-		
+		action.waitElementVisibleToAssert(By.xpath(ElementHelper.CLERICAL_TASK_REPORT_EXAMINER_NAME), examinerName);
+		action.click(By.xpath(ElementHelper.CLERICAL_TASK_REPORT_MODIFY));
+		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.clear(By.id(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_CAPACITY));
+		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_CAPACITY), "100");
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_AVAILABLE_STATUS));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.xpath(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_TEST_DATE));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_SAVE));
 	}
 
 	public void search() throws InterruptedException {

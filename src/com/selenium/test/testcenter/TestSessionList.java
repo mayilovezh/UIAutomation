@@ -70,6 +70,11 @@ public class TestSessionList {
 			Assert.assertEquals(formatOptions.toArray(), formatOptions1.toArray());
 			System.out.println("The select list number is" + " " + formatSize);
 			action.selectByValue(By.id(ElementHelper.TS_CREATE_FORMAT), "1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.TS_CREATE_MONTH_START), 5);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.TS_CREATE_MONTH_END), 5);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TS_CREATE_SEARCH));
 			action.waitElementVisibleToClick(By.id(ElementHelper.TS_CREATE_TESTDATE));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);

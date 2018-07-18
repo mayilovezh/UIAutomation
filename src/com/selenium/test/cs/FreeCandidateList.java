@@ -89,6 +89,7 @@ public class FreeCandidateList {
 		navigate();
 		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_LIST_UPDATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
+		action.clear(By.id(ElementHelper.FREE_CANDIDATE_LIST_UPDATE_REMARK));
 		action.sendkeys(By.id(ElementHelper.FREE_CANDIDATE_LIST_UPDATE_REMARK), ElementHelper.REMARK_VALUE);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));

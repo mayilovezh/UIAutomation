@@ -15,6 +15,7 @@ import org.testng.Assert;
 public class WebDriverAction {
 
 	protected WebDriver driver;
+	boolean istextprest;
 
 	public WebDriverAction(WebDriver driver) {
 		this.driver = driver;
@@ -116,44 +117,41 @@ public class WebDriverAction {
 		return driver.findElement(By.xpath(ElementHelper.RESULT_WARNING)).getText();
 	}
 
-	public void waitElementVisible(By by) {
+	public WebElement waitElementVisible(By by) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
-	
+
 	public void waitElementVisibleToClick(By by) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).click();
+		waitElementVisible(by).click();
 	}
-	
+
 	public void waitElementVisibleToSendKeys(By by, String value) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).sendKeys(value);
+		waitElementVisible(by).sendKeys(value);
 	}
-	
+
 	public void waitElementVisibleToAssert(By by, String value) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText().equals(value);
+		waitElementVisible(by).getText().equals(value);
 	}
-	
-	public void waitElementVisibleToAssertFalse(By by, String value) {
-		boolean istextprest;
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		istextprest  = wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText().equals(value);
+
+	public void waitElementVisibleToAssertFalse(By by, String text) {
+		istextprest = waitElementVisible(by).getText().equals(text);
 		Assert.assertFalse(istextprest);
 	}
-	
+
 	public void isTextPrest(By by, String text) {
-		boolean istextprest;
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		istextprest = wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText().contains(text);
+		istextprest = waitElementVisible(by).getText().contains(text);
 		Assert.assertTrue(istextprest);
 	}
-	
+
 	public void elementSelected(By by) {
 		ExpectedConditions.elementToBeSelected(by);
 	}
-	
+
+	public void assertText(By by, String text) {
+		Assert.assertEquals(getText(by), text);
+	}
+
 	public void getDefaultOption(By by) {
 		Select select = new Select(driver.findElement(by));
 		WebElement option = select.getFirstSelectedOption();
@@ -169,7 +167,7 @@ public class WebDriverAction {
 			return false;
 		}
 	}
-	
+
 	public boolean isTextExist(By by, String text) {
 		try {
 			driver.findElement(by).getText().contains(text);
@@ -178,7 +176,7 @@ public class WebDriverAction {
 			return false;
 		}
 	}
-	
+
 	public boolean elementNotPreset(By by) {
 		try {
 			driver.findElement(by);
@@ -187,5 +185,5 @@ public class WebDriverAction {
 			return true;
 		}
 	}
-	
+
 }

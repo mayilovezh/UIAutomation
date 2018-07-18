@@ -1563,4 +1563,63 @@ public class ElementHelper {
     public static String SPK_ARRANGEMENT_EXPORT_MONTH = "SpkTestArrangementlistDdlMonth-Searchexport";
     public static String SPK_ARRANGEMENT_EXPORT_DATE = "SpkTestArrangementlistDateTimeexport";
     public static String SPK_ARRANGEMENT_CHECK_EXAMINER_DUPLICATE_ARRANGEMENT = "SpkTestArrangementlist_exportexaminerarr";
+    
+    //PinYin MisMatch
+    public static String PINYIN_MISMATCH = "//*[@id='PreTestArrange']/ul/li[3]/a";
+    public static String PINYIN_MISMATCH_YEAR = "PinyinMisMatch-Select-Year-Search";
+    public static String PINYIN_MISMATCH_REGION = "PinyinMisMatchlistRegion";
+    public static String PINYIN_MISMATCH_MONTH = "PinyinMisMatch-Select-Month-Search";
+    public static String PINYIN_MISMATCH_DATE = "PinyinMisMatchDatetime";
+    public static String PINYIN_MISMATCH_TC = "PinyinMisMatchlistCenterId";
+    public static String PINYIN_MISMATCH_SEARCH = "btnPinyinMisMatch";
+    public static String PINYIN_MISMATCH_SEARCH_CDD_NO = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[2]";
+    public static String PINYIN_MISMATCH_SEARCH_TC = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[3]";
+    public static String PINYIN_MISMATCH_SEARCH_CHINESE_NAME = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[5]";
+    public static String PINYIN_MISMATCH_SEARCH_WRONG_PINYIN = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[6]";
+    public static String PINYIN_MISMATCH_SEARCH_POSSIBLE_PINYIN = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[7]";
+    public static String PINYIN_MISMATCH_SEARCH_TEST_DATE = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[8]";
+    public static String PINYIN_MISMATCH_SEARCH_NATIONALITY = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[9]";
+    public static String PINYIN_MISMATCH_SEARCH_STATUS = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[10]";
+    public static String PINYIN_MISMATCH_SEARCH_ITEM = "//*[@id='spreadsheet-PinyinMisMatch-table']/tbody/tr[1]/td[1]/input";
+    public static String PINYIN_MISMATCH_SAVE = "btnSaveMisMatch";
+    public static String PINYIN_MISMATCH_DELETE_SELECTED = "btnDeleteMisMatch";
+    
+    //Free Test Arrangement
+    public static String FREE_TEST_ARRANGEMENT = "//*[@id='PreTestArrange']/ul/li[5]/a";
+    public static String FREE_TEST_ARRANGEMENT_YEAR = "ddlYear-freetest";
+    public static String FREE_TEST_ARRANGEMENT_MONTH = "ddlMonth-freetest";
+    public static String FREE_TEST_ARRANGEMENT_DATE = "ddlTestDate-freetest";
+    public static String FREE_TEST_ARRANGEMENT_TYPE = "ddlFreeType-freetest";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH = "btnQuery-freetest";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_FREE_TYPE = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[1]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_CDD_NO = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[3]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_CDD_NAME = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[4]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_LAST_TC = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[6]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_TC = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[8]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_LAST_TEST_DATE = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[5]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_TEST_DATE = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[7]";
+    public static String FREE_TEST_ARRANGEMENT_ADD = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[10]/input";
+    public static String FREE_TEST_ARRANGEMENT_ADD_TESTROOM = "ddlWrittenArrangedRooms";
+    public static String FREE_TEST_ARRANGEMENT_AMEND = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[10]/input[1]";
+    public static String FREE_TEST_ARRANGEMENT_VIEW = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[10]/input[3]";
+    public static String FREE_TEST_ARRANGEMENT_DELETE = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[1]/td[10]/input[4]";
+    public static String FREE_TEST_ARRANGEMENT_VIEW_ROOM = "//*[@id='FreeTestArr_View']/table/tbody/tr[6]/td";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_FREE_TYPE_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[1]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_CDD_NO_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[3]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_CDD_NAME_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[4]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_LAST_TC_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[6]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_TC_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[8]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_LAST_TEST_DATE_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[5]";
+    public static String FREE_TEST_ARRANGEMENT_SEARCH_TEST_DATE_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[7]";
+    public static String FREE_TEST_ARRANGEMENT_ADD_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[10]/input";
+    public static String FREE_TEST_ARRANGEMENT_AMEND_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[10]/input[1]";
+    public static String FREE_TEST_ARRANGEMENT_VIEW_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[10]/input[3]";
+    public static String FREE_TEST_ARRANGEMENT_DELETE_ITEM2 = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[10]/input[4]";
+    public static String FREE_TEST_ARRANGEMENT_ADD_SPK_TEST_DATE = "ddlSpkTestDate";
+    public static String FREE_TEST_ARRANGEMENT_ADD_SPK_ROOM = "ddlSpkTestRooms";
+    public static String FREE_TEST_ARRANGEMENT_VIEW_SPK = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[10]/input[4]";
+    public static String FREE_TEST_ARRANGEMENT_VIEW_ROOM_SPK = "//*[@id='FreeTestArr_View']/table/tbody/tr[7]/td";
+    public static String FREE_TEST_ARRANGEMENT_DELETE_SPK = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[10]/input[5]";
+    
+    
 }

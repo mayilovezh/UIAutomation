@@ -51,7 +51,14 @@ public class SpkRoomTemplate {
 		action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
 		action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
 		action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
-		action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), createWarning);
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), createWarning);
+			action.click(By.xpath(ElementHelper.SAVE));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 
 	@Test(description = "Create the saturday template for 'UIBE'")

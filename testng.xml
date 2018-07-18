@@ -25,7 +25,7 @@
 	</classes>
 </test> -->
 
-	<test name="TestCenter" preserve-order="true">
+	<!-- <test name="TestCenter" preserve-order="true">
 	<classes>
 		<class name="com.selenium.test.testcenter.TestCenterList" />
 		<class name="com.selenium.test.testcenter.TestBuildingList" />
@@ -142,15 +142,17 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>  
+	</test>   -->
 	
-	<!--<test name="PreTestArrange" preserve-order="true">
+	<test name="PreTestArrange" preserve-order="true">
 		<classes>
-		 	<class name="com.selenium.test.pretestarrange.WrittenApportionment" /> 
+		 <!--	<class name="com.selenium.test.pretestarrange.WrittenApportionment" /> 
 			<class name="com.selenium.test.pretestarrange.SpkArrangementPrebooking" />
 			<class name="com.selenium.test.pretestarrange.SpkArrangementUnPrebooking" />
+			<class name="com.selenium.test.pretestarrange.PinyinMismatch" />-->
+			<class name="com.selenium.test.pretestarrange.FreeTestArrangement" />
 		</classes>
-	</test> -->
+	</test> 
 
 </suite> 
 

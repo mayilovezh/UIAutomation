@@ -1,6 +1,5 @@
 package com.selenium.test.postest;
 
-import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -56,7 +55,7 @@ public class ScoreUpload {
 			navigate();
 			action.click(By.xpath(ElementHelper.SCORE_UPLOAD_FIRST_MARKING));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			upload("\\resource\\posttest\\0106 Xuzhou_1st marking.xml");
+			action.uploadFile("\\resource\\posttest\\0106 Xuzhou_1st marking.xml", By.id(ElementHelper.SCORE_UPLOAD_CHOOSE_FIRST_MARKING));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.cssSelector(ElementHelper.SCORE_UPLOAD_UPLOAD));
 			Thread.sleep(ElementHelper.LONG_TIME_A);
@@ -74,7 +73,7 @@ public class ScoreUpload {
 			navigate();
 			action.click(By.xpath(ElementHelper.SCORE_UPLOAD_FIRST_RELEASE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			upload1("\\resource\\posttest\\0106 Xuzhou_1st release.xml");
+			action.uploadFile("\\resource\\posttest\\0106 Xuzhou_1st release.xml", By.id(ElementHelper.SCORE_UPLOAD_CHOOSE_FIRST_RELEASE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.cssSelector(ElementHelper.SCORE_UPLOAD_UPLOAD));
 			Thread.sleep(ElementHelper.LONG_TIME_A);
@@ -83,22 +82,6 @@ public class ScoreUpload {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-	}
-	
-	public void upload(String filePath) {
-		String path = System.getProperty("user.dir") + filePath;
-		File file = new File(path);
-		if(file.exists()) {
-			driver.findElement(By.id(ElementHelper.SCORE_UPLOAD_CHOOSE_FIRST_MARKING)).sendKeys(file.getPath());
-		}
-	}
-	
-	public void upload1(String filePath) {
-		String path = System.getProperty("user.dir") + filePath;
-		File file = new File(path);
-		if(file.exists()) {
-			driver.findElement(By.id(ElementHelper.SCORE_UPLOAD_CHOOSE_FIRST_RELEASE)).sendKeys(file.getPath());
 		}
 	}
 }

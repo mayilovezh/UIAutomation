@@ -1,5 +1,6 @@
 package com.selenium.test.utils;
 
+import java.io.File;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -183,6 +184,14 @@ public class WebDriverAction {
 			return false;
 		} catch (NoSuchElementException e) {
 			return true;
+		}
+	}
+
+	public void uploadFile(String filePath, By by) {
+		String path = System.getProperty("user.dir") + filePath;
+		File file = new File(path);
+		if (file.exists()) {
+			driver.findElement(by).sendKeys(file.getPath());
 		}
 	}
 

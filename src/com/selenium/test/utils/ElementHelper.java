@@ -1585,7 +1585,7 @@ public class ElementHelper {
     public static String PINYIN_MISMATCH_DELETE_SELECTED = "btnDeleteMisMatch";
     
     //Free Test Arrangement
-    public static String FREE_TEST_ARRANGEMENT = "//*[@id='PreTestArrange']/ul/li[5]/a";
+    public static String FREE_TEST_ARRANGEMENT = "//*[@id='PreTestArrange']/ul/li[4]/a";
     public static String FREE_TEST_ARRANGEMENT_YEAR = "ddlYear-freetest";
     public static String FREE_TEST_ARRANGEMENT_MONTH = "ddlMonth-freetest";
     public static String FREE_TEST_ARRANGEMENT_DATE = "ddlTestDate-freetest";
@@ -1621,5 +1621,32 @@ public class ElementHelper {
     public static String FREE_TEST_ARRANGEMENT_VIEW_ROOM_SPK = "//*[@id='FreeTestArr_View']/table/tbody/tr[7]/td";
     public static String FREE_TEST_ARRANGEMENT_DELETE_SPK = "//*[@id='spreadsheet-FreeTestArrangement-table']/tbody/tr[2]/td[10]/input[5]";
     
+    //MIS To IWAS
+    public static String MIS_TO_IWAS = "//*[@id='PreTestArrange']/ul/li[5]/a";
+    public static String MIS_TO_IWAS_REGION = "mis-ddlregion-m2i";
+    public static String MIS_TO_IWAS_PRODUCT_TYPE = "mis-sel_ExamProductType-m2i";
+    public static String MIS_TO_IWAS_FORMAT = "sel_ExamFormat-m2i";
+    public static String MIS_TO_IWAS_YEAR = "ddlYear-m2i";
+    public static String MIS_TO_IWAS_MONTH = "ddlMonth-m2i";
+    public static String MIS_TO_IWAS_TEST_DATE = "mis-ddltestdate-m2i";
+    public static String MIS_TO_IWAS_TEST_CENTER = "mis-ddltestcenter-m2i";
+    public static String MIS_TO_IWAS_MODULE = "mis-ddlmodule-m2i";
+    public static String MIS_TO_IWAS_DOWNLOAD = "btndownload-m2n";
+    public static String MIS_TO_IWAS_DOWNLOAD_ALL = "btndownloadall-m2n";
     
+    //IWAS To MIS
+    public static String IWAS_TO_MIS = "//*[@id='PreTestArrange']/ul/li[6]/a";
+    public static String IWAS_TO_MIS_REGION = "ddlregion-i2m";
+    public static String IWAS_TO_MIS_YEAR = "ddlYear-i2m";
+    public static String IWAS_TO_MIS_MONTH = "ddlMonth-i2m";
+    public static String IWAS_TO_MIS_DATE = "ddltestdate-i2m";
+    public static String IWAS_TO_MIS_SEARCH = "search_i2m";
+    public static String IWAS_TO_MIS_IMPORT = "//*[@id='i2m_Grid']/div[2]/table/tbody/tr[2]/td[6]/a[1]";
+    public static String IWAS_TO_MIS_IMPORT_CHOOSE = "file-i2m";
+    public static String IWAS_TO_MIS_IMPORT_UPLOAD = "button.k-button.k-upload-selected";
+    public static String IWAS_TO_MIS_LOG = "//*[@id='i2m_Grid']/div[2]/table/tbody/tr[2]/td[6]/a[2]";
+    public static String IWAS_TO_MIS_LOG_MESSAGE = "//*[@id='viewlog_i2m']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String IWAS_TO_MIS_LOG_CREATE_BY = "//*[@id='viewlog_i2m']/div[2]/table/tbody/tr[1]/td[2]";
+    public static String IWAS_TO_MIS_SEARCH_CDD_NO = "//*[@id='i2m_Grid']/div[2]/table/tbody/tr[2]/td[4]";
+    public static String IWAS_TO_MIS_SEARCH_IMPORT_NO = "//*[@id='i2m_Grid']/div[2]/table/tbody/tr[2]/td[5]";
 }

@@ -149,9 +149,10 @@
 		 <!--	<class name="com.selenium.test.pretestarrange.WrittenApportionment" /> 
 			<class name="com.selenium.test.pretestarrange.SpkArrangementPrebooking" />
 			<class name="com.selenium.test.pretestarrange.SpkArrangementUnPrebooking" />
-			<class name="com.selenium.test.pretestarrange.FreeTestArrangement" />-->
-			<class name="com.selenium.test.pretestarrange.MISToIWAS" /> 
+			<class name="com.selenium.test.pretestarrange.FreeTestArrangement" />
 			<class name="com.selenium.test.pretestarrange.IWASToMIS" />
+			<class name="com.selenium.test.pretestarrange.MISToIWAS" /> -->
+			<class name="com.selenium.test.pretestarrange.PrintDocuments" /> 
 		</classes>
 	</test> 
 

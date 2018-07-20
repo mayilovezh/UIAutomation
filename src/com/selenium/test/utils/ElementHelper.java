@@ -1649,4 +1649,24 @@ public class ElementHelper {
     public static String IWAS_TO_MIS_LOG_CREATE_BY = "//*[@id='viewlog_i2m']/div[2]/table/tbody/tr[1]/td[2]";
     public static String IWAS_TO_MIS_SEARCH_CDD_NO = "//*[@id='i2m_Grid']/div[2]/table/tbody/tr[2]/td[4]";
     public static String IWAS_TO_MIS_SEARCH_IMPORT_NO = "//*[@id='i2m_Grid']/div[2]/table/tbody/tr[2]/td[5]";
+    
+    //Print Documents
+    public static String PRINT_DOCUMENTS = "//*[@id='PreTestArrange']/ul/li[3]/a";
+    public static String PRINT_DOCUMENTS_REGION = "selectExportOffice";
+    public static String PRINT_DOCUMENTS_PRODUCT_TYPE = "selectExportTestDate_examproducttype";
+    public static String PRINT_DOCUMENTS_YEAR = "selectExportTestDate_year";
+    public static String PRINT_DOCUMENTS_MONTH = "selectExportTestDate_month";
+    public static String PRINT_DOCUMENTS_DATE = "selectExportTestDate";
+    public static String PRINT_DOCUMENTS_TC = "selectExportTestCenter";
+    public static String PRINT_DOCUMENTS_SEARCH = "BtnPreTestrSearch";
+    public static String PRINT_DOCUMENTS_SEARCH_CDD_NO = "//*[@id='PrintDocumentListGrid']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String PRINT_DOCUMENTS_SEARCH_CDD_NAME = "//*[@id='PrintDocumentListGrid']/div[2]/table/tbody/tr[1]/td[2]";
+    public static String PRINT_DOCUMENTS_SEARCH_EXAMINER_INITIAL = "//*[@id='PrintDocumentListGrid']/div[2]/table/tbody/tr[1]/td[4]";
+    public static String PRINT_DOCUMENTS_SEARCH_EXAMINER_NO = "//*[@id='PrintDocumentListGrid']/div[2]/table/tbody/tr[1]/td[5]";
+    public static String PRINT_DOCUMENTS_SEARCH_SPK_BUILDING = "//*[@id='PrintDocumentListGrid']/div[2]/table/tbody/tr[1]/td[8]";
+    public static String PRINT_DOCUMENTS_SEARCH_SPK_ROOM = "//*[@id='PrintDocumentListGrid']/div[2]/table/tbody/tr[1]/td[9]";
+    
+    
+    
+    
 }

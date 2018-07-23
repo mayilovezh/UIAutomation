@@ -50,7 +50,7 @@ public class UnProcessingList {
 	public void step01_Search() {
 		navigate();
 		try {
-			Thread.sleep(ElementHelper.WAIT_TIME);
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_CDDNO)), caddNo);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_DATE)), date);
@@ -63,9 +63,14 @@ public class UnProcessingList {
 	@Test(description = "Export the matching data")
 	public void step02_Export() {
 		navigate();
-		action.waitElementVisible(By.xpath(ElementHelper.UNPROCESSING_LIST_SEARCH_CDDNO));
-		action.click(By.id(ElementHelper.UNPROCESSING_LIST_EXPORT));
-		action.setTimeout("10");
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.UNPROCESSING_LIST_EXPORT));
+			action.setTimeout("10");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 	
 }

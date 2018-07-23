@@ -55,7 +55,7 @@ public class ScoreUpload {
 			navigate();
 			action.click(By.xpath(ElementHelper.SCORE_UPLOAD_FIRST_MARKING));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.uploadFile("\\resource\\posttest\\0106 Xuzhou_1st marking.xml", By.id(ElementHelper.SCORE_UPLOAD_CHOOSE_FIRST_MARKING));
+			action.uploadFile(".\\resource\\posttest\\0106 Xuzhou_1st marking.xml", By.id(ElementHelper.SCORE_UPLOAD_CHOOSE_FIRST_MARKING));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.cssSelector(ElementHelper.SCORE_UPLOAD_UPLOAD));
 			Thread.sleep(ElementHelper.LONG_TIME_A);
@@ -73,7 +73,7 @@ public class ScoreUpload {
 			navigate();
 			action.click(By.xpath(ElementHelper.SCORE_UPLOAD_FIRST_RELEASE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.uploadFile("\\resource\\posttest\\0106 Xuzhou_1st release.xml", By.id(ElementHelper.SCORE_UPLOAD_CHOOSE_FIRST_RELEASE));
+			action.uploadFile(".\\resource\\posttest\\0106 Xuzhou_1st release.xml", By.id(ElementHelper.SCORE_UPLOAD_CHOOSE_FIRST_RELEASE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.cssSelector(ElementHelper.SCORE_UPLOAD_UPLOAD));
 			Thread.sleep(ElementHelper.LONG_TIME_A);

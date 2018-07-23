@@ -50,7 +50,7 @@ public class RegistrationNumberList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.RUL_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA106)),quota);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA106)),"401");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA113)),quota);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

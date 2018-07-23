@@ -41,9 +41,9 @@ public class PredictNumberNational {
 	public void search() throws Exception {
 		navigate();
 		action.sendkeys(By.id(ElementHelper.PREDICT_NUMBER_NATIONAL_DATE_FROM), "2018-06-01");
-		Thread.sleep(ElementHelper.SHORT_TIME);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.PREDICT_NUMBER_NATIONAL_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
+		Thread.sleep(15000);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.PREDICT_NUMBER_NATIONAL_SEARCH_QUOTA1)), quota1);
 	    Thread.sleep(ElementHelper.SHORT_TIME_A);
 	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.PREDICT_NUMBER_NATIONAL_SEARCH_QUOTA2)), quota2);

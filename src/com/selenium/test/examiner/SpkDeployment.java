@@ -19,8 +19,8 @@ public class SpkDeployment {
 	String date2 = "53";
 	String date3 = "52";
 	String examinerNo = "991756";
-	String examinerName = "Adam  Hassan";
-	
+	String examinerName = "Adam Hassan";
+
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -56,7 +56,7 @@ public class SpkDeployment {
 	}
 
 	@Test
-	public void step01_ExaminerCheck()  {
+	public void step01_ExaminerCheck() {
 		try {
 			navigate();
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_CITY)), city);
@@ -72,7 +72,7 @@ public class SpkDeployment {
 			System.out.println(e);
 		}
 	}
-	
+
 	@Test
 	public void step02_AssignExaminer() {
 		try {
@@ -80,7 +80,7 @@ public class SpkDeployment {
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN));
 			Thread.sleep(ElementHelper.LONG_TIME);
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_DATE));
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			// action.selectByValue(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL),
 			// "1");
 			// Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -90,28 +90,27 @@ public class SpkDeployment {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SAVE));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-//			action.waitElementVisibleToAssert(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_NUMBER), "1");
+			// action.waitElementVisibleToAssert(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_NUMBER),
+			// "1");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
 	}
-	
+
 	@Test
 	public void step03_ShowExaminerDetails() {
 		try {
 			navigate();
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			Assert.assertEquals(
-					action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO_UAT)),
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO)),
 					examinerNo);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(
-					action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME_UAT)),
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME)),
 					examinerName);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_UAT));
+			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL));
 		} catch (InterruptedException e) {
@@ -119,14 +118,14 @@ public class SpkDeployment {
 			System.out.println(e);
 		}
 	}
-	
+
 	@Test
 	public void step04_ShowExaminerPerformance() {
 		try {
 			navigate();
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
 			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_UAT));
+			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_CATEGORY), "1");
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -136,7 +135,7 @@ public class SpkDeployment {
 			System.out.println(e);
 		}
 	}
-	
+
 	@Test
 	public void step05_DeleteExaminerArrange() {
 		try {
@@ -153,7 +152,7 @@ public class SpkDeployment {
 			System.out.println(e);
 		}
 	}
-	
+
 	/*@Test
 	public void step05_ReplaceSwapExaminer() throws Exception {
 		navigate();
@@ -161,7 +160,7 @@ public class SpkDeployment {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.SHOW_EXAMINER_DETAILS_ON_TESTDATE));
 	}
-	
+
 	@Test
 	public void step06_UploadToPretest() throws Exception {
 		navigate();
@@ -171,7 +170,7 @@ public class SpkDeployment {
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
+
 	@Test
 	public void step07_ReleaseToIEP() throws Exception {
 		navigate();
@@ -181,7 +180,7 @@ public class SpkDeployment {
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
+
 	@Test
 	public void step08_SendEmail() throws Exception {
 		navigate();
@@ -191,5 +190,5 @@ public class SpkDeployment {
 		confirm.accept();
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}*/
-	
+
 }

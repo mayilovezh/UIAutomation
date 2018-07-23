@@ -265,7 +265,7 @@ public class ElementHelper {
 	//Spk Room Template
 	public static String SPK_ROOM_TEMPLATE = "//*[@id='TestCenter']/ul/li[6]/a";
 	public static String SPK_TEMPLATE_REGION = "selectSPKRoomTemplateRegionSearch";
-	public static String SPK_TEMPLATE_TEST_CENTER = "SPKAvailabilityTestCenter-Search";
+	public static String SPK_TEMPLATE_TEST_CENTER = "SPKRoomTemplateListTestCenterid";
 	public static String SPK_TEMPLATE_SEARCH = "btnSPKRoomTemplateSearch";
 	public static String SPK_TEMPLATE_ADD = "btnSPKRoomTemplateAddInSearch";
 	public static String SPK_TEMPLATE_ADD_SEARCH = "btnSPKRoomTemplate-AddSearch";
@@ -281,6 +281,7 @@ public class ElementHelper {
 	public static String SPK_TEMPLATE_DELETE = "Delete";
 	public static String SPK_TEMPLATE_MODIFY_ROOM = "//div[@id='ModifySPkTemplateTable']/table/tbody/tr/td[6]/input";
 	public static String SPK_TEMPLATE_MODIFY_SAVE = "btnDoSPkTemplateModify";
+	public static String SPK_TEMPLATE_SEARCH_LIST = "//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr/td[4]";
 	
 	//Spk Room Availability
 	public static String SPK_ROOM_AVAILABILITY = "//*[@id='TestCenter']/ul/li[7]/a";
@@ -303,12 +304,12 @@ public class ElementHelper {
 	public static String SPK_ROOM_CREATE_YEAR_TO = "ddlYear2-SPKAvailablityAdd";
 	public static String SPK_ROOM_CREATE_MONTH_TO = "ddlMonth2-SPKAvailablityAdd";
 	public static String SPK_ROOM_CREATE_SEARCH = "btnSPKAvailablityCreateSearch";
-	public static String SPK_ROOM_CREATE_TEST_DATE = "selecspktestdatereal-10344";
-	public static String SPK_ROOM_SEARCH_TESTDATE = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[2]/td[1]";  
-	public static String SPK_ROOM_MODIFY = "Modify";
-	public static String SPK_ROOM_VIEW = "View";
-	public static String SPK_ROOM_LOG = "Log";
-	public static String SPK_ROOM_DELETE = "Delete";
+	public static String SPK_ROOM_CREATE_TEST_DATE = "selecspktestdatereal-10361";
+	public static String SPK_ROOM_SEARCH_TESTDATE = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[3]/td[1]";  
+	public static String SPK_ROOM_MODIFY = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[3]/td[6]/a[1]";
+	public static String SPK_ROOM_VIEW = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[3]/td[6]/a[2]";
+	public static String SPK_ROOM_LOG = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[3]/td[6]/a[4]";
+	public static String SPK_ROOM_DELETE = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[3]/td[6]/a[3]";
 	public static String SPK_ROOM_MODIFY_REMARK = "ddlRemark-SPKAvailablityModify";
 	public static String SPK_ROOM_VIEW_REMARK = "ddlRemark-SPKAvailablityView";
 	public static String SPK_ROOM_LOG_CONTENT = "//*[@id='SPKAvailabilityLogGrid']/div[2]/table/tbody/tr[1]/td[1]";
@@ -316,6 +317,9 @@ public class ElementHelper {
 	public static String SPK_ROOM_TESTDATE_FROM = "1";
 	public static String SPK_ROOM_CALENDAR_TO = "//div[@id='page-heading']/table/tbody/tr[2]/td[4]/span/span/span/span";
 	public static String SPK_ROOM_TESTDATE_TO = "(//a[contains(text(),'30')])[4]";
+	public static String SPK_ROOM_CALENDAR_FROM_LEFT = "span.k-icon.k-i-arrow-60-left";
+	public static String SPK_ROOM_CALENDAR_TO_LEFT = "//div[12]/div/div/div/a/span";
+	public static String SPK_ROOM_SEARCH_TEMPLATE = "//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr[3]/td[3]";
 	
 	//TDOL 
 	public static String TDOL = "TDOL";
@@ -496,12 +500,13 @@ public class ElementHelper {
 	public static String CAN_STATUS_BLOCK_SEARCH_INFO = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[2]";
 	public static String CAN_STATUS_BLOCK_SEARCH_CHINESE_NAME = "//*[@id='CandidateStatus_List_tabsGrid']/div[2]/table/tbody/tr/td[9]";
 	public static String CAN_STATUS_BLOCK_STATUS_SELECT = "Candidate_Status_Chk";
-	public static String CAN_STATUS_BLOCK_TEST_STATUS = "Candidate_Status_Set_Selected_Test";
-    public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Set_Selected_Score";
-    public static String CAN_STATUS_BLOCK_REASON = "Candidate_Status_Set_Selected_Reject";
-    public static String CAN_STATUS_BLOCK_STAGE = "Candidate_Status_Set_Selected_Stage";
-    public static String CAN_STATUS_BLOCK_REMARK = "Candidate_Status_Remark";
+	public static String CAN_STATUS_BLOCK_TEST_STATUS = "Candidate_Status_Test_List_13450326";
+    public static String CAN_STATUS_BLOCK_SCORE_STATUS = "Candidate_Status_Score_List_13450326";
+    public static String CAN_STATUS_BLOCK_REASON = "Candidate_Status_Reject_List_13450326";
+    public static String CAN_STATUS_BLOCK_STAGE = "Candidate_Status_Stage_List_13450326";
+    public static String CAN_STATUS_BLOCK_REMARK = "Candidate_Status_Remark_13450326";
     public static String CAN_STATUS_BLOCK_STATUS_SAVE = "Candidate_Status_Save_Selected";
+    public static String CAN_STATUS_BLOCK_SELECT = "Candidate_Status_Chk_13450326";
     
     //EMS Management
     public static String EMS_MANAGEMENT = "//*[@id='PostTest']/ul/li[2]/a";
@@ -824,16 +829,16 @@ public class ElementHelper {
     
     //UnProcessing List
     public static String UNPROCESSING_LIST = "//*[@id='CS-EOR']/ul/li[1]/a";
-    public static String UNPROCESSING_LIST_REGION = "RegionIdSecrch_EORTRFNumberList";
-    public static String UNPROCESSING_LIST_YEAR = "EORTRFNumberList-DateIdYearSecrch";
-    public static String UNPROCESSING_LIST_MONTH = "EORTRFNumberList-DateIdMonthSecrch";
-    public static String UNPROCESSING_LIST_DATE = "DateIdSecrch_EORTRFNumberList";
+    public static String UNPROCESSING_LIST_REGION = "RegionIdSecrch_EORTRFNumberList_NEW";
+    public static String UNPROCESSING_LIST_YEAR = "EORTRFNumberList-DateIdYearSecrch_NEW";
+    public static String UNPROCESSING_LIST_MONTH = "EORTRFNumberList-DateIdMonthSecrch_NEW";
+    public static String UNPROCESSING_LIST_DATE = "DateIdSecrch_EORTRFNumberList_NEW";
     public static String UNPROCESSING_LIST_MATCH_STATUS = "MatchStatusSecrch_EORTRFNumberList";
     public static String UNPROCESSING_LIST_REJECT = "//*[@id='SpreadSheetEORTRFNumberRecTimeListGrid']/div[2]/table/tbody/tr[1]/td[10]/input";
     public static String UNPROCESSING_LIST_SEARCH = "//input[contains(@value,'Search')]";
-    public static String UNPROCESSING_LIST_SEARCH_CDDNO = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[1]";
-    public static String UNPROCESSING_LIST_SEARCH_TIME = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[2]";
-    public static String UNPROCESSING_LIST_SEARCH_DATE = "//*[@id='SpreadSheetEORTRFNumberListGrid']/div[2]/table/tbody/tr[1]/td[6]";
+    public static String UNPROCESSING_LIST_SEARCH_CDDNO = "//*[@id='SpreadSheetEORTRFNumberRecTimeListGrid_NEW']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String UNPROCESSING_LIST_SEARCH_TIME = "//*[@id='SpreadSheetEORTRFNumberRecTimeListGrid_NEW']/div[2]/table/tbody/tr[1]/td[2]";
+    public static String UNPROCESSING_LIST_SEARCH_DATE = "//*[@id='SpreadSheetEORTRFNumberRecTimeListGrid_NEW']/div[2]/table/tbody/tr[1]/td[5]";
     public static String UNPROCESSING_LIST_START_SERVICE = "butStartService-EORTRFNumberList";
     public static String UNPROCESSING_LIST_EXPORT = "btn_EORTRFNumberList_ExportExcel_NEW";
     
@@ -1292,19 +1297,19 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_ASSIGN = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[1]";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[1]/td[7]/input[2]";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[2]/td[1]/select";
-    public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "//input[contains(@value='Search')]";
+    public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "//*[@id='div-datatable-SpeakingArrangement-ExaminerList']/div[1]/table[2]/tbody/tr/td[9]/input";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "AI";
-    public static String SPK_DEPLOYMENT_ASSIGN_SAVE = "//button[@type='button']";	
+    public static String SPK_DEPLOYMENT_ASSIGN_SAVE = "/html/body/div[15]/div[3]/input[1]";	
     public static String SPK_DEPLOYMENT_ASSIGN_NUMBER = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[3]/td[7]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[2]";
-    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[3]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr[1]/td[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[3]";
-    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[4]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr[1]/td[4]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[4]";
-    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[1]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr[1]/td[9]/a[1]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[1]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL = "//button[@type='button']";
-    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr/td[9]/a[3]";
+    public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE = "//*[@id='arrexaminerlistGrid']/div[2]/table/tbody/tr[1]/td[9]/a[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[3]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_UAT = "//*[@id='spreadsheet-arrexaminerlist-table']/tbody/tr/td[9]/a[2]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_YES = "(//button[@type='button'])[2]";
@@ -1468,7 +1473,7 @@ public class ElementHelper {
     public static String KEY_DATES_VIEW_SEARCH_DATE = "//*[@id='SpreadSheetRoGetKeyDatesGrid_view']/div[2]/table/tbody/tr[1]/td[1]";
     
     //Predict Number National
-    public static String PREDICT_NUMBER_NATIONAL = "//*[@id='GeneralQuery']/ul/li[8]/a";
+    public static String PREDICT_NUMBER_NATIONAL = "//*[@id='GeneralQuery']/ul/li[9]/a";
     public static String PREDICT_NUMBER_NATIONAL_DATE_FROM = "predictNumberList_search_testdatefrom";
     public static String PREDICT_NUMBER_NATIONAL_DATE_TO = "predictNumberList_search_testdateto";
     public static String PREDICT_NUMBER_NATIONAL_SEARCH = "predictNumberList_search_btn";
@@ -1477,7 +1482,7 @@ public class ElementHelper {
     public static String PREDICT_NUMBER_NATIONAL_SEARCH_QUOTA3 = "//*[@id='predictNumberList_grid']/div[2]/table/tbody/tr[3]/td[6]";
     
     //Predict Number Session
-    public static String PREDICT_NUMBER_SESSION = "//*[@id='GeneralQuery']/ul/li[9]/a";
+    public static String PREDICT_NUMBER_SESSION = "//*[@id='GeneralQuery']/ul/li[10]/a";
     public static String PREDICT_NUMBER_SESSION_CITY = "SearchPredictNumberOfTestCenter_City";
     public static String PREDICT_NUMBER_SESSION_DATE_FROM = "PredictNumberOfTestCentert_search_testdatefrom";
     public static String PREDICT_NUMBER_SESSION_DATE_TO = "SearchPredictNumberOfTestCenter_search_testdateto";

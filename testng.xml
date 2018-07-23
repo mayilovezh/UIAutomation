@@ -24,41 +24,13 @@
 		<class name="com.selenium.test.tdol.ArrangeReports" />
 	</classes>
 </test> -->
-
-	<!-- <test name="TestCenter" preserve-order="true">
+	
+	<!-- <test name="CSCS" preserve-order="true">
 	<classes>
-		<class name="com.selenium.test.testcenter.TestCenterList" />
-		<class name="com.selenium.test.testcenter.TestBuildingList" />
-		<class name="com.selenium.test.testcenter.TestRoomList" />
-		<class name="com.selenium.test.testcenter.TestDateList" />
-		<class name="com.selenium.test.testcenter.TestSessionList" />
-		<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
-		<class name="com.selenium.test.testcenter.SpkRoomAvailability" />
+		<class name="com.selenium.test.cs.FreeCandidateAdd" />
+		<class name="com.selenium.test.cs.FreeCandidateList" />
 	</classes>
 </test>
-
-	<test name="PostTest" preserve-order="true">
-		<classes>
-			<class name="com.selenium.test.postest.CandidateStatusBlock" />
-			<class name="com.selenium.test.postest.JaggedProfileInfo" />
-			<class name="com.selenium.test.postest.SetScore" />
-			<class name="com.selenium.test.postest.ConfirmSetScore" />
-			<class name="com.selenium.test.postest.ScoreUpload" />
-			<class name="com.selenium.test.postest.ImportLog" />
-			<class name="com.selenium.test.postest.ScoreCheck" />
-			<class name="com.selenium.test.postest.StatusScoreCheck" />
-			<class name="com.selenium.test.postest.EMSManagement" />
-			<class name="com.selenium.test.postest.CandidateFromItap" />
-			<class name="com.selenium.test.postest.FESEComparison" />
-		</classes>
-	</test>
-
-	<test name="CSCS" preserve-order="true">
-		<classes>
-			<class name="com.selenium.test.cs.FreeCandidateAdd" />
-			<class name="com.selenium.test.cs.FreeCandidateList" />
-		</classes>
-	</test>
 
 	<test name="Marketing" preserve-order="true">
 		<classes>
@@ -86,9 +58,9 @@
 			<class name="com.selenium.test.eor.Refund" />
 			<class name="com.selenium.test.eor.ConfirmRefund" />
 			<class name="com.selenium.test.eor.EorAppList" />
-			<class name="com.selenium.test.eor.EorMarking" />
 			<class name="com.selenium.test.eor.FirstImportScore" />
 			<class name="com.selenium.test.eor.SecondImportScore" />
+			<class name="com.selenium.test.eor.EorMarking" />
 		</classes>
 	</test>
 
@@ -118,9 +90,9 @@
 		<classes>
 			<class name="com.selenium.test.examiner.ExaminerProfile" />
 			<class name="com.selenium.test.examiner.ExaminerTask" />
-			<class name="com.selenium.test.examiner.SpkDeployment" />
 			<class name="com.selenium.test.examiner.CoreDayManagement" />
 			<class name="com.selenium.test.examiner.WorkRecords" />
+			<class name="com.selenium.test.examiner.SpkDeployment" />
 			<class name="com.selenium.test.examiner.AvailabilitySummary" />
 		</classes>
 	</test>
@@ -142,19 +114,48 @@
 			<class name="com.selenium.test.generalquery.PredictNumberNational" />
 			<class name="com.selenium.test.generalquery.PredictNumberSession" />
 		</classes>
-	</test>   -->
-	
-	<test name="PreTestArrange" preserve-order="true">
+	</test>
+
+
+	<test name="PostTest" preserve-order="true">
 		<classes>
-		 <!--	<class name="com.selenium.test.pretestarrange.WrittenApportionment" /> 
+			<class name="com.selenium.test.postest.CandidateStatusBlock" />
+			<class name="com.selenium.test.postest.JaggedProfileInfo" />
+			<class name="com.selenium.test.postest.SetScore" />
+			<class name="com.selenium.test.postest.ConfirmSetScore" />
+			<class name="com.selenium.test.postest.ScoreUpload" />
+			<class name="com.selenium.test.postest.ImportLog" />
+			<class name="com.selenium.test.postest.ScoreCheck" />
+			<class name="com.selenium.test.postest.StatusScoreCheck" />
+			<class name="com.selenium.test.postest.EMSManagement" />
+			<class name="com.selenium.test.postest.CandidateFromItap" />
+			<class name="com.selenium.test.postest.FESEComparison" />
+		</classes>
+	</test>
+
+	<test name="TestCenter" preserve-order="true">
+		<classes>
+			<class name="com.selenium.test.testcenter.TestCenterList" />
+			<class name="com.selenium.test.testcenter.TestBuildingList" />
+			<class name="com.selenium.test.testcenter.TestRoomList" />
+			<class name="com.selenium.test.testcenter.TestDateList" />
+			<class name="com.selenium.test.testcenter.TestSessionList" />
+			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
+			<class name="com.selenium.test.testcenter.SpkRoomAvailability" />
+		</classes>
+	</test> -->
+
+	 <test name="PreTestArrange" preserve-order="true">
+		<classes>
+			<class name="com.selenium.test.pretestarrange.WrittenApportionment" />
 			<class name="com.selenium.test.pretestarrange.SpkArrangementPrebooking" />
 			<class name="com.selenium.test.pretestarrange.SpkArrangementUnPrebooking" />
 			<class name="com.selenium.test.pretestarrange.FreeTestArrangement" />
 			<class name="com.selenium.test.pretestarrange.IWASToMIS" />
-			<class name="com.selenium.test.pretestarrange.MISToIWAS" /> -->
-			<class name="com.selenium.test.pretestarrange.PrintDocuments" /> 
+			<class name="com.selenium.test.pretestarrange.MISToIWAS" />
+			<class name="com.selenium.test.pretestarrange.PrintDocuments" />
 		</classes>
-	</test> 
+	</test>  
 
 </suite> 
 

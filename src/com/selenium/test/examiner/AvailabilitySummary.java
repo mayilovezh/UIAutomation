@@ -38,6 +38,7 @@ public class AvailabilitySummary {
 			action.click(By.id(ElementHelper.EXAMINER));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.AVAILABILITY_SUMMARY));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.waitElementVisible(By.id(ElementHelper.AVAILABILITY_SUMMARY_REGIOM));
 			action.selectByValue(By.id(ElementHelper.AVAILABILITY_SUMMARY_REGIOM), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);

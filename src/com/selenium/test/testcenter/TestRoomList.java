@@ -205,6 +205,7 @@ public class TestRoomList {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			getRoomNumber();
 			action.click(By.linkText(ElementHelper.TR_SHARE_LOG));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.isTextPrest(By.xpath(ElementHelper.TR_SHARE_LOG_ROOM_NAME), roomName);
 			action.isTextPrest(By.xpath(ElementHelper.TR_SHARE_LOG_CREATE_BY), ElementHelper.USER_NAME_UAT);
 			action.click(By.xpath(ElementHelper.SAVE));
@@ -292,6 +293,7 @@ public class TestRoomList {
 			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.TEST_ROOM_LIST));
 			action.waitElementVisible(By.id(ElementHelper.TR_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByValue(By.id(ElementHelper.TR_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.TR_CENTER), ElementHelper.CENTER_UIBE);

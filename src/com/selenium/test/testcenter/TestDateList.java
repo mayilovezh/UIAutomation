@@ -49,6 +49,7 @@ public class TestDateList {
 			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.TEST_DATE_LIST));
 			action.waitElementVisible(By.id(ElementHelper.TD_YEAR));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByValue(By.id(ElementHelper.TD_YEAR), ElementHelper.YEAR_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 		} catch (InterruptedException e) {
@@ -198,7 +199,7 @@ public class TestDateList {
 			action.click(By.id(ElementHelper.TD_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			//UAT verify
-			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE1), testdate530);
+			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE3), testdate530);
 			//Dev verify
 //			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE1), testdate530);
 		} catch (InterruptedException e) {

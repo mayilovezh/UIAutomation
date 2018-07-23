@@ -52,7 +52,8 @@ public class MarketingQuery {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
-			action.waitElementVisible(By.xpath(ElementHelper.MARKETING_QUERY_SEARCH_LIST_ITEM));
+			Thread.sleep(ElementHelper.LONG_TIME);
+			action.isWebElementPreset(By.xpath(ElementHelper.MARKETING_QUERY_SEARCH_LIST_ITEM));
 			action.click(By.id(ElementHelper.MARKETING_QUERY_SEND_EMAIL));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));
@@ -68,6 +69,7 @@ public class MarketingQuery {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.MARKETING_QUERY_SEARCH));
+			Thread.sleep(ElementHelper.LONG_TIME);
 			action.waitElementVisible(By.xpath(ElementHelper.MARKETING_QUERY_SEARCH_LIST_ITEM));
 			action.click(By.id(ElementHelper.MARKETING_QUERY_SEND_EMAIL_LOG));
 			Thread.sleep(ElementHelper.SHORT_TIME);

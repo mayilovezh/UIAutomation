@@ -59,7 +59,7 @@ public class ConfirmSetScore {
 			action.click(By.xpath(ElementHelper.CONFIRM_SET_SCORE_SET));
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.xpath(ElementHelper.SAVE));
-			Thread.sleep(ElementHelper.LONG_TIME);
+			Thread.sleep(ElementHelper.LONG_TIME_A);
 			action.isTextPrest(By.xpath(ElementHelper.SET_SCORE_SUCCESS_TEXT), ElementHelper.SUCCESS_TEXT);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

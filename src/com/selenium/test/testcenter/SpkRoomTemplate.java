@@ -1,8 +1,11 @@
 package com.selenium.test.testcenter;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -29,29 +32,32 @@ public class SpkRoomTemplate {
 		new DriverInstance().teardown(driver);
 	}
 
-	public void navigate(){
+	public void navigate() {
 		try {
 			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
 			action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
 	}
-	
+
 	@Test(description = "Verify create warning")
 	public void step01_VerifyCreate() {
 		action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 		action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
 		action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
-		action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
 		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), createWarning);
 			action.click(By.xpath(ElementHelper.SAVE));
@@ -62,48 +68,56 @@ public class SpkRoomTemplate {
 	}
 
 	@Test(description = "Create the saturday template for 'UIBE'")
-	public void step02_CreateSaturday(){
+	public void step02_CreateSaturday() {
 		navigate();
 		try {
-			if(action.isTextExist(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_SATURDAY), templateSat)) {
-				new DriverInstance().teardown(driver);
-			} else {
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
-				Thread.sleep(ElementHelper.SHORT_TIME);
-				action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_SATURDAY));
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_BUILDING2));
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SEARCH));
-				action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_ROOM));
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
-				Thread.sleep(ElementHelper.SHORT_TIME);
+			List<WebElement> table = driver.findElements(By.xpath(ElementHelper.SPK_TEMPLATE_SEARCH_LIST));
+			for (WebElement element : table) {
+				if (element.getText().equals(templateSat)) {
+					new DriverInstance().teardown(driver);
+					break;
+				} else {
+					Thread.sleep(ElementHelper.SHORT_TIME_A);
+					action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
+					Thread.sleep(ElementHelper.SHORT_TIME);
+					action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_SATURDAY));
+					Thread.sleep(ElementHelper.SHORT_TIME_A);
+					action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_BUILDING2));
+					Thread.sleep(ElementHelper.SHORT_TIME_A);
+					action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SEARCH));
+					action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_ROOM));
+					Thread.sleep(ElementHelper.SHORT_TIME_A);
+					action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
+					Thread.sleep(ElementHelper.SHORT_TIME);
+				}
 			}
-		} catch (InterruptedException e) {                  
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
 	}
-	
+
 	@Test(description = "Create the thursday template for 'UIBE'")
-	public void step03_CreateThursday(){
+	public void step03_CreateThursday() {
 		navigate();
 		try {
-			if(action.isTextExist(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY), templateThu)) {
-				new DriverInstance().teardown(driver);
-			} else {
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
-				Thread.sleep(ElementHelper.SHORT_TIME);
-				action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_BUILDING1));
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SEARCH));
-				action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_ROOM));
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
-				Thread.sleep(ElementHelper.SHORT_TIME);
+			List<WebElement> table = driver.findElements(By.xpath(ElementHelper.SPK_TEMPLATE_SEARCH_LIST));
+			for (WebElement element : table) {
+				if (element.getText().equals(templateThu)) {
+					new DriverInstance().teardown(driver);
+					break;
+				} else {
+					Thread.sleep(ElementHelper.SHORT_TIME_A);
+					action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
+					Thread.sleep(ElementHelper.SHORT_TIME);
+					action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_BUILDING1));
+					Thread.sleep(ElementHelper.SHORT_TIME_A);
+					action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SEARCH));
+					action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_ROOM));
+					Thread.sleep(ElementHelper.SHORT_TIME_A);
+					action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
+					Thread.sleep(ElementHelper.SHORT_TIME);
+				}
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -174,10 +188,10 @@ public class SpkRoomTemplate {
 	}
 
 	@Test
-	public void step07_DeleteThu(){
+	public void step07_DeleteThu() {
 		navigate();
 		try {
-			if(action.isTextExist(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY), templateThu)) {
+			if (action.isTextExist(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY), templateThu)) {
 				new DriverInstance().teardown(driver);
 			} else {
 				Thread.sleep(ElementHelper.SHORT_TIME);
@@ -190,13 +204,13 @@ public class SpkRoomTemplate {
 			System.out.println(e);
 		}
 	}
-	
-	public void search(){
+
+	public void search() {
 		navigate();
 		action.waitElementVisibleToAssert(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_SATURDAY), templateSat);
 		action.waitElementVisibleToAssert(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY), templateThu);
 	}
-	
+
 	public boolean isroomChecked() {
 		boolean status = false;
 		try {

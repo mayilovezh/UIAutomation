@@ -181,9 +181,9 @@ public class WebDriverAction {
 	public boolean elementNotPreset(By by) {
 		try {
 			driver.findElement(by);
-			return false;
-		} catch (NoSuchElementException e) {
 			return true;
+		} catch (NoSuchElementException e) {
+			return false;
 		}
 	}
 

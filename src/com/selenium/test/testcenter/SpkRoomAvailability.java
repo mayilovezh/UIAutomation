@@ -16,7 +16,7 @@ public class SpkRoomAvailability {
 	WebDriverAction action;
 	String dateFrom = "2018-06-01";
 	String dateTo = "2018-06-30";
-	String testDate = "2018-06-30";
+	String testDate = "2018-07-28";
 	String modifyLog = "Modify TC Speaking Availability";
 
 	@BeforeMethod
@@ -35,13 +35,14 @@ public class SpkRoomAvailability {
 			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_AVAILABILITY));
 			action.waitElementVisible(By.id(ElementHelper.SPK_ROOM_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByValue(By.id(ElementHelper.SPK_ROOM_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.SPK_ROOM_PRODUCT), "1");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.SPK_ROOM_FORMAT), "1");
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
+			action.selectByValue(By.id(ElementHelper.SPK_ROOM_TEST_CENTER), ElementHelper.CENTER_UIBE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -53,14 +54,16 @@ public class SpkRoomAvailability {
 	public void step01_Create() {
 		search();
 		try {
-			if(action.isTextExist(By.xpath(ElementHelper.SPK_ROOM_SEARCH_TESTDATE), testDate)) {
+			if (action.isTextExist(By.xpath(ElementHelper.SPK_ROOM_SEARCH_TESTDATE), testDate)
+					&& action.isTextExist(By.xpath(ElementHelper.SPK_ROOM_SEARCH_TEMPLATE), "BJ-UIBE-Sat")) {
 				new DriverInstance().teardown(driver);
 			} else {
 				action.click(By.id(ElementHelper.SPK_ROOM_CREATE));
+				Thread.sleep(ElementHelper.SHORT_TIME);
 				action.waitElementVisible(By.id(ElementHelper.SPK_ROOM_CREATE_TEST_CENTER));
 				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
 				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.selectByIndex(By.id(ElementHelper.SPK_ROOM_CREATE_TEMPLATE_TYPE), 1);
+				action.selectByIndex(By.id(ElementHelper.SPK_ROOM_CREATE_TEMPLATE_TYPE), 2);
 				Thread.sleep(ElementHelper.SHORT_TIME_A);
 				action.selectByIndex(By.id(ElementHelper.SPK_ROOM_CREATE_TEMPLATE_NAME), 1);
 				Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -69,14 +72,6 @@ public class SpkRoomAvailability {
 				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_FORMAT), "1");
 				Thread.sleep(ElementHelper.SHORT_TIME_A);
 				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_TC), ElementHelper.CENTER_UIBE);
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_YEAR_FROM), ElementHelper.YEAR_VALUE);
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_MONTH_FROM), "6");
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_YEAR_TO), ElementHelper.YEAR_VALUE);
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.selectByValue(By.id(ElementHelper.SPK_ROOM_CREATE_MONTH_TO), "6");
 				Thread.sleep(ElementHelper.SHORT_TIME_A);
 				action.click(By.id(ElementHelper.SPK_ROOM_CREATE_SEARCH));
 				Thread.sleep(ElementHelper.SHORT_TIME);
@@ -104,6 +99,7 @@ public class SpkRoomAvailability {
 			action.click(By.id(ElementHelper.SPK_ROOM_SEARCH));
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_ROOM_SEARCH_TESTDATE)), testDate);
+			action.isTextExist(By.xpath(ElementHelper.SPK_ROOM_SEARCH_TEMPLATE), "BJ-UIBE-Sat");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -120,7 +116,7 @@ public class SpkRoomAvailability {
 		try {
 			search();
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.linkText(ElementHelper.SPK_ROOM_MODIFY));
+			action.click(By.xpath(ElementHelper.SPK_ROOM_MODIFY));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.sendkeys(By.id(ElementHelper.SPK_ROOM_MODIFY_REMARK), ElementHelper.REMARK_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -136,10 +132,9 @@ public class SpkRoomAvailability {
 		try {
 			search();
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.linkText(ElementHelper.SPK_ROOM_VIEW));
+			action.click(By.xpath(ElementHelper.SPK_ROOM_VIEW));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_ROOM_VIEW_REMARK)),
-					ElementHelper.REMARK_VALUE);
+			Assert.assertEquals(action.getText(By.id(ElementHelper.SPK_ROOM_VIEW_REMARK)), ElementHelper.REMARK_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.CANCEL));
 		} catch (InterruptedException e) {
@@ -153,7 +148,7 @@ public class SpkRoomAvailability {
 		try {
 			search();
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.linkText(ElementHelper.SPK_ROOM_LOG));
+			action.click(By.xpath(ElementHelper.SPK_ROOM_LOG));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_ROOM_LOG_CONTENT)), modifyLog);
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -169,7 +164,7 @@ public class SpkRoomAvailability {
 		try {
 			search();
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.linkText(ElementHelper.SPK_ROOM_DELETE));
+			action.click(By.xpath(ElementHelper.SPK_ROOM_DELETE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
@@ -184,6 +179,7 @@ public class SpkRoomAvailability {
 			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
 			action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
@@ -205,6 +201,7 @@ public class SpkRoomAvailability {
 			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
 			action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.CENTER_UIBE);

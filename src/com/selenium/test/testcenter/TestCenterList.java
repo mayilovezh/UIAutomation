@@ -51,9 +51,15 @@ public class TestCenterList {
 	public void navigate() {
 		action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 		action.waitElementVisibleToClick(By.xpath(ElementHelper.TEST_CENTER_LIST));
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 	
-	@Test(description = "Verify input value and select options warnings.")
+	/*@Test(description = "Verify input value and select options warnings.")
 	public void step01_Verifycreatewarning() {
 		navigate();
 		try {
@@ -104,7 +110,7 @@ public class TestCenterList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}
+	}*/
 
 	@Test(description = "Create the TestCenter UIBE")
 	public void step02_CreateTC(){

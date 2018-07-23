@@ -151,6 +151,7 @@ public class TestBuildingList {
 			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 			action.waitElementVisibleToClick(By.xpath(ElementHelper.TEST_BUILDING_LIST));
 			action.waitElementVisible(By.id(ElementHelper.TB_REGION));
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByValue(By.id(ElementHelper.TB_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.TB_CENTER), ElementHelper.CENTER_UIBE);

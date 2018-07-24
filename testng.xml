@@ -146,16 +146,18 @@
 	</test> -->
 
 	 <test name="PreTestArrange" preserve-order="true">
-		<classes>
-			<class name="com.selenium.test.pretestarrange.WrittenApportionment" />
-			<class name="com.selenium.test.pretestarrange.SpkArrangementPrebooking" />
-			<class name="com.selenium.test.pretestarrange.SpkArrangementUnPrebooking" />
-			<class name="com.selenium.test.pretestarrange.FreeTestArrangement" />
-			<class name="com.selenium.test.pretestarrange.IWASToMIS" />
-			<class name="com.selenium.test.pretestarrange.MISToIWAS" />
-			<class name="com.selenium.test.pretestarrange.PrintDocuments" />
-		</classes>
-	</test>  
+	<classes>
+		<!-- <class name="com.selenium.test.pretestarrange.WrittenApportionment" />
+		<class name="com.selenium.test.pretestarrange.SpkArrangementPrebooking" />
+		<class name="com.selenium.test.pretestarrange.SpkArrangementUnPrebooking" />
+		<class name="com.selenium.test.pretestarrange.FreeTestArrangement" />
+		<class name="com.selenium.test.pretestarrange.IWASToMIS" />
+		<class name="com.selenium.test.pretestarrange.MISToIWAS" />
+		<class name="com.selenium.test.pretestarrange.PrintDocuments" /> -->
+		<class name="com.selenium.test.pretestarrange.SetUploadStatus" />
+		<class name="com.selenium.test.pretestarrange.PrebookingSyncResult" />
+	</classes>
+</test>  
 
 </suite> 
 

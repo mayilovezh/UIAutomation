@@ -1535,7 +1535,7 @@ public class ElementHelper {
     public static String WRITTEN_APPORTIONMENT_EXPORT = "apportionmentlist_export";
     public static String WRITTEN_APPORTIONMENT_EXPORT_REGION = "apportionmentlistRegionexport";
     public static String WRITTEN_APPORTIONMENT_EXPORT_YEAR = "apportionmentlistDdlYear-Searchexport";
-    public static String WRITTEN_APPORTIONMENT_EXPORT_MONTH = "apportionmentlistSpan-month-Searchexport";
+    public static String WRITTEN_APPORTIONMENT_EXPORT_MONTH = "apportionmentlistDdlMonth-Searchexport";
     public static String WRITTEN_APPORTIONMENT_EXPORT_DATE = "apportionmentlistDateTimeexport";
     
     //Spk Arrangement
@@ -1671,7 +1671,45 @@ public class ElementHelper {
     public static String PRINT_DOCUMENTS_SEARCH_SPK_BUILDING = "//*[@id='PrintDocumentListGrid']/div[2]/table/tbody/tr[1]/td[8]";
     public static String PRINT_DOCUMENTS_SEARCH_SPK_ROOM = "//*[@id='PrintDocumentListGrid']/div[2]/table/tbody/tr[1]/td[9]";
     
+    //PreTest Log
+    public static String PRE_TEST_LOG = "//*[@id='PreTestArrange']/ul/li[8]/a";
+    public static String PRE_TEST_LOG_TEST_DATE = "//*[@id='SpreadSheetPreTestLogGrid']/div[2]/table/tbody/tr[1]/td[1]";
+    public static String PRE_TEST_LOG_MODULE = "//*[@id='SpreadSheetPreTestLogGrid']/div[2]/table/tbody/tr[1]/td[5]";
+    public static String PRE_TEST_LOG_OPERATION = "//*[@id='SpreadSheetPreTestLogGrid']/div[2]/table/tbody/tr[1]/td[6]";
+    public static String PRE_TEST_LOG_MMODIFY_USER = "//*[@id='SpreadSheetPreTestLogGrid']/div[2]/table/tbody/tr[1]/td[7]";
     
+    //Set Upload Status
+    public static String SET_UPLOAD_STATUS = "//*[@id='PreTestArrange']/ul/li[7]/a";
+    public static String SET_UPLOAD_STATUS_YEAR = "SetCandidateUploadStatus-TestDate-Select-Year-Search";
+    public static String SET_UPLOAD_STATUS_MONTH = "SetCandidateUploadStatus-TestDate-Select-Month-Search";
+    public static String SET_UPLOAD_STATUS_DATE = "selectTestDateTCSearch-SetCandidateUploadStatus";
+    public static String SET_UPLOAD_STATUS_SEARCH = "SetCandidateUploadStatusSearchQuery";
+    public static String SET_UPLOAD_STATUS_VIEW_YEAR = "SetCandidateUploadStatus-TestDate-Select-Year-Search_Show";
+    public static String SET_UPLOAD_STATUS_VIEW_MONTH = "SetCandidateUploadStatus-TestDate-Select-Month-Search_Show";
+    public static String SET_UPLOAD_STATUS_VIEW_DATE = "selectTestDateTCSearch-SetCandidateUploadStatus_Show";
+    public static String SET_UPLOAD_STATUS_VIEW_SEARCH = "SetCandidateUploadStatusSearchQuery_Show";
+    public static String SET_UPLOAD_STATUS_VIEW_TC = "//*[@id='showSetuploadStatusList-ViewLogGrid']/div[2]/table/tbody/tr[7]/td[1]";
+    public static String SET_UPLOAD_STATUS_VIEW_TEST_DATE = "//*[@id='showSetuploadStatusList-ViewLogGrid']/div[2]/table/tbody/tr[7]/td[2]";
+    public static String SET_UPLOAD_STATUS_VIEW_PRODUCT = "//*[@id='showSetuploadStatusList-ViewLogGrid']/div[2]/table/tbody/tr[7]/td[3]";
+    public static String SET_UPLOAD_STATUS_VIEW_QUOTA = "//*[@id='showSetuploadStatusList-ViewLogGrid']/div[2]/table/tbody/tr[7]/td[5]";
+    public static String SET_UPLOAD_STATUS_VIEW_REGISTERED = "//*[@id='showSetuploadStatusList-ViewLogGrid']/div[2]/table/tbody/tr[7]/td[6]";
+    public static String SET_UPLOAD_STATUS_VIEW_PRE_UPLOAD = "//*[@id='showSetuploadStatusList-ViewLogGrid']/div[2]/table/tbody/tr[7]/td[7]";
+    public static String SET_UPLOAD_STATUS_VIEW_AT_UPLOADED = "//*[@id='showSetuploadStatusList-ViewLogGrid']/div[2]/table/tbody/tr[7]/td[10]";
+    public static String SET_UPLOAD_STATUS_VIEW_AT_NEEA_RECEIVED = "//*[@id='showSetuploadStatusList-ViewLogGrid']/div[2]/table/tbody/tr[7]/td[11]";
     
+    //Pre booking SyncResult
+    public static String PREBOOKING_SYNC_RESULT = "//*[@id='PreTestArrange']/ul/li[9]/a";
+    public static String PREBOOKING_SYNC_RESULT_YEAR = "ddlYear-prebookingSyncResult";
+    public static String PREBOOKING_SYNC_RESULT_MONTH = "ddlMonth-prebookingSyncResult";
+    public static String PREBOOKING_SYNC_RESULT_DATE = "prebookingSyncResultTestDate";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH = "BtnprebookingSyncResultSearch";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH_TEST_DATE = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[7]/td[3]";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH_MIS2_RELEASED = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[7]/td[6]";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH_NEEA_RELEASED = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[7]/td[7]";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH_EXPAND = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[7]/td[1]/a";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH_MIS_AM = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[8]/td[2]/div/table/tbody/tr/td[6]/div";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH_MIS_PM = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[8]/td[2]/div/table/tbody/tr/td[7]/div";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH_NEEA_AM = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[8]/td[2]/div/table/tbody/tr/td[8]/div";
+    public static String PREBOOKING_SYNC_RESULT_SEARCH_NEEA_PM = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[8]/td[2]/div/table/tbody/tr/td[9]/div";
     
 }

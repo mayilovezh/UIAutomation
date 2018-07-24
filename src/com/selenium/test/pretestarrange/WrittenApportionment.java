@@ -26,6 +26,10 @@ public class WrittenApportionment {
 	String totalCandidates = "281";
 	String invigilators = "17";
 	String successMessage = "success.";
+	String testDate = "2018-05-19";
+	String module = "Written Candidates Allocation";
+	String operationAdd = "Save Candidate Allocation";
+	String operationDelete = "Delete Current Center Arrangement";
 	ExcelReader reader = new ExcelReader(".\\resource\\pretestArrange\\WrittenCandidatesAllocation.xlsx");
 
 	@BeforeMethod
@@ -109,6 +113,10 @@ public class WrittenApportionment {
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.chooseOkOnNextConfirmation();
 			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), successMessage);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.SAVE));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			navigateAndAssert(testDate, module, operationAdd, ElementHelper.USER_NAME_DEV);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -170,19 +178,24 @@ public class WrittenApportionment {
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.chooseOkOnNextConfirmation();
 			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), "Success.");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.SAVE));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			navigateAndAssert(testDate, module, operationDelete, ElementHelper.USER_NAME_DEV);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
 	}
-	
+
 	@Test(description = "Export the written testsession details")
 	public void step06_Export() {
 		action.waitElementVisibleToClick(By.id(ElementHelper.PRE_TEST_ARRANGE));
 		action.waitElementVisibleToClick(By.xpath(ElementHelper.WRITTEN_APPORTIONMENT));
-		action.waitElementVisible(By.id(ElementHelper.WRITTEN_APPORTIONMENT_EXPORT_REGION));
-		action.selectByValue(By.id(ElementHelper.WRITTEN_APPORTIONMENT_EXPORT_REGION), ElementHelper.REGION_VALUE);
 		try {
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.waitElementVisible(By.id(ElementHelper.WRITTEN_APPORTIONMENT_EXPORT_REGION));
+			action.selectByValue(By.id(ElementHelper.WRITTEN_APPORTIONMENT_EXPORT_REGION), ElementHelper.REGION_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.WRITTEN_APPORTIONMENT_EXPORT_YEAR), ElementHelper.YEAR_VALUE);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
@@ -207,5 +220,19 @@ public class WrittenApportionment {
 			}
 		}
 		return true;
+	}
+
+	public void navigateAndAssert(String testdate, String module, String operation, String user) {
+		action.waitElementVisibleToClick(By.xpath(ElementHelper.PRE_TEST_LOG));
+		try {
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.assertText(By.xpath(ElementHelper.PRE_TEST_LOG_TEST_DATE), testdate);
+			action.assertText(By.xpath(ElementHelper.PRE_TEST_LOG_MODULE), module);
+			action.assertText(By.xpath(ElementHelper.PRE_TEST_LOG_OPERATION), operation);
+			action.assertText(By.xpath(ElementHelper.PRE_TEST_LOG_MMODIFY_USER), user);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 }

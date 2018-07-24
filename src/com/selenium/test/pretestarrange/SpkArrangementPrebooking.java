@@ -26,6 +26,9 @@ public class SpkArrangementPrebooking {
 	String city = "BeiJing";
 	String testCenter = "BJ-BFSU";
 	String slotInfo = "08:20-08:40  08:40-09:00  09:00-09:20  09:20-09:40  09:40-10:00  10:00-10:20  10:20-10:35  10:35-10:55  10:55-11:15  11:15-11:35  11:35-11:55  11:55-12:15  12:15-13:00  13:00-13:20  13:20-13:40  13:40-14:00  14:00-14:20  14:20-14:40  14:40-14:55  14:55-15:15  15:15-15:35  15:35-15:55  15:55-16:15  ";
+	String moduleAlloaction = "	Speaking Candidate Allocation";
+	String operationAlloaction = "Setup Slot And Auto Candidate Apportionment";
+	String operationDeleteArrange = "Delete Current Center Arrangement";
 	ExcelReader reader = new ExcelReader(".\\resource\\pretestArrange\\Check Examiner Duplicate Arrangement.xlsx");
 
 	@BeforeMethod
@@ -105,15 +108,7 @@ public class SpkArrangementPrebooking {
 				action.waitElementVisibleToAssert(By.id(ElementHelper.RESULT_WARNING), "Success.");
 				action.click(By.xpath(ElementHelper.SAVE));
 				Thread.sleep(ElementHelper.SHORT_TIME);
-				action.click(By.id(ElementHelper.SPK_ARRANGEMENT_SPK_APPORTIONMENT_AUTO));
-				Thread.sleep(ElementHelper.SHORT_TIME_B);
-				action.click(By.xpath(ElementHelper.SPK_ARRANGEMENT_SPK_APPORTIONMENT_AUTO_CONFIRM));
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.id(ElementHelper.SPK_ARRANGEMENT_SPK_APPORTIONMENT_SAVE));
-				Thread.sleep(ElementHelper.SHORT_TIME_B);
-				action.chooseOkOnNextConfirmation();
-				action.waitElementVisibleToAssert(
-						By.xpath(ElementHelper.SPK_ARRANGEMENT_SPK_APPORTIONMENT_YES_CONFIRMATION), "Success.");
+				navigateAndAssert(testDate,moduleAlloaction,operationAlloaction,ElementHelper.USER_NAME_DEV);
 			} else {
 				action.click(By.id(ElementHelper.SPK_ARRANGEMENT_SPK_APPORTIONMENT_AUTO));
 				Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -123,6 +118,9 @@ public class SpkArrangementPrebooking {
 				Thread.sleep(ElementHelper.SHORT_TIME_B);
 				action.chooseOkOnNextConfirmation();
 				action.waitElementVisibleToAssert(By.id(ElementHelper.RESULT_WARNING), "Success.");
+				action.click(By.xpath(ElementHelper.SAVE));
+				Thread.sleep(ElementHelper.SHORT_TIME);
+				navigateAndAssert(testDate,moduleAlloaction,operationDeleteArrange,ElementHelper.USER_NAME_DEV);
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -137,6 +135,7 @@ public class SpkArrangementPrebooking {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.id(ElementHelper.SPK_ARRANGEMENT_AMEND_ARRANGE_ROOM_SEARCH));
+			Thread.sleep(ElementHelper.LONG_TIME);
 			action.waitElementVisibleToAssert(By.xpath(ElementHelper.SPK_ARRANGEMENT_TIME_SLOT_CDD_NAME), cddName);
 			action.click(By.xpath(ElementHelper.SPK_ARRANGEMENT_BACK));
 		} catch (InterruptedException e) {
@@ -236,5 +235,19 @@ public class SpkArrangementPrebooking {
 			}
 		}
 		return true;
+	}
+	
+	public void navigateAndAssert(String testdate, String module, String operation, String user) {
+		action.waitElementVisibleToClick(By.xpath(ElementHelper.PRE_TEST_LOG));
+		try {
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.assertText(By.xpath(ElementHelper.PRE_TEST_LOG_TEST_DATE), testdate);
+			action.assertText(By.xpath(ElementHelper.PRE_TEST_LOG_MODULE), module);
+			action.assertText(By.xpath(ElementHelper.PRE_TEST_LOG_OPERATION), operation);
+			action.assertText(By.xpath(ElementHelper.PRE_TEST_LOG_MMODIFY_USER), user);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 }

@@ -5,6 +5,7 @@ public class ElementHelper {
 	//MIS
 	public static String DEV_URL = "http://cnbjs1bms015:9003";
 	public static String UAT_URL = "http://cnbjs1bms001:9001";
+	public static String QA_URL = "http://cnbjs1bms015:9005";
 	public static String USER_NAME = "userName";
 	public static String PASSWORD = "password";
 	public static String USER_NAME_DEV = "ZYF"; 
@@ -1711,5 +1712,29 @@ public class ElementHelper {
     public static String PREBOOKING_SYNC_RESULT_SEARCH_MIS_PM = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[8]/td[2]/div/table/tbody/tr/td[7]/div";
     public static String PREBOOKING_SYNC_RESULT_SEARCH_NEEA_AM = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[8]/td[2]/div/table/tbody/tr/td[8]/div";
     public static String PREBOOKING_SYNC_RESULT_SEARCH_NEEA_PM = "//*[@id='SpreadSheetprebookingSyncResultGrid']/div[2]/table/tbody/tr[8]/td[2]/div/table/tbody/tr/td[9]/div";
+    
+    
+    //Secrurity
+    public static String SECURITY = "Security";
+    
+    //Check Suspicious
+    public static String CHECK_SUSPICIOUS = "//*[@id='Security']/ul/li[1]/a";
+    public static String CHECK_SUSPICIOUS_REGION = "ddlRegion-addsuspicious";
+    public static String CHECK_SUSPICIOUS_PRODUCT = "ExamProductTypeSearch-addsuspicious";
+    public static String CHECK_SUSPICIOUS_TESTDATE_FROM = "txtRegStartDate-addsuspicious";
+    public static String CHECK_SUSPICIOUS_TESTDATE_TO = "txtRegEndDate-addsuspicious";
+    public static String CHECK_SUSPICIOUS_TC = "ddlTestCenter-addsuspicious";
+    public static String CHECK_SUSPICIOUS_CDD_N0 = "txtCandidateNo-addsuspicious";
+    public static String CHECK_SUSPICIOUS_TEST_STATUS = "ddlTestStatus-addsuspicious";
+    public static String CHECK_SUSPICIOUS_SCORE_STATUS = "ddlScoreStatus-addsuspicious";
+    public static String CHECK_SUSPICIOUS_MARK = "chksus-addsuspicious";
+    public static String CHECK_SUSPICIOUS_SEARCH = "btnQuery-addsuspicious";
+    public static String CHECK_SUSPICIOUS_ADD = "buttonAdd";
+    public static String CHECK_SUSPICIOUS_ADD_LEVEL = "ddlSecurityStatus-addsuspicious";
+    public static String CHECK_SUSPICIOUS_ADD_REASON = "ddlSecurityReason-addsuspicious";
+    public static String CHECK_SUSPICIOUS_REMARK = "txtRemark-addsuspicious";
+    public static String CHECK_SUSPICIOUS_SEARCH_CDD_NO = "//*[@id='GridSuspiciousCandidateManuallyCheck']/div[2]/table/tbody/tr/td[2]";
+    public static String CHECK_SUSPICIOUS_SEARCH_LEVEL = "//*[@id='GridSuspiciousCandidateManuallyCheck']/div[2]/table/tbody/tr/td[16]";
+    
     
 }

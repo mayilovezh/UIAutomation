@@ -186,6 +186,15 @@ public class WebDriverAction {
 			return false;
 		}
 	}
+	
+	public boolean isContentExist(By by, String text) {
+		try {
+			istextprest = driver.findElement(by).getText().equals(text);
+			return istextprest;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
 
 	public void uploadFile(String filePath, By by) {
 		String path = System.getProperty("user.dir") + filePath;

@@ -9,7 +9,7 @@
 		<listener class-name="com.selenium.test.listener.TestNGListener" />
 	</listeners>
 
-	<test name="TDOL" preserve-order="true">
+	<!-- <test name="TDOL" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.tdol.TDPProfile" />
 			<class name="com.selenium.test.tdol.TDPTask" />
@@ -23,7 +23,7 @@
 			<class name="com.selenium.test.tdol.ArrangeBagDuty" />
 			<class name="com.selenium.test.tdol.ArrangeReports" />
 		</classes>
-	</test>
+	</test> -->
 
 	<test name="TestCenter" preserve-order="true">
 		<classes>

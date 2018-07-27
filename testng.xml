@@ -25,7 +25,7 @@
 		</classes>
 	</test> -->
 
-	<test name="TestCenter" preserve-order="true">
+<!-- 	<test name="TestCenter" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.testcenter.TestCenterList" />
 			<class name="com.selenium.test.testcenter.TestBuildingList" />
@@ -156,7 +156,7 @@
 			<class name="com.selenium.test.pretestarrange.SetUploadStatus" />
 			<class name="com.selenium.test.pretestarrange.PrebookingSyncResult" />
 		</classes>
-	</test>
+	</test> -->
 
 	<test name="Security" preserve-order="true">
 		<classes>

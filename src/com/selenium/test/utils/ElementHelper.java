@@ -1724,7 +1724,7 @@ public class ElementHelper {
     public static String CHECK_SUSPICIOUS_TESTDATE_FROM = "txtRegStartDate-addsuspicious";
     public static String CHECK_SUSPICIOUS_TESTDATE_TO = "txtRegEndDate-addsuspicious";
     public static String CHECK_SUSPICIOUS_TC = "ddlTestCenter-addsuspicious";
-    public static String CHECK_SUSPICIOUS_CDD_N0 = "txtCandidateNo-addsuspicious";
+    public static String CHECK_SUSPICIOUS_CDD_NO = "txtCandidateNo-addsuspicious";
     public static String CHECK_SUSPICIOUS_TEST_STATUS = "ddlTestStatus-addsuspicious";
     public static String CHECK_SUSPICIOUS_SCORE_STATUS = "ddlScoreStatus-addsuspicious";
     public static String CHECK_SUSPICIOUS_MARK = "chksus-addsuspicious";
@@ -1735,6 +1735,24 @@ public class ElementHelper {
     public static String CHECK_SUSPICIOUS_REMARK = "txtRemark-addsuspicious";
     public static String CHECK_SUSPICIOUS_SEARCH_CDD_NO = "//*[@id='GridSuspiciousCandidateManuallyCheck']/div[2]/table/tbody/tr/td[2]";
     public static String CHECK_SUSPICIOUS_SEARCH_LEVEL = "//*[@id='GridSuspiciousCandidateManuallyCheck']/div[2]/table/tbody/tr/td[16]";
+    public static String CHECK_SUSPICIOUS_EXPORT = "btnExport-addsuspicious";
+    public static String CHECK_SUSPICIOUS_EXPORT_HISTORY_RECORD = "btnExportHistoryRecord-addsuspicious";
     
+    //Suspicious List
+    public static String SUSPICIOUS_LIST = "//*[@id='Security']/ul/li[2]/a";
+    public static String SUSPICIOUS_LIST_REGION = "selectSuspiciousRegion";
+    public static String SUSPICIOUS_LIST_PRODUCT = "selectSuspiciousProduct";
+    public static String SUSPICIOUS_LIST_FORMAT = "selectSuspiciousFormat";
+    public static String SUSPICIOUS_LIST_MODULE = "selectSuspiciousTestModule";
+    public static String SUSPICIOUS_LIST_TESTDATE_FROM_YEAR = "SuspiciousCdt-Select-Year-Start-Search";
+    public static String SUSPICIOUS_LIST_TESTDATE_FROM_MONTH = "SuspiciousCdt-Select-Month-Start-Search";
+    public static String SUSPICIOUS_LIST_TESTDATE_FROM_DATE = "selectSuspiciousTestDateStart";
+    public static String SUSPICIOUS_LIST_TESTDATE_TO_YEAR = "SuspiciousCdt-Select-Year-End-Search";
+    public static String SUSPICIOUS_LIST_TESTDATE_TO_MONTH = "SuspiciousCdt-Select-Month-End-Search";
+    public static String SUSPICIOUS_LIST_TESTDATE_TO_DATE = "selectSuspiciousTestDateEnd";
+    public static String SUSPICIOUS_LIST_TC = "selectSuspiciousTestCenter";
+    public static String SUSPICIOUS_LIST_CDD_NO = "txtSuspiciousCandidateNo";
+    public static String SUSPICIOUS_LIST_LEVEL = "//*[@id='span-suspiciousLevel']/label[3]/input";
+    public static String SUSPICIOUS_LIST_SEARCH = "btnSuspiciousQuery";
     
 }

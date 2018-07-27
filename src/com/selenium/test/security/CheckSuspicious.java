@@ -16,7 +16,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class CheckSuspicious {
 	static WebDriver driver;
 	WebDriverAction action;
-	String testdateFrom = "2018-07-01";
+	String testdateFrom = "2018-07-21";
 	String testdateTo = "2018-07-21";
 	ExcelReader reader = new ExcelReader(".\\resource\\security\\CheckSuspicious.xlsx");
 	String levelOrange = "Orange";
@@ -60,7 +60,7 @@ public class CheckSuspicious {
 	public void step01_Add_Orange() {
 		try {
 			navigate();
-			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_N0), reader.getCellValue("Sheet1", 1, 0));
+			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_NO), reader.getCellValue("Sheet1", 1, 0));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.CHECK_SUSPICIOUS_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -87,7 +87,7 @@ public class CheckSuspicious {
 	public void step02_Add_Yellow() {
 		navigate();
 		try {
-			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_N0), reader.getCellValue("Sheet1", 2, 0));
+			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_NO), reader.getCellValue("Sheet1", 2, 0));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.CHECK_SUSPICIOUS_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -113,14 +113,14 @@ public class CheckSuspicious {
 	}
 	
 	@Test(description = "Add candidate security level 'Red' to suspicious list.")
-	public void step03_Add_red() {
+	public void step03_Add_Red() {
 		navigate();
 		try {
-			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_N0), reader.getCellValue("Sheet1", 3, 0));
+			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_NO), reader.getCellValue("Sheet1", 3, 0));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.CHECK_SUSPICIOUS_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			if (action.isTextExist(By.xpath(ElementHelper.CHECK_SUSPICIOUS_SEARCH_LEVEL),
+			if (action.isContentExist(By.xpath(ElementHelper.CHECK_SUSPICIOUS_SEARCH_LEVEL),
 					reader.getCellValue("Sheet1", 3, 1))) {
 				new DriverInstance().teardown(driver);
 			} else {
@@ -145,11 +145,11 @@ public class CheckSuspicious {
 	public void step04_Add_Delete() {
 		navigate();
 		try {
-			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_N0), reader.getCellValue("Sheet1", 4, 0));
+			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_NO), reader.getCellValue("Sheet1", 4, 0));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.CHECK_SUSPICIOUS_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			if (action.isTextExist(By.xpath(ElementHelper.CHECK_SUSPICIOUS_SEARCH_LEVEL),
+			if (action.isContentExist(By.xpath(ElementHelper.CHECK_SUSPICIOUS_SEARCH_LEVEL),
 					reader.getCellValue("Sheet1", 4, 1))) {
 				new DriverInstance().teardown(driver);
 			} else {
@@ -165,6 +165,36 @@ public class CheckSuspicious {
 				action.click(By.xpath(ElementHelper.SAVE));
 			}
 		} catch (InterruptedException | IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+	}
+	
+	@Test(description = "Export suspicious candidate.")
+	public void step05_Export() {
+		navigate();
+		try {
+			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_NO), reader.getCellValue("Sheet1", 5, 0));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.CHECK_SUSPICIOUS_SEARCH));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.CHECK_SUSPICIOUS_EXPORT));
+		} catch (IOException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+	}
+	
+	@Test(description = "Export suspicious candidate history record.")
+	public void step06_ExportHistoryRecord() {
+		navigate();
+		try {
+			action.sendkeys(By.id(ElementHelper.CHECK_SUSPICIOUS_CDD_NO), reader.getCellValue("Sheet1", 5, 0));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.CHECK_SUSPICIOUS_SEARCH));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.CHECK_SUSPICIOUS_EXPORT_HISTORY_RECORD));
+		} catch (IOException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}

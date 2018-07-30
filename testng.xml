@@ -160,7 +160,9 @@
 
 	<test name="Security" preserve-order="true">
 		<classes>
-			<class name="com.selenium.test.security.CheckSuspicious" />
+		<!-- 	<class name="com.selenium.test.security.CheckSuspicious" /> 
+			<class name="com.selenium.test.security.SuspiciousList" /> -->
+			<class name="com.selenium.test.security.ScoreCompareList" />
 		</classes>
 	</test>
 

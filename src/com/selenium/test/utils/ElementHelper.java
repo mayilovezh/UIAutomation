@@ -1754,5 +1754,38 @@ public class ElementHelper {
     public static String SUSPICIOUS_LIST_CDD_NO = "txtSuspiciousCandidateNo";
     public static String SUSPICIOUS_LIST_LEVEL = "//*[@id='span-suspiciousLevel']/label[3]/input";
     public static String SUSPICIOUS_LIST_SEARCH = "btnSuspiciousQuery";
+    public static String SUSPICIOUS_LIST_SEARCH_LEVEL_ORANGE = "//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr[1]/td[1]/div";
+    public static String SUSPICIOUS_LIST_SEARCH_LEVEL_YELLOW = "//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr[2]/td[1]/div";
+    public static String SUSPICIOUS_LIST_SEARCH_LEVEL_RED = "//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr[3]/td[1]/div";
+    public static String SUSPICIOUS_LIST_SEARCH_LEVEL_DELETE = "//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr[4]/td[1]/div";
+    public static String SUSPICIOUS_LIST_SEARCH_STATUS = "//div[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr/td[2]";
+    public static String SUSPICIOUS_LIST_SEARCH_TEST_DATE = "//div[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr/td[7]";
+    public static String SUSPICIOUS_LIST_SEARCH_CDD_NO = "//div[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr/td[11]";
+    public static String SUSPICIOUS_LIST_VIEW = "input[name='buttonView']";
+    public static String SUSPICIOUS_LIST_UPDATE = "name=buttonModify";
+    public static String SUSPICIOUS_LIST_UPDATE_REASON = "selectModifySecurityReason";
+    public static String SUSPICIOUS_LIST_VIEW_LOG_DETAIL = "//*[@id='suspicious-modifylog-table']/tbody/tr[1]/td[2]";
+    public static String SUSPICIOUS_LIST_EXPORT = "btnExportList-suspiciousCandidate";
+    public static String SUSPICIOUS_LIST_EXPORT_WATCHLIST = "btnExportWatchList-suspiciousCandidate";
+    
+    //Score Compare List
+    public static String SCORE_COMPARE_LIST = "//*[@id='Security']/ul/li[3]/a";
+    public static String SCORE_COMPARE_LIST_REGION = "ddlRegion-scorecompare";
+    public static String SCORE_COMPARE_LIST_YEAR = "ddlYear-scorecompare";
+    public static String SCORE_COMPARE_LIST_MONTH = "ddlMonth-scorecompare";
+    public static String SCORE_COMPARE_LIST_DATE = "ddlTestDate-scorecompare";
+    public static String SCORE_COMPARE_LIST_PRODUCT = "ddlExamProductType-scorecompare";
+    public static String SCORE_COMPARE_LIST_FORMAT = "ddlExamFormat-scorecompare";
+    public static String SCORE_COMPARE_LIST_TC = "ddlTestCenter-scorecompare";
+    public static String SCORE_COMPARE_LIST_SUSPICIOUS_TAG = "ddlSusTag-scorecompare";
+    public static String SCORE_COMPARE_LIST_SEARCH = "btnQuery-scorecompare";
+    public static String SCORE_COMPARE_LIST_SEARCH_PRODUCT = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[2]";
+    public static String SCORE_COMPARE_LIST_SEARCH_FORMAT = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[3]";
+    public static String SCORE_COMPARE_LIST_SEARCH_TEST_DATE = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[4]";
+    public static String SCORE_COMPARE_LIST_SEARCH_TC = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[5]";
+    public static String SCORE_COMPARE_LIST_SEARCH_CHINESE_NAME = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[6]";
+    public static String SCORE_COMPARE_LIST_SEARCH_CDD_NO = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[8]";
+    public static String SCORE_COMPARE_LIST_SEARCH_OVERALL_SCORE = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[14]";
+     
     
 }

@@ -1786,6 +1786,18 @@ public class ElementHelper {
     public static String SCORE_COMPARE_LIST_SEARCH_CHINESE_NAME = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[6]";
     public static String SCORE_COMPARE_LIST_SEARCH_CDD_NO = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[8]";
     public static String SCORE_COMPARE_LIST_SEARCH_OVERALL_SCORE = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr[1]/td[14]";
-     
+    public static String SCORE_COMPARE_LIST_TABLE_LIST_CDD_NO = "//*[@id='spreadsheet-scorecompare-table']/tbody/tr/td[8]";
+    public static String SCORE_COMPARE_LIST_SELECT_CHECKBOX = "chkscorecompare";
+    public static String SCORE_COMPARE_LIST_SAVE_SELECTED = "btnSaveselect-scorecompare";
+    public static String SCORE_COMPARE_LIST_DELETE_SELECTED = "btnDelete-scorecompare";
+    public static String SCORE_COMPARE_LIST_EXPORT = "btnExport-scorecompare";
+    public static String SCORE_COMPARE_LIST_EXPORT_HISTORY = "btnExportHistory-scorecompare";
+    
+    //Suspicious Report
+    public static String SUSPICIOUS_REPORT = "//*[@id='Security']/ul/li[4]/a";
+    public static String SUSPICIOUS_REPORT_REGION = "selectSuspiciousRegionReporting";
+    public static String SUSPICIOUS_REPORT_TYPE = "selSuspiciousCdtMISIIMalpracticeReporting";
+    public static String SUSPICIOUS_REPORT_EXPORT_IELTS = "btnSuspiciousCdtMISIIMalpracticeReporting";
+    public static String SUSPICIOUS_REPORT_EXPORT_UKVI_AND_LIFE_SKILLS = "btnSuspiciousCdtMISIIMalpracticeReportingukviandlifeskills";
     
 }

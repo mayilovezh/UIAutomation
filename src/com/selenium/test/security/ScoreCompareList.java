@@ -1,9 +1,11 @@
 package com.selenium.test.security;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,8 +18,11 @@ import com.selenium.test.utils.WebDriverAction;
 public class ScoreCompareList {
 	static WebDriver driver;
 	WebDriverAction action;
+	String cddNo;
 	ExcelReader reader = new ExcelReader(".\\resource\\security\\ScoreCompare.xlsx");
 	String sheetName = "Sheet1";
+	String levelOrange = "Orange";
+	String levelDelete = "Delete";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -190,25 +195,113 @@ public class ScoreCompareList {
 			System.out.println(e);
 		}
 	}
-	
-	@Test(description = "")
+
+	@Test(description = "Select a candidate to saved.")
 	public void step05_SaveSelected() {
-		
+		searchSavedSvsLRW();
+		getCandidateNo();
+		action.click(By.name(ElementHelper.SCORE_COMPARE_LIST_SELECT_CHECKBOX));
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.SCORE_COMPARE_LIST_SAVE_SELECTED));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.chooseOkOnNextConfirmation();
+			Thread.sleep(ElementHelper.SHORT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
-	
-	@Test(description = "")
+
+	@Test(description = "Check the added candidate suspicious list is 'Orange'.")
 	public void step06_CheckSavedSelect() {
-		
+		action.waitElementVisibleToClick(By.id(ElementHelper.SECURITY));
+		action.waitElementVisibleToClick(By.xpath(ElementHelper.SUSPICIOUS_LIST));
+		try {
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.selectByValue(By.id(ElementHelper.SUSPICIOUS_LIST_REGION), ElementHelper.REGION_VALUE);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.SUSPICIOUS_LIST_PRODUCT), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.SUSPICIOUS_LIST_FORMAT), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.SUSPICIOUS_LIST_CDD_NO), cddNo);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.SUSPICIOUS_LIST_LEVEL));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.SUSPICIOUS_LIST_SEARCH));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.assertText(By.xpath(ElementHelper.SUSPICIOUS_LIST_SEARCH_LEVEL_ORANGE), levelOrange);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
-	
-	@Test(description = "")
-	public void step07_Export() {
-		
+
+	@Test(description = "Select a candidate to delete.")
+	public void step07_DeleteSelected() {
+		searchDeleteSvsLRW();
+		getCandidateNo();
+		action.click(By.name(ElementHelper.SCORE_COMPARE_LIST_SELECT_CHECKBOX));
+		try {
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.SCORE_COMPARE_LIST_DELETE_SELECTED));
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			action.chooseOkOnNextConfirmation();
+			Thread.sleep(ElementHelper.SHORT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
-	
-	@Test(description = "")
-	public void step08_ExportHistory() {
-		
+
+	@Test(description = "Check the delete candidate suspicious level is 'Delete'.")
+	public void step08_CheckDeleteSelect() {
+		action.waitElementVisibleToClick(By.id(ElementHelper.SECURITY));
+		action.waitElementVisibleToClick(By.xpath(ElementHelper.SUSPICIOUS_LIST));
+		try {
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.selectByValue(By.id(ElementHelper.SUSPICIOUS_LIST_REGION), ElementHelper.REGION_VALUE);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.SUSPICIOUS_LIST_PRODUCT), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.SUSPICIOUS_LIST_FORMAT), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.sendkeys(By.id(ElementHelper.SUSPICIOUS_LIST_CDD_NO), cddNo);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.xpath(ElementHelper.SUSPICIOUS_LIST_LEVEL));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.SUSPICIOUS_LIST_SEARCH));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+			action.assertText(By.xpath(ElementHelper.SUSPICIOUS_LIST_SEARCH_LEVEL_ORANGE), levelDelete);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+	}
+
+	@Test(description = "Export candidate score compare list.")
+	public void step09_Export() {
+		searchDeleteSvsLRW();
+		try {
+			action.click(By.id(ElementHelper.SCORE_COMPARE_LIST_EXPORT));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+	}
+
+	@Test(description = "Export candidate score compare history.")
+	public void step10_ExportHistory() {
+		searchDeleteSvsLRW();
+		try {
+			action.click(By.id(ElementHelper.SCORE_COMPARE_LIST_EXPORT_HISTORY));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
 	}
 
 	public void selectMonth(int value) {
@@ -233,5 +326,59 @@ public class ScoreCompareList {
 
 	public void selectSuspiciousTag(String value) {
 		action.selectByValue(By.id(ElementHelper.SCORE_COMPARE_LIST_SUSPICIOUS_TAG), value);
+	}
+
+	public void searchSavedSvsLRW() {
+		navigate();
+		try {
+			selectMonth(0);
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			selectDate("10200");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			selectProduct(1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			selectFormat("1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			selectSuspiciousTag("1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.SCORE_COMPARE_LIST_SEARCH));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+	}
+
+	public void searchDeleteSvsLRW() {
+		navigate();
+		try {
+			selectMonth(0);
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			selectDate("10197");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			selectProduct(1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			selectFormat("1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			selectSuspiciousTag("1");
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.SCORE_COMPARE_LIST_SEARCH));
+			Thread.sleep(ElementHelper.WAIT_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+	}
+
+	public void getCandidateNo() {
+		List<WebElement> table = driver.findElements(By.xpath(ElementHelper.SCORE_COMPARE_LIST_TABLE_LIST_CDD_NO));
+		for (int i = 0; i < table.size(); i++) {
+			if (!table.get(i).getText().isEmpty()) {
+				cddNo = table.get(i).getText();
+				break;
+			} else {
+				driver.quit();
+			}
+		}
 	}
 }

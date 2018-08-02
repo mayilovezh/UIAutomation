@@ -81,17 +81,12 @@ public class SpkDeployment {
 			Thread.sleep(ElementHelper.LONG_TIME);
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_DATE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			// action.selectByValue(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL),
-			// "1");
-			// Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SEARCH));
 			Thread.sleep(ElementHelper.LONG_TIME);
 			action.click(By.id(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SAVE));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			// action.waitElementVisibleToAssert(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_NUMBER),
-			// "1");
+//			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SAVE));
+//			Thread.sleep(ElementHelper.WAIT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);

@@ -14,8 +14,6 @@ import com.selenium.test.utils.WebDriverAction;
 public class SpkRoomAvailability {
 	static WebDriver driver;
 	WebDriverAction action;
-	String dateFrom = "2018-06-01";
-	String dateTo = "2018-06-30";
 	String testDate = "2018-07-28";
 	String modifyLog = "Modify TC Speaking Availability";
 

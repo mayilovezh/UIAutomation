@@ -1,10 +1,10 @@
 package com.selenium.test.utils;
 
 import java.io.File;
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -194,6 +194,19 @@ public class WebDriverAction {
 		} catch (NoSuchElementException e) {
 			return false;
 		}
+	}
+	
+	public boolean isContentAppeared(String content) {
+		boolean status = false;
+		try {
+			driver.findElement(By.xpath("//*[contains(.,'" + content + "')]"));
+			System.out.println(content + "  is appeard!");
+			status = true;
+		} catch (NoSuchElementException e) {
+			status = false;
+			System.out.println("'" + content + "' does not exist!");
+		}
+		return status;
 	}
 
 	public void uploadFile(String filePath, By by) {

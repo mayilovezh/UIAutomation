@@ -55,7 +55,7 @@ public class FreeTestArrangement {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_TYPE), "50");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.waitElementVisibleToClick(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH));
+			action.click(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_FREE_TYPE),
 					reader.getCellValue("Sheet1", 1, 0));
@@ -81,7 +81,7 @@ public class FreeTestArrangement {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_TYPE), "51");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.waitElementVisibleToClick(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH));
+			action.click(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_FREE_TYPE),
 					reader.getCellValue("Sheet1", 2, 0));
@@ -107,7 +107,7 @@ public class FreeTestArrangement {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_TYPE), "52");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.waitElementVisibleToClick(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH));
+			action.click(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_FREE_TYPE_ITEM2),
 					reader.getCellValue("Sheet1", 3, 0));
@@ -133,19 +133,19 @@ public class FreeTestArrangement {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.selectByValue(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_TYPE), "53");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.waitElementVisibleToClick(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH));
+			action.click(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_FREE_TYPE),
 					reader.getCellValue("Sheet1", 4, 0));
-			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_CDD_NO),
+			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_CDD_NO_ITEM2),
 					reader.getCellValue("Sheet1", 4, 1));
-			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_CDD_NAME),
+			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_CDD_NAME_ITEM2),
 					reader.getCellValue("Sheet1", 4, 2));
-			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_LAST_TEST_DATE), lastTestDate);
-			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_LAST_TC),
+			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_LAST_TEST_DATE_ITEM2), lastTestDate);
+			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_LAST_TC_ITEM2),
 					reader.getCellValue("Sheet1", 4, 4));
-			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_TEST_DATE), testDate);
-			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_TC),
+			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_TEST_DATE_ITEM2), testDate);
+			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_SEARCH_TC_ITEM2),
 					reader.getCellValue("Sheet1", 4, 6));
 		} catch (InterruptedException | IOException e) {
 			// TODO Auto-generated catch block
@@ -153,7 +153,7 @@ public class FreeTestArrangement {
 		}
 	}
 
-	@Test(description = "Check and add testroom for 'Free Listening'")
+	/*	@Test(description = "Check and add testroom for 'Free Listening'")
 	public void step01_AddTestRoom_Listening() {
 		search_Listening();
 		try {
@@ -285,8 +285,8 @@ public class FreeTestArrangement {
 		}
 	}
 
-	@Test(description = "Check and add testroom for 'Free Writing'")
-	public void step09_AddTestRoom_Writing() {
+	@Test(description = "Check and add testroom for 'Free Writting'")
+	public void step09_AddTestRoom_Writting() {
 		search_Writing();
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -305,8 +305,8 @@ public class FreeTestArrangement {
 		}
 	}
 
-	@Test(description = "Amend testroom to 'ROM 2' for 'Free Writing'")
-	public void step10_AmendTestRoom_Writing() {
+	@Test(description = "Amend testroom to 'ROM 2' for 'Free Writting'")
+	public void step10_AmendTestRoom_Writting() {
 		search_Writing();
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -321,8 +321,8 @@ public class FreeTestArrangement {
 		}
 	}
 
-	@Test(description = "View the details for 'Free Writing'")
-	public void step11_View_Writing() {
+	@Test(description = "View the details for 'Free Writting'")
+	public void step11_View_Writting() {
 		search_Writing();
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -337,8 +337,8 @@ public class FreeTestArrangement {
 		}
 	}
 
-	@Test(description = "Delete the test room arrange for 'Free Writing'")
-	public void step12_DeleteTestRoom_Writing() {
+	@Test(description = "Delete the test room arrange for 'Free Writting'")
+	public void step12_DeleteTestRoom_Writting() {
 		search_Writing();
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
@@ -349,7 +349,7 @@ public class FreeTestArrangement {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}
+	}*/
 
 	@Test(description = "Check and add test room for 'Free Speaking'")
 	public void step13_AddTestRoom_Speaking() {
@@ -378,7 +378,7 @@ public class FreeTestArrangement {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_AMEND_ITEM2));
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.selectByIndex(By.id(ElementHelper.FREE_TEST_ARRANGEMENT_ADD_SPK_ROOM), 2);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.xpath(ElementHelper.SAVE));
@@ -394,8 +394,8 @@ public class FreeTestArrangement {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_VIEW_SPK));
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.waitElementVisibleToAssert(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_VIEW_ROOM_SPK), roomName);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.assertText(By.xpath(ElementHelper.FREE_TEST_ARRANGEMENT_VIEW_ROOM_SPK), roomName);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {

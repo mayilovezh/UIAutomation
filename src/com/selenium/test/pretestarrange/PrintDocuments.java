@@ -15,10 +15,10 @@ public class PrintDocuments {
 	WebDriverAction action;
 	String cddNo = "049938";
 	String cddName = "LI YANG";
-	String examinerInitial = "JD3";
-	String examinerNo = "985184";
+	String examinerInitial = "AL2";
+	String examinerNo = "986179";
 	String spkBuilding = "No.1 Building, Hongmiao Campus of Capital University of Economics and Business";
-	String spkRoom = "RM02";
+	String spkRoom = "RM01";
 	
 	@BeforeMethod
 	public void setUp() throws Exception {

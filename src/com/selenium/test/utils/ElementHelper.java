@@ -275,8 +275,8 @@ public class ElementHelper {
 	public static String SPK_TEMPLATE_ADD_SATURDAY = "//div[@id='spk-TemplateType']/input[2]";
 	public static String SPK_TEMPLATE_ADD_ROOM = "//*[@id='SPKRoomTemplateTableTest']/table/tbody/tr[1]/td[2]"; 
 	public static String SPK_TEMPLATE_ADD_SAVE = "submitSpeakingRoomTemplate";
-	public static String SPK_TEMPLATE_NAME_SATURDAY = "//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr[1]/td[4]";
-	public static String SPK_TEMPLATE_NAME_THURSDAY = "//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr[2]/td[4]";
+	public static String SPK_TEMPLATE_NAME_THURSDAY = "//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr[1]/td[4]";
+	public static String SPK_TEMPLATE_NAME_SATURDAY = "//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr[2]/td[4]";
 	public static String SPK_TEMPLATE_MODIFY = "Modify";
 	public static String SPK_TEMPLATE_VIEW = "View";
 	public static String SPK_TEMPLATE_DELETE = "Delete";
@@ -1299,7 +1299,7 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[1]/td[7]/input[2]";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[2]/td[1]/select";
     public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "//*[@id='div-datatable-SpeakingArrangement-ExaminerList']/div[1]/table[2]/tbody/tr/td[9]/input";
-    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "AI";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "AR";
     public static String SPK_DEPLOYMENT_ASSIGN_SAVE = "/html/body/div[15]/div[3]/input[1]";	
     public static String SPK_DEPLOYMENT_ASSIGN_NUMBER = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[3]/td[7]";
     public static String SPK_DEPLOYMENT_SHOW_EXAMINER_LIST = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[2]";

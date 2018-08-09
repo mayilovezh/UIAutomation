@@ -82,7 +82,7 @@ public class TestDateList {
 
 		List<String> formatOptions = Arrays
 				.asList(new String[] { ElementHelper.SELECT_ALL, ElementHelper.FORMAT_PB, ElementHelper.FORMAT_CB,
-						ElementHelper.FORMAT_CD_AM, ElementHelper.FORMAT_CD_PM, ElementHelper.FORMAT_CD_EV });
+						ElementHelper.FORMAT_CD_AM, ElementHelper.FORMAT_CD_PM1, ElementHelper.FORMAT_CD_PM2 });
 		int formatSize = formatOptions.size();
 		Select formatselectStage = new Select(driver.findElement(By.id(ElementHelper.TD_EXAM_FORMAT)));
 		Assert.assertFalse(formatselectStage.isMultiple());

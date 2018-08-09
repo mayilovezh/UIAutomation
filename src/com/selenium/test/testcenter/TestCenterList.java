@@ -59,7 +59,7 @@ public class TestCenterList {
 		}
 	}
 	
-	/*@Test(description = "Verify input value and select options warnings.")
+	@Test(description = "Verify input value and select options warnings.")
 	public void step01_Verifycreatewarning() {
 		navigate();
 		try {
@@ -110,7 +110,7 @@ public class TestCenterList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 
 	@Test(description = "Create the TestCenter UIBE")
 	public void step02_CreateTC(){
@@ -198,8 +198,6 @@ public class TestCenterList {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.clear(By.id(ElementHelper.TC_MODIFY_DESCRIPTION));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.clear(By.id(ElementHelper.TC_MODIFY_DESCRIPTION));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.sendkeys(By.id(ElementHelper.TC_MODIFY_DESCRIPTION), ElementHelper.REMARK_VALUE1);
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));
@@ -215,7 +213,7 @@ public class TestCenterList {
 		try {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.click(By.linkText(ElementHelper.TC_VIEW));
-			Thread.sleep(ElementHelper.SHORT_TIME);
+			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_VIEW_NAME)), tcName);
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.xpath(ElementHelper.SAVE));

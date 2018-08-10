@@ -2,7 +2,7 @@ package com.selenium.test.cs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -48,170 +48,210 @@ public class FreeCandidateAdd {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 
-	/*@Test
+	@Test
 	public void step01_CreateLR() throws Exception {
 		search();
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LR));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_READING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+		WebElement add = driver.findElement(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LR));
+		if (add.isDisplayed()) {
+			new DriverInstance().teardown(driver);
+		} else {
+			action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LR));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_READING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		}
 	}
 
 	@Test
 	public void step02_CreateLW() throws Exception {
 		search();
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LW));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+		WebElement add = driver.findElement(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LW));
+		if (add.isDisplayed()) {
+			new DriverInstance().teardown(driver);
+		} else {
+			action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LW));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		}
 	}
 
 	@Test
 	public void step03_CreateLS() throws Exception {
 		search();
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LS));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 3);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+		WebElement add = driver.findElement(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LS));
+		if (add.isDisplayed()) {
+			new DriverInstance().teardown(driver);
+		} else {
+			action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LS));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 3);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		}
 	}
 
 	@Test
 	public void step04_CreateLRS() throws Exception {
 		search();
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LRS));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_READING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 4);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+		WebElement add = driver.findElement(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LRS));
+		if (add.isDisplayed()) {
+			new DriverInstance().teardown(driver);
+		} else {
+			action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LRS));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_READING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 4);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		}
 	}
 
 	@Test
 	public void step05_CreateRW() throws Exception {
 		search();
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_RW));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_READING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 5);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+		WebElement add = driver.findElement(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_RW));
+		if (add.isDisplayed()) {
+			new DriverInstance().teardown(driver);
+		} else {
+			action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_RW));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_READING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 5);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		}
 	}
 
 	@Test
 	public void step06_CreateWS() throws Exception {
 		search();
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_WS));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 6);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+		WebElement add = driver.findElement(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_WS));
+		if (add.isDisplayed()) {
+			new DriverInstance().teardown(driver);
+		} else {
+			action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_WS));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 6);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		}
 	}
 
 	@Test
 	public void step07_CreateRWS() throws Exception {
 		search();
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_RWS));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_READING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 7);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+		WebElement add = driver.findElement(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_RWS));
+		if (add.isDisplayed()) {
+			new DriverInstance().teardown(driver);
+		} else {
+			action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_RWS));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_READING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 7);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		}
 	}
 
 	@Test
 	public void step08_CreateLWS() throws Exception {
 		search();
-		action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LWS));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 8);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}*/
+		WebElement add = driver.findElement(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LWS));
+		if (add.isDisplayed()) {
+			new DriverInstance().teardown(driver);
+		} else {
+			action.click(By.xpath(ElementHelper.FREE_CANDIDATE_ADD_LWS));
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_LISTENING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_WRITTING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.click(By.id(ElementHelper.FREE_CANDIDATE_ADD_SPEAKING));
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_MONTH), 2);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TESTDATE), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_TC), 1);
+			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			action.selectByIndex(By.id(ElementHelper.FREE_CANDIDATE_ADD_REASON), 8);
+			Thread.sleep(ElementHelper.SHORT_TIME);
+			action.click(By.xpath(ElementHelper.SAVE));
+		}
+	}
 
 }

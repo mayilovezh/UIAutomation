@@ -45,7 +45,7 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 
-	/*@Test
+	@Test
 	public void step01_CreateProfile() throws Exception {
 		navigate();
 		Thread.sleep(ElementHelper.SHORT_TIME);
@@ -77,7 +77,7 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 
 	@Test
 	public void step02_SearchProfile() throws Exception {
@@ -103,7 +103,7 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	/*@Test
+	@Test
 	public void step04_SetStatus() throws Exception {
 		navigate();
 		searchExaminer();
@@ -141,7 +141,7 @@ public class ExaminerProfile {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.EXAMINER_PROFILE_STATUS_YES));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
+	}
 	
 	@Test
 	public void step05_ProfileLog() throws Exception {
@@ -156,7 +156,7 @@ public class ExaminerProfile {
 	
 	public void searchExaminer() throws InterruptedException {
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.EXAMINER_PROFILE_EXAMINERNO), examinerNo);
+		action.sendkeys(By.id(ElementHelper.EXAMINER_PROFILE_EXAMINER_EMAIL), email);
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.EXAMINER_PROFILE_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);

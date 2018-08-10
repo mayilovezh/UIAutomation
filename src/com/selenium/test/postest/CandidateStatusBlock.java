@@ -71,7 +71,7 @@ public class CandidateStatusBlock {
 		}
 	}
 
-/*	@Test(description = "Modify the candidate profile.")
+	@Test(description = "Modify the candidate profile.")
 	public void step01_ModifypProfile(){
 		try {
 			search();
@@ -91,7 +91,7 @@ public class CandidateStatusBlock {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 
 	@Test(description = "Modify the candidate score status to 'TRF Sent'.")
 	public void step02_ModifyStatus(){
@@ -111,7 +111,6 @@ public class CandidateStatusBlock {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.CAN_STATUS_BLOCK_STATUS_SAVE));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-//			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), ElementHelper.WARNING_TEXT);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);

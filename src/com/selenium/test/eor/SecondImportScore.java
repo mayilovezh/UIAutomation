@@ -15,7 +15,7 @@ import com.selenium.test.utils.WebDriverAction;
 public class SecondImportScore {
 	static WebDriver driver;
 	WebDriverAction action;
-	
+
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -26,7 +26,7 @@ public class SecondImportScore {
 	public void close() {
 		new DriverInstance().teardown(driver);
 	}
-	
+
 	public void navigate() throws Exception {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.CS_EOR));
@@ -40,7 +40,7 @@ public class SecondImportScore {
 		action.selectByValue(By.id(ElementHelper.SECOND_IMPORT_SCORE_DATE), "2017-01-25T00:00:00");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
-	
+
 	@Test
 	public void step01_UploadSpeaking() throws Exception {
 		navigate();
@@ -49,7 +49,7 @@ public class SecondImportScore {
 		action.click(By.cssSelector(ElementHelper.SECOND_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
+
 	@Test
 	public void step02_UploadWriting() throws Exception {
 		navigate();
@@ -60,7 +60,7 @@ public class SecondImportScore {
 		action.click(By.cssSelector(ElementHelper.SECOND_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
+
 	@Test
 	public void step03_UploadLR() throws Exception {
 		navigate();
@@ -71,13 +71,11 @@ public class SecondImportScore {
 		action.click(By.cssSelector(ElementHelper.SECOND_IMPORT_SCORE_UPLOAD));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
-	
-	
+
 	public void upload(String filePath) {
 		String path = System.getProperty("user.dir") + filePath;
 		File file = new File(path);
-		if(file.exists()) {
+		if (file.exists()) {
 			driver.findElement(By.id(ElementHelper.SECOND_IMPORT_SCORE_SELECTFILE)).sendKeys(file.getPath());
 		}
 	}

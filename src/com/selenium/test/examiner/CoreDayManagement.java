@@ -51,8 +51,8 @@ public class CoreDayManagement {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.xpath(ElementHelper.CORE_DAY_ADD_DATE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-//		action.click(By.xpath(ElementHelper.SAVE));
-//		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.xpath(ElementHelper.SAVE));
+		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
 	@Test

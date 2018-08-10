@@ -34,84 +34,8 @@ public class ExaminerTask {
 		Thread.sleep(ElementHelper.LONG_TIME_A);
 	}
 	
-/*	@Test
-	public void step01_CreateSpeakingTask() throws Exception {
-		navigate();
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_SPEAKING));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_SPEAKING_REGION), "1");
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_SPEAKING_TESTDATE),"10217");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_SPEAKING_TESTDAY_1));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_SPEAKING_TESTDAY_2));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_SPEAKING_TESTDAY_3));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_SPEAKING_TAG), "0");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.EXAMINER_TASK_SPEAKING_SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-	
 	@Test
-	public void step02_CreateWritingTask() throws Exception {
-		navigate();
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_WRITING));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_WRITING_REGION), "1");
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_WRITING_TESTDATE),"10217");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_WRITING_TESTDAY));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.EXAMINER_TASK_WRITING_MARKING_VENUE), "BC Office");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.EXAMINER_TASK_WRITING_SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-	
-	@Test
-	public void step03_Create2ndMarkingTask() throws Exception {
-		navigate();
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_2ND_MARKING));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_2ND_MARKING_REGION), "1");
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_2ND_MARKING_TESTDATE),"10217");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_2ND_MARKING_TESTDAY));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.EXAMINER_TASK_2ND_MARKING_VENUE), "BC Office");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.EXAMINER_TASK_2ND_MARKING_SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-	
-	@Test
-	public void step04_CreateEorMarkingTask() throws Exception {
-		navigate();
-		action.click(By.xpath(ElementHelper.EXAMINER_TASK_EOR_MARKING));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_EOR_MARKING_REGION), "1");
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.sendkeys(By.id(ElementHelper.EXAMINER_TASK_EOR_MARKING_DESPATCH_DATE),"02/06/2018");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.EXAMINER_TASK_EOR_MARKING_REMARK));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.EXAMINER_TASK_EOR_MARKING_ADD_TESTDAY),"07/06/2018");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.EXAMINER_TASK_EOR_MARKING_REMARK));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.name(ElementHelper.EXAMINER_TASK_EOR_MARKING_TESTDAY));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.EXAMINER_TASK_EOR_MARKING_SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
-	
-	@Test
-	public void step05_SearchSpeaking() throws Exception {
+	public void step01_SearchSpeaking() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -130,7 +54,7 @@ public class ExaminerTask {
 	}
 	
 	@Test
-	public void step06_SearchWriting() throws Exception {
+	public void step02_SearchWriting() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -149,7 +73,7 @@ public class ExaminerTask {
 	}
 	
 	@Test
-	public void step07_Search2ndMarking() throws Exception {
+	public void step03_Search2ndMarking() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -168,7 +92,7 @@ public class ExaminerTask {
 	}
 	
 	@Test
-	public void step08_ReportByWriting() throws Exception {
+	public void step04_ReportByWriting() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
@@ -205,7 +129,7 @@ public class ExaminerTask {
 	}
 	
 	@Test
-	public void step09_LogByWriting() throws Exception {
+	public void step05_LogByWriting() throws Exception {
 		navigate();
 		action.selectByValue(By.id(ElementHelper.EXAMINER_TASK_YEAR), "2018");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

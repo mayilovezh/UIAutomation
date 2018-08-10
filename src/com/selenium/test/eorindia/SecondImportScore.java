@@ -72,8 +72,6 @@ public class SecondImportScore {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	
-	
 	public void upload(String filePath) {
 		String path = System.getProperty("user.dir") + filePath;
 		File file = new File(path);

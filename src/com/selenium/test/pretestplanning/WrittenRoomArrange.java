@@ -1,9 +1,7 @@
 package com.selenium.test.pretestplanning;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -48,19 +46,6 @@ public class WrittenRoomArrange {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.id(ElementHelper.WRITTEN_ROOM_ARRANGE_ADD_ROOM));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-//		action.selectByValue(By.id(ElementHelper.WRA_ADD_ROOM_BUILDING), "162");
-//		Thread.sleep(ElementHelper.LONG_TIME);
-//		action.click(By.xpath(ElementHelper.WRA_ADD_ROOM_SAVE));
-//		Thread.sleep(ElementHelper.SHORT_TIME);
-//		action.click(By.id(ElementHelper.WRA_SELECT_ALL));
-//		Thread.sleep(ElementHelper.SHORT_TIME_B);
-//		action.click(By.id(ElementHelper.WRA_SAVE));
-//		Thread.sleep(ElementHelper.SHORT_TIME);
-//		action.click(By.xpath(ElementHelper.WRA_SAVE_CONFIRM));
-//		Thread.sleep(ElementHelper.SHORT_TIME);
-//		action.click(By.xpath(ElementHelper.WRA_CONFIRM));
-//		Thread.sleep(ElementHelper.SHORT_TIME);
-//		Assert.assertEquals(action.getText(By.id(ElementHelper.WRA_SAVE_TEXT)), "Success.");
 	}
 	
 	@Test
@@ -72,9 +57,5 @@ public class WrittenRoomArrange {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.WRA_DELETE_SELECT));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-//		action.click(By.id(ElementHelper.WRA_DELETE));
-//		Alert confirm = driver.switchTo().alert();
-//		confirm.accept();
-//		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 }

@@ -15,7 +15,6 @@ public class FilterWordsList {
 	static WebDriver driver;
 	WebDriverAction action;
 	String words = "Automation";
-	String name = "ZYF";
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);

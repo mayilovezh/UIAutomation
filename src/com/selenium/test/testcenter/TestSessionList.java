@@ -35,7 +35,7 @@ public class TestSessionList {
 		new DriverInstance().teardown(driver);
 	}
 	
-	/*@Test(description = "Verify select options and existed session warnings")
+	@Test(description = "Verify select options and existed session warnings")
 	public void step01_VerifyCreate() {
 		action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
 		action.waitElementVisibleToClick(By.xpath(ElementHelper.TEST_SESSION_LIST));
@@ -60,7 +60,7 @@ public class TestSessionList {
 			
 			List<String> formatOptions = Arrays
 					.asList(new String[] { ElementHelper.SELECT_DEFAULT, ElementHelper.FORMAT_PB, ElementHelper.FORMAT_CB,
-							ElementHelper.FORMAT_CD_AM, ElementHelper.FORMAT_CD_PM, ElementHelper.FORMAT_CD_EV });
+							ElementHelper.FORMAT_CD_AM, ElementHelper.FORMAT_CD_PM1, ElementHelper.FORMAT_CD_PM2 });
 			int formatSize = formatOptions.size();
 			Select formatselectStage = new Select(driver.findElement(By.id(ElementHelper.TS_CREATE_FORMAT)));
 			Assert.assertFalse(formatselectStage.isMultiple());
@@ -87,7 +87,7 @@ public class TestSessionList {
 			// TODO Auto-generated catch block
 			System.out.println(e);
 		}
-	}*/
+	}
 
 	@Test(description = "Create the test session of UIBE")
 	public void step02_Create() {
@@ -196,6 +196,5 @@ public class TestSessionList {
 		action.waitElementVisibleToAssert(By.xpath(ElementHelper.TS_TEST_CENTER), testCenter);
 		
 	}
-	
 
 }

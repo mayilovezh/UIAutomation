@@ -65,7 +65,7 @@ public class SpkDeployment {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE2)), "53");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE3)), "62");
+			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE3)), "69");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -85,8 +85,6 @@ public class SpkDeployment {
 			Thread.sleep(ElementHelper.LONG_TIME);
 			action.click(By.id(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
-//			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SAVE));
-//			Thread.sleep(ElementHelper.WAIT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -147,43 +145,5 @@ public class SpkDeployment {
 			System.out.println(e);
 		}
 	}
-
-	/*@Test
-	public void step05_ReplaceSwapExaminer() throws Exception {
-		navigate();
-		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.xpath(ElementHelper.SHOW_EXAMINER_DETAILS_ON_TESTDATE));
-	}
-
-	@Test
-	public void step06_UploadToPretest() throws Exception {
-		navigate();
-		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_UPLOAD_TO_PRETEST));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-
-	@Test
-	public void step07_ReleaseToIEP() throws Exception {
-		navigate();
-		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_RELEASE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-
-	@Test
-	public void step08_SendEmail() throws Exception {
-		navigate();
-		action.click(By.linkText(ElementHelper.SPK_DEPLOYMENT_SEND_EMAIL));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
 
 }

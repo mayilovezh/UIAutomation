@@ -2,7 +2,6 @@ package com.selenium.test.examiner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -41,11 +40,5 @@ public class WorkRecords {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.WORK_RECORDS_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME);
-//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.WORK_RECORDS_SEARCH_NAME)), "Micheal Coulson");
-//		Thread.sleep(ElementHelper.SHORT_TIME_A);
-//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.WORK_RECORDS_SEARCH_TC)), "BJ-BLCU");
-//		Thread.sleep(ElementHelper.SHORT_TIME_A);
-//		Assert.assertEquals(action.getText(By.xpath(ElementHelper.WORK_RECORDS_SEARCH_CDDNO)), "242007-242013,242015-242026,242214");
-//		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 }

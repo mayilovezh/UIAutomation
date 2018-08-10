@@ -46,7 +46,6 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.EOR_MARKING_SEARCH));
 		Thread.sleep(ElementHelper.LONG_TIME_A);
-//		Assert.assertEquals(action.getText(By.id(ElementHelper.EOR_MARKING_AVAILABLE_EXAMINER)), "85");
 	}
 	
 	public void search() throws Exception {
@@ -54,19 +53,14 @@ public class EorMarking {
 		action.clear(By.id(ElementHelper.EOR_MARKING_SELECT_EXAMINER));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.EOR_MARKING_SELECT_EXAMINER), "10");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.EOR_MARKING_CALCULATE));
-		Thread.sleep(ElementHelper.LONG_TIME);
-//		Assert.assertEquals(action.getText(By.id(ElementHelper.EOR_MARKING_CALCULATE_MAX_COUNT)), maxCount);
-//		Thread.sleep(ElementHelper.SHORT_TIME_A);
-//		Assert.assertEquals(action.getText(By.id(ElementHelper.EOR_MARKING_CALCULATE_MAX_AVG_COUNT)), maxAvgCount);
-//		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-	
 	
 	@Test
 	public void step01_AutoAllocation() throws Exception {
 		search();
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.id(ElementHelper.EOR_MARKING_CALCULATE));
+		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.id(ElementHelper.EOR_MARKING_AUTO_ALLOCATION));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.chooseOkOnNextConfirmation();
@@ -74,23 +68,7 @@ public class EorMarking {
 	}
 	
 	@Test
-	public void setp02_SetCapacity() throws Exception {
-		search();
-		action.click(By.id(ElementHelper.EOR_MARKING_CLEAR_ALL_SELECT));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.EOR_MARKING_SELECT_FIRST));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.linkText(ElementHelper.EOR_MARKING_SET_CAPACITY_SELECT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.clear(By.id(ElementHelper.EOR_MARKING_SET_CAPACITY_NUMBER));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.EOR_MARKING_SET_CAPACITY_NUMBER), "300");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-	}
-	
-	@Test
-	public void step03_ManualAlocationCheck() throws Exception {
+	public void step02_ManualAlocationCheck() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -104,16 +82,10 @@ public class EorMarking {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.id(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_CHECK));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-//		action.click(By.xpath(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_AVAILABLE_EXAMINER));
-//		Thread.sleep(ElementHelper.SHORT_TIME_B);
-//		action.click(By.xpath(ElementHelper.SAVE));
-//		Thread.sleep(ElementHelper.SHORT_TIME);
-//		action.click(By.xpath(ElementHelper.EOR_MARKING_MANUAL_ALLOCATION_CHECK_CONFIRM_SAVE));
-//		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 	
 	@Test
-	public void step04_AllocationResultPage() throws Exception {
+	public void step03_AllocationResultPage() throws Exception {
 		navigate();
 		action.click(By.id(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
@@ -122,8 +94,6 @@ public class EorMarking {
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNO)), "990801");
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.isTextPrest(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_EXAMINERNAME), "Andrew Hillman");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EOR_MARKING_ALLOCATION_RESULT_PAGE_WRITTEN_CDDNO)), "005774,005808,005828,005834,005879,005882,005908,005913,005963,006001,006010");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

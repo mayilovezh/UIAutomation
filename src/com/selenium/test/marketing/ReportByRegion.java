@@ -15,6 +15,7 @@ public class ReportByRegion {
 	WebDriverAction action;
 	String dateFrom = "2018-01-01";
 	String dateTo = "2018-01-06";
+
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -25,7 +26,7 @@ public class ReportByRegion {
 	public void close() {
 		new DriverInstance().teardown(driver);
 	}
-	
+
 	public void navigate() throws Exception {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.MARKETING));
@@ -38,7 +39,7 @@ public class ReportByRegion {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.REPORT_BY_REGION_DATE_TO), dateTo);
 	}
-	
+
 	@Test
 	public void export() throws Exception {
 		navigate();
@@ -47,9 +48,4 @@ public class ReportByRegion {
 		action.click(By.id(ElementHelper.REPORT_BY_REGION_EXPORT));
 		Thread.sleep(ElementHelper.LONG_TIME);
 	}
-	
-	/*@Test
-	public void exportCheck() {
-		
-	}*/
 }

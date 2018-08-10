@@ -23,7 +23,7 @@ public class ClericalMarkerProfile {
 	String dateBirth = "1990-05-26";
 	String mobile = "18505218860";
 	String email = "guoxiao@britishcouncil.org.cn";
-	String clericalNo = "100298";
+	String clericalNo = "100308";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -42,96 +42,26 @@ public class ClericalMarkerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-	
-	/*@Test
-	public void step01_CreateProfileFirstMarker() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.CLERICAL_PROFILE_CREATE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_GIVEN_NAME_EN), givenNameEn);
+		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_NUMBER), clericalNo);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_FAMILY_NAME_EN), familyNameEn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_GIVEN_NAME_CN), givenNameCn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_FAMILY_NAME_CN), familyNameCn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_ID_TYPE));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_ID_NUMBER), passportNumber);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_DATEBIRTH), dateBirth);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_MOBILE), mobile);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_EMAIL), email);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_NATIONALITY), "45");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_PROVINCE), "11");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_CITY), "110100");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_STATUS), "1204");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_CREATE_ROLES));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		((JavascriptExecutor)driver).executeScript("$('#addclericalmarkerRoles_listbox li')[0].click()"); 
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.cssSelector(ElementHelper.CLERICAL_PROFILE_CREATE_SAVE));
+		action.click(By.id(ElementHelper.CLERICAL_PROFILE_SEARCH));
 		Thread.sleep(ElementHelper.WAIT_TIME);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_NUMBER)), clericalNo);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_FAMILY)), familyNameEn);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_GIVEN)), givenNameEn);
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
-	
+
 	@Test
-	public void step02_CreateProfileSecondMarker() throws Exception {
+	public void step01_SearchProfile() throws Exception {
 		navigate();
-		action.click(By.id(ElementHelper.CLERICAL_PROFILE_CREATE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_GIVEN_NAME_EN), givenNameEn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_FAMILY_NAME_EN), familyNameEn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_GIVEN_NAME_CN), givenNameCn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_FAMILY_NAME_CN), familyNameCn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_ID_TYPE));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_ID_NUMBER), passportNumber);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_DATEBIRTH), dateBirth);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_MOBILE), mobile);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_EMAIL), email);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_NATIONALITY), "45");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_PROVINCE), "11");
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_CITY), "110100");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.CLERICAL_PROFILE_CREATE_STATUS), "1204");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_CREATE_ROLES));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		((JavascriptExecutor)driver).executeScript("$('#addclericalmarkerRoles_listbox li')[1].click()"); 
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.cssSelector(ElementHelper.CLERICAL_PROFILE_CREATE_SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
-	
-	@Test
-	public void step03_SearchProfile() throws Exception {
-		navigate();
-		searchProfile();
 	}
-	
+
 	@Test
-	public void step04_ModifyPwd() throws Exception {
+	public void step02_ModifyPwd() throws Exception {
 		navigate();
-		searchProfile();
 		action.click(By.linkText(ElementHelper.CLERICAL_PROFILE_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_MODIFY_PWD));
@@ -141,11 +71,10 @@ public class ClericalMarkerProfile {
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
-	
+
 	@Test
-	public void step05_ModifyPinCode() throws Exception {
+	public void step03_ModifyPinCode() throws Exception {
 		navigate();
-		searchProfile();
 		action.click(By.linkText(ElementHelper.CLERICAL_PROFILE_MODIFY));
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.xpath(ElementHelper.CLERICAL_PROFILE_MODIFY_PINCODE));
@@ -154,18 +83,5 @@ public class ClericalMarkerProfile {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}
-	
-	public void searchProfile() throws Exception {
-		action.sendkeys(By.id(ElementHelper.CLERICAL_PROFILE_NUMBER), clericalNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.CLERICAL_PROFILE_SEARCH));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	    Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_NUMBER)), clericalNo);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_FAMILY)), familyNameEn);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_PROFILE_SEARCH_GIVEN)), givenNameEn);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
 	}
 }

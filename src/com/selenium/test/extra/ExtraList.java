@@ -52,7 +52,7 @@ public class ExtraList {
 		Thread.sleep(ElementHelper.LONG_TIME);
 	}
 
-	/*@Test
+	@Test
 	public void step01_UpdateApp() throws Exception {
 		navigate();
 		action.click(By.linkText(ElementHelper.EXTRA_LIST_UPDATE_APP));
@@ -67,7 +67,7 @@ public class ExtraList {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-	}*/
+	}
 	
 	@Test
 	public void step01_ViewLog() throws Exception {
@@ -94,15 +94,4 @@ public class ExtraList {
 		action.click(By.id(ElementHelper.EXTRA_LIST_EXPORT_EXCEL));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
-
-	/*@Test
-	public void step03_ChangetoDone() throws Exception {
-		navigate();
-		action.click(By.xpath(ElementHelper.EXTRA_LIST_SELECT));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.EXTRA_LIST_DONE));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-	}*/
 }

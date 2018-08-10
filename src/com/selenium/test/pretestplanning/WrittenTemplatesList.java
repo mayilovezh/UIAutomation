@@ -1,6 +1,5 @@
 package com.selenium.test.pretestplanning;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -76,15 +75,4 @@ public class WrittenTemplatesList {
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
 	
-	/*@Test
-	public void step04_DeleteTemplates() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.WRITTEN_TEMPLATES_LIST_SEARCH));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.WRITTEN_TEMPLATES_LIST_DELETE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.SHORT_TIME);
-	}*/
 }

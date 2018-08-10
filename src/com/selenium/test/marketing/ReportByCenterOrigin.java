@@ -15,6 +15,7 @@ public class ReportByCenterOrigin {
 	WebDriverAction action;
 	String dateFrom = "2018-01-01";
 	String dateTo = "2018-01-06";
+
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = new DriverInstance().login(driver);
@@ -25,7 +26,7 @@ public class ReportByCenterOrigin {
 	public void close() {
 		new DriverInstance().teardown(driver);
 	}
-	
+
 	public void navigate() throws Exception {
 		Thread.sleep(ElementHelper.SHORT_TIME);
 		action.click(By.id(ElementHelper.MARKETING));
@@ -39,10 +40,9 @@ public class ReportByCenterOrigin {
 		action.selectByIndex(By.id(ElementHelper.REPORT_BY_CENTER_ORIGIN_CITY), 1);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByIndex(By.id(ElementHelper.REPORT_BY_CENTER_ORIGIN_CENTER), 1);
-		
-		
+
 	}
-	
+
 	@Test
 	public void export() throws Exception {
 		navigate();
@@ -51,9 +51,5 @@ public class ReportByCenterOrigin {
 		action.click(By.id(ElementHelper.REPORT_BY_CENTER_ORIGIN_EXPORT));
 		Thread.sleep(ElementHelper.LONG_TIME);
 	}
-	
-	/*@Test
-	public void exportCheck() {
-		
-	}*/
+
 }

@@ -9,34 +9,18 @@
 		<listener class-name="com.selenium.test.listener.TestNGListener" />
 	</listeners>
 
-	<!-- <test name="TDOL" preserve-order="true">
+	<test name="TestCenter" preserve-order="true">
 		<classes>
-			<class name="com.selenium.test.tdol.TDPProfile" />
-			<class name="com.selenium.test.tdol.TDPTask" />
-			<class name="com.selenium.test.tdol.ArrangeSupervisor" />
-			<class name="com.selenium.test.tdol.ArrangeSAS" />
-			<class name="com.selenium.test.tdol.ArrangeSpkAS" />
-			<class name="com.selenium.test.tdol.ArrangeWAS" />
-			<class name="com.selenium.test.tdol.ArrangeDataAS" />
-			<class name="com.selenium.test.tdol.ArrangeWAStoTC" />
-			<class name="com.selenium.test.tdol.ArrangeInvigilator" />
-			<class name="com.selenium.test.tdol.ArrangeBagDuty" />
-			<class name="com.selenium.test.tdol.ArrangeReports" />
+			<class name="com.selenium.test.testcenter.TestCenterList" />
+			<class name="com.selenium.test.testcenter.TestBuildingList" />
+			<class name="com.selenium.test.testcenter.TestRoomList" />
+			<class name="com.selenium.test.testcenter.TestDateList" />
+			<class name="com.selenium.test.testcenter.TestSessionList" />
+			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
 		</classes>
-	</test> -->
+	</test>
 
-<!--<test name="TestCenter" preserve-order="true">
-	<classes>
-		<class name="com.selenium.test.testcenter.TestCenterList" />
-		<class name="com.selenium.test.testcenter.TestBuildingList" />
-		<class name="com.selenium.test.testcenter.TestRoomList" />
-		<class name="com.selenium.test.testcenter.TestDateList" />
-		<class name="com.selenium.test.testcenter.TestSessionList" />
-		<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
-	</classes>
-</test>
-
- 	<test name="CSCS" preserve-order="true">
+	<test name="CSCS" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.cs.FreeCandidateAdd" />
 			<class name="com.selenium.test.cs.FreeCandidateList" />
@@ -56,18 +40,12 @@
 	<test name="CS-Extra" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
-			<class name="com.selenium.test.extra.PendingList" />
-			<class name="com.selenium.test.extra.Refund" />
-			<class name="com.selenium.test.extra.ConfirmRefund" />
 			<class name="com.selenium.test.extra.ExtraList" />
 		</classes>
 	</test>
 
 	<test name="CS-Eor" preserve-order="true">
 		<classes>
-			<class name="com.selenium.test.eor.UnProcessingList" />
-			<class name="com.selenium.test.eor.Refund" />
-			<class name="com.selenium.test.eor.ConfirmRefund" />
 			<class name="com.selenium.test.eor.EorAppList" />
 			<class name="com.selenium.test.eor.FirstImportScore" />
 			<class name="com.selenium.test.eor.SecondImportScore" />
@@ -104,7 +82,6 @@
 			<class name="com.selenium.test.examiner.CoreDayManagement" />
 			<class name="com.selenium.test.examiner.WorkRecords" />
 			<class name="com.selenium.test.examiner.SpkDeployment" />
-			<class name="com.selenium.test.examiner.AvailabilitySummary" />
 		</classes>
 	</test>
 
@@ -144,28 +121,33 @@
 	</test>
 
 	<test name="Security" preserve-order="true">
-	<classes>
-		<class name="com.selenium.test.security.CheckSuspicious" />
-		<class name="com.selenium.test.security.SuspiciousList" />
-		<class name="com.selenium.test.security.ScoreCompareList" />
-		<class name="com.selenium.test.security.SuspiciousReport" /> 
-	</classes> 
-</test>
+		<classes>
+			<class name="com.selenium.test.security.CheckSuspicious" />
+			<class name="com.selenium.test.security.SuspiciousList" />
+			<class name="com.selenium.test.security.ScoreCompareList" />
+			<class name="com.selenium.test.security.SuspiciousReport" />
+		</classes>
+	</test>
 
 	<test name="PreTestArrange" preserve-order="true">
-	<classes>
-		<class name="com.selenium.test.pretestarrange.FreeTestArrangement" />
-		<class name="com.selenium.test.pretestarrange.WrittenApportionment" />
-		<class name="com.selenium.test.pretestarrange.SpkArrangementPrebooking" />
-		<class name="com.selenium.test.pretestarrange.SpkArrangementUnPrebooking" />
-		<class name="com.selenium.test.pretestarrange.IWASToMIS" />
-		<class name="com.selenium.test.pretestarrange.MISToIWAS" />
-		<class name="com.selenium.test.pretestarrange.PrintDocuments" />
-		<class name="com.selenium.test.pretestarrange.SetUploadStatus" />
-		<class name="com.selenium.test.pretestarrange.PrebookingSyncResult" />
-	</classes>
-</test>  -->
+		<classes>
+			<class name="com.selenium.test.pretestarrange.FreeTestArrangement" />
+			<class name="com.selenium.test.pretestarrange.WrittenApportionment" />
+			<class name="com.selenium.test.pretestarrange.SpkArrangementPrebooking" />
+			<class name="com.selenium.test.pretestarrange.SpkArrangementUnPrebooking" />
+			<class name="com.selenium.test.pretestarrange.IWASToMIS" />
+			<class name="com.selenium.test.pretestarrange.MISToIWAS" />
+			<class name="com.selenium.test.pretestarrange.PrintDocuments" />
+			<class name="com.selenium.test.pretestarrange.SetUploadStatus" />
+			<class name="com.selenium.test.pretestarrange.PrebookingSyncResult" />
+		</classes>
+	</test>
 
+	<test name="Stock" preserve-order="true">
+		<classes>
+			<class name="com.selenium.test.stock.CategoryManagement" />
+		</classes>
+	</test>
 
 </suite> 
 

@@ -54,9 +54,11 @@ public class ElementHelper {
 	public static String FORMAT_PB = "PB";
 	public static String FORMAT_CB = "CB";
 	public static String FORMAT_CD_AM = "CD AM";
-	public static String FORMAT_CD_PM = "CD PM";
-	public static String FORMAT_CD_EV = "CD EV";
+	public static String FORMAT_CD_PM1 = "CD PM1";
+	public static String FORMAT_CD_PM2 = "CD PM2";
 	public static String TC_CUEB = "BJ-CUEB";
+	public static String YES = "Yes";
+	public static String NO = "No";
 	
 	//TDOL IEP
 	public static String DEV_IEP = "http://iep-dev.chinacloudsites.cn/";
@@ -876,6 +878,7 @@ public class ElementHelper {
     public static String EOR_APP_LIST_REFUND_STATUS = "EORDetailsEORAppList-RefundStatusSecrch";
     public static String EOR_APP_LIST_SELECT = "//*[@id='SpreadSheetEORDetailsEORAppListGrid']/div[2]/table/tbody/tr[1]/td[1]/input";
     public static String EOR_APP_LIST_DONE = "inp-Done-EORDetailsEORAppList";
+    public static String EOR_APP_LIST_SEARCH_SELECT_INPUT = "//*[@id='SpreadSheetEORDetailsEORAppListGrid']/div[2]/table/tbody/tr[1]/td[1]/input";
     
     //EOR Marking 
     public static String EOR_MARKING = "//*[@id='CS-EOR']/ul/li[3]/a";
@@ -1226,6 +1229,7 @@ public class ElementHelper {
     public static String EXAMINER_PROFILE_STATUS_YES = "(//button[@type='button'])[5]";
     public static String EXAMINER_PROFILE_LOG = "Log";
     public static String EXAMINER_PROFILE_LOG_NAME = "//*[@id='ExaminerModifyStatusLogGrid']/div[2]/table/tbody/tr[1]/td[3]"; 
+    public static String EXAMINER_PROFILE_EXAMINER_EMAIL = "EmailExaminer";
     
     //Examiner Task
     public static String EXAMINER_TASK = "//*[@id='Examiner']/ul/li[3]/a";
@@ -1296,7 +1300,7 @@ public class ElementHelper {
     public static String SPK_DEPLOYMENT_SEARCH_DATE4 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[5]";
     public static String SPK_DEPLOYMENT_SEARCH_DATE5 = "//*[@id='ExaminerAvailableSummaryList']/table/tbody/tr[2]/td[6]";
     public static String SPK_DEPLOYMENT_ASSIGN = "//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[1]";
-    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[1]/td[7]/input[2]";
+    public static String SPK_DEPLOYMENT_ASSIGN_SELECT_DATE = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[1]/td[2]/input[2]";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_TRAVEL = "//*[@id='SpeakingArrangement-AvailableUnits-ExaminerList']/table/tbody/tr[2]/td[1]/select";
     public static String SPK_DEPLOYMENT_ASSIGN_SEARCH = "//*[@id='div-datatable-SpeakingArrangement-ExaminerList']/div[1]/table[2]/tbody/tr/td[9]/input";
     public static String SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER = "AR";
@@ -1800,4 +1804,35 @@ public class ElementHelper {
     public static String SUSPICIOUS_REPORT_EXPORT_IELTS = "btnSuspiciousCdtMISIIMalpracticeReporting";
     public static String SUSPICIOUS_REPORT_EXPORT_UKVI_AND_LIFE_SKILLS = "btnSuspiciousCdtMISIIMalpracticeReportingukviandlifeskills";
     
+    
+    //Stock
+    public static String STOCK = "Stock";
+    
+    //Category Management
+    public static String CATEGORY_MANAGEMENT = "//*[@id='Stock']/ul/li[1]/a";
+    public static String CATEGORY_MANAGEMENT_SEARCH = "btnQueryStockCategory";
+    public static String CATEGORY_MANAGEMENT_CREATE = "btnAddStockCategory";
+    public static String CATEGORY_MANAGEMENT_CREATE_NAME = "txtStockCategoryName";
+    public static String CATEGORY_MANAGEMENT_CREATE_STOCK_TYPE = "selectStockCategoryTypeDetail";
+    public static String CATEGORY_MANAGEMENT_CREATE_EVERY_PACKAGE_NUMBER = "txtEveryPackageNumber";
+    public static String CATEGORY_MANAGEMENT_CREATE_PERMANENT = "radioPermanent";
+    public static String CATEGORY_MANAGEMENT_CREATE_LIVE_TEST = "radioLiveTest";
+    public static String CATEGORY_MANAGEMENT_CREATE_OUT_FOR_TEST = "txtOutforTest";
+    public static String CATEGORY_MANAGEMENT_CREATE_OUT_FOR_FIRST_MARKING = "txtOutforMarking";
+    public static String CATEGORY_MANAGEMENT_CREATE_OUT_FOR_SECOND_MARKING = "txtOutforMarking2nd";
+    public static String CATEGORY_MANAGEMENT_CREATE_OUT_FOR_EOR = "txtOutforEOR";
+    public static String CATEGORY_MANAGEMENT_CREATE_OUT_FOR_MONITORING = "txtOutforMornitoring";
+    public static String CATEGORY_MANAGEMENT_CREATE_TYPE = "selectUseType";
+    public static String CATEGORY_MANAGEMENT_CREATE_USE_NUMBER = "txtUseNumber";
+    public static String CATEGORY_MANAGEMENT_CREATE_BACKUP_Y = "radioStockIsBackup";
+    public static String CATEGORY_MANAGEMENT_CREATE_BACKUP_N = "radioStockIsBackup";
+    public static String CATEGORY_MANAGEMENT_CREATE_ADJUSTMENT_TYPE = "selectStockCategoryAdjustment";
+    public static String CATEGORY_MANAGEMENT_CREATE_AVAILABLE_STATUS_Y = "radioAvailable";
+    public static String CATEGORY_MANAGEMENT_CREATE_AVAILABLE_STATUS_N = "radioNoavailable";
+    public static String CATEGORY_MANAGEMENT_CREATE_DESCRIPTION = "txtDescription";
+    public static String CATEGORY_MANAGEMENT_SEARCH_NAME = "//*[@id='spreadsheet-CategoryList-table']/tbody/tr/td[1]";
+    public static String CATEGORY_MANAGEMENT_CREATE_NAME_TIP = "//*[@id='txtStockCategoryNameTip']/div";
+    public static String CATEGORY_MANAGEMENT_STOCK_TYPE = "selectStockCategoryTypeSearch";
+    public static String CATEGORY_MANAGEMENT_MODIFY = "//*[@id='spreadsheet-CategoryList-table']/tbody/tr[3]/td[5]/input[1]";
+    public static String CATEGORY_MANAGEMENT_PERMANENT_Y = "//*[@id='spreadsheet-CategoryList-table']/tbody/tr[3]/td[4]";
 }

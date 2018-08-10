@@ -69,9 +69,4 @@ public class SetUploadStatus {
 			System.out.println(e);
 		}
 	}
-	
-	//TO DO
-	public void step02_SyncToItap() {
-		
-	}
 }

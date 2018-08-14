@@ -6,15 +6,13 @@ public class ElementHelper {
 	public static String DEV_URL = "http://cnbjs1bms015:9003";
 	public static String UAT_URL = "http://cnbjs1bms001:9001";
 	public static String QA_URL = "http://cnbjs1bms015:9005";
-	public static String USER_NAME = "userName";
-	public static String PASSWORD = "password";
+	public static String USER_NAME_INPUT = "userName";
+	public static String PASSWORD_INPUT = "password";
 	public static String USER_NAME_DEV = "ZYF"; 
-	public static String PASSWORD_DEV = "Zyf11111!";
-	public static String USER_NAME_UAT = "zyf"; 
-	public static String PASSWORD_UAT = "Zyf111111";
+	public static String USER_NAME_UAT = "zyfan"; 
+	public static String USER_NAME_QA = "zyf"; 
 	public static String USER_NAME_EAST = "zhangyifan"; 
-	public static String PASSWORD_EAST_DEV = "Zyf929670@";
-	public static String PASSWORD_EAST_UAT = "Zyf111111";
+	public static String PASSWORD= "Zyf111111";
 	public static String LOGIN_BTN = "loginButt";
 	public static String UN_PRE_BOOKING = "//*[@id='loginTbl']/tbody/tr[3]/td/input[2]";
 	

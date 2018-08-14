@@ -1,6 +1,5 @@
 package com.selenium.test.testcenter;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,17 +20,6 @@ import com.selenium.test.utils.WebDriverAction;
 public class TestDateList {
 	static WebDriver driver;
 	WebDriverAction action;
-	String testdate106 = "2018-01-06";
-	String testdate111 = "2018-01-11";
-	String testdate113 = "2018-01-13";
-	String testdate118 = "2018-01-18";
-	String testdate120 = "2018-01-20";
-	String testdate125 = "2018-01-25";
-	String testdate516 = "2018-05-16";
-	String testdate517 = "2018-05-17";
-	String testdate518 = "2018-05-18";
-	String testdate519 = "2018-05-19";
-	String testdate530 = "2018-05-30";
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -108,7 +96,7 @@ public class TestDateList {
 				new DriverInstance().teardown(driver);
 			} else {
 				action.waitElementVisibleToClick(By.id(ElementHelper.TD_IMPORT));
-				upload("\\resource\\testcenter\\TestDate.xlsx");
+				action.uploadFile("\\resource\\testcenter\\TestDate.xlsx", By.id(ElementHelper.TD_IMPORT_CHOOSE));
 				action.click(By.cssSelector(ElementHelper.TD_IMPORT_UPLOAD));
 				action.setTimeout("10");
 			}
@@ -128,13 +116,7 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TD_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE1), testdate106);
-			//UAT verify
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE2)), testdate111);
-			
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE3)), testdate113);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE4)), testdate118);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE5)), testdate120);
+			assertTableList(48);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -151,14 +133,7 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TD_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			//UAT verify
-			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE3), testdate530);
-			//Dev verify
-//			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE1), testdate516);
-//			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE2)), testdate517);
-//			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE3)), testdate518);
-//			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE4)), testdate519);
-//			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE5)), testdate530);
+			assertTableList(20);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -175,13 +150,7 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TD_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			//UAT verify
-			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE3), testdate530);
-			//Dev verify
-//			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE1), testdate517);
-//			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE2)), testdate518);
-//			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE3)), testdate519);
-//			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE4)), testdate530);
+			assertTableList(8);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -198,10 +167,7 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TD_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			//UAT verify
-			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE3), testdate530);
-			//Dev verify
-//			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE1), testdate530);
+			assertTableList(3);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
@@ -218,10 +184,7 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TD_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE1), testdate106);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE2)), testdate113);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE3)), testdate118);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE4)), testdate120);
+			assertTableList(48);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -238,7 +201,7 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TD_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE1)), testdate113);
+			assertTableList(18);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -255,19 +218,17 @@ public class TestDateList {
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.id(ElementHelper.TD_SEARCH));
 			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.waitElementVisibleToAssert(By.xpath(ElementHelper.TD_SEARCH_DATE1), testdate111);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TD_SEARCH_DATE2)), testdate125);
+			assertTableList(26);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
-	public void upload(String filePath) {
-		String path = System.getProperty("user.dir") + filePath;
-		File file = new File(path);
-		if (file.exists()) {
-			driver.findElement(By.id(ElementHelper.TD_IMPORT_CHOOSE)).sendKeys(file.getPath());
+	
+	public void assertTableList(int number) {
+		List<WebElement> tableList = driver.findElements(By.xpath(ElementHelper.TD_SEARCH_TABLE_LIST));
+		if (tableList.size() == number) {
+			System.out.println("Table list number is:" + tableList.size());
 		}
 	}
 

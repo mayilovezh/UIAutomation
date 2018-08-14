@@ -261,6 +261,7 @@ public class ElementHelper {
 	public static String TD_SEARCH_DATE5 = "//*[@id='testdate_guid']/div[2]/table/tbody/tr[5]/td[2]";
 	public static String TD_IMPORT_CHOOSE = "importFileForTestDate";
 	public static String TD_IMPORT_UPLOAD = "button.k-button.k-upload-selected";
+	public static String TD_SEARCH_TABLE_LIST = "//*[@id='testdate_guid']/div[2]/table/tbody/tr";
 	
 	
 	//Spk Room Template

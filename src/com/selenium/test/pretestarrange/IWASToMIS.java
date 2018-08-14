@@ -73,7 +73,7 @@ public class IWASToMIS {
 		try {
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.assertText(By.xpath(ElementHelper.IWAS_TO_MIS_LOG_MESSAGE), logMessage);
-			action.assertText(By.xpath(ElementHelper.IWAS_TO_MIS_LOG_CREATE_BY), ElementHelper.USER_NAME_UAT);
+			action.assertText(By.xpath(ElementHelper.IWAS_TO_MIS_LOG_CREATE_BY), ElementHelper.USER_NAME_QA);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);

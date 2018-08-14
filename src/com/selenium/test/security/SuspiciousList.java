@@ -116,7 +116,7 @@ public class SuspiciousList {
 			action.click(By.cssSelector(ElementHelper.SUSPICIOUS_LIST_VIEW));
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.assertText(By.xpath(ElementHelper.SUSPICIOUS_LIST_VIEW_LOG_DETAIL),
-					ElementHelper.USER_NAME_UAT + " Changed 'Security Reason' From 'Dodgy Address' To 'Fake ID'");
+					ElementHelper.USER_NAME_QA + " Changed 'Security Reason' From 'Dodgy Address' To 'Fake ID'");
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.xpath(ElementHelper.SAVE));
 			Thread.sleep(ElementHelper.SHORT_TIME);

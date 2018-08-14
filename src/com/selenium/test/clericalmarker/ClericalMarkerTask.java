@@ -91,9 +91,9 @@ public class ClericalMarkerTask {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_TYPE_SECOND)), typeSecond);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_FIRST)), ElementHelper.USER_NAME_UAT);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_FIRST)), ElementHelper.USER_NAME_QA);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_SECOND)), ElementHelper.USER_NAME_UAT);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_SECOND)), ElementHelper.USER_NAME_QA);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 	}
 
@@ -128,7 +128,7 @@ public class ClericalMarkerTask {
 		search();
 		action.click(By.linkText(ElementHelper.CLERICAL_TASK_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_LOG_USER)), ElementHelper.USER_NAME_UAT);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_LOG_USER)), ElementHelper.USER_NAME_QA);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

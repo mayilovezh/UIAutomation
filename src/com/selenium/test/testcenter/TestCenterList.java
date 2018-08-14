@@ -232,7 +232,7 @@ public class TestCenterList {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 //			action.isTextPrest(By.xpath(ElementHelper.TC_MODIFYLOG_DETAILS), ElementHelper.REMARK_VALUE1);
 			Assert.assertEquals(action.getText(By.xpath(ElementHelper.TC_MODIFYLOG_CREATE_BY)),
-					ElementHelper.USER_NAME_UAT);
+					ElementHelper.USER_NAME_QA);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

@@ -101,12 +101,12 @@ public class AvailabilitySummary {
 			action.waitElementVisibleToAssert(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOCK_SPK_LOG_OPERATION),
 					logOperation);
 			action.waitElementVisibleToAssert(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOCK_SPK_LOG_CREATEBY),
-					ElementHelper.USER_NAME_UAT);
+					ElementHelper.USER_NAME_QA);
 			action.waitElementVisibleToAssert(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOCK_WRT_LOG_TYPE), logWrt);
 			action.waitElementVisibleToAssert(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOCK_WRT_LOG_OPERATION),
 					logOperation);
 			action.waitElementVisibleToAssert(By.xpath(ElementHelper.AVAILABILITY_SUMMARY_LOCK_WRT_LOG_CREATEBY),
-					ElementHelper.USER_NAME_UAT);
+					ElementHelper.USER_NAME_QA);
 			Thread.sleep(ElementHelper.SHORT_TIME_B);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {

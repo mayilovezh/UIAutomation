@@ -74,7 +74,7 @@ public class HolidayManagement {
 		search();
 		action.click(By.linkText(ElementHelper.HM_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_LOG_NAME)), ElementHelper.USER_NAME_UAT);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.HM_LOG_NAME)), ElementHelper.USER_NAME_QA);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);

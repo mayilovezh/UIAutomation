@@ -74,7 +74,7 @@ public class ExtraList {
 		navigate();
 		action.click(By.xpath(ElementHelper.EXTRA_LIST_VIEW_LOG));
 		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXTRA_LIST_VIEW_LOG_UPDATEBY)), ElementHelper.USER_NAME_UAT);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXTRA_LIST_VIEW_LOG_UPDATEBY)), ElementHelper.USER_NAME_QA);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

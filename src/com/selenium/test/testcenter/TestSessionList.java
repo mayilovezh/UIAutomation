@@ -156,7 +156,7 @@ public class TestSessionList {
 				new DriverInstance().teardown(driver);
 			} else {
 				action.click(By.linkText(ElementHelper.TS_LOG));
-				action.isTextPrest(By.xpath(ElementHelper.TS_LOG_CREATE_BY), ElementHelper.USER_NAME_UAT);
+				action.isTextPrest(By.xpath(ElementHelper.TS_LOG_CREATE_BY), ElementHelper.USER_NAME_QA);
 				Thread.sleep(ElementHelper.SHORT_TIME_A);
 				action.click(By.xpath(ElementHelper.SAVE));
 			}

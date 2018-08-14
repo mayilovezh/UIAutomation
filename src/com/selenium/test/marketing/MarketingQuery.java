@@ -74,7 +74,7 @@ public class MarketingQuery {
 			action.click(By.id(ElementHelper.MARKETING_QUERY_SEND_EMAIL_LOG));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.assertText(By.xpath(ElementHelper.MARKETING_QUERY_SEND_EMAIL_LOG_CONTENT), emailContent);
-			action.assertText(By.xpath(ElementHelper.MARKETING_QUERY_SEND_EMAIL_LOG_CREATE_BY), ElementHelper.USER_NAME_UAT);
+			action.assertText(By.xpath(ElementHelper.MARKETING_QUERY_SEND_EMAIL_LOG_CREATE_BY), ElementHelper.USER_NAME_QA);
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {

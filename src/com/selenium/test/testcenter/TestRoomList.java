@@ -207,7 +207,7 @@ public class TestRoomList {
 			action.click(By.linkText(ElementHelper.TR_SHARE_LOG));
 			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.isTextPrest(By.xpath(ElementHelper.TR_SHARE_LOG_ROOM_NAME), roomName);
-			action.isTextPrest(By.xpath(ElementHelper.TR_SHARE_LOG_CREATE_BY), ElementHelper.USER_NAME_UAT);
+			action.isTextPrest(By.xpath(ElementHelper.TR_SHARE_LOG_CREATE_BY), ElementHelper.USER_NAME_QA);
 			action.click(By.xpath(ElementHelper.SAVE));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

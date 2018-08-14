@@ -90,7 +90,7 @@ public class FilterWordsList {
 		navigate();
 		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FILTER_WORDS_MODIFY_WORDS)), words);
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FILTER_WORDS_MODIFY_NAME)), ElementHelper.USER_NAME_UAT);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FILTER_WORDS_MODIFY_NAME)), ElementHelper.USER_NAME_QA);
 	}
 	
 	@Test

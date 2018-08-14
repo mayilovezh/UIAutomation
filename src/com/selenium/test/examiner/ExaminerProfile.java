@@ -149,7 +149,7 @@ public class ExaminerProfile {
 		searchExaminer();
 		action.click(By.linkText(ElementHelper.EXAMINER_PROFILE_LOG));
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_PROFILE_LOG_NAME)), ElementHelper.USER_NAME_UAT);
+		Assert.assertEquals(action.getText(By.xpath(ElementHelper.EXAMINER_PROFILE_LOG_NAME)), ElementHelper.USER_NAME_QA);
 	    Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.SAVE));
 	}

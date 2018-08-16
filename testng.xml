@@ -20,7 +20,7 @@
 		</classes>
 	</test>
 
-	<test name="CSCS" preserve-order="true">
+	<!-- <test name="CSCS" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.cs.FreeCandidateAdd" />
 			<class name="com.selenium.test.cs.FreeCandidateList" />
@@ -148,7 +148,7 @@
 			<class name="com.selenium.test.stock.CategoryManagement" />
 		</classes>
 	</test>
-
+ -->
 </suite> 
 
  

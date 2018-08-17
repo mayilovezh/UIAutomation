@@ -9,7 +9,7 @@
 		<listener class-name="com.selenium.test.listener.TestNGListener" />
 	</listeners>
 
-	 <test name="CSCS" preserve-order="true">
+	<test name="CSCS" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.cs.FreeCandidateAdd" />
 			<class name="com.selenium.test.cs.FreeCandidateList" />
@@ -137,7 +137,7 @@
 			<class name="com.selenium.test.stock.CategoryManagement" />
 		</classes>
 	</test>
-	
+
 	<test name="TestCenter" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.testcenter.TestCenterList" />

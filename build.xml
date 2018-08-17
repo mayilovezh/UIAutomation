@@ -56,7 +56,7 @@
 
 	<target name="testoutput" depends="run">
 		<xslt in="${basedir}/test-output/testng-results.xml" style="${basedir}/testng-results.xsl" 
-			out="${basedir}/test-output/${CURTIME}/index.html"  processor="SaxonLiaison">
+			out="${basedir}/test-output/${CURTIME}/index1.html"  processor="SaxonLiaison">
 			<param name="testNgXslt.outputDir" expression="${basedir}/test-output/${CURTIME}/" />
 			<param name="testNgXslt.showRuntimeTotals" expression="true" />
 			<param name="testNgXslt.sortTestCaseLinks" expression="true" />

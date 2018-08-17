@@ -16,7 +16,7 @@
 		</classes>
 	</test>
 
-	<test name="Marketing" preserve-order="true">
+	<!-- <test name="Marketing" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.marketing.MarketingQuery" />
 			<class name="com.selenium.test.marketing.ReportByRegion" />
@@ -147,7 +147,7 @@
 			<class name="com.selenium.test.testcenter.TestSessionList" />
 			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
 		</classes>
-	</test>
+	</test> -->
 
 </suite> 
 

@@ -26,7 +26,7 @@
 		</classes>
 	</test>
 
-<!--	<test name="CS-Extra" preserve-order="true">
+	<test name="CS-Extra" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.extra.FilterWordsList" />
 			<class name="com.selenium.test.extra.ExtraList" />
@@ -148,7 +148,7 @@
 			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
 		</classes>
 	</test>
- -->
+
 </suite> 
 
  

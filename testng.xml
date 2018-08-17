@@ -9,25 +9,14 @@
 		<listener class-name="com.selenium.test.listener.TestNGListener" />
 	</listeners>
 
-	<test name="TestCenter" preserve-order="true">
-		<classes>
-			<class name="com.selenium.test.testcenter.TestCenterList" />
-			<class name="com.selenium.test.testcenter.TestBuildingList" />
-			<class name="com.selenium.test.testcenter.TestRoomList" />
-			<class name="com.selenium.test.testcenter.TestDateList" />
-			<class name="com.selenium.test.testcenter.TestSessionList" />
-			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
-		</classes>
-	</test>
-
-	<!-- <test name="CSCS" preserve-order="true">
+	 <test name="CSCS" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.cs.FreeCandidateAdd" />
 			<class name="com.selenium.test.cs.FreeCandidateList" />
 		</classes>
 	</test>
 
-	<test name="Marketing" preserve-order="true">
+<!--	<test name="Marketing" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.marketing.MarketingQuery" />
 			<class name="com.selenium.test.marketing.ReportByRegion" />
@@ -146,6 +135,17 @@
 	<test name="Stock" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.stock.CategoryManagement" />
+		</classes>
+	</test>
+	
+	<test name="TestCenter" preserve-order="true">
+		<classes>
+			<class name="com.selenium.test.testcenter.TestCenterList" />
+			<class name="com.selenium.test.testcenter.TestBuildingList" />
+			<class name="com.selenium.test.testcenter.TestRoomList" />
+			<class name="com.selenium.test.testcenter.TestDateList" />
+			<class name="com.selenium.test.testcenter.TestSessionList" />
+			<class name="com.selenium.test.testcenter.SpkRoomTemplate" />
 		</classes>
 	</test>
  -->

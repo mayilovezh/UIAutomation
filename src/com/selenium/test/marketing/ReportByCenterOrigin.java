@@ -37,7 +37,7 @@ public class ReportByCenterOrigin {
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.REPORT_BY_CENTER_ORIGIN_DATE_TO), dateTo);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByIndex(By.id(ElementHelper.REPORT_BY_CENTER_ORIGIN_CITY), 1);
+		action.selectByIndex(By.id(ElementHelper.REPORT_BY_CENTER_ORIGIN_CITY), 12);
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.selectByIndex(By.id(ElementHelper.REPORT_BY_CENTER_ORIGIN_CENTER), 1);
 

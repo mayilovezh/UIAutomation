@@ -57,6 +57,7 @@
 		<classes>
 			<class name="com.selenium.test.eorindia.IndiaUnProcessingList" />
 			<class name="com.selenium.test.eorindia.IndiaAppList" />
+			<class name="com.selenium.test.eorindia.IndiaMarking" />
 			<class name="com.selenium.test.eorindia.FirstImportScore" />
 			<class name="com.selenium.test.eorindia.SecondImportScore" />
 			<class name="com.selenium.test.eorindia.Journal" />

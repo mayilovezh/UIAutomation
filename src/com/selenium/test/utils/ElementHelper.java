@@ -1834,4 +1834,99 @@ public class ElementHelper {
     public static String CATEGORY_MANAGEMENT_STOCK_TYPE = "selectStockCategoryTypeSearch";
     public static String CATEGORY_MANAGEMENT_MODIFY = "//*[@id='spreadsheet-CategoryList-table']/tbody/tr[3]/td[5]/input[1]";
     public static String CATEGORY_MANAGEMENT_PERMANENT_Y = "//*[@id='spreadsheet-CategoryList-table']/tbody/tr[3]/td[4]";
+    
+    //Live Materials
+    public static String LIVE_MATERIALS = ".//*[@id='Stock']/ul/li[2]/a";
+    public static String LIVE_MATERIALS_REGION = "ddlRegion-testmaterials";
+    public static String LIVE_MATERIALS_TESTDATE_YEAR = "testmaterials-Select-Year-Search";
+    public static String LIVE_MATERIALS_TESTDATE_MONTH = "testmaterials-Select-Month-Search";
+    public static String LIVE_MATERIALS_TESTDATE = "ddlTestDate-testmaterials";
+    public static String LIVE_MATERIALS_STOCKTYPE = "ddlStockType-testmaterials";
+    public static String LIVE_MATERIALS_SEARCH = "btnQuery-testmaterials";
+    public static String LIVE_MATERIALS_LISTOFCATEGORYNAME = ".//*[@id='tr4141']/td[2]";
+    public static String LIVE_MATERIALS_CATEGORYNAME = "Listening CD";
+    public static String LIVE_MATERIALS_UPDATEBUTTON = ".//*[@id='tr4141']/td[11]/input";
+    public static String LIVE_MATERIALS_UPDATE_STORAGETYPE = "ddlstoragetype-testmaterials";
+    public static String LIVE_MATERIALS_UPDATE_TOTALPACKAGES = "txtpackage-testmaterials";
+    public static String LIVE_MATERIALS_UPDATE_TOTALNUMBER = "txttotal-testmaterials";
+    public static String LIVE_MATERIALS_UPDATE_EXPIREDAY = "txtexpire-testmaterials";
+    public static String LIVE_MATERIALS_UPDATE_REMARK = "txtremark-testmaterials";
+    public static String LIVE_MATERIALS_UPDATE_SAVEBUTTON= "btnSave-testmaterials";
+    public static String LIVE_MATERIALS_STORAGELOCATION = "StorageLocation4141";
+    public static String LIVE_MATERIALS_REMARK= "Remark4141";
+    
+    //Marking
+    public static String MARKING = "Marking"; 
+    
+    //First Marking New
+    public static String FIRSTMARKINGNEW = ".//*[@id='Marking']/ul/li[1]/a";
+    public static String FIRSTMARKINGNEW_REGION = "ddlRegion-firstMarking_New";
+    public static String FIRSTMARKINGNEW_TESTDATE_YEAR = "FirstMarking-Select-Year-Search_New";
+    public static String FIRSTMARKINGNEW_TESTDATE_MONTH = "FirstMarking-Select-Month-Search_New";
+    public static String FIRSTMARKINGNEW_TESTDATE = "ddlTestDate-firstMarking_New";
+    public static String FIRSTMARKINGNEW_SELECTONECENTER = "CZ-CZU";
+    public static String FIRSTMARKINGNEW_SEARCH = "btnQuery-firstMarking_New";
+    public static String FIRSTMARKINGNEW_TOTALREGISTRATION = "spanTotalRegistration-firstMarking_New";
+    public static String FIRSTMARKINGNEW_EXAMINER = "East Region";
+    public static String FIRSTMARKINGNEW_EXAMINERSEARCH = "btnQuery-SearchAvailableExaminerfirstMarking_New";
+    public static String FIRSTMARKINGNEW_AVAILABLEEXAMINERNO = "spanAvailableExaminer-firstMarking_New";
+    public static String FIRSTMARKINGNEW_INPUTSELECTEXAMINER = "txtSelectExaminerNum-firstMarking_New";
+    public static String FIRSTMARKINGNEW_CALCULATEBUTTON = "btnCalculate-firstMarking_New";
+    public static String FIRSTMARKINGNEW_AUTOALLOCATION = "btnAutoAllocation-firstMarking_New";
+    public static String FIRSTMARKINGNEW_MESSAGEYES ="html/body/div[12]/div[3]/div/button[1]";
+    public static String FIRSTMARKINGNEW_CLEARALLOCATIONBYTESTCENTER = "btnClearAllocationbytestcenter-firstMarking_New";
+    public static String FIRSTMARKINGNEW_CATESTCENTER = ".//*[@id='windwos-firstmarking-claerallocation-tc-span-testcenter_New']/label/input";
+    public static String FIRSTMARKINGNEW_AUTOALLOCATIONIGNORESPEAKINGTC = "btnAutoAllocationignorespeakingtc-firstmarking_New";
+    public static String FIRSTMARKINGNEW_CLEARALLOCATION = "btnClearAllocation-firstMarking_New";
+
+    
+    //Double Marking
+    public static String DOUBLEMARKING = ".//*[@id='Marking']/ul/li[2]/a";
+    public static String DOUBLEMARKING_REGION = "ddlRegion-db";
+    public static String DOUBLEMARKING_TESTDATE_YEAR = "ddlYear-db";
+    public static String DOUBLEMARKING_TESTDATE_MONTH = "ddlMonth-db";
+    public static String DOUBLEMARKING_TESTDATE = "ddlTestDate-db";
+    public static String DOUBLEMARKING_SELECTONECENTER = "CZ-CZU";
+    public static String DOUBLEMARKING_SEARCH = "btnQuery-db";
+    public static String DOUBLEMARKING_INPUTSELECTEXAMINER = "txtSelectExaminerNum-db";
+    public static String DOUBLEMARKING_CALCULATEBUTTON = "btnCalculate-db";
+    public static String DOUBLEMARKING_AVAILABLEEXAMINER = "spanAvailableExaminer-db";
+    public static String DOUBLEMARKING_LISTOFEXAMINERNO = ".//*[@id='dbMaringExaminerListGrid']/div[2]/table/tbody/tr[1]/td[3]";
+    public static String DOUBLEMARKING_AUTOALLOCATION = "btnAutoAllocation-db";
+    public static String DOUBLEMARKING_CLEARALLOCATION = "btnClearAllocation-db";
+    public static String DOUBLEMARKING_SETCAPACITY = ".//*[@id='dbMaringExaminerListGrid']/div[2]/table/tbody/tr[1]/td[19]/a";
+    public static String DOUBLEMARKING_NEWCAPACITYNUMBER = "txtnewcapacity-db";
+    public static String DOUBLEMARKING_MANUALALLOCATIONCHECK = "btnManualAllocation-db";
+    public static String DOUBLEMARKING_MANUALALLOCATIONCHECK_EXAMINER  = ".//*[@id='windows-db-manualAllocation']/table/tbody/tr[1]/td/span/span";
+    public static String DOUBLEMARKING_MANUALALLOCATIONCHECK_EXAMINERLIST  = ".//*[@id='ddlDbMarkingExamienrInfo_listbox']/li[1]";
+    public static String DOUBLEMARKING_MANUALALLOCATIONCHECK_SPEAKINGCANDIDATE = "txtDbMarkingSpeakingCandidateNo";
+    public static String DOUBLEMARKING_MANUALALLOCATIONCHECK_WRITTENTASK1 = "txtDbMarkingTask1CandidateNo";
+    public static String DOUBLEMARKING_MANUALALLOCATIONCHECK_WRITTENTASK2 = "txtDbMarkingTask2CandidateNo";
+    
+    //Marking Input
+    public static String MARKINGINPUT = ".//*[@id='Marking']/ul/li[3]/a";
+    public static String MARKINGINPUT_REGION = "ddlRegionInput-firstMarking";
+    public static String MARKINGINPUT_TESTDATE_YEAR = "FirstMarkingInput-Select-Year-Search";
+    public static String MARKINGINPUT_TESTDATE_MONTH = "FirstMarkingInput-Select-Month-Search";
+    public static String MARKINGINPUT_TESTDATE = "ddlTestDateInput-firstMarking";
+    public static String MARKINGINPUT_SEARCH = "btnQueryInput-firstMarking";
+    public static String MARKINGINPUT_ADDNEWEXAMINER = "btn-firstMarkingInput-addNewExaminer";
+    public static String MARKINGINPUT_EXAMINERINITIAL = ".//*[@id='windows-firstMarkingInput-addNewExaminer']/p[2]/span/span/input";
+    public static String MARKINGINPUT_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[12]/div[3]/div/button[1]";
+
+    //CreateSpkActivityLog
+    public static String CREATESPKACTIVITYLOG = ".//*[@id='Marking']/ul/li[4]/a";
+    public static String CREATESPKACTIVITYLOG_REGION = "selFianceRegion";
+    public static String CREATESPKACTIVITYLOG_TESTDATE_YEAR = "selFianceYear";
+    public static String CREATESPKACTIVITYLOG_TESTDATE_MONTH = "selFinanceMonth";
+    public static String CREATESPKACTIVITYLOG_TESTDATE = "selFianceTestDate";
+    public static String CREATESPKACTIVITYLOG_SEARCH = "btnFinanceSpkActivitySearch";
+    public static String CREATESPKACTIVITYLOG_ADDNEWEXAMINER = "btnFinanceSpkAddExaminer";
+    public static String CREATESPKACTIVITYLOG_EXAMINERINITIAL = ".//*[@id='divSpkAddExaminer']/p[2]/span/span/input";
+    public static String CREATESPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[12]/div[3]/div/button[1]";
+    public static String CREATESPKACTIVITYLOG_RESET = "btnFinanceSpkActivityReset";
+    
+
+
+
 }

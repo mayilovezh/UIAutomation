@@ -1926,7 +1926,29 @@ public class ElementHelper {
     public static String CREATESPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[12]/div[3]/div/button[1]";
     public static String CREATESPKACTIVITYLOG_RESET = "btnFinanceSpkActivityReset";
     
-
-
+    //Create2ndSpkActivityLog
+    public static String CREATE2NDSPKACTIVITYLOG = ".//*[@id='Marking']/ul/li[5]/a";
+    public static String CREATE2NDSPKACTIVITYLOG_REGION = "sel2ndSPKFianceRegion";
+    public static String CREATE2NDSPKACTIVITYLOG_TESTDATE_YEAR = "sel2ndSPKFianceYear";
+    public static String CREATE2NDSPKACTIVITYLOG_TESTDATE_MONTH = "sel2ndSPKFinanceMonth";
+    public static String CREATE2NDSPKACTIVITYLOG_TESTDATE = "sel2ndSPKFianceTestDate";
+    public static String CREATE2NDSPKACTIVITYLOG_SEARCH = "btnFinance2ndSpkActivitySearch";
+    public static String CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER = "btnFinance2ndSpkAddExaminer";
+    public static String CREATE2NDSPKACTIVITYLOG_EXAMINERINITIAL = ".//*[@id='div2ndSpkAddExaminer']/p[2]/span/span/input";
+    public static String CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[13]/div[3]/div/button[1]";
+    public static String CREATE2NDSPKACTIVITYLOG_RESET = "btnFinance2ndSpkActivityReset";
+  
+    //Create2ndSpkActivityLog
+    public static String CREATE2NDWMT = ".//*[@id='Marking']/ul/li[6]/a";
+    public static String CREATE2NDWMT_REGION = "selFiance2ndWMT1Region";
+    public static String CREATE2NDWMT_TESTDATE_YEAR = "selFiance2ndWMT1Year";
+    public static String CREATE2NDWMT_TESTDATE_MONTH = "selFinance2ndWMT1Month";
+    public static String CREATE2NDWMT_TESTDATE = "selFiance2ndWMT1TestDate";
+    public static String CREATE2NDWMT_SEARCH = "btnFinance2ndWritingMT1ActivitySearch";
+    public static String CREATE2NDWMT_ADDNEWEXAMINER = "btnFinance2ndWritingMT1AddExaminer";
+    public static String CREATE2NDWMT_EXAMINERINITIAL = ".//*[@id='div2ndWMTAddExaminer']/p[2]/span/span/input";
+    public static String CREATE2NDWMT_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[13]/div[3]/div/button[1]";
+    public static String CREATE2NDWMT_RESET = "btnFinance2ndWritingMT1ActivityReset";
+  
 
 }

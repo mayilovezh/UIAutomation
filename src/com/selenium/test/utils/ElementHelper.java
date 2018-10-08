@@ -1938,7 +1938,7 @@ public class ElementHelper {
     public static String CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[13]/div[3]/div/button[1]";
     public static String CREATE2NDSPKACTIVITYLOG_RESET = "btnFinance2ndSpkActivityReset";
   
-    //Create2ndSpkActivityLog
+    //Create2ndWMT
     public static String CREATE2NDWMT = ".//*[@id='Marking']/ul/li[6]/a";
     public static String CREATE2NDWMT_REGION = "selFiance2ndWMT1Region";
     public static String CREATE2NDWMT_TESTDATE_YEAR = "selFiance2ndWMT1Year";
@@ -1950,5 +1950,35 @@ public class ElementHelper {
     public static String CREATE2NDWMT_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[13]/div[3]/div/button[1]";
     public static String CREATE2NDWMT_RESET = "btnFinance2ndWritingMT1ActivityReset";
   
+    //Create2ndWMT2
+    public static String CREATE2NDWMT2 = ".//*[@id='Marking']/ul/li[7]/a";
+    public static String CREATE2NDWMT2_REGION = "selFiance2ndWMT2Region";
+    public static String CREATE2NDWMT2_TESTDATE_YEAR = "selFiance2ndWMT2Year";
+    public static String CREATE2NDWMT2_TESTDATE_MONTH = "selFinance2ndWMT2Month";
+    public static String CREATE2NDWMT2_TESTDATE = "selFiance2ndWMT2TestDate";
+    public static String CREATE2NDWMT2_SEARCH = "btnFinance2ndWritingMT2ActivitySearch";
+    public static String CREATE2NDWMT2_RESET = "btnFinance2ndWritingMT2ActivityReset";
+  
+    //First Marking
+    public static String FIRSTMARKING = ".//*[@id='Marking']/ul/li[8]/a";
+    public static String FIRSTMARKING_REGION = "ddlRegion-firstMarking";
+    public static String FIRSTMARKING_TESTDATE_YEAR = "FirstMarking-Select-Year-Search";
+    public static String FIRSTMARKING_TESTDATE_MONTH = "FirstMarking-Select-Month-Search";
+    public static String FIRSTMARKING_TESTDATE = "ddlTestDate-firstMarking";
+    public static String FIRSTMARKING_SELECTONECENTER = "CZ-CZU";
+    public static String FIRSTMARKING_SEARCH = "btnQuery-firstMarking";
+    public static String FIRSTMARKING_TOTALREGISTRATION = "spanTotalRegistration-firstMarking";
+    public static String FIRSTMARKING_EXAMINER = "East Region";
+    public static String FIRSTMARKING_EXAMINERSEARCH = "btnQuery-SearchAvailableExaminerfirstMarking";
+    public static String FIRSTMARKING_AVAILABLEEXAMINERNO = "spanAvailableExaminer-firstMarking";
+    public static String FIRSTMARKING_INPUTSELECTEXAMINER = "txtSelectExaminerNum-firstMarking";
+    public static String FIRSTMARKING_CALCULATEBUTTON = "btnCalculate-firstMarking";
+    public static String FIRSTMARKING_AUTOALLOCATION = "btnAutoAllocation-firstMarking";
+    public static String FIRSTMARKING_MESSAGEYES ="html/body/div[12]/div[3]/div/button[1]";
+    public static String FIRSTMARKING_CLEARALLOCATIONBYTESTCENTER = "btnClearAllocationbytestcenter-firstMarking";
+    public static String FIRSTMARKING_CATESTCENTER = ".//*[@id='windwos-firstmarking-claerallocation-tc-span-testcenter']/label/input";
+    public static String FIRSTMARKING_AUTOALLOCATIONIGNORESPEAKINGTC = "btnAutoAllocationignorespeakingtc-firstmarking";
+    public static String FIRSTMARKING_CLEARALLOCATION = "btnClearAllocation-firstMarking";
 
+    
 }

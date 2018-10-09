@@ -13,7 +13,7 @@ import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.WebDriverAction;
 
-public class LiveMaterials {
+public class AdminTestLiveMats {
 
 	static WebDriver driver;
 	WebDriverAction action;

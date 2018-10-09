@@ -1835,7 +1835,7 @@ public class ElementHelper {
     public static String CATEGORY_MANAGEMENT_MODIFY = "//*[@id='spreadsheet-CategoryList-table']/tbody/tr[3]/td[5]/input[1]";
     public static String CATEGORY_MANAGEMENT_PERMANENT_Y = "//*[@id='spreadsheet-CategoryList-table']/tbody/tr[3]/td[4]";
     
-    //Live Materials
+    //Admin Test Live Mats
     public static String LIVE_MATERIALS = ".//*[@id='Stock']/ul/li[2]/a";
     public static String LIVE_MATERIALS_REGION = "ddlRegion-testmaterials";
     public static String LIVE_MATERIALS_TESTDATE_YEAR = "testmaterials-Select-Year-Search";
@@ -1854,6 +1854,22 @@ public class ElementHelper {
     public static String LIVE_MATERIALS_UPDATE_SAVEBUTTON= "btnSave-testmaterials";
     public static String LIVE_MATERIALS_STORAGELOCATION = "StorageLocation4141";
     public static String LIVE_MATERIALS_REMARK= "Remark4141";
+    
+    //Admin Permanent Mats
+    public static String PERMANENTMATERIALS = ".//*[@id='Stock']/ul/li[3]/a";
+    public static String PERMANENTMATERIALS_REGION = "ddlRegion-Permanent";
+    public static String PERMANENTMATERIALS_UPDATEBUTTON = ".//*[@id='tr21']/td[9]/input";
+    public static String PERMANENTMATERIALS_UPDATE_STORAGETYPE = "ddlstoragetype-Permanent";
+    public static String PERMANENTMATERIALS_UPDATE_TESTDATEYEAR = "Permanent-Select-Year";
+    public static String PERMANENTMATERIALS_UPDATE_TESTDATEMONTH = "Permanent-Select-Month";
+    public static String PERMANENTMATERIALS_UPDATE_TESTDATE = "ddlTestDate-Permanent";
+    public static String PERMANENTMATERIALS_UPDATE_TestCENTER = "ddlPermanent-testcenter";
+    public static String PERMANENTMATERIALS_UPDATE_TOTALPACKAGES = "txtpackage-Permanent";
+    public static String PERMANENTMATERIALS_UPDATE_TOTALNUMBER = "txttotal-Permanent";
+    public static String PERMANENTMATERIALS_UPDATE_REMARK = "txtremark-Permanent";
+    public static String PERMANENTMATERIALS_UPDATE_SAVEBUTTON= "btnSave-Permanent";
+    public static String PERMANENTMATERIALS_STORAGELOCATION = "StorageLocation21";
+    public static String PERMANENTMATERIALS_REMARK= "Remark21";
     
     //Marking
     public static String MARKING = "Marking"; 
@@ -1980,5 +1996,13 @@ public class ElementHelper {
     public static String FIRSTMARKING_AUTOALLOCATIONIGNORESPEAKINGTC = "btnAutoAllocationignorespeakingtc-firstmarking";
     public static String FIRSTMARKING_CLEARALLOCATION = "btnClearAllocation-firstMarking";
 
+    //Marking Sorting
+    public static String MARKINGSORTING = ".//*[@id='Marking']/ul/li[10]/a";
+    public static String MARKINGSORTING_REGION = "MarkingSortinglistRegion";
+    public static String MARKINGSORTING_TESTDATE_YEAR = "MarkingSortinglistDdlYear-Search";
+    public static String MARKINGSORTING_TESTDATE_MONTH = "MarkingSortinglistDdlMonth-Search";
+    public static String MARKINGSORTING_TESTDATE = "MarkingSortinglistDateTime";
+    public static String MARKINGSORTING_SEARCH = "btnMarkingSorting";
+  
     
 }

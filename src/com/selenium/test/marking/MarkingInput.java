@@ -70,5 +70,30 @@ public class MarkingInput {
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		action.click(By.xpath(ElementHelper.MARKINGINPUT_ADDNEWEXAMINER_SAVEBUTTON));
 	}
-	
+
+	@Test(description = "Save Changes Marking Input")
+	public void step02_SaveChanges() throws InterruptedException {
+		search();
+		Thread.sleep(ElementHelper.WAIT_TIME);
+		action.click(By.id(ElementHelper.MARKINGINPUT_ADDNEWEXAMINER));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.MARKINGINPUT_EXAMINERINITIAL));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.sendkeys(By.xpath(ElementHelper.MARKINGINPUT_EXAMINERINITIAL), "AB");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('txtfirstMarkingInputExaminer_listbox').getElementsByTagName('li').item(1).click()");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.MARKINGINPUT_ADDNEWEXAMINER_SAVEBUTTON));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.id(ElementHelper.MARKINGINPUT_SAVECHANGES));
+	}
+
+	@Test(description = "Clear Marking Input Marking Input")
+	public void step02_ClearMarkingInput() throws InterruptedException {
+		search();
+		Thread.sleep(ElementHelper.LONG_TIME);
+		action.click(By.id(ElementHelper.MARKINGINPUT_CLEARMARKINGINPUT));
+	}
+
 }

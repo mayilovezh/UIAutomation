@@ -85,4 +85,27 @@ public class Create2ndWMT {
 		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(0).getElementsByTagName('Button').item(0).click()");
 	}
 
+	@Test(description = "Batch Save CREATE2NDWMT")
+	public void step04_BatchSave() throws InterruptedException {
+		search();
+		Thread.sleep(ElementHelper.LONG_TIME);
+		action.click(By.id(ElementHelper.CREATE2NDWMT_ADDNEWEXAMINER));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.CREATE2NDWMT_EXAMINERINITIAL));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.sendkeys(By.xpath(ElementHelper.CREATE2NDWMT_EXAMINERINITIAL), "AB");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('txt2ndMarkingInputExaminer_listbox').getElementsByTagName('li').item(1).click()");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(0).getElementsByTagName('Button').item(0).click()");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.id(ElementHelper.CREATE2NDWMT_BATCHSAVE));
+	}
+	
+	@Test(description = "Clear CREATE2NDWMT")
+	public void step05_Clear() throws InterruptedException {
+		search();
+		action.click(By.id(ElementHelper.CREATE2NDWMT_CLEAR));
+	}
 }

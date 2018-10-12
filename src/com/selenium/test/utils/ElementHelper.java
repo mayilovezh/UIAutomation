@@ -1870,6 +1870,24 @@ public class ElementHelper {
     public static String PERMANENTMATERIALS_UPDATE_SAVEBUTTON= "btnSave-Permanent";
     public static String PERMANENTMATERIALS_STORAGELOCATION = "StorageLocation21";
     public static String PERMANENTMATERIALS_REMARK= "Remark21";
+    public static String PERMANENTMATERIALS_CHECKALL= "SelectAll-Permanent";
+    public static String PERMANENTMATERIALS_SAVESELECT= "btnSaveSelect-Permanent";
+    
+    //Test Day Allocation
+    public static String TESTDAYALLOCATION = ".//*[@id='Stock']/ul/li[4]/a";
+    public static String TESTDAYALLOCATION_REGION = "selectStockWrittenArrangementRegion";
+    public static String TESTDAYALLOCATION_TESTDATEYEAR = "StockWrittenArrangement-Select-Year-Search";
+    public static String TESTDAYALLOCATION_TESTDATEMONTH = "StockWrittenArrangement-Select-Month-Search";
+    public static String TESTDAYALLOCATION_TESTDATE = "selectStockWrittenArrangementTestDate";
+    public static String TESTDAYALLOCATION_TestCENTER = "selectStockWrittenArrangementTestCenter";
+    public static String TESTDAYALLOCATION_SEARCH = "btnStockArrangementSearch";
+    public static String TESTDAYALLOCATION_AUTOARRAGECURRENTCENTRE = "btnStockAutoArrange";
+    public static String TESTDAYALLOCATION_CLEARARRANGEOFCURRENTCENTRE = "btnStockArrangeClearWrittenArrange";
+    public static String TESTDAYALLOCATION_SAVE = "btnStockArrangeSave";  
+    public static String TESTDAYALLOCATION_MESSAGEYES = "html/body/div[11]/div[3]/div/button";
+    
+    
+    
     
     //Marking
     public static String MARKING = "Marking"; 
@@ -1929,6 +1947,8 @@ public class ElementHelper {
     public static String MARKINGINPUT_ADDNEWEXAMINER = "btn-firstMarkingInput-addNewExaminer";
     public static String MARKINGINPUT_EXAMINERINITIAL = ".//*[@id='windows-firstMarkingInput-addNewExaminer']/p[2]/span/span/input";
     public static String MARKINGINPUT_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[12]/div[3]/div/button[1]";
+    public static String MARKINGINPUT_CLEARMARKINGINPUT = "btnClearMarkingInput-firstMarking";
+    public static String MARKINGINPUT_SAVECHANGES = "btnSaveMarkingInput-firstMarking";
 
     //CreateSpkActivityLog
     public static String CREATESPKACTIVITYLOG = ".//*[@id='Marking']/ul/li[4]/a";
@@ -1941,6 +1961,8 @@ public class ElementHelper {
     public static String CREATESPKACTIVITYLOG_EXAMINERINITIAL = ".//*[@id='divSpkAddExaminer']/p[2]/span/span/input";
     public static String CREATESPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[12]/div[3]/div/button[1]";
     public static String CREATESPKACTIVITYLOG_RESET = "btnFinanceSpkActivityReset";
+    public static String CREATESPKACTIVITYLOG_BATCHSAVE = "btnFinanceSpkActivityUpload";
+    public static String CREATESPKACTIVITYLOG_CLEAR = "btnFinanceSpkActivityBatchClear";
     
     //Create2ndSpkActivityLog
     public static String CREATE2NDSPKACTIVITYLOG = ".//*[@id='Marking']/ul/li[5]/a";
@@ -1953,7 +1975,10 @@ public class ElementHelper {
     public static String CREATE2NDSPKACTIVITYLOG_EXAMINERINITIAL = ".//*[@id='div2ndSpkAddExaminer']/p[2]/span/span/input";
     public static String CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[13]/div[3]/div/button[1]";
     public static String CREATE2NDSPKACTIVITYLOG_RESET = "btnFinance2ndSpkActivityReset";
-  
+    public static String CREATE2NDSPKACTIVITYLOG_BATCHSAVE = "btnFinanceSpkActivityUpload";
+    public static String CREATE2NDSPKACTIVITYLOG_CLEAR = "btnFinanceSpkActivityBatchClear";
+    
+    
     //Create2ndWMT
     public static String CREATE2NDWMT = ".//*[@id='Marking']/ul/li[6]/a";
     public static String CREATE2NDWMT_REGION = "selFiance2ndWMT1Region";
@@ -1965,7 +1990,9 @@ public class ElementHelper {
     public static String CREATE2NDWMT_EXAMINERINITIAL = ".//*[@id='div2ndWMTAddExaminer']/p[2]/span/span/input";
     public static String CREATE2NDWMT_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[13]/div[3]/div/button[1]";
     public static String CREATE2NDWMT_RESET = "btnFinance2ndWritingMT1ActivityReset";
-  
+    public static String CREATE2NDWMT_BATCHSAVE = "btnFinance2ndWritingMT1ActivityUploadToFianance";
+    public static String CREATE2NDWMT_CLEAR = "btnFinance2ndWritingMT1ActivityBatchClear";
+    
     //Create2ndWMT2
     public static String CREATE2NDWMT2 = ".//*[@id='Marking']/ul/li[7]/a";
     public static String CREATE2NDWMT2_REGION = "selFiance2ndWMT2Region";

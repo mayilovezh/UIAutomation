@@ -85,4 +85,28 @@ public class CreateSpkActivityLog {
 		action.click(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON));
 	}
 
+	@Test(description = "Batch Save CreateSpkActivityLog")
+	public void step04_BatchSave() throws InterruptedException {
+		search();
+		Thread.sleep(ElementHelper.LONG_TIME);
+		action.click(By.id(ElementHelper.CREATESPKACTIVITYLOG_ADDNEWEXAMINER));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_EXAMINERINITIAL));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.sendkeys(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_EXAMINERINITIAL), "AB");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('txtSpkInputExaminer_listbox').getElementsByTagName('li').item(1).click()");
+		Thread.sleep(ElementHelper.SHORT_TIME_B);
+		action.click(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON));
+		Thread.sleep(ElementHelper.SHORT_TIME_B);		
+		action.click(By.id(ElementHelper.CREATESPKACTIVITYLOG_BATCHSAVE));
+	}
+
+	@Test(description = "Clear CreateSpkActivityLog")
+	public void step05_Clear() throws InterruptedException {
+		search();
+		Thread.sleep(ElementHelper.SHORT_TIME_B);		
+		action.click(By.id(ElementHelper.CREATESPKACTIVITYLOG_CLEAR));
+	}
 }

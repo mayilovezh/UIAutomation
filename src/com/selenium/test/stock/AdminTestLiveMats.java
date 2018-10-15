@@ -3,6 +3,7 @@ package com.selenium.test.stock;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
@@ -17,6 +18,21 @@ public class AdminTestLiveMats {
 
 	static WebDriver driver;
 	WebDriverAction action;
+	
+	public void inputOneStorageLocation() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("function inputOneStorageLocation(){\r\n" + 
+				"document.getElementsByName('StorageLocation').item(0).value = '222'" + 
+				"};return inputOneStorageLocation()");
+	}
+	
+	public void inputOneRemark() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("function inputOneRemark(){\r\n" + 
+				"document.getElementsByName('Remark').item(0).value = '222'" + 
+				"};return inputOneRemark()");
+	}
+	
 	
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -37,7 +53,8 @@ public class AdminTestLiveMats {
 		action.selectByValue(By.id(ElementHelper.LIVE_MATERIALS_TESTDATE), "10210");
 		action.selectByValue(By.id(ElementHelper.LIVE_MATERIALS_STOCKTYPE), "340");
 		try {
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
+
+
 			action.click(By.id(ElementHelper.LIVE_MATERIALS_SEARCH));
 			Thread.sleep(ElementHelper.WAIT_TIME);
 			action.assertText(By.xpath(ElementHelper.LIVE_MATERIALS_LISTOFCATEGORYNAME), ElementHelper.LIVE_MATERIALS_CATEGORYNAME);
@@ -90,18 +107,13 @@ public class AdminTestLiveMats {
 	}
 
 	@Test(description = "Save Live Test Materials")
-	public void step03_Search() throws InterruptedException {
+	public void step03_Save() throws InterruptedException {
 		search();
 		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.clear(By.id(ElementHelper.LIVE_MATERIALS_STORAGELOCATION));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.sendkeys(By.id(ElementHelper.LIVE_MATERIALS_STORAGELOCATION), "40");
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.clear(By.id(ElementHelper.LIVE_MATERIALS_REMARK));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.sendkeys(By.id(ElementHelper.LIVE_MATERIALS_REMARK), "50");
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.click(By.id(ElementHelper.LIVE_MATERIALS_UPDATE_SAVEBUTTON));
+		inputOneStorageLocation();
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		inputOneRemark();
+		action.click(By.id(ElementHelper.LIVE_MATERIALS_SAVEBUTTON));
 	}
 	
 	

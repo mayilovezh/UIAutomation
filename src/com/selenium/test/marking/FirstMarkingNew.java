@@ -76,7 +76,7 @@ public class FirstMarkingNew {
 	@Test(description = "Calculate First Marking New")
 	public void step02_Calculate() throws InterruptedException {
 		search();
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.name(ElementHelper.FIRSTMARKINGNEW_EXAMINER));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.id(ElementHelper.FIRSTMARKINGNEW_EXAMINERSEARCH));
@@ -90,7 +90,7 @@ public class FirstMarkingNew {
 	@Test(description = "Auto Allocation First Marking New")
 	public void step03_AutoAllocation() throws InterruptedException {
 		search();
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.name(ElementHelper.FIRSTMARKINGNEW_EXAMINER));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		action.click(By.id(ElementHelper.FIRSTMARKINGNEW_EXAMINERSEARCH));
@@ -121,7 +121,7 @@ public class FirstMarkingNew {
 	@Test(description = "Auto allocation ignore speaking TC First Marking New")
 	public void step05_AutoallocationignorespeakingTC() throws InterruptedException {
 		search();
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.id(ElementHelper.FIRSTMARKINGNEW_AUTOALLOCATIONIGNORESPEAKINGTC));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -131,7 +131,7 @@ public class FirstMarkingNew {
 	@Test(description = "Clear Allocation First Marking New")
 	public void step06_ClearAllocation() throws InterruptedException {
 		search();
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.id(ElementHelper.FIRSTMARKINGNEW_CLEARALLOCATION));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		JavascriptExecutor js = (JavascriptExecutor) driver;

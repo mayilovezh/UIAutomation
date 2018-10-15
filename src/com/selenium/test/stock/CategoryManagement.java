@@ -105,7 +105,7 @@ public class CategoryManagement {
 				status = true;
 			} else {
 				status = false;
-				System.out.println(categoryName + "  did not match!");
+				//System.out.println(categoryName + "  did not match!");
 			}
 		}
 		return status;

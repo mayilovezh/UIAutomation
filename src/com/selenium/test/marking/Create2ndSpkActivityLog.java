@@ -32,25 +32,25 @@ public class Create2ndSpkActivityLog {
 	
 	public void reset() {
 		navigate();
-		action.selectByValue(By.id(ElementHelper.CREATESPKACTIVITYLOG_REGION), "2");
-		action.selectByValue(By.id(ElementHelper.CREATESPKACTIVITYLOG_TESTDATE_YEAR), "2018");
-		action.selectByIndex(By.id(ElementHelper.CREATESPKACTIVITYLOG_TESTDATE_MONTH), 2);
-		action.selectByValue(By.id(ElementHelper.CREATESPKACTIVITYLOG_TESTDATE), "10208");
-		action.click(By.id(ElementHelper.CREATESPKACTIVITYLOG_RESET));
+		action.selectByValue(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_REGION), "2");
+		action.selectByValue(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_TESTDATE_YEAR), "2018");
+		action.selectByIndex(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_TESTDATE_MONTH), 2);
+		action.selectByValue(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_TESTDATE), "10208");
+		action.click(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_RESET));
 	}
 	
 	public void search() {
 		navigate();
-		action.selectByValue(By.id(ElementHelper.CREATESPKACTIVITYLOG_REGION), "2");
-		action.selectByValue(By.id(ElementHelper.CREATESPKACTIVITYLOG_TESTDATE_YEAR), "2018");
-		action.selectByIndex(By.id(ElementHelper.CREATESPKACTIVITYLOG_TESTDATE_MONTH), 2);
-		action.selectByValue(By.id(ElementHelper.CREATESPKACTIVITYLOG_TESTDATE), "10208");
-		action.click(By.id(ElementHelper.CREATESPKACTIVITYLOG_SEARCH));
+		action.selectByValue(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_REGION), "2");
+		action.selectByValue(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_TESTDATE_YEAR), "2018");
+		action.selectByIndex(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_TESTDATE_MONTH), 2);
+		action.selectByValue(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_TESTDATE), "10208");
+		action.click(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_SEARCH));
 	}
 	
 	public void navigate() {
 		action.waitElementVisibleToClick(By.id(ElementHelper.MARKING));
-		action.waitElementVisibleToClick(By.xpath(ElementHelper.CREATESPKACTIVITYLOG));
+		action.waitElementVisibleToClick(By.xpath(ElementHelper.CREATE2NDSPKACTIVITYLOG));
 		try {
 			Thread.sleep(ElementHelper.WAIT_TIME);
 		} catch (InterruptedException e) {
@@ -73,32 +73,32 @@ public class Create2ndSpkActivityLog {
 	public void step03_AddNewExaminer() throws InterruptedException {
 		search();
 		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.CREATESPKACTIVITYLOG_ADDNEWEXAMINER));
+		action.click(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_EXAMINERINITIAL));
+		action.click(By.xpath(ElementHelper.CREATE2NDSPKACTIVITYLOG_EXAMINERINITIAL));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_EXAMINERINITIAL), "AB");
+		action.sendkeys(By.xpath(ElementHelper.CREATE2NDSPKACTIVITYLOG_EXAMINERINITIAL), "AB");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('txtSpkInputExaminer_listbox').getElementsByTagName('li').item(1).click()");
+		js.executeScript("document.getElementById('txt2ndSpkInputExaminer_listbox').getElementsByTagName('li').item(1).click()");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON));
+		action.click(By.xpath(ElementHelper.CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON));
 	}
 
 	@Test(description = "Batch Save Create2ndSpkActivityLog")
 	public void step04_BatchSave() throws InterruptedException {
 		search();
 		Thread.sleep(ElementHelper.LONG_TIME);
-		action.click(By.id(ElementHelper.CREATESPKACTIVITYLOG_ADDNEWEXAMINER));
+		action.click(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_EXAMINERINITIAL));
+		action.click(By.xpath(ElementHelper.CREATE2NDSPKACTIVITYLOG_EXAMINERINITIAL));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_EXAMINERINITIAL), "AB");
+		action.sendkeys(By.xpath(ElementHelper.CREATE2NDSPKACTIVITYLOG_EXAMINERINITIAL), "AB");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('txtSpkInputExaminer_listbox').getElementsByTagName('li').item(1).click()");
+		js.executeScript("document.getElementById('txt2ndSpkInputExaminer_listbox').getElementsByTagName('li').item(1).click()");
 		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CREATESPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON));
+		action.click(By.xpath(ElementHelper.CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON));
 		Thread.sleep(ElementHelper.SHORT_TIME_B);		
 		action.click(By.id(ElementHelper.CREATE2NDSPKACTIVITYLOG_BATCHSAVE));
 	}

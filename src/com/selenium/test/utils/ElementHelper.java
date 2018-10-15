@@ -1843,18 +1843,17 @@ public class ElementHelper {
     public static String LIVE_MATERIALS_TESTDATE = "ddlTestDate-testmaterials";
     public static String LIVE_MATERIALS_STOCKTYPE = "ddlStockType-testmaterials";
     public static String LIVE_MATERIALS_SEARCH = "btnQuery-testmaterials";
-    public static String LIVE_MATERIALS_LISTOFCATEGORYNAME = ".//*[@id='tr4141']/td[2]";
+    public static String LIVE_MATERIALS_LISTOFCATEGORYNAME = ".//*[@id='spreadsheet-TestMaterials-table']/tbody/tr[1]/td[2]";
     public static String LIVE_MATERIALS_CATEGORYNAME = "Listening CD";
-    public static String LIVE_MATERIALS_UPDATEBUTTON = ".//*[@id='tr4141']/td[11]/input";
+    public static String LIVE_MATERIALS_UPDATEBUTTON = ".//*[@id='spreadsheet-TestMaterials-table']/tbody/tr[1]/td[11]/input";
     public static String LIVE_MATERIALS_UPDATE_STORAGETYPE = "ddlstoragetype-testmaterials";
     public static String LIVE_MATERIALS_UPDATE_TOTALPACKAGES = "txtpackage-testmaterials";
     public static String LIVE_MATERIALS_UPDATE_TOTALNUMBER = "txttotal-testmaterials";
     public static String LIVE_MATERIALS_UPDATE_EXPIREDAY = "txtexpire-testmaterials";
     public static String LIVE_MATERIALS_UPDATE_REMARK = "txtremark-testmaterials";
-    public static String LIVE_MATERIALS_UPDATE_SAVEBUTTON= "btnSave-testmaterials";
-    public static String LIVE_MATERIALS_STORAGELOCATION = "StorageLocation4141";
-    public static String LIVE_MATERIALS_REMARK= "Remark4141";
-    
+    public static String LIVE_MATERIALS_UPDATE_SAVEBUTTON= "html/body/div[11]/div[3]/div/button[1]";
+    public static String LIVE_MATERIALS_SAVEBUTTON= "btnSave-testmaterials";
+
     //Admin Permanent Mats
     public static String PERMANENTMATERIALS = ".//*[@id='Stock']/ul/li[3]/a";
     public static String PERMANENTMATERIALS_REGION = "ddlRegion-Permanent";
@@ -1973,10 +1972,10 @@ public class ElementHelper {
     public static String CREATE2NDSPKACTIVITYLOG_SEARCH = "btnFinance2ndSpkActivitySearch";
     public static String CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER = "btnFinance2ndSpkAddExaminer";
     public static String CREATE2NDSPKACTIVITYLOG_EXAMINERINITIAL = ".//*[@id='div2ndSpkAddExaminer']/p[2]/span/span/input";
-    public static String CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[13]/div[3]/div/button[1]";
+    public static String CREATE2NDSPKACTIVITYLOG_ADDNEWEXAMINER_SAVEBUTTON = "html/body/div[12]/div[3]/div/button[1]";
     public static String CREATE2NDSPKACTIVITYLOG_RESET = "btnFinance2ndSpkActivityReset";
     public static String CREATE2NDSPKACTIVITYLOG_BATCHSAVE = "btnFinanceSpkActivityUpload";
-    public static String CREATE2NDSPKACTIVITYLOG_CLEAR = "btnFinanceSpkActivityBatchClear";
+    public static String CREATE2NDSPKACTIVITYLOG_CLEAR = "btnFinance2ndSpkActivityClear";
     
     
     //Create2ndWMT

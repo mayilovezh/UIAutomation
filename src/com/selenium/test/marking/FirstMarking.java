@@ -76,9 +76,11 @@ public class FirstMarking {
 	@Test(description = "Calculate First Marking")
 	public void step02_Calculate() throws InterruptedException {
 		search();
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.LONG_TIME);
 		String ss = action.getText(By.id(ElementHelper.FIRSTMARKING_AVAILABLEEXAMINERNO));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.sendkeys(By.id(ElementHelper.FIRSTMARKING_INPUTSELECTEXAMINER), ss);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.FIRSTMARKING_CALCULATEBUTTON));
 		Thread.sleep(ElementHelper.WAIT_TIME);
 	}
@@ -86,11 +88,13 @@ public class FirstMarking {
 	@Test(description = "Auto Allocation First Marking")
 	public void step03_AutoAllocation() throws InterruptedException {
 		search();
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		String ss = action.getText(By.id(ElementHelper.FIRSTMARKING_AVAILABLEEXAMINERNO));
-		action.sendkeys(By.id(ElementHelper.FIRSTMARKING_INPUTSELECTEXAMINER), ss);
-		action.click(By.id(ElementHelper.FIRSTMARKING_CALCULATEBUTTON));
 		Thread.sleep(ElementHelper.LONG_TIME);
+		String ss = action.getText(By.id(ElementHelper.FIRSTMARKING_AVAILABLEEXAMINERNO));
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.sendkeys(By.id(ElementHelper.FIRSTMARKING_INPUTSELECTEXAMINER), ss);
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		action.click(By.id(ElementHelper.FIRSTMARKING_CALCULATEBUTTON));
+		Thread.sleep(ElementHelper.LONG_TIME_A);
 		action.click(By.id(ElementHelper.FIRSTMARKING_AUTOALLOCATION));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -100,6 +104,7 @@ public class FirstMarking {
 	@Test(description = "Clear Allocation By Test Center First Marking")
 	public void step04_ClearAllocationByTestCenter() throws InterruptedException {
 		search1();
+		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.FIRSTMARKING_CLEARALLOCATIONBYTESTCENTER));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.xpath(ElementHelper.FIRSTMARKING_CATESTCENTER));
@@ -108,12 +113,13 @@ public class FirstMarking {
 		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(0).getElementsByTagName('Button').item(0).click()");
 		Thread.sleep(ElementHelper.WAIT_TIME);
 		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(1).getElementsByTagName('Button').item(0).click()");
+		Thread.sleep(ElementHelper.SHORT_TIME);
 	}
 
 	@Test(description = "Auto allocation ignore speaking TC First Marking")
 	public void step05_AutoallocationignorespeakingTC() throws InterruptedException {
 		search();
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.id(ElementHelper.FIRSTMARKING_AUTOALLOCATIONIGNORESPEAKINGTC));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -123,9 +129,9 @@ public class FirstMarking {
 	@Test(description = "Clear Allocation First Marking")
 	public void step06_ClearAllocation() throws InterruptedException {
 		search();
-		Thread.sleep(ElementHelper.WAIT_TIME);
+		Thread.sleep(ElementHelper.LONG_TIME);
 		action.click(By.id(ElementHelper.FIRSTMARKING_CLEARALLOCATION));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+		Thread.sleep(ElementHelper.SHORT_TIME);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(0).getElementsByTagName('Button').item(0).click()");
 	}

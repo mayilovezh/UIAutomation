@@ -8,7 +8,7 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 		<listener class-name="com.selenium.test.listener.TestNGListener" />
 	</listeners>
-
+	<!--  
 	<test name="TestCenter" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.testcenter.TestCenterList" />
@@ -148,7 +148,29 @@
 			<class name="com.selenium.test.stock.CategoryManagement" />
 		</classes>
 	</test>
+	-->	
+	<test name="Stock" preserve-order="true">
+		<classes>
+			<class name="com.selenium.test.stock.CategoryManagement" />
+			<class name="com.selenium.test.stock.AdminTestLiveMats" />
+			<class name="com.selenium.test.stock.AdminPermanentMats" />
+			<class name="com.selenium.test.stock.TestDayAllocation" />								
+		</classes>
+	</test>
 
+	<test name="Marking" preserve-order="true">
+		<classes>
+			<class name="com.selenium.test.marking.FirstMarkingNew" />
+			<class name="com.selenium.test.marking.DoubleMarking" />
+			<class name="com.selenium.test.marking.MarkingInput" />
+			<class name="com.selenium.test.marking.CreateSpkActivityLog" />
+			<class name="com.selenium.test.marking.Create2ndSpkActivityLog" />
+			<class name="com.selenium.test.marking.Create2ndWMT" />
+			<class name="com.selenium.test.marking.Create2ndWMT2" />
+			<class name="com.selenium.test.marking.FirstMarking" />
+			<class name="com.selenium.test.marking.MarkingSorting" />								
+		</classes>
+	</test>
 </suite> 
 
  

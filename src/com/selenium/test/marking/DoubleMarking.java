@@ -52,12 +52,13 @@ public class DoubleMarking {
 			String availableExaminer = action.getText(By.id(ElementHelper.DOUBLEMARKING_AVAILABLEEXAMINER));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.sendkeys(By.id(ElementHelper.DOUBLEMARKING_INPUTSELECTEXAMINER),availableExaminer);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
+			Thread.sleep(ElementHelper.SHORT_TIME);
 			action.click(By.id(ElementHelper.DOUBLEMARKING_CALCULATEBUTTON));
 			Thread.sleep(ElementHelper.LONG_TIME);
 			String examinerNo = action.getText(By.xpath(ElementHelper.DOUBLEMARKING_LISTOFEXAMINERNO));
 			Thread.sleep(ElementHelper.SHORT_TIME_A);
 			action.assertText(By.xpath(ElementHelper.DOUBLEMARKING_LISTOFEXAMINERNO), examinerNo);
+			Thread.sleep(ElementHelper.SHORT_TIME);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);

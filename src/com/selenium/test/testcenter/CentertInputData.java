@@ -12,110 +12,30 @@ import com.selenium.test.brower.Mis2Brower;
 
 public class CentertInputData {	
 
-	public String BusinessPartnerGlobalKeys = "Hilton Hotel";
+	public String tcName = "对外经济贸易大学";
 	
-	public String CustomerNameKeys = "Mr.Pawn";
+	public String tcEName = "University of International Business and Economics";
 	
-	public String TotalValueKeys = "999999";
+	public String abbreviation = "BJ-UIBE";
 	
-	public String ResponsibleDepartmentHeadKeys = "responsibleDeptHead@qq.com";
+	public String address = "朝阳区惠新东街10号(中日友好医院北侧)";
 	
-	public String incomeContractDescriptionKeys = "Create Income Contract through automation save";
-
-	public String paymentContractDescriptionKeys = "Create Payment Contract through automation save";
-
-	public String paymentSubmitContractDescriptionKeys = "Create Payment Contract through automation submit";
+	public String addressE = "Chaoyang District, No. 10 Huixin East Street (Sino-Japanese Friendship Hospital on the north side)";
 	
-	public String ContractDescriptionKeys = "Through add Contract by created in the Contract Management";
-
-	public String ContractCreatorCommentsKeys = "Create comments save";
+	public String centerDescription = "No ReMark";
 	
-	public String DelegatedAuthorityKeys = "yuanfeng";
+	public String trafficInfoCn = "No ReMark";
 	
-	public String successfulWarning = "Action is successful.";
+	public String trafficInfoEn = "No ReMark";
 	
-	public String uploadFileIsRequiredWarning = "Please upload contract first.";
+	public String telephone = "010-1234567";
 	
-	public String uploadSupportingDocumentsIsRequiredWarning = "Please upload supporting documents.";
+	public String superPhone = "13822222222";
 	
-	public String submitWarning = "Contract has been uploaded.";
+	public String postCode = "100000";
 	
-	public String inputVendorName = "modifyTestVendorEN";
+	public String saveSuccessfulMessage = "Operation is complete!";
 	
-	public String uploadFileLaction = "./upload/test.pdf";
-	
-	public String uploadFileOfDocxLaction = "./upload/test.docx";
-	
-	public String uploadFileOfDocLaction = "./upload/test.doc";
-	
-	public String uploadFileOfXlsxLaction = "./upload/test.xlsx";
-	
-	public String uploadFileOfXlsLaction = "./upload/test.xls";
-	
-	public String uploadFileOfZipLaction = "./upload/test.zip";
-	
-	public String browserType = "chrome";
-	
-	public String ContractLocationText = "Select the office where the hard copy of contract be stored.";
-	
-	public String OriginalOfficeText = "Select the office where the service or goods will be used.";
-	
-	public String TotalValueText = "Please make sure all fees like Tax or Service charge are all included.";
-	
-	public String DataProtectionText = "For data sharing arrangements where the British Council and its partners exercise joint control over the data, as well as data processing arrangements in which one side processes data on the instructions of the other, we have to consider about data protection procedures and include relevant clauses.";
-	
-	public String ResponsibleDepartmentHeadText = "The person as team lead/ department head to confirm this expenditure plan.";
-	
-	public String DelegatedAuthorityText = "Check DA list";
-
-	public String DelegatedAuthorityAlinkText = "https://britishcouncil.sharepoint.com/sites/china/contract/SitePages/Delegated-Authorities.aspx";
-
-	public String ContractTypeSearchDefaultIsPaymentText = "Payment";
-	
-	public String informationContractNo = "informationContractNo";
-	
-	public String addInformationContractNo = "addInformationContractNo";
-	
-	public String PaymentDetails = "1231.12";
-	
-	public String informationContractDescriptionText = "add contract contract description in information";
-
-	public String informationUploadFileContractDescriptionText = "add contract of upload file by contract description in information";
-
-	public String informationItemsContractDescriptionText = "add item contract contract description in information";
-	
-	public String informationUploadFileContractNo = "informationUploadFileContractNo";
-	
-	public String informationItemsCategoryNoText = "2-2";
-	
-	public String searchListStautsContractApproved = "Contract Approved";
-	
-	public String continueToCreateNewcontractText = "Continue to create New contract?";
-	
-	public String searchListStautsValid = "Valid";
-	
-	public String contractManagetmentlegalCommentsText = "agree";
-	
-	public String contractManagetmentSubmittedText = "Submitted";
-	
-	public String contractManagetmentContractApprovedText = "Contract Approved";
-	
-	public String contractManagetmentValidText = "Valid";
-	
-	public String chinaContractPortalText = "https://www.google.com/search?q=e";
-
-	public String visitProcurementLinkText = "https://britishcouncil.sharepoint.com/sites/china/procurement/sourcing/relevant%20documents/Pages/default.aspx";
-
-	public String searchVendorText = "China Active Vend​ors ​​List";
-	
-	public String contractManagetmentUnderCallOffText = "Under Call-off";
-	
-	public String contractNoIsRequiredText = "Contract No. is required.";
-	
-	public String copyContractNoText = "CopyinformationContractNo";
-
-	public String resultNotDataText = "No results found";
-
 
 
 

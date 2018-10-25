@@ -114,7 +114,7 @@ public class DoubleMarking {
 
 	@Test(description = "Manual Allocation Check Double Marking")
 	public void step04_ManualAllocationCheck() throws InterruptedException {
-		search();
+		search();;
 		Thread.sleep(ElementHelper.SHORT_TIME_A);
 		action.click(By.id(ElementHelper.DOUBLEMARKING_MANUALALLOCATIONCHECK));
 		Thread.sleep(ElementHelper.SHORT_TIME_A);

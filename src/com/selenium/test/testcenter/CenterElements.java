@@ -114,6 +114,11 @@ public class CenterElements extends Mis2Brower{
 	
 	public void SearchClick(){
 		WaitElementVisible(driver, By.id(searchButton)).click();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
 	}
 	
 	public void SearchCenterNameCn(String elements){
@@ -140,6 +145,9 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void CreateCenterSaveButton(){
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(createCenterSaveButton)).click();
 	}
@@ -200,6 +208,10 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void SelectCreateCenterRegionClick() {
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCenterRegionButton)));
 		dropList.selectByValue("2");
 	} 	

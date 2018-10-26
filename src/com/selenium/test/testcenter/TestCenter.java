@@ -41,8 +41,44 @@ public class TestCenter {
 		ce.InputCreateCenterSuperPhone(ci.superPhone);
 		ce.InputCreateCenterPostCode(ci.postCode);
 		ce.CreateCenterSaveButton();
-		String saveWarning = ce.SaveSuccessfulWarning();
-		Assert.assertEquals(saveWarning, ci.saveSuccessfulMessage);
-		
+//		String saveWarning = ce.SaveSuccessfulWarning();
+//		Assert.assertEquals(saveWarning, ci.saveSuccessfulMessage);
 	}
+
+	@Test(description = "Search the TestCenter of UIBE")
+	public void step02_Search() {
+		ce.SearchSelectCenterRegionClick();
+		ce.SearchCenterNameCn(ci.tcName);
+		ce.SearchClick();
+		String listOfCenterNameCn = ce.listOfCenterNameCnWarning();
+		Assert.assertEquals(listOfCenterNameCn, ci.tcName);
+	}
+
+	@Test(description = "Modify the TestCenter of UIBE")
+	public void step03_Modify() {
+		ce.SearchSelectCenterRegionClick();
+		ce.SearchCenterNameCn(ci.tcName);
+		ce.SearchClick();
+		ce.CenterListDetailsClick();
+		ce.InputCreateCenterCenterNameCn(ci.mtcName);
+		ce.CreateCenterSaveButton();
+		ce.WaitTime();
+		ce.SearchSelectCenterRegionClick();
+		ce.SearchCenterNameCn(ci.mtcName);
+		ce.SearchClick();
+		String listOfCenterNameCn = ce.listOfCenterNameCnWarning();
+		Assert.assertEquals(listOfCenterNameCn, ci.mtcName);
+	}
+
+	@Test(description = "View the TestCenter of UIBE")
+	public void step05_View() {
+		ce.SearchSelectCenterRegionClick();
+		ce.SearchCenterNameCn(ci.mtcName);
+		ce.SearchClick();
+		String listOfCenterNameCn = ce.listOfCenterNameCnWarning();
+		ce.CenterListViewClick();
+		String viewCenterNameCnWarning = ce.ViewCenterNameCnWarning();
+		Assert.assertEquals(viewCenterNameCnWarning, listOfCenterNameCn);
+
+	}	
 }

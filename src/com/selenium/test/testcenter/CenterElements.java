@@ -74,12 +74,73 @@ public class CenterElements extends Mis2Brower{
 	
 	public String saveSuccessfulWarning = "//div[@role='dialog'][2]/div[2]";
 	
+	public String centerListDetailsButton = ".//*[@id='SpreadSheetTestCenterGrid']/div[2]/table/tbody/tr[1]/td[10]/a[1]";
+	
+	public String searchCenterRegionButton = "selectofficeTCSearch";
+	
+	public String searchCenterNameCnText = "txtCenterName";
+	
+	public String searchButton = "BtnCenterSearch";
+	
+	public String listOfCenterNameCnText = ".//*[@id='SpreadSheetTestCenterGrid']/div[2]/table/tbody/tr[1]/td[3]";
+	
+	public String centerListViewButton = ".//*[@id='SpreadSheetTestCenterGrid']/div[2]/table/tbody/tr[1]/td[10]/a[2]";
+	
+	public String viewCenterNameCnText = ".//*[@id='testCenterDetailsWindow']/table/tbody/tr[5]/td";
+	
+	public String ViewCenterNameCnWarning(){
+		Wait(normalTime);
+		return driver.findElement(By.xpath(viewCenterNameCnText)).getText();
+	}
+	
+	public void CenterListViewClick(){
+		Wait(normalTime);
+		driver.findElement(By.xpath(centerListViewButton)).click();
+	}
+	
+	public void WaitTime(){
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
+	public String listOfCenterNameCnWarning(){
+		return WaitElementVisible(driver, By.xpath(listOfCenterNameCnText)).getText();
+	}
+	
+	public void SearchClick(){
+		WaitElementVisible(driver, By.id(searchButton)).click();
+	}
+	
+	public void SearchCenterNameCn(String elements){
+		WaitElementVisible(driver, By.id(searchCenterNameCnText)).clear();
+		WaitElementVisible(driver, By.id(searchCenterNameCnText)).sendKeys(elements);
+	}
+	
+	public void SearchSelectCenterRegionClick() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCenterRegionButton)));
+		dropList.selectByValue("2");
+	} 	
+	
+	public void CenterListDetailsClick(){
+		Wait(normalTime);
+		driver.findElement(By.xpath(centerListDetailsButton)).click();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
 	public String SaveSuccessfulWarning(){
 		Wait(normalTime);
 		return driver.findElement(By.xpath(saveSuccessfulWarning)).getText();
 	}
 	
 	public void CreateCenterSaveButton(){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(createCenterSaveButton)).click();
 	}
 	

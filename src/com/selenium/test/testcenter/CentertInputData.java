@@ -14,6 +14,8 @@ public class CentertInputData {
 
 	public String tcName = "对外经济贸易大学";
 	
+	public String mtcName = "对外经济大学";
+	
 	public String tcEName = "University of International Business and Economics";
 	
 	public String abbreviation = "BJ-UIBE";

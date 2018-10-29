@@ -12,6 +12,7 @@ import com.selenium.test.brower.Mis2Brower;
 
 public class CentertInputData {	
 
+	//Test center list
 	public String tcName = "对外经济贸易大学";
 	
 	public String mtcName = "对外经济大学";
@@ -38,9 +39,24 @@ public class CentertInputData {
 	
 	public String saveSuccessfulMessage = "Operation is complete!";
 	
+	//Test building
+	public String tbName = "对外经济大学";
+	
+	public String tbName_Cn = "A座";
+	
+	public String tbName_En = "A Seat";
+	
+	public String floor = "1,2";
+	
+	public String tbAddress_Cn = "北京市朝阳区惠新东街10号";
+	
+	public String tbAddress_En = "No.10 Huixin dongjie, Chaoyang district, Beijing";
+	
+	public String buildingRemark = "RemarkRemarkRemarkRemarkRemarkRemarkRemarkRemarkRemark";
 
-
-
+	public String mTbName_Cn = "B座";
+	
+	public String mTbName_En = "B Seat";
 
 
 }

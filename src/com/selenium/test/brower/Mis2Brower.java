@@ -45,7 +45,7 @@ public class Mis2Brower  {
 	        Wait(normalTime);
 	        WaitElementVisible(this.driver,By.xpath(".//*[@id='"+ menueName +"']/a")).click();
 	        Wait(normalTime);
-	        WaitElementVisible(this.driver,By.xpath(".//*[@id='"+ menueName +"']/ul/li['"+ menueLocation +"']/a")).click();
+	        WaitElementVisible(this.driver,By.xpath(".//*[@id='"+ menueName +"']/ul/li["+ menueLocation +"]/a")).click();
 	        Wait(accessTime);
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -130,6 +130,299 @@ public class CenterElements extends Mis2Brower{
 	
 	public String viewOfBuildingDetailsSecondButton = "//div[@class='ui-dialog-buttonset']/button[2]";
 	
+	//Test Room List
+	public String searchRoomOfRegion = "selectofficeRoomSearch";
+	
+	public String searchRoomOfCenter = "selectCenterRoomSearch";
+	
+	public String searchRoomOfBuilding = "selectbuildingRoomSearch";
+	
+	public String roomOfSearchButton = ".//*[@id='page-heading']/div/table/tbody/tr[2]/td[6]/input[1]";
+	
+	public String roomOfCreateButton = ".//*[@id='page-heading']/input[1]";
+	
+	public String createOfRoomNameText = "roomName";
+	
+	public String createOfPriorityButton = "selectPriorityAdd";
+	
+	public String createOfTableChairStatusButton = "selectTableCharStatus";
+	
+	public String createOfRoomTowardText = "Room_Toward";
+	
+	public String createRoomRemarkText = "Remark";
+	
+	public String createOfRoomDetailsFirstButton = "//div[@class='ui-dialog-buttonset']/button[1]";
+	
+	public String roomNameWarningText = ".//*[@id='spreadsheet-testroom']/div[2]/table/tbody/tr/td[1]";
+	
+	public String modifyOfRoomModifyButton = ".//*[@id='spreadsheet-testroom']/div[2]/table/tbody/tr/td[11]/a[1]";
+	
+	public String modifyOfRoomViewButton = ".//*[@id='spreadsheet-testroom']/div[2]/table/tbody/tr/td[11]/a[2]";
+	
+	public String checkRoomNameButton = "checkModifyRoom";
+	
+	public String viewOfRoomDetailsWarningText = ".//*[@id='testRoomDetailsWindow']/table/tbody/tr[2]/td";
+	
+	public String roomOfCreateShareRoomButton = ".//*[@id='page-heading']/input[2]";
+	
+	public String selectShareRoomButton = "selectestroomshare-All";
+	
+	public String shareRoomOfDateFromText = "set_DateTime_RoomShareDateFrom";
+	
+	public String shareRoomOfDateToText = "set_DateTime_RoomShareDateTo";
+	
+	public String selectShareRoomTestDayButton = "selectestroomsharedate-All";
+	
+	public String createShareRoomOfSearchButton = "btntestshareroomdatelistSearch";
+	
+	public String roomOfModifyShareDayButton = ".//*[@id='spreadsheet-testroom']/div[2]/table/tbody/tr[1]/td[11]/a[4]";
+	
+	public String modifyShareRoomOfDateFromText = "set_DateTime_ModifyRoomShareDateFrom";
+	
+	public String modifyShareRoomOfDateToText = "set_DateTime_ModifyRoomShareDateTo";
+	
+	public String modifyShareRoomOfSearchButton = "btntestshareroomdatelistSearch-modify";
+	
+	//Test Session List
+	public String createTestSessionButton = "testSessionListCreate";
+	
+	
+	//Test Room List
+	public void InputModifyShareRoomOfSearchClick() {
+		WaitElementVisible(driver, By.id(modifyShareRoomOfSearchButton)).click();
+	}
+	
+	public void InputModifyShareRoomOfDateFrom() {
+		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).clear();
+		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).sendKeys(getCurrentDate());
+	}
+	
+	public void InputModifyShareRoomOfDateTo() {
+		WaitElementVisible(driver, By.id(modifyShareRoomOfDateToText)).clear();
+		WaitElementVisible(driver, By.id(modifyShareRoomOfDateToText)).sendKeys(getLastDate());
+	}
+	
+	public void RoomOfModifyShareDayButton() {
+		WaitElementVisible(driver, By.xpath(roomOfModifyShareDayButton)).click();
+	}
+	
+	public void CreateShareRoomOfSearchClick() {
+		WaitElementVisible(driver, By.id(createShareRoomOfSearchButton)).click();
+	}
+	
+	public void SelectShareRoomTestDayClick() {
+		WaitElementVisible(driver, By.id(selectShareRoomTestDayButton)).click();
+	}
+	
+	public void InputShareRoomOfDateFrom() {
+		WaitElementVisible(driver, By.id(shareRoomOfDateFromText)).clear();
+		WaitElementVisible(driver, By.id(shareRoomOfDateFromText)).sendKeys(getCurrentDate());
+	}
+	
+	public void InputShareRoomOfDateTo() {
+		WaitElementVisible(driver, By.id(shareRoomOfDateToText)).clear();
+		WaitElementVisible(driver, By.id(shareRoomOfDateToText)).sendKeys(getCurrentDate());
+	}
+	
+	public String getLastDate() {
+		 Date date=new Date();//取时间
+		 Calendar calendar = new GregorianCalendar();
+		 calendar.setTime(date);
+		 calendar.add(calendar.DATE, 1);//把日期往后增加一天.整数往后推,负数往前移动
+		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
+		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		 String dateString = formatter.format(date);
+		 return dateString;
+	}
+	
+	public String getCurrentDate() {
+		 Date date=new Date();//取时间
+		 Calendar calendar = new GregorianCalendar();
+		 calendar.setTime(date);
+		 calendar.add(calendar.DATE,0);//把日期往后增加一天.整数往后推,负数往前移动
+		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
+		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		 String dateString = formatter.format(date);
+		 return dateString;
+	}
+	
+	public void SelectShareRoomClick() {
+		WaitElementVisible(driver, By.id(selectShareRoomButton)).click();
+	}
+	
+	public void RoomOfCreateShareRoomClick() {
+		WaitElementVisible(driver, By.xpath(roomOfCreateShareRoomButton)).click();
+	}
+	
+	public String ViewOfRoomDetailsWarning() {
+		return WaitElementVisible(driver, By.xpath(viewOfRoomDetailsWarningText)).getText();
+	}
+	
+	public void CheckRoomNameClick() {
+		WaitElementVisible(driver, By.id(checkRoomNameButton)).click();
+	}
+	
+	public void ModifyOfRoomModifyClick() {
+		WaitElementVisible(driver, By.xpath(modifyOfRoomModifyButton)).click();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
+	public void ModifyOfRoomViewClick() {
+		WaitElementVisible(driver, By.xpath(modifyOfRoomViewButton)).click();
+	}
+	
+	public String RoomNameWarning() {
+		return WaitElementVisible(driver, By.xpath(roomNameWarningText)).getText();
+	}
+	
+	public void CreateOfRoomSaveButton() {
+		Wait(normalTime);
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(createOfRoomDetailsFirstButton)).click();
+	}
+	
+	public void CreateRoomRemark(String elements){
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createRoomRemarkText)).clear();
+		WaitElementVisible(driver, By.id(createRoomRemarkText)).sendKeys(elements);
+	}
+	
+	
+	public void InputCreateOfRoomToward(String elements){
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createOfRoomTowardText)).clear();
+		WaitElementVisible(driver, By.id(createOfRoomTowardText)).sendKeys(elements);
+	}
+	
+	public void SelectCreateOfTableChairStatus(){
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createOfTableChairStatusButton)));
+		dropList.selectByValue("28");
+	}
+	
+	public void SelectCreateOfPriority(){
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createOfPriorityButton)));
+		dropList.selectByValue("250");
+	}
+	
+	public void InputCreateOfFloor(String elements){
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("$('#Floor').data('kendoNumericTextBox').value('2');");
+	}
+		
+	public void GetRoomProductType() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("function getRoomProductType() {\r\n" + 
+				"  var roomProductTypeLength = document.getElementsByName('checkRoomProductType').length\r\n" + 
+				"  for (var i = 0; i < roomProductTypeLength; i++) {\r\n" + 
+				"    document.getElementsByName('checkRoomProductType').item(i).click()\r\n" + 
+				"  }\r\n" + 
+				"}\r\n" + 
+				"return getRoomProductType()\r\n" + 
+				"");
+	}
+	
+	
+	public void GetRoomType() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("function getRoomType() {\r\n" + 
+				"  var roomTypeLength = document.getElementsByName('checkRoomType').length\r\n" + 
+				"  for (var i = 0; i < roomTypeLength; i++) {\r\n" + 
+				"    document.getElementsByName('checkRoomType').item(i).click()\r\n" + 
+				"  }\r\n" + 
+				"}\r\n" + 
+				"return getRoomType()");
+	}
+	
+	
+	public void InputCreateOfRoomQuota(String elements){
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("$('#RoomQuota').data('kendoNumericTextBox').value('100')");
+	}
+	
+	public void InputCreateOfRoomOptimalQuota(String elements){
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("$('#OptimalQuota').data('kendoNumericTextBox').value('100')");
+	}
+	
+	public void InputRoomName(String elements){
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createOfRoomNameText)).clear();
+		WaitElementVisible(driver, By.id(createOfRoomNameText)).sendKeys(elements);
+	}
+	
+	public void RoomOfCreateClick(){
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(roomOfCreateButton)).click();
+	}
+	
+	public void RoomOfSearchClick(){
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(roomOfSearchButton)).click();
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
+	public void SelectSearchRoomOfRegion(){
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchRoomOfRegion)));
+		dropList.selectByValue("2");
+	}
+	
+	public void SelectSearchRoomOfCenter(){
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchRoomOfCenter)));
+		dropList.selectByValue(GetValueOfCenterId());
+	}
+	
+	public void SearchRoomOfBuilding(){
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchRoomOfBuilding)));
+		dropList.selectByValue(GetFirstValueOfBuilding());
+	}
+	
+	public String GetFirstValueOfBuilding() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select * from tblTestCenterBuilding where BuildingNameEn = 'B Seat'";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("BuildingId");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+
+	public String GetSecondValueOfBuilding() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select * from tblTestCenterBuilding where BuildingNameEn = 'No.10 Huixin dongjie, Chaoyang district, Beijing'";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("BuildingId");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	//Test Building List	
 	public void ViewOfBuildingDetailsSecondClick(){
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(viewOfBuildingDetailsSecondButton)).click();

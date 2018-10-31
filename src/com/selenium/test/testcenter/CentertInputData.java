@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import com.selenium.test.brower.Mis2Brower;
+import com.selenium.test.utils.WebDriverAction;
 
 public class CentertInputData {	
 
@@ -57,6 +58,14 @@ public class CentertInputData {
 	public String mTbName_Cn = "B座";
 	
 	public String mTbName_En = "B Seat";
+	
+	//Test room
+	String roomNameOne = "RM 01";
+	
+	String roomNameTwo = "RM 02";
+	
+	String roomNameThree = "RM 00";
+	
 
 
 }

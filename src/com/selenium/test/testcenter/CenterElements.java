@@ -23,6 +23,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
@@ -186,6 +187,320 @@ public class CenterElements extends Mis2Brower{
 	//Test Session List
 	public String createTestSessionButton = "testSessionListCreate";
 	
+	public String createTestSeesionRegion = "ddlRegion-testsessionAdd";
+	
+	public String createTestSesstionProduct = "selectTestSessionExamProductTypeAdd2";
+	
+	public String createTestSessionTestCenter = "//input[@value='"+GetValueOfCenterId()+"']";
+	
+	public String createTestSessionFormatButton = "selectTestSessionExamFormatSearchAdd";
+	
+	public String createTestSessionTimeTableButton = "selectTestSessionTimeTableSearchAdd";
+	
+	public String createTestSessionStartTestYear = "ddlYear-testsessionAdd";
+	
+	public String createTestSessionStartTestMonth = "ddlMonth-testsessionAdd";
+	
+	public String createTestSessionEndTestYear = "ddlYear-endYear1";
+	
+	public String createTestSessionEndTestMonth = "ddlMonth-endMonth1";
+	
+	public String createTestSessionEndSearch = "btntestcenterlistSearch";
+	
+	public String subTestDate = StringUtils.substringBefore(GetTestDate(), " ");
+	
+	public String createTestSessionTestDate = "//input[@value='"+getFormatString()+"']";
+	
+	public String searchTestSessionRegion = "selectRegionSearch-testsession";
+	
+	public String searchTestSessionExamProductType = "selectTestSessionExamProductTypeSearch";
+	
+	public String searchTestSessionExamFormat = "selectTestSessionExamFormatSearch";
+	
+	public String searchTestSessionTestDateYear = "ddlYear-testsession";
+	
+	public String searchTestSessionTestDateMonth = "ddlMonth-testsession";
+	
+	public String searchTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+GetTestDayId()+"']";
+	
+	public String searchTestSessionTestCenter = ".//*[@id='ddltestcenter-testsession']//option[@value='"+GetValueOfCenterId()+"']";
+	
+	public String searchTestSessionButton = "btntestsessionlistSearch";
+	
+	public String testCenterOfSearchWarningText = ".//*[@id='spreadsheet_testsession_Grid']/div[2]/table/tbody/tr/td[6]";
+	
+	public String modifyTestSessionButton = ".//*[@id='spreadsheet_testsession_Grid']/div[2]/table/tbody/tr/td[12]/a[1]";
+	
+	public String modifySessionQuotaText = "quotaForUpdate";
+	
+	public String searchTcSessionRegion = "log_Region";
+	
+	public String searchTcSessionViewLogFrom = "log_Start";
+	
+	public String searchTcSessionViewLogTo = "log_End";
+	
+	public String testTcCenterOfSearchWarningText = ".//*[@id='log_Show_Grid']/div[2]/table/tbody/tr/td[6]";
+	
+	public String tcSessionSearchButton = "Log_Search";
+	
+	public String tcSessionResetButton = "Log_Reset";
+		
+	public String noDataWarningText = ".//*[@id='log_Show_Grid']/div[2]/table/tbody/tr/td";
+	
+	public String logOutButton = ".//*[@id='page-top-outer']/div[1]/div[1]/a[3]";
+	
+	public void LogOutClick() {
+		WaitElementVisible(driver, By.xpath(logOutButton)).click();
+	}
+	
+	public String NoDataWarning() {
+		return WaitElementVisible(driver, By.xpath(noDataWarningText)).getText();
+	}
+	
+	public void ResetTcSessionButton() {
+		WaitElementVisible(driver, By.id(tcSessionResetButton)).click();
+	}
+	
+	public void SearchTcSessionButton() {
+		WaitElementVisible(driver, By.id(tcSessionSearchButton)).click();
+	}
+	
+	public String TestTCCenterSessionOfSearchWarning() {
+		return WaitElementVisible(driver, By.xpath(testTcCenterOfSearchWarningText)).getText();
+	}
+	
+	public void SearchTcSessionRegion() {
+		WaitElementVisible(driver, By.id(searchTcSessionRegion)).click();
+	}
+	
+	public void SearchTcSessionViewLogFrom() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('log_Start').value = '"+getCurrentDate()+"'");
+	}
+	
+	public void SearchTcSessionViewLogTo() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('log_End').value ='"+getCurrentDate()+"'");
+	}
+	public void ModifySessionQuota(String elements) {
+		WaitElementVisible(driver, By.id(modifySessionQuotaText)).clear();
+		WaitElementVisible(driver, By.id(modifySessionQuotaText)).sendKeys(elements);
+		Wait(normalTime);
+	}
+	
+	public void ModifyTestSessionClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(modifyTestSessionButton)).click();
+		Wait(normalTime);
+	}
+	
+	public String TestCenterOfSearchWarning() {
+		return WaitElementVisible(driver, By.xpath(testCenterOfSearchWarningText)).getText();
+	}
+	
+	public void SearchOfTestSessionClick() {
+		WaitElementVisible(driver, By.id(searchTestSessionButton)).click();
+	}
+	
+	public String GetTestDayId() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0) and ProductId = 1";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+	public void SelectSearchTestSessionRegion() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionRegion)));
+		dropList.selectByValue("2");
+	}
+	
+	public void SelectSearchTestSessionExamProductType() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionExamProductType)));
+		dropList.selectByValue("1");
+	}
+	
+	public void SelectSearchTestSessionExamFormat() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionExamFormat)));
+		dropList.selectByValue("1");
+	}
+	
+	public void SelectSearchTestSessionTestDateYear() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionTestDateYear)));
+		dropList.selectByValue(getCurrentYear());
+	}
+	
+	public void SelectSearchTestSessionTestDateMonth() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionTestDateMonth)));
+		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()));
+	}
+	
+	public void SelectSearchTestSessionTestDate() {
+		WaitElementVisible(driver, By.xpath(searchTestSessionTestDate)).click();
+	}
+	
+	public void SelectSearchTestSessionTestCenter() {
+		WaitElementVisible(driver, By.xpath(searchTestSessionTestCenter)).click();
+	}
+	
+	public String getFormatString() {
+		String subTestDate = StringUtils.substringBefore(GetTestDate(), " ");
+		String[] subTestDateString = subTestDate.split("-");
+		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09"};
+		String formatString = null;
+		for (int i =0; i<subTestDateString.length;) {
+			if(Arrays.asList(numStringList).contains(subTestDateString[2])) {
+				int subToInt = Integer.valueOf(subTestDateString[2]);
+				String subToString = String.valueOf(subToInt);
+				formatString = subTestDateString[0] + "-" + subTestDateString[1] + "-" + subToString;
+				break;
+			}else {
+				return subTestDate;
+			}
+		}
+		return formatString;
+	}
+	
+	public void CreateTestSessionTestDate() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(createTestSessionTestDate)).click();
+	}
+	
+	public String GetTestDate() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select top 1* from tblTestDate where DateDiff(mm,TestDate,getdate())=0";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("TestDate");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+	public void CreateTestSessionEndSearchClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createTestSessionEndSearch)).click();
+	}
+	
+	public void CreateTestSessionStartTestYearClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionStartTestYear)));
+		dropList.selectByValue(getCurrentYear());
+	}
+	
+	public void CreateTestSessionStartTestMonthClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionStartTestMonth)));
+		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+	}
+	
+	public void CreateTestSessionEndTestYearClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionEndTestYear)));
+		dropList.selectByValue(getCurrentYear());
+	}
+	
+	public void CreateTestSessionEndTestMonthClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionEndTestMonth)));
+		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+	}
+	
+	public String getLastYear() {
+		 Date date=new Date();//取时间
+		 Calendar calendar = new GregorianCalendar();
+		 calendar.setTime(date);
+		 calendar.add(calendar.YEAR, 1);//把日期往后增加一天.整数往后推,负数往前移动
+		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
+		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
+		 String dateString = formatter.format(date);
+		 return dateString;
+	}
+	
+	public String getCurrentYear() {
+		 Date date=new Date();//取时间
+		 Calendar calendar = new GregorianCalendar();
+		 calendar.setTime(date);
+		 calendar.add(calendar.YEAR,0);//把日期往后增加一天.整数往后推,负数往前移动
+		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
+		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
+		 String dateString = formatter.format(date);
+		 return dateString;
+	}
+	
+	public String getLastMonth() {
+		 Date date=new Date();//取时间
+		 Calendar calendar = new GregorianCalendar();
+		 calendar.setTime(date);
+		 calendar.add(calendar.MONTH, 1);//把日期往后增加一天.整数往后推,负数往前移动
+		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
+		 SimpleDateFormat formatter = new SimpleDateFormat("MM");
+		 String dateString = formatter.format(date);
+		 return dateString;
+	}
+	
+	public String getCurrentMonth() {
+		 Date date=new Date();//取时间
+		 Calendar calendar = new GregorianCalendar();
+		 calendar.setTime(date);
+		 calendar.add(calendar.MONTH, 0);//把日期往后增加一天.整数往后推,负数往前移动
+		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
+		 SimpleDateFormat formatter = new SimpleDateFormat("MM");
+		 String dateString = formatter.format(date);
+		 return dateString;
+	}
+	
+	public void CreateTestSessionTimeTableClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionTimeTableButton)));
+		dropList.selectByValue("1");
+	}
+	
+	public void CreateTestSessionFormatClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionFormatButton)));
+		dropList.selectByValue("1");
+	}
+	
+	public void CreateTestSessionTestCenterClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(createTestSessionTestCenter)).click();
+	}
+	
+	public void CreateTestSesstionProductClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSesstionProduct)));
+		dropList.selectByValue("1");
+	}
+	
+	public void CreateTestSeesionRegionClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSeesionRegion)));
+		dropList.selectByValue("2");
+	}
+	
+	public void CreateTestSessionClick() {
+		WaitElementVisible(driver, By.id(createTestSessionButton)).click();
+	}
 	
 	//Test Room List
 	public void InputModifyShareRoomOfSearchClick() {
@@ -425,7 +740,9 @@ public class CenterElements extends Mis2Brower{
 	//Test Building List	
 	public void ViewOfBuildingDetailsSecondClick(){
 		Wait(normalTime);
-		WaitElementVisible(driver, By.xpath(viewOfBuildingDetailsSecondButton)).click();
+		//WaitElementVisible(driver, By.xpath(viewOfBuildingDetailsSecondButton)).click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(0).getElementsByTagName('button').item(1).click()");
 	}
 	
 	public void ModifyOfBuildingLendBuildingClick(){
@@ -463,7 +780,10 @@ public class CenterElements extends Mis2Brower{
 	
 	public void ViewOfBuildingDetailsFirstClick(){
 		Wait(normalTime);
-		WaitElementVisible(driver, By.xpath(viewOfBuildingDetailsFirstButton)).click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(0).getElementsByTagName('button').item(0).click()");
+	
+		//WaitElementVisible(driver, By.xpath(viewOfBuildingDetailsFirstButton)).click();
 	}
 	
 	public String ViewOfBuildingDetailsWarning(){

@@ -66,6 +66,11 @@ public class CentertInputData {
 	
 	String roomNameThree = "RM 00";
 	
+	//Test session
+	String modifySessionQuota = "400";
+	
+	String noDataWarning = "No available data....";
+	
 
 
 }

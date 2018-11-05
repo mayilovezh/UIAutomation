@@ -22,6 +22,7 @@
 			<include name="xmlbeans-2.6.0.jar"/>
 			<include name="commons-collections4-4.1.jar"/>
 			<include name="dom4j-1.6.1.jar"/>
+			<include name="sqljdbc4.jar"/>
 		</fileset>
 	</path>
 

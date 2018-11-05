@@ -223,7 +223,7 @@ public class CenterElements extends Mis2Brower{
 	
 	public String searchTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+GetTestDayId()+"']";
 	
-	public String searchTestSessionTestCenter = ".//*[@id='ddltestcenter-testsession']//option[@value='"+GetValueOfCenterId()+"']";
+	//public String searchTestSessionTestCenter = ".//*[@id='ddltestcenter-testsession']//option[@value='"+GetValueOfCenterId()+"']";
 	
 	public String searchTestSessionButton = "btntestsessionlistSearch";
 	
@@ -249,19 +249,99 @@ public class CenterElements extends Mis2Brower{
 	
 	public String logOutButton = ".//*[@id='page-top-outer']/div[1]/div[1]/a[3]";
 	
+	//Test date
+	public String searchTestDateYearButton = "selectTestYear";
+	
+	public String searchTestDateExamProductTypeButton = "testdate_search_examproducttype";
+	
+	public String searchTestDateExamFormatButton = "testdate_search_examformat";
+	
+	public String searchTestDateButton = "testdate_search";
+	
+	public String searchTestDateRealWarningText = ".//*[@id='testdate_guid']/div[2]/table/tbody/tr[1]/td[1]";
+	
+	//Test date
+	public String GetValueOfCenterId() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select * from tblTestCenter where CenterName = '对外经济大学'";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("CenterId");
+			}
+			System.out.println("-------------");
+			System.out.println("centerId:" + centerId);
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+	public String searchTestDateRealWarning() {
+		return WaitElementVisible(driver, By.xpath(searchTestDateRealWarningText)).getText();
+	}
+	
+	public void searchTestDateYear() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestDateYearButton)));
+		dropList.selectByValue(getCurrentYear());
+	}
+	
+	public void searchTestDateExamProductTypeButton() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestDateExamProductTypeButton)));
+		dropList.selectByValue("1");
+	}
+	
+	public void searchTestDateExamFormatButton() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestDateExamFormatButton)));
+		dropList.selectByValue("1");
+	}
+	
+	public void searchTestDateButton() {
+		WaitElementVisible(driver, By.id(searchTestDateButton)).click();
+		Wait(normalTime);
+	}
+	
+	public String GetTestDateRealId() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select top 1 * from tblTestDateReal where TestDateId in (select ID from tblTestDate where year(TestDate)=year(getdate())) and ProductId = 1 and ExamFormatId = 1 order by TestDate";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+	
+	//Test session
 	public void LogOutClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(logOutButton)).click();
 	}
 	
 	public String NoDataWarning() {
+		Wait(normalTime);
 		return WaitElementVisible(driver, By.xpath(noDataWarningText)).getText();
 	}
 	
 	public void ResetTcSessionButton() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(tcSessionResetButton)).click();
 	}
 	
 	public void SearchTcSessionButton() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(tcSessionSearchButton)).click();
 	}
 	
@@ -270,6 +350,7 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void SearchTcSessionRegion() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(searchTcSessionRegion)).click();
 	}
 	
@@ -301,6 +382,7 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void SearchOfTestSessionClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(searchTestSessionButton)).click();
 	}
 	
@@ -323,36 +405,45 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void SelectSearchTestSessionRegion() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionRegion)));
 		dropList.selectByValue("2");
 	}
 	
 	public void SelectSearchTestSessionExamProductType() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionExamProductType)));
 		dropList.selectByValue("1");
 	}
 	
 	public void SelectSearchTestSessionExamFormat() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionExamFormat)));
 		dropList.selectByValue("1");
 	}
 	
 	public void SelectSearchTestSessionTestDateYear() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionTestDateYear)));
 		dropList.selectByValue(getCurrentYear());
 	}
 	
 	public void SelectSearchTestSessionTestDateMonth() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionTestDateMonth)));
 		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()));
 	}
 	
 	public void SelectSearchTestSessionTestDate() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(searchTestSessionTestDate)).click();
 	}
 	
 	public void SelectSearchTestSessionTestCenter() {
-		WaitElementVisible(driver, By.xpath(searchTestSessionTestCenter)).click();
+		Wait(normalTime);
+		//WaitElementVisible(driver, By.xpath(searchTestSessionTestCenter)).click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("$('#ddltestcenter-testsession').find(\"option[value='"+GetValueOfCenterId()+"']\").attr(\"selected\", true)");
 	}
 	
 	public String getFormatString() {
@@ -483,13 +574,17 @@ public class CenterElements extends Mis2Brower{
 	
 	public void CreateTestSessionTestCenterClick() {
 		Wait(normalTime);
-		WaitElementVisible(driver, By.xpath(createTestSessionTestCenter)).click();
+		//WaitElementVisible(driver, By.xpath(createTestSessionTestCenter)).click();
+		//document.getElementById('selectestcenter-101171').click()
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('selectestcenter-"+GetValueOfCenterId()+"').click()");
 	}
 	
 	public void CreateTestSesstionProductClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSesstionProduct)));
 		dropList.selectByValue("1");
+		Wait(normalTime);
 	}
 	
 	public void CreateTestSeesionRegionClick() {
@@ -499,42 +594,52 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void CreateTestSessionClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(createTestSessionButton)).click();
+		Wait(normalTime);
 	}
 	
 	//Test Room List
 	public void InputModifyShareRoomOfSearchClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(modifyShareRoomOfSearchButton)).click();
 	}
 	
 	public void InputModifyShareRoomOfDateFrom() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).clear();
 		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).sendKeys(getCurrentDate());
 	}
 	
 	public void InputModifyShareRoomOfDateTo() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(modifyShareRoomOfDateToText)).clear();
 		WaitElementVisible(driver, By.id(modifyShareRoomOfDateToText)).sendKeys(getLastDate());
 	}
 	
 	public void RoomOfModifyShareDayButton() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(roomOfModifyShareDayButton)).click();
 	}
 	
 	public void CreateShareRoomOfSearchClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(createShareRoomOfSearchButton)).click();
 	}
 	
 	public void SelectShareRoomTestDayClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(selectShareRoomTestDayButton)).click();
 	}
 	
 	public void InputShareRoomOfDateFrom() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(shareRoomOfDateFromText)).clear();
 		WaitElementVisible(driver, By.id(shareRoomOfDateFromText)).sendKeys(getCurrentDate());
 	}
 	
 	public void InputShareRoomOfDateTo() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(shareRoomOfDateToText)).clear();
 		WaitElementVisible(driver, By.id(shareRoomOfDateToText)).sendKeys(getCurrentDate());
 	}
@@ -562,10 +667,12 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void SelectShareRoomClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(selectShareRoomButton)).click();
 	}
 	
 	public void RoomOfCreateShareRoomClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(roomOfCreateShareRoomButton)).click();
 	}
 	
@@ -574,6 +681,7 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void CheckRoomNameClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(checkRoomNameButton)).click();
 	}
 	
@@ -585,6 +693,7 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void ModifyOfRoomViewClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(modifyOfRoomViewButton)).click();
 	}
 	
@@ -680,6 +789,8 @@ public class CenterElements extends Mis2Brower{
 	public void RoomOfSearchClick(){
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(roomOfSearchButton)).click();
+		Wait(normalTime);
+		Wait(normalTime);
 		Wait(normalTime);
 		Wait(normalTime);
 	}
@@ -869,37 +980,22 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void SearchSelectBuildingOfBuildingAvailableClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchBuildingOfBuildingAvailable)));
 		dropList.selectByValue("1");
 	} 	
 	
 	public void SearchSelectBuildingOfRegionClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchBuildingOfRegion)));
 		dropList.selectByValue("2");
 	} 	
 	
 	public void SearchSelectBuildingOfTestCenterClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchBuildingOfTestCenter)));
 		dropList.selectByValue(GetValueOfCenterId());
 	} 	
-	
-	public String GetValueOfCenterId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenter where CenterName = '对外经济大学'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("CenterId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
 	
 	//Test Center List
 	public String ViewCenterNameCnWarning(){
@@ -928,20 +1024,18 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void SearchClick(){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(searchButton)).click();
-		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
 	}
 	
 	public void SearchCenterNameCn(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(searchCenterNameCnText)).clear();
 		WaitElementVisible(driver, By.id(searchCenterNameCnText)).sendKeys(elements);
 	}
 	
 	public void SearchSelectCenterRegionClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCenterRegionButton)));
 		dropList.selectByValue("2");
 	} 	
@@ -961,58 +1055,65 @@ public class CenterElements extends Mis2Brower{
 	
 	public void CreateCenterSaveButton(){
 		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(createCenterSaveButton)).click();
 	}
 	
 	public void InputCreateCenterPostCode(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(inputCreateCenterPostCodeText)).clear();
 		WaitElementVisible(driver, By.id(inputCreateCenterPostCodeText)).sendKeys(elements);
 	}
 	
 	public void InputCreateCenterSuperPhone(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(inputCreateCenterSuperPhoneText)).clear();
 		WaitElementVisible(driver, By.id(inputCreateCenterSuperPhoneText)).sendKeys(elements);
 	}
 	
 	public void InputCreateCenterTelephone(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(inputCreateCenterTelephoneText)).clear();
 		WaitElementVisible(driver, By.id(inputCreateCenterTelephoneText)).sendKeys(elements);
 	}
 	
 	public void InputCreateCenterTrafficInfoEn(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(inputCreateCenterTrafficInfoEnText)).clear();
 		WaitElementVisible(driver, By.id(inputCreateCenterTrafficInfoEnText)).sendKeys(elements);
 	}
 	
 	public void InputCreateCenterTrafficInfoCn(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(inputCreateCenterTrafficInfoCnText)).clear();
 		WaitElementVisible(driver, By.id(inputCreateCenterTrafficInfoCnText)).sendKeys(elements);
 	}
 	
 	public void InputCreateCenterCenterDescription(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(inputCreateCenterCenterDescriptionText)).clear();
 		WaitElementVisible(driver, By.id(inputCreateCenterCenterDescriptionText)).sendKeys(elements);
 	}
 	
 	public void SelectCreateCenterRegionZone() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCenterRegionZoneButton)));
 		dropList.selectByValue("2");
 	} 	
 	
 	public void InputCreateCenterAddressEn(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(createCenterAddressEnText)).clear();
 		WaitElementVisible(driver, By.id(createCenterAddressEnText)).sendKeys(elements);
 	}
 	
 	public void InputCreateCenterAddressCn(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(createCenterAddressCnText)).clear();
 		WaitElementVisible(driver, By.id(createCenterAddressCnText)).sendKeys(elements);
 	}
 	
 	public void InputCreateCenterAbbreviation(String elements){
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(createCenterAbbreviationText)).clear();
 		WaitElementVisible(driver, By.id(createCenterAbbreviationText)).sendKeys(elements);
 	}
@@ -1024,34 +1125,36 @@ public class CenterElements extends Mis2Brower{
 	
 	public void SelectCreateCenterRegionClick() {
 		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCenterRegionButton)));
 		dropList.selectByValue("2");
 	} 	
 	
 	public void SelectCreateCenterExamProductTypeClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCenterExamProductTypeButton)));
 		dropList.selectByValue("1");
 	} 	
 	
 	public void SelectCreateCenterProvinceClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCenterProvinceButton)));
 		dropList.selectByValue("34");
 	} 	
 	
 	public void SelectCreateCenterCityClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCenterCityButton)));
 		dropList.selectByValue("340800");
 	} 	
 	
 	public void InputCreateCenterCenterNameCn(String elements) {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(createCenterCenterNameCnText)).clear();
 		WaitElementVisible(driver, By.id(createCenterCenterNameCnText)).sendKeys(elements);
 	} 	
 	
 	public void InputCreateCenterCenterNameEn(String elements) {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(createCenterCenterNameEnText)).clear();
 		WaitElementVisible(driver, By.id(createCenterCenterNameEnText)).sendKeys(elements);
 	} 	

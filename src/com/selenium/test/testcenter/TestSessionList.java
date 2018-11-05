@@ -37,11 +37,11 @@ public class TestSessionList {
 		ce.Close();
 	}
 	
-	@Test(description = "Log Out")
-	public void step01_LogOut(){
-		ce.LogOutClick();
-	}
-	
+//	@Test(description = "Log Out")
+//	public void step01_LogOut(){
+//		ce.LogOutClick();
+//	}
+
 	@Test(description = "Create Session")
 	public void step02_CreateSession(){
 		ce.CreateTestSessionClick();

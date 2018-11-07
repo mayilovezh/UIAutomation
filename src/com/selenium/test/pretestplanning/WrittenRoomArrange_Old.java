@@ -10,7 +10,7 @@ import com.selenium.test.utils.DriverInstance;
 import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.WebDriverAction;
 
-public class WrittenRoomArrange {
+public class WrittenRoomArrange_Old {
 	static WebDriver driver;
 	WebDriverAction action;
 

@@ -36,7 +36,7 @@ public class WrittenTemplatesList {
 		pe.getRoomStatus();
 		pe.AddWrittenTemplateSaveClick();
 	}
-	/*
+
 	@Test
 	public void step02_Search(){
 		pe.SelectWrittenTemplatesListRegion();
@@ -74,5 +74,5 @@ public class WrittenTemplatesList {
 		pe.getRoomStatus();
 		pe.AddWrittenTemplateSaveClick();
 	}
-	*/
+
 }

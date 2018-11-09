@@ -64,12 +64,193 @@ public class PreTestPlanningElements extends Mis2Brower{
 	
 	public String deleteButton = ".//*[@id='SpreadSheetWrittenTemplateListGrid']/div[2]/table/tbody/tr[1]/td[6]/a[2]";
 	
+	//Written Room Arrange
+	public String selectWrittenRoomArrangeRegionButton = "ddlRegion-Search";
+	
+	public String selectWrittenRoomArrangeExamProductTypeButton = "selectWrittenRoomArrangeExamProductTypeSearch";
+	
+	public String selectWrittenRoomArrangeExamFormatButton = "selectWrittenRoomArrangeExamFormatSearch";
+	
+	public String selectWrittenRoomArrangeTestDateYearButton = "ddlYear-Search";
+	
+	public String selectWrittenRoomArrangeTestDateMonthButton = "ddlMonth-Search";
+		
+	public String selectWrittenRoomArrangeTestDateButton = ".//*[@id='ddlTestDate-Search']//option[@value='"+GetTestDayId()+"']";
+	
+	public String selectWrittenRoomArrangeSearchButton = "btnQuery";
+	
+	public String AddWrittenTestRoomArrangementButton = ".//*[@id='spreadsheet-WrittenArrangement-table']/tbody/tr/td[7]/a";
+	
+	public String selectAddWrittenRoomTempName = ".//*[@id='ddlTempName-mod']//option[@value='"+GetTemplateNameValue()+"']";
+	
+	public String AddWrittenTestRoomArrangementSearchButton = "btnQuery1";
+	
+	public String AddWrittenTestRoomArrangementAutoArrangeButton = "btnArrange";
+	
+	public String AddWrittenTestRoomArrangementSaveUploadButton = "btnSave-Upload-WArr";
+	
+	public String AddWrittenTestRoomArrangementListOfDeleteButton = ".//*[@id='spreadsheet-WrittenArrangementDetail-table_wrapper']/table/tbody/tr[2]/td[14]/a";
+	
+	public String AddWrittenTestRoomArrangementListOfAddExtraButton = "btnAddRoom";
+	
+	public String AddWrittenTestRoomArrangementListOfAddBuilding = "TestBuilding-add";
+	
+	public String AddWrittenTestRoomArrangementDeleteButton = "BatchDeleteRoom";
+	
+	public void AddWrittenTestRoomArrangementDeleteClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementDeleteButton)).click();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
+	public void AddWrittenTestRoomArrangementListOfAddBuildingClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementListOfAddBuilding)));
+		dropList.selectByValue(GetFirstValueOfBuilding());
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
+	public void AddWrittenTestRoomArrangementListOfAddExtraClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementListOfAddExtraButton)).click();
+	}
+	
+	public void WindowsAlertConfirm() {
+		Wait(normalTime);
+		driver.switchTo().alert().accept();
+	}
+	
+	public void AddWrittenTestRoomArrangementListOfDeleteClick() {
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(AddWrittenTestRoomArrangementListOfDeleteButton)).click();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
+	public void ModifySecondFirstButtonClick(){
+		Wait(normalTime);
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(1).getElementsByTagName('button').item(0).click()");
+	}
+	
+	public void AddWrittenTestRoomArrangementSaveUploadClick() {
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementSaveUploadButton)).click();
+	}
+	
+	public void GetWARoomStatus() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("function getRoomStatus() {\r\n" + 
+				"  var roomStatusLength = document.getElementsByName('batch_DeleteRoom').length\r\n" + 
+				"  for (var i = 0; i < roomStatusLength; i++) {\r\n" + 
+				"    document.getElementsByName('batch_DeleteRoom').item(i).click()\r\n" + 
+				"  }\r\n" + 
+				"}\r\n" + 
+				"return getRoomStatus()");
+	}
+	
+	public void AddWrittenTestRoomArrangementAutoArrangeClick() {
+		Wait(normalTime);
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementAutoArrangeButton)).click();
+	}
+	
+	public void AddWrittenTestRoomArrangementSearchClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementSearchButton)).click();
+	}
+	
+	public void SelectAddWrittenRoomTempName() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(selectAddWrittenRoomTempName)).click();
+	}
+	
+	public String GetTemplateNameValue() {
+		SqlReader sr = null;
+		String WrittenTemplateId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select * from tblWrittenTemplates where TestCenterId in (select CenterId from tblTestCenter where CenterName like '%对外经济大学%')";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				WrittenTemplateId = rs.getString("WrittenTemplateId");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return WrittenTemplateId;
+	}
+	
+	public void AddwrittentestroomarrangementClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(AddWrittenTestRoomArrangementButton)).click();
+	}
+	
+	public void SearchSelectWrittenRoomArrangeClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(selectWrittenRoomArrangeSearchButton)).click();
+	}
+	
+	public void SearchSelectWrittenRoomArrangeTestDateYearClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(selectWrittenRoomArrangeTestDateYearButton)));
+		dropList.selectByValue(getCurrentYear());
+	}
+	
+	public void SearchSelectWrittenRoomArrangeTestDateMonthClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(selectWrittenRoomArrangeTestDateMonthButton)));
+		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+	}
+	
+	public void SearchSelectWrittenRoomArrangeTestDateClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(selectWrittenRoomArrangeTestDateButton)).click();
+	}
+	
+	public void SearchSelectWrittenRoomArrangeExamFormatClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(selectWrittenRoomArrangeExamFormatButton)));
+		dropList.selectByValue("1");
+	}
+	
+	public void SearchSelectWrittenRoomArrangeExamProductTypeClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(selectWrittenRoomArrangeExamProductTypeButton)));
+		dropList.selectByValue("1");
+	}
+	
+	public void SearchSelectWrittenRoomArrangeRegionClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(selectWrittenRoomArrangeRegionButton)));
+		dropList.selectByValue("2");
+	}
+	
+	//Written Templates List
 	public void DeleteClick() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(deleteButton)).click();
 	}
 	
 	public void ModifyFirstButtonClick(){
+		Wait(normalTime);
 		Wait(normalTime);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(0).getElementsByTagName('button').item(0).click()");
@@ -145,6 +326,46 @@ public class PreTestPlanningElements extends Mis2Brower{
 				"}\r\n" + 
 				"return getRoomStatus()\r\n" + 
 				"");
+	}
+	
+	public String GetTestDayId() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0) and ProductId = 1";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+	public String getCurrentYear() {
+		 Date date=new Date();//取时间
+		 Calendar calendar = new GregorianCalendar();
+		 calendar.setTime(date);
+		 calendar.add(calendar.YEAR,0);//把日期往后增加一天.整数往后推,负数往前移动
+		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
+		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
+		 String dateString = formatter.format(date);
+		 return dateString;
+	}
+	
+	public String getCurrentMonth() {
+		 Date date=new Date();//取时间
+		 Calendar calendar = new GregorianCalendar();
+		 calendar.setTime(date);
+		 calendar.add(calendar.MONTH, 0);//把日期往后增加一天.整数往后推,负数往前移动
+		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
+		 SimpleDateFormat formatter = new SimpleDateFormat("MM");
+		 String dateString = formatter.format(date);
+		 return dateString;
 	}
 	
 	public String GetFirstValueOfBuilding() {

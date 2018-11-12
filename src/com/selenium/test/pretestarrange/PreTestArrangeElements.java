@@ -58,22 +58,46 @@ public class PreTestArrangeElements extends Mis2Brower{
 	
 	public String writtenApportionmentSaveButton = "btnSave-ArrCdd";
 	
+	public String writtenApportionmentAutoApportionAllButton = "btnAutoArr-ArrCdd";
+	
+	public String listOfWrittenApportionmentTestCenterText = ".//*[@id='spreadsheet-ArrangementSummary-table']/tbody/tr/td[1]";
+	
+	public String writtenApportionmentUnappAllButton = "unapp-ArrCdd";
+	
+	public String writtenApportionmentAmendChangeButton = ".//*[@id='spreadsheet-ArrangementSummary-table']/tbody/tr/td[6]/input";
+	
+	public String writtenApportionmentDeleteCurrentCenterArrangementButton = "delete-SpkArrCdd-w";
+	
 	//Written Apportionment
+	
+	public void WrittenApportionmentDeleteCurrentCenterArrangementClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(writtenApportionmentDeleteCurrentCenterArrangementButton)).click();
+	}
+	
+	public void WrittenApportionmentAmendChangeClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(writtenApportionmentAmendChangeButton)).click();
+	}
+	
+	public void WrittenApportionmentUnappAllClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(writtenApportionmentUnappAllButton)).click();
+	}
+	
+	public String ListOfWrittenApportionmentTestCenterWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOfWrittenApportionmentTestCenterText)).getText();
+	}
+	
+	public void WrittenApportionmentAutoApportionAllClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(writtenApportionmentAutoApportionAllButton)).click();
+	}
 	
 	public void WrittenApportionmentSaveClick() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(writtenApportionmentSaveButton)).click();
-	}
-	
-	public void ApportionSelectedCandidatesClick() {
-		Wait(normalTime);
-		WaitElementVisible(driver, By.id(writtenApportionmentApportionSelectedCandidatesButton)).click();
-	}
-	
-	public void SelectOneOfCandidate() {
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementsByName(\"checkbox\").item(0).click()");
 	}
 	
 	public void WrittenApportionmentAddClick() {

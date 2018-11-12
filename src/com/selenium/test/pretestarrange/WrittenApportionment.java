@@ -23,7 +23,7 @@ public class WrittenApportionment {
 	}
 
 	@Test
-	public void step01_AutoApportionAll(){
+	public void step01_Search(){
 		pae.SearchSelectWrittenApportionmentRegionClick();
 		pae.SearchSelectWrittenApportionmentExamProductTypeClick();
 		pae.SearchSelectWrittenApportionmentExamFormatClick();
@@ -75,6 +75,22 @@ public class WrittenApportionment {
 		pae.SearchSelectWrittenApportionmentClick();
 		pae.WrittenApportionmentAmendChangeClick();
 		pae.WrittenApportionmentDeleteCurrentCenterArrangementClick();
+		pae.WindowsAlertConfirm();
+		pae.ModifyFirstButtonClick();
+	}	
+	
+	@Test
+	public void step05_RepeatAutoApportionAll(){
+		pae.SearchSelectWrittenApportionmentRegionClick();
+		pae.SearchSelectWrittenApportionmentExamProductTypeClick();
+		pae.SearchSelectWrittenApportionmentExamFormatClick();
+		pae.SearchSelectWrittenApportionmentTestDateYearClick();
+		pae.SearchSelectWrittenApportionmentTestDateMonthClick();
+		pae.SearchSelectWrittenApportionmentTestDateClick();
+		pae.SearchSelectWrittenApportionmentClick();
+		pae.WrittenApportionmentAddClick();
+		pae.WrittenApportionmentAutoApportionAllClick();
+		pae.WrittenApportionmentSaveClick();
 		pae.WindowsAlertConfirm();
 		pae.ModifyFirstButtonClick();
 	}	

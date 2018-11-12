@@ -698,6 +698,7 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public String RoomNameWarning() {
+		Wait(normalTime);
 		return WaitElementVisible(driver, By.xpath(roomNameWarningText)).getText();
 	}
 	
@@ -1020,6 +1021,7 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public String listOfCenterNameCnWarning(){
+		Wait(normalTime);
 		return WaitElementVisible(driver, By.xpath(listOfCenterNameCnText)).getText();
 	}
 	

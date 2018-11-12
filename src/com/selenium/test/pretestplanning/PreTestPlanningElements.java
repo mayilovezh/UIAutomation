@@ -81,8 +81,6 @@ public class PreTestPlanningElements extends Mis2Brower{
 	
 	public String AddWrittenTestRoomArrangementButton = ".//*[@id='spreadsheet-WrittenArrangement-table']/tbody/tr/td[7]/a";
 	
-	public String selectAddWrittenRoomTempName = ".//*[@id='ddlTempName-mod']//option[@value='"+GetTemplateNameValue()+"']";
-	
 	public String AddWrittenTestRoomArrangementSearchButton = "btnQuery1";
 	
 	public String AddWrittenTestRoomArrangementAutoArrangeButton = "btnArrange";
@@ -177,7 +175,8 @@ public class PreTestPlanningElements extends Mis2Brower{
 	
 	public void SelectAddWrittenRoomTempName() {
 		Wait(normalTime);
-		WaitElementVisible(driver, By.xpath(selectAddWrittenRoomTempName)).click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("$('#ddlTempName-mod').find(\"option[value='"+GetTemplateNameValue()+"']\").attr(\"selected\", true)");
 	}
 	
 	public String GetTemplateNameValue() {

@@ -1,34 +1,14 @@
 package com.selenium.test.pretestplanning;
 
-import org.testng.annotations.Test;
-
 import com.selenium.test.utils.SqlReader;
 import com.selenium.test.brower.Mis2Brower;
-
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.AfterTest;
-
-import java.awt.event.ActionEvent;
-import java.beans.PropertyChangeListener;
-import java.io.File;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class PreTestPlanningElements extends Mis2Brower{
@@ -95,6 +75,68 @@ public class PreTestPlanningElements extends Mis2Brower{
 	
 	public String AddWrittenTestRoomArrangementDeleteButton = "BatchDeleteRoom";
 	
+	public String ss = "//div[@class='ui-dialog-buttonset'][1]/button[1]";
+	
+	public void ModifySecondClick() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
+				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength-1).getElementsByTagName('div').item(2).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
+	}
+	
+	public void ModifyFirstClick() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
+				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength-1).getElementsByTagName('div').item(2).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
+		Wait(normalTime);
+		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
+				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength-1).getElementsByTagName('div').item(2).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
+		
+	}
+	
+	public void ModifyNineButtonClick(){
+		Wait(normalTime);
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(9).getElementsByTagName('button').item(0).click()");
+	}
+		
+	public void ModifyEighthButtonClick(){
+		Wait(normalTime);
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(8).getElementsByTagName('button').item(0).click()");
+	}
+	
+	public void ModifySixthButtonClick(){
+		Wait(normalTime);
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(5).getElementsByTagName('button').item(0).click()");
+	}
+	
+	public void ModifyFivthButtonClick(){
+		Wait(normalTime);
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(4).getElementsByTagName('button').item(0).click()");
+	}
+	
+	public void ModifyForthButtonClick(){
+		Wait(normalTime);
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(3).getElementsByTagName('button').item(0).click()");
+	}
+	
+	public void ModifyThirdButtonClick(){
+		Wait(normalTime);
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(2).getElementsByTagName('button').item(0).click()");
+	}
+	
 	public void AddWrittenTestRoomArrangementDeleteClick() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementDeleteButton)).click();
@@ -120,6 +162,10 @@ public class PreTestPlanningElements extends Mis2Brower{
 	public void WindowsAlertConfirm() {
 		Wait(normalTime);
 		driver.switchTo().alert().accept();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
 	}
 	
 	public void AddWrittenTestRoomArrangementListOfDeleteClick() {
@@ -136,18 +182,34 @@ public class PreTestPlanningElements extends Mis2Brower{
 		Wait(normalTime);
 	}
 	
-	public void ModifySecondFirstButtonClick(){
+	public void ModifySecondButtonClick(){
 		Wait(normalTime);
 		Wait(normalTime);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(1).getElementsByTagName('button').item(0).click()");
 	}
 	
+	public boolean isElementPresent(By by) {
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+	
 	public void AddWrittenTestRoomArrangementSaveUploadClick() {
-		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
-		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementSaveUploadButton)).click();
+		for(int i=0; i<60; i++) {
+			if(isElementPresent(By.id(AddWrittenTestRoomArrangementSaveUploadButton))) {
+				WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementSaveUploadButton)).click();
+				break;
+			}
+		}
+//		Wait(normalTime);
+//		Wait(normalTime);
+//		Wait(normalTime);
+//		Wait(normalTime);
+//		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementSaveUploadButton)).click();
 	}
 	
 	public void GetWARoomStatus() {
@@ -175,6 +237,7 @@ public class PreTestPlanningElements extends Mis2Brower{
 	
 	public void SelectAddWrittenRoomTempName() {
 		Wait(normalTime);
+		Wait(normalTime);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("$('#ddlTempName-mod').find(\"option[value='"+GetTemplateNameValue()+"']\").attr(\"selected\", true)");
 	}
@@ -198,6 +261,9 @@ public class PreTestPlanningElements extends Mis2Brower{
 	}
 	
 	public void AddwrittentestroomarrangementClick() {
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(AddWrittenTestRoomArrangementButton)).click();
 	}

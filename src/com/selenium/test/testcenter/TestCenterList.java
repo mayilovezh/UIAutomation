@@ -1,8 +1,8 @@
 package com.selenium.test.testcenter;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
@@ -10,12 +10,12 @@ public class TestCenterList {
 	CenterElements ce = new CenterElements();
 	CentertInputData ci = new CentertInputData();
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setUp(){
 		ce.OpenBrower("TestCenter", 1);
 	}
 
-	@AfterMethod
+	@AfterClass
 	public void Close() {
 		ce.Close();
 	}
@@ -41,12 +41,11 @@ public class TestCenterList {
 		ce.InputCreateCenterSuperPhone(ci.superPhone);
 		ce.InputCreateCenterPostCode(ci.postCode);
 		ce.CreateCenterSaveButton();
-//		String saveWarning = ce.SaveSuccessfulWarning();
-//		Assert.assertEquals(saveWarning, ci.saveSuccessfulMessage);
 	}
 
 	@Test(description = "Search the TestCenter of UIBE")
 	public void step02_Search() {
+		ce.WaitTime();
 		ce.SearchSelectCenterRegionClick();
 		ce.SearchCenterNameCn(ci.tcName);
 		ce.SearchClick();
@@ -56,9 +55,6 @@ public class TestCenterList {
 
 	@Test(description = "Modify the TestCenter of UIBE")
 	public void step03_Modify() {
-		ce.SearchSelectCenterRegionClick();
-		ce.SearchCenterNameCn(ci.tcName);
-		ce.SearchClick();
 		ce.CenterListDetailsClick();
 		ce.InputCreateCenterCenterNameCn(ci.mtcName);
 		ce.CreateCenterSaveButton();
@@ -71,10 +67,7 @@ public class TestCenterList {
 	}
 
 	@Test(description = "View the TestCenter of UIBE")
-	public void step05_View() {
-		ce.SearchSelectCenterRegionClick();
-		ce.SearchCenterNameCn(ci.mtcName);
-		ce.SearchClick();
+	public void step04_View() {
 		String listOfCenterNameCn = ce.listOfCenterNameCnWarning();
 		ce.CenterListViewClick();
 		String viewCenterNameCnWarning = ce.ViewCenterNameCnWarning();

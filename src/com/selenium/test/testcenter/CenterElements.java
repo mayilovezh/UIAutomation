@@ -271,8 +271,6 @@ public class CenterElements extends Mis2Brower{
 			while(rs.next()) {
 				centerId = rs.getString("CenterId");
 			}
-			System.out.println("-------------");
-			System.out.println("centerId:" + centerId);
 		}catch(SQLException ex) {
 			ex.printStackTrace();
 		}finally {
@@ -600,12 +598,31 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	//Test Room List
+	public void CreateThirdRoomSaveClick(){
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(3).getElementsByTagName('button').item(0).click()");
+	}
+	
+	public void CreateSechondRoomSaveClick(){
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(2).getElementsByTagName('button').item(0).click()");
+	}
+	
+	public void RoomeOfViewSaveClick(){
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(1).getElementsByTagName('button').item(0).click()");
+	}
+	
 	public void InputModifyShareRoomOfSearchClick() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(modifyShareRoomOfSearchButton)).click();
 	}
 	
 	public void InputModifyShareRoomOfDateFrom() {
+		Wait(normalTime);
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).clear();
 		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).sendKeys(getCurrentDate());
@@ -620,6 +637,7 @@ public class CenterElements extends Mis2Brower{
 	public void RoomOfModifyShareDayButton() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(roomOfModifyShareDayButton)).click();
+		Wait(normalTime);
 	}
 	
 	public void CreateShareRoomOfSearchClick() {
@@ -686,10 +704,8 @@ public class CenterElements extends Mis2Brower{
 	}
 	
 	public void ModifyOfRoomModifyClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(modifyOfRoomModifyButton)).click();
-		Wait(normalTime);
-		Wait(normalTime);
-		Wait(normalTime);
 	}
 	
 	public void ModifyOfRoomViewClick() {
@@ -850,6 +866,12 @@ public class CenterElements extends Mis2Brower{
 		return centerId;
 	}
 	//Test Building List	
+	public void LendBuildingSaveClick(){
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(1).getElementsByTagName('button').item(0).click()");
+	}
+	
 	public void ViewOfBuildingDetailsSecondClick(){
 		Wait(normalTime);
 		//WaitElementVisible(driver, By.xpath(viewOfBuildingDetailsSecondButton)).click();
@@ -865,6 +887,7 @@ public class CenterElements extends Mis2Brower{
 	public void SelectLendBuildingOfCZCZUTestCenterClick() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath("//input[@value='"+GetCZCZUValueOfCenterId()+"']")).click();
+		Wait(normalTime);
 	} 	
 	
 	public String GetCZCZUValueOfCenterId() {

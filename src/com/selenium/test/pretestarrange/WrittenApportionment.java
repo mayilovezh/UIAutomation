@@ -1,23 +1,21 @@
 package com.selenium.test.pretestarrange;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.selenium.test.pretestplanning.PreTestPlanningElements;
-import com.selenium.test.pretestplanning.PreTestPlanningInputData;
 
 public class WrittenApportionment {
 	PreTestArrangeElements pae = new PreTestArrangeElements();
 	PreTestArrangeInputData pai = new PreTestArrangeInputData();
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setUp(){
 		pae.OpenBrower("PreTestArrange", 1);
 	}
 
-	@AfterMethod
+	@AfterClass
 	public void Close() {
 		pae.Close();
 	}
@@ -35,63 +33,40 @@ public class WrittenApportionment {
 	}	
 	
 	@Test
-	public void step02_AutoApportionAll(){
-		pae.SearchSelectWrittenApportionmentRegionClick();
-		pae.SearchSelectWrittenApportionmentExamProductTypeClick();
-		pae.SearchSelectWrittenApportionmentExamFormatClick();
-		pae.SearchSelectWrittenApportionmentTestDateYearClick();
-		pae.SearchSelectWrittenApportionmentTestDateMonthClick();
-		pae.SearchSelectWrittenApportionmentTestDateClick();
-		pae.SearchSelectWrittenApportionmentClick();
-		pae.WrittenApportionmentAddClick();
+	public void step02_DeleteCurrentCenterArrangement(){
+		pae.WrittenApportionmentAmendChangeClick();
+		pae.WrittenApportionmentDeleteCurrentCenterArrangementClick();
+		pae.WindowsAlertConfirm();
+		pae.ModifyFirstClick();
+	}	
+	
+	@Test
+	public void step03_AutoApportionAll(){
 		pae.WrittenApportionmentAutoApportionAllClick();
 		pae.WrittenApportionmentSaveClick();
 		pae.WindowsAlertConfirm();
-		pae.ModifyFirstButtonClick();
+		pae.ModifyFirstClick();
 	}	
 
 	@Test
-	public void step03_UnappAll(){
-		pae.SearchSelectWrittenApportionmentRegionClick();
-		pae.SearchSelectWrittenApportionmentExamProductTypeClick();
-		pae.SearchSelectWrittenApportionmentExamFormatClick();
-		pae.SearchSelectWrittenApportionmentTestDateYearClick();
-		pae.SearchSelectWrittenApportionmentTestDateMonthClick();
-		pae.SearchSelectWrittenApportionmentTestDateClick();
-		pae.SearchSelectWrittenApportionmentClick();
+	public void step04_UnappAll(){
 		pae.WrittenApportionmentAmendChangeClick();
 		pae.WrittenApportionmentUnappAllClick();
 		pae.WindowsAlertConfirm();
 	}	
 
 	@Test
-	public void step04_DeleteCurrentCenterArrangement(){
-		pae.SearchSelectWrittenApportionmentRegionClick();
-		pae.SearchSelectWrittenApportionmentExamProductTypeClick();
-		pae.SearchSelectWrittenApportionmentExamFormatClick();
-		pae.SearchSelectWrittenApportionmentTestDateYearClick();
-		pae.SearchSelectWrittenApportionmentTestDateMonthClick();
-		pae.SearchSelectWrittenApportionmentTestDateClick();
-		pae.SearchSelectWrittenApportionmentClick();
-		pae.WrittenApportionmentAmendChangeClick();
+	public void step05_DeleteCurrentCenterArrangement(){
 		pae.WrittenApportionmentDeleteCurrentCenterArrangementClick();
 		pae.WindowsAlertConfirm();
-		pae.ModifyFirstButtonClick();
+		pae.ModifyFirstClick();
 	}	
 	
 	@Test
-	public void step05_RepeatAutoApportionAll(){
-		pae.SearchSelectWrittenApportionmentRegionClick();
-		pae.SearchSelectWrittenApportionmentExamProductTypeClick();
-		pae.SearchSelectWrittenApportionmentExamFormatClick();
-		pae.SearchSelectWrittenApportionmentTestDateYearClick();
-		pae.SearchSelectWrittenApportionmentTestDateMonthClick();
-		pae.SearchSelectWrittenApportionmentTestDateClick();
-		pae.SearchSelectWrittenApportionmentClick();
-		pae.WrittenApportionmentAddClick();
+	public void step06_RepeatAutoApportionAll(){
 		pae.WrittenApportionmentAutoApportionAllClick();
 		pae.WrittenApportionmentSaveClick();
 		pae.WindowsAlertConfirm();
-		pae.ModifyFirstButtonClick();
+		pae.ModifyFirstClick();
 	}	
 }

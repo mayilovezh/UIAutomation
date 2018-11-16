@@ -69,6 +69,16 @@ public class PreTestArrangeElements extends Mis2Brower{
 	public String writtenApportionmentDeleteCurrentCenterArrangementButton = "delete-SpkArrCdd-w";
 	
 	//Written Apportionment
+	public void ModifyFirstClick() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
+				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength-1).getElementsByTagName('div').item(2).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
+		Wait(normalTime);
+		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
+				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength-1).getElementsByTagName('div').item(2).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
+		
+	}
 	
 	public void WrittenApportionmentDeleteCurrentCenterArrangementClick() {
 		Wait(normalTime);
@@ -102,6 +112,8 @@ public class PreTestArrangeElements extends Mis2Brower{
 	
 	public void WrittenApportionmentAddClick() {
 		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(writtenApportionmentAddButton)).click();
 	}
 	
@@ -109,6 +121,9 @@ public class PreTestArrangeElements extends Mis2Brower{
 	public void WindowsAlertConfirm() {
 		Wait(normalTime);
 		driver.switchTo().alert().accept();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
 	}
 
 	public String GetTemplateNameValue() {

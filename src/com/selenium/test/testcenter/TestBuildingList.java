@@ -1,32 +1,27 @@
 package com.selenium.test.testcenter;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.WebDriverAction;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class TestBuildingList {
 	CenterElements ce = new CenterElements();
 	CentertInputData ci = new CentertInputData();
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setUp(){
 		ce.OpenBrower("TestCenter", 2);
 	}
 
-	@AfterMethod
+	@AfterClass
 	public void Close() {
 		ce.Close();
 	}
 
 	@Test(description = "Create for the testbuilding of UIBE")
-	public void step01_Create() throws InterruptedException{
+	public void step01_Create(){
 		ce.SearchSelectBuildingOfRegionClick();
 		ce.SearchSelectBuildingOfTestCenterClick();
 		ce.SearchSelectBuildingOfBuildingAvailableClick();
@@ -45,19 +40,12 @@ public class TestBuildingList {
 
 	@Test(description = "Search for the testbuilding of UIBE")
 	public void step02_Search(){
-		ce.SearchSelectBuildingOfRegionClick();
-		ce.SearchSelectBuildingOfTestCenterClick();
-		ce.SearchSelectBuildingOfBuildingAvailableClick();
-		ce.BuildingOfSearchClick();
+		ce.WaitTime();
 		Assert.assertEquals(ce.BuildingNameEnWarning(), ci.tbName_En);
 	}
 
 	@Test(description = "Modify the testbuilding of UIBE")
 	public void step03_Modify(){
-		ce.SearchSelectBuildingOfRegionClick();
-		ce.SearchSelectBuildingOfTestCenterClick();
-		ce.SearchSelectBuildingOfBuildingAvailableClick();
-		ce.BuildingOfSearchClick();
 		ce.ModifyOfBuildingModifyClick();
 		ce.CreateBuildingOfBuildingNameCn(ci.mTbName_Cn);
 		ce.CreateBuildingOfBuildingNameEn(ci.mTbName_En);
@@ -72,10 +60,6 @@ public class TestBuildingList {
 
 	@Test(description = "View the testbuilding's detail of UIBE")
 	public void step04_View(){
-		ce.SearchSelectBuildingOfRegionClick();
-		ce.SearchSelectBuildingOfTestCenterClick();
-		ce.SearchSelectBuildingOfBuildingAvailableClick();
-		ce.BuildingOfSearchClick();
 		ce.ModifyOfBuildingViewClick();
 		Assert.assertEquals(ce.ViewOfBuildingDetailsWarning(), ci.mTbName_En);
 		ce.ViewOfBuildingDetailsFirstClick();
@@ -83,21 +67,14 @@ public class TestBuildingList {
 
 	@Test(description = "Lend testbuilding from other testcenter")
 	public void step05_LendBuilding(){
-		ce.SearchSelectBuildingOfRegionClick();
-		ce.SearchSelectBuildingOfTestCenterClick();
-		ce.SearchSelectBuildingOfBuildingAvailableClick();
-		ce.BuildingOfSearchClick();
 		ce.ModifyOfBuildingLendBuildingClick();
 		ce.SelectLendBuildingOfCZCZUTestCenterClick();
-		ce.ViewOfBuildingDetailsFirstClick();
+		ce.LendBuildingSaveClick();
 	}
 
 	@Test(description = "Create for the testbuilding of UIBE")
 	public void step06_Create2Building(){
-		ce.SearchSelectBuildingOfRegionClick();
-		ce.SearchSelectBuildingOfTestCenterClick();
-		ce.SearchSelectBuildingOfBuildingAvailableClick();
-		ce.BuildingOfSearchClick();
+		ce.WaitTime();
 		ce.BuildingOfCreateClick();
 		ce.CreateBuildingOfBuildingNameCn(ci.tbName_Cn);
 		ce.CreateBuildingOfBuildingNameEn(ci.tbAddress_En);

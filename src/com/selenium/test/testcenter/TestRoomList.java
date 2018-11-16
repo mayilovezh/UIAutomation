@@ -1,32 +1,21 @@
 package com.selenium.test.testcenter;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.WebDriverAction;
 
 public class TestRoomList {
 
 	CenterElements ce = new CenterElements();
 	CentertInputData ci = new CentertInputData();
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setUp(){
 		ce.OpenBrower("TestCenter", 3);
 	}
 
-	@AfterMethod
+	@AfterClass
 	public void Close() {
 		ce.Close();
 	}
@@ -53,20 +42,14 @@ public class TestRoomList {
 
 	@Test(description = "Search room")
 	public void step02_SearchRoom(){
-		ce.SelectSearchRoomOfRegion();
-		ce.SelectSearchRoomOfCenter();
-		ce.SearchRoomOfBuilding();
-		ce.RoomOfSearchClick();
+		ce.WaitTime();
 		Assert.assertEquals(ce.RoomNameWarning(), ci.roomNameOne);
 	}
 
 	@Test(description = "Modify Room")
 	public void step03_Modify(){
-		ce.SelectSearchRoomOfRegion();
-		ce.SelectSearchRoomOfCenter();
-		ce.SearchRoomOfBuilding();
-		ce.RoomOfSearchClick();
 		ce.ModifyOfRoomModifyClick();
+		ce.WaitTime();
 		ce.CheckRoomNameClick();
 		ce.InputRoomName(ci.roomNameTwo);
 		ce.CreateOfRoomSaveButton();
@@ -76,21 +59,14 @@ public class TestRoomList {
 
 	@Test(description = "View Room")
 	public void step04_View(){
-		ce.SelectSearchRoomOfRegion();
-		ce.SelectSearchRoomOfCenter();
-		ce.SearchRoomOfBuilding();
-		ce.RoomOfSearchClick();
 		ce.ModifyOfRoomViewClick();
 		Assert.assertEquals(ce.ViewOfRoomDetailsWarning(), ci.roomNameTwo);
-		ce.CreateOfRoomSaveButton();
+		ce.RoomeOfViewSaveClick();
 	}
 
 	@Test(description = "Create building room is RM02")
 	public void step05_CreateSecondBuildingRoom(){
-		ce.SelectSearchRoomOfRegion();
-		ce.SelectSearchRoomOfCenter();
-		ce.SearchRoomOfBuilding();
-		ce.RoomOfSearchClick();
+		ce.WaitTime();
 		ce.RoomOfCreateClick();
 		ce.InputRoomName(ci.roomNameOne);
 		ce.InputCreateOfRoomQuota("50");
@@ -107,30 +83,24 @@ public class TestRoomList {
 
 	@Test(description = "Create Share room")
 	public void step06_CreateShareRoom(){
-		ce.SelectSearchRoomOfRegion();
-		ce.SelectSearchRoomOfCenter();
-		ce.SearchRoomOfBuilding();
-		ce.RoomOfSearchClick();
+		ce.WaitTime();
 		ce.RoomOfCreateShareRoomClick();
 		ce.SelectShareRoomClick();
 		ce.InputShareRoomOfDateFrom();
 		ce.InputShareRoomOfDateTo();
 		ce.CreateShareRoomOfSearchClick();
 		ce.SelectShareRoomTestDayClick();
-		ce.CreateOfRoomSaveButton();
+		ce.CreateSechondRoomSaveClick();
 	}
-	
+
 	@Test(description = "Modify Share Day")
 	public void step07_ModifyShareDay(){
-		ce.SelectSearchRoomOfRegion();
-		ce.SelectSearchRoomOfCenter();
-		ce.SearchRoomOfBuilding();
-		ce.RoomOfSearchClick();
+		ce.WaitTime();
 		ce.RoomOfModifyShareDayButton();
 		ce.InputModifyShareRoomOfDateFrom();
 		ce.InputModifyShareRoomOfDateTo();
 		ce.InputModifyShareRoomOfSearchClick();
-		ce.CreateOfRoomSaveButton();
+		ce.CreateThirdRoomSaveClick();
 	}
-	
+
 }

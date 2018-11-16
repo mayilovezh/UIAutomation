@@ -1,8 +1,7 @@
 package com.selenium.test.admin;
 
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
@@ -10,12 +9,12 @@ public class TestImportCdtoMIS2 {
 	AdminElements ae = new AdminElements();
 	AdminInputData ai = new AdminInputData();
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setUp(){
 		ae.OpenBrower("Admin", 7);
 	}
 
-	@AfterMethod
+	@AfterClass
 	public void Close() {
 		ae.Close();
 	}

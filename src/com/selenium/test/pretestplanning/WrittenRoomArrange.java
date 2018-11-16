@@ -1,19 +1,19 @@
 package com.selenium.test.pretestplanning;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class WrittenRoomArrange {
 	PreTestPlanningElements pe = new PreTestPlanningElements();
 	PreTestPlanningInputData pi = new PreTestPlanningInputData();
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setUp(){
 		pe.OpenBrower("PreTestPlanning", 2);
 	}
 
-	@AfterMethod
+	@AfterClass
 	public void Close() {
 		pe.Close();
 	}
@@ -33,80 +33,48 @@ public class WrittenRoomArrange {
 		pe.AddWrittenTestRoomArrangementAutoArrangeClick();
 		pe.GetWARoomStatus();
 		pe.AddWrittenTestRoomArrangementSaveUploadClick();
-		pe.ModifyFirstButtonClick();
-		pe.ModifySecondFirstButtonClick();
+		pe.ModifyFirstClick();
 	}
 
 	@Test
-	public void step02_AmendWrittenDelete(){
-		pe.SearchSelectWrittenRoomArrangeRegionClick();
-		pe.SearchSelectWrittenRoomArrangeExamProductTypeClick();
-		pe.SearchSelectWrittenRoomArrangeExamFormatClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateYearClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateMonthClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateClick();
-		pe.SearchSelectWrittenRoomArrangeClick();
+	public void step02_AmendWrittenListOfDelete(){
 		pe.AddwrittentestroomarrangementClick();
 		pe.SelectAddWrittenRoomTempName();
 		pe.AddWrittenTestRoomArrangementListOfDeleteClick();
 		pe.WindowsAlertConfirm();
 		pe.AddWrittenTestRoomArrangementSaveUploadClick();
-		pe.ModifyFirstButtonClick();
-		pe.ModifySecondFirstButtonClick();
+		pe.ModifyFirstClick();
 	}
 
 	@Test
-	public void step03_AmendWrittenAddExtraRoom(){
-		pe.SearchSelectWrittenRoomArrangeRegionClick();
-		pe.SearchSelectWrittenRoomArrangeExamProductTypeClick();
-		pe.SearchSelectWrittenRoomArrangeExamFormatClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateYearClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateMonthClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateClick();
-		pe.SearchSelectWrittenRoomArrangeClick();
+	public void step03_AmendWrittenAddExtraRoom() throws InterruptedException{
 		pe.AddwrittentestroomarrangementClick();
 		pe.SelectAddWrittenRoomTempName();
 		pe.AddWrittenTestRoomArrangementListOfAddExtraClick();
 		pe.AddWrittenTestRoomArrangementListOfAddBuildingClick();
-		pe.ModifyFirstButtonClick();
+		pe.ModifySecondClick();
 		pe.AddWrittenTestRoomArrangementSaveUploadClick();
-		pe.ModifySecondFirstButtonClick();
-		pe.ModifyFirstButtonClick();
+		pe.ModifyFirstClick();
 	}
 
 	@Test
 	public void step04_AmendWrittenDelete(){
-		pe.SearchSelectWrittenRoomArrangeRegionClick();
-		pe.SearchSelectWrittenRoomArrangeExamProductTypeClick();
-		pe.SearchSelectWrittenRoomArrangeExamFormatClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateYearClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateMonthClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateClick();
-		pe.SearchSelectWrittenRoomArrangeClick();
 		pe.AddwrittentestroomarrangementClick();
 		pe.GetWARoomStatus();
 		pe.AddWrittenTestRoomArrangementDeleteClick();
 		pe.WindowsAlertConfirm();
-		pe.ModifyFirstButtonClick();
+		pe.ModifyFirstClick();
 	}
 	
 	@Test
 	public void step05_AmendWrittenRepeatAutoArrange(){
-		pe.SearchSelectWrittenRoomArrangeRegionClick();
-		pe.SearchSelectWrittenRoomArrangeExamProductTypeClick();
-		pe.SearchSelectWrittenRoomArrangeExamFormatClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateYearClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateMonthClick();
-		pe.SearchSelectWrittenRoomArrangeTestDateClick();
-		pe.SearchSelectWrittenRoomArrangeClick();
 		pe.AddwrittentestroomarrangementClick();
 		pe.SelectAddWrittenRoomTempName();
 		pe.AddWrittenTestRoomArrangementSearchClick();
 		pe.AddWrittenTestRoomArrangementAutoArrangeClick();
 		pe.GetWARoomStatus();
 		pe.AddWrittenTestRoomArrangementSaveUploadClick();
-		pe.ModifyFirstButtonClick();
-		pe.ModifySecondFirstButtonClick();
+		pe.ModifyFirstClick();
 	}
-	
+
 }

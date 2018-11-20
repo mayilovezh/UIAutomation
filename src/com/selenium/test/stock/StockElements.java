@@ -36,6 +36,11 @@ public class StockElements extends Mis2Brower{
 	public void OpenBrower(String MenueName,int MenueLocation) {
 		driver = Login(MenueName,MenueLocation);
 	}
+    //Category Management
+	public String CategoryManagementSearchStockType = "selectStockCategoryTypeSearch";
+	
+	public String CategoryManagementSearchButton = "btnQueryStockCategory";
+	
 	
     //Admin Test Live Mats
     public String LIVE_MATERIALS_REGION = "ddlRegion-testmaterials";
@@ -53,7 +58,6 @@ public class StockElements extends Mis2Brower{
     public String LIVE_MATERIALS_UPDATE_REMARK = "txtremark-testmaterials";
     public String LIVE_MATERIALS_SAVEBUTTON= "btnSave-testmaterials";
 	
-    
     
     //Admin Permanent Mats
     public String PERMANENTMATERIALS_REGION = "ddlRegion-Permanent";
@@ -83,6 +87,55 @@ public class StockElements extends Mis2Brower{
     public String TESTDAYALLOCATION_CLEARARRANGEOFCURRENTCENTRE = "btnStockArrangeClearWrittenArrange";
     public String TESTDAYALLOCATION_SAVE = "btnStockArrangeSave";  
     public String TESTDAYALLOCATION_MESSAGEYES = "html/body/div[11]/div[3]/div/button";
+	
+    //Category Management
+	public void CategoryManagementSearchClick() {
+		WaitElementVisible(driver, By.id(CategoryManagementSearchButton)).click();
+	}
+    
+    
+	public void SearchCategoryManagementStockTypeClick() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(CategoryManagementSearchStockType)));
+		dropList.selectByValue(GetSearchStockType());
+	}
+	
+	public void ModifyPackageSave() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("function ClickSave() {\r\n" + 
+				"  var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
+				"  document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength - 1).getElementsByClassName('ui-dialog-buttonpane ui-widget-content ui-helper-clearfix').item(0).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()\r\n" + 
+				"}\r\n" + 
+				"return ClickSave()");
+	}
+	
+	public void ModifyPackageNumber() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('txtEveryPackageNumber').value = 100");
+	}
+	
+	public void ModifyClick(int buttonLocation) {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('spreadsheet-CategoryList-table').getElementsByTagName('input').item("+buttonLocation+").click()");
+	}
+	
+	public int ModifyAllPackageNumberLength() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Long i = (Long)js.executeScript("function ModifyPackageNumberLength() {\r\n" + 
+				"  var packageNumberTotalLength = document.getElementById('spreadsheet-CategoryList-table').getElementsByTagName('input').length\r\n" + 
+				"  return packageNumberTotalLength\r\n" + 
+				"}\r\n" + 
+				"return ModifyPackageNumberLength()\r\n" + 
+				"");
+		Integer packageNumberTotalLength= new Integer(String.valueOf(i));
+		return packageNumberTotalLength;
+	}
+    //Admin Permanent Mats
+
+	
 	
     //Admin Test Live Mats
 	public void WaitTime(){
@@ -142,7 +195,7 @@ public class StockElements extends Mis2Brower{
 		js.executeScript("function inputAllStorageLocation(){\r\n" + 
 				"  var StorageLocationLength = document.getElementsByName('StorageLocation').length\r\n" + 
 				"  for(var i =0; i<StorageLocationLength; i++){\r\n" + 
-				"   document.getElementsByName('StorageLocation').item(i).value = '12313'\r\n" + 
+				"   document.getElementsByName('StorageLocation').item(i).value = '10'\r\n" + 
 				"  }\r\n" + 
 				"};return inputAllStorageLocation()");
 	}
@@ -152,7 +205,7 @@ public class StockElements extends Mis2Brower{
 		js.executeScript("function inputAllRemark(){\r\n" + 
 				"  var RemarkLength = document.getElementsByName('Remark').length\r\n" + 
 				"  for(var i =0; i<RemarkLength; i++){\r\n" + 
-				"   document.getElementsByName('Remark').item(i).value = '33333'\r\n" + 
+				"   document.getElementsByName('Remark').item(i).value = 'remark'\r\n" + 
 				"  }\r\n" + 
 				"};return inputAllRemark()");
 	}

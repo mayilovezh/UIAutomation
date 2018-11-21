@@ -14,5 +14,8 @@ import com.selenium.test.utils.WebDriverAction;
 public class StockInputData {	
 
 	public String uploadCandidateFile = ".//resource//ImportCddtoMIS2//Cdd info.xlsx";
-    public String LIVE_MATERIALS_CATEGORYNAME = "Listening CD";
+    
+	public String LIVE_MATERIALS_CATEGORYNAME = "Listening CD";
+    
+	public String PermanentMaterials_ViewStorageType = "Paper Transfer In";
 }

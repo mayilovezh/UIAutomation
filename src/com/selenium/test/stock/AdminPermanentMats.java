@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -22,32 +23,50 @@ public class AdminPermanentMats {
 	
 	@BeforeClass
 	public void setUp(){
-		se.OpenBrower("Stock", 2);
+		se.OpenBrower("Stock", 3);
 	}
 
 	@AfterClass
 	public void Close() {
 		se.Close();
 	}
-	
-	@Test(description = "Search Permanent Materials")
-	public void step01_Search() {
-		
-	}
 
 	@Test(description = "Update Permanent Materials")
-	public void step02_Update() throws InterruptedException {
-		
+	public void step01_Update(){
+		se.SearchPermanentMatsRegionClick();
+		se.PermanentMatsUpdateClick();
+		se.SelectUpdatePermanentMatsStorageTypeClick();
+		se.InputUpdatePermanentMatsTotalPackage();
+		se.InputUpdatePermanentMatsTotalNumber();
+		se.InputUpdatePermanentMatsRemark();
+		se.ModifyPackageSave();
+		se.WaitTime();
 	}
 
-	@Test(description = "Save Permanent Materials")
-	public void step03_Save() throws InterruptedException {
-		
+	@Test(description = "View Permanent Materials")
+	public void step02_View(){
+		se.SearchPermanentMatsRegionClick();
+		se.PermanentMatsRemarkViewClick();
+		Assert.assertEquals(se.PermanentMatsViewStorageTypeWarning(), si.PermanentMaterials_ViewStorageType);
+		se.ModifyPackageSave();
+		se.WaitTime();
 	}
+
+	@Test(description = "Save One Record Of Permanent Materials")
+	public void step03_SaveOneRecord(){
+		se.SearchPermanentMatsRegionClick();
+		se.InputPermanentMatsOneOfStorageLocation();
+		se.InputPermanentMatsOneOfRemark();
+		se.PermanentMatsSaveClick();
+		se.WaitTime();
+	}	
 
 	@Test(description = "Save All Permanent Materials")
-	public void step04_SaveAll() throws InterruptedException {
-		
+	public void step04_SaveAll(){
+		se.SearchPermanentMatsRegionClick();
+		se.inputAllStorageLocation();
+		se.inputAllRemark();
+		se.PermanentMatsSaveAllClick();
 	}	
-	
+
 }

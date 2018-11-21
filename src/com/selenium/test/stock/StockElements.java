@@ -61,12 +61,10 @@ public class StockElements extends Mis2Brower{
     
     //Admin Permanent Mats
     public String PERMANENTMATERIALS_REGION = "ddlRegion-Permanent";
-    public String PERMANENTMATERIALS_UPDATEBUTTON = ".//*[@id='tr21']/td[9]/input";
+    public String PERMANENTMATERIALS_UPDATEBUTTON = "//div[@id='spreadsheet-WrittenArrangement-table_wrapper']/table/tbody/tr[1]/td[9]/input[1]";
+    public String PERMANENTMATERIALS_VIEWBUTTON = "//div[@id='spreadsheet-WrittenArrangement-table_wrapper']/table/tbody/tr[1]/td[10]/input[1]";
+    public String PERMANENTMATERIALS_VIEWSTORAGETYPEText = ".//*[@id='ShowDetail-table-Permanent']/tbody/tr[1]/td[2]";
     public String PERMANENTMATERIALS_UPDATE_STORAGETYPE = "ddlstoragetype-Permanent";
-    public String PERMANENTMATERIALS_UPDATE_TESTDATEYEAR = "Permanent-Select-Year";
-    public String PERMANENTMATERIALS_UPDATE_TESTDATEMONTH = "Permanent-Select-Month";
-    public String PERMANENTMATERIALS_UPDATE_TESTDATE = "ddlTestDate-Permanent";
-    public String PERMANENTMATERIALS_UPDATE_TestCENTER = "ddlPermanent-testcenter";
     public String PERMANENTMATERIALS_UPDATE_TOTALPACKAGES = "txtpackage-Permanent";
     public String PERMANENTMATERIALS_UPDATE_TOTALNUMBER = "txttotal-Permanent";
     public String PERMANENTMATERIALS_UPDATE_REMARK = "txtremark-Permanent";
@@ -74,7 +72,7 @@ public class StockElements extends Mis2Brower{
     public String PERMANENTMATERIALS_STORAGELOCATION = "StorageLocation21";
     public String PERMANENTMATERIALS_REMARK= "Remark21";
     public String PERMANENTMATERIALS_CHECKALL= "SelectAll-Permanent";
-    public String PERMANENTMATERIALS_SAVESELECT= "btnSaveSelect-Permanent";
+    public String PERMANENTMATERIALS_SAVESALLELECT= "btnSaveSelect-Permanent";
     
     //Test Day Allocation
     public String TESTDAYALLOCATION_REGION = "selectStockWrittenArrangementRegion";
@@ -87,7 +85,82 @@ public class StockElements extends Mis2Brower{
     public String TESTDAYALLOCATION_CLEARARRANGEOFCURRENTCENTRE = "btnStockArrangeClearWrittenArrange";
     public String TESTDAYALLOCATION_SAVE = "btnStockArrangeSave";  
     public String TESTDAYALLOCATION_MESSAGEYES = "html/body/div[11]/div[3]/div/button";
+    
+    //Admin Permanent Mats
+	public void PermanentMatsSaveAllClick() {
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_SAVESALLELECT)).click();
+	}
+    
+	public void PermanentMatsSaveClick() {
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_UPDATE_SAVEBUTTON)).click();
+	}
+    
+	public void InputPermanentMatsOneOfStorageLocation() {
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_STORAGELOCATION)).clear();
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_STORAGELOCATION)).sendKeys("20");
+	}
+    
+	public void InputPermanentMatsOneOfRemark() {
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_REMARK)).clear();
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_REMARK)).sendKeys("20");
+	}
+    
+	public String PermanentMatsViewStorageTypeWarning() {
+		return WaitElementVisible(driver, By.xpath(PERMANENTMATERIALS_VIEWSTORAGETYPEText)).getText();
+	}
+    
+	public void PermanentMatsRemarkViewClick() {
+		WaitElementVisible(driver, By.xpath(PERMANENTMATERIALS_VIEWBUTTON)).click();
+	}
+    
+	public void InputUpdatePermanentMatsRemark() {
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_UPDATE_REMARK )).clear();
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_UPDATE_REMARK )).sendKeys("RemarkRemarkRemarkRemarkRemarkRemarkRemarkRemarkRemarkRemark");
+	}
 	
+	public void InputUpdatePermanentMatsTotalPackage() {
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_UPDATE_TOTALPACKAGES)).clear();
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_UPDATE_TOTALPACKAGES)).sendKeys("1");
+	}
+	
+	public void InputUpdatePermanentMatsTotalNumber() {
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_UPDATE_TOTALNUMBER)).clear();
+		WaitElementVisible(driver, By.id(PERMANENTMATERIALS_UPDATE_TOTALNUMBER)).sendKeys("100");
+	}
+    
+	public void SelectUpdatePermanentMatsStorageTypeClick() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(PERMANENTMATERIALS_UPDATE_STORAGETYPE)));
+		dropList.selectByValue(GetPMUpdateStockType());
+	}
+    
+	public String GetPMUpdateStockType() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = "select * from TB_Dictionary where Table_mark = 'StockStorageType' and [Values] = 'Paper Transfer In'";
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
+	
+	public void SearchPermanentMatsRegionClick() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(PERMANENTMATERIALS_REGION)));
+		dropList.selectByValue("2");
+	}
+    
+	public void PermanentMatsUpdateClick() {
+		WaitElementVisible(driver, By.xpath(PERMANENTMATERIALS_UPDATEBUTTON)).click();
+	}
+	
+    
     //Category Management
 	public void CategoryManagementSearchClick() {
 		WaitElementVisible(driver, By.id(CategoryManagementSearchButton)).click();

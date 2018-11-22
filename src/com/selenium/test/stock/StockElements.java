@@ -78,13 +78,62 @@ public class StockElements extends Mis2Brower{
     public String TESTDAYALLOCATION_REGION = "selectStockWrittenArrangementRegion";
     public String TESTDAYALLOCATION_TESTDATEYEAR = "StockWrittenArrangement-Select-Year-Search";
     public String TESTDAYALLOCATION_TESTDATEMONTH = "StockWrittenArrangement-Select-Month-Search";
-    public String TESTDAYALLOCATION_TESTDATE = "selectStockWrittenArrangementTestDate";
+    public String TESTDAYALLOCATION_TESTDATE = ".//select[@id='selectStockWrittenArrangementTestDate']//option[@value='"+GetTestDate()+"']";
     public String TESTDAYALLOCATION_TestCENTER = "selectStockWrittenArrangementTestCenter";
     public String TESTDAYALLOCATION_SEARCH = "btnStockArrangementSearch";
     public String TESTDAYALLOCATION_AUTOARRAGECURRENTCENTRE = "btnStockAutoArrange";
     public String TESTDAYALLOCATION_CLEARARRANGEOFCURRENTCENTRE = "btnStockArrangeClearWrittenArrange";
     public String TESTDAYALLOCATION_SAVE = "btnStockArrangeSave";  
     public String TESTDAYALLOCATION_MESSAGEYES = "html/body/div[11]/div[3]/div/button";
+    
+    //Test Day Allocation
+    public void WindowAlertConfirm() {
+    	Wait(normalTime);
+    	driver.switchTo().alert().accept();
+    }
+    
+	public void TestDayAllocationSaveClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(TESTDAYALLOCATION_SAVE)).click();
+	}
+	
+	public void TestDayAllocationAutoArrangeForCurrentCentre() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(TESTDAYALLOCATION_AUTOARRAGECURRENTCENTRE)).click();
+	}
+	
+	public void TestDayAllocationClearArrangeOfCurrentCentre() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(TESTDAYALLOCATION_CLEARARRANGEOFCURRENTCENTRE)).click();
+	}
+    
+	public void SelectTestDayAllocationRegion() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(TESTDAYALLOCATION_REGION)));
+		dropList.selectByValue("2");
+	}
+	
+	public void SelectTestDayAllocationTestDateYear() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(TESTDAYALLOCATION_TESTDATEYEAR)));
+		dropList.selectByValue(getCurrentYear());
+	}
+	
+	public void SelectTestDayAllocationTestDateMonth() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(TESTDAYALLOCATION_TESTDATEMONTH)));
+		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+	}
+	
+	public void SelectTestDayAllocationTestDate() {
+		WaitElementVisible(driver, By.xpath(TESTDAYALLOCATION_TESTDATE)).click();
+	}
+	
+	public void SelectTestDayAllocationTestCenter() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(TESTDAYALLOCATION_TestCENTER)));
+		dropList.selectByValue(GetValueOfCenterId());
+	}
+	public void TestDayAllocationSearchClick() {
+		WaitElementVisible(driver, By.id(TESTDAYALLOCATION_SEARCH)).click();
+	}
+   
     
     //Admin Permanent Mats
 	public void PermanentMatsSaveAllClick() {

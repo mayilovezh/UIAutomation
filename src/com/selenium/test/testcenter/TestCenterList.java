@@ -21,7 +21,7 @@ public class TestCenterList {
 	}
 
 	@Test(description = "Create the TestCenter of UIBE")
-	public void step01_Create() {
+	public void step01_Create(){
 		ce.CreateCenterClick();
 		ce.SelectCreateCenterRegionClick();
 		ce.SelectCreateCenterProvinceClick();
@@ -40,12 +40,11 @@ public class TestCenterList {
 		ce.InputCreateCenterTelephone(ci.telephone);
 		ce.InputCreateCenterSuperPhone(ci.superPhone);
 		ce.InputCreateCenterPostCode(ci.postCode);
-		ce.CreateCenterSaveButton();
+		ce.ModifyFirstClick();
 	}
 
 	@Test(description = "Search the TestCenter of UIBE")
 	public void step02_Search() {
-		ce.WaitTime();
 		ce.SearchSelectCenterRegionClick();
 		ce.SearchCenterNameCn(ci.tcName);
 		ce.SearchClick();
@@ -54,11 +53,10 @@ public class TestCenterList {
 	}
 
 	@Test(description = "Modify the TestCenter of UIBE")
-	public void step03_Modify() {
+	public void step03_Modify(){
 		ce.CenterListDetailsClick();
 		ce.InputCreateCenterCenterNameCn(ci.mtcName);
-		ce.CreateCenterSaveButton();
-		ce.WaitTime();
+		ce.ModifyFirstClick();
 		ce.SearchSelectCenterRegionClick();
 		ce.SearchCenterNameCn(ci.mtcName);
 		ce.SearchClick();

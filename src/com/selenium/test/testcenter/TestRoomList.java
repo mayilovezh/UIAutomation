@@ -5,6 +5,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.selenium.test.utils.FirstClick;
+
 public class TestRoomList {
 
 	CenterElements ce = new CenterElements();
@@ -37,7 +39,7 @@ public class TestRoomList {
 		ce.SelectCreateOfTableChairStatus();
 		ce.InputCreateOfRoomToward("rw");
 		ce.CreateRoomRemark("RemarkRemarkRemarkRemarkRemarkRemarkRemark");
-		ce.CreateOfRoomSaveButton();
+		ce.ModifyFirstClick();
 	}
 
 	@Test(description = "Search room")
@@ -52,7 +54,7 @@ public class TestRoomList {
 		ce.WaitTime();
 		ce.CheckRoomNameClick();
 		ce.InputRoomName(ci.roomNameTwo);
-		ce.CreateOfRoomSaveButton();
+		ce.ModifyFirstClick();
 		ce.WaitTime();
 		Assert.assertEquals(ce.RoomNameWarning(), ci.roomNameTwo);
 	}
@@ -78,11 +80,11 @@ public class TestRoomList {
 		ce.SelectCreateOfTableChairStatus();
 		ce.InputCreateOfRoomToward("rw");
 		ce.CreateRoomRemark("RemarkRemarkRemarkRemarkRemarkRemarkRemark");
-		ce.CreateOfRoomSaveButton();
+		ce.ModifyFirstClick();
 	}
 
 	@Test(description = "Create Share room")
-	public void step06_CreateShareRoom(){
+	public void step06_CreateShareRoom() throws InterruptedException{
 		ce.WaitTime();
 		ce.RoomOfCreateShareRoomClick();
 		ce.SelectShareRoomClick();
@@ -90,7 +92,7 @@ public class TestRoomList {
 		ce.InputShareRoomOfDateTo();
 		ce.CreateShareRoomOfSearchClick();
 		ce.SelectShareRoomTestDayClick();
-		ce.CreateSechondRoomSaveClick();
+		ce.ModifyFirstClick();
 	}
 
 	@Test(description = "Modify Share Day")
@@ -100,7 +102,8 @@ public class TestRoomList {
 		ce.InputModifyShareRoomOfDateFrom();
 		ce.InputModifyShareRoomOfDateTo();
 		ce.InputModifyShareRoomOfSearchClick();
-		ce.CreateThirdRoomSaveClick();
+		ce.ModifyFirstClick();
+		
 	}
 
 }

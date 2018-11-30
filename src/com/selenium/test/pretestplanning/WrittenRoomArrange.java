@@ -19,7 +19,7 @@ public class WrittenRoomArrange {
 	}
 
 	@Test
-	public void step01_AmendWrittenAutoArrange(){
+	public void step01_AmendWrittenAutoArrange() throws InterruptedException{
 		pe.SearchSelectWrittenRoomArrangeRegionClick();
 		pe.SearchSelectWrittenRoomArrangeExamProductTypeClick();
 		pe.SearchSelectWrittenRoomArrangeExamFormatClick();

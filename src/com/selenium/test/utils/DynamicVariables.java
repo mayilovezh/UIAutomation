@@ -23,6 +23,25 @@ public class DynamicVariables {
 	
 	public String SqlValueOfCenterId = "select * from tblTestCenter where CenterName = '对外经济大学'";
 	
+	public String SqlTemplateNameValue = "select * from tblWrittenTemplates where TestCenterId in (select CenterId from tblTestCenter where CenterName like '%对外经济大学%')";
+	
+	public String GetTemplateNameValue() {
+		SqlReader sr = null;
+		String WrittenTemplateId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlTemplateNameValue;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				WrittenTemplateId = rs.getString("WrittenTemplateId");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return WrittenTemplateId;
+	}
 	
 	public String getLastDate() {
 		 Date date=new Date();//取时间

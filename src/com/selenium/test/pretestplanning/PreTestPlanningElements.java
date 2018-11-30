@@ -1,18 +1,17 @@
 package com.selenium.test.pretestplanning;
 
-import com.selenium.test.utils.SqlReader;
+import com.selenium.test.utils.DynamicVariables;
+import com.selenium.test.utils.FirstClick;
 import com.selenium.test.brower.Mis2Brower;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
 public class PreTestPlanningElements extends Mis2Brower{
-
+	
+	DynamicVariables dv = new DynamicVariables();
+	
+	FirstClick fc = new FirstClick();
+	
 	public void OpenBrower(String MenueName,int MenueLocation) {
 		driver = Login(MenueName,MenueLocation);
 	}
@@ -55,7 +54,7 @@ public class PreTestPlanningElements extends Mis2Brower{
 	
 	public String selectWrittenRoomArrangeTestDateMonthButton = "ddlMonth-Search";
 		
-	public String selectWrittenRoomArrangeTestDateButton = ".//*[@id='ddlTestDate-Search']//option[@value='"+GetTestDayId()+"']";
+	public String selectWrittenRoomArrangeTestDateButton = ".//*[@id='ddlTestDate-Search']//option[@value='"+dv.GetTestDayId()+"']";
 	
 	public String selectWrittenRoomArrangeSearchButton = "btnQuery";
 	
@@ -76,25 +75,7 @@ public class PreTestPlanningElements extends Mis2Brower{
 	public String AddWrittenTestRoomArrangementDeleteButton = "BatchDeleteRoom";
 	
 	public String ss = "//div[@class='ui-dialog-buttonset'][1]/button[1]";
-	
-	public void ModifySecondClick() {
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
-				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength-1).getElementsByTagName('div').item(2).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
-	}
-	
-	public void ModifyFirstClick() {
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
-				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength-1).getElementsByTagName('div').item(2).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
-		Wait(normalTime);
-		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
-				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength-1).getElementsByTagName('div').item(2).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
 		
-	}
-	
 	public void ModifyNineButtonClick(){
 		Wait(normalTime);
 		Wait(normalTime);
@@ -148,7 +129,7 @@ public class PreTestPlanningElements extends Mis2Brower{
 	public void AddWrittenTestRoomArrangementListOfAddBuildingClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementListOfAddBuilding)));
-		dropList.selectByValue(GetFirstValueOfBuilding());
+		dropList.selectByValue(dv.GetFirstValueOfBuilding());
 		Wait(normalTime);
 		Wait(normalTime);
 		Wait(normalTime);
@@ -205,11 +186,6 @@ public class PreTestPlanningElements extends Mis2Brower{
 				break;
 			}
 		}
-//		Wait(normalTime);
-//		Wait(normalTime);
-//		Wait(normalTime);
-//		Wait(normalTime);
-//		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementSaveUploadButton)).click();
 	}
 	
 	public void GetWARoomStatus() {
@@ -239,27 +215,9 @@ public class PreTestPlanningElements extends Mis2Brower{
 		Wait(normalTime);
 		Wait(normalTime);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("$('#ddlTempName-mod').find(\"option[value='"+GetTemplateNameValue()+"']\").attr(\"selected\", true)");
+		js.executeScript("$('#ddlTempName-mod').find(\"option[value='"+dv.GetTemplateNameValue()+"']\").attr(\"selected\", true)");
 	}
-	
-	public String GetTemplateNameValue() {
-		SqlReader sr = null;
-		String WrittenTemplateId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblWrittenTemplates where TestCenterId in (select CenterId from tblTestCenter where CenterName like '%对外经济大学%')";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				WrittenTemplateId = rs.getString("WrittenTemplateId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return WrittenTemplateId;
-	}
-	
+		
 	public void AddwrittentestroomarrangementClick() {
 		Wait(normalTime);
 		Wait(normalTime);
@@ -276,13 +234,13 @@ public class PreTestPlanningElements extends Mis2Brower{
 	public void SearchSelectWrittenRoomArrangeTestDateYearClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(selectWrittenRoomArrangeTestDateYearButton)));
-		dropList.selectByValue(getCurrentYear());
+		dropList.selectByValue(dv.getCurrentYear());
 	}
 	
 	public void SearchSelectWrittenRoomArrangeTestDateMonthClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(selectWrittenRoomArrangeTestDateMonthButton)));
-		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
 	}
 	
 	public void SearchSelectWrittenRoomArrangeTestDateClick() {
@@ -313,14 +271,7 @@ public class PreTestPlanningElements extends Mis2Brower{
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(deleteButton)).click();
 	}
-	
-	public void ModifyFirstButtonClick(){
-		Wait(normalTime);
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(0).getElementsByTagName('button').item(0).click()");
-	}
-	
+		
 	public void WaitTime(){
 		Wait(normalTime);
 		Wait(normalTime);
@@ -335,7 +286,7 @@ public class PreTestPlanningElements extends Mis2Brower{
 	public void selectModifyBuildingRoomClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(selectModifyBuildingRoomButton)));
-		dropList.selectByValue(GetFirstValueOfBuilding());
+		dropList.selectByValue(dv.GetFirstValueOfBuilding());
 	}
 	
 	public void ModifyAddRoomClick() {
@@ -393,91 +344,15 @@ public class PreTestPlanningElements extends Mis2Brower{
 				"");
 	}
 	
-	public String GetTestDayId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0) and ProductId = 1";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("Id");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
-	public String getCurrentYear() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.YEAR,0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String getCurrentMonth() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.MONTH, 0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("MM");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String GetFirstValueOfBuilding() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenterBuilding where BuildingNameEn = 'B Seat'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("BuildingId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
 	public void SelectBuildingClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(selectBuildingButton)));
-		dropList.selectByValue(GetFirstValueOfBuilding());
+		dropList.selectByValue(dv.GetFirstValueOfBuilding());
 	}
 	
 	public void AddWrittenTemplatesClick() {
 		WaitElementVisible(driver, By.id(addWrittenTemplatesButton)).click();
 		Wait(normalTime);
-	}
-	
-	public String GetValueOfCenterId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenter where CenterName = '对外经济大学'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("CenterId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
 	}
 	
 	public void SelectWrittenTemplatesListRegion() {
@@ -487,7 +362,16 @@ public class PreTestPlanningElements extends Mis2Brower{
 	
 	public void SearchTestDateExamProductType() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(selectWrittenTemplatesListTestCenterButton)));
-		dropList.selectByValue(GetValueOfCenterId());
+		dropList.selectByValue(dv.GetValueOfCenterId());
 	}
 	
+	public void ModifyFirstClick() {
+		Wait(normalTime);
+		fc.ModifyFirstClick(driver);
+	}	
+	
+	public void ModifySecondClick() {
+		Wait(normalTime);
+		fc.ModifySecondClick(driver);
+	}	
 }

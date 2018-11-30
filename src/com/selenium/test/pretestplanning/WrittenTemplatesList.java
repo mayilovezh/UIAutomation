@@ -54,7 +54,7 @@ public class WrittenTemplatesList {
 		pe.SearchAddWrittenTemplateClick();
 		pe.DeleteClick();
 		pe.WindowAlertConfirm();
-		pe.ModifyFirstButtonClick();
+		pe.ModifyFirstClick();
 	}
 	
 	@Test

@@ -5,9 +5,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.selenium.test.utils.DynamicVariables;
+
 public class TestDateList {
 	CenterElements ce = new CenterElements();
 	CentertInputData ci = new CentertInputData();
+	DynamicVariables dv = new DynamicVariables();
 	
 	@BeforeClass
 	public void setUp(){
@@ -25,6 +28,6 @@ public class TestDateList {
 		ce.searchTestDateExamProductTypeButton();
 		ce.searchTestDateExamFormatButton();
 		ce.searchTestDateButton();
-		Assert.assertEquals(ce.searchTestDateRealWarning(), ce.GetTestDateRealId());
+		Assert.assertEquals(ce.searchTestDateRealWarning(), dv.GetTestDateRealId());
 	}
 }

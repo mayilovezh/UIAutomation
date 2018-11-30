@@ -2,6 +2,7 @@ package com.selenium.test.admin;
 
 import org.testng.annotations.Test;
 
+import com.selenium.test.utils.DynamicVariables;
 import com.selenium.test.utils.SqlReader;
 import com.selenium.test.brower.Mis2Brower;
 
@@ -33,6 +34,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class AdminElements extends Mis2Brower{
 
+	DynamicVariables dv = new DynamicVariables();
+	
 	public void OpenBrower(String MenueName,int MenueLocation) {
 		driver = Login(MenueName,MenueLocation);
 	}
@@ -47,7 +50,7 @@ public class AdminElements extends Mis2Brower{
 	
 	public String importCandidateTestDateMonth = "ImportCandidateToMIS2-Select-Month-Search";
 	
-	public String importCandidateTestDate = ".//select[@id='ImportCandidateToMIS2Datetime']//option[@value='"+GetTestDayId()+"']";
+	public String importCandidateTestDate = ".//select[@id='ImportCandidateToMIS2Datetime']//option[@value='"+dv.GetTestDayId()+"']";
 	
 	public String importCandidateTestCenter = "ImportCandidateToMIS2listCenterId";
 	
@@ -80,116 +83,49 @@ public class AdminElements extends Mis2Brower{
 	}
 	
 	public void importCandidateClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.id(importCandidateButton)).click();
 	}
 	
 	public void SearchImportCandidateTestCenterClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(importCandidateTestCenter)));
-		dropList.selectByValue(GetValueOfCenterId());
+		dropList.selectByValue(dv.GetValueOfCenterId());
 	}
 	
 	public void SearchImportCandidateTestDateClick() {
+		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(importCandidateTestDate)).click();
 	}
 	
 	public void SearchImportCandidateTestDateMonthClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(importCandidateTestDateMonth)));
-		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
 	}
 	
 	public void SearchImportCandidateTestDateYearClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(importCandidateTestDateYear)));
-		dropList.selectByValue(getCurrentYear());
+		dropList.selectByValue(dv.getCurrentYear());
 	}
 	
 	public void SearchImportCandidateExamFormatClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(importCandidateExamProductTypeButton)));
 		dropList.selectByValue("2");
 	}
 	
 	public void SearchImportCandidateExamProductTypeClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(importCandidateExamProductTypeButton)));
 		dropList.selectByValue("2");
 	}
 	
 	public void SearchImportCandidateRegionClick() {
+		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(importCandidateRegionButton)));
 		dropList.selectByValue("2");
 	}
 	
-	public String GetValueOfCenterId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenter where CenterName = '对外经济大学'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("CenterId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
-	public String GetTestDate() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select top 1* from tblTestDate where DateDiff(mm,TestDate,getdate())=0";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("TestDate");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
-	public String getCurrentYear() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.YEAR,0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String getCurrentMonth() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.MONTH, 0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("MM");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String GetTestDayId() {
-		SqlReader sr = null;
-		String testDayId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0) and ProductId = 1";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				testDayId = rs.getString("Id");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return testDayId;
-	}
 }

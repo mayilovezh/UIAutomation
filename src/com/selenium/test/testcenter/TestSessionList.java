@@ -20,9 +20,9 @@ public class TestSessionList {
 	public void Close() {
 		ce.Close();
 	}
-	
+
 	@Test(description = "Create Session")
-	public void step02_CreateSession(){
+	public void step01_CreateSession(){
 		ce.CreateTestSessionClick();
 		ce.CreateTestSeesionRegionClick();
 		ce.CreateTestSesstionProductClick();
@@ -35,14 +35,12 @@ public class TestSessionList {
 		ce.CreateTestSessionEndTestMonthClick();
 		ce.CreateTestSessionEndSearchClick();
 		ce.CreateTestSessionTestDate();
-		ce.ViewOfBuildingDetailsFirstClick();
-		ce.WaitTime();
-		ce.WaitTime();
-		ce.ViewOfBuildingDetailsSecondClick();
+		ce.ModifyFirstClick();
+		ce.ModifySecondClick();
 	}
 
 	@Test(description = "Search Session")
-	public void step03_SearchSession(){
+	public void step02_SearchSession(){
 		ce.WaitTime();
 		ce.SelectSearchTestSessionRegion();
 		ce.SelectSearchTestSessionExamProductType();
@@ -56,32 +54,11 @@ public class TestSessionList {
 	}
 
 	@Test(description = "Modify Session")
-	public void step04_ModifySession() throws InterruptedException{
-		try {
-			ce.ModifyTestSessionClick();
-			ce.ModifySessionQuota(ci.modifySessionQuota);
-			ce.ViewOfBuildingDetailsFirstClick();
-			ce.ViewOfBuildingDetailsSecondClick();
-		}catch(TimeoutException e) {
-			System.out.println("3333");
-		}
+	public void step03_ModifySession(){
+		ce.ModifyTestSessionClick();
+		ce.ModifySessionQuota(ci.modifySessionQuota);
+		ce.ModifyFirstClick();
 
 	}
-	/*
-	@Test(description = "Search TC session list for NEEA")
-	public void step05_SearchTCSessionForNeea(){
-		ce.WaitTime();
-		ce.SelectSearchTestSessionRegion();
-		ce.SearchTcSessionViewLogFrom();
-		ce.SearchTcSessionViewLogTo();
-		ce.SearchTcSessionButton();
-		Assert.assertEquals(ce.TestTCCenterSessionOfSearchWarning(), ci.abbreviation);
-	}
 
-	@Test(description = "Reset TC session list for NEEA")
-	public void step06_ResetTCSessionForNeea(){
-		ce.ResetTcSessionButton();
-		Assert.assertEquals(ce.NoDataWarning(), ci.noDataWarning);
-	}
-	*/
 }

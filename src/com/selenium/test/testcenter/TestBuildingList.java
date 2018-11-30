@@ -21,7 +21,7 @@ public class TestBuildingList {
 	}
 
 	@Test(description = "Create for the testbuilding of UIBE")
-	public void step01_Create(){
+	public void step01_Create() throws InterruptedException{
 		ce.SearchSelectBuildingOfRegionClick();
 		ce.SearchSelectBuildingOfTestCenterClick();
 		ce.SearchSelectBuildingOfBuildingAvailableClick();

@@ -1,17 +1,10 @@
 package com.selenium.test.testcenter;
 
-import com.selenium.test.utils.SqlReader;
-import com.selenium.test.brower.Mis2Brower;
-import com.selenium.test.utils.FirstClick;
 
-import java.awt.List;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
+import com.selenium.test.brower.Mis2Brower;
+import com.selenium.test.utils.DynamicVariables;
+import com.selenium.test.utils.FirstClick;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
@@ -19,6 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 public class CenterElements extends Mis2Brower{
 	
 	FirstClick fc = new FirstClick();
+	
+	DynamicVariables dv = new DynamicVariables();
 	
 	public void OpenBrower(String MenueName,int MenueLocation) {
 		driver = Login(MenueName,MenueLocation);
@@ -176,7 +171,7 @@ public class CenterElements extends Mis2Brower{
 	
 	public String createTestSesstionProduct = "selectTestSessionExamProductTypeAdd2";
 	
-	public String createTestSessionTestCenter = "//input[@value='"+GetValueOfCenterId()+"']";
+	public String createTestSessionTestCenter = "//input[@value='"+dv.GetValueOfCenterId()+"']";
 	
 	public String createTestSessionFormatButton = "selectTestSessionExamFormatSearchAdd";
 	
@@ -192,7 +187,7 @@ public class CenterElements extends Mis2Brower{
 	
 	public String createTestSessionEndSearch = "btntestcenterlistSearch";
 	
-	public String subTestDate = StringUtils.substringBefore(GetTestDate(), " ");
+	public String subTestDate = StringUtils.substringBefore(dv.GetTestDate(), " ");
 	
 	public String createTestSessionTestDate = "//input[@value='"+getFormatString()+"']";
 	
@@ -206,7 +201,7 @@ public class CenterElements extends Mis2Brower{
 	
 	public String searchTestSessionTestDateMonth = "ddlMonth-testsession";
 	
-	public String searchTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+GetTestDayId()+"']";
+	public String searchTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+dv.GetTestDayId()+"']";
 	
 	public String searchTestSessionButton = "btntestsessionlistSearch";
 	
@@ -244,23 +239,6 @@ public class CenterElements extends Mis2Brower{
 	public String searchTestDateRealWarningText = ".//*[@id='testdate_guid']/div[2]/table/tbody/tr[1]/td[1]";
 	
 	//Test date
-	public String GetValueOfCenterId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenter where CenterName = '对外经济大学'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("CenterId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
 	
 	public String searchTestDateRealWarning() {
 		return WaitElementVisible(driver, By.xpath(searchTestDateRealWarningText)).getText();
@@ -268,7 +246,7 @@ public class CenterElements extends Mis2Brower{
 	
 	public void searchTestDateYear() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestDateYearButton)));
-		dropList.selectByValue(getCurrentYear());
+		dropList.selectByValue(dv.getCurrentYear());
 	}
 	
 	public void searchTestDateExamProductTypeButton() {
@@ -285,26 +263,7 @@ public class CenterElements extends Mis2Brower{
 		WaitElementVisible(driver, By.id(searchTestDateButton)).click();
 		Wait(normalTime);
 	}
-	
-	public String GetTestDateRealId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select top 1 * from tblTestDateReal where TestDateId in (select ID from tblTestDate where year(TestDate)=year(getdate())) and ProductId = 1 and ExamFormatId = 1 order by TestDate";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("Id");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
-	
+		
 	//Test session
 	public void LogOutClick() {
 		Wait(normalTime);
@@ -338,13 +297,13 @@ public class CenterElements extends Mis2Brower{
 	public void SearchTcSessionViewLogFrom() {
 		Wait(normalTime);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('log_Start').value = '"+getCurrentDate()+"'");
+		js.executeScript("document.getElementById('log_Start').value = '"+dv.getCurrentDate()+"'");
 	}
 	
 	public void SearchTcSessionViewLogTo() {
 		Wait(normalTime);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('log_End').value ='"+getCurrentDate()+"'");
+		js.executeScript("document.getElementById('log_End').value ='"+dv.getCurrentDate()+"'");
 	}
 	public void ModifySessionQuota(String elements) {
 		WaitElementVisible(driver, By.id(modifySessionQuotaText)).clear();
@@ -366,25 +325,7 @@ public class CenterElements extends Mis2Brower{
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(searchTestSessionButton)).click();
 	}
-	
-	public String GetTestDayId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select top 1 * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0) and ProductId = 1 and ExamFormatId = 1";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("Id");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
+		
 	public void SelectSearchTestSessionRegion() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionRegion)));
@@ -406,13 +347,13 @@ public class CenterElements extends Mis2Brower{
 	public void SelectSearchTestSessionTestDateYear() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionTestDateYear)));
-		dropList.selectByValue(getCurrentYear());
+		dropList.selectByValue(dv.getCurrentYear());
 	}
 	
 	public void SelectSearchTestSessionTestDateMonth() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionTestDateMonth)));
-		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()));
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()));
 	}
 	
 	public void SelectSearchTestSessionTestDate() {
@@ -424,11 +365,11 @@ public class CenterElements extends Mis2Brower{
 		Wait(normalTime);
 		//WaitElementVisible(driver, By.xpath(searchTestSessionTestCenter)).click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("$('#ddltestcenter-testsession').find(\"option[value='"+GetValueOfCenterId()+"']\").attr(\"selected\", true)");
+		js.executeScript("$('#ddltestcenter-testsession').find(\"option[value='"+dv.GetValueOfCenterId()+"']\").attr(\"selected\", true)");
 	}
 	
 	public String getFormatString() {
-		String subTestDate = StringUtils.substringBefore(GetTestDate(), " ");
+		String subTestDate = StringUtils.substringBefore(dv.GetTestDate(), " ");
 		String[] subTestDateString = subTestDate.split("-");
 		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09"};
 		String formatString = null;
@@ -450,24 +391,6 @@ public class CenterElements extends Mis2Brower{
 		WaitElementVisible(driver, By.xpath(createTestSessionTestDate)).click();
 	}
 	
-	public String GetTestDate() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select top 1* from tblTestDate where DateDiff(mm,TestDate,getdate())=0";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("TestDate");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
 	public void CreateTestSessionEndSearchClick() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(createTestSessionEndSearch)).click();
@@ -476,71 +399,27 @@ public class CenterElements extends Mis2Brower{
 	public void CreateTestSessionStartTestYearClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionStartTestYear)));
-		dropList.selectByValue(getCurrentYear());
+		dropList.selectByValue(dv.getCurrentYear());
 	}
 	
 	public void CreateTestSessionStartTestMonthClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionStartTestMonth)));
-		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
 	}
 	
 	public void CreateTestSessionEndTestYearClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionEndTestYear)));
-		dropList.selectByValue(getCurrentYear());
+		dropList.selectByValue(dv.getCurrentYear());
 	}
 	
 	public void CreateTestSessionEndTestMonthClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionEndTestMonth)));
-		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
 	}
-	
-	public String getLastYear() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.YEAR, 1);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String getCurrentYear() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.YEAR,0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String getLastMonth() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.MONTH, 1);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("MM");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String getCurrentMonth() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.MONTH, 0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("MM");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
+		
 	public void CreateTestSessionTimeTableClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionTimeTableButton)));
@@ -556,7 +435,7 @@ public class CenterElements extends Mis2Brower{
 	public void CreateTestSessionTestCenterClick() {
 		Wait(normalTime);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementById('selectestcenter-"+GetValueOfCenterId()+"').click()");
+		js.executeScript("document.getElementById('selectestcenter-"+dv.GetValueOfCenterId()+"').click()");
 	}
 	
 	public void CreateTestSesstionProductClick() {
@@ -606,13 +485,13 @@ public class CenterElements extends Mis2Brower{
 		Wait(normalTime);
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).clear();
-		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).sendKeys(getCurrentDate());
+		WaitElementVisible(driver, By.id(modifyShareRoomOfDateFromText)).sendKeys(dv.getCurrentDate());
 	}
 	
 	public void InputModifyShareRoomOfDateTo() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(modifyShareRoomOfDateToText)).clear();
-		WaitElementVisible(driver, By.id(modifyShareRoomOfDateToText)).sendKeys(getLastDate());
+		WaitElementVisible(driver, By.id(modifyShareRoomOfDateToText)).sendKeys(dv.getLastDate());
 	}
 	
 	public void RoomOfModifyShareDayButton() {
@@ -634,35 +513,13 @@ public class CenterElements extends Mis2Brower{
 	public void InputShareRoomOfDateFrom() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(shareRoomOfDateFromText)).clear();
-		WaitElementVisible(driver, By.id(shareRoomOfDateFromText)).sendKeys(getCurrentDate());
+		WaitElementVisible(driver, By.id(shareRoomOfDateFromText)).sendKeys(dv.getCurrentDate());
 	}
 	
 	public void InputShareRoomOfDateTo() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(shareRoomOfDateToText)).clear();
-		WaitElementVisible(driver, By.id(shareRoomOfDateToText)).sendKeys(getCurrentDate());
-	}
-	
-	public String getLastDate() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.DATE, 1);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String getCurrentDate() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.DATE,0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		 String dateString = formatter.format(date);
-		 return dateString;
+		WaitElementVisible(driver, By.id(shareRoomOfDateToText)).sendKeys(dv.getCurrentDate());
 	}
 	
 	public void SelectShareRoomClick() {
@@ -802,50 +659,15 @@ public class CenterElements extends Mis2Brower{
 	public void SelectSearchRoomOfCenter(){
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchRoomOfCenter)));
-		dropList.selectByValue(GetValueOfCenterId());
+		dropList.selectByValue(dv.GetValueOfCenterId());
 	}
 	
 	public void SearchRoomOfBuilding(){
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchRoomOfBuilding)));
-		dropList.selectByValue(GetFirstValueOfBuilding());
+		dropList.selectByValue(dv.GetFirstValueOfBuilding());
 	}
 	
-	public String GetFirstValueOfBuilding() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenterBuilding where BuildingNameEn = 'B Seat'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("BuildingId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-
-	public String GetSecondValueOfBuilding() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenterBuilding where BuildingNameEn = 'No.10 Huixin dongjie, Chaoyang district, Beijing'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("BuildingId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
 	//Test Building List	
 	public void LendBuildingSaveClick(){
 		Wait(normalTime);
@@ -867,28 +689,10 @@ public class CenterElements extends Mis2Brower{
 	
 	public void SelectLendBuildingOfCZCZUTestCenterClick() {
 		Wait(normalTime);
-		WaitElementVisible(driver, By.xpath("//input[@value='"+GetCZCZUValueOfCenterId()+"']")).click();
+		WaitElementVisible(driver, By.xpath("//input[@value='"+dv.GetCZCZUValueOfCenterId()+"']")).click();
 		Wait(normalTime);
 	} 	
-	
-	public String GetCZCZUValueOfCenterId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenter where CenterName = '常州大学'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("CenterId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
+		
 	public void ModifyOfBuildingViewClick(){
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(modifyOfBuildingViewButton)).click();
@@ -997,7 +801,7 @@ public class CenterElements extends Mis2Brower{
 	public void SearchSelectBuildingOfTestCenterClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchBuildingOfTestCenter)));
-		dropList.selectByValue(GetValueOfCenterId());
+		dropList.selectByValue(dv.GetValueOfCenterId());
 	} 	
 	
 	//Test Center List
@@ -1169,6 +973,11 @@ public class CenterElements extends Mis2Brower{
 	public void ModifyFirstClick() {
 		Wait(normalTime);
 		fc.ModifyFirstClick(driver);
+	}	
+	
+	public void ModifySecondClick() {
+		Wait(normalTime);
+		fc.ModifySecondClick(driver);
 	}	
 	
 }

@@ -20,7 +20,7 @@ public class TestImportCdtoMIS2 {
 	}
 
 	@Test(description = "Import Candidate To MIS2")
-	public void step01_ImportCandidateToMIS2() throws InterruptedException {
+	public void step01_ImportCandidateToMIS2(){
 		ae.SearchImportCandidateRegionClick();
 		ae.SearchImportCandidateExamProductTypeClick();
 		ae.SearchImportCandidateExamFormatClick();
@@ -32,8 +32,6 @@ public class TestImportCdtoMIS2 {
 		ae.importChooseClick(ai.uploadCandidateFile);
 		ae.importUploadClick();
 		ae.importSaveClick();
-		Thread.sleep(5000);
-
 	}
 
 }

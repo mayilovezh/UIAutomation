@@ -44,12 +44,7 @@ public class FirstClick{
 			}
 		}
 	}
-	
-	public void ModifySecondClick(WebDriver driver){
-		MessageFirstClick(driver);
-		ModifyFirstClick(driver);
-	}
-	
+		
 	public int ModifyAllFirstButtonLength(WebDriver driver) {
 		m2b.Wait(m2b.normalTime);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -76,6 +71,7 @@ public class FirstClick{
 					m2b.Wait(m2b.normalTime);
 					m2b.Wait(m2b.normalTime);
 					m2b.Wait(m2b.normalTime);
+					m2b.Wait(m2b.normalTime);
 				}else {
 					continue;
 				}
@@ -86,4 +82,30 @@ public class FirstClick{
 			}
 		}
 	}
+	
+	public void ModifySecondClick(WebDriver driver) {
+		m2b.Wait(m2b.normalTime);
+		String warningDisplayStyle = driver.findElement(By.xpath("//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons']")).getAttribute("style");
+		String[] arryStyl = warningDisplayStyle.split(";");
+		String displayStyle = arryStyl[arryStyl.length-1].trim();
+		int isDisplay = warningDisplayStyle.indexOf(displayStyle);
+		for(int i =0; i<ModifyAllFirstButtonLength(driver); i++) {
+			try {
+				if(isElementPresent(driver,By.xpath("//div[@aria-labelledby='ui-id-"+(i+1)+"']")) && isDisplay!=-1) {
+					driver.findElement(By.xpath("//div[@aria-labelledby='ui-id-"+(i+1)+"']/div[3]/div[1]/button[2]")).click();
+					m2b.Wait(m2b.normalTime);
+					m2b.Wait(m2b.normalTime);
+					m2b.Wait(m2b.normalTime);
+					m2b.Wait(m2b.normalTime);
+				}else {
+					continue;
+				}
+			}catch(ElementNotVisibleException e) {
+				continue;
+			}catch(NoSuchElementException e) {
+				continue;
+			}
+		}
+	}
+	
 }

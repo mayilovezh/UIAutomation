@@ -37,7 +37,7 @@ public class CategoryManagement {
 		for(int i = 0; i<se.ModifyAllPackageNumberLength();) {
 			se.ModifyClick(i);
 			se.ModifyPackageNumber();
-			se.ModifyPackageSave();
+			se.ModifyFirstClick();
 			se.WaitTime();
 			i = i + 2;
 		}

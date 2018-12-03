@@ -16,12 +16,14 @@ import org.testng.annotations.Test;
 import com.selenium.test.testcenter.CenterElements;
 import com.selenium.test.testcenter.CentertInputData;
 import com.selenium.test.utils.DriverInstance;
+import com.selenium.test.utils.DynamicVariables;
 import com.selenium.test.utils.ElementHelper;
 import com.selenium.test.utils.WebDriverAction;
 
 public class AdminTestLiveMats {
 	StockElements se = new StockElements();
 	StockInputData si = new StockInputData();
+	DynamicVariables dv = new DynamicVariables();
 	
 	@BeforeClass
 	public void setUp(){
@@ -41,7 +43,7 @@ public class AdminTestLiveMats {
 		se.SearchLiveTestMaterialsTestDateClick();
 		se.SearchImportCandidateStockTypeClick();
 		se.SearchImportCandidateSearchClick();
-		Assert.assertEquals(se.LISTOFCATEGORYNAMEWarning(), si.LIVE_MATERIALS_CATEGORYNAME);
+		Assert.assertEquals(se.LISTOFCATEGORYNAMEWarning(), dv.GetLiveMaterialsCategoryName());
 	}
 	
 	@Test(description = "Update Live Test Materials")

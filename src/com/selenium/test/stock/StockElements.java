@@ -1,38 +1,20 @@
 package com.selenium.test.stock;
 
-import org.testng.annotations.Test;
-
+import com.selenium.test.utils.DynamicVariables;
+import com.selenium.test.utils.FirstClick;
 import com.selenium.test.utils.SqlReader;
 import com.selenium.test.brower.Mis2Brower;
-
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.AfterTest;
-
-import java.awt.event.ActionEvent;
-import java.beans.PropertyChangeListener;
-import java.io.File;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class StockElements extends Mis2Brower{
 
+	FirstClick fc = new FirstClick();
+	
+	DynamicVariables dv = new DynamicVariables();
+	
 	public void OpenBrower(String MenueName,int MenueLocation) {
 		driver = Login(MenueName,MenueLocation);
 	}
@@ -46,7 +28,7 @@ public class StockElements extends Mis2Brower{
     public String LIVE_MATERIALS_REGION = "ddlRegion-testmaterials";
     public String LIVE_MATERIALS_TESTDATE_YEAR = "testmaterials-Select-Year-Search";
     public String LIVE_MATERIALS_TESTDATE_MONTH = "testmaterials-Select-Month-Search";
-    public String LIVE_MATERIALS_TESTDATE = ".//*[@id='ddlTestDate-testmaterials']//option[@value='"+GetTestDate()+"']";
+    public String LIVE_MATERIALS_TESTDATE = ".//*[@id='ddlTestDate-testmaterials']//option[@value='"+dv.GetTestDateId()+"']";
     public String LIVE_MATERIALS_STOCKTYPE = "ddlStockType-testmaterials";
     public String LIVE_MATERIALS_SEARCH = "btnQuery-testmaterials";
     public String LIVE_MATERIALS_LISTOFCATEGORYNAME = ".//*[@id='spreadsheet-TestMaterials-table']/tbody/tr[1]/td[2]";
@@ -78,7 +60,7 @@ public class StockElements extends Mis2Brower{
     public String TESTDAYALLOCATION_REGION = "selectStockWrittenArrangementRegion";
     public String TESTDAYALLOCATION_TESTDATEYEAR = "StockWrittenArrangement-Select-Year-Search";
     public String TESTDAYALLOCATION_TESTDATEMONTH = "StockWrittenArrangement-Select-Month-Search";
-    public String TESTDAYALLOCATION_TESTDATE = ".//select[@id='selectStockWrittenArrangementTestDate']//option[@value='"+GetTestDate()+"']";
+    public String TESTDAYALLOCATION_TESTDATE = ".//select[@id='selectStockWrittenArrangementTestDate']//option[@value='"+dv.GetTestDateId()+"']";
     public String TESTDAYALLOCATION_TestCENTER = "selectStockWrittenArrangementTestCenter";
     public String TESTDAYALLOCATION_SEARCH = "btnStockArrangementSearch";
     public String TESTDAYALLOCATION_AUTOARRAGECURRENTCENTRE = "btnStockAutoArrange";
@@ -114,12 +96,12 @@ public class StockElements extends Mis2Brower{
 	
 	public void SelectTestDayAllocationTestDateYear() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(TESTDAYALLOCATION_TESTDATEYEAR)));
-		dropList.selectByValue(getCurrentYear());
+		dropList.selectByValue(dv.getCurrentYear());
 	}
 	
 	public void SelectTestDayAllocationTestDateMonth() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(TESTDAYALLOCATION_TESTDATEMONTH)));
-		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
 	}
 	
 	public void SelectTestDayAllocationTestDate() {
@@ -128,7 +110,7 @@ public class StockElements extends Mis2Brower{
 	
 	public void SelectTestDayAllocationTestCenter() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(TESTDAYALLOCATION_TestCENTER)));
-		dropList.selectByValue(GetValueOfCenterId());
+		dropList.selectByValue(dv.GetValueOfCenterId());
 	}
 	public void TestDayAllocationSearchClick() {
 		WaitElementVisible(driver, By.id(TESTDAYALLOCATION_SEARCH)).click();
@@ -218,18 +200,13 @@ public class StockElements extends Mis2Brower{
     
 	public void SearchCategoryManagementStockTypeClick() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(CategoryManagementSearchStockType)));
-		dropList.selectByValue(GetSearchStockType());
+		dropList.selectByValue(dv.GetSearchStockType());
 	}
 	
-	public void ModifyPackageSave() {
+	public void ModifyFirstClick() {
 		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("function ClickSave() {\r\n" + 
-				"  var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
-				"  document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength - 1).getElementsByClassName('ui-dialog-buttonpane ui-widget-content ui-helper-clearfix').item(0).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()\r\n" + 
-				"}\r\n" + 
-				"return ClickSave()");
-	}
+		fc.ModifyFirstClick(driver);
+	}	
 	
 	public void ModifyPackageNumber() {
 		Wait(normalTime);
@@ -277,7 +254,7 @@ public class StockElements extends Mis2Brower{
 	
 	public void SelectLiveTestMaterialsUpdateStorageTypeClick() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(LIVE_MATERIALS_UPDATE_STORAGETYPE)));
-		dropList.selectByValue(GetUpdateStockType());
+		dropList.selectByValue(dv.GetUpdateStockType());
 	}
 	
 	public void InputLiveTestMaterialsTotalPackage() {
@@ -299,15 +276,7 @@ public class StockElements extends Mis2Brower{
 		WaitElementVisible(driver, By.id(LIVE_MATERIALS_UPDATE_EXPIREDAY)).clear();
 		WaitElementVisible(driver, By.id(LIVE_MATERIALS_UPDATE_EXPIREDAY)).sendKeys("10");
 	}
-	
-	public void ModifyFirstClick() {
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("var divLength = document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').length\r\n" + 
-				"document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons').item(divLength - 1).getElementsByClassName('ui-dialog-buttonpane ui-widget-content ui-helper-clearfix').item(0).getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()\r\n" + 
-				"");
-	}
-    
+	    
 	public String LISTOFCATEGORYNAMEWarning() {
 		return WaitElementVisible(driver, By.xpath(LIVE_MATERIALS_LISTOFCATEGORYNAME)).getText();
 	}
@@ -339,12 +308,12 @@ public class StockElements extends Mis2Brower{
 	
 	public void SearchLiveTestMaterialsYearClick() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(LIVE_MATERIALS_TESTDATE_YEAR)));
-		dropList.selectByValue(getCurrentYear());
+		dropList.selectByValue(dv.getCurrentYear());
 	}
 	
 	public void SearchLiveTestMaterialsMonthClick() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(LIVE_MATERIALS_TESTDATE_MONTH)));
-		dropList.selectByIndex(Integer.parseInt(getCurrentMonth()) - 1);
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
 	}
 	
 	public void SearchLiveTestMaterialsTestDateClick() {
@@ -353,123 +322,11 @@ public class StockElements extends Mis2Brower{
 
 	public void SearchImportCandidateStockTypeClick() {
 		Select dropList = new Select(WaitElementVisible(driver, By.id(LIVE_MATERIALS_STOCKTYPE)));
-		dropList.selectByValue(GetSearchStockType());
+		dropList.selectByValue(dv.GetSearchStockType());
 	}
 	
 	public void SearchImportCandidateSearchClick() {
 		WaitElementVisible(driver, By.id(LIVE_MATERIALS_SEARCH)).click();
 	}
 	
-	
-	public String GetValueOfCenterId() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestCenter where CenterName = '对外经济大学'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("CenterId");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
-	public String GetTestDate() {
-		SqlReader sr = null;
-		String centerId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select top 1* from tblTestDate where DateDiff(mm,TestDate,getdate())=0";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				centerId = rs.getString("ID");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return centerId;
-	}
-	
-	public String getCurrentYear() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.YEAR,0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String getCurrentMonth() {
-		 Date date=new Date();//取时间
-		 Calendar calendar = new GregorianCalendar();
-		 calendar.setTime(date);
-		 calendar.add(calendar.MONTH, 0);//把日期往后增加一天.整数往后推,负数往前移动
-		 date=calendar.getTime(); //这个时间就是日期往后推一天的结果 
-		 SimpleDateFormat formatter = new SimpleDateFormat("MM");
-		 String dateString = formatter.format(date);
-		 return dateString;
-	}
-	
-	public String GetTestDayId() {
-		SqlReader sr = null;
-		String testDayId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0) and ProductId = 1";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				testDayId = rs.getString("Id");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return testDayId;
-	}
-
-	public String GetSearchStockType() {
-		SqlReader sr = null;
-		String StockTypeId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select top 1 * from TB_Dictionary where [Values] = 'Paper Test Materials (L/R/W)'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				StockTypeId = rs.getString("Id");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return StockTypeId;
-	}
-	
-	public String GetUpdateStockType() {
-		SqlReader sr = null;
-		String StockTypeId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select top 1 * from TB_Dictionary where [Values] = 'Wasted'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				StockTypeId = rs.getString("Id");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return StockTypeId;
-	}
 }

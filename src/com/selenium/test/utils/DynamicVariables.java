@@ -3,9 +3,12 @@ package com.selenium.test.utils;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class DynamicVariables {
 	
@@ -24,6 +27,84 @@ public class DynamicVariables {
 	public String SqlValueOfCenterId = "select * from tblTestCenter where CenterName = '对外经济大学'";
 	
 	public String SqlTemplateNameValue = "select * from tblWrittenTemplates where TestCenterId in (select CenterId from tblTestCenter where CenterName like '%对外经济大学%')";
+	
+	public String SqlSearchStockType = "select top 1 * from TB_Dictionary where [Values] = 'Paper Test Materials (L/R/W)'";
+	
+	public String SqUpdateStockType = "select top 1 * from TB_Dictionary where [Values] = 'Wasted'";
+	
+	public String SqlLiveMaterialsCategoryName = "select top 1 * from tblStockCategory where PermanentType = 0 order by OrderNumber";
+	
+	public String GetLiveMaterialsCategoryName(){
+		SqlReader sr = null;
+		String CategoryName = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlLiveMaterialsCategoryName;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				CategoryName = rs.getString("CategoryName");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return CategoryName;
+	}
+	
+	public String getFormatString() {
+		String subTestDate = StringUtils.substringBefore(GetTestDate(), " ");
+		String[] subTestDateString = subTestDate.split("-");
+		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09"};
+		String formatString = null;
+		for (int i =0; i<subTestDateString.length;) {
+			if(Arrays.asList(numStringList).contains(subTestDateString[2])) {
+				int subToInt = Integer.valueOf(subTestDateString[2]);
+				String subToString = String.valueOf(subToInt);
+				formatString = subTestDateString[0] + "-" + subTestDateString[1] + "-" + subToString;
+				break;
+			}else {
+				return subTestDate;
+			}
+		}
+		return formatString;
+	}
+	
+	public String GetSearchStockType() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlSearchStockType;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
+	
+	public String GetUpdateStockType() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqUpdateStockType;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
 	
 	public String GetTemplateNameValue() {
 		SqlReader sr = null;
@@ -171,6 +252,24 @@ public class DynamicVariables {
 			ResultSet rs = sr.getResultSet(sql);
 			while(rs.next()) {
 				centerId = rs.getString("TestDate");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+	public String GetTestDateId() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlTestDate;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("ID");
 			}
 		}catch(SQLException ex) {
 			ex.printStackTrace();

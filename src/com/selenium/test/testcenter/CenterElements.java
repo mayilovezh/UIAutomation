@@ -4,8 +4,6 @@ package com.selenium.test.testcenter;
 import com.selenium.test.brower.Mis2Brower;
 import com.selenium.test.utils.DynamicVariables;
 import com.selenium.test.utils.FirstClick;
-import java.util.Arrays;
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
@@ -187,9 +185,7 @@ public class CenterElements extends Mis2Brower{
 	
 	public String createTestSessionEndSearch = "btntestcenterlistSearch";
 	
-	public String subTestDate = StringUtils.substringBefore(dv.GetTestDate(), " ");
-	
-	public String createTestSessionTestDate = "//input[@value='"+getFormatString()+"']";
+	public String createTestSessionTestDate = "//input[@value='"+dv.getFormatString()+"']";
 	
 	public String searchTestSessionRegion = "selectRegionSearch-testsession";
 	
@@ -367,25 +363,7 @@ public class CenterElements extends Mis2Brower{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("$('#ddltestcenter-testsession').find(\"option[value='"+dv.GetValueOfCenterId()+"']\").attr(\"selected\", true)");
 	}
-	
-	public String getFormatString() {
-		String subTestDate = StringUtils.substringBefore(dv.GetTestDate(), " ");
-		String[] subTestDateString = subTestDate.split("-");
-		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09"};
-		String formatString = null;
-		for (int i =0; i<subTestDateString.length;) {
-			if(Arrays.asList(numStringList).contains(subTestDateString[2])) {
-				int subToInt = Integer.valueOf(subTestDateString[2]);
-				String subToString = String.valueOf(subToInt);
-				formatString = subTestDateString[0] + "-" + subTestDateString[1] + "-" + subToString;
-				break;
-			}else {
-				return subTestDate;
-			}
-		}
-		return formatString;
-	}
-	
+		
 	public void CreateTestSessionTestDate() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(createTestSessionTestDate)).click();

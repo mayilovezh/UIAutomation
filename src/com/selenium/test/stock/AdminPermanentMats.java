@@ -39,7 +39,7 @@ public class AdminPermanentMats {
 		se.InputUpdatePermanentMatsTotalPackage();
 		se.InputUpdatePermanentMatsTotalNumber();
 		se.InputUpdatePermanentMatsRemark();
-		se.ModifyPackageSave();
+		se.ModifyFirstClick();
 		se.WaitTime();
 	}
 
@@ -48,7 +48,7 @@ public class AdminPermanentMats {
 		se.SearchPermanentMatsRegionClick();
 		se.PermanentMatsRemarkViewClick();
 		Assert.assertEquals(se.PermanentMatsViewStorageTypeWarning(), si.PermanentMaterials_ViewStorageType);
-		se.ModifyPackageSave();
+		se.ModifyFirstClick();
 		se.WaitTime();
 	}
 

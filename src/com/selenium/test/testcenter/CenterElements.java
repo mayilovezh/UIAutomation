@@ -917,13 +917,13 @@ public class CenterElements extends Mis2Brower{
 	public void SelectCreateCenterProvinceClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCenterProvinceButton)));
-		dropList.selectByValue("34");
+		dropList.selectByValue("31");
 	} 	
 	
 	public void SelectCreateCenterCityClick() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCenterCityButton)));
-		dropList.selectByValue("340800");
+		dropList.selectByValue("310100");
 	} 	
 	
 	public void InputCreateCenterCenterNameCn(String elements) {

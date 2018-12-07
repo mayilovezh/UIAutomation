@@ -187,6 +187,8 @@ public class CenterElements extends Mis2Brower{
 	
 	public String createTestSessionTestDate = "//input[@value='"+dv.getFormatString()+"']";
 	
+	public String createLastTestSessionTestDate = "//input[@value='"+dv.getLastFormatString()+"']";
+	
 	public String searchTestSessionRegion = "selectRegionSearch-testsession";
 	
 	public String searchTestSessionExamProductType = "selectTestSessionExamProductTypeSearch";
@@ -197,7 +199,7 @@ public class CenterElements extends Mis2Brower{
 	
 	public String searchTestSessionTestDateMonth = "ddlMonth-testsession";
 	
-	public String searchTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+dv.GetTestDayId()+"']";
+	public String searchTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+dv.GetLastTestDayId()+"']";
 	
 	public String searchTestSessionButton = "btntestsessionlistSearch";
 	
@@ -334,6 +336,12 @@ public class CenterElements extends Mis2Brower{
 		dropList.selectByValue("1");
 	}
 	
+	public void SelectSearchLastTestSessionExamFormat() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionExamFormat)));
+		dropList.selectByValue("3");
+	}
+	
 	public void SelectSearchTestSessionExamFormat() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchTestSessionExamFormat)));
@@ -367,6 +375,11 @@ public class CenterElements extends Mis2Brower{
 	public void CreateTestSessionTestDate() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(createTestSessionTestDate)).click();
+	}
+	
+	public void CreateLastTestSessionTestDate() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(createLastTestSessionTestDate)).click();
 	}
 	
 	public void CreateTestSessionEndSearchClick() {
@@ -408,6 +421,12 @@ public class CenterElements extends Mis2Brower{
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionFormatButton)));
 		dropList.selectByValue("1");
+	}
+	
+	public void CreateLastTestSessionFormatClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createTestSessionFormatButton)));
+		dropList.selectByValue("3");
 	}
 	
 	public void CreateTestSessionTestCenterClick() {

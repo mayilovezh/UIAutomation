@@ -34,6 +34,65 @@ public class DynamicVariables {
 	
 	public String SqlLiveMaterialsCategoryName = "select top 1 * from tblStockCategory where PermanentType = 0 order by OrderNumber";
 	
+	public String SqlLastTestDate = "select top 1 * from tblTestDate where DateDiff(mm,TestDate,getdate())=0 order by TestDate desc";
+	
+	public String SqlLastTestDayId = "select top 1 * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0 order by TestDate desc) and ProductId = 1 and ExamFormatId = 3";
+	
+	
+	public String GetLastTestDayId() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlLastTestDayId;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+	public String GetLastTestDate() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlLastTestDate;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("TestDate");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+	public String getLastFormatString() {
+		String subTestDate = StringUtils.substringBefore(GetLastTestDate(), " ");
+		String[] subTestDateString = subTestDate.split("-");
+		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09"};
+		String formatString = null;
+		for (int i =0; i<subTestDateString.length;) {
+			if(Arrays.asList(numStringList).contains(subTestDateString[2])) {
+				int subToInt = Integer.valueOf(subTestDateString[2]);
+				String subToString = String.valueOf(subToInt);
+				formatString = subTestDateString[0] + "-" + subTestDateString[1] + "-" + subToString;
+				break;
+			}else {
+				return subTestDate;
+			}
+		}
+		return formatString;
+	}
+	
 	public String GetLiveMaterialsCategoryName(){
 		SqlReader sr = null;
 		String CategoryName = null;

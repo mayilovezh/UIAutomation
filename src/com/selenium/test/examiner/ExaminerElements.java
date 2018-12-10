@@ -7,6 +7,7 @@ import com.selenium.test.utils.FirstClick;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
@@ -36,6 +37,88 @@ public class ExaminerElements extends Mis2Brower{
 	public String availabilitySummarySearchText = ".//*[@id='ExaminerAvailabilitySummary_Guid']/div[2]/table/tbody/tr[1]/td[1]";
 	
 	public String availabilitySummaryModifyAvailabilityButton = ".//*[@id='Availability_Summary_Guid']/div[1]/div[2]/table/tbody/tr[1]/td[7]/input[1]";
+	
+	//Examiner
+	public String examinerTaskCreateSpeakingTaskButton = "//input[@value='Speaking Task']";
+	
+	public String examinerTaskCreateSpeakingTaskRegion = "examinerTaskListSpeakingTaskRegion";
+	
+	public String examinerTaskCreateSpeakingTaskYear = "examinerTaskList-SpeakingTask-TestDateYear";
+	
+	public String examinerTaskCreateSpeakingTaskMonth = "examinerTaskList-SpeakingTask-TestDateMonth";
+	
+	public String examinerTaskCreateSpeakingTaskTestDate = "examinerTaskList-SpeakingTask-TestDate";
+	
+	public String examinerTaskCreateSpeakingTaskChooseDay = "//input[@value='"+FormatOfTestDayChoose()+"']";
+	
+	public String examinerTaskCreateSpeakingTaskExaminerDescription = "examinerTaskList-SpeakingTask-Description";
+	
+	public String examinerTaskCreateSpeakingTaskStaffRemark = "examinerTaskList-SpeakingTask-Remark";
+	
+	public String examinerTaskCreateSpeakingTaskSaveButton = "examinerTaskList-SpeakingTask-Save";
+	
+	
+	//Examiner
+	public void ExaminerTaskSpeakingTaskSaveClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskSaveButton)).click();
+		Wait(6000);
+	}
+	
+	public void ExaminerTaskCreateSpeakingTaskStaffRemark() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskStaffRemark)).clear();
+		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskStaffRemark)).sendKeys("Staff Remark");
+	}
+	
+	public void ExaminerTaskCreateSpeakingTaskExaminerDescription() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskExaminerDescription)).clear();
+		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskExaminerDescription)).sendKeys("Examiner Description");
+	}
+	
+	public void ExaminerTaskCreateSpeakingTaskTestDayChoose() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(examinerTaskCreateSpeakingTaskChooseDay)).click();
+	}
+	
+	public String FormatOfTestDayChoose(){
+		String lastDate = StringUtils.substringBefore(dv.GetLastTestDate(), " ");
+		String[] lastDateList = lastDate.split("-");
+		String formatLastDate = lastDateList[2] + "/" + lastDateList[1] + "/" + lastDateList[0];
+		return formatLastDate;
+	}
+	
+	
+	public void ExaminerTaskCreateSpeakingTaskTestDate() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskTestDate)));
+		dropList.selectByValue(dv.GetLastTestDateID());
+	}
+	
+	public void ExaminerTaskCreateSpeakingTaskMonth() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskMonth)));
+		dropList.selectByValue(dv.getCurrentMonth());
+	}
+	
+	public void ExaminerTaskCreateSpeakingTaskYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	}
+	public void ExaminerTaskCreateSpeakingTaskRegion() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskRegion)));
+		dropList.selectByValue("2");
+		Wait(6000);
+	}
+	
+	public void ExaminerTaskSpeakingTaskClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(examinerTaskCreateSpeakingTaskButton)).click();
+		Wait(6000);
+	}
 	
 	//Availability Summary
 	public void ModifyAvailabilitySummary() {

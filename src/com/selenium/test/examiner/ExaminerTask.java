@@ -20,16 +20,61 @@ public class ExaminerTask{
 	}
 
 	@Test
-	public void step01_CreateSpeakingTask() throws InterruptedException{
+	public void step01_CreateSpeakingTask(){
 		ee.ExaminerTaskSpeakingTaskClick();
 		ee.ExaminerTaskCreateSpeakingTaskRegion();
 		ee.ExaminerTaskCreateSpeakingTaskYear();
 		ee.ExaminerTaskCreateSpeakingTaskMonth();
 		ee.ExaminerTaskCreateSpeakingTaskTestDate();
 		ee.ExaminerTaskCreateSpeakingTaskTestDayChoose();
-		ee.ExaminerTaskCreateSpeakingTaskExaminerDescription();
-		ee.ExaminerTaskCreateSpeakingTaskStaffRemark();
+		ee.ExaminerTaskCreateSpeakingTaskExaminerDescription(ei.ExaminerDescriptionText);
+		ee.ExaminerTaskCreateSpeakingTaskStaffRemark(ei.StaffRemarkText);
 		ee.ExaminerTaskSpeakingTaskSaveClick();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
 	}
-	
+
+	@Test
+	public void step02_SearchSpeakingTask(){
+		ee.ExaminerTaskSearchRegion();
+		ee.ExaminerTaskSearchYear();
+		ee.ExaminerTaskSearchMonth();
+		ee.ExaminerTaskSearchTestDate();
+		ee.ExaminerTaskSearchTaskType();
+		ee.ExaminerTaskSearchClick();
+		Assert.assertEquals(ee.ListOfExaminerTaskSearchWarning(), ee.ListOfExaminerTaskSearchWarning());
+		ee.WaitShotTime();
+	}
+
+	@Test
+	public void step03_ModifySpeakingTask(){
+		ee.ExaminerTaskModifyClick();
+		ee.ModifyFirstClick();
+		ee.WaitShotTime();
+		ee.ExaminerTaskCreateSpeakingTaskExaminerDescription(ei.ModifyExaminerDescriptionText);
+		ee.ExaminerTaskSpeakingTaskSaveClick();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+	}
+
+	@Test
+	public void step04_ViewSpeakingTask(){
+		ee.ExaminerTaskViewClick();
+		//ee.ModifyOnceFirstClick();
+		ee.WaitShotTime();
+		Assert.assertEquals(ee.ExaminerTaskViewDescriptionExaminerWarning(), ei.ModifyExaminerDescriptionText);;
+		ee.ModifyFirstClick();
+		ee.WaitShotTime();
+	}
+		
 }

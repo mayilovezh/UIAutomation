@@ -57,24 +57,143 @@ public class ExaminerElements extends Mis2Brower{
 	
 	public String examinerTaskCreateSpeakingTaskSaveButton = "examinerTaskList-SpeakingTask-Save";
 	
+	public String examinerTaskSearchRegion = "selectofficeRegionSearch";
+	
+	public String examinerTaskSearchYear = "examinerstasklistYear-Search";
+	
+	public String examinerTaskSearchMonth = "examinerstasklistMonth-Search";
+	
+	public String examinerTaskSearchTestDate = "examinerstasklistDatetime";
+	
+	public String examinerTaskSearchTaskType = "examinertasktypelist";
+	
+	public String examinerTaskSearchButton = "examinerTaskList-btnsearch";
+	
+	public String listOfExaminerTaskSearchText = ".//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr[1]/td[1]";
+	
+	public String examinerTaskModifyButton = ".//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr[1]/td[8]/a[1]";
+	
+	public String examinerTaskViewButton = ".//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr[1]/td[8]/a[2]";
+	
+	public String examinerTaskViewDescriptionExaminerText = ".//*[@id='examinerTaskList-ShowTaskDetail']/label[3]";
+	
+	public String examinerTaskReportButton = ".//*[@id='ExaminerTaskInfoGrid']/div[2]/table/tbody/tr[1]/td[8]/a[4]";
+	
+	public String examinerTaskReportUpdateButton = ".//*[@id='examinerTaskList-report-grid']/div[2]/table/tbody/tr[1]/td[10]/input";
+	
+	public String examinerTaskReportUpdateAvailableButton = "radExaminerAvaYes";
+	
+	public String examinerTaskReportUpdateExaminerAvailableAllButton = "examinerAvaAll";
+	
+	public String examinerTaskReportUpdateTravelAvailableAllButton = "travelAvaAll";
+	
 	
 	//Examiner
+	public void ExaminerTaskReportUpdateExaminerAvailableAllClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(examinerTaskReportUpdateExaminerAvailableAllButton)).click();
+	}
+	
+	public void ExaminerTaskReportUpdateTravelAvailableAllClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(examinerTaskReportUpdateTravelAvailableAllButton)).click();
+	}
+	
+	public void ExaminerTaskReportUpdateAvailableButton() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(examinerTaskReportUpdateAvailableButton)).click();
+	}
+	
+	public void ExaminerTaskReportUpdateClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(examinerTaskReportUpdateButton)).click();
+		Wait(6000);
+	}
+	
+	public void ExaminerTaskReportClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(examinerTaskReportButton)).click();
+	}
+	
+	public String ExaminerTaskViewDescriptionExaminerWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(examinerTaskViewDescriptionExaminerText)).getText();
+	}
+	
+	
+	public void ExaminerTaskViewClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(examinerTaskViewButton)).click();
+	}
+	
+	public void WaitShotTime() {
+		Wait(6000);
+	}
+	
+	public void ExaminerTaskModifyClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(examinerTaskModifyButton)).click();
+	}
+	
+	public String ListOfExaminerTaskSearchWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOfExaminerTaskSearchText)).getText();
+	}
+	
+	public void ExaminerTaskSearchClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(examinerTaskSearchButton)).click();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
+	public void ExaminerTaskSearchTaskType() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskSearchTaskType)));
+		dropList.selectByValue("6");
+	}
+	
+	public void ExaminerTaskSearchTestDate() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskSearchTestDate)));
+		dropList.selectByValue(dv.GetLastTestDateID());
+	}
+	
+	public void ExaminerTaskSearchMonth() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskSearchMonth)));
+		dropList.selectByValue(dv.getCurrentMonth());
+	}
+	
+	public void ExaminerTaskSearchYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskSearchYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	}
+	
+	public void ExaminerTaskSearchRegion() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskSearchRegion)));
+		dropList.selectByValue("2");
+	}
+	
 	public void ExaminerTaskSpeakingTaskSaveClick() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskSaveButton)).click();
 		Wait(6000);
 	}
 	
-	public void ExaminerTaskCreateSpeakingTaskStaffRemark() {
+	public void ExaminerTaskCreateSpeakingTaskStaffRemark(String elements) {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskStaffRemark)).clear();
-		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskStaffRemark)).sendKeys("Staff Remark");
+		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskStaffRemark)).sendKeys(elements);
 	}
 	
-	public void ExaminerTaskCreateSpeakingTaskExaminerDescription() {
+	public void ExaminerTaskCreateSpeakingTaskExaminerDescription(String elements) {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskExaminerDescription)).clear();
-		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskExaminerDescription)).sendKeys("Examiner Description");
+		WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskExaminerDescription)).sendKeys(elements);
 	}
 	
 	public void ExaminerTaskCreateSpeakingTaskTestDayChoose() {
@@ -199,6 +318,11 @@ public class ExaminerElements extends Mis2Brower{
 	public void ModifyFirstClick() {
 		Wait(normalTime);
 		fc.ModifyFirstClick(driver);
+	}	
+	
+	public void ModifyOnceFirstClick() {
+		Wait(normalTime);
+		fc.ModifyOnceFirstClick(driver);
 	}	
 	
 	public void ModifySecondClick() {

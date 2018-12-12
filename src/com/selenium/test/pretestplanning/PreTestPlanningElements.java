@@ -3,7 +3,11 @@ package com.selenium.test.pretestplanning;
 import com.selenium.test.utils.DynamicVariables;
 import com.selenium.test.utils.FirstClick;
 import com.selenium.test.brower.Mis2Brower;
+
+import java.util.List;
+
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class PreTestPlanningElements extends Mis2Brower{
@@ -74,50 +78,122 @@ public class PreTestPlanningElements extends Mis2Brower{
 	
 	public String AddWrittenTestRoomArrangementDeleteButton = "BatchDeleteRoom";
 	
-	public String ss = "//div[@class='ui-dialog-buttonset'][1]/button[1]";
+	//Resource Planning	
+	public String resourcePlanningSearchRegion = "prebookingSpkplanninglistRegion";
+	
+	public String resourcePlanningSearchYear = "prebookingSpkplanninglistYear-Search";
+	
+	public String resourcePlanningSearchMonth = "prebookingSpkplanninglistMonth-Search";
+	
+	public String resourcePlanningSearchTestDate = "prebookingSpkplanninglistDatetime";
+	
+	public String resourcePlanningSearchButton = "prebookingbtnSpkplanninglist";
+	
+	public String resourcePlanningListOfTotal = ".//*[@id='SpkplanninglistTotalGrid']/div[2]/table/tbody/tr/td[1]";
+	
+	public String resourcePlanningSaveUpload = "btnSubmitResourcePlanningPrebooking";
+	
+	public void ResourcePlanningSaveUpload() {
+		WaitElementVisible(driver, By.id(resourcePlanningSaveUpload)).click();
+	}
+	
+	public void inputAllSlot() {
+		List<WebElement> elements = driver.findElements(By.xpath(GetLocationForTC()+"/td[7]/table/tbody/tr"));
+		for (int i =0; i< elements.size()-1; i++) {
+			List<WebElement> elementsTd = driver.findElements(By.xpath(GetLocationForTC()+"/td[7]/table/tbody/tr["+(i+1)+"]/td"));
+			for(int j = 2; j< elementsTd.size(); j++) {
+				String getAttrOfSlots = driver.findElement(By.xpath(GetLocationForTC()+"/td[7]/table/tbody/tr["+(i+1)+"]/td["+j+"]/input")).getAttribute("id");
+				int isFindSlots = getAttrOfSlots.indexOf(dv.getLastDateNotFormat());
+				if( isFindSlots != -1) {
+					if(i != 2) {
+						driver.findElement(By.xpath(GetLocationForTC()+"/td[7]/table/tbody/tr["+(i+1)+"]/td["+j+"]/input")).clear();
+						driver.findElement(By.xpath(GetLocationForTC()+"/td[7]/table/tbody/tr["+(i+1)+"]/td["+j+"]/input")).sendKeys("5");
+					}else {
+						driver.findElement(By.xpath(GetLocationForTC()+"/td[7]/table/tbody/tr["+(i+1)+"]/td["+j+"]/input")).clear();
+						driver.findElement(By.xpath(GetLocationForTC()+"/td[7]/table/tbody/tr["+(i+1)+"]/td["+j+"]/input")).sendKeys("1");
+					}
+
+				}
+			}
+		}
+	}
+	
+	public void ClickTestDay() {
+		Actions action = new Actions(driver);
+		WebElement slotsLink = WaitElementVisible(driver, By.xpath(GetLocationForSlots()));
+		action.click(slotsLink).perform();
+	}
+	
+	public String GetLocationForSlots() {
+		List<WebElement> elements = driver.findElements(By.xpath(GetLocationForTC()+"/td[7]/table/thead/tr/td"));
+		String findSlots = null;
+		for (int i =1; i< elements.size(); i++) {
+			String getAttrOfSlots = driver.findElement(By.xpath(GetLocationForTC()+"/td[7]/table/thead/tr/td["+(i+1)+"]/label[1]")).getAttribute("onclick");
+			int isFindSlots = getAttrOfSlots.indexOf(dv.getLastDateNotFormat());
+			if( isFindSlots != -1) {
+				findSlots =  GetLocationForTC()+"/td[7]/table/thead/tr/td["+(i+1)+"]/label[1]";
+				break;
+			}
+		}
+		return findSlots;
+	}
+	
+	public void ShortWaitTime() {
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+	}
+	
+	public String GetLocationForTC() {
+		List<WebElement> elements = driver.findElements(By.xpath(".//*[@id='SpkplanninglistGrid']/div[2]/table/tbody/tr"));
+		String findTc = null;
+		for (int i =0; i< elements.size(); i++) {
+			String isFindTc = driver.findElement(By.xpath(".//*[@id='SpkplanninglistGrid']/div[2]/table/tbody/tr["+(i+1)+"]/td[1]")).getText();
+			if( isFindTc.equals("BJ-UIBE")) {
+				findTc = ".//*[@id='SpkplanninglistGrid']/div[2]/table/tbody/tr["+(i+1)+"]";
+			}else {
+				continue;
+			}
+		}
+		return findTc;
+	}
+	
+	
+	public String ResourcePlanningListOfTotal() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(resourcePlanningListOfTotal)).getText();
+	}
+	
+	public void ResourcePlanningSearchClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(resourcePlanningSearchButton)).click();
+	}
+	
+	public void ResourcePlanningSearchTestDate() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(resourcePlanningSearchTestDate)));
+		dropList.selectByValue(dv.GetLastTestDateID());
+	}
+	
+	public void ResourcePlanningSearchMonth() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(resourcePlanningSearchMonth)));
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
+	}
+	
+	public void ResourcePlanningSearchYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(resourcePlanningSearchYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	}
 		
-	public void ModifyNineButtonClick(){
+	public void ResourcePlanningSearchRegion() {
 		Wait(normalTime);
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(9).getElementsByTagName('button').item(0).click()");
-	}
-		
-	public void ModifyEighthButtonClick(){
-		Wait(normalTime);
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(8).getElementsByTagName('button').item(0).click()");
+		Select dropList = new Select(WaitElementVisible(driver, By.id(resourcePlanningSearchRegion)));
+		dropList.selectByValue("2");
 	}
 	
-	public void ModifySixthButtonClick(){
-		Wait(normalTime);
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(5).getElementsByTagName('button').item(0).click()");
-	}
-	
-	public void ModifyFivthButtonClick(){
-		Wait(normalTime);
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(4).getElementsByTagName('button').item(0).click()");
-	}
-	
-	public void ModifyForthButtonClick(){
-		Wait(normalTime);
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(3).getElementsByTagName('button').item(0).click()");
-	}
-	
-	public void ModifyThirdButtonClick(){
-		Wait(normalTime);
-		Wait(normalTime);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.getElementsByClassName('ui-dialog-buttonset').item(2).getElementsByTagName('button').item(0).click()");
-	}
-	
+	//Written Room Arrange
 	public void AddWrittenTestRoomArrangementDeleteClick() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.id(AddWrittenTestRoomArrangementDeleteButton)).click();

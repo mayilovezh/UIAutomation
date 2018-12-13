@@ -87,6 +87,90 @@ public class ExaminerElements extends Mis2Brower{
 	
 	public String examinerTaskReportUpdateTravelAvailableAllButton = "travelAvaAll";
 	
+	//SPK Deployment
+	public String spkDeploymentSearchRegion = "examinerSpeakingArrangeoffice";
+	
+	public String spkDeploymentSearchYear = "examinerSpeakingArrangelistYear-Search";
+	
+	public String spkDeploymentSearchMonth = "examinerSpeakingArrangelistMonth-Search";
+	
+	public String spkDeploymentSearchTestDate = "examinerSpeakingArrangeTestDate";
+	
+	public String spkDeploymentSearchButton = ".//input[@value='Search']";
+	
+	public String spkDeploymentListOfCnText = ".//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[2]";
+	
+	public String spkDeploymentAssignButton = ".//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[1]";
+	
+	public String spkDeploymentAssignSearchButton = ".//*[@id='div-datatable-SpeakingArrangement-ExaminerList']/div[1]/table[2]/tbody/tr/td[9]/input";
+	
+	public String spkDeploymentAssignSession = "spreadsheet-examinerSpeakingArrange-CheckBoxUnitsSelectAll";
+	
+	public String spkDeploymentUploadToPretest = ".//*[@id='spreadsheet-examinerSpeakingArrange-table']/tbody/tr[1]/td[10]/a[4]";
+	
+	//SPK Deployment
+	public void SpkDeploymentUploadToPretest() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkDeploymentUploadToPretest)).click();
+	}
+	
+	public void SpkDeploymentAssignSession() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(spkDeploymentAssignSession)).click();
+	}
+	
+	public void SpkDeploymentAssignSearchClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkDeploymentAssignSearchButton)).click();
+	}
+	
+	public void SpkDeploymentAssignClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkDeploymentAssignButton)).click();
+	}
+	
+	public void SelectSPKTestDay() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("function getTestDateLength() {\r\n" + 
+				"  var testDayLength = document.getElementsByName('CanArrCheckedUnits').length\r\n" + 
+				"  for (var i = 0; i < testDayLength; i++) {\r\n" + 
+				"    document.getElementsByName('CanArrCheckedUnits').item(i).click()\r\n" + 
+				"  }\r\n" + 
+				"}\r\n" + 
+				"return getTestDateLength()");
+	}
+	
+	
+	public void WaitLongTime() {
+		Wait(30000);
+	}
+	
+	public String SpkDeploymentListOfCnWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(spkDeploymentListOfCnText)).getText();
+	}
+	
+	public void SpkDeploymentSearchClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkDeploymentSearchButton)).click();
+	}
+	
+	public void SelectTestDate() {
+		fc.SelectTestDate(driver, spkDeploymentSearchMonth, spkDeploymentSearchTestDate);
+	}
+	
+	public void SpkDeploymentSearchYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkDeploymentSearchRegion)));
+		dropList.selectByValue(dv.getCurrentYear());
+	}
+	
+	public void SpkDeploymentSearchRegion() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkDeploymentSearchRegion)));
+		dropList.selectByValue("2");
+	}
 	
 	//Examiner
 	public void ExaminerTaskReportUpdateExaminerAvailableAllClick() {
@@ -329,5 +413,15 @@ public class ExaminerElements extends Mis2Brower{
 		Wait(normalTime);
 		fc.ModifySecondClick(driver);
 	}	
+	
+	public void ModifyInputSecondClick() {
+		Wait(normalTime);
+		fc.ModifyInputSecondClick(driver);
+	}
+	
+	public void ModifyInputFirstClick() {
+		Wait(normalTime);
+		fc.ModifyInputFirstClick(driver);
+	}
 	
 }

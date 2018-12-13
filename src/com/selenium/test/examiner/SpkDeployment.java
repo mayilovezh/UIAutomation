@@ -1,149 +1,56 @@
 package com.selenium.test.examiner;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.WebDriverAction;
-
-public class SpkDeployment {
-	static WebDriver driver;
-	WebDriverAction action;
-	String city = "BeiJing";
-	String date1 = "29";
-	String date2 = "53";
-	String date3 = "52";
-	String examinerNo = "991756";
-	String examinerName = "Adam Hassan";
-
-	@BeforeMethod
-	public void setUp() throws Exception {
-		driver = new DriverInstance().login(driver);
-		action = new WebDriverAction(driver);
+public class SpkDeployment{
+	ExaminerElements ee = new ExaminerElements();
+	ExaminerInputData ei = new ExaminerInputData();
+	
+	@BeforeClass
+	public void setUp(){
+		ee.OpenBrower("Examiner", 4);
 	}
 
-	@AfterMethod
-	public void close() {
-		new DriverInstance().teardown(driver);
-	}
-
-	public void navigate() {
-		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.EXAMINER));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT));
-			Thread.sleep(ElementHelper.LONG_TIME);
-			action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_REGION), ElementHelper.REGION_VALUE);
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_YEAR), ElementHelper.YEAR_VALUE);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_MONTH), "6");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_DATE), "10217");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH));
-			Thread.sleep(ElementHelper.LONG_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
+	@AfterClass
+	public void Close() {
+		ee.Close();
 	}
 
 	@Test
-	public void step01_ExaminerCheck() {
-		try {
-			navigate();
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_CITY)), city);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE1)), "65");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE2)), "53");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SEARCH_DATE3)), "69");
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
+	public void step01_Search(){
+		ee.SelectTestDate();
+		ee.SpkDeploymentSearchClick();
+		ee.WaitShotTime();
+		Assert.assertEquals(ee.SpkDeploymentListOfCnWarning(), ee.SpkDeploymentListOfCnWarning());
 	}
 
 	@Test
-	public void step02_AssignExaminer() {
-		try {
-			navigate();
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN));
-			Thread.sleep(ElementHelper.LONG_TIME);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_DATE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SEARCH));
-			Thread.sleep(ElementHelper.LONG_TIME);
-			action.click(By.id(ElementHelper.SPK_DEPLOYMENT_ASSIGN_SELECT_EXAMINER));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
+	public void step02_Assign(){
+		ee.SpkDeploymentAssignClick();
+		ee.SelectSPKTestDay();
+		ee.SpkDeploymentAssignSearchClick();
+		ee.WaitTime();
+		ee.SpkDeploymentAssignSession();
+		ee.ModifyInputFirstClick();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.WaitShotTime();
+		ee.ModifyFirstClick();
+		ee.WaitShotTime();
+		ee.ModifyInputSecondClick();
+		
 	}
 
 	@Test
-	public void step03_ShowExaminerDetails() {
-		try {
-			navigate();
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINERNO)),
-					examinerNo);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			Assert.assertEquals(action.getText(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_EXAMINER_NAME)),
-					examinerName);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_SHOW_DETAIL_CANCEL));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
-	}
-
-	@Test
-	public void step04_ShowExaminerPerformance() {
-		try {
-			navigate();
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.selectByValue(By.id(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_CATEGORY), "1");
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_PERFORMANCE_SAVE));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
-	}
-
-	@Test
-	public void step05_DeleteExaminerArrange() {
-		try {
-			navigate();
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST));
-			Thread.sleep(ElementHelper.WAIT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_UAT));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_YES));
-			action.waitElementVisibleToAssert(By.id(ElementHelper.RESULT_WARNING), "Delete success");
-			action.click(By.xpath(ElementHelper.SPK_DEPLOYMENT_SHOW_EXAMINER_LIST_DELETEARRANGE_CONFIRM));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
-	}
-
+	public void step03_UploadToPretest(){
+		ee.SpkDeploymentUploadToPretest();
+		ee.WaitShotTime();
+		ee.ModifyFirstClick();
+		ee.WaitTime();
+	}	
+	
+	
 }

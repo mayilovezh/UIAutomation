@@ -39,6 +39,33 @@ public class DynamicVariables {
 	public String SqlLastTestDayId = "select top 1 * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0 order by TestDate desc) and ProductId = 1 and ExamFormatId = 3";
 	
 	
+	public String GetLastTestDateID() {
+		SqlReader sr = null;
+		String centerId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlLastTestDate;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				centerId = rs.getString("ID");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return centerId;
+	}
+	
+    public String GetLastDayOfThisMonth(){
+       SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); 
+       //获取当前月最后一天
+       Calendar ca = Calendar.getInstance();    
+       ca.set(Calendar.DAY_OF_MONTH, ca.getActualMaximum(Calendar.DAY_OF_MONTH));  
+       String lastDay = format.format(ca.getTime());
+       return lastDay;
+    }
+	
 	public String GetLastTestDayId() {
 		SqlReader sr = null;
 		String centerId = null;
@@ -73,6 +100,13 @@ public class DynamicVariables {
 			sr.getCloseConnection();
 		}
 		return centerId;
+	}
+	
+	public String getLastDateNotFormat() {
+		String subTestDate = StringUtils.substringBefore(GetLastTestDate(), " ");
+		String[] splitTestDate = subTestDate.split("-");
+		String newTestDate = splitTestDate[0] + splitTestDate[1]+ splitTestDate[2];
+		return newTestDate;
 	}
 	
 	public String getLastFormatString() {

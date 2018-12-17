@@ -1,170 +1,82 @@
 package com.selenium.test.testcenter;
 
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.WebDriverAction;
-
 public class SpkRoomTemplate {
-	static WebDriver driver;
-	WebDriverAction action;
-	String templateSat = "BJ-UIBE-Sat";
-	String templateThu = "BJ-UIBE-Thu";
-	String createWarning = "Please select a Test Center!";
-
-	@BeforeMethod
-	public void setUp() throws Exception {
-		driver = new DriverInstance().login(driver);
-		action = new WebDriverAction(driver);
+	CenterElements ce = new CenterElements();
+	CentertInputData ci = new CentertInputData();
+	
+	@BeforeClass
+	public void setUp(){
+		ce.OpenBrower("TestCenter", 6);
 	}
 
-	@AfterMethod
-	public void close() {
-		new DriverInstance().teardown(driver);
+	@AfterClass
+	public void Close() {
+		ce.Close();
 	}
 
-	public void navigate() {
-		try {
-			action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
-			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
-			action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_REGION), ElementHelper.REGION_VALUE);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.selectByValue(By.id(ElementHelper.SPK_TEMPLATE_TEST_CENTER), ElementHelper.CENTER_UIBE);
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_SEARCH));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
+	@Test(description = "Add Speaking Room Template")
+	public void step01_AddSpeakingRoomTemplate(){
+		ce.SpkTemplateRegion();
+		ce.SpkTemplateTestCenter();
+		ce.SpkTemplateAddSpeakingRoomTemplate();
+		ce.SpkTemplateSelectBuilding();
+		ce.SpkTemplateAddTemplateSearch();
+		ce.SpkTemplateSelectBuildingTestDay();
+		ce.SpkTemplateAddTemplateSave();
+		ce.WaitTime();
+		ce.WaitTime();
 	}
 
-	/*@Test(description = "Verify create warning")
-	public void step01_VerifyCreate() {
-		action.waitElementVisibleToClick(By.id(ElementHelper.TEST_CENTER));
-		action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_ROOM_TEMPLATE));
-		action.waitElementVisible(By.id(ElementHelper.SPK_TEMPLATE_REGION));
-		try {
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
-			Thread.sleep(ElementHelper.SHORT_TIME_B);
-			action.isTextPrest(By.id(ElementHelper.RESULT_WARNING), createWarning);
-			action.click(By.xpath(ElementHelper.SAVE));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
+	@Test(description = "Search Speaking Room Template")
+	public void step02_Search(){
+		ce.SpkTemplateRegion();
+		ce.SpkTemplateTestCenter();
+		ce.SpkTemplateSearch();
+		Assert.assertEquals(ce.ListOfSpkTemplateTestCenterWarning(), ce.ListOfSpkTemplateTestCenterWarning());
 	}
 
-	@Test(description = "Create the saturday template for 'UIBE'")
-	public void step02_CreateSaturday() {
-		navigate();
-		try {
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_SATURDAY));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_BUILDING2));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SEARCH));
-			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_ROOM));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
+	@Test(description = "Modify Speaking Room Template")
+	public void step03_Modify(){
+		ce.SpkTemplateModify();
+		ce.SpkTemplateModifyTemplateName(ci.modifyTemplateName);
+		ce.SpkTemplateModifyTemplateSave();
+		ce.WaitTime();
+		ce.WaitTime();
 	}
 
-	@Test(description = "Create the thursday template for 'UIBE'")
-	public void step03_CreateThursday() {
-		navigate();
-		try {
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-			action.click(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_BUILDING1));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SEARCH));
-			action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_TEMPLATE_ADD_ROOM));
-			Thread.sleep(ElementHelper.SHORT_TIME_A);
-			action.click(By.id(ElementHelper.SPK_TEMPLATE_ADD_SAVE));
-			Thread.sleep(ElementHelper.SHORT_TIME);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
-	} */
-
-		@Test(description = "Search the thursday and saturday template for 'UIBE'")
-	public void step04_SearchTemplate() {
-		search();
+	@Test(description = "View Speaking Room Template")
+	public void step04_View(){
+		ce.SpkTemplateView();
+		ce.WaitTime();
+		Assert.assertEquals(ce.ViewTemplateNameOfSpkTemplateWarning(), ce.ViewTemplateNameOfSpkTemplateWarning());
+		ce.SpkTemplateGoToTemplateList();
+		ce.WaitTime();
+	}
+	
+	@Test(description = "Delete Speaking Room Template")
+	public void step05_Delete(){
+		ce.SpkTemplateDelete();
+		ce.ModifyFirstClick();
+		ce.ModifyFirstClick();
+		ce.WaitTime();
 	}
 
-	@Test(description = "Modify the saturday template for 'UIBE'")
-	public void step05_Modify() {
-		search();
-		try {
-			if (action.isTextExist(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY), templateThu)
-					&& action.isTextExist(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_SATURDAY), templateSat)) {
-				Thread.sleep(ElementHelper.SHORT_TIME);
-				action.click(By.linkText(ElementHelper.SPK_TEMPLATE_MODIFY));
-				action.waitElementVisibleToClick(By.xpath(ElementHelper.SPK_TEMPLATE_MODIFY_ROOM));
-				Thread.sleep(ElementHelper.SHORT_TIME_A);
-				action.click(By.id(ElementHelper.SPK_TEMPLATE_MODIFY_SAVE));
-				Thread.sleep(ElementHelper.SHORT_TIME);
-			} else {
-				new DriverInstance().teardown(driver);
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
+	@Test(description = "Repeat Add Speaking Room Template")
+	public void step06_RepeatAddSpeakingRoomTemplate(){
+		ce.SpkTemplateRegion();
+		ce.SpkTemplateTestCenter();
+		ce.SpkTemplateAddSpeakingRoomTemplate();
+		ce.SpkTemplateSelectBuilding();
+		ce.SpkTemplateAddTemplateSearch();
+		ce.WaitTime();
+		ce.SpkTemplateSelectBuildingTestDay();
+		ce.SpkTemplateAddTemplateSave();
+		ce.WaitTime();
 	}
 
-	@Test(description = "View and check the saturday template is selected")
-	public void step06_View() {
-		search();
-		try {
-			if (action.isTextExist(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY), templateThu)
-					&& action.isTextExist(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_SATURDAY), templateSat)) {
-				action.waitElementVisibleToClick(By.linkText(ElementHelper.SPK_TEMPLATE_VIEW));
-				Thread.sleep(ElementHelper.WAIT_TIME);
-				isroomChecked();
-			} else {
-				new DriverInstance().teardown(driver);
-			}
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
-		}
-	}
-
-	public void search() {
-		navigate();
-		action.assertText(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_SATURDAY), templateSat);
-		action.assertText(By.xpath(ElementHelper.SPK_TEMPLATE_NAME_THURSDAY), templateThu);
-	}
-
-	public boolean isroomChecked() {
-		boolean status = false;
-		try {
-			driver.findElement(By.xpath("//input[contains(@checked,'checked')]"));
-			status = true;
-		} catch (NoSuchElementException e) {
-			status = false;
-		}
-		return status;
-	}
 }

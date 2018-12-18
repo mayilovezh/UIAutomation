@@ -38,6 +38,14 @@ public class DynamicVariables {
 	
 	public String SqlLastTestDayId = "select top 1 * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0 order by TestDate desc) and ProductId = 1 and ExamFormatId = 3";
 	
+    public String GetFirstDayOfThisMonth(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); 
+        //获取当前月最后一天
+        Calendar ca = Calendar.getInstance();    
+        ca.set(Calendar.DAY_OF_MONTH, ca.getActualMinimum(Calendar.DAY_OF_MONTH));  
+        String firstDay = format.format(ca.getTime());
+        return firstDay;
+     }
 	
 	public String GetLastTestDateID() {
 		SqlReader sr = null;

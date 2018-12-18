@@ -1,16 +1,5 @@
 package com.selenium.test.testcenter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import com.selenium.test.brower.Mis2Brower;
-import com.selenium.test.utils.WebDriverAction;
-
 public class CentertInputData {	
 
 	//Test center list
@@ -60,16 +49,19 @@ public class CentertInputData {
 	public String mTbName_En = "B Seat";
 	
 	//Test room
-	String roomNameOne = "RM 01";
+	public String roomNameOne = "RM 01";
 	
-	String roomNameTwo = "RM 02";
+	public String roomNameTwo = "RM 02";
 	
-	String roomNameThree = "RM 00";
+	public String roomNameThree = "RM 00";
 	
 	//Test session
-	String modifySessionQuota = "400";
+	public String modifySessionQuota = "400";
 	
-	String noDataWarning = "No available data....";
+	public String noDataWarning = "No available data....";
+	
+	//Speaking Room Template
+	public String modifyTemplateName = "BJ-UIBE-Modify";
 	
 
 

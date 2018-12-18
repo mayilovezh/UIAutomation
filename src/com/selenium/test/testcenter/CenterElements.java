@@ -1,9 +1,9 @@
 package com.selenium.test.testcenter;
 
-
 import com.selenium.test.brower.Mis2Brower;
 import com.selenium.test.utils.DynamicVariables;
 import com.selenium.test.utils.FirstClick;
+import java.util.List;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
@@ -236,8 +236,235 @@ public class CenterElements extends Mis2Brower{
 	
 	public String searchTestDateRealWarningText = ".//*[@id='testdate_guid']/div[2]/table/tbody/tr[1]/td[1]";
 	
-	//Test date
+	//Spk Room Template
+	public String spkTemplateAddSpeakingRoomTemplate = "btnSPKRoomTemplateAddInSearch";
 	
+	public String spkTemplateRegion = "selectSPKRoomTemplateRegionSearch";
+	
+	public String spkTemplateTestCenter = "SPKRoomTemplateListTestCenterid";
+	
+	public String spkTemplateAddTemplateSelectBuild = "//div[@id='SpeakingTemplateBuilding-AddSearch']/input[@type='checkbox']";
+	
+	public String spkTemplateAddTemplateSearchButton = "btnSPKRoomTemplate-AddSearch";
+	
+	public String spkTemplateAddTemplateSelectBuildTestDay = "//div[@id='add-SpeakingRoomTemplateList']/div[@id='SPKRoomTemplateTableTest']/table/tbody/tr";
+	
+	public String spkTemplateAddTemplateSaveButton = "submitSpeakingRoomTemplate";
+	
+	public String spkTemplateSearchButton = "btnSPKRoomTemplateSearch";
+	
+	public String listOfSpkTemplateTestCenterText = ".//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr/td[2]";
+	
+	public String spkTemplateModifyButton = ".//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr/td[5]/a[1]";
+	
+	public String spkTemplateModifyTemplateName = "txtTemplateName-ModifySearch";
+	
+	public String spkTemplateModifyTemplateSaveButton = "btnDoSPkTemplateModify";
+	
+	public String spkTemplateViewTemplateNameButton = ".//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr/td[5]/a[2]";
+	
+	public String spkTemplateGoToTemplateListButton = ".//*[@id='view-SpeakingTemplateList']/input[1]";
+	
+	public String spkTemplateViewTemplateNameText = "txtTemplateName-ViewSearch";
+	
+	public String spkTemplateDeleteTemplateNameButton = ".//*[@id='SPKRoomTemplateListGrid']/div[2]/table/tbody/tr/td[5]/a[3]";
+	
+	//Spk Room Availability
+	public String spkRoomAvailabilitySearchButton = "SPKAvailability-Search";
+	
+	public String spkRoomAvailabilitySearchRegion = "SPKAvailabilityRegion-Search";
+	
+	public String spkRoomAvailabilitySearchProduct = "SPKAvailabilityProduct-Search";
+	
+	public String spkRoomAvailabilitySearchFormat = "SPKAvailabilityFormat-Search";
+	
+	public String spkRoomAvailabilitySearchTestCenter = "SPKAvailabilityTestCenter-Search";
+	
+	public String spkRoomAvailabilityListOfTestCenterText = ".//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr/td[2]";
+	
+	public String spkRoomAvailabilityResetButton = "btnSPKAvailability-Reset";
+	
+	public String spkRoomAvailabilityResetListOfTestCenterText = ".//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr/td";
+	
+	public String spkRoomAvailabilityListOFTr = ".//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr";
+	
+	//Spk Room Availability
+	public void DeleteSpkRoomAvailability() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(GetAvailabilityAddedIsYesLocation() + "/td[6]/a[3]")).click();
+	}
+	
+	public String ListOfTCWarning() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String tcText = (String)js.executeScript("function getTc() {\r\n" + 
+				"  var tcText = document.getElementById('ddlTestCenter-SPKAvailablityModify').value\r\n" + 
+				"  return tcText\r\n" + 
+				"}\r\n" + 
+				"return getTc()");
+		return tcText;
+	}
+	
+	public void ViewSpkRoomAvailability() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(GetAvailabilityAddedIsYesLocation() + "/td[6]/a[2]")).click();
+	}
+	
+	public String GetAvailabilityAddedIsYesLocation() {
+		Wait(normalTime);
+		List<WebElement> trLength = driver.findElements(By.xpath(spkRoomAvailabilityListOFTr));
+		String AvailabilityAddedYest = null;
+		for(int i=0; i<trLength.size(); i++) {
+			String isYest = driver.findElement(By.xpath(".//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr["+(i+1)+"]/td[4]")).getText();
+			if(isYest.equals("Y")) {
+				AvailabilityAddedYest = ".//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr["+(i+1)+"]";
+				break;
+			}
+		}
+		return AvailabilityAddedYest;
+	}
+	
+	public String ResetListOfTestCenterSpkRoomAvailabilityWarning() {
+		Wait(normalTime);
+		return driver.findElement(By.xpath(spkRoomAvailabilityResetListOfTestCenterText)).getText();
+	}
+	
+	public void ResetSpkRoomAvailability() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(spkRoomAvailabilityResetButton)).click();
+	}
+	
+	public String SpkRoomAvailabilityListOfTestCenterWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(spkRoomAvailabilityListOfTestCenterText)).getText();
+	}
+	
+	public void SearchTestDateEndSpkRoomAvailability() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('SPKAvailabilityEndDate-Search').value = '"+dv.GetLastDayOfThisMonth()+"'");	
+	}
+	
+	public void SearchTestDateStartSpkRoomAvailability() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementById('SPKAvailabilityStartDate-Search').value = '"+dv.GetFirstDayOfThisMonth()+"'");	
+	}
+	
+	public void SearchFormatSpkRoomAvailability() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkRoomAvailabilitySearchFormat)));
+		dropList.selectByValue("1");
+	}
+	
+	public void SearchProductSpkRoomAvailability() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkRoomAvailabilitySearchProduct)));
+		dropList.selectByValue("1");
+	}
+	
+	public void SearchRegionSpkRoomAvailability() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkRoomAvailabilitySearchRegion)));
+		dropList.selectByValue("2");
+	}
+	
+	public void SearchSpkRoomAvailability() {
+		Wait(normalTime);
+		driver.findElement(By.id(spkRoomAvailabilitySearchButton)).click();
+	}
+	
+	//Spk Room Template	
+	public void SpkTemplateDelete() {
+		Wait(normalTime);
+		driver.findElement(By.xpath(spkTemplateDeleteTemplateNameButton)).click();
+	}
+	
+	public String ViewTemplateNameOfSpkTemplateWarning() {
+		Wait(normalTime);
+		return driver.findElement(By.id(spkTemplateViewTemplateNameText)).getText();
+	}
+	
+	public void SpkTemplateGoToTemplateList() {
+		Wait(normalTime);
+		driver.findElement(By.xpath(spkTemplateGoToTemplateListButton)).click();
+	}
+	
+	public void SpkTemplateView() {
+		Wait(normalTime);
+		driver.findElement(By.xpath(spkTemplateViewTemplateNameButton)).click();
+	}
+	
+	public void SpkTemplateModifyTemplateSave() {
+		Wait(normalTime);
+		driver.findElement(By.id(spkTemplateModifyTemplateSaveButton)).click();
+	}
+	
+	public void SpkTemplateModifyTemplateName(String elements) {
+		Wait(normalTime);
+		driver.findElement(By.id(spkTemplateModifyTemplateName)).clear();
+		driver.findElement(By.id(spkTemplateModifyTemplateName)).sendKeys(elements);
+	}
+	
+	public void SpkTemplateModify() {
+		Wait(normalTime);
+		driver.findElement(By.xpath(spkTemplateModifyButton)).click();
+	}
+	
+	public String ListOfSpkTemplateTestCenterWarning() {
+		Wait(normalTime);
+		return driver.findElement(By.xpath(listOfSpkTemplateTestCenterText)).getText();
+	}
+	
+	public void SpkTemplateSearch() {
+		Wait(normalTime);
+		driver.findElement(By.id(spkTemplateSearchButton)).click();
+	}
+	
+	public void SpkTemplateAddTemplateSave() {
+		Wait(normalTime);
+		driver.findElement(By.id(spkTemplateAddTemplateSaveButton)).click();
+	}
+	
+	public void SpkTemplateSelectBuildingTestDay() {
+		Wait(normalTime);
+		List<WebElement> trLength = driver.findElements(By.xpath(spkTemplateAddTemplateSelectBuildTestDay));
+		for(int i=0; i<trLength.size(); i++) {
+			List<WebElement> checkbox = driver.findElements(By.xpath("//div[@id='add-SpeakingRoomTemplateList']/div[@id='SPKRoomTemplateTableTest']/table/tbody/tr["+(i+1)+"]/td[@style='width: 2.6470588235294117%;text-align: center;background-color:#ecf6fc']"));
+			for(int j=0; j<checkbox.size(); j++) {
+				driver.findElement(By.xpath("//div[@id='add-SpeakingRoomTemplateList']/div[@id='SPKRoomTemplateTableTest']/table/tbody/tr["+(i+1)+"]/td[@style='width: 2.6470588235294117%;text-align: center;background-color:#ecf6fc']["+(j+1)+"]/input")).click();
+			}
+		}
+	}
+	
+	public void SpkTemplateAddTemplateSearch() {
+		WaitElementVisible(driver, By.id(spkTemplateAddTemplateSearchButton)).click();
+	}
+	
+	public void SpkTemplateSelectBuilding() {
+		Wait(normalTime);
+		List<WebElement> checkboxes = driver.findElements(By.xpath(spkTemplateAddTemplateSelectBuild));
+		for(int i= 0; i<checkboxes.size(); i++) {
+			driver.findElement(By.xpath("//div[@id='SpeakingTemplateBuilding-AddSearch']/input["+(i+1)+"]")).click();
+		}
+	}
+	
+	public void SpkTemplateRegion() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkTemplateRegion)));
+		dropList.selectByValue("2");
+	}
+	
+	public void SpkTemplateTestCenter() {
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkTemplateTestCenter)));
+		dropList.selectByValue(dv.GetValueOfCenterId());
+	}
+	
+	public void SpkTemplateAddSpeakingRoomTemplate() {
+		WaitElementVisible(driver, By.id(spkTemplateAddSpeakingRoomTemplate)).click();
+	}
+	
+	//Test date
 	public String searchTestDateRealWarning() {
 		return WaitElementVisible(driver, By.xpath(searchTestDateRealWarningText)).getText();
 	}
@@ -810,6 +1037,12 @@ public class CenterElements extends Mis2Brower{
 	public void CenterListViewClick(){
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(centerListViewButton)).click();
+	}
+	
+	public void ShortWaitTime(){
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
 	}
 	
 	public void WaitTime(){

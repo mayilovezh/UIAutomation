@@ -47,6 +47,127 @@ public class PreTestArrangeElements extends Mis2Brower{
 	
 	public String writtenApportionmentDeleteCurrentCenterArrangementButton = "delete-SpkArrCdd-w";
 	
+	//Spk Arrangement
+	public String spkArrangementRegion = "SpkTestArrangementlistRegion";
+	
+	public String spkArrangementProductType = "selectSpkTestArrangementExamProductTypeSearch";
+	
+	public String spkArrangementExamFormat = "selectSpkTestArrangementExamFormatSearch";
+	
+	public String spkArrangementTestDateYear = "SpkTestArrangementlistDdlYear-Search";
+	
+	public String spkArrangementTestDateMonth = "SpkTestArrangementlistDdlMonth-Search";
+	
+	public String spkArrangementTestDate = "SpkTestArrangementlistDateTime";
+	
+	public String spkArrangementSearchButton = "btnSpkArrangement";
+	
+	public String spkArrangementSearchTcText = ".//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[1]";
+	
+	public String spkArrangementAmendChange = "//input[@value='Amend/Change']";
+	
+	public String spkArrangementAmendChangeOfSave = "roomarrange-submit-Arr";
+	
+	public String spkArrangementAmendChangeOfBack = ".//*[@id='div-datatable-list-SpkRoomArrangement-Arr']/p/input[2]";
+	
+	public String spkArrangementTimeSlotOfAdd = ".//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[5]/input";
+	
+	public String spkArrangementTimeSlotOfAddSaveTheAboveSetting = "saveTimeSlotInfo";
+	
+	public String spkArrangementTimeSlotOfAddBack = ".//*[@id='page-heading']/p[2]/input[1]";
+	
+	public String spkArrangementCandidatesApportionmentOfAdd = ".//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[6]/input";
+	
+	public String spkArrangementCandidatesApportionmentOfAutoArrangeSpeakingTest = "btnAutoArr-SpkArrCdd";
+	
+	//Spk Arrangement
+	public void SpkArrangementCandidatesApportionmentOfAutoArrangeSpeakingTest() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(spkArrangementCandidatesApportionmentOfAutoArrangeSpeakingTest)).click();
+	}
+	
+	public void SpkArrangementCandidatesApportionmentOfAdd() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkArrangementCandidatesApportionmentOfAdd)).click();
+	}
+	
+	public void SpkArrangementTimeSlotOfAddBack() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkArrangementTimeSlotOfAddBack)).click();
+	}
+	
+	public void SpkArrangementTimeSlotOfAddSaveTheAboveSetting() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(spkArrangementTimeSlotOfAddSaveTheAboveSetting)).click();
+	}
+	
+	public void SpkArrangementTimeSlotOfAdd() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkArrangementTimeSlotOfAdd)).click();
+	}
+	
+	public void SpkArrangementAmendChangeOfBack() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkArrangementAmendChangeOfBack)).click();
+	}
+	
+	public void SpkArrangementAmendChangeOfSave() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(spkArrangementAmendChangeOfSave)).click();
+	}
+	
+	public void SpkArrangementAmendChange() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(spkArrangementAmendChange)).click();
+	}
+	
+	public String SpkArrangementSearchTcWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(spkArrangementSearchTcText)).getText();
+	}
+	
+	public void SearchSpkArrangementClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(spkArrangementSearchButton)).click();
+	}
+	
+	public void SearchSpkArrangementTestDateClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkArrangementTestDate)));
+		dropList.selectByValue(dv.GetLastTestDayId());
+	}
+	
+	public void SearchSpkArrangementTestDateMonthClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkArrangementTestDateMonth)));
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
+	}
+	
+	public void SearchSpkArrangementTestDateYearClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkArrangementTestDateYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	}
+	
+	public void SearchSpkArrangementExamFormatClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkArrangementExamFormat)));
+		dropList.selectByValue("3");
+	}
+	
+	public void SearchSpkArrangementProductTypeClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkArrangementProductType)));
+		dropList.selectByValue("1");
+	}
+	
+	public void SearchSpkArrangementRegionClick() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkArrangementRegion)));
+		dropList.selectByValue("2");
+	}
+	
+	
 	//Written Apportionment	
 	public void WrittenApportionmentDeleteCurrentCenterArrangementClick() {
 		Wait(normalTime);

@@ -36,7 +36,7 @@ public class DynamicVariables {
 	
 	public String SqlLastTestDate = "select top 1 * from tblTestDate where DateDiff(mm,TestDate,getdate())=0 order by TestDate desc";
 	
-	public String SqlLastTestDayId = "select top 1 * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0 order by TestDate desc) and ProductId = 1 and ExamFormatId = 3";
+	public String SqlLastTestDateRealId = "select top 1 * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0 order by TestDate desc) and ProductId = 1 and ExamFormatId = 3";
 	
     public String GetFirstDayOfThisMonth(){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); 
@@ -79,7 +79,7 @@ public class DynamicVariables {
 		String centerId = null;
 		try {
 			sr = new SqlReader();
-			String sql = SqlLastTestDayId;
+			String sql = SqlLastTestDateRealId;
 			ResultSet rs = sr.getResultSet(sql);
 			while(rs.next()) {
 				centerId = rs.getString("Id");

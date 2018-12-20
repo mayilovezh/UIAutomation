@@ -48,21 +48,7 @@ public class SpkArrangement {
 	}	
 
 	@Test
-	public void step04_ArrangeTimeSlotOfSaveTheAboveSetting(){
-		pae.SpkArrangementTimeSlotOfAdd();
-		pae.WaitTime();
-		pae.SpkArrangementTimeSlotOfAddSaveTheAboveSetting();
-		pae.ModifyFirstButtonClick();
-	}	
-	
-	@Test
-	public void step05_ArrangeTimeSlotOfBack(){
-		pae.WaitTime();
-		pae.SpkArrangementTimeSlotOfAddBack();
-	}	
-
-	@Test
-	public void step06_CandidatesApportionmentOfAutoArrangeSpeakingTest(){
+	public void step04_CandidatesApportionmentOfAutoArrangeSpeakingTest(){
 		pae.WaitTime();
 		pae.SpkArrangementCandidatesApportionmentOfAdd();
 		pae.SpkArrangementCandidatesApportionmentOfAutoArrangeSpeakingTest();

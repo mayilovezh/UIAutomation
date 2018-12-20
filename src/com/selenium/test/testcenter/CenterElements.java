@@ -6,6 +6,7 @@ import com.selenium.test.utils.FirstClick;
 import java.util.List;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.Cookie; 
 
 public class CenterElements extends Mis2Brower{
 	
@@ -289,6 +290,12 @@ public class CenterElements extends Mis2Brower{
 	public String spkRoomAvailabilityListOFTr = ".//*[@id='SPKAvailabilityListGrid']/div[2]/table/tbody/tr";
 	
 	//Spk Room Availability
+	
+	public void ClearCookie() {
+	 //清除所有的缓存
+	 driver.manage().deleteAllCookies();
+	}
+	
 	public void DeleteSpkRoomAvailability() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(GetAvailabilityAddedIsYesLocation() + "/td[6]/a[3]")).click();

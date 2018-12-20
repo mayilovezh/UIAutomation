@@ -1,6 +1,5 @@
 package com.selenium.test.testcenter;
 
-import org.openqa.selenium.TimeoutException;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -78,7 +77,7 @@ public class TestSessionList {
 		ce.ModifyFirstClick();
 		ce.ModifySecondClick();
 	}
-
+	
 	@Test(description = "Search session in the current month")
 	public void step05_SearchLastSession(){
 		ce.WaitTime();
@@ -93,4 +92,12 @@ public class TestSessionList {
 		Assert.assertEquals(ce.TestCenterOfSearchWarning(), ci.abbreviation);
 	}
 
+	@Test(description = "Search session in the current month")
+	public void step06_LogOut(){
+		ce.WaitTime();
+		ce.LogOutClick();
+		ce.OpenBrower("TestCenter", 4);
+		step04_CreateLastSession();
+	}
+	
 }

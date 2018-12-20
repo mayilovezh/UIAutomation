@@ -64,17 +64,11 @@ public class PreTestArrangeElements extends Mis2Brower{
 	
 	public String spkArrangementSearchTcText = ".//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[1]";
 	
-	public String spkArrangementAmendChange = "//input[@value='Amend/Change']";
+	public String spkArrangementAmendChange = ".//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[4]/input";
 	
 	public String spkArrangementAmendChangeOfSave = "roomarrange-submit-Arr";
 	
 	public String spkArrangementAmendChangeOfBack = ".//*[@id='div-datatable-list-SpkRoomArrangement-Arr']/p/input[2]";
-	
-	public String spkArrangementTimeSlotOfAdd = ".//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[5]/input";
-	
-	public String spkArrangementTimeSlotOfAddSaveTheAboveSetting = "saveTimeSlotInfo";
-	
-	public String spkArrangementTimeSlotOfAddBack = ".//*[@id='page-heading']/p[2]/input[1]";
 	
 	public String spkArrangementCandidatesApportionmentOfAdd = ".//*[@id='spreadsheet-SpkTestArrangementlist-table']/tbody/tr/td[6]/input";
 	
@@ -90,22 +84,7 @@ public class PreTestArrangeElements extends Mis2Brower{
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(spkArrangementCandidatesApportionmentOfAdd)).click();
 	}
-	
-	public void SpkArrangementTimeSlotOfAddBack() {
-		Wait(normalTime);
-		WaitElementVisible(driver, By.xpath(spkArrangementTimeSlotOfAddBack)).click();
-	}
-	
-	public void SpkArrangementTimeSlotOfAddSaveTheAboveSetting() {
-		Wait(normalTime);
-		WaitElementVisible(driver, By.id(spkArrangementTimeSlotOfAddSaveTheAboveSetting)).click();
-	}
-	
-	public void SpkArrangementTimeSlotOfAdd() {
-		Wait(normalTime);
-		WaitElementVisible(driver, By.xpath(spkArrangementTimeSlotOfAdd)).click();
-	}
-	
+		
 	public void SpkArrangementAmendChangeOfBack() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(spkArrangementAmendChangeOfBack)).click();

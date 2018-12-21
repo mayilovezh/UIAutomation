@@ -4,9 +4,6 @@ package com.selenium.test.examiner;
 import com.selenium.test.brower.Mis2Brower;
 import com.selenium.test.utils.DynamicVariables;
 import com.selenium.test.utils.FirstClick;
-
-import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;

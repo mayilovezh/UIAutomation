@@ -6,10 +6,6 @@ import com.selenium.test.utils.SqlReader;
 import com.selenium.test.brower.Mis2Brower;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import org.openqa.selenium.*;
 
 public class GeneralQueryElements extends Mis2Brower{

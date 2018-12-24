@@ -7,6 +7,7 @@ import com.selenium.test.brower.Mis2Brower;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.Select;
 
 public class GeneralQueryElements extends Mis2Brower{
 
@@ -31,6 +32,133 @@ public class GeneralQueryElements extends Mis2Brower{
     public String HM_DELETE = ".//*[@id='div_Holiday_Grid']/div[2]/table/tbody/tr[1]/td[4]/a[2]";
     public String HM_SEARCHYEAR = ".//*[@id='select-Holiday-Year']/option[@value='"+dv.getCurrentYear()+"']";
     
+    //Key Dates
+    public String KeyDatesSearchProduct = "KeyDates_ProductType";
+    public String KeyDatesSearchExamsFormat = "KeyDates_Exams_Format";
+    public String KeyDatesSearchYear = "KeyDates_Year";
+    public String KeyDatesSearchStartMonth = "KeyDates_StartDate";
+    public String KeyDatesSearchEndMonth = "KeyDates_EndDate";
+    public String KeyDatesSearchButton = "KeyDates_Search";
+    public String listOfKeyDatesText = ".//*[@id='SpreadSheetRoGetKeyDatesGrid']/div[2]/table/tbody/tr[1]/td[1]";
+    public String KeyDatesEditButton = ".//*[@id='SpreadSheetRoGetKeyDatesGrid']/div[2]/table/tbody/tr[1]/td[4]/span";
+    public String ChangeKeyDatesText = "KeyDatesChangeDate";
+    public String viewPageKeyDatesText = ".//*[@id='SpreadSheetRoGetKeyDatesGrid']/div[2]/table/tbody/tr[1]/td[16]/input";
+    
+    //Key Dates Views
+    public String KeyDatesViewSearchProduct = "KeyDates_ProductType_view";
+    public String KeyDatesViewSearchExamsFormat = "KeyDates_Exams_Format_view";
+    public String KeyDatesViewSearchYear = "KeyDates_Year_view";
+    public String KeyDatesViewSearchStartMonth = "KeyDates_StartDate_view";
+    public String KeyDatesViewSearchEndMonth = "KeyDates_EndDate_view";
+    public String KeyDatesViewSearchButton = "KeyDates_Search_view";
+    public String listOfKeyDatesViewText = ".//*[@id='SpreadSheetRoGetKeyDatesGrid_view']/div[2]/table/tbody/tr[1]/td[1]";
+
+    //Key Dates Views
+    public String ListOfKeyDatesViewsWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOfKeyDatesViewText)).getText();
+    }
+    
+    public void SearchKeyDatesViewClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(KeyDatesViewSearchButton)).click();
+    }
+    
+    public void SearchProductKeyDatesView() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesViewSearchProduct)));
+		dropList.selectByValue("1");
+    }
+    
+    public void SearchExamsFormatKeyDatesView() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesViewSearchExamsFormat)));
+		dropList.selectByValue("1");
+    }
+    
+    public void SearchYearKeyDatesView() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesViewSearchYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+    }
+    
+    public void SearchStartMonthKeyDatesView() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesViewSearchStartMonth)));
+		dropList.selectByIndex(1);
+    }
+    
+    public void SearchEndMonthKeyDatesView() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesViewSearchEndMonth)));
+		dropList.selectByIndex(12);
+    }
+    
+    //Key Dates
+    public void ViewPageKeyDates() {
+		String viewPageContents = WaitElementVisible(driver, By.xpath(viewPageKeyDatesText)).getAttribute("value");
+		if (viewPageContents.equals("Shown On View Page")) {
+			Wait(normalTime);
+			WaitElementVisible(driver, By.xpath(viewPageKeyDatesText)).click();
+		}else {
+			Wait(normalTime);
+			WaitElementVisible(driver, By.xpath(viewPageKeyDatesText)).click();
+			Wait(normalTime);
+			Wait(normalTime);
+			WaitElementVisible(driver, By.xpath(viewPageKeyDatesText)).click();
+		}
+    }
+    
+    public void inputEditKeyDates() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(ChangeKeyDatesText)).clear();
+		WaitElementVisible(driver, By.id(ChangeKeyDatesText)).sendKeys(dv.GetLastDayOfThisMonth());
+    }
+    
+    public void EditKeyDatesClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(KeyDatesEditButton)).click();
+    }
+    
+    public String ListOfKeyDatesWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOfKeyDatesText)).getText();
+    }
+    
+    public void SearchKeyDatesClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(KeyDatesSearchButton)).click();
+    }
+    
+    public void SearchProductKeyDates() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesSearchProduct)));
+		dropList.selectByValue("1");
+    }
+    
+    public void SearchExamsFormatKeyDates() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesSearchExamsFormat)));
+		dropList.selectByValue("1");
+    }
+    
+    public void SearchYearKeyDates() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesSearchYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+    }
+    
+    public void SearchStartMonthKeyDates() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesSearchStartMonth)));
+		dropList.selectByIndex(1);
+    }
+    
+    public void SearchEndMonthKeyDates() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(KeyDatesSearchEndMonth)));
+		dropList.selectByIndex(12);
+    }
     
     //Holiday Management
 	public void ModifyFirstClick() {
@@ -106,25 +234,7 @@ public class GeneralQueryElements extends Mis2Brower{
     	Wait(normalTime);
     	driver.switchTo().alert().accept();
     }
-    
-	public String GetPMUpdateStockType() {
-		SqlReader sr = null;
-		String StockTypeId = null;
-		try {
-			sr = new SqlReader();
-			String sql = "select * from TB_Dictionary where Table_mark = 'StockStorageType' and [Values] = 'Paper Transfer In'";
-			ResultSet rs = sr.getResultSet(sql);
-			while(rs.next()) {
-				StockTypeId = rs.getString("Id");
-			}
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}finally {
-			sr.getCloseConnection();
-		}
-		return StockTypeId;
-	}
-	
+    	
 	public void WaitTime(){
 		Wait(normalTime);
 		Wait(normalTime);

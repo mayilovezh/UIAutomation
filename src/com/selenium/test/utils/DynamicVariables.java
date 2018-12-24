@@ -38,6 +38,26 @@ public class DynamicVariables {
 	
 	public String SqlLastTestDateRealId = "select top 1 * from tblTestDateReal where TestDateId in (select top 1 ID from tblTestDate where DateDiff(mm,TestDate,getdate())=0 order by TestDate desc) and ProductId = 1 and ExamFormatId = 3";
 	
+	public String SqlTBDictionary = "select * from TB_Dictionary where Table_mark = 'StockStorageType' and [Values] = 'Paper Transfer In'";
+	
+	public String GetPMUpdateStockType() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlTBDictionary;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
+	
     public String GetFirstDayOfThisMonth(){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); 
         //获取当前月最后一天

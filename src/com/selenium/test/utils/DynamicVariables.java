@@ -40,6 +40,106 @@ public class DynamicVariables {
 	
 	public String SqlTBDictionary = "select * from TB_Dictionary where Table_mark = 'StockStorageType' and [Values] = 'Paper Transfer In'";
 	
+	public String SqlGet1stMarker = "select * from TB_Dictionary where [Values] = '1st Marker'";
+	
+	public String SqlGetCountryOfChina = "select * from TB_Country where CountryName = 'China'";
+	
+	public String SqlGetCity = "select * from TB_Province where NAME = 'Shanghai'";
+	
+	public String SqlGetCityOfDistrict = "select * from TB_City where ProvinceID in (select ProId from TB_Province where NAME = 'Shanghai')";
+	
+	public String SqlGetClericalMarkerStatus = "select * from TB_Dictionary where [Values] = 'Active' and Table_mark = 'ClericalMarkerStatus'";
+	
+	public String GetClericalMarkerStatus() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlGetClericalMarkerStatus;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
+	
+	public String GetCityOfDistrict() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlGetCityOfDistrict;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("CityID");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
+	
+	public String GetCity() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlGetCity;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("ProId");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
+	
+	public String GetCountryOfChina() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlGetCountryOfChina;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("CountryId");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
+	
+	public String Get1stMarker() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlGet1stMarker;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
+	
 	public String GetPMUpdateStockType() {
 		SqlReader sr = null;
 		String StockTypeId = null;

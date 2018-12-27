@@ -42,6 +42,8 @@ public class DynamicVariables {
 	
 	public String SqlGet1stMarker = "select * from TB_Dictionary where [Values] = '1st Marker'";
 	
+	public String SqlGet2ndMarker = "select * from TB_Dictionary where [Values] = '2nd Marker'";
+	
 	public String SqlGetCountryOfChina = "select * from TB_Country where CountryName = 'China'";
 	
 	public String SqlGetCity = "select * from TB_Province where NAME = 'Shanghai'";
@@ -49,6 +51,24 @@ public class DynamicVariables {
 	public String SqlGetCityOfDistrict = "select * from TB_City where ProvinceID in (select ProId from TB_Province where NAME = 'Shanghai')";
 	
 	public String SqlGetClericalMarkerStatus = "select * from TB_Dictionary where [Values] = 'Active' and Table_mark = 'ClericalMarkerStatus'";
+	
+	public String Get2ndMarker() {
+		SqlReader sr = null;
+		String StockTypeId = null;
+		try {
+			sr = new SqlReader();
+			String sql = SqlGet2ndMarker;
+			ResultSet rs = sr.getResultSet(sql);
+			while(rs.next()) {
+				StockTypeId = rs.getString("Id");
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			sr.getCloseConnection();
+		}
+		return StockTypeId;
+	}
 	
 	public String GetClericalMarkerStatus() {
 		SqlReader sr = null;
@@ -237,16 +257,58 @@ public class DynamicVariables {
 		return newTestDate;
 	}
 	
+	public String GetFormatSpritString() {
+		String subTestDate = StringUtils.substringBefore(GetTestDate(), " ");
+		String[] subTestDateString = subTestDate.split("-");
+		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+		String formatString = null;
+		for (int i =0; i<subTestDateString.length;) {
+			if(Arrays.asList(numStringList).contains(subTestDateString[1])) {
+				int subToInt = Integer.valueOf(subTestDateString[1]);
+				String subToString = String.valueOf(subToInt);
+				int subMonthToInt = Integer.valueOf(subTestDateString[2]);
+				String subMonthToString = String.valueOf(subMonthToInt);
+				formatString = subMonthToString + "/" + subToString + "/" + subTestDateString[0] ;
+				break;
+			}else {
+				return subTestDate;
+			}
+		}
+		return formatString;
+	}
+	
+	public String GetLastFormatSpritString() {
+		String subTestDate = StringUtils.substringBefore(GetLastTestDate(), " ");
+		String[] subTestDateString = subTestDate.split("-");
+		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+		String formatString = null;
+		for (int i =0; i<subTestDateString.length;) {
+			if(Arrays.asList(numStringList).contains(subTestDateString[1])) {
+				int subToInt = Integer.valueOf(subTestDateString[1]);
+				String subToString = String.valueOf(subToInt);
+				int subMonthToInt = Integer.valueOf(subTestDateString[2]);
+				String subMonthToString = String.valueOf(subMonthToInt);
+				formatString = subMonthToString + "/" + subToString + "/" + subTestDateString[0] ;
+				break;
+			}else {
+				return subTestDate;
+			}
+		}
+		return formatString;
+	}
+	
 	public String getLastFormatString() {
 		String subTestDate = StringUtils.substringBefore(GetLastTestDate(), " ");
 		String[] subTestDateString = subTestDate.split("-");
-		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09"};
+		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
 		String formatString = null;
 		for (int i =0; i<subTestDateString.length;) {
-			if(Arrays.asList(numStringList).contains(subTestDateString[2])) {
-				int subToInt = Integer.valueOf(subTestDateString[2]);
+			if(Arrays.asList(numStringList).contains(subTestDateString[1])) {
+				int subToInt = Integer.valueOf(subTestDateString[1]);
 				String subToString = String.valueOf(subToInt);
-				formatString = subTestDateString[0] + "-" + subTestDateString[1] + "-" + subToString;
+				int subMonthToInt = Integer.valueOf(subTestDateString[2]);
+				String subMonthToString = String.valueOf(subMonthToInt);
+				formatString = subTestDateString[0] + "-" + subToString + "-" + subMonthToString;
 				break;
 			}else {
 				return subTestDate;
@@ -274,15 +336,17 @@ public class DynamicVariables {
 	}
 	
 	public String getFormatString() {
-		String subTestDate = StringUtils.substringBefore(GetTestDate(), " ");
+		String subTestDate = StringUtils.substringBefore(GetTestDate(), " ");//
 		String[] subTestDateString = subTestDate.split("-");
-		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09"};
+		String[] numStringList = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
 		String formatString = null;
 		for (int i =0; i<subTestDateString.length;) {
-			if(Arrays.asList(numStringList).contains(subTestDateString[2])) {
-				int subToInt = Integer.valueOf(subTestDateString[2]);
+			if(Arrays.asList(numStringList).contains(subTestDateString[1])) {
+				int subToInt = Integer.valueOf(subTestDateString[1]);
 				String subToString = String.valueOf(subToInt);
-				formatString = subTestDateString[0] + "-" + subTestDateString[1] + "-" + subToString;
+				int subMonthToInt = Integer.valueOf(subTestDateString[2]);
+				String subMonthToString = String.valueOf(subMonthToInt);
+				formatString = subTestDateString[0] + "-" + subToString + "-" + subMonthToString;
 				break;
 			}else {
 				return subTestDate;

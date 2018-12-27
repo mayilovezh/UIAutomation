@@ -1,161 +1,97 @@
 package com.selenium.test.clericalmarker;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.WebDriverAction;
-
-public class ClericalMarkerTask {
-	static WebDriver driver;
-	WebDriverAction action;
-	String openIntervalFrom = "15/05/2018 00:00";
-	String openIntervalTo = "20/05/2018 00:00";
-	String venue = "BC Office";
-	String testDate = "27/Dec/2018";
-	String typeFirst = "1st Marking";
-	String typeSecond = "2nd Marking";
-	String examinerName = "Xiao Guo";
-
-	@BeforeMethod
-	public void setUp() throws Exception {
-		driver = new DriverInstance().login(driver);
-		action = new WebDriverAction(driver);
+public class ClericalMarkerTask{
+	ClericalMarkerElements cme = new ClericalMarkerElements();
+	
+	@BeforeClass
+	public void setUp(){
+		cme.OpenBrower("ClericalMarker", 2);
 	}
 
-	@AfterMethod
-	public void close() {
-		new DriverInstance().teardown(driver);
-	}
-
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.CLERICAL_MARKER));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-
-	/*@Test
-	public void step01_CreateFirstMarkingTask() throws Exception {
-		navigate();
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_INTERVAL_FROM), openIntervalFrom);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_INTERVAL_TO), openIntervalTo);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_FM_DAY));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_FM_VENUE), venue);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	@AfterClass
+	public void Close() {
+		cme.Close();
 	}
 
 	@Test
-	public void step02_CreateSecondMarkingTask() throws Exception {
-		navigate();
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_SM));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByIndex(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_TESTDATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_INTERVAL_FROM), openIntervalFrom);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_INTERVAL_TO), openIntervalTo);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK_CREATE_SM_DAY));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_CREATE_SM_VENUE), venue);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}*/
-
-	@Test
-	public void step03_SearchTask() throws Exception {
-		navigate();
-		search();
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_TEST_DATE_FIRST)), testDate);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_TEST_DATE_SECOND)), testDate);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_TYPE_FIRST)), typeFirst);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_TYPE_SECOND)), typeSecond);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_FIRST)), ElementHelper.USER_NAME_QA);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_SEARCH_CREATE_BY_SECOND)), ElementHelper.USER_NAME_QA);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+	public void step01_Create1stMarkingTask(){
+		cme.CreateCMTask1();
+		cme.CreateCMTask1SelectTestDateYear();
+		cme.CreateCMTask1SelectTestDateMonth();
+		cme.CreateCMTask1SelectTestDate();
+		cme.CreateCMTask1OpenIntervalStart();
+		cme.CreateCMTask1OpenIntervalEnd();
+		cme.CreateCMTask1ChooseDay();
+		cme.CreateCMTask1ChooseVenue();
+		cme.CreateCMTask1DescriptionForCM();
+		cme.CreateCMTask1RemarkForStaff();
+		cme.ModifyFirstClick();
+		cme.WaitTime();
 	}
 
 	@Test
-	public void step04_ModifyTask() throws Exception {
-		navigate();
-		search();
-		action.click(By.linkText(ElementHelper.CLERICAL_TASK_MODIFY));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK_MODIFY_DAY));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.clear(By.id(ElementHelper.CLERICAL_TASK_MODIFY_REMARK));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_MODIFY_REMARK), ElementHelper.REMARK_VALUE);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	public void step02_Search1stMarkingTask(){
+		cme.SearchCMTaskSelectRegion();
+		cme.SearchCMTaskSelectTestDateYear();
+		cme.SearchCMTaskSelectTestDateMonth();
+		cme.SearchCMTaskSelectTestDate();
+		cme.SearchCMTask1SelectTaskType();
+		cme.SearchCMTask();
+		Assert.assertEquals(cme.ListOfCMTask(), cme.ListOfCMTask());
 	}
 
 	@Test
-	public void step05_ViewTask() throws Exception {
-		navigate();
-		search();
-		action.click(By.linkText(ElementHelper.CLERICAL_TASK_VIEW));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SAVE));
+	public void step03_Modify1stMarkingTask(){
+		cme.ModifyCMTask();
+		cme.ModifyCMTask1ChooseVenue();
+		cme.ModifyFirstClick();
+		cme.ShortWaitTime();
 	}
 
 	@Test
-	public void step06_ViewLog() throws Exception {
-		navigate();
-		search();
-		action.click(By.linkText(ElementHelper.CLERICAL_TASK_LOG));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.CLERICAL_TASK_LOG_USER)), ElementHelper.USER_NAME_QA);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
+	public void step04_View1stMarkingTask(){
+		cme.ViewCMTask();
+		Assert.assertEquals(cme.ResultOfViewCMTaskText(), cme.ResultOfViewCMTaskText());
+		cme.ModifyFirstClick();
+		cme.ShortWaitTime();
 	}
 	
 	@Test
-	public void step07_Report() throws Exception {
-		navigate();
-		search();
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK_REPORT));
-		action.waitElementVisibleToAssert(By.xpath(ElementHelper.CLERICAL_TASK_REPORT_EXAMINER_NAME), examinerName);
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK_REPORT_MODIFY));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.clear(By.id(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_CAPACITY));
-		action.sendkeys(By.id(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_CAPACITY), "100");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_AVAILABLE_STATUS));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.xpath(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_TEST_DATE));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.CLERICAL_TASK_REPORT_MODIFY_SAVE));
+	public void step05_Create2ndMarkingTask(){
+		cme.CreateCMTask2();
+		cme.CreateCMTask2SelectTestDateYear();
+		cme.CreateCMTask2SelectTestDateMonth();
+		cme.CreateCMTask2SelectTestDate();
+		cme.CreateCMTask1OpenIntervalStart();
+		cme.CreateCMTask1OpenIntervalEnd();
+		cme.CreateCMTask1ChooseDay();
+		cme.CreateCMTask1ChooseVenue();
+		cme.CreateCMTask1DescriptionForCM();
+		cme.CreateCMTask1RemarkForStaff();
+		cme.ModifyFirstClick();
+		cme.WaitTime();
 	}
 
-	public void search() throws InterruptedException {
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByIndex(By.id(ElementHelper.CLERICAL_TASK_TEST_DATE), 1);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.CLERICAL_TASK_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
+	@Test
+	public void step06_Search2ndMarkingTask(){
+		cme.SearchCMTaskSelectRegion();
+		cme.SearchCMTaskSelectTestDateYear();
+		cme.SearchCMTaskSelectTestDateMonth();
+		cme.SearchCMTaskSelectTestDate();
+		cme.SearchCMTask2SelectTaskType();
+		cme.SearchCMTask();
+		Assert.assertEquals(cme.ListOfCMTask(), cme.ListOfCMTask());
 	}
+
+	
+	
+	
+	
+	
+	
 }

@@ -85,6 +85,210 @@ public class ClericalMarkerElements extends Mis2Brower{
 
 	public String cmTransferOfSelectCity = "ClericalMarkerTransferCityList";
 
+	//Clerical Marker Task
+	public String createCMTask1Button = ".//*[@id='div-datatable-clericalmarkerTask']/input[1]";
+
+	public String createCMTask1TestDateYear = "selectClericalMarkerTestDatefirstYear";
+
+	public String createCMTask1TestDateMonth = "selectClericalMarkerTestDatefirstMonth";
+
+	public String createCMTask1TestDate = "selectClericalMarkerTestDatefirst";
+
+	public String createCMTask1OpenIntervalStart = "clericalmarkertaskOpenstart";
+
+	public String createCMTask1OpenIntervalEnd = "clericalmarkertaskOpenend";
+
+	public String createCMTask1ChooseDay = "//input[@value='"+dv.GetLastFormatSpritString()+"']";
+
+	public String createCMTask1ChooseVenue = "clericalmarkertaskMarkingVenue";
+
+	public String createCMTask1DescriptionForCM = "clericalmarkertaskDescription";
+
+	public String createCMTask1RemarkForStaff = "clericalmarkertaskRemark";
+	
+	public String searchCMTask = "btnsearchforCM";
+	
+	public String searchCMTaskRegion = "selectRegionforCM";
+	
+	public String searchCMTaskTestDateYear = "selectTestDateforCMYear";
+	
+	public String searchCMTaskTestDateMonth = "selectTestDateforCMMonth";
+	
+	public String searchCMTaskTestDate = "selectTestDateforCM";
+	
+	public String searchCMTask1TaskType = "selectTaskTypeforCM";
+	
+	public String listOfCMTaskText = ".//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[3]";
+	
+	public String modifyCMTask = ".//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[8]/a[1]";
+	
+	public String modifyCMTask1ChooseVenue = "clericalmarkertaskMarkingVenuemodify";
+	
+	public String viewCMTask = ".//*[@id='ClericalMarkerTaskGrid']/div[2]/table/tbody/tr[1]/td[8]/a[2]";
+	
+	public String resultOfViewCMTaskText = "viewclericalmarkerTaskStatus";
+	
+	public String createCMTask2Button = ".//*[@id='div-datatable-clericalmarkerTask']/input[2]";
+
+	public String createCMTask2TestDateYear = "selectClericalMarkerTestDatesecondYear";
+
+	public String createCMTask2TestDateMonth = "selectClericalMarkerTestDatesecondMonth";
+
+	public String createCMTask2TestDate = "selectClericalMarkerTestDatesecond";
+
+	//Clerical Marker Task
+	public void CreateCMTask2SelectTestDateYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createCMTask2TestDateYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	} 
+	
+	public void CreateCMTask2SelectTestDateMonth() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createCMTask2TestDateMonth)));
+		dropList.selectByValue(dv.getCurrentMonth());
+	} 
+	
+	public void CreateCMTask2SelectTestDate() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createCMTask2TestDate)));
+		dropList.selectByValue(dv.GetLastTestDateID());
+	} 
+	
+	public void CreateCMTask2() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(createCMTask2Button)).click();
+		Wait(6000);
+	} 
+	
+	public String ResultOfViewCMTaskText() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.id(resultOfViewCMTaskText)).getText();
+	}
+	
+	public void ViewCMTask() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(viewCMTask)).click();
+		Wait(4000);
+	}
+	
+	public void ModifyCMTask1ChooseVenue() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(modifyCMTask1ChooseVenue)).clear();
+		WaitElementVisible(driver, By.id(modifyCMTask1ChooseVenue)).sendKeys(cmi.ModifyChooseVenueForTask);
+	} 
+	
+	public void ModifyCMTask() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(modifyCMTask)).click();
+		Wait(4000);
+	}
+	
+	public String ListOfCMTask() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOfCMTaskText)).getText();
+	}
+	
+	public void SearchCMTaskSelectRegion() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCMTaskRegion)));
+		dropList.selectByValue("2");
+	} 
+	
+	public void SearchCMTaskSelectTestDateYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCMTaskTestDateYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	} 
+	
+	public void SearchCMTaskSelectTestDateMonth() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCMTaskTestDateMonth)));
+		dropList.selectByValue(dv.getCurrentMonth());
+	} 
+	
+	public void SearchCMTaskSelectTestDate() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCMTaskTestDate)));
+		dropList.selectByValue(dv.GetLastTestDateID());
+	} 
+	
+	public void SearchCMTask2SelectTaskType() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCMTask1TaskType)));
+		dropList.selectByValue(dv.Get2ndMarker());
+	} 
+	
+	public void SearchCMTask1SelectTaskType() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCMTask1TaskType)));
+		dropList.selectByValue(dv.Get1stMarker());
+	} 
+	
+	public void SearchCMTask() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(searchCMTask)).click();
+	} 
+	
+	public void CreateCMTask1() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(createCMTask1Button)).click();
+		Wait(6000);
+	} 
+	
+	public void CreateCMTask1SelectTestDateYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createCMTask1TestDateYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	} 
+	
+	public void CreateCMTask1SelectTestDateMonth() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createCMTask1TestDateMonth)));
+		dropList.selectByValue(dv.getCurrentMonth());
+	} 
+	
+	public void CreateCMTask1SelectTestDate() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(createCMTask1TestDate)));
+		dropList.selectByValue(dv.GetLastTestDateID());
+	} 
+	
+	public void CreateCMTask1OpenIntervalStart() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createCMTask1OpenIntervalStart)).clear();
+		WaitElementVisible(driver, By.id(createCMTask1OpenIntervalStart)).sendKeys(dv.GetFormatSpritString());
+	} 
+	
+	public void CreateCMTask1OpenIntervalEnd() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createCMTask1OpenIntervalEnd)).clear();
+		WaitElementVisible(driver, By.id(createCMTask1OpenIntervalEnd)).sendKeys(dv.GetLastFormatSpritString());
+	} 
+	
+	public void CreateCMTask1ChooseDay() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(createCMTask1ChooseDay)).click();
+	} 
+	
+	public void CreateCMTask1ChooseVenue() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createCMTask1ChooseVenue)).clear();
+		WaitElementVisible(driver, By.id(createCMTask1ChooseVenue)).sendKeys(cmi.ChooseVenueForTask);
+	} 
+	
+	public void CreateCMTask1DescriptionForCM() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createCMTask1DescriptionForCM)).clear();
+		WaitElementVisible(driver, By.id(createCMTask1DescriptionForCM)).sendKeys(cmi.DescriptionForTask);
+	} 
+	
+	public void CreateCMTask1RemarkForStaff() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(createCMTask1RemarkForStaff)).clear();
+		WaitElementVisible(driver, By.id(createCMTask1RemarkForStaff)).sendKeys(cmi.RemarkForStaffTask);
+	} 
+	
 	//Clerical Marker Profile
 	public void CmTransferOfSelectCity() {
 		Wait(normalTime);

@@ -1,7 +1,7 @@
 package com.selenium.test.clericalmarker;
 
 public class ClericalMarkerInputData {	
-
+	//Clerical Marker Profile
 	public String givenNameEn = "Guo";
 	
 	public String familyNameEn = "Xiao";
@@ -31,5 +31,16 @@ public class ClericalMarkerInputData {
 	public String ModifyPassword = "Passw0rd!";
 	
 	public String ModifyPinCode = "1111";
+	
+	//Clerical Marker Task
+	public String DescriptionForTask = "Clerical Marker Task Description";
+
+	public String RemarkForStaffTask = "Clerical Marker Task Remark For Staff";
+	
+	public String ChooseVenueForTask = "Clerical Marker Task Choose Venue";
+	
+	public String ModifyChooseVenueForTask = "Venue";
+	
+	
 
 }

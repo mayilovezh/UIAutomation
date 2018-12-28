@@ -135,7 +135,220 @@ public class ClericalMarkerElements extends Mis2Brower{
 	public String createCMTask2TestDateMonth = "selectClericalMarkerTestDatesecondMonth";
 
 	public String createCMTask2TestDate = "selectClericalMarkerTestDatesecond";
+	
+	//1st Marking Allocation
+	public String searchMarkingAllocation1Region = "cmddlRegion-firstMarking";
+	
+	public String searchMarkingAllocation1TestDateYear = "cmFirstMarking-Select-Year-Search";
+	
+	public String searchMarkingAllocation1TestDateMonth = "cmFirstMarking-Select-Month-Search";
+	
+	public String searchMarkingAllocation1TestDate = "cmddlTestDate-firstMarking";
+	
+	public String get1stMAOptionList = "function getOptionList() {\r\n" + 
+			"  var string = '';\r\n" + 
+			"  $('#cmddlTestDate-firstMarking option').each(function () {\r\n" + 
+			"    var text = $(this).text(); \r\n" + 
+			"    var value = $(this).val(); \r\n" + 
+			"    if ($(this).attr('style') == 'color:red')\r\n" + 
+			"    string += value + ';';\r\n" + 
+			"  });\r\n" + 
+			"  return string.substring(0, string.length);\r\n" + 
+			"}\r\n" + 
+			"return getOptionList();";
+	
+	public String selectall1stMATC = "cmfirstMarkingTestCenterSelectAll";
+	
+	public String searchMarkingAllocation1Button = "cmbtnQuery-firstMarking";
+	
+	public String searchMarkingAllocation1AvailableMarkerText = "cmspanAvailableExaminer-firstMarking";
+	
+	public String markingAllocation1SelectMarkerText = "cmtxtSelectExaminerNum-firstMarking";
+	
+	public String markingAllocation1Calculate = "cmbtnCalculate-firstMarking";
+	
+	public String listOfMarkerNoText = ".//*[@id='cmfirstMaringExaminerListGrid']/div[2]/table/tbody/tr[1]/td[3]";
+	
+	public String markingAllocation1SetCapacity = ".//*[@id='cmfirstMaringExaminerListGrid']/div[2]/table/tbody/tr[1]/td[14]/a[1]";
+	
+	public String markingAllocation1NewSetCapacityText = "newCapacitynumber";
+	
+	//2nd Marking Allocation
+	public String searchMarkingAllocation2Region = "cmddlRegion-DoubleMarking";
+	
+	public String searchMarkingAllocation2TestDateYear = "cmDoubleMarking-Select-Year-Search";
+	
+	public String searchMarkingAllocation2TestDateMonth = "cmDoubleMarking-Select-Month-Search";
+	
+	public String searchMarkingAllocation2TestDate = "cmddlTestDate-DoubleMarking";
+	
+	public String get2ndMAOptionList = "function getOptionList() {\r\n" + 
+			"  var string = '';\r\n" + 
+			"  $('#cmddlTestDate-DoubleMarking option').each(function () {\r\n" + 
+			"    var text = $(this).text(); \r\n" + 
+			"    var value = $(this).val(); \r\n" + 
+			"    if ($(this).attr('style') == 'color:red')\r\n" + 
+			"    string += value + ';';\r\n" + 
+			"  });\r\n" + 
+			"  return string.substring(0, string.length);\r\n" + 
+			"}\r\n" + 
+			"return getOptionList();";
+	
+	public String selectall2ndMATC = "ckb-SelectAll-AvailableMarkers-List-clericalmarkerDoublemarkingallocation";
+	
+	public String searchMarkingAllocation2Button = "cmbtnQuery-DoubleMarking";
 
+	public String markingAllocation2Calculate = "Calcuator-clericalmarkerDoublemarkingallocation";
+
+	public String markingAllocation2SetCapacity = ".//*[@id='AvailableMarkersListCalcuatorclericalmarkerDoublemarkingallocationGrid']/div[2]/table/tbody/tr[1]/td[8]/input";
+	
+	public String markingAllocation2SelectMarkerText = "txt-Set-Capacity-AvailableMarkersListCalcuatorclericalmarkerDoublemarkingallocationGrid";
+	
+	public String listOf2ndMarkerNoText = ".//*[@id='AvailableMarkersListCalcuatorclericalmarkerDoublemarkingallocationGrid']/div[2]/table/tbody/tr[1]/td[2]";
+	
+	//2nd Marking Allocation
+	public String ListOf2ndMarkerNoWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOf2ndMarkerNoText)).getText();
+	}
+	
+	public void inputMarkingAllocation2SelectMarker() {
+		WaitElementVisible(driver, By.id(markingAllocation2SelectMarkerText)).clear();
+		WaitElementVisible(driver, By.id(markingAllocation2SelectMarkerText)).sendKeys("100");
+	}
+	
+	public void MarkingAllocation2SetCapacity() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(markingAllocation2SetCapacity)).click();
+	}
+	
+	public void MarkingAllocation2Calculate() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(markingAllocation2Calculate)).click();
+	}
+	
+	public void Selectall2ndMATC() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(selectall2ndMATC)).click();
+	}
+	
+	public void SearchMarkingAllocation2() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(searchMarkingAllocation2Button)).click();
+	}
+	
+	public String Get2ndMAOptionList() {
+		Wait(normalTime);
+		String redTestDate = null;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String getMAOptionList = (String)js.executeScript(get2ndMAOptionList);
+		String[] maOptionList = getMAOptionList.split(";");
+		redTestDate = maOptionList[0];
+		return redTestDate;
+	}
+	
+	public void SearchMarkingAllocation2Region() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation2Region)));
+		dropList.selectByValue("2");
+	} 
+	
+	public void SearchMarkingAllocation2TestDateYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation2TestDateYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	} 
+	
+	public void SearchMarkingAllocation2TestDateMonth() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation2TestDateMonth)));
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
+	} 
+	
+	public void SearchMarkingAllocation2TestDate() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation2TestDate)));
+		dropList.selectByValue(Get2ndMAOptionList());
+	} 
+		
+	//1st Marking Allocation
+	public void InputMarkingAllocation1NewSetCapacity() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(markingAllocation1NewSetCapacityText)).clear();
+		WaitElementVisible(driver, By.id(markingAllocation1NewSetCapacityText)).sendKeys("100");
+	}
+	
+	public void MarkingAllocation1SetCapacity() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(markingAllocation1SetCapacity)).click();
+	}
+	
+	public String ListOfMarkerNoWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOfMarkerNoText)).getText();
+	}
+	
+	public void MarkingAllocation1Calculate() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(markingAllocation1Calculate)).click();
+	}
+	
+	public String MarkingAllocation1AvailableMarker() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.id(searchMarkingAllocation1AvailableMarkerText)).getText();
+	}
+	
+	public void inputMarkingAllocation1SelectMarker() {
+		WaitElementVisible(driver, By.id(markingAllocation1SelectMarkerText)).clear();
+		WaitElementVisible(driver, By.id(markingAllocation1SelectMarkerText)).sendKeys(MarkingAllocation1AvailableMarker());
+	}
+	
+	public void SearchMarkingAllocation1() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(searchMarkingAllocation1Button)).click();
+	}
+	
+	public void Selectall1stMATC() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(selectall1stMATC)).click();
+	}
+	
+	public String Get1stMAOptionList() {
+		Wait(normalTime);
+		String redTestDate = null;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String getMAOptionList = (String)js.executeScript(get1stMAOptionList);
+		String[] maOptionList = getMAOptionList.split(";");
+		redTestDate = maOptionList[0];
+		return redTestDate;
+	}
+	
+	
+	public void SearchMarkingAllocation1Region() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation1Region)));
+		dropList.selectByValue("2");
+	} 
+	
+	public void SearchMarkingAllocation1TestDateYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation1TestDateYear)));
+		dropList.selectByValue(dv.getCurrentYear());
+	} 
+	
+	public void SearchMarkingAllocation1TestDateMonth() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation1TestDateMonth)));
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) - 1);
+	} 
+	
+	public void SearchMarkingAllocation1TestDate() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation1TestDate)));
+		dropList.selectByValue(Get1stMAOptionList());
+	} 
+	
+	
 	//Clerical Marker Task
 	public void CreateCMTask2SelectTestDateYear() {
 		Wait(normalTime);

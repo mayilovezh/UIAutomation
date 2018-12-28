@@ -1,106 +1,44 @@
 package com.selenium.test.clericalmarker;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.WebDriverAction;
-
-public class FirstMarkingAllocation {
-	static WebDriver driver;
-	WebDriverAction action;
-	String name = "Du Jingfen";
-
-	@BeforeMethod
-	public void setUp() throws Exception {
-		driver = new DriverInstance().login(driver);
-		action = new WebDriverAction(driver);
+public class FirstMarkingAllocation{
+	ClericalMarkerElements cme = new ClericalMarkerElements();
+	
+	@BeforeClass
+	public void setUp(){
+		cme.OpenBrower("ClericalMarker", 3);
 	}
 
-	@AfterMethod
-	public void close() {
-		new DriverInstance().teardown(driver);
-	}
-
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.CLERICAL_MARKER));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.FIRST_ALLOCATION));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByIndex(By.id(ElementHelper.FIRST_ALLOCATION_MONTH), 4);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.FIRST_ALLOCATION_DATE), "10215");
-		Thread.sleep(ElementHelper.LONG_TIME);
+	@AfterClass
+	public void Close() {
+		cme.Close();
 	}
 
 	@Test
-	public void step01_ToResultPage() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.FIRST_ALLOCATION_RESULT_PAGE_NAME)), name);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
+	public void step01_Calculate(){
+		cme.SearchMarkingAllocation1Region();
+		cme.SearchMarkingAllocation1TestDateYear();
+		cme.SearchMarkingAllocation1TestDateMonth();
+		cme.SearchMarkingAllocation1TestDate();
+		cme.Selectall1stMATC();
+		cme.SearchMarkingAllocation1();
+		cme.ShortWaitTime();
+		cme.inputMarkingAllocation1SelectMarker();
+		cme.MarkingAllocation1Calculate();
+		cme.WaitTime();
+		Assert.assertEquals(cme.ListOfMarkerNoWarning(), cme.ListOfMarkerNoWarning());
 	}
-
+	
 	@Test
-	public void step02_Notice() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_NOTICE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_NOTICE_ADD_PLACEHOLDER));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.FIRST_ALLOCATION_NOTICE_TEXT), ElementHelper.REMARK_VALUE);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
+	public void step02_SetCapacity(){
+		cme.MarkingAllocation1SetCapacity();
+		cme.InputMarkingAllocation1NewSetCapacity();
+		cme.ModifyFirstClick();
+		cme.ShortWaitTime();
 	}
-
-	@Test
-	public void step03_DeleteNotice() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_NOTICE_DELETE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.LONG_TIME);
-	}
-
-	@Test
-	public void step04_ExportAllocationResult() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_ALLOCATION_RESULT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.LONG_TIME);
-	}
-
-	@Test
-	public void step05_ExportRegisterResult() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_REGISTER_RESULT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.LONG_TIME);
-	}
-
-	@Test
-	public void step06_ExportFinanceReport() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.FIRST_ALLOCATION_EXPORT_FINANCE_REPORT));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		Alert confirm = driver.switchTo().alert();
-		confirm.accept();
-		Thread.sleep(ElementHelper.LONG_TIME);
-	}
+	
 }

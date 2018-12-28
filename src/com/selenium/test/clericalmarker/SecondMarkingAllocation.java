@@ -1,95 +1,43 @@
 package com.selenium.test.clericalmarker;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.WebDriverAction;
-
-public class SecondMarkingAllocation {
-	static WebDriver driver;
-	WebDriverAction action;
-	String name = "Du Jingfen";
-
-	@BeforeMethod
-	public void setUp() throws Exception {
-		driver = new DriverInstance().login(driver);
-		action = new WebDriverAction(driver);
-	}
-
-	@AfterMethod
-	public void close() {
-		new DriverInstance().teardown(driver);
-	}
-
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.CLERICAL_MARKER));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.SECOND_ALLOCATION));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		action.selectByIndex(By.id(ElementHelper.SECOND_ALLOCATION_MONTH), 4);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.selectByValue(By.id(ElementHelper.SECOND_ALLOCATION_DATE), "10215");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME);
-	}
-
-	@Test
-	public void step01_ToResultPage() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_RESULT_PAGE));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.SECOND_ALLOCATION_RESULT_PAGE_NAME)), name);
-	    Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-	}
-
-	@Test
-	public void step02_Notice() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_NOTICE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_NOTICE_ADD_PLACEHOLDER));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.SECOND_ALLOCATION_NOTICE_TEXT), ElementHelper.REMARK_VALUE);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.xpath(ElementHelper.SAVE));
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-	}
-
-	@Test
-	public void step03_DeleteNotice() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_DELETE_NOTICE));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-	}
+public class SecondMarkingAllocation{
+	ClericalMarkerElements cme = new ClericalMarkerElements();
 	
-	@Test
-	public void step04_ExportAllocationResult() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_RESULT));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	@BeforeClass
+	public void setUp(){
+		cme.OpenBrower("ClericalMarker", 5);
 	}
+
+	@AfterClass
+	public void Close() {
+		cme.Close();
+	}
+
+	@Test
+	public void step01_Calculate(){
+		cme.SearchMarkingAllocation2Region();
+		cme.SearchMarkingAllocation2TestDateYear();
+		cme.SearchMarkingAllocation2TestDateMonth();
+		cme.SearchMarkingAllocation2TestDate();
+		cme.SearchMarkingAllocation2();
+		cme.ShortWaitTime();
+		cme.Selectall2ndMATC();
+		cme.MarkingAllocation2Calculate();
+		cme.ShortWaitTime();
+		Assert.assertEquals(cme.ListOf2ndMarkerNoWarning(), cme.ListOf2ndMarkerNoWarning());
+	}
+
+	@Test
+	public void step02_SetCapacity(){	
+		cme.MarkingAllocation2SetCapacity();
+		cme.inputMarkingAllocation2SelectMarker();
+		cme.ModifyFirstClick();
+
+	}	
 	
-	@Test
-	public void step05_ExportRegisterResult() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_REGISTER_RESULT));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
-	
-	@Test
-	public void step06_ExportFinanceReport() throws Exception {
-		navigate();
-		action.click(By.id(ElementHelper.SECOND_ALLOCATION_EXPORT_FINANCE_REPORT));
-		Thread.sleep(ElementHelper.WAIT_TIME);
-	}
 }

@@ -707,20 +707,5 @@ public class ClericalMarkerElements extends Mis2Brower{
 		Wait(normalTime);
 		fc.ModifySecondClick(driver);
 	}	
-	/*
-	public void ModifyOnceFirstClick() {
-		Wait(normalTime);
-		fc.ModifyOnceFirstClick(driver);
-	}	
-	
-	public void ModifyInputSecondClick() {
-		Wait(normalTime);
-		fc.ModifyInputSecondClick(driver);
-	}
-	
-	public void ModifyInputFirstClick() {
-		Wait(normalTime);
-		fc.ModifyInputFirstClick(driver);
-	}
-	 */
+
 }

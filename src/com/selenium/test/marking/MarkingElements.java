@@ -87,7 +87,7 @@ public class MarkingElements extends Mis2Brower{
 	
 	public String getDoubleMarkingAvailableExaminerText = "spanAvailableExaminer-db";
 	
-	public String inputDoubleMarkingtxtSelectExaminerNumText = "txtSelectExaminerNum-db";
+	public String inputDoubleMarkingSelectExaminerNumText = "txtSelectExaminerNum-db";
 	
 	public String doubleMarkingCalculateButton = "btnCalculate-db";
 	
@@ -100,6 +100,159 @@ public class MarkingElements extends Mis2Brower{
 	public String doubleMarkingTestCenter = "SearchSpanTestCenterDoubleMarkingSelectAll";
 	
 	public String doubleMarkingAutoAllocation = "btnAutoAllocation-db";
+	
+	//Double Marking OSM
+	public String searchDoubleMarkingOSMTestDateYear = "ddlYear_DoubleMarkingNew";
+	
+	public String searchDoubleMarkingOSMTestDateMonth = "ddlMonth_DoubleMarkingNew";
+	
+	public String searchDoubleMarkingOSMTestDate = "ddlTestDate_DoubleMarkingNew";
+	
+	public String getSearchAllDoubleMarkingOSMTestCenter = ".//*[@id='spanTestCenter_DoubleMarkingNew']/label";
+	
+	public String doubleMarkingOSMClearAllocation = "btnClearAllocation_DoubleMarkingNew";
+	
+	public String searchDoubleMarkingOSM = "btnQuery_DoubleMarkingNew";
+	
+	public String getDoubleMarkingOSMAvailableExaminerText = "spanAvailableExaminer_DoubleMarkingNew";
+	
+	public String inputDoubleMarkingOSMSelectExaminerNumText = "txtSelectExaminerNum_DoubleMarkingNew";
+	
+	public String doubleMarkingOSMCalculateButton = "btnCalculate_DoubleMarkingNew";
+	
+	public String listOfDoubleMarkingOSMText = ".//*[@id='DoubleMarkingNewExaminerListGrid']/div[2]/table/tbody/tr[1]/td[3]";
+	
+	public String doubleMarkingOSMSetCapacityButton = ".//*[@id='DoubleMarkingNewExaminerListGrid']/div[2]/table/tbody/tr[1]/td[16]/a";
+	
+	public String doubleMarkingOSMNewCapacityNumberText = "txtnewcapacity_DoubleMarkingNew";
+
+	public String doubleMarkingOSMTestCenter = "chkTestCenterAll_DoubleMarkingNew";
+	
+	public String doubleMarkingOSMAutoAllocation = "btnAutoAllocation_DoubleMarkingNew";
+	
+	//Double Marking OSM
+	public void AutoAllocationDoubleMarkingOSM() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(doubleMarkingOSMAutoAllocation)).click();
+	}
+	
+	public void DoubleMarkingOSMTestCenter() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(doubleMarkingOSMTestCenter)).click();
+	}
+	
+	public boolean IsSelectDoubleMarkingOSMTestCenter() {
+		Wait(normalTime);
+		boolean isTrue = WaitElementVisible(driver, By.id(doubleMarkingOSMTestCenter)).isSelected();
+		return isTrue;
+	}
+	
+	public void ClearAllocationDoubleMarkingOSM() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(doubleMarkingOSMClearAllocation)).click();
+	}
+	
+	public void inputDoubleMarkingOSMNewCapacityNumber() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(doubleMarkingOSMNewCapacityNumberText)).clear();
+		WaitElementVisible(driver, By.id(doubleMarkingOSMNewCapacityNumberText)).sendKeys(mi.doubleMarkingNewCapacityNumber);
+	}
+	
+	public void DoubleMarkingOSMSetCapacityClick() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(doubleMarkingOSMSetCapacityButton)).click();
+	}
+	
+	public String ListOfDoubleMarkingOSMWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOfDoubleMarkingOSMText)).getText();
+	}
+	
+	public void DoubleMarkingOSMCalculate() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(doubleMarkingOSMCalculateButton)).click();
+	}
+	
+	public String GetDoubleMarkingOSMAvailableExaminerText() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.id(getDoubleMarkingOSMAvailableExaminerText)).getText();
+	}
+	
+	public void InputDoubleMarkingOSMSelectExaminerNum() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(inputDoubleMarkingOSMSelectExaminerNumText)).clear();
+		WaitElementVisible(driver, By.id(inputDoubleMarkingOSMSelectExaminerNumText)).sendKeys(GetDoubleMarkingOSMAvailableExaminerText());
+	}
+	
+	public void SearchDoubleMarkingOSM() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(searchDoubleMarkingOSM)).click();
+	}
+		
+	public void GetDoubleMarkingOSMGreenTestCenter() {
+		String allTcLocation = null;
+		OUT:
+		for(int i = 0; i<GetDoubleMarkingOSMMonthLength(); i++) {
+			Wait(normalTime);
+			Select dropList = new Select(WaitElementVisible(driver, By.id(searchDoubleMarkingOSMTestDateMonth)));
+			dropList.selectByIndex(i);
+			for(int j = 0; j<GetDoubleMarkingOSMTestDateList().length; j++) {
+				Select dropTestDateList = new Select(WaitElementVisible(driver, By.id(searchDoubleMarkingOSMTestDate)));
+				dropTestDateList.selectByValue(GetDoubleMarkingOSMTestDateList()[j]);
+				Wait(normalTime);
+				int tcLength =  driver.findElements(By.xpath(getSearchAllDoubleMarkingOSMTestCenter)).size();
+				for(int k = 0; k<tcLength; k++) {
+					String tcStyle = driver.findElement(By.xpath(".//*[@id='spanTestCenter_DoubleMarkingNew']/label["+(k+1)+"]")).getAttribute("style");
+					if(tcStyle.equals("color: green;")) {
+						allTcLocation = "chkTestCenterAll_DoubleMarkingNew";
+						driver.findElement(By.id(allTcLocation)).click();
+						break OUT;
+					}else {
+						continue;
+					}
+				}
+			}
+		}
+	}
+	public String getDoubleMarkingOSMTestDateRedOptionList = "function getOptionList() {\r\n" + 
+			"  var string = '';\r\n" + 
+			"  $('#ddlTestDate_DoubleMarkingNew option').each(function () {\r\n" + 
+			"    var value = $(this).val(); \r\n" + 
+			"    if ($(this).attr('style') == 'color:red')\r\n" + 
+			"    string += value + ';';\r\n" + 
+			"  });\r\n" + 
+			"  return string.substring(0, string.length);\r\n" + 
+			"}\r\n" + 
+			"return getOptionList();";
+	
+	public String getDoubleMarkingOSMMonthLength = "function getMonthLength() {\r\n" + 
+			"  var monthLength = document.getElementById('ddlMonth_DoubleMarkingNew').children.length\r\n" + 
+			"  return monthLength\r\n" + 
+			"}\r\n" + 
+			"return getMonthLength()\r\n" + 
+			"";
+	
+	public String[] GetDoubleMarkingOSMTestDateList() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String getTestDateList = (String)js.executeScript(getDoubleMarkingOSMTestDateRedOptionList);
+		String[] testDateOptionList = getTestDateList.split(";");
+		return testDateOptionList;
+	}
+	
+	public void SearchDoubleMarkingOSMYear() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(searchDoubleMarkingOSMTestDateYear)));
+		dropList.selectByValue(String.valueOf(Integer.parseInt(dv.getCurrentYear()) - 1));//dv.getCurrentYear()
+	}
+	
+	public int GetDoubleMarkingOSMMonthLength() {
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Long getFMNMonthLength = (Long)js.executeScript(getDoubleMarkingOSMMonthLength);
+		Integer monthLength= new Integer(String.valueOf(getFMNMonthLength));
+		return monthLength;
+	}
 	
 	//Double Marking
 	public void AutoAllocationDoubleMarking() {
@@ -151,8 +304,8 @@ public class MarkingElements extends Mis2Brower{
 	
 	public void InputDoubleMarkingtxtSelectExaminerNum() {
 		Wait(normalTime);
-		WaitElementVisible(driver, By.id(inputDoubleMarkingtxtSelectExaminerNumText)).clear();
-		WaitElementVisible(driver, By.id(inputDoubleMarkingtxtSelectExaminerNumText)).sendKeys(GetDoubleMarkingAvailableExaminerText());
+		WaitElementVisible(driver, By.id(inputDoubleMarkingSelectExaminerNumText)).clear();
+		WaitElementVisible(driver, By.id(inputDoubleMarkingSelectExaminerNumText)).sendKeys(GetDoubleMarkingAvailableExaminerText());
 	}
 	
 	public void SearchDoubleMarking() {

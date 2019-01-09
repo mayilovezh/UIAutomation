@@ -9,6 +9,33 @@ public class FirstClick{
 		
 	Mis2Brower m2b = new Mis2Brower();
 	
+	public int MessageSaveButtonLength(WebDriver driver) {
+		m2b.Wait(m2b.normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Long i = (Long)js.executeScript("function MessageFirstButtonLength() {\r\n" + 
+				"  var divLength = document.getElementsByClassName('ui-dialog-buttonpane ui-widget-content ui-helper-clearfix').length\r\n" + 
+				"  return divLength\r\n" + 
+				"}\r\n" + 
+				"return MessageFirstButtonLength()\r\n" + 
+				"");
+		Integer messageFirstButtonLength= new Integer(String.valueOf(i));
+		return messageFirstButtonLength;
+	}
+	
+	public void MessageSaveClick(WebDriver driver) {
+		m2b.Wait(m2b.normalTime);
+		for(int i =MessageSaveButtonLength(driver); i>0; i--) {
+			try {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("document.getElementsByClassName('ui-dialog-buttonpane ui-widget-content ui-helper-clearfix').item("+(i-1)+").getElementsByTagName('div').item(0).getElementsByTagName('button').item(0).click()");
+			}catch(ElementNotVisibleException e) {
+				continue;
+			}catch(NoSuchElementException e) {
+				continue;
+			}
+		}
+	}
+	
 	public void ModifyInputFirstClick(WebDriver driver) {
 		m2b.Wait(m2b.normalTime);
 		String warningDisplayStyle = driver.findElement(By.xpath("//div[@class='ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-dialog-buttons']")).getAttribute("style");

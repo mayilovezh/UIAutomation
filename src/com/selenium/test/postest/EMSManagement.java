@@ -1,33 +1,54 @@
 package com.selenium.test.postest;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.WebDriverAction;
-
-public class EMSManagement {
-	static WebDriver driver;
-	WebDriverAction action;
-	@BeforeMethod
-	public void setUp() throws Exception {
-		driver = new DriverInstance().loginEast(driver);
-		action = new WebDriverAction(driver);
+public class EMSManagement{
+	PostTestElements pte = new PostTestElements();
+	PostTestInput pti = new PostTestInput();
+	
+	@BeforeClass
+	public void setUp(){
+		pte.OpenBrower("PostTest", 2);
 	}
 
-	@AfterMethod
-	public void close() {
-		new DriverInstance().teardown(driver);
+	@AfterClass
+	public void Close() {
+		pte.Close();
 	}
 
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.POST_TEST));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.EMS_MANAGEMENT));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	@Test
+	public void step01_Reset(){
+		pte.ResetEMSManagement();
+		Assert.assertEquals(pte.ListOfEMSNotDataWarning(), pte.ListOfEMSNotDataWarning());
 	}
+
+	@Test
+	public void step02_Search(){
+		pte.EMSManagementTestDateYear();
+		pte.InitSelectTRFReturnCompleted();
+		pte.GetEMSListOfContent();
+		Assert.assertEquals(pte.ListOfEMSDataWarning(), pte.ListOfEMSDataWarning());
+	}
+
+	@Test
+	public void step03_View(){
+		pte.ListOfEMSManagementDetails();
+		Assert.assertEquals(pte.ViewOfFamilyNameWarning(), pte.ViewOfFamilyNameWarning());
+		pte.ModifySaveClick();
+		pte.ShortWaitTime();
+	}
+
+	@Test
+	public void step04_Modify(){
+		pte.ListOfEMSManagementModify();
+		pte.inputEMSManagementEMSNO();
+		pte.ModifySaveClick();
+		pte.ShortWaitTime();
+	}
+	
+	
+	
 }

@@ -45,7 +45,7 @@
 		<testng outputdir="test-output" classpathref="test.classpath" delegateCommandSystemProperties="true"
 				useDefaultListeners="true" haltOnfailure="false" outputDir="test-output">
 			<xmlfileset dir=".">
-				<include name="SpeakArrange.xml" />
+				<include name="tdoltask.xml" />
 			</xmlfileset>
 		</testng>
 	</target>

@@ -52,6 +52,26 @@ public class DynamicVariables {
 	
 	public String SqlGetClericalMarkerStatus = "select * from TB_Dictionary where [Values] = 'Active' and Table_mark = 'ClericalMarkerStatus'";
 	
+    public String GetFormatFirstDayOfThisMonth(){
+        SimpleDateFormat sdformat = new SimpleDateFormat("dd/MM/yyyy"); 
+        //获取当前月最后一天
+        Calendar ca = Calendar.getInstance();    
+        ca.set(Calendar.DAY_OF_MONTH, ca.getActualMinimum(Calendar.DAY_OF_MONTH));  
+        String firstDay = sdformat.format(ca.getTime());
+        return firstDay;
+     }    
+
+
+
+    public String GetFormatLastDayOfThisMonth(){
+       SimpleDateFormat sdformat = new SimpleDateFormat("dd/MM/yyyy"); 
+       //获取当前月最后一天
+       Calendar ca = Calendar.getInstance();    
+       ca.set(Calendar.DAY_OF_MONTH, ca.getActualMaximum(Calendar.DAY_OF_MONTH));  
+       String lastDay = sdformat.format(ca.getTime());
+       return lastDay;
+    }
+
 	public String Get2ndMarker() {
 		SqlReader sr = null;
 		String StockTypeId = null;

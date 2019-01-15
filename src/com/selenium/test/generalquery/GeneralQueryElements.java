@@ -76,7 +76,7 @@ public class GeneralQueryElements extends Mis2Brower{
     public void SearchRegistrationsNumberListTC() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(RUL_TC)));
-		dropList.selectByValue("100229");//dv.GetCZCZUValueOfCenterId()
+		dropList.selectByValue(dv.GetCZCZUValueOfCenterId());
     }
     
     public void SearchRegistrationsNumberListDateFrom() {

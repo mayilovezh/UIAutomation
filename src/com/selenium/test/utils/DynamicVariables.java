@@ -12,7 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class DynamicVariables {
 	
-	public String SqlCZCZUValueOfCenterId = "select * from tblTestCenter where CenterName = '常州大学'";
+	public String SqlCZCZUValueOfCenterId = "select top 1* from tblTestCenter where CenterName = '常州大学'";
 	
 	public String SqlSecondValueOfBuilding = "select * from tblTestCenterBuilding where BuildingNameEn = 'No.10 Huixin dongjie, Chaoyang district, Beijing'";
 	

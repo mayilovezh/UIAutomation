@@ -1,66 +1,44 @@
 package com.selenium.test.generalquery;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import com.selenium.test.utils.DriverInstance;
-import com.selenium.test.utils.ElementHelper;
-import com.selenium.test.utils.ExcelReader;
-import com.selenium.test.utils.WebDriverAction;
+import com.selenium.test.utils.DynamicVariables;
 
 public class RegistrationNumberList {
-	static WebDriver driver;
-	WebDriverAction action;
-	ExcelReader reader = new ExcelReader(".\\resource\\generalquery\\registration.xlsx");
-    String quota = "400";
-    String totalRegistered = "0";
-    String totalQuota = "1201";
+	GeneralQueryElements gqe = new GeneralQueryElements();
+	GeneralQueryInputData gqi = new GeneralQueryInputData();
+	DynamicVariables dv = new DynamicVariables();
 	
-	@BeforeMethod
-	public void setUp() throws Exception {
-		driver = new DriverInstance().login(driver);
-		action = new WebDriverAction(driver);
+	@BeforeClass
+	public void setUp(){
+		gqe.OpenBrower("GeneralQuery", 1);
 	}
 
-	@AfterMethod
-	public void close() {
-		new DriverInstance().teardown(driver);
-	}
-
-	public void navigate() throws Exception {
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.id(ElementHelper.GENERAL_QUERY));
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.click(By.xpath(ElementHelper.REGISTRATION_NUMBER_LIST));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	@AfterClass
+	public void Close(){
+		gqe.Close();
 	}
 
 	@Test
-	public void search() throws Exception {
-		navigate();
-		action.selectByValue(By.id(ElementHelper.RUL_REGION), ElementHelper.REGION_VALUE);
-		Thread.sleep(ElementHelper.SHORT_TIME);
-		action.selectByValue(By.id(ElementHelper.RUL_TC), ElementHelper.TC_BFSU);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.sendkeys(By.id(ElementHelper.RUL_DATE_FROM), "2018-06-01");
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.RUL_SEARCH));
-		Thread.sleep(ElementHelper.LONG_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA106)),"401");
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA113)),quota);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_MIS_QUOTA118)),quota);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_TOTAL_REGISTERED)),totalRegistered);
-		Thread.sleep(ElementHelper.SHORT_TIME_A);
-		Assert.assertEquals(action.getText(By.xpath(ElementHelper.RUL_TOTAL_QUOTA)),totalQuota);
-		Thread.sleep(ElementHelper.SHORT_TIME_B);
-		action.click(By.id(ElementHelper.RUL_EXPORT_REGISTRATION_NUMBER));
-		Thread.sleep(ElementHelper.WAIT_TIME);
+	public void step01_Search(){
+		try {
+			gqe.SearchRegistrationsNumberListRegion();
+			gqe.SearchRegistrationsNumberListTC();
+			gqe.SearchRegistrationsNumberListDateFrom();
+			gqe.SearchRegistrationsNumberListDateTo();
+			gqe.SearchRegistrationsNumberList();
+			Assert.assertEquals(gqe.RUL_ListOfRegistrationsNumberListViewWarning(), gqe.RUL_ListOfRegistrationsNumberListViewWarning());
+		}catch(NoSuchElementException e) {
+			System.out.println(e.getMessage());
+			System.out.println("There is not data......");
+		}catch(TimeoutException e) {
+			System.out.println(e.getMessage());
+			System.out.println("There is not data......");
+		}
 	}
+
 }

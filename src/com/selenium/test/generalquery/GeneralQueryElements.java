@@ -53,6 +53,49 @@ public class GeneralQueryElements extends Mis2Brower{
     public String KeyDatesViewSearchButton = "KeyDates_Search_view";
     public String listOfKeyDatesViewText = ".//*[@id='SpreadSheetRoGetKeyDatesGrid_view']/div[2]/table/tbody/tr[1]/td[1]";
 
+    //Registrations Number List
+    public String RUL_REGION = "generalQuerySelectRegion";
+    public String RUL_TC = "generalQuerySelectCenter";
+    public String RUL_DATE_FROM = "txtRegStartDate-RegNum";
+    public String RUL_DATE_TO = "txtRegEndDate-RegNum";
+    public String RUL_SEARCH = "btnRegistrationsNumberSearch";
+    public String RUL_ListOfRegistrationsNumberListViewText = ".//*[@id='spreadsheet-registrations-numberlist']/div[2]/table/tbody/tr[1]/td[2]";
+
+    //Registrations Number List
+    public String RUL_ListOfRegistrationsNumberListViewWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(RUL_ListOfRegistrationsNumberListViewText)).getText();
+    }
+    
+    public void SearchRegistrationsNumberListRegion() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(RUL_REGION)));
+		dropList.selectByValue("2");
+    }
+    
+    public void SearchRegistrationsNumberListTC() {
+		Wait(normalTime);
+		Select dropList = new Select(WaitElementVisible(driver, By.id(RUL_TC)));
+		dropList.selectByValue("100229");//dv.GetCZCZUValueOfCenterId()
+    }
+    
+    public void SearchRegistrationsNumberListDateFrom() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(RUL_DATE_FROM)).clear();
+		WaitElementVisible(driver, By.id(RUL_DATE_FROM)).sendKeys(dv.GetFirstDayOfThisMonth());
+    }
+    
+    public void SearchRegistrationsNumberListDateTo() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(RUL_DATE_TO)).clear();
+		WaitElementVisible(driver, By.id(RUL_DATE_TO)).sendKeys(dv.GetLastDayOfThisMonth());
+    }
+    
+    public void SearchRegistrationsNumberList() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(RUL_SEARCH)).click();
+	}
+    
     //Key Dates Views
     public String ListOfKeyDatesViewsWarning() {
 		Wait(normalTime);

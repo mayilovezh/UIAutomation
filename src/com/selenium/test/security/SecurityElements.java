@@ -9,6 +9,7 @@ import java.util.List;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class SecurityElements extends Mis2Brower{
 	
@@ -56,6 +57,150 @@ public class SecurityElements extends Mis2Brower{
 	public String selectCheckSuspiciousAddSuspiciousReason = "ddlSecurityReason-addsuspicious";
 	
 	public String inputCheckSuspiciousAddRemark = "txtRemark-addsuspicious";
+	
+	//Suspicious List
+	public String getSuspiciousListLength = "function getSuspiciousLevelLength() {\r\n" + 
+			"  var levelLength = document.getElementsByName('checkSuspiciousLevel').length;\r\n" + 
+			"  return levelLength\r\n" + 
+			"}\r\n" + 
+			"return getSuspiciousLevelLength()\r\n" + 
+			"";
+	
+	public String suspiciousListUpdateButton = ".//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr[1]/td[20]/input[1]";
+	
+	public String suspiciousListViewLogButton = ".//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr[1]/td[20]/input[2]";
+	
+	public String suspiciousListSearchButton = "btnSuspiciousQuery";
+	
+	public String inputSuspiciousListRemark = "areaSuspiciousRemark";
+
+	public String suspiciousListViewLogText = ".//*[@id='suspicious-modifylog-table']/tbody/tr/td[2]";
+	
+	public String listOfSuspiciousListText = ".//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr[1]/td[2]";
+	
+	public String suspiciousListResetButton = "btnSuspiousReset";
+	
+	public String resetListOfSuspiciousListWarning = ".//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr/td";
+	
+	public String suspiciousListViewButton = ".//*[@id='girdSuspicious_candidateList']/div[2]/table/tbody/tr[1]/td[10]/a";
+	
+	public String suspiciousListViewText = ".//*[@id='chinaAppList']/tbody/tr[2]/td";
+	
+	//Suspicious List
+	public String SuspiciousListViewWarning() {
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(suspiciousListViewText)).getText();
+	}
+	
+	public void ViewSuspiciousList() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(suspiciousListViewButton)).click();
+	}
+	
+	public String ResetListOfSuspiciousListWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(resetListOfSuspiciousListWarning)).getText();
+	}
+	
+	public void ResetSuspiciousList() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(suspiciousListResetButton)).click();
+	}
+	
+	public String ListOfSuspiciousListWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(listOfSuspiciousListText)).getText();
+	}
+	
+	public String SuspiciousListViewLogWarning() {
+		Wait(normalTime);
+		return WaitElementVisible(driver, By.xpath(suspiciousListViewLogText)).getText();
+	}
+	
+	public void ViewLogSuspiciousList() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(suspiciousListViewLogButton)).click();
+	}
+	
+	public void InputSuspiciousListRemark() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(inputSuspiciousListRemark)).clear();
+		WaitElementVisible(driver, By.id(inputSuspiciousListRemark)).sendKeys(si.ModifySuspiciousCandidateRemarkText);
+	}
+	
+	public void WindowsAlertConfirm() {
+		Wait(normalTime);
+		driver.switchTo().alert().accept();
+	}
+	
+	public void UpdateSuspiciousList() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(suspiciousListUpdateButton)).click();
+	}
+	
+	public void SearchSuspiciousList() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.id(suspiciousListSearchButton)).click();
+	}
+	
+	public int GetSuspiciousLevelLength() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Long i = (Long)js.executeScript(getSuspiciousListLength);
+		Integer suspiciousLevelLength = new Integer(String.valueOf(i));
+		return suspiciousLevelLength;
+	}
+	
+	public void ClickSuspiciousListUpdateView(int i) {
+		SearchSuspiciousList();
+		Wait(6000);
+		UpdateSuspiciousList();
+		WindowsAlertConfirm();
+		InputSuspiciousListRemark();
+		Wait(normalTime);
+		ModifySaveClick();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		ViewLogSuspiciousList();
+		Wait(normalTime);
+		Assert.assertEquals(SuspiciousListViewLogWarning(), SuspiciousListViewLogWarning());
+		ModifySaveClick();
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		Wait(normalTime);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.getElementsByName('checkSuspiciousLevel').item("+i+").click()");
+		
+	}
+	
+	
+	public void InitSuspiciousListSelect() {
+		for(int i =0; i<GetSuspiciousLevelLength(); i++) {
+			boolean isSeleted = WaitElementVisible(driver, By.xpath(".//*[@id='span-suspiciousLevel']/label["+(i+1)+"]/input")).isSelected();
+			if(isSeleted) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("document.getElementsByName('checkSuspiciousLevel').item("+i+").click()");
+			}
+		}
+	}
+	
+	public void SelectSuspiciousListUpdateView() {
+		for(int i =0; i<GetSuspiciousLevelLength(); i++) {
+			boolean isSeleted = WaitElementVisible(driver, By.xpath(".//*[@id='span-suspiciousLevel']/label["+(i+1)+"]/input")).isSelected();
+			if(isSeleted==false) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("document.getElementsByName('checkSuspiciousLevel').item("+i+").click()");
+				ClickSuspiciousListUpdateView(i);
+				continue;
+			}
+		}
+	}
+	
+	
 	
 	//Check Suspicious
 	public void InputCheckSuspiciousAddRemark() {

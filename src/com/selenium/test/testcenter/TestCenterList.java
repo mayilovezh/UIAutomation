@@ -41,6 +41,7 @@ public class TestCenterList {
 		ce.InputCreateCenterSuperPhone(ci.superPhone);
 		ce.InputCreateCenterPostCode(ci.postCode);
 		ce.ModifyFirstClick();
+		ce.WaitTime();
 	}
 
 	@Test(description = "Search the TestCenter of UIBE")

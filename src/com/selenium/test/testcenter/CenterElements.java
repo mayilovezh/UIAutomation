@@ -200,7 +200,9 @@ public class CenterElements extends Mis2Brower{
 	
 	public String searchTestSessionTestDateMonth = "ddlMonth-testsession";
 	
-	public String searchTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+dv.GetLastTestDayId()+"']";
+	public String searchTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+dv.GetTestDayId()+"']";
+	
+	public String searchLastTestSessionTestDate = ".//*[@id='selectTestDateSearch']//option[@value='"+dv.GetLastTestDayId()+"']";
 	
 	public String searchTestSessionButton = "btntestsessionlistSearch";
 	
@@ -597,6 +599,11 @@ public class CenterElements extends Mis2Brower{
 	public void SelectSearchTestSessionTestDate() {
 		Wait(normalTime);
 		WaitElementVisible(driver, By.xpath(searchTestSessionTestDate)).click();
+	}
+	
+	public void SelectSearchLastTestSessionTestDate() {
+		Wait(normalTime);
+		WaitElementVisible(driver, By.xpath(searchLastTestSessionTestDate)).click();
 	}
 	
 	public void SelectSearchTestSessionTestCenter() {

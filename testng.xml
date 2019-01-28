@@ -13,16 +13,10 @@
 			<class name="com.selenium.test.testcenter.TestBuildingList" />
 			<class name="com.selenium.test.testcenter.TestRoomList" />
 			<class name="com.selenium.test.testcenter.TestDateList" />
-	   		<class name="com.selenium.test.testcenter.TestSessionList" >
-	   		      <methods>
-         				<include name = "step01_CreateSession" />
-         				<include name = "step02_SearchSession" />
-         				<include name = "step03_ModifySession" />
-      			  </methods>
-      		</class>
+	   		<class name="com.selenium.test.testcenter.TestSessionList" />
 	  </classes>
 	</test>
-	
+	<!-- 
 	<test name="Admin" preserve-order="true">
 		<classes>
 			<class name="com.selenium.test.admin.TestImportCdtoMIS2" />						
@@ -138,5 +132,5 @@
 			<class name="com.selenium.test.clericalmarker.SecondMarkingAllocation" />
 		</classes>
 	</test>
-	
+	-->
 </suite> 

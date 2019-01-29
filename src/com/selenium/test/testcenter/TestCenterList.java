@@ -58,11 +58,13 @@ public class TestCenterList {
 		ce.CenterListDetailsClick();
 		ce.InputCreateCenterCenterNameCn(ci.mtcName);
 		ce.ModifyFirstClick();
+		ce.WaitTime();
 		ce.SearchSelectCenterRegionClick();
 		ce.SearchCenterNameCn(ci.mtcName);
 		ce.SearchClick();
 		String listOfCenterNameCn = ce.listOfCenterNameCnWarning();
 		Assert.assertEquals(listOfCenterNameCn, ci.mtcName);
+		
 	}
 
 	@Test(description = "View the TestCenter of UIBE")

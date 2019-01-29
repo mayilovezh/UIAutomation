@@ -176,6 +176,7 @@ public class FirstClick{
 		for(int i =0; i<ModifyAllFirstButtonLength(driver); i++) {
 			try {
 				if(isElementPresent(driver,By.xpath("//div[@aria-labelledby='ui-id-"+(i+1)+"']")) && isDisplay!=-1) {
+					m2b.Wait(m2b.normalTime);
 					driver.findElement(By.xpath("//div[@aria-labelledby='ui-id-"+(i+1)+"']/div[3]/div[1]/button[1]")).click();
 					m2b.Wait(m2b.normalTime);
 					m2b.Wait(m2b.normalTime);

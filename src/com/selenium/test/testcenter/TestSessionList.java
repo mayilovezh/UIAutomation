@@ -35,9 +35,10 @@ public class TestSessionList {
 		ce.CreateTestSessionEndSearchClick();
 		ce.CreateTestSessionTestDate();
 		ce.ModifyFirstClick();
+		ce.ShortWaitTime();
 		ce.ModifySecondClick();
 	}
-
+	/*
 	@Test(description = "Logout session")
 	public void step02_LogOut(){
 		ce.WaitTime();
@@ -45,9 +46,9 @@ public class TestSessionList {
 		ce.OpenBrower("TestCenter", 4);
 		step01_CreateSession();
 	}
-
+	*/
 	@Test(description = "Search Session")
-	public void step03_SearchSession(){
+	public void step02_SearchSession(){
 		ce.WaitTime();
 		ce.SelectSearchTestSessionRegion();
 		ce.SelectSearchTestSessionExamProductType();
@@ -60,16 +61,9 @@ public class TestSessionList {
 		Assert.assertEquals(ce.TestCenterOfSearchWarning(), ci.abbreviation);
 	}
 
-	@Test(description = "Modify Session")
-	public void step04_ModifySession(){
-		ce.ModifyTestSessionClick();
-		ce.ModifySessionQuota(ci.modifySessionQuota);
-		ce.ModifyFirstClick();
-
-	}
-
 	@Test(description = "Create last session in the current month")
-	public void step05_CreateLastSession(){
+	public void step03_CreateLastSession(){
+		ce.WaitTime();
 		ce.CreateTestSessionClick();
 		ce.CreateTestSeesionRegionClick();
 		ce.CreateTestSesstionProductClick();
@@ -87,7 +81,7 @@ public class TestSessionList {
 	}
 
 	@Test(description = "Search session in the current month")
-	public void step06_SearchLastSession(){
+	public void step04_SearchLastSession(){
 		ce.WaitTime();
 		ce.SelectSearchTestSessionRegion();
 		ce.SelectSearchTestSessionExamProductType();
@@ -100,5 +94,11 @@ public class TestSessionList {
 		Assert.assertEquals(ce.TestCenterOfSearchWarning(), ci.abbreviation);
 	}
 
-	
+	@Test(description = "Modify Session")
+	public void step05_ModifySession(){
+		ce.ShortWaitTime();
+		ce.ModifyTestSessionClick();
+		ce.ModifySessionQuota(ci.modifySessionQuota);
+		ce.ModifyFirstClick();
+	}
 }

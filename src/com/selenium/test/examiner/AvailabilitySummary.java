@@ -28,7 +28,7 @@ public class AvailabilitySummary{
 		ee.WaitTime();
 		Assert.assertEquals(ee.SearchAvailabilitySummaryWarning(), ee.SearchAvailabilitySummaryWarning());
 	}
-
+	/*
 	@Test
 	public void step02_ModifyLock(){
 		ee.ModifyLockAvailabilitySummaryClick();
@@ -44,5 +44,5 @@ public class AvailabilitySummary{
 		ee.ModifyAvailabilitySummary();
 		ee.ModifyFirstClick();
 	}
-	
+	*/
 }

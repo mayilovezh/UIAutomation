@@ -34,6 +34,7 @@ public class WrittenRoomArrange {
 		pe.GetWARoomStatus();
 		pe.AddWrittenTestRoomArrangementSaveUploadClick();
 		pe.ModifyFirstClick();
+		pe.WaitTime();
 	}
 
 	@Test
@@ -42,8 +43,12 @@ public class WrittenRoomArrange {
 		pe.SelectAddWrittenRoomTempName();
 		pe.AddWrittenTestRoomArrangementListOfDeleteClick();
 		pe.WindowsAlertConfirm();
+		pe.WaitTime();
+		pe.WaitTime();
+		pe.WaitTime();
 		pe.AddWrittenTestRoomArrangementSaveUploadClick();
 		pe.ModifyFirstClick();
+		pe.WaitTime();
 	}
 
 	@Test
@@ -55,6 +60,7 @@ public class WrittenRoomArrange {
 		pe.ModifySecondClick();
 		pe.AddWrittenTestRoomArrangementSaveUploadClick();
 		pe.ModifyFirstClick();
+		pe.WaitTime();
 	}
 
 	@Test
@@ -64,6 +70,7 @@ public class WrittenRoomArrange {
 		pe.AddWrittenTestRoomArrangementDeleteClick();
 		pe.WindowsAlertConfirm();
 		pe.ModifyFirstClick();
+		pe.WaitTime();
 	}
 	
 	@Test

@@ -19,31 +19,31 @@ public class ExaminerTask{
 		ee.Close();
 	}
 
-	@Test
-	public void step01_CreateSpeakingTask(){
-		ee.ExaminerTaskSpeakingTaskClick();
-		ee.ExaminerTaskCreateSpeakingTaskRegion();
-		ee.ExaminerTaskCreateSpeakingTaskYear();
-		ee.ExaminerTaskCreateSpeakingTaskMonth();
-		ee.ExaminerTaskCreateSpeakingTaskTestDate();
-		ee.ExaminerTaskCreateSpeakingTaskTestDayChoose();
-		ee.ExaminerTaskCreateSpeakingTaskExaminerDescription(ei.ExaminerDescriptionText);
-		ee.ExaminerTaskCreateSpeakingTaskStaffRemark(ei.StaffRemarkText);
-		ee.ExaminerTaskSpeakingTaskSaveClick();
-		ee.WaitShotTime();
-		ee.WaitShotTime();
-		ee.WaitShotTime();
-		ee.WaitShotTime();
-		ee.WaitShotTime();
-		ee.WaitShotTime();
-	}
+//	@Test
+//	public void step01_CreateSpeakingTask(){
+//		ee.ExaminerTaskSpeakingTaskClick();
+//		ee.ExaminerTaskCreateSpeakingTaskRegion();
+//		ee.ExaminerTaskCreateSpeakingTaskYear();
+//		ee.ExaminerTaskCreateSpeakingTaskMonth();
+//		ee.ExaminerTaskCreateSpeakingTaskTestDate();
+//		ee.ExaminerTaskCreateSpeakingTaskTestDayChoose();
+//		ee.ExaminerTaskCreateSpeakingTaskExaminerDescription(ei.ExaminerDescriptionText);
+//		ee.ExaminerTaskCreateSpeakingTaskStaffRemark(ei.StaffRemarkText);
+//		ee.ExaminerTaskSpeakingTaskSaveClick();
+//		ee.WaitShotTime();
+//		ee.WaitShotTime();
+//		ee.WaitShotTime();
+//		ee.WaitShotTime();
+//		ee.WaitShotTime();
+//		ee.WaitShotTime();
+//	}
 
 	@Test
 	public void step02_SearchSpeakingTask(){
 		ee.ExaminerTaskSearchRegion();
 		ee.ExaminerTaskSearchYear();
 		ee.ExaminerTaskSearchMonth();
-		ee.ExaminerTaskSearchTestDate();
+//		ee.ExaminerTaskSearchTestDate();
 		ee.ExaminerTaskSearchTaskType();
 		ee.ExaminerTaskSearchClick();
 		Assert.assertEquals(ee.ListOfExaminerTaskSearchWarning(), ee.ListOfExaminerTaskSearchWarning());
@@ -76,5 +76,5 @@ public class ExaminerTask{
 		ee.ModifyFirstClick();
 		ee.WaitShotTime();
 	}
-		
+
 }

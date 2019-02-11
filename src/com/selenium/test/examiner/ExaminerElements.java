@@ -244,7 +244,7 @@ public class ExaminerElements extends Mis2Brower{
 	public void ExaminerTaskSearchMonth() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskSearchMonth)));
-		dropList.selectByValue(dv.getCurrentMonth());
+		dropList.selectByValue(String.valueOf(Integer.parseInt(dv.getCurrentMonth())));
 	}
 	
 	public void ExaminerTaskSearchYear() {
@@ -299,7 +299,7 @@ public class ExaminerElements extends Mis2Brower{
 	public void ExaminerTaskCreateSpeakingTaskMonth() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(examinerTaskCreateSpeakingTaskMonth)));
-		dropList.selectByValue(dv.getCurrentMonth());
+		dropList.selectByValue(String.valueOf(Integer.parseInt(dv.getCurrentMonth())));
 	}
 	
 	public void ExaminerTaskCreateSpeakingTaskYear() {
@@ -356,7 +356,7 @@ public class ExaminerElements extends Mis2Brower{
 	}
 	
 	public void WaitTime(){
-		Wait(25000);
+		Wait(30000);
 	}
 	
 	public void InputModifyLockLockSPKdate() {
@@ -388,7 +388,7 @@ public class ExaminerElements extends Mis2Brower{
 	public void SearchAvailabilitySummaryMonth() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(availabilitySummarySearchMonth)));
-		dropList.selectByValue(dv.getCurrentMonth());
+		dropList.selectByIndex(Integer.parseInt(dv.getCurrentMonth()) -1);
 	}
 	
 	public void SearchAvailabilitySummaryClick() {

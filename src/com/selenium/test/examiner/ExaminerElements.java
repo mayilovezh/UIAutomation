@@ -159,8 +159,8 @@ public class ExaminerElements extends Mis2Brower{
 	
 	public void SpkDeploymentSearchYear() {
 		Wait(normalTime);
-		Select dropList = new Select(WaitElementVisible(driver, By.id(spkDeploymentSearchRegion)));
-		dropList.selectByValue(dv.getCurrentYear());
+		Select dropList = new Select(WaitElementVisible(driver, By.id(spkDeploymentSearchYear)));
+		dropList.selectByValue(String.valueOf(Integer.parseInt(dv.getCurrentYear()) - 1));
 	}
 	
 	public void SpkDeploymentSearchRegion() {

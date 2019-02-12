@@ -21,6 +21,7 @@ public class SpkDeployment{
 
 	@Test
 	public void step01_Search(){
+		ee.SpkDeploymentSearchYear();
 		ee.SelectTestDate();
 		ee.SpkDeploymentSearchClick();
 		ee.WaitShotTime();
@@ -51,6 +52,5 @@ public class SpkDeployment{
 		ee.ModifyFirstClick();
 		ee.WaitTime();
 	}	
-	
 	
 }

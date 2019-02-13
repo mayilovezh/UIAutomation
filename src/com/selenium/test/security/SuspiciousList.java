@@ -26,12 +26,14 @@ public class SuspiciousList {
 
 	@Test
 	public void step02_Search(){
+		se.WaitTime();
 		se.SearchSuspiciousList();
 		Assert.assertEquals(se.ListOfSuspiciousListWarning(), se.ListOfSuspiciousListWarning());
 	}
 	
 	@Test
 	public void step03_View(){
+		se.WaitTime();
 		se.ViewSuspiciousList();
 		Assert.assertEquals(se.SuspiciousListViewWarning(), se.SuspiciousListViewWarning());
 		se.ModifySaveClick();
@@ -40,6 +42,7 @@ public class SuspiciousList {
 
 	@Test
 	public void step04_UpdateView(){
+		se.WaitTime();
 		se.InitSuspiciousListSelect();
 		se.SelectSuspiciousListUpdateView();
 	}

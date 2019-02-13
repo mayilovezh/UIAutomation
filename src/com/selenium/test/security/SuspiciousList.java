@@ -26,8 +26,8 @@ public class SuspiciousList {
 
 	@Test
 	public void step02_Search(){
-		se.WaitTime();
 		se.SearchSuspiciousList();
+		se.WaitTime();
 		Assert.assertEquals(se.ListOfSuspiciousListWarning(), se.ListOfSuspiciousListWarning());
 	}
 	

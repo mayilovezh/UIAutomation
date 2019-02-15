@@ -34,6 +34,9 @@ public class FirstMarkingNew{
 		me.SearchFirstMarkingNewExaminerAll();
 		me.SearchFirstMarkingNewExaminer();
 		me.WaitTime();
+		me.WaitTime();
+		me.WaitTime();
+		me.WaitTime();
 		Assert.assertEquals(me.ListOfFirstMarkingNewWarning(), me.ListOfFirstMarkingNewWarning());
 	}
 
@@ -61,6 +64,9 @@ public class FirstMarkingNew{
 			me.SearchFirstMarkingNewExaminerAll();
 		}
 		me.SearchFirstMarkingNewExaminer();
+		me.WaitTime();
+		me.WaitTime();
+		me.WaitTime();
 		me.WaitTime();
 		me.AutoAllocationFirstMarkingNew();
 		me.ModifyFirstClick();

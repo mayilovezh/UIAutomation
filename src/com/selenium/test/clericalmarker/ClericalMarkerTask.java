@@ -60,7 +60,7 @@ public class ClericalMarkerTask{
 		cme.ModifyFirstClick();
 		cme.ShortWaitTime();
 	}
-	
+
 	@Test
 	public void step05_Create2ndMarkingTask(){
 		cme.CreateCMTask2();
@@ -85,13 +85,8 @@ public class ClericalMarkerTask{
 		cme.SearchCMTaskSelectTestDate();
 		cme.SearchCMTask2SelectTaskType();
 		cme.SearchCMTask();
+		cme.ShortWaitTime();
 		Assert.assertEquals(cme.ListOfCMTask(), cme.ListOfCMTask());
 	}
 
-	
-	
-	
-	
-	
-	
 }

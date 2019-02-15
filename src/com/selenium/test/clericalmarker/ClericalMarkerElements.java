@@ -359,7 +359,7 @@ public class ClericalMarkerElements extends Mis2Brower{
 	public void CreateCMTask2SelectTestDateMonth() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCMTask2TestDateMonth)));
-		dropList.selectByValue(dv.getCurrentMonth());
+		dropList.selectByValue(String.valueOf(Integer.parseInt(dv.getCurrentMonth())));
 	} 
 	
 	public void CreateCMTask2SelectTestDate() {
@@ -417,7 +417,7 @@ public class ClericalMarkerElements extends Mis2Brower{
 	public void SearchCMTaskSelectTestDateMonth() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchCMTaskTestDateMonth)));
-		dropList.selectByValue(dv.getCurrentMonth());
+		dropList.selectByValue(String.valueOf(Integer.parseInt(dv.getCurrentMonth())));
 	} 
 	
 	public void SearchCMTaskSelectTestDate() {
@@ -458,7 +458,7 @@ public class ClericalMarkerElements extends Mis2Brower{
 	public void CreateCMTask1SelectTestDateMonth() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(createCMTask1TestDateMonth)));
-		dropList.selectByValue(dv.getCurrentMonth());
+		dropList.selectByValue(String.valueOf(Integer.parseInt(dv.getCurrentMonth())));
 	} 
 	
 	public void CreateCMTask1SelectTestDate() {

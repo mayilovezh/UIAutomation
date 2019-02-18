@@ -256,7 +256,7 @@ public class ClericalMarkerElements extends Mis2Brower{
 	public void SearchMarkingAllocation2TestDateYear() {
 		Wait(normalTime);
 		Select dropList = new Select(WaitElementVisible(driver, By.id(searchMarkingAllocation2TestDateYear)));
-		dropList.selectByValue(dv.getCurrentYear());
+		dropList.selectByValue(String.valueOf(Integer.parseInt(dv.getCurrentYear()) - 1));
 	} 
 	
 	public void SearchMarkingAllocation2TestDateMonth() {

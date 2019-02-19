@@ -25,7 +25,7 @@ public class CheckSuspicious {
 		se.SearchCheckSuspiciousExamFormat();
 		se.SearchCheckSuspiciousTestCenter();
 		se.SearchCheckSuspicious();
-		se.WaitTime();2
+		se.WaitTime();
 		se.WaitShotTime();
 		Assert.assertEquals(se.ListOfCheckSuspiciousWarning(), se.ListOfCheckSuspiciousWarning());
 	}

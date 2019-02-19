@@ -19,7 +19,7 @@ public class CheckSuspicious {
 	}
 		
 	@Test
-	public void step01_Search(){
+	public void step01_Search(){1
 		se.SearchCheckSuspiciousRegion();
 		se.SearchCheckSuspiciousProductType();
 		se.SearchCheckSuspiciousExamFormat();
